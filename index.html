@@ -1,278 +1,807 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <title>KIWI Serenity Limited | Medical & Wellness Travel Coordination</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="KIWI Serenity Limited provides medical and wellness travel coordination services, including dental care, Traditional Chinese Medicine (TCM), and cultural experiences in China for New Zealand and Australian clients.">
+    <meta charset="UTF-8">
+    <title>KIWI Serenity Limited | Medical & Wellness Travel Coordination</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="KIWI Serenity Limited provides medical and wellness travel coordination services, including dental care, Traditional Chinese Medicine (TCM), and cultural experiences in China for New Zealand and Australian clients.">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;500&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #1e40af;
+            --secondary-color: #2f855a;
+            --accent-color: #d4af37;
+            --tcm-red: #c53030;
+            --tcm-gold: #d4af37;
+            --tcm-green: #2f855a;
+            --dental-blue: #1e88e5;
+            --dental-green: #10b981;
+            --dark-color: #1f2937;
+            --light-color: #f8fafc;
+            --text-color: #333;
+            --text-light: #666;
+            --white: #FFFFFF;
+            --gray-light: #F5F5F5;
+            --border-radius: 12px;
+            --box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Open Sans', 'Noto Sans SC', sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+            background-image: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0.98)), url('Background.jpg');
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
 
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
+        /* ===== 简洁头部 ===== */
+        .site-header {
+            text-align: center;
+            padding: 80px 20px 60px;
+            background: linear-gradient(135deg, rgba(30, 64, 175, 0.05) 0%, rgba(47, 133, 90, 0.05) 100%);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        .site-header h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.8rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .site-header .tagline {
+            font-size: 1.4rem;
+            color: var(--secondary-color);
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+        
+        .site-header .subtitle {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 800px;
+            margin: 0 auto 25px;
+            line-height: 1.6;
+        }
+        
+        .notice {
+            background: #fff3cd;
+            border-left: 5px solid var(--accent-color);
+            padding: 18px 20px;
+            max-width: 900px;
+            margin: 35px auto 0;
+            font-size: 0.95rem;
+            border-radius: 8px;
+            color: #856404;
+        }
 
-  <style>
-    :root {
-      --primary: #1e40af;
-      --secondary: #2f855a;
-      --accent: #d4af37;
-      --dark: #1f2937;
-      --light: #f8fafc;
-    }
+        /* ===== 主要导航 ===== */
+        .main-nav {
+            background: var(--dark-color);
+            color: var(--white);
+            padding: 15px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .nav-link {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .nav-link:hover {
+            background: rgba(255,255,255,0.15);
+            transform: translateY(-2px);
+        }
+        
+        /* ===== 服务卡片网格 ===== */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 14px;
+            padding: 35px 30px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+            border-top: 5px solid var(--primary-color);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 18px 40px rgba(0,0,0,0.12);
+        }
+        
+        .service-card.tcm {
+            border-top-color: var(--tcm-red);
+        }
+        
+        .service-card.dental {
+            border-top-color: var(--dental-blue);
+        }
+        
+        .service-card.tour {
+            border-top-color: var(--secondary-color);
+        }
+        
+        .service-card.premium {
+            border-top-color: var(--accent-color);
+        }
+        
+        .service-card h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .service-card.tcm h2 {
+            color: var(--tcm-red);
+        }
+        
+        .service-card.dental h2 {
+            color: var(--dental-blue);
+        }
+        
+        .service-card.tour h2 {
+            color: var(--secondary-color);
+        }
+        
+        .service-card.premium h2 {
+            color: var(--accent-color);
+        }
+        
+        .service-card p {
+            color: var(--text-light);
+            font-size: 1rem;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+        
+        .service-card .icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+        
+        .service-card.tcm .icon {
+            color: var(--tcm-red);
+        }
+        
+        .service-card.dental .icon {
+            color: var(--dental-blue);
+        }
+        
+        .service-card.tour .icon {
+            color: var(--secondary-color);
+        }
+        
+        .service-card.premium .icon {
+            color: var(--accent-color);
+        }
+        
+        .service-card a {
+            display: inline-block;
+            padding: 12px 26px;
+            border-radius: 30px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: opacity 0.3s;
+            margin-top: 10px;
+        }
+        
+        .service-card a:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+        
+        .service-card.tcm a {
+            background: linear-gradient(135deg, var(--tcm-red), #e53e3e);
+        }
+        
+        .service-card.dental a {
+            background: linear-gradient(135deg, var(--dental-blue), #1e88e5);
+        }
+        
+        .service-card.tour a {
+            background: linear-gradient(135deg, var(--secondary-color), #38a169);
+        }
+        
+        .service-card.premium a {
+            background: linear-gradient(135deg, var(--accent-color), #d69e2e);
+        }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+        /* ===== 特色展示区域 ===== */
+        .feature-section {
+            background: var(--light-color);
+            padding: 80px 20px;
+            margin: 40px 0;
+            border-radius: 15px;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 50px;
+            color: var(--primary-color);
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--accent-color);
+            border-radius: 2px;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .feature-item {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 30px 25px;
+            text-align: center;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+        
+        .feature-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .feature-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        /* ===== 联系栏 ===== */
+        .contact-bar {
+            background: var(--white);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            max-width: 1000px;
+            margin: 40px auto;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .contact-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .contact-icon {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+        
+        .contact-main {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-color);
+        }
+        
+        .contact-sub {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            font-style: italic;
+            margin-top: 5px;
+        }
+        
+        /* ===== 返回顶部按钮 ===== */
+        #back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: var(--transition);
+            opacity: 0;
+            visibility: hidden;
+            z-index: 999;
+            border: none;
+            outline: none;
+        }
+        
+        #back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+        }
+        
+        #back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* ===== 页脚 ===== */
+        .site-footer {
+            background: var(--dark-color);
+            color: #cbd5e1;
+            padding: 40px 20px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        
+        .footer-nav {
+            margin-bottom: 20px;
+        }
+        
+        .footer-nav a {
+            color: #cbd5e1;
+            text-decoration: underline;
+            margin: 0 10px;
+        }
+        
+        .footer-nav a:hover {
+            color: white;
+        }
+        
+        .footer-brand {
+            margin: 15px 0;
+            font-weight: 600;
+        }
+        
+        .footer-notice {
+            max-width: 800px;
+            margin: 20px auto 0;
+            color: #94a3b8;
+            font-size: 0.85rem;
+            line-height: 1.5;
+        }
 
-    body {
-      font-family: 'Open Sans', sans-serif;
-      color: var(--dark);
-      background: linear-gradient(
-        rgba(255,255,255,0.92),
-        rgba(255,255,255,0.95)
-      ),
-      url("Background.jpg") center / cover no-repeat fixed;
-      line-height: 1.7;
-    }
-
-    header {
-      text-align: center;
-      padding: 90px 20px 70px;
-    }
-
-    header h1 {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 2.8rem;
-      color: var(--primary);
-      margin-bottom: 15px;
-    }
-
-    header p {
-      max-width: 820px;
-      margin: 0 auto 15px;
-      font-size: 1.15rem;
-      color: #444;
-    }
-
-    .tagline {
-      font-style: italic;
-      color: #555;
-      margin-top: 10px;
-    }
-
-    .notice {
-      background: #fff3cd;
-      border-left: 5px solid var(--accent);
-      padding: 18px 20px;
-      max-width: 900px;
-      margin: 35px auto 0;
-      font-size: 0.95rem;
-      border-radius: 8px;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 60px 20px;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 30px;
-    }
-
-    .card {
-      background: white;
-      border-radius: 14px;
-      padding: 35px 30px;
-      box-shadow: 0 12px 30px rgba(0,0,0,0.08);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      text-align: center;
-    }
-
-    .card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 18px 40px rgba(0,0,0,0.12);
-    }
-
-    .card h2 {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 1.5rem;
-      color: var(--primary);
-      margin-bottom: 15px;
-    }
-
-    .card p {
-      color: #555;
-      font-size: 1rem;
-      margin-bottom: 25px;
-    }
-
-    .card a {
-      display: inline-block;
-      padding: 12px 26px;
-      border-radius: 30px;
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      color: white;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.95rem;
-      transition: opacity 0.3s;
-    }
-
-    .card a:hover {
-      opacity: 0.9;
-    }
-
-    footer {
-      background: #0f172a;
-      color: #cbd5e1;
-      padding: 40px 20px;
-      text-align: center;
-      font-size: 0.9rem;
-    }
-
-    footer a {
-      color: #cbd5e1;
-      margin: 0 10px;
-      text-decoration: underline;
-    }
-
-    footer a:hover {
-      color: white;
-    }
-.site-footer .footer-nav {
-  margin-bottom: 14px;
-}
-
-.site-footer .footer-nav a {
-  color: #cbd5e1;
-  text-decoration: underline;
-  margin: 0 6px;
-}
-
-.site-footer .footer-nav a:hover {
-  color: #ffffff;
-}
-  </style>
+        /* ===== 响应式设计 ===== */
+        @media (max-width: 768px) {
+            .site-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .site-header .tagline {
+                font-size: 1.2rem;
+            }
+            
+            .main-nav {
+                padding: 12px 15px;
+            }
+            
+            .nav-links {
+                gap: 10px;
+            }
+            
+            .nav-link {
+                padding: 6px 12px;
+                font-size: 0.9rem;
+            }
+            
+            .contact-bar {
+                flex-direction: column;
+                gap: 25px;
+                padding: 25px 20px;
+            }
+            
+            .service-card {
+                padding: 25px 20px;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            #back-to-top {
+                bottom: 20px;
+                right: 20px;
+                width: 45px;
+                height: 45px;
+                font-size: 1.2rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .site-header {
+                padding: 60px 15px 40px;
+            }
+            
+            .site-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .service-card h2 {
+                font-size: 1.3rem;
+            }
+            
+            .footer-nav a {
+                display: block;
+                margin: 5px 0;
+            }
+            
+            #back-to-top {
+                bottom: 15px;
+                right: 15px;
+                width: 40px;
+                height: 40px;
+                font-size: 1.1rem;
+            }
+        }
+        
+        /* ===== 动画效果 ===== */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.8s ease-out;
+        }
+    </style>
 </head>
 
 <body>
+    <!-- 返回顶部按钮 -->
+    <button id="back-to-top" title="返回顶部 | Back to Top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
 
-<header>
-  <h1>KIWI Serenity Limited</h1>
-  <p>
-    Medical & Wellness Travel Coordination Services<br>
-    for New Zealand and Australian Clients
-  </p>
-  <p class="tagline">
-    Connecting healthcare, culture, and wellbeing — with clarity and care.
-  </p>
+    <!-- 网站头部 -->
+    <header class="site-header">
+        <h1>KIWI Serenity Limited</h1>
+        <p class="tagline">Medical & Wellness Travel Coordination Services</p>
+        <p class="subtitle">
+            For New Zealand and Australian Clients<br>
+            为新西兰和澳大利亚客户提供医疗与健康旅行协调服务
+        </p>
+        <p class="subtitle" style="font-style: italic; color: #555;">
+            Connecting healthcare, culture, and wellbeing — with clarity and care.<br>
+            连接医疗、文化和健康——清晰而周到
+        </p>
+        
+        <div class="notice">
+            <strong>Important Notice:</strong>
+            This website provides information and coordination services only and does not constitute medical advice, diagnosis, or treatment.
+            <br>
+            <strong>重要提示：</strong>
+            本网站仅提供信息与协调服务，不构成医疗建议、诊断或治疗。
+        </div>
+    </header>
 
-  <div class="notice">
-    <strong>Important Notice:</strong>
-    This website provides information and coordination services only and does not constitute medical advice, diagnosis, or treatment.
-  </div>
-</header>
+    <!-- 主要导航 -->
+    <nav class="main-nav">
+        <div class="nav-links">
+            <a href="#services" class="nav-link">
+                <i class="fas fa-concierge-bell"></i> 服务 | Services
+            </a>
+            <a href="#tcm" class="nav-link">
+                <i class="fas fa-spa"></i> 中医理疗 | TCM Wellness
+            </a>
+            <a href="#tours" class="nav-link">
+                <i class="fas fa-map-marked-alt"></i> 旅游线路 | Tours
+            </a>
+            <a href="#dental" class="nav-link">
+                <i class="fas fa-tooth"></i> 口腔咨询 | Dental
+            </a>
+            <a href="#contact" class="nav-link">
+                <i class="fas fa-phone-alt"></i> 联系我们 | Contact
+            </a>
+        </div>
+    </nav>
 
-<main class="container">
-  <div class="grid">
+    <!-- 主要服务区域 -->
+    <main class="container">
+        <div id="services" class="services-grid">
+            <div class="service-card tcm fade-in" id="tcm">
+                <div class="icon"><i class="fas fa-spa"></i></div>
+                <h2>Traditional Chinese Medicine (TCM)</h2>
+                <p>
+                    体验成都专业中医理疗服务，包括针灸、推拿、拔罐等传统疗法，感受中医文化的独特魅力。
+                    <br><br>
+                    Experience professional TCM therapies in Chengdu including acupuncture, massage, cupping and more, discovering the unique charm of traditional Chinese medicine culture.
+                </p>
+                <a href="tcm.html">探索中医服务 | Explore TCM Services</a>
+            </div>
 
-    <div class="card">
-      <h2>Traditional Chinese Medicine (TCM)</h2>
-      <p>
-        Learn about licensed Traditional Chinese Medicine clinics and cultural wellness experiences in Chengdu, China.
-      </p>
-      <a href="tcm.html">Explore TCM Services</a>
-    </div>
+            <div class="service-card dental fade-in" id="dental">
+                <div class="icon"><i class="fas fa-tooth"></i></div>
+                <h2>Dental Care Services</h2>
+                <p>
+                    在成都享受高质量的牙科咨询服务，费用相比新西兰可节省高达70%。我们提供预约协调和全程英语支持。
+                    <br><br>
+                    Enjoy high-quality dental consultations in Chengdu with potential savings of up to 70% compared to New Zealand. We provide appointment coordination and full English support.
+                </p>
+                <a href="dental.html">查看牙科服务 | View Dental Services</a>
+            </div>
 
-    <div class="card">
-      <h2>Dental Care Services</h2>
-      <p>
-        Discover dental care coordination options, treatment categories, and travel planning support.
-      </p>
-      <a href="dental.html">View Dental Services</a>
-    </div>
+            <div class="service-card tour fade-in" id="tours">
+                <div class="icon"><i class="fas fa-map-marked-alt"></i></div>
+                <h2>Cultural & Travel Experiences</h2>
+                <p>
+                    探索精心策划的四川文化之旅，将自然景观、文化遗产与健康体验完美结合。
+                    <br><br>
+                    Explore curated Sichuan cultural journeys that perfectly blend natural landscapes, cultural heritage and wellness experiences.
+                </p>
+                <a href="tours.html">查看旅游线路 | View Travel Routes</a>
+            </div>
 
-    <div class="card">
-      <h2>Cultural & Travel Experiences</h2>
-      <p>
-        Explore curated Sichuan cultural journeys designed to complement wellness and medical travel.
-      </p>
-      <a href="tours.html">View Travel Routes</a>
-    </div>
+            <div class="service-card premium fade-in">
+                <div class="icon"><i class="fas fa-crown"></i></div>
+                <h2>Premium Experience Packages</h2>
+                <p>
+                    尊享体验套餐融合四川文化、中医智慧与现代健康管理，包含免费洁牙和中医体质辨证服务。
+                    <br><br>
+                    Premium packages combine Sichuan culture, TCM wisdom and modern health management, including free dental cleaning and TCM constitution analysis.
+                </p>
+                <a href="sichuan.html">查看尊享套餐 | View Premium Packages</a>
+            </div>
 
-    <div class="card">
-      <h2>Health Information Questionnaire</h2>
-      <p>
-        Submit your health and travel information securely for preliminary coordination purposes.
-      </p>
-      <a href="questionnaire.html">Complete Questionnaire</a>
-    </div>
+            <div class="service-card fade-in">
+                <div class="icon"><i class="fas fa-file-medical"></i></div>
+                <h2>Health Information Questionnaire</h2>
+                <p>
+                    提交您的健康和旅行信息，我们将为您提供个性化的协调服务建议。
+                    <br><br>
+                    Submit your health and travel information for personalized coordination service recommendations.
+                </p>
+                <a href="questionnaire.html">填写问卷 | Complete Questionnaire</a>
+            </div>
 
-    <div class="card">
-      <h2>FAQs & Important Information</h2>
-      <p>
-        Understand service scope, suitability, limitations, and frequently asked questions.
-      </p>
-      <a href="faq.html">Read FAQs</a>
-    </div>
+            <div class="service-card fade-in">
+                <div class="icon"><i class="fas fa-question-circle"></i></div>
+                <h2>FAQs & Important Information</h2>
+                <p>
+                    了解我们的服务范围、适用人群、限制条款以及常见问题解答。
+                    <br><br>
+                    Understand our service scope, suitability, limitations and frequently asked questions.
+                </p>
+                <a href="faq.html">阅读常见问题 | Read FAQs</a>
+            </div>
+        </div>
 
-  </div>
-  <section id="sichuan-showcase" style="padding:80px 20px; background:#f8fafc;">
-  <div style="max-width:1200px;margin:0 auto;text-align:center;">
-    <h2 style="font-family:'Montserrat',sans-serif;
-               font-size:2.2rem;
-               color:#1e40af;
-               margin-bottom:15px;">
-      Sichuan Culture & Wellness Experience
-    </h2>
+        <!-- 特色展示区域 -->
+        <section class="feature-section" id="tours-detail">
+            <h2 class="section-title">四川文化·自然·健康体验</h2>
+            <p style="text-align:center;color:var(--text-light);margin-bottom:40px;max-width:800px;margin-left:auto;margin-right:auto;">
+                Discover the perfect balance of cultural immersion, natural wonders, and wellness integration in the heart of China
+                <br>
+                在四川体验文化沉浸、自然奇观与健康养生的完美平衡
+            </p>
+            
+            <div class="features-grid">
+                <div class="feature-item fade-in">
+                    <div class="feature-icon"><i class="fas fa-paw"></i></div>
+                    <h3 class="feature-title">熊猫基地参观</h3>
+                    <p>参观世界著名的大熊猫保护研究中心，近距离观察这些可爱的国宝。</p>
+                    <p class="english">Visit the world-famous Panda Research Base and observe these adorable national treasures up close.</p>
+                </div>
+                
+                <div class="feature-item fade-in">
+                    <div class="feature-icon"><i class="fas fa-mountain"></i></div>
+                    <h3 class="feature-title">乐山大佛 & 峨眉山</h3>
+                    <p>探索世界自然与文化双遗产，感受佛教圣地的庄严与宁静。</p>
+                    <p class="english">Explore the dual World Heritage sites and experience the solemnity and tranquility of Buddhist sacred places.</p>
+                </div>
+                
+                <div class="feature-item fade-in">
+                    <div class="feature-icon"><i class="fas fa-water"></i></div>
+                    <h3 class="feature-title">都江堰水利工程</h3>
+                    <p>参观2000多年前建造的古代水利工程，了解中国古代智慧。</p>
+                    <p class="english">Visit the ancient irrigation system built over 2000 years ago and learn about ancient Chinese wisdom.</p>
+                </div>
+                
+                <div class="feature-item fade-in">
+                    <div class="feature-icon"><i class="fas fa-utensils"></i></div>
+                    <h3 class="feature-title">四川美食体验</h3>
+                    <p>品尝正宗的川菜，体验成都的慢生活文化和茶馆文化。</p>
+                    <p class="english">Taste authentic Sichuan cuisine and experience Chengdu's slow living culture and tea house culture.</p>
+                </div>
+            </div>
+        </section>
 
-    <p style="max-width:800px;margin:0 auto 40px;
-              font-size:1.05rem;color:#555;">
-      Explore curated Sichuan cultural, natural, and wellness experiences —  
-      seamlessly coordinated by KIWI Serenity Limited.
-    </p>
-  </div>
-</main>
+        <!-- 联系栏 -->
+        <div class="contact-bar" id="contact">
+            <div class="contact-item">
+                <i class="fas fa-phone contact-icon"></i>
+                <div class="contact-main">Tel: +64 022 040 5795</div>
+                <div class="contact-sub">New Zealand Number | 新西兰号码</div>
+            </div>
+            
+            <div class="contact-item">
+                <i class="fas fa-envelope contact-icon"></i>
+                <div class="contact-main">Email: KIWI_Serenity_Limited@outlook.com</div>
+                <div class="contact-sub">24-hour Response | 24小时回复</div>
+            </div>
+            
+            <div class="contact-item">
+                <i class="fas fa-clock contact-icon"></i>
+                <div class="contact-main">Service Hours: 9:00-18:00 (NZST)</div>
+                <div class="contact-sub">Monday to Friday | 周一至周五</div>
+            </div>
+        </div>
+    </main>
 
-<footer>
-<footer class="site-footer">
-  <div class="footer-inner">
+    <!-- 页脚 -->
+    <footer class="site-footer">
+        <div class="footer-nav">
+            <a href="#top">首页 | Home</a> ·
+            <a href="privacy.html">隐私政策 | Privacy Policy</a> ·
+            <a href="terms.html">服务条款 | Terms of Service</a> ·
+            <a href="disclaimer.html">医疗免责声明 | Medical Disclaimer</a>
+        </div>
+        
+        <p class="footer-brand">
+            © 2026 <strong>KIWI Serenity Limited</strong>. All rights reserved.
+        </p>
+        
+        <p class="footer-notice">
+            KIWI Serenity Limited provides information and coordination services only
+            and does not provide medical advice, diagnosis, or treatment.
+            <br>
+            KIWI Serenity Limited 仅提供信息与协调服务，不提供医疗建议、诊断或治疗。
+        </p>
+    </footer>
 
-    <p class="footer-nav">
-      <a href="index.html">Home</a> ·
-      <a href="privacy.html">Privacy Policy</a> ·
-      <a href="terms.html">Terms of Service</a> ·
-      <a href="disclaimer.html">Medical Disclaimer</a>
-    </p>
-
-    <p class="footer-brand">
-      © 2026 <strong>KIWI Serenity Limited</strong>. All rights reserved.
-    </p>
-
-    <p class="footer-notice">
-      KIWI Serenity Limited provides information and coordination services only
-      and does not provide medical advice, diagnosis, or treatment.
-    </p>
-
-  </div>
-</footer>
-
-  <p>
-    © 2026 KIWI Serenity Limited. All rights reserved.
-  </p>
-  <p>
-    <a href="privacy.html">Privacy Policy</a> |
-    <a href="terms.html">Terms of Service</a> |
-    <a href="disclaimer.html">Medical Disclaimer</a>
-  </p>
-</footer>
-
+    <script>
+        // 页面加载动画
+        document.addEventListener('DOMContentLoaded', function() {
+            // 为所有卡片添加悬停效果
+            const cards = document.querySelectorAll('.service-card, .feature-item');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transition = 'all 0.3s ease';
+                });
+            });
+            
+            // 平滑滚动
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    const targetId = this.getAttribute('href');
+                    if(targetId !== '#') {
+                        e.preventDefault();
+                        const targetElement = document.querySelector(targetId);
+                        if(targetElement) {
+                            window.scrollTo({
+                                top: targetElement.offsetTop - 80,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
+            });
+            
+            // 动画效果
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in');
+                    }
+                });
+            }, observerOptions);
+            
+            document.querySelectorAll('.fade-in').forEach(el => {
+                observer.observe(el);
+            });
+            
+            // 返回顶部按钮功能
+            const backToTopButton = document.getElementById('back-to-top');
+            
+            // 监听滚动事件
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    backToTopButton.classList.add('show');
+                } else {
+                    backToTopButton.classList.remove('show');
+                }
+            });
+            
+            // 点击返回顶部
+            backToTopButton.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // 滚动到指定部分
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                window.scrollTo({
+                    top: section.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            }
+        }
+    </script>
 </body>
 </html>
-
-
-
-
-
