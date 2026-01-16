@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KIWI Serenity - 海外游客中国支付指南 2026 | International Visitors Payment Guide in China 2026</title>
-    <!-- 引入html2canvas库，用于图片保存功能 -->
-    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
     <style>
         /* 基础样式 */
         * {
@@ -927,75 +925,6 @@
                 }, 300);
             }, 300);
         }
-        
-        // 保存为图片
-        function saveAsImage() {
-            // 检查html2canvas是否可用
-            if (typeof html2canvas === 'undefined') {
-                showSuccessMessage("错误：图片保存库未加载 | Error: Image saving library not loaded", true);
-                return;
-            }
-            
-            // 显示保存提示
-            showSuccessMessage("正在生成图片... | Generating image...");
-            
-            // 获取要保存的元素
-            const element = document.querySelector('.container');
-            
-            // 使用html2canvas将元素转换为canvas
-            html2canvas(element, {
-                scale: 2, // 提高图片质量
-                useCORS: true, // 允许跨域图片
-                backgroundColor: '#f5f7fa'
-            }).then(canvas => {
-                // 将canvas转换为图片URL
-                const imageURL = canvas.toDataURL('image/png');
-                
-                // 创建下载链接
-                const downloadLink = document.createElement('a');
-                downloadLink.href = imageURL;
-                downloadLink.download = `KIWI_Serenity_Payment_Guide_2026_${new Date().toISOString().slice(0,10)}.png`;
-                
-                // 触发下载
-                document.body.appendChild(downloadLink);
-                downloadLink.click();
-                document.body.removeChild(downloadLink);
-                
-                // 显示成功提示
-                showSuccessMessage("图片已保存！ | Image saved successfully!");
-            }).catch(error => {
-                console.error('图片生成失败:', error);
-                showSuccessMessage("图片保存失败，请重试 | Image save failed, please try again", true);
-            });
-        }
-        
-        // 显示成功/错误消息
-        function showSuccessMessage(message, isError = false) {
-            const messageElement = document.getElementById('successMessage');
-            messageElement.textContent = message;
-            messageElement.style.background = isError 
-                ? 'linear-gradient(135deg, #e53935, #c62828)' 
-                : 'linear-gradient(135deg, #2e7d32, #1a472a)';
-            
-            // 显示消息
-            messageElement.classList.add('show');
-            
-            // 3秒后隐藏消息
-            setTimeout(() => {
-                messageElement.classList.remove('show');
-            }, 3000);
-        }
-        
-        // 添加平台图标悬停效果
-        document.querySelectorAll('.platform').forEach(platform => {
-            platform.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-10px) scale(1.05)';
-            });
-            
-            platform.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0) scale(1)';
-            });
-        });
     </script>
 </body>
 </html>
