@@ -1,0 +1,2387 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>四川文化体验与健康服务协调 | Sichuan Cultural Experience & Wellness Service Coordination - KIWI Serenity Limited</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;500&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1e40af;
+            --secondary-color: #2f855a;
+            --accent-color: #d4af37;
+            --tcm-red: #c53030;
+            --tcm-gold: #d4af37;
+            --tcm-green: #2f855a;
+            --dental-blue: #1e88e5;
+            --dental-green: #10b981;
+            --dark-color: #1f2937;
+            --light-color: #f8fafc;
+            --text-color: #333;
+            --text-light: #666;
+            --white: #FFFFFF;
+            --gray-light: #F5F5F5;
+            --border-radius: 12px;
+            --box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Open Sans', 'Noto Sans SC', sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+            background-image: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0.98)), url('Background.jpg');
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        /* ===== Floating Back to Home ===== */
+        .back-home-float {
+            position: fixed;
+            bottom: 18px;
+            left: 18px;
+            z-index: 9999;
+            padding: 10px 18px;
+            border-radius: 999px;
+            background: rgba(30, 64, 175, 0.9);
+            color: #ffffff;
+            font-size: 13px;
+            font-weight: 600;
+            text-decoration: none;
+            white-space: nowrap;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+            backdrop-filter: blur(6px);
+            transition: all 0.25s ease;
+        }
+
+        .back-home-float:hover {
+            background: rgba(30, 64, 175, 1);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 26px rgba(0, 0, 0, 0.35);
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .back-home-float {
+                bottom: 14px;
+                left: 14px;
+                padding: 8px 14px;
+                font-size: 12px;
+            }
+        }
+
+        /* 顶部导航 */
+        .top-nav {
+            background: var(--dark-color);
+            color: var(--white);
+            padding: 18px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            border-bottom: 4px solid var(--accent-color);
+        }
+        
+        .brand-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .brand-logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--white);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+        
+        .nav-link {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,0.1);
+        }
+        
+        .nav-link:hover {
+            background: rgba(255,255,255,0.25);
+            transform: translateY(-2px);
+        }
+        
+        .nav-link.tcm {
+            color: #FBD38D;
+            border-left: 3px solid var(--tcm-red);
+        }
+        
+        .nav-link.dental {
+            color: #90CDF4;
+            border-left: 3px solid var(--dental-blue);
+        }
+
+        /* 已删除的服务跳转卡片 */
+        .service-jump-cards {
+            display: none !important;
+        }
+
+        /* 已删除的头部 */
+        .header {
+            display: none !important;
+        }
+        
+        /* 联系栏 */
+        .contact-bar {
+            background: var(--white);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            max-width: 1000px;
+            margin: 40px auto 60px;
+            position: relative;
+            z-index: 10;
+            flex-wrap: nowrap;
+            gap: 10px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        
+        .contact-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            flex: 1;
+            min-width: 200px;
+            padding: 0 15px;
+        }
+        
+        .contact-icon {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 12px;
+        }
+        
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        
+        .contact-main {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-color);
+            line-height: 1.4;
+        }
+        
+        .contact-sub {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            font-style: italic;
+            line-height: 1.3;
+        }
+        
+        .separator {
+            width: 1px;
+            height: 60px;
+            background: linear-gradient(to bottom, transparent, #CBD5E0, transparent);
+        }
+        
+        /* 容器 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* ===== 统一卡片基础样式 ===== */
+        .feature-card,
+        .tcm-package-card,
+        .premium-package-card,
+        .dental-service-card {
+            border-radius: 16px;
+            box-shadow: var(--box-shadow);
+            border: 1px solid rgba(0,0,0,0.05);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            background: var(--white);
+        }
+
+        /* 统一悬停效果 */
+        .feature-card:hover,
+        .tcm-package-card:hover,
+        .premium-package-card:hover,
+        .dental-service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+            border-color: var(--primary-color);
+        }
+
+        /* 特色卡片 */
+        .features-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 60px 0;
+        }
+        
+        .feature-card {
+            border-top: 5px solid var(--primary-color);
+            padding: 40px 30px;
+            text-align: center;
+        }
+        
+        .feature-icon {
+            font-size: 2.8rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .feature-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        .feature-desc {
+            color: var(--text-light);
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+        
+        /* ===== 可折叠卡片组件 ===== */
+        .collapsible-section {
+            margin: 60px 0;
+        }
+        
+        .collapsible-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .collapsible-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            border: 1px solid rgba(0,0,0,0.05);
+            transition: var(--transition);
+        }
+        
+        .collapsible-card:hover {
+            box-shadow: 0 12px 35px rgba(0,0,0,0.12);
+        }
+        
+        .collapsible-header {
+            padding: 25px 30px;
+            background: linear-gradient(135deg, rgba(30, 64, 175, 0.05) 0%, rgba(47, 133, 90, 0.05) 100%);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        .collapsible-header h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.6rem;
+            color: var(--primary-color);
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .collapsible-header h3 i {
+            color: var(--primary-color);
+            font-size: 1.4rem;
+        }
+        
+        .collapsible-header .toggle-icon {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            transition: transform 0.3s ease;
+        }
+        
+        .collapsible-card.active .toggle-icon {
+            transform: rotate(180deg);
+        }
+        
+        .collapsible-content {
+            padding: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease, padding 0.3s ease;
+            background: var(--white);
+        }
+        
+        .collapsible-card.active .collapsible-content {
+            padding: 30px;
+            max-height: 2000px;
+        }
+        
+        /* ===== 中医套餐部分 (可折叠版本) ===== */
+        .tcm-packages-section {
+            padding: 60px 40px;
+            background: linear-gradient(135deg, rgba(30, 64, 175, 0.02) 0%, rgba(47, 133, 90, 0.02) 100%);
+            position: relative;
+            margin: 50px 0;
+            border-radius: var(--border-radius);
+            border: 1px solid rgba(0,0,0,0.05);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.4rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--accent-color);
+            border-radius: 2px;
+        }
+        
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--secondary-color);
+            max-width: 800px;
+            margin: 25px auto 0;
+            line-height: 1.6;
+        }
+        
+        /* 中医折叠卡片内部网格 */
+        .tcm-collapsible-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+        
+        .tcm-package-card {
+            border: 1px solid rgba(0,0,0,0.05);
+            padding: 30px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            border-top: 5px solid var(--tcm-red);
+        }
+        
+        .tcm-package-card.featured {
+            border-color: var(--accent-color);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.15);
+        }
+        
+        .tcm-package-header {
+            margin-bottom: 20px;
+        }
+        
+        .tcm-package-name {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            color: var(--tcm-red);
+            margin-bottom: 10px;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+        
+        .tcm-package-duration {
+            color: var(--tcm-green);
+            font-weight: 600;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .tcm-package-details {
+            list-style: none;
+            margin: 20px 0;
+            flex-grow: 1;
+        }
+        
+        .tcm-package-detail-item {
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            display: grid;
+            gap: 6px;
+        }
+        
+        .tcm-package-detail-item:last-child {
+            border-bottom: none;
+        }
+        
+        .tcm-detail-chinese {
+            color: var(--text-color);
+            font-weight: 500;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 0.95rem;
+        }
+        
+        .tcm-detail-chinese::before {
+            content: '→';
+            color: var(--primary-color);
+            font-weight: bold;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+        
+        .tcm-detail-english {
+            color: var(--text-light);
+            font-size: 0.85rem;
+            font-style: italic;
+            padding-left: 24px;
+            line-height: 1.4;
+        }
+        
+        .tcm-package-footer {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 2px dashed rgba(0,0,0,0.1);
+        }
+        
+        .tcm-package-target {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        
+        .tcm-package-tag {
+            display: inline-block;
+            padding: 6px 15px;
+            background: rgba(30, 64, 175, 0.1);
+            color: var(--primary-color);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-top: 12px;
+            border: 1px solid rgba(30, 64, 175, 0.2);
+        }
+        
+        /* ===== Premium Experience Packages 部分 (可折叠版本) ===== */
+        .premium-packages-section {
+            margin: 80px 0;
+            background: linear-gradient(135deg, rgba(30, 64, 175, 0.02) 0%, rgba(47, 133, 90, 0.02) 100%);
+            border-radius: var(--border-radius);
+            padding: 70px 40px;
+            box-shadow: var(--box-shadow);
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .premium-intro {
+            text-align: center;
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin: 20px auto 40px;
+            max-width: 800px;
+            padding: 18px;
+            background: linear-gradient(135deg, rgba(30, 64, 175, 0.05), rgba(47, 133, 90, 0.05));
+            border-radius: 12px;
+            border-left: 4px solid var(--accent-color);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        /* Premium折叠卡片内部网格 */
+        .premium-collapsible-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .premium-package-card {
+            border: 1px solid rgba(0,0,0,0.05);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        /* 每个卡片的顶部颜色条 */
+        .premium-package-card.discover {
+            border-top: 5px solid var(--primary-color);
+        }
+
+        .premium-package-card.healing {
+            border-top: 5px solid var(--secondary-color);
+            transform: scale(1.02);
+        }
+
+        .premium-package-card.heritage {
+            border-top: 5px solid var(--accent-color);
+        }
+
+        .premium-package-card.elite {
+            border-top: 5px solid var(--dental-blue);
+        }
+
+        .package-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 6px 20px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            z-index: 2;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .package-badge.popular {
+            top: 20px;
+            right: 20px;
+            left: auto;
+            transform: none;
+            background: linear-gradient(135deg, var(--accent-color), var(--secondary-color));
+            font-size: 0.7rem;
+            padding: 4px 12px;
+        }
+
+        .premium-package-card.discover .package-badge {
+            background: linear-gradient(135deg, var(--primary-color), #3182CE);
+        }
+
+        .premium-package-card.healing .package-badge {
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+        }
+
+        .premium-package-card.heritage .package-badge {
+            background: linear-gradient(135deg, var(--accent-color), #d69e2e);
+        }
+
+        .premium-package-card.elite .package-badge {
+            background: linear-gradient(135deg, var(--dental-blue), var(--primary-color));
+            color: white;
+        }
+
+        .package-icon {
+            font-size: 2.8rem;
+            text-align: center;
+            margin: 10px 0 15px;
+        }
+
+        .package-name {
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+            line-height: 1.3;
+        }
+
+        .package-subtitle {
+            text-align: center;
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .package-inclusions {
+            flex-grow: 1;
+            margin-bottom: 20px;
+        }
+
+        .package-inclusions h4 {
+            color: var(--primary-color);
+            font-size: 0.95rem;
+            margin: 15px 0 8px;
+            padding-bottom: 6px;
+            border-bottom: 2px solid rgba(30, 64, 175, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .package-inclusions ul {
+            list-style: none;
+            margin-left: 0;
+            padding-left: 0;
+        }
+
+        .package-inclusions li {
+            padding: 6px 0;
+            font-size: 0.85rem;
+            line-height: 1.4;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .package-inclusions li:last-child {
+            border-bottom: none;
+        }
+
+        .package-inclusions li strong {
+            color: var(--primary-color);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-top: 12px;
+        }
+
+        .benefit-item {
+            background: rgba(30, 64, 175, 0.05);
+            border-radius: 8px;
+            padding: 12px;
+            display: flex;
+            flex-direction: column;
+            transition: var(--transition);
+            border: 1px solid rgba(30, 64, 175, 0.1);
+        }
+
+        .benefit-item:hover {
+            background: rgba(30, 64, 175, 0.1);
+            transform: translateY(-2px);
+            border-color: var(--primary-color);
+        }
+
+        .benefit-item i {
+            color: var(--primary-color);
+            font-size: 0.9rem;
+            margin-bottom: 4px;
+        }
+
+        .benefit-item span {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-color);
+            margin-bottom: 2px;
+        }
+
+        .benefit-item small {
+            font-size: 0.7rem;
+            color: var(--text-light);
+            font-style: italic;
+        }
+
+        .package-suitability {
+            background: rgba(30, 64, 175, 0.03);
+            padding: 18px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border: 1px solid rgba(30, 64, 175, 0.1);
+        }
+
+        .package-suitability h4 {
+            color: var(--primary-color);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
+        }
+
+        .package-suitability p {
+            font-size: 0.85rem;
+            line-height: 1.4;
+        }
+
+        .package-suitability .english {
+            color: var(--text-light);
+            font-size: 0.8rem;
+            margin-top: 4px;
+            font-style: italic;
+        }
+
+        .cta-section {
+            text-align: center;
+            margin-top: auto;
+        }
+
+        .value-statement {
+            font-size: 0.85rem;
+            color: var(--primary-color);
+            font-style: italic;
+            margin-bottom: 15px;
+            padding: 12px;
+            background: rgba(30, 64, 175, 0.05);
+            border-radius: 8px;
+            border: 1px solid rgba(30, 64, 175, 0.1);
+        }
+
+        .premium-btn {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            letter-spacing: 0.5px;
+            border: 1px solid transparent;
+        }
+
+        .premium-btn.discover-btn {
+            background: linear-gradient(135deg, var(--primary-color), #3182CE);
+            color: white;
+        }
+
+        .premium-btn.healing-btn {
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            color: white;
+        }
+
+        .premium-btn.heritage-btn {
+            background: linear-gradient(135deg, var(--accent-color), #d69e2e);
+            color: white;
+        }
+
+        .premium-btn.elite-btn {
+            background: linear-gradient(135deg, var(--dental-blue), var(--primary-color));
+            color: white;
+            font-weight: 800;
+            border: 1px solid rgba(30, 64, 175, 0.3);
+        }
+
+        .premium-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .premium-btn.featured-btn {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(30, 64, 175, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(30, 64, 175, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(30, 64, 175, 0); }
+        }
+
+        .premium-notice {
+            text-align: center;
+            margin-top: 50px;
+            padding: 35px;
+            background: linear-gradient(135deg, rgba(30, 64, 175, 0.05), rgba(47, 133, 90, 0.05));
+            border-radius: 15px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .premium-notice p {
+            margin: 10px 0;
+            color: var(--text-color);
+        }
+
+        .premium-cta-container {
+            margin-top: 30px;
+        }
+
+        .premium-consult-btn {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border: none;
+            padding: 20px 40px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .premium-consult-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+        }
+
+        .cta-note {
+            margin-top: 15px;
+            font-size: 0.9rem;
+            color: var(--text-light);
+            font-style: italic;
+        }
+
+        /* 牙科详情部分 */
+        .dental-detail-section {
+            background: linear-gradient(135deg, rgba(30, 64, 175, 0.02) 0%, rgba(47, 133, 90, 0.02) 100%);
+            border-radius: var(--border-radius);
+            padding: 70px 40px;
+            margin: 80px 0;
+            box-shadow: var(--box-shadow);
+            border-left: 8px solid var(--dental-blue);
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        .dental-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .dental-icon {
+            font-size: 3.5rem;
+            color: var(--dental-blue);
+        }
+        
+        .dental-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: var(--dental-blue);
+        }
+        
+        .dental-subtitle {
+            color: var(--text-light);
+            font-size: 1.2rem;
+            margin-top: 5px;
+        }
+        
+        .dental-stats {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            background: linear-gradient(135deg, rgba(30, 64, 175, 0.05), rgba(212, 175, 55, 0.05));
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        .stat-item {
+            text-align: center;
+            flex: 1;
+            min-width: 150px;
+        }
+        
+        .stat-number {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--dental-blue);
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+        
+        .dental-services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .dental-service-card {
+            border: 1px solid rgba(0,0,0,0.05);
+            border-radius: var(--border-radius);
+            padding: 35px 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .dental-service-card.included {
+            border-top: 5px solid var(--secondary-color);
+        }
+        
+        .dental-service-card.additional {
+            border-top: 5px solid var(--dental-blue);
+        }
+        
+        .dental-service-card.complex {
+            border-top: 5px solid var(--accent-color);
+        }
+        
+        .service-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .included .service-badge {
+            background: linear-gradient(135deg, rgba(47, 133, 90, 0.1), rgba(47, 133, 90, 0.2));
+            color: var(--secondary-color);
+        }
+        
+        .additional .service-badge {
+            background: linear-gradient(135deg, rgba(30, 136, 229, 0.1), rgba(30, 136, 229, 0.2));
+            color: var(--dental-blue);
+        }
+        
+        .complex .service-badge {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(212, 175, 55, 0.2));
+            color: var(--accent-color);
+        }
+        
+        .dental-service-name {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            color: var(--text-color);
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        /* 预订区域 */
+        .booking-section {
+            text-align: center;
+            margin: 80px 0;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            border-radius: var(--border-radius);
+            color: var(--white);
+            border-top: 4px solid var(--accent-color);
+        }
+        
+        .booking-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.4rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .booking-desc {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            opacity: 0.9;
+        }
+        
+        .booking-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 18px 40px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            justify-content: center;
+            text-decoration: none;
+            border: 1px solid transparent;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-color), var(--secondary-color));
+            color: var(--white);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .btn-primary:hover {
+            background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        .btn-secondary {
+            background: rgba(255,255,255,0.15);
+            color: var(--white);
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.25);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        /* 页脚 */
+        .footer {
+            background: var(--dark-color);
+            color: var(--white);
+            padding: 70px 20px 40px;
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
+            margin-top: 80px;
+            border-top: 4px solid var(--accent-color);
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .footer-contact {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .footer-contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+        
+        .site-footer .footer-nav {
+            margin-bottom: 14px;
+        }
+
+        .site-footer .footer-nav a {
+            color: #CBD5E0;
+            text-decoration: underline;
+            margin: 0 6px;
+        }
+
+        .site-footer .footer-nav a:hover {
+            color: #ffffff;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        /* 模态框 */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .modal-content {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 40px;
+            max-width: 500px;
+            width: 90%;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            text-align: center;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        .modal-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .modal-text {
+            color: var(--text-light);
+            margin-bottom: 30px;
+            line-height: 1.7;
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--text-light);
+            cursor: pointer;
+        }
+        
+        /* 响应式调整 */
+        @media (max-width: 1200px) {
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .tcm-packages-section {
+                padding: 40px 25px;
+            }
+            
+            .premium-packages-section {
+                padding: 40px 25px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .top-nav {
+                flex-direction: column;
+                gap: 15px;
+                padding: 15px;
+            }
+            
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+            }
+            
+            .company-logo {
+                font-size: 2.5rem;
+            }
+            
+            .company-tagline {
+                font-size: 1.2rem;
+            }
+            
+            .main-title {
+                font-size: 2rem;
+            }
+            
+            .contact-bar {
+                flex-direction: column;
+                gap: 25px;
+                padding: 25px;
+                margin: 0 20px 40px;
+            }
+            
+            .separator {
+                width: 80%;
+                height: 1px;
+                background: linear-gradient(to right, transparent, #E2E8F0, transparent);
+            }
+            
+            .tcm-package-card {
+                padding: 25px 20px;
+            }
+            
+            .tcm-packages-section,
+            .premium-packages-section,
+            .dental-detail-section {
+                padding: 30px 20px;
+            }
+            
+            .booking-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .premium-package-card {
+                padding: 25px 20px;
+            }
+            
+            .premium-package-card.healing {
+                transform: scale(1);
+            }
+            
+            .package-name {
+                font-size: 1.4rem;
+            }
+            
+            .premium-consult-btn {
+                width: 100%;
+                padding: 18px;
+            }
+            
+            /* 移动端调整卡片圆角和阴影 */
+            .feature-card,
+            .tcm-package-card,
+            .premium-package-card,
+            .dental-service-card {
+                border-radius: var(--border-radius);
+                box-shadow: var(--box-shadow);
+            }
+            
+            /* 移动端折叠卡片调整 */
+            .collapsible-header {
+                padding: 20px;
+            }
+            
+            .collapsible-header h3 {
+                font-size: 1.4rem;
+            }
+            
+            .collapsible-card.active .collapsible-content {
+                padding: 20px;
+            }
+            
+            .tcm-collapsible-content,
+            .premium-collapsible-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .package-badge.popular {
+                position: relative;
+                top: 0;
+                right: 0;
+                margin: 10px auto;
+                width: fit-content;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+        
+        /* 动画 */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.8s ease-out;
+        }
+        
+        /* 折叠卡片动画 */
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .collapsible-card.active .collapsible-content > * {
+            animation: slideDown 0.5s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Back to Home -->
+    <a href="index.html" class="back-home-float" aria-label="Back to Home">
+        ← 返回首页 | Back to Home
+    </a>
+
+    <!-- Official Website Header -->
+    <section style="text-align:center; padding:60px 20px 40px; border-bottom:1px solid #E2E8F0; background:linear-gradient(135deg, rgba(30, 64, 175, 0.02) 0%, rgba(47, 133, 90, 0.02) 100%);">
+        <img src="logo.jpg" alt="KIWI Serenity Limited Logo" style="max-width:420px;width:90%;margin-bottom:25px;">
+
+        <h1 style="font-family:'Montserrat',sans-serif;font-size:36px;color:#1e40af;margin-bottom:10px;">
+            Medical Travel & Wellness Coordination
+        </h1>
+
+        <p style="font-weight:600;color:#2D3748;">
+            Independent · Informational · Non-Medical Support
+        </p>
+        <p style="color:#666;font-size:15px;">
+            独立 · 信息支持 · 非医疗服务
+        </p>
+
+        <p style="margin-top:18px;font-size:14px;color:#666;">
+            For International Visitors ｜ 面向国际访客
+        </p>
+
+        <p style="max-width:900px;margin:25px auto 0;font-size:15px;color:#4A5568;line-height:1.7;">
+            We provide non-medical consultation, wellness travel coordination, and appointment assistance
+            for international visitors travelling to Chengdu, China.
+            <br>
+            我们为前往中国成都的国际访客提供非医疗性质的咨询、健康体验协调及预约协助服务。
+        </p>
+
+        <p style="margin-top:15px;font-size:14px;color:#666;">
+            We do not provide medical diagnosis, treatment, or medical advice.
+            <br>
+            本公司不提供任何医疗诊断、治疗或医疗建议。
+        </p>
+    </section>
+
+    <!-- 顶部导航 -->
+    <nav class="top-nav">
+        <div class="brand-container">
+            <div class="brand-logo">
+                <i class="fas fa-leaf" style="color: var(--accent-color);"></i>
+                KIWI Serenity Limited
+            </div>
+        </div>
+        <div class="nav-links">
+            <a href="#tcm-packages" class="nav-link tcm">
+                <i class="fas fa-spa"></i> 中医理疗 | TCM Wellness Experience
+            </a>
+            <a href="#premium-packages" class="nav-link">
+                <i class="fas fa-crown"></i> 尊享套餐 | Premium Packages
+            </a>
+            <a href="#dental-detail" class="nav-link dental">
+                <i class="fas fa-tooth"></i> 口腔咨询 | Dental Consultation
+            </a>
+            <a href="#contact" class="nav-link">
+                <i class="fas fa-phone-alt"></i> 联系我们 | Contact
+            </a>
+        </div>
+    </nav>
+
+    <!-- 联系栏 -->
+    <div class="contact-bar">
+        <div class="contact-item">
+            <i class="fas fa-phone contact-icon"></i>
+            <div class="contact-details">
+                <div class="contact-main">Tel: +64 022 040 5795</div>
+                <div class="contact-sub">New Zealand Number | 新西兰号码</div>
+            </div>
+        </div>
+        
+        <div class="separator"></div>
+        
+        <div class="contact-item">
+            <i class="fas fa-envelope contact-icon"></i>
+            <div class="contact-details">
+                <div class="contact-main">Email: KIWI_Serenity_Limited@outlook.com</div>
+                <div class="contact-sub">24-hour Response | 24小时回复</div>
+            </div>
+        </div>
+        
+        <div class="separator"></div>
+        
+        <div class="contact-item">
+            <i class="fas fa-clock contact-icon"></i>
+            <div class="contact-details">
+                <div class="contact-main">Service Hours: 9:00-18:00 (NZST)</div>
+                <div class="contact-sub">Monday to Friday | 周一至周五</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 主要内容 -->
+    <div class="container">
+        <!-- 特色介绍 -->
+        <section class="features-section">
+            <div class="feature-card fade-in">
+                <i class="fas fa-shield-alt feature-icon"></i>
+                <h3 class="feature-title">100% 个性化定制 | 100% Personalised</h3>
+                <p class="feature-desc">Completely customisable itineraries tailored to your unique interests and pace.</p>
+                <p class="feature-desc chinese">完全可定制的行程，根据您的独特兴趣和节奏量身打造。</p>
+            </div>
+            <div class="feature-card fade-in">
+                <i class="fas fa-comments feature-icon"></i>
+                <h3 class="feature-title">Bilingual Guides | 双语导游</h3>
+                <p class="feature-desc">Professional English & Chinese speaking guides for seamless communication.</p>
+                <p class="feature-desc chinese">专业中英双语导游，确保沟通无障碍。</p>
+            </div>
+            <div class="feature-card fade-in">
+                <i class="fas fa-spa feature-icon"></i>
+                <h3 class="feature-title">健康体验 | Wellness Experiences</h3>
+                <p class="feature-desc">Free dental cleaning and TCM constitution analysis included in premium packages.</p>
+                <p class="feature-desc chinese">尊享套餐包含免费洁牙和中医体质辨证体验。</p>
+            </div>
+        </section>
+
+        <!-- ===== 中医套餐部分 (可折叠版本) ===== -->
+        <section class="tcm-packages-section" id="tcm-packages">
+            <div class="section-header">
+                <h2 class="section-title">新西兰游客专属中医体验套餐</h2>
+                <div class="section-subtitle">NZ Visitor Exclusive TCM Packages | 专为短期旅游设计 · 安全合规 · 双语服务 · Designed for short stays · Safe & compliant · Bilingual service</div>
+            </div>
+            
+            <div class="collapsible-container">
+                <!-- 旅途疲劳恢复套餐 -->
+                <div class="collapsible-card active fade-in">
+                    <div class="collapsible-header" onclick="toggleCollapsible(this)">
+                        <h3><i class="fas fa-bed"></i> 旅途疲劳恢复套餐 | Travel Recovery Package</h3>
+                        <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="collapsible-content">
+                        <div class="tcm-collapsible-content">
+                            <div class="tcm-package-card">
+                                <div class="tcm-package-header">
+                                    <h3 class="tcm-package-name">旅途疲劳恢复套餐 | Travel Recovery Package</h3>
+                                    <div class="tcm-package-duration">⏰90分钟 | 90 mins</div>
+                                </div>
+                                
+                                <ul class="tcm-package-details">
+                                    <li class="tcm-package-detail-item">
+                                        <div class="tcm-detail-chinese">专业健康咨询 | 英文双语评估</div>
+                                        <div class="tcm-detail-english">Professional health consultation | Bilingual assessment</div>
+                                    </li>
+                                    <li class="tcm-package-detail-item">
+                                        <div class="tcm-detail-chinese">中医推拿体验 | 全身放松按摩（45分钟）</div>
+                                        <div class="tcm-detail-english">Tui Na massage experience | Full-body relaxation massage (45min)</div>
+                                    </li>
+                                    <li class="tcm-package-detail-item">
+                                        <div class="tcm-detail-chinese">刮痧体验 | 颈肩部位舒缓（20分钟）</div>
+                                        <div class="tcm-detail-english">Gua Sha experience | Neck & shoulder relief (20min)</div>
+                                    </li>
+                                    <li class="tcm-package-detail-item">
+                                        <div class="tcm-detail-chinese">温热理疗辅助 | TDP烤灯放松（15分钟）</div>
+                                        <div class="tcm-detail-english">Warm therapy assistance | TDP lamp relaxation (15min)</div>
+                                    </li>
+                                    <li class="tcm-package-detail-item">
+                                        <div class="tcm-detail-chinese">个性化建议 | 旅途养生小贴士</div>
+                                        <div class="tcm-detail-english">Personalized recommendations | Travel wellness tips</div>
+                                    </li>
+                                </ul>
+                                
+                                <div class="tcm-package-footer">
+                                    <div class="tcm-package-target">
+                                        🎯 <strong>适合人群：</strong>长途飞行后 · 肌肉酸痛 · 时差调整<br>
+                                        <span style="font-size: 0.85rem; font-weight: normal;">Ideal for: Post-long flight · Muscle soreness · Jet lag recovery</span>
+                                    </div>
+                                    <div class="tcm-package-tag">✅ 最安全选择 | Safest Option</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 中医文化深度体验 -->
+                <div class="collapsible-card fade-in">
+                    <div class="collapsible-header" onclick="toggleCollapsible(this)">
+                        <h3><i class="fas fa-landmark"></i> 中医文化深度体验 | TCM Cultural Immersion</h3>
+                        <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="collapsible-content">
+                        <div class="tcm-collapsible-content">
+                            <div class="tcm-package-card featured">
+                                <div class="tcm-package-header">
+                                    <h3 class="tcm-package-name">中医文化深度体验 | TCM Cultural Immersion</h3>
+                                    <div class="tcm-package-duration">⏰105分钟 | 105 mins</div>
+                                </div>
+                                
+                                <ul class="tcm-package-details">
+                                    <li class="tcm-package-detail-item">
+                                        <div class="tcm-detail-chinese">中医文化讲解 | 双语介绍中医基础理论</div>
+                                        <div class="tcm-detail-english">TCM culture introduction | Bilingual explanation of TCM basics</div>
+                                    </li>
+                                    <li class="tcm-package-detail-item">
+                                        <div class="tcm-detail-chinese">中医推拿体验 | 传统手法体验（40分钟）</div>
+                                        <div class="tcm-detail-english">Tui Na experience | Traditional technique experience (40min)</div>
+                                    </li>
+                                    <li class="tcm-package-detail-item">
+                                        <div class="tcm-detail-chinese">拔罐文化体验 | 现代真空拔罐（25分钟）</div>
+                                        <div class="tcm-detail-english">Cupping culture experience | Modern vacuum cupping (25min)</div>
+                                    </li>
+                                    <li class="tcm-package-detail-item">
+                                        <div class="tcm-detail-chinese">刮痧体验 | 传统工具操作演示（20分钟）</div>
+                                        <div class="tcm-detail-english">Gua Sha demonstration | Traditional tool operation (20min)</div>
+                                    </li>
+                                    <li class="tcm-package-detail-item">
+                                        <div class="tcm-detail-chinese">中医茶饮体验 | 养生草本茶品尝</div>
+                                        <div class="tcm-detail-english">TCM tea experience | Herbal tea tasting</div>
+                                    </li>
+                                </ul>
+                                
+                                <div class="tcm-package-footer">
+                                    <div class="tcm-package-target">
+                                        🎯 <strong>适合人群：</strong>文化探索者 · 首次体验者 · 拍照分享<br>
+                                        <span style="font-size: 0.85rem; font-weight: normal;">Ideal for: Cultural explorers · First-timers · Photo enthusiasts</span>
+                                    </div>
+                                    <div class="tcm-package-tag">📸 拍照友好 | Icon</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 自由组合体验套餐 -->
+                <div class="collapsible-card fade-in">
+                    <div class="collapsible-header" onclick="toggleCollapsible(this)">
+                        <h3><i class="fas fa-sliders-h"></i> 自由组合体验套餐 | Flexible Custom Package</h3>
+                        <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="collapsible-content">
+                        <div class="tcm-collapsible-content">
+                            <div class="tcm-package-card">
+                                <div class="tcm-package-header">
+                                    <h3 class="tcm-package-name">自由组合体验套餐 | Flexible Custom Package</h3>
+                                    <div class="tcm-package-duration">⏰60-120分钟 | 60-120 mins</div>
+                                </div>
+                                
+                                <ul class="tcm-package-details">
+                                    <li class="tcm-package-detail-item">
+                                        <div class="tcm-detail-chinese">基础咨询 | 专业评估与建议</div>
+                                        <div class="tcm-detail-english">Basic consultation | Professional assessment and advice</div>
+                                    </li>
+                                    <li class="tcm-package-detail-item">
+                                        <div class="tcm-detail-chinese">自选项目一 | 中医推拿 / 刮痧（二选一）</div>
+                                        <div class="tcm-detail-english">Choice 1 | Tui Na OR Gua Sha (choose one)</div>
+                                    </li>
+                                    <li class="tcm-package-detail-item">
+                                        <div class="tcm-detail-chinese">自选项目二 | 拔罐体验 / TDP温热（二选一）</div>
+                                        <div class="tcm-detail-english">Choice 2 | Cupping experience OR TDP warmth (choose one)</div>
+                                    </li>
+                                    <li class="tcm-package-detail-item">
+                                        <div class="tcm-detail-chinese">个性化定制 | 根据个人偏好调整重点</div>
+                                        <div class="tcm-detail-english">Personalized customization | Focus areas adjusted based on preferences</div>
+                                    </li>
+                                    <li class="tcm-package-detail-item">
+                                        <div class="tcm-detail-chinese">后续建议 | 旅游期间养生建议</div>
+                                        <div class="tcm-detail-english">Follow-up recommendations | Wellness tips during your trip</div>
+                                    </li>
+                                </ul>
+                                
+                                <div class="tcm-package-footer">
+                                    <div class="tcm-package-target">
+                                        🎯 <strong>适合人群：</strong>时间有限 · 偏好明确 · 家庭团体<br>
+                                        <span style="font-size: 0.85rem; font-weight: normal;">Ideal for: Limited time · Clear preferences · Family groups</span>
+                                    </div>
+                                    <div class="tcm-package-tag">⚡ 高度灵活 | Highly Flexible</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 高级定制套餐 -->
+                <div class="collapsible-card fade-in">
+                    <div class="collapsible-header" onclick="toggleCollapsible(this)">
+                        <h3><i class="fas fa-crown"></i> 高级定制套餐 | Premium Custom Package</h3>
+                        <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="collapsible-content">
+                        <div class="tcm-collapsible-content">
+                            <div class="tcm-package-card">
+                                <div class="tcm-package-header">
+                                    <h3 class="tcm-package-name">高级定制套餐 | Premium Custom Package</h3>
+                                    <div class="tcm-package-duration">⏰120+分钟 | 120+ mins</div>
+                                </div>
+                                
+                                <ul class="tcm-package-details">
+                                    <li class="tcm-package-detail-item">
+                                        <div class="tcm-detail-chinese">资深中医师一对一咨询</div>
+                                        <div class="tcm-detail-english">One-on-one consultation with senior TCM practitioner</div>
+                                    </li>
+                                    <li class="tcm-package-detail-item">
+                                        <div class="tcm-detail-chinese">综合疗法体验（推拿+拔罐+刮痧）</div>
+                                        <div class="tcm-detail-english">Comprehensive therapy experience (Tui Na + Cupping + Gua Sha)</div>
+                                    </li>
+                                    <li class="tcm-package-detail-item">
+                                        <div class="tcm-detail-chinese">个性化养生方案定制</div>
+                                        <div class="tcm-detail-english">Personalized wellness plan development</div>
+                                    </li>
+                                    <li class="tcm-package-detail-item">
+                                        <div class="tcm-detail-chinese">中医茶饮与食疗建议</div>
+                                        <div class="tcm-detail-english">TCM tea and dietary recommendations</div>
+                                    </li>
+                                    <li class="tcm-package-detail-item">
+                                        <div class="tcm-detail-chinese">后续跟进服务（离境后30天）</div>
+                                        <div class="tcm-detail-english">Follow-up service (30 days post-experience)</div>
+                                    </li>
+                                </ul>
+                                
+                                <div class="tcm-package-footer">
+                                    <div class="tcm-package-target">
+                                        🎯 <strong>适合人群：</strong>深度体验者 · 健康关注者 · 高端客户<br>
+                                        <span style="font-size: 0.85rem; font-weight: normal;">Ideal for: Deep experience seekers · Health-conscious · Premium clients</span>
+                                    </div>
+                                    <div class="tcm-package-tag">👑 尊享体验 | Premium Experience</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 40px; padding: 20px; background: rgba(30, 64, 175, 0.05); border-radius: 10px; border: 1px solid rgba(30, 64, 175, 0.1);">
+                <p><i class="fas fa-info-circle"></i> 所有中医服务由成都认证的中医师提供，我们提供全程英文翻译和支持服务。</p>
+                <p>All TCM services are provided by certified TCM practitioners in Chengdu, with full English support.</p>
+            </div>
+        </section>
+
+        <!-- ===== Premium Experience Packages 部分 (可折叠版本) ===== -->
+        <section class="premium-packages-section" id="premium-packages">
+            <div class="section-header">
+                <h2 class="section-title">尊享体验套餐 | Premium Experience Packages</h2>
+                <div class="section-subtitle">融合四川文化、中医智慧与现代健康管理的深度体验旅程 | Integrated Cultural & Wellness Journey</div>
+                <p class="premium-intro">
+                    🎁 <strong>所有套餐均包含：免费中医体质辨证 + 免费洁牙服务</strong><br>
+                    <strong>All packages include: Free TCM Constitution Analysis + Free Dental Cleaning</strong>
+                </p>
+            </div>
+            
+            <div class="collapsible-container">
+                <!-- Package 1: 7天精华体验 -->
+                <div class="collapsible-card active fade-in">
+                    <div class="collapsible-header" onclick="toggleCollapsible(this)">
+                        <h3><i class="fas fa-gem"></i> 四川精华体验套餐 (7天) | Sichuan Essence Experience Package</h3>
+                        <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="collapsible-content">
+                        <div class="premium-collapsible-content">
+                            <div class="premium-package-card discover fade-in">
+                                <div class="package-badge">精华体验 | ESSENCE EXPERIENCE</div>
+                                <div class="package-icon">🐼</div>
+                                <h3 class="package-name">四川精华体验套餐</h3>
+                                <p class="package-subtitle">Sichuan Essence Experience Package (7 Days)</p>
+                                
+                                <div class="package-inclusions">
+                                    <h4><i class="fas fa-map-marked-alt"></i> 文化探索 | Cultural Exploration</h4>
+                                    <ul>
+                                        <li><strong>成都文化核心体验</strong>（熊猫基地、茶馆体验）</li>
+                                        <li><strong>Chengdu Core Cultural Experience</strong> (Panda Base, Tea Houses)</li>
+                                    </ul>
+                                    
+                                    <h4><i class="fas fa-spa"></i> 健康体验 | Wellness Experience</h4>
+                                    <ul>
+                                        <li>免费中医体质辨证（认知层面）</li>
+                                        <li>免费基础洁牙体验（非治疗性质）</li>
+                                        <li>Free TCM Constitution Analysis (Awareness Level)</li>
+                                        <li>Free Basic Dental Cleaning (Non-treatment)</li>
+                                    </ul>
+                                    
+                                    <h4><i class="fas fa-gift"></i> 专属增值 | Exclusive Benefits</h4>
+                                    <div class="benefits-grid">
+                                        <div class="benefit-item">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>双语导游全程陪同</span>
+                                            <small>Bilingual Guide Throughout</small>
+                                        </div>
+                                        <div class="benefit-item">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>成都慢生活体验</span>
+                                            <small>Chengdu Slow Living Experience</small>
+                                        </div>
+                                        <div class="benefit-item">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>世界文化遗产参观</span>
+                                            <small>World Heritage Sites Visit</small>
+                                        </div>
+                                        <div class="benefit-item">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>健康生活方式分享</span>
+                                            <small>Healthy Lifestyle Sharing</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="package-suitability">
+                                    <h4><i class="fas fa-user-check"></i> 适合人群 | Perfect For</h4>
+                                    <p>时间有限但希望全面体验四川文化、自然与健康元素的首次访客</p>
+                                    <p class="english">First-time visitors with limited time seeking comprehensive Sichuan culture, nature, and wellness experience</p>
+                                </div>
+                                
+                                <div class="cta-section">
+                                    <p class="value-statement">体验四川精髓，开启健康之旅初章 | Experience Sichuan's essence, begin your wellness journey</p>
+                                    <button class="premium-btn discover-btn" onclick="showCustomizationModal('四川精华体验套餐')">
+                                        <i class="fas fa-calendar-plus"></i> 定制精华之旅 | Customize Essence Journey
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Package 2: 10天经典深度游 -->
+                <div class="collapsible-card fade-in">
+                    <div class="collapsible-header" onclick="toggleCollapsible(this)">
+                        <h3><i class="fas fa-mountain"></i> 四川经典深度套餐 (10天) | Sichuan Classic Deep Experience Package</h3>
+                        <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="collapsible-content">
+                        <div class="premium-collapsible-content">
+                            <div class="premium-package-card healing fade-in">
+                                <div class="package-badge">经典深度 | CLASSIC DEEP EXPERIENCE</div>
+                                <div class="package-icon">🏞</div>
+                                <h3 class="package-name">四川经典深度套餐</h3>
+                                <p class="package-subtitle">Sichuan Classic Deep Experience Package (10 Days)</p>
+                                
+                                <div class="package-inclusions">
+                                    <h4><i class="fas fa-map-marked-alt"></i> 文化探索 | Cultural Exploration</h4>
+                                    <ul>
+                                        <li><strong>乐山大佛 + 峨眉山组合</strong>（世界自然文化双遗产）</li>
+                                        <li><strong>Leshan Giant Buddha + Mount Emei</strong> (Dual World Heritage)</li>
+                                    </ul>
+                                    
+                                    <h4><i class="fas fa-spa"></i> 健康体验 | Wellness Experience</h4>
+                                    <ul>
+                                        <li>免费中医体质辨证 + 健康咨询</li>
+                                        <li>免费洁牙 + 口腔健康评估</li>
+                                        <li>Free TCM Analysis + Wellness Consultation</li>
+                                        <li>Free Dental Cleaning + Oral Health Assessment</li>
+                                    </ul>
+                                    
+                                    <h4><i class="fas fa-gift"></i> 专属增值 | Exclusive Benefits</h4>
+                                    <div class="benefits-grid">
+                                        <div class="benefit-item">
+                                            <i class="fas fa-star"></i>
+                                            <span>专属健康体验日</span>
+                                            <small>Dedicated Wellness Day</small>
+                                        </div>
+                                        <div class="benefit-item">
+                                            <i class="fas fa-star"></i>
+                                            <span>自由活动日（完全个性化）</span>
+                                            <small>Free Exploration Day (Fully Customizable)</small>
+                                        </div>
+                                        <div class="benefit-item">
+                                            <i class="fas fa-star"></i>
+                                            <span>道家文化深度体验</span>
+                                            <small>Taoist Culture Deep Experience</small>
+                                        </div>
+                                        <div class="benefit-item">
+                                            <i class="fas fa-star"></i>
+                                            <span>川西自然景观欣赏</span>
+                                            <small>Western Sichuan Natural Landscape</small>
+                                        </div>
+                                        <div class="benefit-item">
+                                            <i class="fas fa-star"></i>
+                                            <span>全程健康翻译服务</span>
+                                            <small>Full Health Translation Service</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="package-suitability">
+                                    <h4><i class="fas fa-user-check"></i> 适合人群 | Perfect For</h4>
+                                    <p>寻求深度文化、自然与健康体验的旅行者，希望获得个性化健康指导</p>
+                                    <p class="english">Travellers seeking deep cultural, nature, and wellness experiences with personalized guidance</p>
+                                </div>
+                                
+                                <div class="cta-section">
+                                    <p class="value-statement">从风景到身心，体验巴蜀大地的疗愈力量 | From scenery to well-being, experience Bashu's healing power</p>
+                                    <button class="premium-btn healing-btn featured-btn" onclick="showCustomizationModal('四川经典深度套餐')">
+                                        <i class="fas fa-calendar-star"></i> 开始经典之旅 | Start Classic Journey
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Package 3: 12天探索版 -->
+                <div class="collapsible-card fade-in">
+                    <div class="collapsible-header" onclick="toggleCollapsible(this)">
+                        <h3><i class="fas fa-hiking"></i> 川蜀探索体验套餐 (12天) | Sichuan Explorer Experience Package</h3>
+                        <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="collapsible-content">
+                        <div class="premium-collapsible-content">
+                            <div class="premium-package-card heritage fade-in">
+                                <div class="package-badge">探索体验 | EXPLORER EXPERIENCE</div>
+                                <div class="package-icon">🌄</div>
+                                <h3 class="package-name">川蜀探索体验套餐</h3>
+                                <p class="package-subtitle">Sichuan Explorer Experience Package (12 Days)</p>
+                                
+                                <div class="package-inclusions">
+                                    <h4><i class="fas fa-map-marked-alt"></i> 文化探索 | Cultural Exploration</h4>
+                                    <ul>
+                                        <li><strong>峨眉山深度游览</strong>（金顶、寺院、自然景观）</li>
+                                        <li><strong>Mount Emei Deep Exploration</strong> (Golden Summit, Temples, Nature)</li>
+                                    </ul>
+                                    
+                                    <h4><i class="fas fa-spa"></i> 健康体验 | Wellness Experience</h4>
+                                    <ul>
+                                        <li>多次健康体验机会</li>
+                                        <li>中医文化深度了解</li>
+                                        <li>Multiple Wellness Experience Opportunities</li>
+                                        <li>Deep Understanding of TCM Culture</li>
+                                    </ul>
+                                    
+                                    <h4><i class="fas fa-gift"></i> 专属增值 | Exclusive Benefits</h4>
+                                    <div class="benefits-grid">
+                                        <div class="benefit-item">
+                                            <i class="fas fa-heart"></i>
+                                            <span>更多自由探索时间</span>
+                                            <small>More Free Exploration Time</small>
+                                        </div>
+                                        <div class="benefit-item">
+                                            <i class="fas fa-heart"></i>
+                                            <span>川西自然美景深度欣赏</span>
+                                            <small>Deep Appreciation of Western Sichuan Beauty</small>
+                                        </div>
+                                        <div class="benefit-item">
+                                            <i class="fas fa-heart"></i>
+                                            <span>道家养生功法体验</span>
+                                            <small>Taoist Wellness Practice Experience</small>
+                                        </div>
+                                        <div class="benefit-item">
+                                            <i class="fas fa-heart"></i>
+                                            <span>禅修静坐体验（可选）</span>
+                                            <small>Meditation Experience (Optional)</small>
+                                        </div>
+                                        <div class="benefit-item">
+                                            <i class="fas fa-heart"></i>
+                                            <span>个性化饮食调理建议</span>
+                                            <small>Personalized Dietary Guidance</small>
+                                        </div>
+                                        <div class="benefit-item">
+                                            <i class="fas fa-heart"></i>
+                                            <span>健康生活方式工作坊</span>
+                                            <small>Healthy Lifestyle Workshop</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="package-suitability">
+                                    <h4><i class="fas fa-user-check"></i> 适合人群 | Perfect For</h4>
+                                    <p>对自然与文化有深度兴趣，希望有充分时间自由探索的旅行者</p>
+                                    <p class="english">Travellers with deep interest in nature and culture, wanting ample time for free exploration</p>
+                                </div>
+                                
+                                <div class="cta-section">
+                                    <p class="value-statement">在佛道圣地中，找到身心平衡的古老智慧 | Find ancient wisdom for mind-body balance in sacred sites</p>
+                                    <button class="premium-btn heritage-btn" onclick="showCustomizationModal('川蜀探索体验套餐')">
+                                        <i class="fas fa-yin-yang"></i> 开启探索之旅 | Begin Explorer Journey
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Package 4: 完全定制版 -->
+                <div class="collapsible-card fade-in">
+                    <div class="collapsible-header" onclick="toggleCollapsible(this)">
+                        <h3><i class="fas fa-crown"></i> 川蜀至尊定制套餐 (15+天) | Sichuan Elite Customized Package</h3>
+                        <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="collapsible-content">
+                        <div class="premium-collapsible-content">
+                            <div class="premium-package-card elite fade-in">
+                                <div class="package-badge">完全定制 | FULLY CUSTOMIZED</div>
+                                <div class="package-icon">👑</div>
+                                <h3 class="package-name">川蜀至尊定制套餐</h3>
+                                <p class="package-subtitle">Sichuan Elite Customized Package (15+ Days)</p>
+                                
+                                <div class="package-inclusions">
+                                    <h4><i class="fas fa-map-marked-alt"></i> 文化探索 | Cultural Exploration</h4>
+                                    <ul>
+                                        <li><strong>全川景点自选组合</strong>（根据偏好完全定制）</li>
+                                        <li><strong>Complete Sichuan Attractions Selection</strong> (Fully Customized to Preferences)</li>
+                                    </ul>
+                                    
+                                    <h4><i class="fas fa-spa"></i> 健康体验 | Wellness Experience</h4>
+                                    <ul>
+                                        <li>综合健康体验全方案</li>
+                                        <li>中医理疗 + 口腔健康全面咨询</li>
+                                        <li>Comprehensive Wellness Program</li>
+                                        <li>TCM Therapy + Complete Dental Consultation</li>
+                                    </ul>
+                                    
+                                    <h4><i class="fas fa-gift"></i> 专属增值 | Exclusive Benefits</h4>
+                                    <div class="benefits-grid">
+                                        <div class="benefit-item">
+                                            <i class="fas fa-crown"></i>
+                                            <span>私人健康管家服务</span>
+                                            <small>Personal Health Butler Service</small>
+                                        </div>
+                                        <div class="benefit-item">
+                                            <i class="fas fa-crown"></i>
+                                            <span>VIP快速通道（所有景点）</span>
+                                            <small>VIP Fast Access (All Attractions)</small>
+                                        </div>
+                                        <div class="benefit-item">
+                                            <i class="fas fa-crown"></i>
+                                            <span>五星级酒店住宿升级</span>
+                                            <small>5-Star Hotel Upgrade</small>
+                                        </div>
+                                        <div class="benefit-item">
+                                            <i class="fas fa-crown"></i>
+                                            <span>年度健康跟踪服务</span>
+                                            <small>Annual Health Tracking Service</small>
+                                        </div>
+                                        <div class="benefit-item">
+                                            <i class="fas fa-crown"></i>
+                                            <span>健康总结报告（双语）</span>
+                                            <small>Health Summary Report (Bilingual)</small>
+                                        </div>
+                                        <div class="benefit-item">
+                                            <i class="fas fa-crown"></i>
+                                            <span>中医理疗家庭套装</span>
+                                            <small>TCM Family Therapy Kit</small>
+                                        </div>
+                                        <div class="benefit-item">
+                                            <i class="fas fa-crown"></i>
+                                            <span>离境前专属送机服务</span>
+                                            <small>Pre-departure VIP Transfer</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="package-suitability">
+                                    <h4><i class="fas fa-user-check"></i> 适合人群 | Perfect For</h4>
+                                    <p>追求极致个性化体验的高端客户，希望获得全方位健康文化沉浸</p>
+                                    <p class="english">Elite clients seeking fully personalized cultural & wellness immersion</p>
+                                </div>
+                                
+                                <div class="cta-section">
+                                    <p class="value-statement">此套餐价值超越单一服务总和，为您提供无缝衔接的文化与健康深度体验 | Value beyond individual services, offering seamless cultural & wellness immersion</p>
+                                    <button class="premium-btn elite-btn" onclick="showCustomizationModal('川蜀至尊定制套餐')">
+                                        <i class="fas fa-gem"></i> 定制至尊之旅 | Design Elite Journey
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="premium-notice">
+                <p><i class="fas fa-info-circle"></i> 所有套餐均可根据您的具体需求和偏好进行个性化调整。请点击下方按钮开始定制咨询。</p>
+                <p>All packages can be customized according to your specific needs and preferences. Click below to start your customization consultation.</p>
+                
+                <div class="premium-cta-container">
+                    <button class="premium-consult-btn" onclick="showCustomizationModal('Premium套餐咨询')">
+                        <i class="fas fa-headset"></i> 预约免费咨询 | Free Customization Consultation
+                    </button>
+                    <p class="cta-note">由我们的双语健康顾问为您推荐最适合的体验方案 | Our bilingual health consultants will recommend the most suitable experience for you</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 牙科详情部分 -->
+        <section class="dental-detail-section" id="dental-detail">
+            <div class="dental-header">
+                <i class="fas fa-tooth dental-icon"></i>
+                <div>
+                    <h2 class="dental-title">成都优质牙科服务</h2>
+                    <div class="dental-subtitle">Chengdu Premium Dental Care - High-Quality Dental Consultations at Comparatively Affordable Costs</div>
+                    <div class="dental-subtitle chinese">以相对可负担的费用，在成都为您协调优质牙科咨询与服务安排</div>
+                </div>
+            </div>
+            
+            <p style="font-size: 1.2rem; color: var(--text-light); margin-bottom: 30px; line-height: 1.7;">
+                我们的合作诊所将先进技术与卓越护理相结合，以相对可负担的费用，在成都为您协调优质牙科咨询与服务安排。
+                Our partner clinics combine advanced technology with exceptional care to provide high-quality dental consultations at comparatively affordable costs.
+            </p>
+            
+            <div class="dental-stats fade-in">
+                <div class="stat-item">
+                    <div class="stat-number">~60%</div>
+                    <div class="stat-label">Cost Savings vs NZ | 相比新西兰节省</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">24hr</div>
+                    <div class="stat-label">English Support | 英语支持</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">5-Star</div>
+                    <div class="stat-label">Partner Clinics | 合作诊所</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Sterile Equipment | 无菌设备</div>
+                </div>
+            </div>
+            
+            <h3 style="font-family:'Montserrat',sans-serif;font-size: 1.8rem; color: var(--dental-blue); margin: 40px 0 20px; text-align: center;">可提供的牙科咨询与预约协助服务 | Available Dental Services Coordination</h3>
+            
+            <div class="dental-services">
+                <div class="dental-service-card included fade-in">
+                    <div class="service-badge">已包含 | INCLUDED</div>
+                    <div style="font-size: 2.5rem; color: var(--dental-blue); margin-bottom: 20px;">
+                        <i class="fas fa-tooth"></i>
+                    </div>
+                    <h3 class="dental-service-name">口腔检查与预防 | Dental Check & Prevention</h3>
+                    <p style="color: var(--text-light); margin-bottom: 15px;">Comprehensive oral examination and preventive care to maintain your dental health.</p>
+                    <ul style="list-style: none; margin-top: 20px;">
+                        <li style="padding: 8px 0; color: var(--text-color); position: relative; padding-left: 25px; font-size: 0.95rem;">
+                            <i class="fas fa-check" style="color: var(--secondary-color); position: absolute; left: 0;"></i>
+                            全面口腔检查 | Full oral examination
+                        </li>
+                        <li style="padding: 8px 0; color: var(--text-color); position: relative; padding-left: 25px; font-size: 0.95rem;">
+                            <i class="fas fa-check" style="color: var(--secondary-color); position: absolute; left: 0;"></i>
+                            免费洁牙服务 | Free dental cleaning
+                        </li>
+                        <li style="padding: 8px 0; color: var(--text-color); position: relative; padding-left: 25px; font-size: 0.95rem;">
+                            <i class="fas fa-check" style="color: var(--secondary-color); position: absolute; left: 0;"></i>
+                            X光检查（如需要）| X-rays if needed
+                        </li>
+                    </ul>
+                    <div style="color: var(--secondary-color); font-weight: 600; margin-top: 20px;">✅ 首次咨询包含免费洁牙 | Free cleaning with initial consultation</div>
+                </div>
+                
+                <div class="dental-service-card additional fade-in">
+                    <div class="service-badge">标准服务 | STANDARD</div>
+                    <div style="font-size: 2.5rem; color: var(--dental-blue); margin-bottom: 20px;">
+                        <i class="fas fa-teeth"></i>
+                    </div>
+                    <h3 class="dental-service-name">基础治疗项目 | Basic Treatments</h3>
+                    <p style="color: var(--text-light); margin-bottom: 15px;">Common dental procedures performed with precision and care.</p>
+                    <ul style="list-style: none; margin-top: 20px;">
+                        <li style="padding: 8px 0; color: var(--text-color); position: relative; padding-left: 25px; font-size: 0.95rem;">
+                            <i class="fas fa-check" style="color: var(--dental-blue); position: absolute; left: 0;"></i>
+                            拔牙（常规）| Tooth extraction (routine)
+                        </li>
+                        <li style="padding: 8px 0; color: var(--text-color); position: relative; padding-left: 25px; font-size: 0.95rem;">
+                            <i class="fas fa-check" style="color: var(--dental-blue); position: absolute; left: 0;"></i>
+                            补牙（树脂填充）| Fillings (composite resin)
+                        </li>
+                        <li style="padding: 8px 0; color: var(--text-color); position: relative; padding-left: 25px; font-size: 0.95rem;">
+                            <i class="fas fa-check" style="color: var(--dental-blue); position: absolute; left: 0;"></i>
+                            牙齿美白 | Teeth whitening
+                        </li>
+                    </ul>
+                    <div style="color: var(--dental-blue); font-weight: 600; margin-top: 20px;">💡 医生诊断后提供详细方案与报价 | Detailed plan & quote after diagnosis</div>
+                </div>
+                
+                <div class="dental-service-card complex fade-in">
+                    <div class="service-badge">需咨询 | CONSULTATION REQUIRED</div>
+                    <div style="font-size: 2.5rem; color: var(--dental-blue); margin-bottom: 20px;">
+                        <i class="fas fa-teeth-open"></i>
+                    </div>
+                    <h3 class="dental-service-name">复杂治疗项目 | Complex Procedures</h3>
+                    <p style="color: var(--text-light); margin-bottom: 15px;">Advanced dental treatments requiring specialist consultation.</p>
+                    <ul style="list-style: none; margin-top: 20px;">
+                        <li style="padding: 8px 0; color: var(--text-color); position: relative; padding-left: 25px; font-size: 0.95rem;">
+                            <i class="fas fa-check" style="color: var(--accent-color); position: absolute; left: 0;"></i>
+                            种植牙 | Dental implants
+                        </li>
+                        <li style="padding: 8px 0; color: var(--text-color); position: relative; padding-left: 25px; font-size: 0.95rem;">
+                            <i class="fas fa-check" style="color: var(--accent-color); position: absolute; left: 0;"></i>
+                            正畸治疗 | Orthodontic treatment
+                        </li>
+                        <li style="padding: 8px 0; color: var(--text-color); position: relative; padding-left: 25px; font-size: 0.95rem;">
+                            <i class="fas fa-check" style="color: var(--accent-color); position: absolute; left: 0;"></i>
+                            根管治疗 | Root canal treatment
+                        </li>
+                    </ul>
+                    <div style="color: var(--accent-color); font-weight: 600; margin-top: 20px;">⚠️ 需双方另外书面确认 | Requires additional written confirmation</div>
+                </div>
+            </div>
+            
+            <div style="background: rgba(30, 64, 175, 0.05); border-left: 4px solid var(--accent-color); padding: 25px; border-radius: 10px; margin: 40px 0; border: 1px solid rgba(30, 64, 175, 0.1);">
+                <h4 style="font-size: 1.2rem; color: var(--primary-color); margin-bottom: 10px; font-weight: 600;">
+                    <i class="fas fa-exclamation-triangle"></i> 重要声明 | Important Notice
+                </h4>
+                <p style="color: var(--text-color);">
+                    <strong>KIWI Serenity Limited is a booking and coordination service only.</strong> We do NOT provide dental treatments directly. All medical procedures are performed by licensed dentists at our partner clinics in Chengdu. We facilitate appointments, provide English support, and ensure a seamless experience from NZ to China and back.
+                </p>
+                <p style="color: var(--text-color); margin-top: 10px;">
+                    <strong>KIWI Serenity Limited仅为预约协调服务公司。</strong> 我们不直接提供牙科治疗。所有医疗相关均由我们在成都的合作诊所持牌牙医执行。我们协助预约、提供英语支持，并确保从新西兰到中国往返的无缝体验。
+                </p>
+            </div>
+                        
+            <div style="text-align: center; margin-top: 40px;">
+                <a class="action-btn dental" onclick="showBookingModal('口腔咨询服务')" style="padding: 15px 40px; font-size: 1.1rem; background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); color: white; border-radius: 50px; text-decoration: none; display: inline-block; font-weight: 600; border: 1px solid rgba(255,255,255,0.2);">
+                    <i class="fas fa-calendar-check"></i> 🦷预约牙科咨询 （由合作诊所视情况提供） | Book Dental Consultation (Subject to Clinic Availability)
+                </a>
+            </div>
+        </section>
+
+        <!-- 预订区域 -->
+        <section class="booking-section" id="contact">
+            <h2 class="booking-title">准备好开启四川之旅了吗？ | Ready for Your Sichuan Adventure?</h2>
+            <p style="max-width:800px;margin:20px auto; font-size:0.95rem;color:#F7FAFC;line-height:1.7;">
+                All enquiries and submissions are treated as <strong>non-binding coordination requests</strong>.<br>所有咨询与提交内容均视为<strong>非约束性的预约协调申请</strong>
+                Service availability, eligibility, and final arrangements are determined independently by third-party providers.<br>
+                具体服务安排由第三方机构独立评估与确认。
+            </p>
+            <p class="booking-desc">联系我们定制完美行程。所有线路包含住宿、餐饮、门票、专车接送和双语导游服务。<br>Contact us to customize your perfect itinerary. Our service include booking accommodation, meals, entrance tickets, private transportation, and bilingual guide service.</p>
+            
+            <div class="booking-buttons">
+                <a href="mailto:KIWI_Serenity_Limited@outlook.com?subject=Sichuan Tour Inquiry&body=Hello, I'm interested in your Sichuan tour packages. Please send me more information." class="btn btn-primary">
+                    <i class="fas fa-envelope"></i> 邮件咨询 | Email Inquiry
+                </a>
+                <a href="tel:+640220405795" class="btn btn-secondary">
+                    <i class="fas fa-phone"></i> 立即致电 | Call Now
+                </a>
+            </div>
+            
+            <div style="margin-top: 40px; font-size: 0.95rem; opacity: 0.9;">
+                <p><i class="fas fa-info-circle"></i> All itineraries are fully customizable with transparent pricing upon request. | 所有行程均可完全定制，价格透明。</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div>
+                <div class="footer-logo">
+                    <div>KIWI Serenity Limited</div>
+                </div>
+                <p style="opacity: 0.9; line-height: 1.7;"> 专注于为国际游客提供地道的四川文化体验和健康旅行安排。<br>Specializing in authentic Sichuan cultural experiences and wellness travel arrangements for international visitors.</p>
+            </div>
+            
+            <div class="footer-contact">
+                <div class="footer-contact-item">
+                    <i class="fas fa-phone"></i>
+                    <div>+64 022 040 5795</div>
+                </div>
+                <div class="footer-contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>KIWI_Serenity_Limited@outlook.com</div>
+                </div>
+                <div class="footer-contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>Based in New Zealand | 新西兰公司</div>
+                </div>
+                <div class="footer-contact-item">
+                    <i class="fas fa-clock"></i>
+                    <div>NZST 9:00-18:00 Weekdays | 新西兰时间 工作日9:00-18:00</div>
+                </div>
+            </div>
+            
+            <div>
+                <h3 style="margin-bottom: 20px; font-size: 1.2rem;">快速链接 | Quick Links</h3>
+                <div style="display: flex; flex-direction: column; gap: 12px;">
+                    <a href="#tcm-packages" style="color: white; opacity: 0.9; text-decoration: none;" onclick="scrollToSection('tcm-packages')">中医理疗 | TCM Services</a>
+                    <a href="#premium-packages" style="color: white; opacity: 0.9; text-decoration: none;" onclick="scrollToSection('premium-packages')">尊享套餐 | Premium Packages</a>
+                    <a href="#dental-detail" style="color: white; opacity: 0.9; text-decoration: none;" onclick="scrollToSection('dental-detail')">口腔咨询 | Dental Services</a>
+                    <a href="#contact" style="color: white; opacity: 0.9; text-decoration: none;" onclick="scrollToSection('contact')">联系我们 | Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Legal Footer -->
+    <section style="background:var(--dark-color); color:#CBD5E0; padding:40px 20px; font-size:13px;">
+        <div style="max-width:1100px; margin:auto;">
+            <strong>© 2026 <strong>KIWI Serenity Limited</strong>. All rights reserved。
+            Medical Travel Consultation & Coordination Services
+
+            <p style="margin-top:12px; line-height:1.6;">
+                KIWI Serenity Limited is not a medical provider, clinic, hospital, or travel agency.<br>
+                All medical, dental, and wellness services are provided independently by licensed third-party institutions in China.
+            </p>
+
+            <p style="line-height:1.6;">
+                KIWI Serenity Limited 并非医疗机构、诊所、医院或旅行社。<br>
+                所有医疗及理疗服务均由中国境内具备合法资质的第三方机构独立提供。
+            </p>
+
+            <div style="margin-top:15px;">
+                <a href="privacy.html" style="color:#CBD5E0; margin-right:15px;">Privacy Policy | 隐私政策</a>
+                <a href="terms.html" style="color:#CBD5E0; margin-right:15px;">Terms of Service | 服务条款</a>
+                <a href="disclaimer.html" style="color:#CBD5E0;">Medical Disclaimer | 医疗免责声明</a>
+            </div>
+
+            <p style="margin-top:15px; font-size:12px; opacity:0.8;">
+                Governing law: New Zealand ｜ 本网站受新西兰法律管辖
+            </p>
+        </div>
+    </section>
+
+    <!-- 预约模态框 -->
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <h3 class="modal-title" id="modalTourName">行程定制 | Itinerary Customization</h3>
+            <p class="modal-text" id="modalText">您已选择将此项服务添加到您的行程中。我们的团队将很快通过电子邮件与您联系，确认详细信息并为您定制完美的四川之旅。</p>
+            <div style="margin-top:20px;padding:15px;background:#F7FAFC;
+            border-radius:8px;font-size:0.9rem;line-height:1.6;color:var(--text-color);">
+
+                <strong>预约协调说明 | Booking Information Notice</strong><br><br>
+
+                KIWI Serenity Limited provides <strong>non-medical consultation and appointment coordination services only</strong>.<br>
+                We do <strong>not</strong> provide medical diagnosis, treatment, or clinical advice.<br>
+                All medical, dental, or wellness-related services are provided independently by licensed providers in China.<br>
+                This submission constitutes a <strong>request for coordination only</strong> and is subject to availability and assessment.
+                <br><br>
+                KIWI Serenity Limited 仅提供<strong>非医疗性质的信息咨询与预约协调服务</strong>。<br>
+                本公司不提供任何医疗诊断、治疗或医疗建议。<br>
+                所有相关服务均由中国当地持证机构独立提供。<br>
+                本次提交仅为预约协调申请，不构成服务承诺。
+            </div>
+
+            <div style="display: flex; gap: 15px; justify-content: center; margin-top: 30px; flex-wrap: wrap;">
+                <a href="mailto:KIWI_Serenity_Limited@outlook.com?subject=Tour Customization Request&body=Hello, I would like to customize a tour package including the services I selected on your website." class="btn btn-primary" style="padding: 12px 25px;">
+                    <i class="fas fa-envelope"></i> 发送邮件确认 | Send Email Confirmation
+                </a>
+                <p style="margin-top:20px;font-size:0.85rem;color:var(--text-light);text-align:center;">
+                    By proceeding, you acknowledge that KIWI Serenity Limited does not provide medical advice and acts solely as an independent coordination facilitator.<br>
+                    继续操作即表示您理解并同意：KIWI Serenity Limited 仅作为独立协调方，不提供任何医疗建议。
+                </p>
+
+                <button onclick="closeModal()" class="btn btn-secondary" style="padding: 12px 25px;">
+                    <i class="fas fa-times"></i> 关闭 | Close
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 页面功能
+        document.addEventListener('DOMContentLoaded', function() {
+            // 为所有卡片添加悬停效果
+            const cards = document.querySelectorAll('.feature-card, .tcm-package-card, .premium-package-card, .dental-service-card');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transition = 'all 0.3s ease';
+                });
+            });
+            
+            // 平滑滚动
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    const targetId = this.getAttribute('href');
+                    if(targetId !== '#') {
+                        e.preventDefault();
+                        const targetElement = document.querySelector(targetId);
+                        if(targetElement) {
+                            window.scrollTo({
+                                top: targetElement.offsetTop - 100,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
+            });
+            
+            // 动画效果
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in');
+                    }
+                });
+            }, observerOptions);
+            
+            document.querySelectorAll('.fade-in').forEach(el => {
+                observer.observe(el);
+            });
+        });
+
+        // 滚动到指定部分
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                window.scrollTo({
+                    top: section.offsetTop - 100,
+                    behavior: 'smooth'
+                });
+            }
+        }
+
+        // 折叠卡片功能
+        function toggleCollapsible(element) {
+            const card = element.closest('.collapsible-card');
+            card.classList.toggle('active');
+        }
+
+        // 显示预约模态框
+        function showBookingModal(serviceName) {
+            const englishNames = {
+                '口腔咨询服务': 'Dental Consultation Service'
+            };
+            
+            const englishName = englishNames[serviceName] || serviceName;
+            document.getElementById('modalTourName').textContent = `预约${serviceName} | Booking ${englishName}`;
+            document.getElementById('modalText').textContent = `您已提交${serviceName}的预约协调申请。我们的团队将很快通过电子邮件与您联系，确认预约时间和其他详细信息。`;
+            
+            // 英文版本
+            document.getElementById('modalText').innerHTML += `<br><br>You have submitted a coordination request for ${englishName}. Our team will contact you shortly via email to confirm appointment details.`;
+            
+            document.getElementById('bookingModal').style.display = 'flex';
+            
+            // 记录用户选择
+            console.log(`Booking requested for: ${serviceName}`);
+        }
+
+        // 显示定制模态框
+        function showCustomizationModal(packageName) {
+            const englishNames = {
+                '四川精华体验套餐': 'Sichuan Essence Experience Package',
+                '四川经典深度套餐': 'Sichuan Classic Deep Experience Package',
+                '川蜀探索体验套餐': 'Sichuan Explorer Experience Package',
+                '川蜀至尊定制套餐': 'Sichuan Elite Customized Package',
+                'Premium套餐咨询': 'Premium Package Consultation'
+            };
+            
+            const englishName = englishNames[packageName] || packageName;
+            document.getElementById('modalTourName').textContent = `定制${packageName} | Customize ${englishName}`;
+            document.getElementById('modalText').textContent = `您已提交${packageName}的定制咨询。我们的双语健康顾问将在24小时内与您联系，了解您的具体需求并为您设计最合适的体验方案。`;
+            
+            // 英文版本
+            document.getElementById('modalText').innerHTML += `<br><br>You have submitted a customization inquiry for ${englishName}. Our bilingual health consultant will contact you within 24 hours to understand your specific needs and design the most suitable experience plan for you.`;
+            
+            document.getElementById('bookingModal').style.display = 'flex';
+            
+            // 记录用户选择
+            console.log(`Customization requested for package: ${packageName}`);
+        }
+
+        // 关闭模态框
+        function closeModal() {
+            document.getElementById('bookingModal').style.display = 'none';
+        }
+
+        // 点击模态框外部关闭
+        window.onclick = function(event) {
+            const modal = document.getElementById('bookingModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
