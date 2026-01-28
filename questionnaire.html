@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>健康信息问卷 / Health Questionnaire</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+        }
+
+        body {
+            position: relative;
+            background: url("Background.jpg") center / cover no-repeat fixed;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background: rgba(255, 255, 255, 0.8);
+            z-index: -1;
+        }
+
+        /* ===== Header ===== */
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        /* ===== Logo 区域 ===== */
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        .logo img {
+            max-height: 140px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .logo-text {
+            text-align: left;
+        }
+
+        h1 {
+            color: #2c5aa0;
+            font-size: 1.8em;
+            margin-bottom: 5px;
+        }
+
+        h2 {
+            color: #2c5aa0;
+            font-size: 1.4em;
+            margin: 25px 0 15px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        h3 {
+            color: #4a6fa5;
+            font-size: 1.1em;
+            margin: 20px 0 10px;
+        }
+
+        .company-info {
+            background-color: #e8f4ff;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            margin-bottom: 25px;
+            font-size: 0.9em;
+        }
+
+        .language-note {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 12px;
+            margin-bottom: 20px;
+            font-size: 0.95em;
+        }
+
+        .form-section {
+            background-color: rgba(255, 255, 255, 0.92);
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            margin-bottom: 25px;
+            transition: box-shadow 0.3s;
+        }
+
+        .form-section:hover {
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .bilingual {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .chinese {
+            border-right: 1px dashed #ddd;
+            padding-right: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 15px;
+        }
+
+        textarea {
+            min-height: 90px;
+            resize: vertical;
+        }
+
+        .required::after {
+            content: " *";
+            color: #e74c3c;
+        }
+
+        .clinic-select {
+            display: flex;
+            gap: 20px;
+            margin-top: 10px;
+        }
+
+        .clinic-option {
+            flex: 1;
+            padding: 20px 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .clinic-option:hover {
+            background-color: #f5f9ff;
+            border-color: #a0c1f1;
+        }
+
+        .clinic-option.selected {
+            border-color: #2c5aa0;
+            background-color: #e8f4ff;
+            box-shadow: 0 2px 5px rgba(44, 90, 160, 0.2);
+        }
+
+        .form-row {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 15px;
+        }
+
+        .form-col {
+            flex: 1;
+        }
+        
+        /* ===== Footer ===== */
+        .site-footer .footer-nav {
+            margin-bottom: 14px;
+        }
+
+        .site-footer .footer-nav a {
+            color: #1e40af;
+            text-decoration: underline;
+            margin: 0 6px;
+        }
+
+        .site-footer .footer-nav a:hover {
+            color: #1e3a8a;
+        }
+        
+        /* 更新单选按钮组样式 */
+        .radio-group {
+            display: flex;
+            gap: 20px;
+            margin: 15px 0;
+            flex-wrap: wrap;
+        }
+
+        .radio-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+
+        .radio-item label {
+            margin-left: 6px;
+            white-space: nowrap;
+        }
+
+        .radio-item input[type="radio"] {
+            width: auto;
+            margin-right: 6px;
+            margin-bottom: 0;
+        }
+
+        /* 多选框组样式 */
+        .checkbox-group {
+            margin: 15px 0;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            text-align: left;
+            margin-bottom: 10px;
+        }
+        
+        .checkbox-item label {
+            margin-left: 8px;
+            margin-bottom: 0;
+            cursor: pointer;
+        }
+
+        .checkbox-item input[type="checkbox"] {
+            width: auto;
+            margin-top: 3px;
+            margin-bottom: 0;
+        }
+
+        .medical-history {
+            text-align: left;
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 15px 0;
+        }
+
+        .medical-history label {
+            text-align: left;
+        }
+
+        .submit-btn {
+            background-color: #2c5aa0;
+            color: white;
+            border: none;
+            padding: 14px 30px;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            display: block;
+            margin: 30px auto 10px;
+            min-width: 200px;
+        }
+
+        .submit-btn:hover {
+            background-color: #1e3f7c;
+        }
+
+        .submit-btn:disabled {
+            background-color: #a0a0a0;
+            cursor: not-allowed;
+        }
+
+        .progress-indicator {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 25px;
+        }
+
+        .progress-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0 10px;
+            flex: 1;
+            max-width: 150px;
+        }
+
+        .step-circle {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: #ddd;
+            color: #666;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-bottom: 5px;
+            transition: all 0.3s;
+        }
+
+        .step-circle.active {
+            background-color: #2c5aa0;
+            color: white;
+        }
+
+        .step-text {
+            font-size: 0.85em;
+            text-align: center;
+            color: #666;
+        }
+
+        .section-note {
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .privacy-consent {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #2c5aa0;
+            margin-top: 20px;
+        }
+
+        .privacy-consent a {
+            color: #2c5aa0;
+            text-decoration: none;
+        }
+
+        .privacy-consent a:hover {
+            text-decoration: underline;
+        }
+
+        /* 新增：左对齐的同意声明区域 */
+        .consent-section-left {
+            text-align: left;
+            margin: 20px 0;
+        }
+        
+        .consent-checkbox-group {
+            margin: 15px 0;
+        }
+        
+        .consent-text {
+            font-size: 0.95em;
+            color: #1f2937;
+            margin: 10px 0;
+        }
+
+        @media (max-width: 768px) {
+            .bilingual {
+                grid-template-columns: 1fr;
+            }
+            .chinese {
+                border-right: none;
+                border-bottom: 1px dashed #ddd;
+                padding-bottom: 15px;
+            }
+            .logo {
+                flex-direction: column;
+            }
+            .logo-text {
+                text-align: center;
+            }
+            .logo img {
+                max-height: 100px;
+            }
+            .form-row {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .clinic-select {
+                flex-direction: column;
+            }
+            .progress-indicator {
+                flex-wrap: wrap;
+            }
+            .progress-step {
+                margin-bottom: 15px;
+            }
+            .radio-group {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+        
+        /* Clinic-specific styling */
+        .dental-questions, .tcm-questions {
+            display: none;
+        }
+        
+        .dental-questions.active, .tcm-questions.active {
+            display: block;
+        }
+        
+        /* ===== Floating Back to Home (Dental Style) ===== */
+        .back-home-float {
+            position: fixed;
+            top: 18px;
+            left: 18px;
+            z-index: 9999;
+            padding: 10px 18px;
+            border-radius: 999px;
+            background: rgba(30, 64, 175, 0.85);
+            color: #ffffff;
+            font-size: 13px;
+            font-weight: 600;
+            text-decoration: none;
+            white-space: nowrap;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+            backdrop-filter: blur(6px);
+            transition: all 0.25s ease;
+        }
+
+        .back-home-float:hover {
+            background: rgba(30, 64, 175, 1);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 26px rgba(0, 0, 0, 0.35);
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .back-home-float {
+                top: 14px;
+                left: 14px;
+                padding: 8px 14px;
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== 头部（已加入 Logo） ===== -->
+    <div class="header">
+        <div class="logo">
+            <img src="logo.jpg" alt="KIWI Serenity Limited Logo">
+
+            <div>
+                <h1>KIWI Serenity Limited</h1>
+                <p>Medical Tourism Health Questionnaire</p>
+                <p>医旅健康信息问卷</p>
+            </div>
+        </div>
+
+        <div class="company-info">
+            <p><strong>联系电话 / TEL:</strong> +64 022 040 5795</p>
+            <p><strong>邮箱 / Email:</strong> KIWI_Serenity_Limited@outlook.com</p>
+        </div>
+    </div>
+
+    <div class="language-note">
+        <p><strong>Important Notice:</strong> This questionnaire is for travel coordination purposes only and does not constitute medical assessment, diagnosis, or medical advice.</p>
+        <p><strong>重要声明：</strong>本问卷仅用于医疗旅行与行程协调之目的，不构成任何医疗评估、诊断或医疗建议。</p>
+    </div>
+    <div class="language-note">
+        <p><strong>Note:</strong>This questionnaire is bilingual. Please fill in all information in English.</p>
+        <p><strong>请注意:</strong>本问卷为中英文对照，请用英文填写所有信息。填写后将转交诊所进行医生预评估。</p>
+    </div>
+    
+    <!-- Progress Indicator -->
+    <div class="progress-indicator">
+        <div class="progress-step">
+            <div class="step-circle active">1</div>
+            <div class="step-text">选择诊所<br>Select Clinic</div>
+        </div>
+        <div class="progress-step">
+            <div class="step-circle">2</div>
+            <div class="step-text">个人信息<br>Personal Info</div>
+        </div>
+        <div class="progress-step">
+            <div class="step-circle">3</div>
+            <div class="step-text">健康信息<br>Health Info</div>
+        </div>
+        <div class="progress-step">
+            <div class="step-circle">4</div>
+            <div class="step-text">确认提交<br>Confirmation</div>
+        </div>
+    </div>
+
+    <div class="language-note">
+        <p><strong>Note:</strong>Please fill in English. Your information may be shared with your selected third-party provider for scheduling and suitability screening conducted by that provider. KIWI Serenity Limited does not provide medical advice or assessments. All fields marked with * are required.</p>
+        <p><strong>请注意:</strong> 请使用英文填写，本问卷信息可能转交所选第三方服务方用于预约安排与适配性筛查。KIWI Serenity Limited不提供任何医疗评估或建议。所有带 * 的为必填项。</p>
+    </div>
+
+    <form id="health-questionnaire" action="https://formspree.io/f/abcdwxyz" method="POST">
+        
+        <!-- FormSubmit配置 -->
+        <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you.html">
+        <input type="hidden" name="_subject" value="New Health Questionnaire Submission">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_language" value="en">
+        <input type="hidden" name="_captcha" value="false">
+
+        <!-- Clinic Selection -->
+        <div class="form-section">
+            <h2>选择诊所 / Select Clinic</h2>
+            <p class="section-note">请选择您计划就诊的诊所类型。不同诊所的健康问题不同。</p>
+            <div class="clinic-select">
+                <div class="clinic-option" data-clinic="dental">
+                    <div style="font-size: 2em; margin-bottom: 5px;">🦷</div>
+                    <strong>牙科诊所</strong><br>
+                    <strong>Dental Clinic</strong><br>
+                    <small style="color: #666;">牙齿治疗、种植牙、正畸等</small>
+                </div>
+                <div class="clinic-option" data-clinic="tcm">
+                    <div style="font-size: 2em; margin-bottom: 5px;">🌿</div>
+                    <strong>中医诊所</strong><br>
+                    <strong>TCM Clinic</strong><br>
+                    <small style="color: #666;">针灸、中药、推拿等</small>
+                </div>
+            </div>
+            <input type="hidden" id="clinic-type" name="clinic-type" required>
+        </div>
+
+        <!-- Personal Information -->
+        <div class="form-section">
+            <h2>个人信息 / Personal Information</h2>
+            <div class="bilingual">
+                <div class="chinese">
+                    <label class="required">姓名 / Full Name</label>
+                    <input type="text" name="full-name" required>
+                    
+                    <label class="required">性别 / Gender</label>
+                    <select name="gender" required>
+                        <option value="">请选择 / Please select</option>
+                        <option value="male">男 / Male</option>
+                        <option value="female">女 / Female</option>
+                        <option value="other">其他 / Other</option>
+                        <option value="prefer-not-to-say">不愿透露 / Prefer not to say</option>
+                    </select>
+                    
+                    <label class="required">出生日期 / Date of Birth</label>
+                    <input type="date" name="dob" required>
+                </div>
+                <div>
+                    <label class="required">护照号 / Passport Number</label>
+                    <input type="text" name="passport" required>
+                    
+                    <label class="required">国籍 / Nationality</label>
+                    <input type="text" name="nationality" required>
+                    
+                    <label class="required">邮箱 / Email</label>
+                    <input type="email" name="email" required>
+                    
+                    <label class="required">联系电话 / Phone Number</label>
+                    <input type="tel" name="phone" required>
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-col">
+                    <label>紧急联系人 / Emergency Contact</label>
+                    <input type="text" name="emergency-contact">
+                </div>
+                <div class="form-col">
+                    <label>紧急联系电话 / Emergency Phone</label>
+                    <input type="tel" name="emergency-phone">
+                </div>
+            </div>
+        </div>
+
+        <!-- Medical History - Common Section -->
+        <div class="form-section">
+            <h2>基本健康状况 / Basic Health Information</h2>
+            
+            <h3>过敏史 / Allergies</h3>
+            <div class="medical-history">
+                <label>是否有已知过敏？ / Do you have any known allergies?</label>
+                <div class="radio-group">
+                    <div class="radio-item">
+                        <input type="radio" name="allergies" id="allergies-no" value="no">
+                        <label for="allergies-no">无 / No</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" name="allergies" id="allergies-yes" value="yes">
+                        <label for="allergies-yes">有 / Yes</label>
+                    </div>
+                </div>
+                
+                <div id="allergies-details" style="display:none; margin-top:10px;">
+                    <label>请说明过敏情况 / Please specify:</label>
+                    <textarea name="allergies-details" placeholder="例如：青霉素、食物过敏、环境过敏等 / E.g., Penicillin, food allergies, environmental allergies, etc."></textarea>
+                </div>
+            </div>
+            
+            <h3>当前用药 / Current Medications</h3>
+            <div class="medical-history">
+                <label>是否正在服用任何药物？ / Are you currently taking any medications?</label>
+                <div class="radio-group">
+                    <div class="radio-item">
+                        <input type="radio" name="medications" id="medications-no" value="no">
+                        <label for="medications-no">无 / No</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" name="medications" id="medications-yes" value="yes">
+                        <label for="medications-yes">有 / Yes</label>
+                    </div>
+                </div>
+                
+                <div id="medications-details" style="display:none; margin-top:10px;">
+                    <label>请列出您正在服用的药物 / Please list your current medications:</label>
+                    <textarea name="medications-details" placeholder="药物名称、剂量、频率 / Medication name, dosage, frequency"></textarea>
+                </div>
+            </div>
+            
+            <h3>病史 / Medical History</h3>
+            <div class="medical-history">
+                <label>是否有以下疾病史？ / Do you have a history of any of the following conditions?</label>
+                <div class="checkbox-group">
+                    <div class="checkbox-item">
+                        <input type="checkbox" name="medical-history[]" id="history-diabetes" value="diabetes">
+                        <label for="history-diabetes">糖尿病 / Diabetes</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" name="medical-history[]" id="history-hypertension" value="hypertension">
+                        <label for="history-hypertension">高血压 / Hypertension</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" name="medical-history[]" id="history-heart" value="heart-disease">
+                        <label for="history-heart">心脏病 / Heart Disease</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" name="medical-history[]" id="history-cancer" value="cancer">
+                        <label for="history-cancer">癌症 / Cancer</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" name="medical-history[]" id="history-bleeding" value="bleeding-disorder">
+                        <label for="history-bleeding">出血性疾病 / Bleeding Disorder</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" name="medical-history[]" id="history-other" value="other">
+                        <label for="history-other">其他 / Other</label>
+                    </div>
+                </div>
+                
+                <div id="medical-history-other" style="display:none; margin-top:10px;">
+                    <label>请说明其他病史 / Please specify other conditions:</label>
+                    <textarea name="medical-history-other"></textarea>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Travel Insurance -->
+        <div class="form-section">
+            <h2>旅行保险信息 / Travel Insurance</h2>
+
+            <div class="medical-history">
+                <label class="required">
+                    是否已购买涵盖医疗的旅行保险？  
+                    <br>
+                    Have you purchased travel insurance that includes medical coverage?
+                </label>
+
+                <div class="radio-group">
+                    <div class="radio-item">
+                        <input type="radio" name="travel-insurance" id="insurance-yes" value="yes" required>
+                        <label for="insurance-yes">
+                            是 / Yes (Medical coverage included)
+                        </label>
+                    </div>
+
+                    <div class="radio-item">
+                        <input type="radio" name="travel-insurance" id="insurance-no" value="no">
+                        <label for="insurance-no">
+                            否 / No
+                        </label>
+                    </div>
+
+                    <div class="radio-item">
+                        <input type="radio" name="travel-insurance" id="insurance-unsure" value="unsure">
+                        <label for="insurance-unsure">
+                            不确定 / Not sure
+                        </label>
+                    </div>
+                </div>
+
+                <div id="insurance-details" style="display:none; margin-top:10px;">
+                    <label>
+                        如已购买，请填写保险公司名称（可选）  
+                        <br>
+                        If purchased, please specify the insurance provider (optional):
+                    </label>
+                    <input type="text" name="insurance-provider" placeholder="e.g. Allianz, Southern Cross, AXA">
+                </div>
+
+                <p class="section-note" style="margin-top:10px;">
+                    注：旅行保险并非强制要求，但强烈建议购买以覆盖潜在医疗或行程风险。  
+                    <br>
+                    Note: Travel insurance is not mandatory, but strongly recommended to cover potential medical or travel-related risks.
+                </p>
+            </div>
+        </div>
+
+        <!-- Dental Clinic Specific Questions -->
+        <div class="form-section dental-questions">
+            <h2>牙科健康信息 / Dental Health Information</h2>
+            
+            <h3>牙齿治疗历史 / Dental Treatment History</h3>
+            <div class="medical-history">
+                <label>过去是否接受过牙齿治疗？ / Have you had dental treatment before?</label>
+                <div class="radio-group">
+                    <div class="radio-item">
+                        <input type="radio" name="dental-history" id="dental-history-no" value="no">
+                        <label for="dental-history-no">无 / No</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" name="dental-history" id="dental-history-yes" value="yes">
+                        <label for="dental-history-yes">有 / Yes</label>
+                    </div>
+                </div>
+                
+                <div id="dental-history-details" style="display:none; margin-top:10px;">
+                    <label>请说明治疗类型 / Please specify treatment type:</label>
+                    <textarea name="dental-history-details" placeholder="例如：拔牙、补牙、根管治疗、种植牙等 / E.g., Extraction, filling, root canal, implant, etc."></textarea>
+                </div>
+            </div>
+            
+            <h3>当前牙齿问题 / Current Dental Issues</h3>
+            <div class="medical-history">
+                <label>请描述您当前的牙齿问题 / Please describe your current dental issues:</label>
+                <textarea name="dental-issues" placeholder="例如：牙齿疼痛、牙龈出血、牙齿敏感、缺牙等 / E.g., Tooth pain, bleeding gums, tooth sensitivity, missing teeth, etc." rows="4"></textarea>
+            </div>
+            
+            <h3>口腔习惯 / Oral Habits</h3>
+            <div class="checkbox-group">
+                <div class="checkbox-item">
+                    <input type="checkbox" name="oral-habits[]" id="habit-smoking" value="smoking">
+                    <label for="habit-smoking">吸烟 / Smoking</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" name="oral-habits[]" id="habit-alcohol" value="alcohol">
+                    <label for="habit-alcohol">经常饮酒 / Regular alcohol consumption</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" name="oral-habits[]" id="habit-grinding" value="teeth-grinding">
+                    <label for="habit-grinding">磨牙 / Teeth grinding</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- TCM Clinic Specific Questions -->
+        <div class="form-section tcm-questions">
+            <h2>中医健康信息 / TCM Health Information</h2>
+            
+            <h3>主要症状 / Main Symptoms</h3>
+            <div class="medical-history">
+                <label>请描述您的主要症状 / Please describe your main symptoms:</label>
+                <textarea name="tcm-symptoms" placeholder="例如：疼痛部位、频率、持续时间、加重或缓解因素等 / E.g., Pain location, frequency, duration, factors that worsen or relieve symptoms" rows="4"></textarea>
+            </div>
+            
+            <h3>过往中医治疗 / Previous TCM Treatment</h3>
+            <div class="medical-history">
+                <label>是否接受过中医治疗？ / Have you had TCM treatment before?</label>
+                <div class="radio-group">
+                    <div class="radio-item">
+                        <input type="radio" name="tcm-history" id="tcm-history-no" value="no">
+                        <label for="tcm-history-no">无 / No</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" name="tcm-history" id="tcm-history-yes" value="yes">
+                        <label for="tcm-history-yes">有 / Yes</label>
+                    </div>
+                </div>
+                
+                <div id="tcm-history-details" style="display:none; margin-top:10px;">
+                    <label>请说明既往服务与个人感受（选填） / Please specify previous services and your experience (optional):</label>
+                    <textarea name="tcm-history-details" placeholder="例如：针灸、中药、推拿等及效果 / E.g., Acupuncture, herbal medicine, massage, and effectiveness"></textarea>
+                </div>
+            </div>
+            
+            <h3>舌诊与脉诊信息 / Tongue and Pulse Information</h3>
+            <div class="medical-history">
+                <label>如有条件，请描述舌象 / If possible, please describe your tongue:</label>
+                <textarea name="tongue-description" placeholder="例如：舌色、舌苔、裂纹等 / E.g., Tongue color, coating, cracks, etc." rows="3"></textarea>
+                
+                <label style="margin-top:15px;">其他中医相关信息 / Other TCM-related information:</label>
+                <textarea name="tcm-other" placeholder="例如：怕冷/怕热、出汗情况、睡眠质量、食欲等 / E.g., Sensitivity to cold/heat, sweating, sleep quality, appetite, etc." rows="3"></textarea>
+            </div>
+        </div>
+
+        <!-- Additional Information -->
+        <div class="form-section">
+            <h2>补充信息 / Additional Information</h2>
+            
+            <div class="medical-history">
+                <label>其他健康相关信息 / Other relevant health information:</label>
+                <textarea name="additional-info" placeholder="请提供任何其他可能相关的健康信息 / Please provide any other health information that may be relevant" rows="4"></textarea>
+            </div>
+            
+            <div class="medical-history">
+                <label>本次就医期望 / Appointment Goals:</label>
+                <textarea name="expectations" placeholder="您希望与诊所咨询什么？ / What would you like to discuss with the clinic?" rows="3"></textarea>
+            </div>
+        </div>
+
+        <!-- Consent & Privacy -->
+        <div class="form-section">
+            <h2>同意与提交 / Consent & Submission</h2>
+            
+            <div class="medical-history">
+                <p><strong>我确认以上信息真实准确，并同意将信息转交诊所进行预评估。</strong></p>
+                <p><strong>I confirm that the information provided is accurate and agree to forward it to the clinic for pre-assessment.</strong></p>
+                
+                <!-- 左对齐的同意声明区域 -->
+                <div class="consent-section-left">
+		 <P>Privacy notice (summary): We collect the information in this form for non-medical travel and booking coordination. With your consent, we may disclose relevant information to your selected independent provider in China for scheduling and suitability screening. Information may be stored and processed in New Zealand and/or overseas. You may request access to and correction of your information. See our Privacy Policy for retention, security and contact details.</P>
+                    <div class="consent-checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="consent-agree" name="consent_agree" required>
+                            <label for="consent-agree">
+                                <strong>我同意以上声明 / I Agree to the above statement</strong>
+                            </label>
+                        </div>
+                        
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="privacy-consent-check" name="privacy_consent" required>
+                            <label for="privacy-consent-check">
+                                <strong>我确认已阅读并同意隐私保护政策 / I confirm that I have read and agree to the Privacy Policy.</strong>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="consent-text">
+                        <p>提交后，我们的团队将在1-2个工作日内通过邮件与您联系，安排后续预约对接。</p>
+                        <p>After submission, our team will contact you via email within 1-2 business days to arrange subsequent appointments.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <br>
+            <button class="submit-btn" type="submit" id="submit-button">提交问卷 / Submit Questionnaire</button>
+            <input type="hidden" name="_next" value="thank-you.html">
+            <div style="text-align: center; margin-top: 15px; color: #666; font-size: 0.9em;">
+                如有问题，请致电 +64 022 040 5795 或邮件至 KIWI_Serenity_Limited@outlook.com<br>
+                For any questions, please call +64 022 040 5795 or email KIWI_Serenity_Limited@outlook.com
+            </div>
+        </div>
+    </form>
+
+    <!-- Floating Back to Home (Dental Style) -->
+    <a href="index.html" class="back-home-float" aria-label="Back to Home">
+        ← 返回首页 | Back to Home
+    </a>
+
+    <!-- ===== Footer ===== -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <p class="footer-nav">
+                <a href="index.html">Home</a> ·
+                <a href="privacy.html">Privacy Policy</a> ·
+                <a href="terms.html">Terms of Service</a> ·
+                <a href="disclaimer.html">Medical Disclaimer</a>
+            </p>
+
+            <p class="footer-brand">
+                © 2026 <strong>KIWI Serenity Limited</strong>. All rights reserved.
+            </p>
+
+            <p class="footer-notice">
+                KIWI Serenity Limited provides information and coordination services only
+                and does not provide medical advice, diagnosis, or treatment.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Clinic selection
+        document.querySelectorAll('.clinic-option').forEach(opt => {
+            opt.onclick = () => {
+                document.querySelectorAll('.clinic-option').forEach(o => o.classList.remove('selected'));
+                opt.classList.add('selected');
+                document.getElementById('clinic-type').value = opt.dataset.clinic;
+                
+                // Show clinic-specific questions
+                document.querySelectorAll('.dental-questions, .tcm-questions').forEach(section => {
+                    section.classList.remove('active');
+                });
+                
+                if (opt.dataset.clinic === 'dental') {
+                    document.querySelector('.dental-questions').classList.add('active');
+                } else if (opt.dataset.clinic === 'tcm') {
+                    document.querySelector('.tcm-questions').classList.add('active');
+                }
+                
+                updateProgress(2);
+            };
+        });
+        
+        // Toggle allergy details
+        document.querySelectorAll('input[name="allergies"]').forEach(radio => {
+            radio.onchange = () => {
+                const details = document.getElementById('allergies-details');
+                details.style.display = radio.value === 'yes' ? 'block' : 'none';
+            };
+        });
+        
+        // Toggle medication details
+        document.querySelectorAll('input[name="medications"]').forEach(radio => {
+            radio.onchange = () => {
+                const details = document.getElementById('medications-details');
+                details.style.display = radio.value === 'yes' ? 'block' : 'none';
+            };
+        });
+        
+        // Toggle travel insurance details
+        document.querySelectorAll('input[name="travel-insurance"]').forEach(radio => {
+            radio.onchange = () => {
+                const details = document.getElementById('insurance-details');
+                if (details) {
+                    details.style.display = radio.value === 'yes' ? 'block' : 'none';
+                }
+            };
+        });
+        
+        // Toggle other medical history
+        document.getElementById('history-other').onchange = () => {
+            const otherDetails = document.getElementById('medical-history-other');
+            otherDetails.style.display = document.getElementById('history-other').checked ? 'block' : 'none';
+        };
+        
+        // Toggle dental history details
+        document.querySelectorAll('input[name="dental-history"]').forEach(radio => {
+            radio.onchange = () => {
+                const details = document.getElementById('dental-history-details');
+                if (details) details.style.display = radio.value === 'yes' ? 'block' : 'none';
+            };
+        });
+        
+        // Toggle TCM history details
+        document.querySelectorAll('input[name="tcm-history"]').forEach(radio => {
+            radio.onchange = () => {
+                const details = document.getElementById('tcm-history-details');
+                if (details) details.style.display = radio.value === 'yes' ? 'block' : 'none';
+            };
+        });
+        
+        // Form validation
+        document.getElementById('health-questionnaire').onsubmit = (e) => {
+            e.preventDefault();
+            
+            // Validate clinic selection
+            if (!document.getElementById('clinic-type').value) {
+                alert('请选择诊所类型 / Please select a clinic type');
+                return false;
+            }
+            
+            // Basic validation
+            const requiredInputs = document.querySelectorAll('input[required], select[required]');
+            let valid = true;
+            
+            requiredInputs.forEach(input => {
+                if (!input.value.trim()) {
+                    valid
