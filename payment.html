@@ -1,0 +1,1521 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>KIWI Serenity - 海外游客中国支付指南 2026 | International Visitors Payment Guide in China 2026</title>
+    <!-- 引入html2canvas库，用于图片保存功能 -->
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <style>
+        /* 基础样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', 'Helvetica Neue', Arial, sans-serif;
+        }
+        
+        :root {
+            --primary-green: #1a472a;
+            --secondary-green: #2e7d32;
+            --light-green: #7cb798;
+            --accent-blue: #00a0e9;
+            --accent-orange: #ff6b35;
+            --accent-brown: #8a6d3b;
+            --text-dark: #1a3c27;
+            --text-medium: #4a7c59;
+            --text-light: #666;
+            --bg-white: rgba(255, 255, 255, 0.97);
+            --shadow-light: 0 5px 20px rgba(0, 0, 0, 0.08);
+            --shadow-medium: 0 8px 25px rgba(0, 0, 0, 0.12);
+            --border-radius: 15px;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+            position: relative;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        /* 背景图样式 */
+        .background-image {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(135deg, rgba(245, 247, 250, 0.9), rgba(255, 255, 255, 0.8)), 
+                              url('background.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: -1;
+        }
+        
+        /* 主容器 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Logo区域 */
+        .logo-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+            padding: 25px;
+            background-color: rgba(255, 255, 255, 0.98);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-light);
+            flex-wrap: wrap;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            margin-right: 40px;
+        }
+        
+        .logo-img {
+            width: 180px;
+            height: auto;
+            margin-right: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            object-fit: contain;
+        }
+        
+        .logo-text {
+            text-align: left;
+        }
+        
+        .logo-title {
+            color: var(--primary-green);
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+            line-height: 1.3;
+        }
+        
+        .logo-subtitle {
+            color: var(--secondary-green);
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+        
+        .year-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--secondary-green), var(--primary-green));
+            color: white;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 18px;
+            margin-top: 10px;
+            box-shadow: 0 4px 8px rgba(46, 125, 50, 0.3);
+        }
+        
+        /* 标题区域 */
+        .title-section {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px;
+            background-color: var(--bg-white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-light);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .main-title {
+            color: var(--text-dark);
+            font-size: 36px;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 4px solid var(--secondary-green);
+            position: relative;
+            line-height: 1.3;
+        }
+        
+        .main-title::after {
+            content: "";
+            position: absolute;
+            bottom: -4px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 4px;
+            background-color: var(--accent-blue);
+        }
+        
+        .sub-title {
+            color: var(--text-medium);
+            font-size: 22px;
+            margin-bottom: 10px;
+            font-weight: 500;
+            line-height: 1.4;
+        }
+        
+        .update-info {
+            color: var(--text-light);
+            font-size: 16px;
+            margin-top: 15px;
+            font-style: italic;
+        }
+        
+        /* 支付平台图标展示 */
+        .payment-platforms {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .platform {
+            text-align: center;
+            transition: all 0.3s ease;
+            background: var(--bg-white);
+            border-radius: var(--border-radius);
+            padding: 25px 20px;
+            box-shadow: var(--shadow-light);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+        }
+        
+        .platform:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .platform-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 32px;
+            color: white;
+            font-weight: bold;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+        
+        .alipay-bg {
+            background: linear-gradient(135deg, #00a0e9, #0077b6);
+        }
+        
+        .wechat-bg {
+            background: linear-gradient(135deg, #07c160, #059c47);
+        }
+        
+        .card-bg {
+            background: linear-gradient(135deg, #ff6b35, #e05527);
+        }
+        
+        .cash-bg {
+            background: linear-gradient(135deg, #8a6d3b, #6b4f25);
+        }
+        
+        .platform-name {
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+            font-size: 18px;
+            line-height: 1.3;
+        }
+        
+        .platform-desc {
+            font-size: 14px;
+            color: var(--text-light);
+            line-height: 1.4;
+        }
+        
+        /* 联系信息卡片 */
+        .contact-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+        
+        .contact-card {
+            background-color: var(--bg-white);
+            border-radius: var(--border-radius);
+            padding: 25px;
+            box-shadow: var(--shadow-light);
+            border-top: 4px solid var(--secondary-green);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .contact-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            cursor: pointer;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        
+        .contact-header h3 {
+            color: var(--text-dark);
+            font-size: 18px;
+            margin-left: 10px;
+            flex-grow: 1;
+        }
+        
+        .contact-icon {
+            font-size: 24px;
+        }
+        
+        .collapse-icon {
+            transition: transform 0.3s ease;
+        }
+        
+        .contact-card.active .collapse-icon {
+            transform: rotate(180deg);
+        }
+        
+        .whatsapp-icon {
+            color: #25D366;
+        }
+        
+        .phone-icon {
+            color: #0077b6;
+        }
+        
+        .email-icon {
+            color: #ea4335;
+        }
+        
+        .social-icon {
+            font-size: 22px;
+            margin-right: 12px;
+        }
+        
+        .contact-content {
+            overflow: hidden;
+            transition: max-height 0.5s ease, opacity 0.3s ease, padding 0.3s ease;
+            max-height: 0;
+            opacity: 0;
+        }
+        
+        .contact-card.active .contact-content {
+            max-height: 500px;
+            opacity: 1;
+            padding-top: 15px;
+        }
+        
+        .contact-number {
+            font-size: 20px;
+            font-weight: bold;
+            color: var(--secondary-green);
+            margin-bottom: 10px;
+        }
+        
+        .contact-email {
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 15px;
+            word-break: break-all;
+        }
+        
+        .social-icons {
+            display: flex;
+            align-items: center;
+            margin-top: 15px;
+        }
+        
+        /* 内容区域 */
+        .content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 35px;
+            margin-bottom: 50px;
+        }
+        
+        .section {
+            background-color: var(--bg-white);
+            border-radius: var(--border-radius);
+            padding: 35px;
+            box-shadow: var(--shadow-light);
+            transition: all 0.3s ease;
+            border-top: 5px solid var(--secondary-green);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .section:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .section-title {
+            color: var(--text-dark);
+            font-size: 26px;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--light-green);
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            user-select: none;
+            transition: color 0.3s ease;
+        }
+        
+        .section-title:hover {
+            color: var(--primary-green);
+        }
+        
+        .section-title::before {
+            content: "✓";
+            background: linear-gradient(135deg, var(--secondary-green), var(--primary-green));
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-size: 18px;
+            box-shadow: 0 4px 8px rgba(46, 125, 50, 0.3);
+            flex-shrink: 0;
+        }
+        
+        .section-title.collapsed::before {
+            content: "+";
+        }
+        
+        .section-content {
+            overflow: hidden;
+            transition: max-height 0.5s ease, opacity 0.3s ease;
+            max-height: 5000px;
+            opacity: 1;
+        }
+        
+        .section-content.collapsed {
+            max-height: 0;
+            opacity: 0;
+        }
+        
+        .bilingual-item {
+            margin-bottom: 28px;
+            padding-bottom: 20px;
+            border-bottom: 1px dashed #ddd;
+            transition: all 0.3s ease;
+        }
+        
+        .bilingual-item:hover {
+            padding-left: 10px;
+            border-bottom-color: var(--light-green);
+        }
+        
+        .bilingual-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+        
+        .chinese {
+            color: var(--text-dark);
+            font-size: 19px;
+            margin-bottom: 10px;
+            font-weight: 600;
+            line-height: 1.5;
+        }
+        
+        .english {
+            color: var(--text-medium);
+            font-size: 17px;
+            font-style: italic;
+            padding-left: 18px;
+            border-left: 4px solid var(--light-green);
+            line-height: 1.5;
+        }
+        
+        .icon-list {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 12px;
+        }
+        
+        .icon {
+            width: 28px;
+            height: 28px;
+            margin-right: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--secondary-green), var(--primary-green));
+            color: white;
+            font-weight: bold;
+            border-radius: 50%;
+            font-size: 16px;
+            box-shadow: 0 3px 6px rgba(46, 125, 50, 0.3);
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        
+        /* 提示框 */
+        .tip-box {
+            background: linear-gradient(135deg, rgba(124, 183, 152, 0.15), rgba(46, 125, 50, 0.1));
+            border-radius: 12px;
+            padding: 28px;
+            margin: 35px 0;
+            border-left: 6px solid var(--secondary-green);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .tip-title {
+            color: var(--primary-green);
+            font-size: 22px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            font-weight: 700;
+        }
+        
+        .tip-title::before {
+            content: "💡";
+            margin-right: 15px;
+            font-size: 28px;
+            filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.2));
+        }
+        
+        /* 按钮容器 */
+        .button-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 50px 0;
+        }
+        
+        .action-button {
+            background: linear-gradient(135deg, var(--secondary-green), var(--primary-green));
+            color: white;
+            border: none;
+            padding: 20px 30px;
+            font-size: 18px;
+            border-radius: 40px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            line-height: 1.4;
+            height: auto;
+            min-height: 70px;
+        }
+        
+        .action-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+            background: linear-gradient(135deg, var(--primary-green), var(--secondary-green));
+        }
+        
+        .action-button:active {
+            transform: translateY(-2px);
+        }
+        
+        .print-button {
+            background: linear-gradient(135deg, var(--accent-blue), #0077b6);
+        }
+        
+        .save-image-button {
+            background: linear-gradient(135deg, var(--accent-orange), #e05527);
+        }
+        
+        .home-button {
+            background: linear-gradient(135deg, var(--accent-brown), #6b4f25);
+            text-decoration: none;
+        }
+        
+        .button-icon {
+            margin-right: 12px;
+            font-size: 22px;
+            flex-shrink: 0;
+        }
+        
+        /* 页脚 */
+        .footer {
+            text-align: center;
+            padding: 35px;
+            margin-top: 30px;
+            background-color: var(--bg-white);
+            border-radius: var(--border-radius);
+            color: var(--text-medium);
+            font-size: 17px;
+            border-top: 5px solid var(--light-green);
+            box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .footer p {
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+        
+        .copyright {
+            font-size: 15px;
+            color: var(--text-light);
+            margin-top: 20px;
+        }
+        
+        /* 打印样式 */
+        @media print {
+            body {
+                background-color: white !important;
+                color: black !important;
+                font-size: 14pt;
+                line-height: 1.5;
+            }
+            
+            .background-image {
+                display: none;
+            }
+            
+            .container, .logo-header, .title-section, .section, .footer, .contact-card {
+                box-shadow: none !important;
+                background-color: white !important;
+                border: 1px solid #ddd !important;
+                backdrop-filter: none !important;
+            }
+            
+            .button-container, .back-home-container {
+                display: none;
+            }
+            
+            .section-content.collapsed,
+            .contact-content {
+                max-height: none !important;
+                opacity: 1 !important;
+                display: block !important;
+            }
+            
+            .section {
+                break-inside: avoid;
+                page-break-inside: avoid;
+                margin-bottom: 20px;
+            }
+            
+            .main-title, .section-title {
+                color: black !important;
+            }
+            
+            .footer {
+                border: 1px solid #ccc !important;
+                background-color: white !important;
+                margin-top: 20px;
+            }
+            
+            .platform-icon {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+                box-shadow: none !important;
+            }
+            
+            .tip-box {
+                border: 1px solid #ccc;
+                background-color: #f9f9f9 !important;
+                box-shadow: none !important;
+            }
+            
+            .content {
+                grid-template-columns: 1fr !important;
+                gap: 20px;
+            }
+            
+            .payment-platforms {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 20px;
+            }
+            
+            .contact-cards {
+                grid-template-columns: 1fr !important;
+            }
+            
+            .bilingual-item {
+                break-inside: avoid;
+            }
+        }
+        
+        /* 响应式设计 - 平板 */
+        @media (max-width: 1024px) {
+            .container {
+                padding: 20px;
+            }
+            
+            .content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .logo-header {
+                flex-direction: column;
+                text-align: center;
+                padding: 20px;
+            }
+            
+            .logo-container {
+                margin-right: 0;
+                margin-bottom: 20px;
+                flex-direction: column;
+            }
+            
+            .logo-img {
+                margin-right: 0;
+                margin-bottom: 20px;
+                width: 160px;
+            }
+            
+            .logo-text {
+                text-align: center;
+            }
+            
+            .payment-platforms {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+            
+            .button-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        /* 响应式设计 - 手机 */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .main-title {
+                font-size: 28px;
+            }
+            
+            .sub-title {
+                font-size: 18px;
+            }
+            
+            .section {
+                padding: 25px 20px;
+            }
+            
+            .section-title {
+                font-size: 22px;
+            }
+            
+            .payment-platforms {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .platform {
+                padding: 20px 15px;
+            }
+            
+            .platform-icon {
+                width: 70px;
+                height: 70px;
+                font-size: 28px;
+            }
+            
+            .button-container {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .action-button {
+                padding: 18px 20px;
+                font-size: 16px;
+                min-height: 60px;
+            }
+            
+            .contact-cards {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .contact-card {
+                padding: 20px;
+            }
+            
+            .content {
+                gap: 25px;
+            }
+            
+            .chinese {
+                font-size: 17px;
+            }
+            
+            .english {
+                font-size: 15px;
+            }
+            
+            .logo-img {
+                width: 140px;
+            }
+            
+            .logo-title {
+                font-size: 24px;
+            }
+            
+            .footer {
+                padding: 25px 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 12px;
+            }
+            
+            .main-title {
+                font-size: 24px;
+                padding-bottom: 12px;
+            }
+            
+            .section-title {
+                font-size: 20px;
+            }
+            
+            .chinese {
+                font-size: 16px;
+            }
+            
+            .english {
+                font-size: 14px;
+                padding-left: 12px;
+                border-left-width: 3px;
+            }
+            
+            .platform-name {
+                font-size: 16px;
+            }
+            
+            .platform-desc {
+                font-size: 13px;
+            }
+            
+            .section {
+                padding: 20px 15px;
+            }
+            
+            .button-container {
+                gap: 15px;
+            }
+            
+            .action-button {
+                padding: 16px;
+                font-size: 15px;
+                min-height: 55px;
+            }
+            
+            .button-icon {
+                font-size: 20px;
+                margin-right: 10px;
+            }
+            
+            .logo-img {
+                width: 120px;
+            }
+            
+            .logo-title {
+                font-size: 22px;
+            }
+            
+            .logo-subtitle {
+                font-size: 16px;
+            }
+            
+            .year-badge {
+                font-size: 16px;
+                padding: 6px 16px;
+            }
+            
+            .icon {
+                width: 24px;
+                height: 24px;
+                font-size: 14px;
+                margin-right: 12px;
+            }
+            
+            .footer {
+                padding: 20px 15px;
+                font-size: 15px;
+            }
+            
+            .footer p {
+                margin-bottom: 8px;
+            }
+        }
+        
+        @media (max-width: 360px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .main-title {
+                font-size: 22px;
+            }
+            
+            .section-title {
+                font-size: 18px;
+            }
+            
+            .chinese {
+                font-size: 15px;
+            }
+            
+            .english {
+                font-size: 13px;
+            }
+            
+            .logo-img {
+                width: 100px;
+            }
+            
+            .logo-title {
+                font-size: 20px;
+            }
+        }
+        
+        /* 加载动画 */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in {
+            opacity: 0;
+            animation: fadeInUp 0.6s ease forwards;
+        }
+        
+        /* 成功提示 */
+        .success-message {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, var(--secondary-green), var(--primary-green));
+            color: white;
+            padding: 15px 25px;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            opacity: 0;
+            transform: translateX(100px);
+            transition: opacity 0.3s, transform 0.3s;
+            font-weight: 600;
+            max-width: calc(100vw - 40px);
+            text-align: center;
+            pointer-events: none;
+        }
+        
+        .success-message.show {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .success-message.error {
+            background: linear-gradient(135deg, #e53935, #c62828);
+        }
+        
+        /* 滚动条美化 */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.05);
+            border-radius: 10px;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, var(--secondary-green), var(--primary-green));
+            border-radius: 10px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(135deg, var(--primary-green), var(--secondary-green));
+        }
+        
+        /* 触摸设备优化 */
+        @media (hover: none) and (pointer: coarse) {
+            .platform:hover,
+            .section:hover,
+            .action-button:hover,
+            .bilingual-item:hover {
+                transform: none;
+            }
+            
+            .section-title,
+            .contact-header {
+                cursor: default;
+            }
+            
+            .action-button {
+                min-height: 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 背景图 -->
+    <div class="background-image"></div>
+    
+    <div class="container">
+        <!-- Logo和标题区域 -->
+        <header class="logo-header fade-in">
+            <div class="logo-container">
+                <!-- Logo图片 -->
+                <img src="logo.jpg" alt="KIWI Serenity Limited Logo" class="logo-img">
+                <div class="logo-text">
+                    <h1 class="logo-title">KIWI Serenity Limited</h1>
+                    <p class="logo-subtitle">Discover Sichuan, Wellness Travel</p>
+                    <p class="logo-subtitle">Experience the Summit</p>
+                    <div class="year-badge">2026 Edition</div>
+                </div>
+            </div>
+        </header>
+        
+        <!-- 主标题区域 -->
+        <section class="title-section fade-in">
+            <h1 class="main-title">海外游客中国支付指南 2026</h1>
+            <h2 class="sub-title">International Visitors Payment Guide in China 2026</h2>
+            <p class="update-info">Updated for 2026 | 包含最新支付政策与平台更新</p>
+        </section>
+        
+        <!-- 支付平台图标展示 -->
+        <div class="payment-platforms fade-in">
+            <div class="platform">
+                <div class="platform-icon alipay-bg">A</div>
+                <div class="platform-name">支付宝/Alipay</div>
+                <div class="platform-desc">移动支付首选 | Top Mobile Payment</div>
+            </div>
+            <div class="platform">
+                <div class="platform-icon wechat-bg">W</div>
+                <div class="platform-name">微信支付/WeChat Pay</div>
+                <div class="platform-desc">社交+支付 | Social + Payment</div>
+            </div>
+            <div class="platform">
+                <div class="platform-icon card-bg">C</div>
+                <div class="platform-name">国际卡/International Cards</div>
+                <div class="platform-desc">Visa/Mastercard/Amex</div>
+            </div>
+            <div class="platform">
+                <div class="platform-icon cash-bg">¥</div>
+                <div class="platform-name">现金/Cash</div>
+                <div class="platform-desc">应急备用 | Emergency Backup</div>
+            </div>
+        </div>
+        
+        <!-- 联系信息卡片 -->
+        <div class="contact-cards fade-in">
+            <!-- WhatsApp卡片 -->
+            <div class="contact-card active">
+                <div class="contact-header" onclick="toggleContactCard(this)">
+                    <span class="contact-icon whatsapp-icon">💬</span>
+                    <h3>WhatsApp</h3>
+                    <span class="collapse-icon">▼</span>
+                </div>
+                <div class="contact-content">
+                    <div class="contact-number">+64 22 040 5795</div>
+                    <p>通过WhatsApp联系我们获取即时帮助</p>
+                    <p>Contact us via WhatsApp for instant assistance</p>
+                </div>
+            </div>
+            
+            <!-- 电话卡片 -->
+            <div class="contact-card active">
+                <div class="contact-header" onclick="toggleContactCard(this)">
+                    <span class="contact-icon phone-icon">📞</span>
+                    <h3>电话 / Phone</h3>
+                    <span class="collapse-icon">▼</span>
+                </div>
+                <div class="contact-content">
+                    <div class="contact-number">+64 22 040 5795</div>
+                    <p>周一至周五 9:00-18:00 (新西兰时间)</p>
+                    <p>Mon-Fri 9:00-18:00 (NZ Time)</p>
+                </div>
+            </div>
+            
+            <!-- 邮箱和社交媒体卡片 -->
+            <div class="contact-card active">
+                <div class="contact-header" onclick="toggleContactCard(this)">
+                    <span class="contact-icon email-icon">✉️</span>
+                    <h3>邮箱 & 社交媒体</h3>
+                    <span class="collapse-icon">▼</span>
+                </div>
+                <div class="contact-content">
+                    <div class="contact-email">contact@kiwiserenity.com</div>
+                    <p>发送邮件至我们，我们会在24小时内回复</p>
+                    <p>Email us and we'll respond within 24 hours</p>
+                    
+                    <div class="social-icons">
+                        <span class="social-icon tiktok-icon">🎵</span>
+                        <span>TikTok: @KIWISerenityLimited</span>
+                    </div>
+                    
+                    <div class="social-icons">
+                        <span class="social-icon facebook-icon">f</span>
+                        <span>Facebook: KIWI Serenity Limited</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 主要内容区域 -->
+        <div class="content">
+            <!-- 左侧内容 - 行前准备 -->
+            <section class="section fade-in">
+                <h3 class="section-title" onclick="toggleSection(this)">行前准备 / Pre-Trip Preparation</h3>
+                <div class="section-content">
+                    <div class="bilingual-item">
+                        <div class="icon-list">
+                            <div class="icon">1</div>
+                            <div class="chinese">开通国际漫游或购买中国SIM卡/ eSIM（确保有网络连接）</div>
+                        </div>
+                        <div class="english">Enable international roaming or purchase a Chinese SIM card/eSIM (ensure internet access)</div>
+                    </div>
+                    
+                    <div class="bilingual-item">
+                        <div class="icon-list">
+                            <div class="icon">2</div>
+                            <div class="chinese">下载并绑定国际信用卡到支付宝/微信支付（支持Visa/Mastercard/Amex等）</div>
+                        </div>
+                        <div class="english">Download and link international credit cards to Alipay/WeChat Pay (supports Visa/Mastercard/Amex, etc.)</div>
+                    </div>
+                    
+                    <div class="bilingual-item">
+                        <div class="icon-list">
+                            <div class="icon">3</div>
+                            <div class="chinese">准备少量人民币现金应急（建议500-1000元，用于小额支付）</div>
+                        </div>
+                        <div class="english">Prepare a small amount of RMB cash for emergencies (recommended 500-1000 yuan for small payments)</div>
+                    </div>
+                    
+                    <div class="bilingual-item">
+                        <div class="icon-list">
+                            <div class="icon">4</div>
+                            <div class="chinese">2026年更新：支付宝新增"TourCard"功能，专为海外游客设计</div>
+                        </div>
+                        <div class="english">2026 Update: Alipay introduces "TourCard" feature specifically designed for international visitors</div>
+                    </div>
+                    
+                    <div class="tip-box">
+                        <div class="tip-title">重要提示 / Important Note</div>
+                        <div class="bilingual-item">
+                            <div class="chinese">建议在出发前完成支付宝/微信支付的绑定和验证，避免到达后因网络或验证问题受阻</div>
+                            <div class="english">It's recommended to complete Alipay/WeChat Pay binding and verification before departure to avoid issues upon arrival</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- 右侧内容 - 支付方式详解 -->
+            <section class="section fade-in">
+                <h3 class="section-title" onclick="toggleSection(this)">支付方式详解 / Payment Methods Details</h3>
+                <div class="section-content">
+                    <div class="bilingual-item">
+                        <div class="icon-list">
+                            <div class="icon">A</div>
+                            <div class="chinese">支付宝 (Alipay) - 支持绑定Visa/Mastercard/Amex等国际卡，单笔限额已提升至500元</div>
+                        </div>
+                        <div class="english">Alipay - Supports linking international cards like Visa/Mastercard/Amex, single transaction limit increased to 500 yuan</div>
+                    </div>
+                    
+                    <div class="bilingual-item">
+                        <div class="icon-list">
+                            <div class="icon">W</div>
+                            <div class="chinese">微信支付 (WeChat Pay) - 在"服务-钱包"中添加国际银行卡，支持更多国家银行卡</div>
+                        </div>
+                        <div class="english">WeChat Pay - Add international bank cards in "Services-Wallet", supports more countries' bank cards</div>
+                    </div>
+                    
+                    <div class="bilingual-item">
+                        <div class="icon-list">
+                            <div class="icon">💳</div>
+                            <div class="chinese">国际信用卡 - 2026年更多商户支持非接触式支付，大型商户、酒店、连锁店普遍接受</div>
+                        </div>
+                        <div class="english">International credit cards - More merchants support contactless payments in 2026, widely accepted at large merchants, hotels, chain stores</div>
+                    </div>
+                    
+                    <div class="bilingual-item">
+                        <div class="icon-list">
+                            <div class="icon">💴</div>
+                            <div class="chinese">现金人民币 - 小额交易、传统市场、备用方案，建议准备新版人民币</div>
+                        </div>
+                        <div class="english">Cash RMB - For small transactions, traditional markets, backup option, recommended to prepare new version RMB</div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- 场景指南 -->
+            <section class="section fade-in">
+                <h3 class="section-title" onclick="toggleSection(this)">场景支付指南 / Scenario Payment Guide</h3>
+                <div class="section-content">
+                    <div class="bilingual-item">
+                        <div class="icon-list">
+                            <div class="icon">🍽️</div>
+                            <div class="chinese">餐厅用餐：扫描桌边二维码点餐支付，或使用扫码枪支付，2026年更多餐厅支持双语菜单</div>
+                        </div>
+                        <div class="english">Dining: Scan QR code on table for ordering and payment, or use扫码枪; more restaurants support bilingual menus in 2026</div>
+                    </div>
+                    
+                    <div class="bilingual-item">
+                        <div class="icon-list">
+                            <div class="icon">🚕</div>
+                            <div class="chinese">出租车/网约车：扫描司机二维码或App内支付，滴滴等平台已支持外卡直接支付</div>
+                        </div>
+                        <div class="english">Taxi/Ride-hailing: Scan driver's QR code or pay in app; platforms like DiDi now support direct foreign card payment</div>
+                    </div>
+                    
+                    <div class="bilingual-item">
+                        <div class="icon-list">
+                            <div class="icon">🚇</div>
+                            <div class="chinese">地铁公交：支付宝/微信内开通"乘车码"，2026年支持更多城市交通系统</div>
+                        </div>
+                        <div class="english">Subway/Bus: Activate "Ride Code" in Alipay/WeChat; supports more city transportation systems in 2026</div>
+                    </div>
+                    
+                    <div class="bilingual-item">
+                        <div class="icon-list">
+                            <div class="icon">🏨</div>
+                            <div class="chinese">酒店住宿：国际信用卡预授权+移动支付结算，2026年更多酒店支持自助入住支付</div>
+                        </div>
+                        <div class="english">Hotel stay: International card for deposit + mobile payment for settlement; more hotels support self-check-in payment in 2026</div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- 重要提示 -->
+            <section class="section fade-in">
+                <h3 class="section-title" onclick="toggleSection(this)">重要提示与建议 / Key Tips & Recommendations</h3>
+                <div class="section-content">
+                    <div class="bilingual-item">
+                        <div class="icon-list">
+                            <div class="icon">📶</div>
+                            <div class="chinese">确保手机有稳定网络连接，移动支付需要网络，建议购买本地流量包</div>
+                        </div>
+                        <div class="english">Ensure stable internet connection on your phone; mobile payments require network; recommended to purchase local data package</div>
+                    </div>
+                    
+                    <div class="bilingual-item">
+                        <div class="icon-list">
+                            <div class="icon">🔄</div>
+                            <div class="chinese">支付失败时，尝试切换支付宝/微信支付平台，或检查网络连接</div>
+                        </div>
+                        <div class="english">If payment fails, try switching between Alipay and WeChat Pay, or check internet connection</div>
+                    </div>
+                    
+                    <div class="bilingual-item">
+                        <div class="icon-list">
+                            <div class="icon">💾</div>
+                            <div class="chinese">保存支付成功截图，以备查询或争议，建议保留24小时</div>
+                        </div>
+                        <div class="english">Save payment confirmation screenshots for reference or disputes; recommended to keep for 24 hours</div>
+                    </div>
+                    
+                    <div class="bilingual-item">
+                        <div class="icon-list">
+                            <div class="icon">⚠️</div>
+                            <div class="chinese">避免在公共Wi-Fi下进行支付操作，使用移动数据或可信网络</div>
+                        </div>
+                        <div class="english">Avoid payment operations on public Wi-Fi; use mobile data or trusted networks</div>
+                    </div>
+                    
+                    <div class="tip-box">
+                        <div class="tip-title">2026年最佳支付组合 / 2026 Optimal Payment Combination</div>
+                        <div class="chinese" style="font-size: 20px; margin-bottom: 12px; font-weight: 700;">支付宝 + 微信支付 + 少量现金 + 国际信用卡 + 数字人民币(可选)</div>
+                        <div class="english" style="font-size: 18px;">Alipay + WeChat Pay + Some cash + International credit card + Digital RMB (optional)</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+        <!-- 按钮容器 -->
+        <div class="button-container">
+            <button class="action-button print-button" onclick="printGuide()">
+                <span class="button-icon">🖨️</span>
+                <span>打印本指南 / Print This Guide</span>
+            </button>
+            <button class="action-button save-image-button" onclick="saveAsImage()">
+                <span class="button-icon">💾</span>
+                <span>保存为图片 / Save as Image</span>
+            </button>
+            <a href="index.html" class="action-button home-button">
+                <span class="button-icon">🏠</span>
+                <span>返回首页 / Back to Home</span>
+            </a>
+        </div>
+        
+        
+        <!-- 页脚 -->
+        <footer class="footer fade-in">
+            <p>KIWI Serenity Limited - Discover Sichuan, Wellness Travel, Experience the Summit</p>
+            <p>© 2018-2026 海外游客中国支付指南 | International Visitors Payment Guide in China</p>
+            <p style="margin-top: 15px; font-size: 16px;">本指南基于2026年中国支付政策编制，信息仅供参考 | This guide is based on 2026 China payment policies, information is for reference only</p>
+            <p class="copyright">政策与限额可能变化，出行前请以支付宝/微信支付及银行最新规则为准。 | Policies and limits can change. Please verify with Alipay/WeChat Pay and your bank before departure</p>
+        </footer>
+    </div>
+    
+    <!-- 成功提示消息 -->
+    <div id="successMessage" class="success-message"></div>
+
+    <script>
+        // 页面加载动画
+        document.addEventListener('DOMContentLoaded', function() {
+            // 为所有fade-in元素添加延迟动画
+            const fadeElements = document.querySelectorAll('.fade-in');
+            fadeElements.forEach((element, index) => {
+                element.style.animationDelay = (index * 0.1) + 's';
+            });
+            
+            // 初始化所有内容区域为展开状态
+            document.querySelectorAll('.section-content').forEach(content => {
+                content.style.maxHeight = content.scrollHeight + 'px';
+            });
+            
+            // 初始化联系卡片为展开状态
+            document.querySelectorAll('.contact-card').forEach(card => {
+                const content = card.querySelector('.contact-content');
+                content.style.maxHeight = content.scrollHeight + 'px';
+            });
+            
+            // 检查html2canvas是否加载成功
+            if (typeof html2canvas === 'undefined') {
+                console.warn('html2canvas库加载失败，图片保存功能可能无法使用');
+            }
+            
+            // 添加触摸设备优化
+            if ('ontouchstart' in window || navigator.maxTouchPoints) {
+                document.body.classList.add('touch-device');
+            }
+        });
+        
+        // 切换内容区域折叠/展开
+        function toggleSection(titleElement) {
+            const content = titleElement.nextElementSibling;
+            const isCollapsed = content.classList.contains('collapsed');
+            
+            if (isCollapsed) {
+                // 展开
+                titleElement.classList.remove('collapsed');
+                content.classList.remove('collapsed');
+                content.style.maxHeight = content.scrollHeight + 'px';
+            } else {
+                // 折叠
+                titleElement.classList.add('collapsed');
+                content.style.maxHeight = content.scrollHeight + 'px';
+                // 强制重绘
+                void content.offsetHeight;
+                content.style.maxHeight = '0';
+                setTimeout(() => {
+                    content.classList.add('collapsed');
+                }, 300);
+            }
+        }
+        
+        // 切换联系卡片折叠/展开
+        function toggleContactCard(headerElement) {
+            const card = headerElement.closest('.contact-card');
+            const content = headerElement.nextElementSibling;
+            const collapseIcon = headerElement.querySelector('.collapse-icon');
+            const isActive = card.classList.contains('active');
+            
+            if (isActive) {
+                // 折叠
+                card.classList.remove('active');
+                content.style.maxHeight = content.scrollHeight + 'px';
+                void content.offsetHeight;
+                content.style.maxHeight = '0';
+                collapseIcon.style.transform = 'rotate(0deg)';
+                setTimeout(() => {
+                    content.style.opacity = '0';
+                }, 150);
+            } else {
+                // 展开
+                card.classList.add('active');
+                content.style.maxHeight = '0';
+                void content.offsetHeight;
+                content.style.maxHeight = content.scrollHeight + 'px';
+                content.style.opacity = '1';
+                collapseIcon.style.transform = 'rotate(180deg)';
+            }
+        }
+        
+        // 打印指南
+        function printGuide() {
+            // 添加打印优化
+            const originalTitle = document.title;
+            document.title = "KIWI Serenity - 海外游客中国支付指南 2026 | International Visitors Payment Guide in China 2026 - " + new Date().toLocaleDateString();
+            
+            // 显示打印提示
+            showSuccessMessage("正在准备打印... | Preparing for print...");
+            
+            // 展开所有折叠内容以确保打印完整
+            document.querySelectorAll('.section-content.collapsed').forEach(content => {
+                content.previousElementSibling.click();
+            });
+            
+            document.querySelectorAll('.contact-card:not(.active)').forEach(card => {
+                card.querySelector('.contact-header').click();
+            });
+            
+            // 短暂延迟后触发打印
+            setTimeout(() => {
+                window.print();
+                
+                // 恢复原始标题
+                setTimeout(() => {
+                    document.title = originalTitle;
+                }, 500);
+                
+                // 显示打印完成提示
+                setTimeout(() => {
+                    showSuccessMessage("打印对话框已打开 | Print dialog opened");
+                }, 300);
+            }, 500);
+        }
+        
+        // 保存为图片
+        function saveAsImage() {
+            // 检查html2canvas是否可用
+            if (typeof html2canvas === 'undefined') {
+                showSuccessMessage("错误：图片保存库未加载 | Error: Image saving library not loaded", true);
+                return;
+            }
+            
+            // 显示保存提示
+            showSuccessMessage("正在生成图片... | Generating image...");
+            
+            // 展开所有折叠内容以确保图片完整
+            document.querySelectorAll('.section-content.collapsed').forEach(content => {
+                content.previousElementSibling.click();
+            });
+            
+            document.querySelectorAll('.contact-card:not(.active)').forEach(card => {
+                card.querySelector('.contact-header').click();
+            });
+            
+            // 等待折叠内容展开
+            setTimeout(() => {
+                // 获取要保存的元素
+                const element = document.querySelector('.container');
+                
+                // 使用html2canvas将元素转换为canvas
+                html2canvas(element, {
+                    scale: 2, // 提高图片质量
+                    useCORS: true, // 允许跨域图片
+                    backgroundColor: '#f5f7fa',
+                    logging: false,
+                    allowTaint: true
+                }).then(canvas => {
+                    // 将canvas转换为图片URL
+                    const imageURL = canvas.toDataURL('image/png');
+                    
+                    // 创建下载链接
+                    const downloadLink = document.createElement('a');
+                    downloadLink.href = imageURL;
+                    downloadLink.download = `KIWI_Serenity_Payment_Guide_2026_${new Date().toISOString().slice(0,10)}.png`;
+                    
+                    // 触发下载
+                    document.body.appendChild(downloadLink);
+                    downloadLink.click();
+                    document.body.removeChild(downloadLink);
+                    
+                    // 显示成功提示
+                    showSuccessMessage("图片已保存！ | Image saved successfully!");
+                }).catch(error => {
+                    console.error('图片生成失败:', error);
+                    showSuccessMessage("图片保存失败，请重试 | Image save failed, please try again", true);
+                });
+            }, 500);
+        }
+        
+        // 显示成功/错误消息
+        function showSuccessMessage(message, isError = false) {
+            const messageElement = document.getElementById('successMessage');
+            messageElement.textContent = message;
+            messageElement.className = 'success-message' + (isError ? ' error' : '');
+            
+            // 显示消息
+            setTimeout(() => {
+                messageElement.classList.add('show');
+            }, 10);
+            
+            // 3秒后隐藏消息
+            setTimeout(() => {
+                messageElement.classList.remove('show');
+            }, 3000);
+        }
+        
+        // 添加平台图标悬停效果
+        document.querySelectorAll('.platform').forEach(platform => {
+            platform.addEventListener('mouseenter', function() {
+                if (!document.body.classList.contains('touch-device')) {
+                    this.style.transform = 'translateY(-10px) scale(1.05)';
+                }
+            });
+            
+            platform.addEventListener('mouseleave', function() {
+                if (!document.body.classList.contains('touch-device')) {
+                    this.style.transform = 'translateY(0) scale(1)';
+                }
+            });
+        });
+        
+        // 添加键盘快捷键支持
+        document.addEventListener('keydown', function(event) {
+            // Ctrl/Cmd + P 打印
+            if ((event.ctrlKey || event.metaKey) && event.key === 'p') {
+                event.preventDefault();
+                printGuide();
+            }
+            
+            // Ctrl/Cmd + S 保存图片
+            if ((event.ctrlKey || event.metaKey) && event.key === 's') {
+                event.preventDefault();
+                saveAsImage();
+            }
+        });
+        
+        // 添加滚动动画效果
+        window.addEventListener('scroll', function() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.style.opacity = "1";
+                    element.style.transform = "translateY(0)";
+                }
+            });
+        });
+    </script>
+</body>
+</html>
