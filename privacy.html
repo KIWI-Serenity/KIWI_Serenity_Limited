@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - KIWI Serenity Limited</title>
+    <style>
+        /* ===== CSS变量与全局样式 ===== */
+        :root {
+            --primary-color: #1e5799;
+            --primary-dark: #154073;
+            --secondary-color: #207cca;
+            --accent-color: #f8c146;
+            --light-bg: #f8f9fa;
+            --text-color: #333;
+            --text-light: #666;
+            --border-color: #e0e0e0;
+            --shadow-light: rgba(0, 0, 0, 0.1);
+            --shadow-medium: rgba(0, 0, 0, 0.15);
+            --radius-sm: 4px;
+            --radius-md: 8px;
+            --radius-lg: 12px;
+            --transition: all 0.3s ease;
+            --header-gradient: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 51%, #2989d8 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light-bg);
+            color: var(--text-color);
+            line-height: 1.6;
+            position: relative;
+            font-size: 16px;
+            overflow-x: hidden;
+        }
+
+        /* ===== 响应式容器 ===== */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            width: 100%;
+        }
+
+        /* ===== 悬浮返回按钮样式 ===== */
+        .back-home-float {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 9999;
+            padding: 12px 20px;
+            border-radius: 50px;
+            background: rgba(30, 64, 175, 0.9);
+            color: #ffffff;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            white-space: nowrap;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+            backdrop-filter: blur(8px);
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .back-home-float:hover {
+            background: rgba(30, 64, 175, 1);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        /* ===== 背景图片样式 ===== */
+        .background-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+        
+        .background-image {
+            background-image: url('background.jpg');
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            width: 100%;
+            height: 100%;
+            opacity: 0.4;
+            filter: brightness(0.9);
+        }
+
+        /* ===== 头部样式 ===== */
+        header {
+            background: var(--header-gradient);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            border-bottom: 5px solid var(--accent-color);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .header-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+            line-height: 1.2;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.5;
+        }
+        
+        /* ===== 公司信息样式 ===== */
+        .company-info {
+            background-color: white;
+            border-radius: var(--radius-md);
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 6px 15px var(--shadow-light);
+            border-left: 5px solid var(--secondary-color);
+            transition: var(--transition);
+        }
+
+        .company-info:hover {
+            box-shadow: 0 8px 20px var(--shadow-medium);
+            transform: translateY(-2px);
+        }
+        
+        .company-info h2 {
+            color: var(--primary-color);
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--border-color);
+        }
+        
+        .info-item {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: flex-start;
+            padding: 12px 0;
+            border-bottom: 1px dashed #eee;
+        }
+        
+        .info-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+        
+        .info-label {
+            font-weight: 600;
+            min-width: 180px;
+            color: var(--primary-color);
+            font-size: 1.05rem;
+        }
+        
+        /* ===== 隐私内容样式 ===== */
+        .privacy-content {
+            background-color: white;
+            border-radius: var(--radius-md);
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 6px 15px var(--shadow-light);
+            transition: var(--transition);
+        }
+
+        .privacy-content:hover {
+            box-shadow: 0 8px 20px var(--shadow-medium);
+        }
+        
+        h2 {
+            color: var(--primary-color);
+            margin: 35px 0 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--border-color);
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+
+        h2:first-child {
+            margin-top: 0;
+        }
+        
+        h3 {
+            color: var(--secondary-color);
+            margin: 25px 0 15px;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+        
+        p {
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+        
+        ul, ol {
+            padding-left: 25px;
+            margin-bottom: 25px;
+        }
+        
+        li {
+            margin-bottom: 12px;
+            line-height: 1.6;
+        }
+        
+        /* ===== 高亮框样式 ===== */
+        .highlight {
+            background-color: #f0f8ff;
+            padding: 25px;
+            border-radius: var(--radius-sm);
+            border-left: 5px solid var(--secondary-color);
+            margin: 25px 0;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+        }
+        
+        .legal-note {
+            background-color: #fff8e1;
+            padding: 25px;
+            border-radius: var(--radius-sm);
+            border-left: 5px solid var(--accent-color);
+            margin: 25px 0;
+            font-size: 0.95rem;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+        }
+        
+        /* ===== 页脚样式 ===== */
+        .site-footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+            margin-top: 50px;
+        }
+        
+        .footer-inner {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .footer-nav {
+            margin-bottom: 25px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .footer-nav a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            padding: 5px 10px;
+            border-radius: var(--radius-sm);
+        }
+
+        .footer-nav a:hover {
+            color: #ffffff;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .footer-brand {
+            margin-bottom: 15px;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        .footer-notice {
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+            font-size: 0.95rem;
+            color: #b0b8c4;
+        }
+        
+        .update-date {
+            font-style: italic;
+            color: #bdc3c7;
+            margin-top: 15px;
+            font-size: 0.9rem;
+        }
+        
+        /* ===== 联系链接样式 ===== */
+        .contact-link {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border-bottom: 1px dotted transparent;
+        }
+        
+        .contact-link:hover {
+            color: var(--primary-dark);
+            border-bottom-color: var(--secondary-color);
+        }
+        
+        /* ===== 同意部分样式 ===== */
+        .consent-section {
+            margin: 25px 0;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: var(--radius-sm);
+            border-left: 4px solid var(--secondary-color);
+            transition: var(--transition);
+        }
+
+        .consent-section:hover {
+            background-color: #f5f7fa;
+        }
+        
+        .consent-checkbox {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .consent-checkbox input[type="checkbox"] {
+            margin-top: 5px;
+            min-width: 22px;
+            height: 22px;
+            cursor: pointer;
+            accent-color: var(--secondary-color);
+        }
+        
+        .consent-label {
+            font-weight: 600;
+            color: var(--primary-color);
+            cursor: pointer;
+            font-size: 1.1rem;
+            line-height: 1.5;
+        }
+        
+        .consent-note {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-left: 37px;
+            line-height: 1.5;
+        }
+
+        /* ===== 提交按钮样式 ===== */
+        .submit-section {
+            text-align: center;
+            margin: 40px 0 20px;
+        }
+
+        .submit-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 16px 40px;
+            border-radius: var(--radius-md);
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 4px 12px rgba(30, 87, 153, 0.3);
+            min-width: 220px;
+        }
+
+        .submit-btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(30, 87, 153, 0.4);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        /* ===== 动画效果 ===== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .privacy-content {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        /* ===== 响应式设计 - 平板设备 (768px - 1024px) ===== */
+        @media (max-width: 1024px) {
+            .container {
+                padding: 0 25px;
+            }
+            
+            h1 {
+                font-size: 2.4rem;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .privacy-content {
+                padding: 35px;
+            }
+            
+            .company-info {
+                padding: 25px;
+            }
+            
+            .info-label {
+                min-width: 160px;
+            }
+            
+            .back-home-float {
+                top: 18px;
+                left: 18px;
+                padding: 10px 18px;
+                font-size: 13px;
+            }
+        }
+
+        /* ===== 响应式设计 - 手机设备 (小于768px) ===== */
+        @media (max-width: 768px) {
+            body {
+                font-size: 15px;
+            }
+            
+            .container {
+                padding: 0 15px;
+            }
+            
+            header {
+                padding: 30px 0;
+            }
+            
+            h1 {
+                font-size: 2rem;
+                margin-bottom: 12px;
+            }
+            
+            .subtitle {
+                font-size: 1.1rem;
+            }
+            
+            /* 公司信息垂直布局 */
+            .info-item {
+                flex-direction: column;
+                gap: 5px;
+                padding: 15px 0;
+            }
+            
+            .info-label {
+                min-width: 100%;
+                margin-bottom: 5px;
+                font-size: 1rem;
+            }
+            
+            .privacy-content {
+                padding: 25px 20px;
+                margin-bottom: 30px;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+                margin: 30px 0 15px;
+                padding-bottom: 10px;
+            }
+            
+            h3 {
+                font-size: 1.2rem;
+                margin: 20px 0 12px;
+            }
+            
+            .highlight, .legal-note, .consent-section {
+                padding: 20px 15px;
+            }
+            
+            .footer-nav {
+                flex-direction: column;
+                gap: 10px;
+                align-items: center;
+            }
+            
+            .footer-nav a {
+                display: inline-block;
+                padding: 8px 15px;
+            }
+            
+            /* 悬浮按钮调整 */
+            .back-home-float {
+                top: 15px;
+                left: 15px;
+                padding: 10px 16px;
+                font-size: 13px;
+            }
+            
+            /* 提交按钮调整 */
+            .submit-btn {
+                width: 100%;
+                min-width: auto;
+                padding: 18px;
+                font-size: 17px;
+            }
+            
+            /* 列表项调整 */
+            li {
+                margin-bottom: 10px;
+            }
+        }
+
+        /* ===== 响应式设计 - 小手机设备 (小于480px) ===== */
+        @media (max-width: 480px) {
+            body {
+                font-size: 14px;
+            }
+            
+            .container {
+                padding: 0 12px;
+            }
+            
+            header {
+                padding: 25px 0;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .subtitle {
+                font-size: 1rem;
+            }
+            
+            .company-info, .privacy-content {
+                padding: 20px 15px;
+            }
+            
+            .company-info h2, h2 {
+                font-size: 1.3rem;
+            }
+            
+            h3 {
+                font-size: 1.1rem;
+            }
+            
+            .back-home-float {
+                top: 12px;
+                left: 12px;
+                padding: 8px 14px;
+                font-size: 12px;
+            }
+            
+            .footer-inner {
+                padding: 0 15px;
+            }
+            
+            .footer-notice {
+                font-size: 0.9rem;
+            }
+            
+            /* 复选框调整 */
+            .consent-checkbox {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .consent-label {
+                font-size: 1rem;
+            }
+            
+            .consent-note {
+                margin-left: 0;
+                margin-top: 8px;
+            }
+            
+            /* 链接调整 */
+            .contact-link {
+                word-break: break-all;
+            }
+        }
+
+        /* ===== 响应式设计 - 超大屏幕 (大于1200px) ===== */
+        @media (min-width: 1200px) {
+            .container {
+                max-width: 1100px;
+            }
+        }
+
+        /* ===== 打印样式 ===== */
+        @media print {
+            .back-home-float,
+            .submit-section,
+            .site-footer {
+                display: none !important;
+            }
+            
+            body {
+                background: white;
+                font-size: 12pt;
+            }
+            
+            .container {
+                max-width: 100%;
+                padding: 0;
+            }
+            
+            .privacy-content,
+            .company-info {
+                box-shadow: none;
+                border: 1px solid #ddd;
+                break-inside: avoid;
+            }
+            
+            header {
+                background: #f0f0f0 !important;
+                color: black;
+                border-bottom: 2px solid #ccc;
+            }
+            
+            .contact-link {
+                color: black;
+                text-decoration: underline;
+            }
+            
+            a[href]:after {
+                content: " (" attr(href) ")";
+                font-size: 0.9em;
+                font-weight: normal;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ===== 悬浮返回按钮 ===== -->
+    <a href="index.html" class="back-home-float" aria-label="Back to Home">
+        ← 返回首页 | Back to Home
+    </a>
+
+    <!-- 背景层 -->
+    <div class="background-container">
+        <div class="background-image"></div>
+    </div>	
+
+    <!-- 头部 -->
+    <header>
+        <div class="header-content">
+            <h1>Privacy Policy</h1>
+            <p class="subtitle">KIWI Serenity Limited - Protecting Your Personal Information</p>
+        </div>
+    </header>
+    
+    <!-- 主内容区 -->
+    <div class="container">
+        <!-- 公司信息 -->
+        <div class="company-info">
+            <h2>Company Information</h2>
+            <div class="info-item">
+                <div class="info-label">Company Name:</div>
+                <div>KIWI Serenity Limited</div>
+            </div>
+            <div class="info-item">
+                <div class="info-label">Phone:</div>
+                <div>+64 022 040 5795</div>
+            </div>
+            <div class="info-item">
+                <div class="info-label">Email:</div>
+                <div><a href="mailto:KIWI_Serenity_Limited@outlook.com" class="contact-link">KIWI_Serenity_Limited@outlook.com</a></div>
+            </div>
+            <div class="info-item">
+                <div class="info-label">Jurisdiction:</div>
+                <div>New Zealand</div>
+            </div>
+        </div>
+        
+        <!-- 隐私政策内容 -->
+        <div class="privacy-content">
+            <div class="legal-note">
+                <p><strong>Legal Notice:</strong> This privacy policy is governed by and construed in accordance with the laws of New Zealand. By using our services, you consent to the practices described in this policy.</p>
+            </div>
+            
+            <h2>1. Introduction</h2>
+            <p>KIWI Serenity Limited ("we", "us", or "our") is committed to protecting your privacy and personal information. This Privacy Policy explains how we collect, use, disclose, and protect your personal information in accordance with New Zealand law, including the Privacy Act 2020.</p>
+            <p>This policy applies to all personal information we collect through our services, including but not limited to cross-border travel arrangements and non-medical logistical coordination relating to third-party services.</p>
+            
+            <h2>2. Information We Collect</h2>
+            <p>We may collect the following types of personal information:</p>
+            <ul>
+                <li><strong>Identity Information:</strong> Name, passport/ID number, date of birth, nationality</li>
+                <li><strong>Contact Information:</strong> Email address, phone number, residential address</li>
+                <li><strong>Travel Information:</strong> Itinerary details, travel preferences, accommodation requirements</li>
+                <li><strong>Health Information:</strong> Health-related information voluntarily provided by you for non-medical coordination and scheduling purposes only, which will only be collected if you expressly and voluntarily provide such information through our health questionnaire with explicit consent.</li>
+                <li><strong>Financial Information:</strong> Payment details, billing address (processed securely through third-party providers)</li>
+                <li><strong>Technical Information:</strong> IP address, browser type, device information, cookies data</li>
+            </ul>
+            
+            <h2>3. How We Use Your Information</h2>
+            <p>We use your personal information for the following purposes:</p>
+            <ul>
+                <li>To provide and manage our cross-border tourism services</li>
+                <li>To coordinate travel and medical appointment arrangements as requested</li>
+                <li>To communicate with you about your itinerary, bookings, and updates</li>
+                <li>To process payments and maintain financial records</li>
+                <li>To comply with legal obligations under New Zealand law</li>
+                <li>To improve our services and customer experience</li>
+                <li>To ensure the security of our services and prevent fraud</li>
+            </ul>
+            
+            <div class="highlight">
+                <h3>Important Note Regarding Medical Information</h3>
+                <p>Any health or medical information collected is used solely for coordination purposes to facilitate scheduling and communication with independent third-party service providers in China, at your request and with your consent. We do not provide medical advice, diagnosis, or treatment. All medical decisions and treatments are between you and the healthcare provider.</p>
+            </div>
+            
+            <h2>4. Disclosure of Your Information</h2>
+            <p>We may disclose your personal information in the following circumstances:</p>
+            <ul>
+                <li>To travel service providers (airlines, hotels, transportation companies) to fulfill your bookings</li>
+                <li>To independent medical or wellness service providers in China, solely for appointment scheduling and logistical coordination, where you have expressly requested such assistance.</li>
+                <li>To government authorities when required by New Zealand law</li>
+                <li>To our professional advisors (lawyers, accountants) as necessary</li>
+                <li>In connection with a business transaction, such as a merger or acquisition</li>
+            </ul>
+            <p>We will never sell your personal information to third parties for marketing purposes.</p>
+            
+            <h2>5. International Transfers</h2>
+            <p>As we provide cross-border tourism services, your personal information may be transferred to and processed in countries outside New Zealand. We ensure that such transfers comply with New Zealand privacy laws and that appropriate safeguards are in place to protect your information. You acknowledge that privacy laws in other jurisdictions may not provide the same level of protection as New Zealand law, and you consent to such transfers for the purposes described in this policy.</p>
+            
+            <h2>6. Data Security</h2>
+            <p>We implement appropriate technical and organizational measures to protect your personal information against unauthorized access, disclosure, alteration, or destruction. These measures include encryption, access controls, and secure data storage solutions.</p>
+            
+            <h2>7. Your Rights Under New Zealand Law</h2>
+            <p>Under the Privacy Act 2020, you have the right to:</p>
+            <ul>
+                <li>Access your personal information held by us</li>
+                <li>Request correction of any inaccurate or incomplete information</li>
+                <li>Withdraw consent for processing where consent is the legal basis</li>
+                <li>Make a complaint to the New Zealand Privacy Commissioner</li>
+            </ul>
+            <p>To exercise these rights, please contact us using the details provided in this policy.</p>
+            
+            <h2>8. Retention of Information</h2>
+            <p>We retain your personal information only for as long as necessary to fulfill the purposes for which it was collected, including for legal, accounting, or reporting requirements. Typically, we retain client information for a period of 7 years after the completion of services, in accordance with New Zealand business record-keeping requirements.</p>
+            
+            <h2>9. Cookies and Tracking Technologies</h2>
+            <p>Our website may use cookies and similar tracking technologies to enhance your browsing experience and collect information about how you use our site. You can control cookie settings through your browser preferences.</p>
+            
+            <h2>10. Changes to This Policy</h2>
+            <p>We may update this Privacy Policy from time to time. The most current version will always be posted on our website with the effective date. We encourage you to review this policy periodically.</p>
+            
+            <h2>11. Contact Us</h2>
+            <p>If you have any questions, concerns, or requests regarding this Privacy Policy or our handling of your personal information, please contact us:</p>
+            <ul>
+                <li><strong>By Email:</strong> <a href="mailto:KIWI_Serenity_Limited@outlook.com" class="contact-link">KIWI_Serenity_Limited@outlook.com</a></li>
+                <li><strong>By Phone:</strong> +64 022 040 5795</li>
+                <li><strong>By Mail:</strong> KIWI Serenity Limited [Address to be completed]</li>
+            </ul>
+            
+            <p>If you are not satisfied with our response, you have the right to contact the New Zealand Privacy Commissioner:</p>
+            <ul>
+                <li>Office of the Privacy Commissioner</li>
+                <li>PO Box 10-094, Wellington 6143, New Zealand</li>
+                <li>Phone: 0800 803 909</li>
+                <li>Website: <a href="https://www.privacy.org.nz" class="contact-link" target="_blank" rel="noopener noreferrer">www.privacy.org.nz</a></li>
+            </ul>
+            
+            <!-- 新增的同意部分 -->
+            <h2>12. Consent</h2>
+            <p>By using our services or submitting information through our website, you acknowledge that you have read and understood this Privacy Policy.</p>
+            
+            <!-- 合规确认区 -->
+            <div class="consent-section">
+                <div class="consent-checkbox">
+                    <input type="checkbox" id="privacy-consent" name="privacy_consent" required>
+                    <label for="privacy-consent" class="consent-label">
+                        I confirm that I have read and agree to the
+                        <a href="privacy.html" target="_blank" class="contact-link">Privacy Policy</a>
+                        and
+                        <a href="disclaimer.html" target="_blank" class="contact-link">Medical Disclaimer</a>.
+                    </label>
+                </div>
+                <div class="consent-note">
+                    This confirmation is required to proceed with our services.
+                </div>
+            </div>
+
+            <div class="consent-section">
+                <div class="consent-checkbox">
+                    <input type="checkbox" id="health-info-consent" name="health_info_consent" required>
+                    <label for="health-info-consent" class="consent-label">
+                        I understand that this questionnaire does not constitute medical advice,
+                        diagnosis, or treatment, and I voluntarily provide health-related information
+                        for coordination purposes only.
+                    </label>
+                </div>
+                <div class="consent-note">
+                    Health information is used solely for scheduling and coordination with your selected healthcare providers.
+                </div>
+            </div>
+
+            <div class="consent-section">
+                <div class="consent-checkbox">
+                    <input type="checkbox" id="non-emergency-acknowledgement" name="non_emergency_acknowledgement" required>
+                    <label for="non-emergency-acknowledgement" class="consent-label">
+                        I understand that this service is not suitable for medical emergencies.
+                    </label>
+                </div>
+                <div class="consent-note">
+                    In case of a medical emergency, please contact local emergency services immediately.
+                </div>
+            </div>
+
+            <!-- 提交按钮 -->
+            <div class="submit-section">
+                <button type="submit" class="submit-btn">
+                    Submit Acknowledgement
+                </button>
+            </div>
+            
+            <div class="legal-note">
+                <p><strong>Effective Date:</strong> This Privacy Policy is effective as of the date of publication on our website.</p>
+                <p class="update-date"><strong>Last Updated:</strong> <span id="current-date">January 2026</span></p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 页脚 -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-nav">
+                <a href="index.html">Home</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+                <a href="disclaimer.html">Medical Disclaimer</a>
+            </div>
+
+            <p class="footer-brand">
+                © <span id="current-year">2026</span> <strong>KIWI Serenity Limited</strong>. All rights reserved.
+            </p>
+
+            <p class="footer-notice">
+                KIWI Serenity Limited provides information and coordination services only
+                and does not provide medical advice, diagnosis, or treatment.
+            </p>
+        </div>
+    </footer>
+    
+    <script>
+        // DOM加载完成后执行
+        document.addEventListener('DOMContentLoaded', function() {
+            // 更新当前年份
+            const currentYear = new Date().getFullYear();
+            document.getElementById('current-year').textContent = currentYear;
+            
+            // 更新最后更新日期
+            const currentDate = new Date();
+            const options = { year: 'numeric', month: 'long' };
+            const formattedDate = currentDate.toLocaleDateString('en-NZ', options);
+            document.getElementById('current-date').textContent = formattedDate;
+            
+            // 复选框交互效果
+            const consentCheckboxes = document.querySelectorAll('.consent-checkbox input[type="checkbox"]');
+            consentCheckboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', function() {
+                    const consentSection = this.closest('.consent-section');
+                    if (this.checked) {
+                        consentSection.style.backgroundColor = '#f0f8ff';
+                        consentSection.style.borderLeftColor = '#4CAF50';
+                        consentSection.style.boxShadow = '0 4px 10px rgba(76, 175, 80, 0.1)';
+                    } else {
+                        consentSection.style.backgroundColor = '#f9f9f9';
+                        consentSection.style.borderLeftColor = '#207cca';
+                        consentSection.style.boxShadow = '0 3px 8px rgba(0, 0, 0, 0.05)';
+                    }
+                });
+            });
+            
+            // 表单提交处理
+            const submitBtn = document.querySelector('.submit-btn');
+            if (submitBtn) {
+                submitBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // 检查所有必填复选框是否已勾选
+                    const allChecked = Array.from(consentCheckboxes).every(checkbox => checkbox.checked);
+                    
+                    if (!allChecked) {
+                        alert('Please agree to all the statements before submitting.');
+                        // 滚动到第一个未勾选的复选框
+                        const firstUnchecked = Array.from(consentCheckboxes).find(checkbox => !checkbox.checked);
+                        if (firstUnchecked) {
+                            firstUnchecked.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                            firstUnchecked.focus();
+                        }
+                        return;
+                    }
+                    
+                    // 显示提交成功消息
+                    this.innerHTML = 'Submitted Successfully!';
+                    this.style.backgroundColor = '#4CAF50';
+                    this.disabled = true;
+                    
+                    // 可选：实际提交表单的逻辑
+                    // document.querySelector('form').submit();
+                    
+                    // 3秒后恢复按钮状态
+                    setTimeout(() => {
+                        this.innerHTML = 'Submit Acknowledgement';
+                        this.style.backgroundColor = '';
+                        this.disabled = false;
+                    }, 3000);
+                });
+            }
+            
+            // 移动设备优化：增加触摸目标大小
+            if ('ontouchstart' in window) {
+                document.querySelectorAll('.consent-label, .footer-nav a').forEach(element => {
+                    element.style.padding = '12px 0';
+                    element.style.minHeight = '44px';
+                    element.style.display = 'flex';
+                    element.style.alignItems = 'center';
+                    element.style.justifyContent = 'center';
+                });
+                
+                // 增加复选框触摸目标
+                consentCheckboxes.forEach(checkbox => {
+                    checkbox.style.width = '24px';
+                    checkbox.style.height = '24px';
+                });
+            }
+            
+            // 平滑滚动到锚点
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        const headerOffset = 80;
+                        const elementPosition = targetElement.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                        
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // 打印优化
+            window.addEventListener('beforeprint', () => {
+                document.querySelector('.back-home-float').style.display = 'none';
+            });
+            
+            window.addEventListener('afterprint', () => {
+                document.querySelector('.back-home-float').style.display = 'flex';
+            });
+        });
+    </script>
+</body>
+</html>

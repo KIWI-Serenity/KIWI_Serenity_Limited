@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Medical Disclaimer | KIWI Serenity Limited</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Medical disclaimer for KIWI Serenity Limited outlining the limitations of information and coordination services.">
+  
+  <!-- Google字体 -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ===== CSS变量与全局样式 ===== */
+    :root {
+      --primary-color: #1e40af;
+      --primary-dark: #1e3a8a;
+      --secondary-color: #0f172a;
+      --accent-color: #d4af37;
+      --text-color: #333;
+      --text-light: #64748b;
+      --bg-color: #f8fafc;
+      --card-bg: rgba(255, 255, 255, 0.98);
+      --border-color: #e2e8f0;
+      --highlight-bg: #fff3cd;
+      --highlight-border: #d4af37;
+      --shadow-light: rgba(0, 0, 0, 0.08);
+      --shadow-medium: rgba(0, 0, 0, 0.12);
+      --shadow-heavy: rgba(0, 0, 0, 0.15);
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 14px;
+      --transition: all 0.3s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background: transparent;
+      position: relative;
+      min-height: 100vh;
+      color: var(--text-color);
+      line-height: 1.6;
+      font-size: 16px;
+    }
+
+    /* ===== 响应式容器 ===== */
+    .container {
+      max-width: 1100px;
+      margin: 60px auto;
+      background: var(--card-bg);
+      padding: 50px;
+      border-radius: var(--radius-lg);
+      box-shadow: 0 12px 30px var(--shadow-heavy);
+      position: relative;
+      z-index: 1;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(10px);
+      transition: var(--transition);
+    }
+
+    /* ===== 悬浮返回按钮样式 ===== */
+    .back-home-float {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 9999;
+      padding: 12px 20px;
+      border-radius: 50px;
+      background: rgba(30, 64, 175, 0.9);
+      color: #ffffff;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      white-space: nowrap;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+      backdrop-filter: blur(8px);
+      transition: var(--transition);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .back-home-float:hover {
+      background: rgba(30, 64, 175, 1);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    /* ===== 背景容器 ===== */
+    .background-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    /* 背景图 */
+    .background-image {
+      background-image: url('Background.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 100%;
+      height: 100%;
+      opacity: 0.75;
+      filter: blur(1px) brightness(0.95);
+    }
+
+    /* ===== 标题样式 ===== */
+    h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.5rem;
+      color: var(--primary-color);
+      margin-bottom: 12px;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .updated {
+      font-size: 0.95rem;
+      color: var(--text-light);
+      margin-bottom: 40px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .updated::before {
+      content: "📅";
+      font-size: 1.1rem;
+    }
+
+    h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.4rem;
+      margin-top: 45px;
+      margin-bottom: 18px;
+      color: var(--secondary-color);
+      font-weight: 600;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--border-color);
+      position: relative;
+    }
+
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 60px;
+      height: 2px;
+      background-color: var(--primary-color);
+    }
+
+    /* ===== 段落样式 ===== */
+    p {
+      margin-bottom: 20px;
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    .zh {
+      margin-top: 10px;
+      color: #4b5563;
+      padding-left: 20px;
+      border-left: 3px solid #e5e7eb;
+      font-style: normal;
+    }
+
+    /* ===== 高亮框样式 ===== */
+    .highlight {
+      background: var(--highlight-bg);
+      border-left: 5px solid var(--highlight-border);
+      padding: 25px;
+      border-radius: var(--radius-md);
+      margin: 40px 0;
+      font-size: 1rem;
+      box-shadow: 0 4px 12px rgba(212, 175, 55, 0.1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .highlight::before {
+      content: "⚠️";
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      font-size: 1.5rem;
+    }
+
+    .highlight strong {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+      color: #92400e;
+    }
+
+    /* ===== 页脚样式 ===== */
+    .site-footer {
+      margin-top: 70px;
+      padding-top: 30px;
+      border-top: 2px solid var(--border-color);
+    }
+
+    .footer-inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .footer-nav {
+      margin-bottom: 25px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .footer-nav a {
+      color: var(--text-light);
+      text-decoration: none;
+      font-weight: 500;
+      transition: var(--transition);
+      padding: 5px 12px;
+      border-radius: var(--radius-sm);
+      border: 1px solid transparent;
+    }
+
+    .footer-nav a:hover {
+      color: var(--primary-color);
+      background-color: rgba(30, 64, 175, 0.05);
+      border-color: rgba(30, 64, 175, 0.2);
+    }
+
+    .footer-brand {
+      margin-bottom: 15px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: var(--secondary-color);
+    }
+
+    .footer-notice {
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.6;
+      font-size: 0.95rem;
+      color: var(--text-light);
+    }
+
+    /* ===== 动画效果 ===== */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .container {
+      animation: fadeInUp 0.6s ease-out;
+    }
+
+    /* ===== 打印样式 ===== */
+    @media print {
+      .back-home-float,
+      .background-container {
+        display: none !important;
+      }
+      
+      body {
+        background: white;
+        font-size: 12pt;
+      }
+      
+      .container {
+        box-shadow: none;
+        border: 1px solid #ddd;
+        margin: 0;
+        padding: 20px;
+      }
+      
+      .highlight {
+        background: #f0f0f0 !important;
+        border: 1px solid #ccc;
+      }
+    }
+
+    /* ===== 响应式设计 - 平板设备 (768px - 1024px) ===== */
+    @media (max-width: 1024px) {
+      .container {
+        max-width: 90%;
+        padding: 40px 35px;
+        margin: 50px auto;
+      }
+      
+      h1 {
+        font-size: 2.2rem;
+      }
+      
+      h2 {
+        font-size: 1.3rem;
+        margin-top: 40px;
+      }
+      
+      p {
+        font-size: 1.03rem;
+      }
+      
+      .back-home-float {
+        top: 18px;
+        left: 18px;
+        padding: 10px 18px;
+        font-size: 13px;
+      }
+    }
+
+    /* ===== 响应式设计 - 手机设备 (小于768px) ===== */
+    @media (max-width: 768px) {
+      body {
+        font-size: 15px;
+      }
+      
+      .container {
+        max-width: 95%;
+        padding: 30px 25px;
+        margin: 40px auto;
+        border-radius: 12px;
+      }
+      
+      h1 {
+        font-size: 1.9rem;
+        margin-bottom: 10px;
+      }
+      
+      .updated {
+        font-size: 0.9rem;
+        margin-bottom: 30px;
+      }
+      
+      h2 {
+        font-size: 1.25rem;
+        margin-top: 35px;
+        margin-bottom: 15px;
+      }
+      
+      p {
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 18px;
+      }
+      
+      .zh {
+        padding-left: 15px;
+        margin-top: 8px;
+      }
+      
+      .highlight {
+        padding: 20px;
+        margin: 30px 0;
+      }
+      
+      .highlight::before {
+        top: 15px;
+        left: 15px;
+      }
+      
+      /* 悬浮按钮调整 */
+      .back-home-float {
+        top: 15px;
+        left: 15px;
+        padding: 10px 16px;
+        font-size: 13px;
+      }
+      
+      /* 页脚导航调整 */
+      .footer-nav {
+        flex-direction: column;
+        gap: 12px;
+        align-items: center;
+      }
+      
+      .footer-nav a {
+        display: inline-block;
+        padding: 8px 15px;
+        width: 100%;
+        max-width: 200px;
+        text-align: center;
+      }
+      
+      .site-footer {
+        margin-top: 50px;
+        padding-top: 25px;
+      }
+    }
+
+    /* ===== 响应式设计 - 小手机设备 (小于480px) ===== */
+    @media (max-width: 480px) {
+      body {
+        font-size: 14px;
+      }
+      
+      .container {
+        max-width: 100%;
+        padding: 25px 20px;
+        margin: 30px 15px;
+        border-radius: 10px;
+      }
+      
+      h1 {
+        font-size: 1.7rem;
+      }
+      
+      h2 {
+        font-size: 1.2rem;
+        margin-top: 30px;
+      }
+      
+      .updated {
+        font-size: 0.85rem;
+      }
+      
+      p, .zh {
+        font-size: 0.95rem;
+      }
+      
+      .highlight {
+        padding: 18px 15px;
+        margin: 25px 0;
+      }
+      
+      .back-home-float {
+        top: 12px;
+        left: 12px;
+        padding: 8px 14px;
+        font-size: 12px;
+      }
+      
+      .footer-nav a {
+        max-width: 180px;
+      }
+      
+      .footer-notice {
+        font-size: 0.9rem;
+      }
+    }
+
+    /* ===== 响应式设计 - 超大屏幕 (大于1200px) ===== */
+    @media (min-width: 1200px) {
+      .container {
+        max-width: 1000px;
+      }
+    }
+
+    /* ===== 可访问性改进 ===== */
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+      
+      .back-home-float:hover {
+        transform: none;
+      }
+    }
+
+    /* ===== 高对比度模式 ===== */
+    @media (prefers-contrast: high) {
+      :root {
+        --primary-color: #0000ff;
+        --secondary-color: #000000;
+        --text-color: #000000;
+        --highlight-bg: #ffff00;
+        --highlight-border: #ff0000;
+      }
+      
+      body {
+        background-color: white;
+      }
+      
+      .container {
+        background-color: white;
+        border: 2px solid black;
+      }
+    }
+
+    /* ===== 深色模式支持 ===== */
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --primary-color: #60a5fa;
+        --primary-dark: #3b82f6;
+        --secondary-color: #f1f5f9;
+        --text-color: #e2e8f0;
+        --text-light: #94a3b8;
+        --bg-color: #0f172a;
+        --card-bg: rgba(30, 41, 59, 0.95);
+        --border-color: #334155;
+        --highlight-bg: #451a03;
+        --highlight-border: #f59e0b;
+      }
+      
+      body {
+        background-color: var(--bg-color);
+      }
+      
+      .background-image {
+        filter: blur(1px) brightness(0.6);
+      }
+      
+      .zh {
+        color: #cbd5e1;
+        border-left-color: #475569;
+      }
+      
+      .footer-nav a:hover {
+        background-color: rgba(96, 165, 250, 0.1);
+        border-color: rgba(96, 165, 250, 0.3);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ===== 悬浮返回按钮 ===== -->
+  <a href="index.html" class="back-home-float" aria-label="Back to Home">
+    ← 返回首页 | Back to Home
+  </a>
+
+  <!-- 背景容器 -->
+  <div class="background-container">
+    <div class="background-image"></div>
+  </div>
+  
+  <!-- 主内容容器 -->
+  <div class="container">
+    <h1>Medical Disclaimer</h1>
+    <div class="updated">Last updated: <span id="current-date">January 2026</span></div>
+
+    <!-- 重要通知高亮框 -->
+    <div class="highlight">
+      <strong>Important Notice:</strong><br>
+      The information and services provided by KIWI Serenity Limited are for coordination and informational purposes only and do not constitute medical advice, diagnosis, or treatment.
+    </div>
+
+    <!-- 免责声明内容 -->
+    <section>
+      <h2>1. No Medical Advice</h2>
+      <p>
+        KIWI Serenity Limited does not provide medical, clinical, diagnostic, or therapeutic services.  
+        Any information presented on this website or provided through questionnaires, emails, or communications is general in nature and must not be relied upon as a substitute for professional medical advice.
+      </p>
+      <p class="zh">
+        KIWI Serenity Limited 不提供任何医疗、临床、诊断或治疗服务。本网站及通过问卷、电子邮件或其他方式提供的所有信息，仅供一般性参考，不应被视为或替代专业医疗建议。
+      </p>
+
+      <h2>2. No Doctor–Patient Relationship</h2>
+      <p>
+        Use of this website or submission of information does not establish a doctor–patient or healthcare provider–patient relationship between you and KIWI Serenity Limited.
+      </p>
+      <p class="zh">
+        使用本网站或提交任何信息，并不构成您与 KIWI Serenity Limited 之间的医生—患者或医疗服务提供者—患者关系。
+      </p>
+
+      <h2>3. Third-Party Medical Providers</h2>
+      <p>
+        Any medical services, treatments, or consultations are provided solely by independent third-party licensed medical practitioners or clinics.  
+        KIWI Serenity Limited does not control, supervise, or guarantee the quality, safety, or outcomes of any medical services. We act as an independent coordinator and do not enter into clinical agreements on behalf of providers.
+      </p>
+      <p class="zh">
+        所有医疗服务、治疗或咨询均由独立的第三方持牌医疗机构或医疗专业人士提供。KIWI Serenity Limited 不对任何医疗服务的质量、安全性或结果进行控制、监督或保证。
+      </p>
+
+      <h2>4. No Emergency Services</h2>
+      <p>
+        This website and related services are not intended for use in medical emergencies.  
+        If you are experiencing a medical emergency, please seek immediate assistance from local emergency services or a qualified healthcare provider.
+      </p>
+      <p class="zh">
+        本网站及相关服务不适用于紧急医疗情况。如您正处于医疗紧急状态，请立即联系当地急救服务或合格的医疗机构。
+      </p>
+
+      <h2>5. Limitation of Liability</h2>
+      <p>
+        To the maximum extent permitted by law, KIWI Serenity Limited shall not be liable for any loss, damage, injury, or adverse outcome arising from reliance on information provided through this website or related coordination services.
+      </p>
+      <p class="zh">
+        在法律允许的最大范围内，KIWI Serenity Limited 不对因依赖本网站或相关协调服务所提供的信息而产生的任何损失、损害、伤害或不良结果承担责任。
+      </p>
+
+      <h2>6. Governing Law</h2>
+      <p>
+        This disclaimer is governed by and construed in accordance with the laws of New Zealand.
+      </p>
+      <p class="zh">
+        本免责声明受新西兰法律管辖并依其解释。
+      </p>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-nav">
+          <a href="index.html">Home</a>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+          <a href="disclaimer.html">Medical Disclaimer</a>
+        </div>
+
+        <p class="footer-brand">
+          © <span id="current-year">2026</span> <strong>KIWI Serenity Limited</strong>. All rights reserved.
+        </p>
+
+        <p class="footer-notice">
+          KIWI Serenity Limited provides information and coordination services only
+          and does not provide medical advice, diagnosis, or treatment.
+        </p>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // DOM加载完成后执行
+    document.addEventListener('DOMContentLoaded', function() {
+      // 更新当前年份
+      const currentYear = new Date().getFullYear();
+      document.getElementById('current-year').textContent = currentYear;
+      
+      // 更新最后更新日期
+      const currentDate = new Date();
+      const options = { year: 'numeric', month: 'long' };
+      const formattedDate = currentDate.toLocaleDateString('en-NZ', options);
+      document.getElementById('current-date').textContent = formattedDate;
+      
+      // 移动设备优化：增加触摸目标大小
+      if ('ontouchstart' in window) {
+        document.querySelectorAll('.footer-nav a, .back-home-float').forEach(element => {
+          element.style.padding = '12px 20px';
+          element.style.minHeight = '44px';
+          element.style.display = 'flex';
+          element.style.alignItems = 'center';
+          element.style.justifyContent = 'center';
+        });
+      }
+      
+      // 平滑滚动到锚点
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href');
+          if (targetId === '#') return;
+          
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            const headerOffset = 80;
+            const elementPosition = targetElement.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+            
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+      
+      // 打印优化
+      window.addEventListener('beforeprint', () => {
+        document.querySelector('.back-home-float').style.display = 'none';
+      });
+      
+      window.addEventListener('afterprint', () => {
+        document.querySelector('.back-home-float').style.display = 'flex';
+      });
+      
+      // 添加卡片悬停效果
+      const container = document.querySelector('.container');
+      if (container) {
+        container.addEventListener('mouseenter', () => {
+          container.style.boxShadow = '0 15px 40px rgba(0, 0, 0, 0.18)';
+          container.style.transform = 'translateY(-5px)';
+        });
+        
+        container.addEventListener('mouseleave', () => {
+          container.style.boxShadow = '0 12px 30px rgba(0, 0, 0, 0.15)';
+          container.style.transform = 'translateY(0)';
+        });
+      }
+      
+      // 高亮重要内容
+      const highlightElement = document.querySelector('.highlight');
+      if (highlightElement) {
+        // 添加轻微脉动动画
+        setInterval(() => {
+          highlightElement.style.boxShadow = '0 4px 15px rgba(212, 175, 55, 0.2)';
+          setTimeout(() => {
+            highlightElement.style.boxShadow = '0 4px 12px rgba(212, 175, 55, 0.1)';
+          }, 1000);
+        }, 5000);
+      }
+    });
+    
+    // 监听系统颜色模式变化
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+      // 重新加载页面以应用新的颜色方案
+      if (e.matches) {
+        console.log('Dark mode activated');
+      } else {
+        console.log('Light mode activated');
+      }
+    });
+  </script>
+</body>
+</html>
