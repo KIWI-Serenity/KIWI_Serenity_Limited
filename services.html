@@ -1,0 +1,1908 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>KIWI Serenity Limited | Services Navigation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+    <meta name="description" content="Navigate through KIWI Serenity Limited's medical and wellness travel coordination services. Find TCM, dental, tours, and premium packages.">
+    <meta name="theme-color" content="#1e40af">
+    
+    <!-- iOS Safari 优化 -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="format-detection" content="telephone=no">
+    
+    <!-- 预加载关键资源 -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;500&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" as="style">
+    
+    <!-- 字体和图标 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;500&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- 图标 -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    
+    <style>
+        /* ===== CSS 变量与重置 ===== */
+        :root {
+            /* 主色调 */
+            --primary-color: #1e40af;
+            --primary-light: #3b82f6;
+            --primary-dark: #1e3a8a;
+            --secondary-color: #2f855a;
+            --secondary-light: #38a169;
+            --accent-color: #d4af37;
+            --accent-light: #e6b940;
+            
+            /* 服务特定颜色 */
+            --tcm-red: #c53030;
+            --tcm-light: #e53e3e;
+            --dental-blue: #1e88e5;
+            --dental-light: #4299e1;
+            --tour-green: #2f855a;
+            --tour-light: #38a169;
+            --premium-gold: #d4af37;
+            --premium-light: #e6b940;
+            --questionnaire-purple: #7c3aed;
+            --questionnaire-light: #8b5cf6;
+            --faq-teal: #059669;
+            --faq-light: #10b981;
+            
+            /* 中性色 */
+            --dark-color: #1f2937;
+            --darker-color: #111827;
+            --light-color: #f8fafc;
+            --lighter-color: #ffffff;
+            --text-color: #333333;
+            --text-light: #666666;
+            --text-lighter: #94a3b8;
+            --border-color: #e2e8f0;
+            --border-light: #f1f5f9;
+            
+            /* 阴影和效果 */
+            --border-radius-sm: 8px;
+            --border-radius: 12px;
+            --border-radius-lg: 16px;
+            --border-radius-xl: 24px;
+            --box-shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
+            --box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+            --box-shadow-lg: 0 18px 40px rgba(0,0,0,0.12);
+            --box-shadow-xl: 0 25px 50px rgba(0,0,0,0.15);
+            --transition-fast: 0.2s ease;
+            --transition: 0.3s ease;
+            --transition-slow: 0.5s ease;
+            
+            /* 间距 */
+            --spacing-xs: 0.25rem;
+            --spacing-sm: 0.5rem;
+            --spacing-md: 1rem;
+            --spacing-lg: 1.5rem;
+            --spacing-xl: 2rem;
+            --spacing-2xl: 3rem;
+            --spacing-3xl: 4rem;
+            
+            /* 响应式断点 */
+            --breakpoint-sm: 576px;
+            --breakpoint-md: 768px;
+            --breakpoint-lg: 992px;
+            --breakpoint-xl: 1200px;
+            --breakpoint-2xl: 1400px;
+        }
+        
+        /* 暗色模式变量 */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --dark-color: #0f172a;
+                --light-color: #1e293b;
+                --lighter-color: #334155;
+                --text-color: #f1f5f9;
+                --text-light: #cbd5e1;
+                --border-color: #475569;
+                --border-light: #334155;
+                --box-shadow-sm: 0 2px 8px rgba(0,0,0,0.2);
+                --box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+            }
+        }
+        
+        /* 重置和基础样式 */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            font-size: 16px;
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+            -webkit-text-size-adjust: 100%;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        body {
+            font-family: 'Open Sans', 'Noto Sans SC', system-ui, -apple-system, sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+            font-weight: 400;
+            background: var(--light-color);
+            overflow-x: hidden;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* 添加渐变背景效果 */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(30, 64, 175, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(47, 133, 90, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(212, 175, 55, 0.02) 0%, transparent 50%);
+            z-index: -1;
+            pointer-events: none;
+        }
+        
+        /* ===== 新版响应式头部 ===== */
+        .site-header {
+            padding: var(--spacing-xl) var(--spacing-md);
+            background: linear-gradient(135deg, 
+                rgba(30, 64, 175, 0.05) 0%, 
+                rgba(47, 133, 90, 0.05) 50%, 
+                rgba(212, 175, 55, 0.02) 100%);
+            border-bottom: 1px solid var(--border-color);
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        
+        .site-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                linear-gradient(45deg, transparent 65%, rgba(30, 64, 175, 0.03) 65%, transparent 70%),
+                linear-gradient(135deg, transparent 65%, rgba(47, 133, 90, 0.03) 65%, transparent 70%);
+            z-index: 0;
+            pointer-events: none;
+        }
+        
+        .header-content {
+            max-width: var(--breakpoint-2xl);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            gap: var(--spacing-xl);
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-lg);
+            min-width: 200px;
+        }
+        
+        .header-logo {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            transition: all var(--transition);
+            border: 3px solid white;
+        }
+        
+        .header-logo:hover {
+            transform: rotate(-5deg) scale(1.05);
+            box-shadow: var(--box-shadow-lg);
+        }
+        
+        .header-text {
+            flex: 1;
+        }
+        
+        .site-header h1 {
+            font-family: 'Montserrat', system-ui, -apple-system, sans-serif;
+            font-size: clamp(1.5rem, 4vw, 2.2rem);
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-xs);
+            line-height: 1.2;
+            letter-spacing: -0.5px;
+        }
+        
+        .site-header .tagline {
+            font-size: clamp(0.875rem, 2.5vw, 1.2rem);
+            color: var(--secondary-color);
+            font-weight: 600;
+            margin-bottom: var(--spacing-xs);
+            display: inline-block;
+            padding: var(--spacing-xs) var(--spacing-sm);
+            background: rgba(47, 133, 90, 0.08);
+            border-radius: var(--border-radius-sm);
+        }
+        
+        .site-header .subtitle {
+            font-size: clamp(0.875rem, 2vw, 1rem);
+            color: var(--text-light);
+            line-height: 1.5;
+            max-width: 500px;
+        }
+        
+        .services-visual {
+            width: clamp(120px, 20vw, 220px);
+            height: clamp(80px, 15vw, 120px);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            position: relative;
+            transition: all var(--transition);
+        }
+        
+        .services-visual:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: var(--box-shadow-lg);
+        }
+        
+        .services-visual img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+        
+        .services-visual:hover img {
+            transform: scale(1.1);
+        }
+        
+        .notice {
+            grid-column: 1 / -1;
+            background: rgba(255, 243, 205, 0.9);
+            border-left: 5px solid var(--accent-color);
+            padding: var(--spacing-lg);
+            border-radius: var(--border-radius);
+            font-size: 0.875rem;
+            color: #856404;
+            margin-top: var(--spacing-lg);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+        }
+        
+        .notice strong {
+            font-weight: 600;
+        }
+        
+        /* ===== 响应式主导航 ===== */
+        .main-nav {
+            background: var(--dark-color);
+            color: var(--lighter-color);
+            padding: var(--spacing-sm) var(--spacing-md);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--box-shadow);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            background: rgba(31, 41, 55, 0.95);
+        }
+        
+        .nav-container {
+            max-width: var(--breakpoint-2xl);
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+        
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: var(--spacing-sm);
+            transition: all var(--transition);
+        }
+        
+        .nav-link {
+            color: var(--lighter-color);
+            text-decoration: none;
+            font-weight: 500;
+            padding: var(--spacing-sm) var(--spacing-md);
+            border-radius: var(--border-radius-sm);
+            transition: all var(--transition);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            font-size: 0.875rem;
+            white-space: nowrap;
+        }
+        
+        .nav-link:hover,
+        .nav-link:focus {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
+            outline: none;
+        }
+        
+        .nav-link i {
+            font-size: 1rem;
+        }
+        
+        /* ===== 汉堡菜单（移动端） ===== */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--lighter-color);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: var(--spacing-sm);
+            border-radius: var(--border-radius-sm);
+            transition: all var(--transition);
+            z-index: 1001;
+        }
+        
+        .menu-toggle:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        /* 为菜单活动状态添加遮罩 */
+        .menu-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            backdrop-filter: blur(3px);
+            -webkit-backdrop-filter: blur(3px);
+        }
+        
+        .menu-overlay.active {
+            display: block;
+        }
+        
+        /* 平板设备 (768px 以下) */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            
+            .nav-links {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(31, 41, 55, 0.98);
+                padding: 80px var(--spacing-md) var(--spacing-xl);
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                gap: var(--spacing-md);
+                box-shadow: var(--box-shadow-lg);
+                overflow-y: auto;
+                z-index: 1000;
+                backdrop-filter: blur(20px);
+                -webkit-backdrop-filter: blur(20px);
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+            }
+            
+            .nav-links.active {
+                display: flex;
+                transform: translateX(0);
+            }
+            
+            .nav-link {
+                padding: var(--spacing-lg) var(--spacing-xl);
+                justify-content: center;
+                font-size: 1.1rem;
+                width: 100%;
+                max-width: 300px;
+                text-align: center;
+                border-radius: var(--border-radius);
+                background: rgba(255, 255, 255, 0.1);
+            }
+            
+            .nav-link i {
+                font-size: 1.2rem;
+            }
+        }
+        
+        /* 手机设备 (576px 以下) */
+        @media (max-width: 576px) {
+            .nav-link {
+                padding: var(--spacing-md) var(--spacing-lg);
+                font-size: 1rem;
+            }
+            
+            .nav-link i {
+                font-size: 1rem;
+            }
+        }
+        
+        /* ===== 主内容容器 ===== */
+        .container {
+            max-width: min(var(--breakpoint-xl), 95%);
+            margin: 0 auto;
+            padding: var(--spacing-xl) var(--spacing-md);
+            flex: 1;
+        }
+        
+        /* ===== 统计数据展示 ===== */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-lg);
+            margin: var(--spacing-2xl) 0;
+        }
+        
+        .stat-item {
+            background: var(--lighter-color);
+            border-radius: var(--border-radius);
+            padding: var(--spacing-xl);
+            text-align: center;
+            box-shadow: var(--box-shadow);
+            transition: all var(--transition);
+            border: 1px solid var(--border-light);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .stat-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--box-shadow-lg);
+            border-color: var(--primary-light);
+        }
+        
+        .stat-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            transform: scaleX(0);
+            transition: transform var(--transition);
+        }
+        
+        .stat-item:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .stat-number {
+            font-family: 'Montserrat', system-ui, -apple-system, sans-serif;
+            font-size: clamp(2rem, 5vw, 2.5rem);
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-xs);
+            display: block;
+            line-height: 1;
+        }
+        
+        .stat-label {
+            font-size: 0.875rem;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            line-height: 1.4;
+        }
+        
+        /* ===== 服务类别标题 ===== */
+        .category-header {
+            text-align: center;
+            margin: var(--spacing-3xl) 0 var(--spacing-2xl);
+            padding: 0 var(--spacing-md);
+        }
+        
+        .category-title {
+            font-family: 'Montserrat', system-ui, -apple-system, sans-serif;
+            font-size: clamp(1.75rem, 4vw, 2.2rem);
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-lg);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .category-title::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: var(--accent-color);
+            border-radius: 2px;
+        }
+        
+        .category-subtitle {
+            font-size: clamp(1rem, 2vw, 1.1rem);
+            color: var(--text-light);
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        
+        /* ===== 响应式服务卡片网格 ===== */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(min(100%, 350px), 1fr));
+            gap: var(--spacing-xl);
+            margin: var(--spacing-xl) 0;
+        }
+        
+        .service-card {
+            background: var(--lighter-color);
+            border-radius: var(--border-radius-lg);
+            padding: var(--spacing-xl);
+            box-shadow: var(--box-shadow);
+            transition: all var(--transition);
+            border: 1px solid var(--border-light);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--primary-color);
+            transform: scaleX(0);
+            transition: transform var(--transition);
+            transform-origin: left;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--box-shadow-lg);
+            border-color: var(--primary-light);
+        }
+        
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        /* 服务卡片颜色变体 */
+        .service-card.tcm {
+            border-top-color: var(--tcm-red);
+        }
+        .service-card.tcm::before { background: var(--tcm-red); }
+        
+        .service-card.dental {
+            border-top-color: var(--dental-blue);
+        }
+        .service-card.dental::before { background: var(--dental-blue); }
+        
+        .service-card.tour {
+            border-top-color: var(--tour-green);
+        }
+        .service-card.tour::before { background: var(--tour-green); }
+        
+        .service-card.premium {
+            border-top-color: var(--premium-gold);
+        }
+        .service-card.premium::before { background: var(--premium-gold); }
+        
+        .service-card.questionnaire {
+            border-top-color: var(--questionnaire-purple);
+        }
+        .service-card.questionnaire::before { background: var(--questionnaire-purple); }
+        
+        .service-card.faq {
+            border-top-color: var(--faq-teal);
+        }
+        .service-card.faq::before { background: var(--faq-teal); }
+        
+        .service-card .icon {
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-lg);
+            color: var(--primary-color);
+            transition: transform var(--transition);
+        }
+        
+        .service-card:hover .icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+        
+        .service-card h2 {
+            font-family: 'Montserrat', system-ui, -apple-system, sans-serif;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-md);
+            line-height: 1.3;
+        }
+        
+        /* 服务卡片标题颜色 */
+        .service-card.tcm h2 { color: var(--tcm-red); }
+        .service-card.dental h2 { color: var(--dental-blue); }
+        .service-card.tour h2 { color: var(--tour-green); }
+        .service-card.premium h2 { color: var(--premium-gold); }
+        .service-card.questionnaire h2 { color: var(--questionnaire-purple); }
+        .service-card.faq h2 { color: var(--faq-teal); }
+        
+        .service-card p {
+            color: var(--text-light);
+            font-size: 1rem;
+            margin-bottom: var(--spacing-xl);
+            line-height: 1.6;
+            flex-grow: 1;
+        }
+        
+        /* 卡片操作按钮 */
+        .card-actions {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-sm);
+            margin-top: auto;
+        }
+        
+        .service-card a {
+            display: inline-block;
+            padding: var(--spacing-md) var(--spacing-lg);
+            border-radius: var(--border-radius);
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all var(--transition);
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card a::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+        
+        .service-card a:hover::after {
+            width: 300px;
+            height: 300px;
+        }
+        
+        .service-card a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        /* 按钮颜色变体 */
+        .service-card.tcm a { background: linear-gradient(135deg, var(--tcm-red), #e53e3e); }
+        .service-card.dental a { background: linear-gradient(135deg, var(--dental-blue), #1e88e5); }
+        .service-card.tour a { background: linear-gradient(135deg, var(--tour-green), #38a169); }
+        .service-card.premium a { background: linear-gradient(135deg, var(--premium-gold), #d69e2e); }
+        .service-card.questionnaire a { background: linear-gradient(135deg, var(--questionnaire-purple), #8b5cf6); }
+        .service-card.faq a { background: linear-gradient(135deg, var(--faq-teal), #10b981); }
+        
+        .secondary-btn {
+            padding: var(--spacing-sm) var(--spacing-lg);
+            border-radius: var(--border-radius);
+            background: transparent;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: all var(--transition);
+            border: 2px solid var(--primary-color);
+            text-align: center;
+        }
+        
+        .secondary-btn:hover {
+            background: rgba(30, 64, 175, 0.1);
+            transform: translateY(-2px);
+        }
+        
+        /* ===== 分隔线 ===== */
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(30, 64, 175, 0.2), transparent);
+            margin: var(--spacing-3xl) auto;
+            max-width: 1000px;
+        }
+        
+        /* ===== 特色展示区域 ===== */
+        .feature-section {
+            background: linear-gradient(135deg, 
+                rgba(30, 64, 175, 0.03) 0%, 
+                rgba(47, 133, 90, 0.03) 100%);
+            padding: var(--spacing-3xl) var(--spacing-md);
+            margin: var(--spacing-3xl) 0;
+            border-radius: var(--border-radius-lg);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid var(--border-light);
+        }
+        
+        .feature-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 300px;
+            height: 100%;
+            background: url('services.png') no-repeat right top;
+            background-size: contain;
+            opacity: 0.08;
+            z-index: 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: clamp(1.75rem, 4vw, 2.2rem);
+            font-weight: 700;
+            margin-bottom: var(--spacing-2xl);
+            color: var(--primary-color);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--accent-color);
+            border-radius: 2px;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            font-size: clamp(1rem, 2vw, 1.1rem);
+            color: var(--text-light);
+            max-width: 800px;
+            margin: 0 auto var(--spacing-2xl);
+            line-height: 1.6;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+            gap: var(--spacing-xl);
+            max-width: var(--breakpoint-xl);
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .feature-item {
+            background: var(--lighter-color);
+            border-radius: var(--border-radius);
+            padding: var(--spacing-xl);
+            text-align: center;
+            box-shadow: var(--box-shadow);
+            transition: all var(--transition);
+            border: 1px solid var(--border-light);
+        }
+        
+        .feature-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--box-shadow-lg);
+            border-color: var(--primary-light);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-lg);
+            transition: transform var(--transition);
+        }
+        
+        .feature-item:hover .feature-icon {
+            transform: scale(1.1) rotate(10deg);
+        }
+        
+        .feature-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: var(--spacing-md);
+            color: var(--primary-color);
+        }
+        
+        .feature-item .english {
+            font-style: italic;
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-top: var(--spacing-xs);
+        }
+        
+        /* ===== 响应式联系栏 ===== */
+        .contact-bar {
+            background: var(--lighter-color);
+            padding: var(--spacing-xl);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+            max-width: 1000px;
+            margin: var(--spacing-3xl) auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
+            gap: var(--spacing-lg);
+            align-items: start;
+            border: 1px solid var(--border-light);
+        }
+        
+        .contact-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: var(--spacing-sm);
+        }
+        
+        .contact-icon {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: var(--spacing-sm);
+            transition: transform var(--transition);
+        }
+        
+        .contact-item:hover .contact-icon {
+            transform: scale(1.1);
+        }
+        
+        .contact-main {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-color);
+            line-height: 1.4;
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        .contact-sub {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            font-style: italic;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: var(--spacing-md);
+            justify-content: center;
+            margin-top: var(--spacing-sm);
+        }
+        
+        .social-icon {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            transition: all var(--transition);
+        }
+        
+        .social-icon:hover {
+            transform: translateY(-3px);
+            color: var(--primary-light);
+        }
+        
+        /* ===== 返回顶部按钮 ===== */
+        #back-to-top {
+            position: fixed;
+            bottom: var(--spacing-xl);
+            right: var(--spacing-xl);
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            cursor: pointer;
+            box-shadow: var(--box-shadow-lg);
+            transition: all var(--transition);
+            opacity: 0;
+            visibility: hidden;
+            z-index: 999;
+            border: none;
+            outline: none;
+        }
+        
+        #back-to-top:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: var(--box-shadow-xl);
+        }
+        
+        #back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* ===== 浮动返回主页按钮 ===== */
+        .back-main-float {
+            position: fixed;
+            bottom: calc(var(--spacing-xl) + 60px);
+            left: var(--spacing-xl);
+            z-index: 9999;
+            padding: var(--spacing-sm) var(--spacing-lg);
+            border-radius: 999px;
+            background: rgba(30, 64, 175, 0.9);
+            color: #ffffff;
+            font-size: 0.813rem;
+            font-weight: 600;
+            text-decoration: none;
+            white-space: nowrap;
+            box-shadow: var(--box-shadow);
+            backdrop-filter: blur(6px);
+            transition: all var(--transition);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+        }
+        
+        .back-main-float:hover {
+            background: var(--primary-color);
+            transform: translateY(-2px);
+            box-shadow: var(--box-shadow-lg);
+        }
+        
+        /* ===== 页脚 ===== */
+        .site-footer {
+            background: var(--dark-color);
+            color: #cbd5e1;
+            padding: var(--spacing-2xl) var(--spacing-md);
+            text-align: center;
+            font-size: 0.9rem;
+            margin-top: auto;
+        }
+        
+        .footer-content {
+            max-width: var(--breakpoint-xl);
+            margin: 0 auto;
+        }
+        
+        .footer-nav {
+            margin-bottom: var(--spacing-xl);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: var(--spacing-md);
+        }
+        
+        .footer-nav a {
+            color: #cbd5e1;
+            text-decoration: none;
+            padding: var(--spacing-xs) var(--spacing-sm);
+            border-radius: var(--border-radius-sm);
+            transition: all var(--transition);
+        }
+        
+        .footer-nav a:hover {
+            color: white;
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .footer-brand {
+            margin: var(--spacing-lg) 0;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: white;
+        }
+        
+        .footer-notice {
+            max-width: 800px;
+            margin: var(--spacing-xl) auto 0;
+            color: #94a3b8;
+            font-size: 0.85rem;
+            line-height: 1.5;
+            padding: var(--spacing-md);
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: var(--border-radius);
+        }
+        
+        /* ===== 动画效果 ===== */
+        @keyframes fadeIn {
+            from { 
+                opacity: 0; 
+                transform: translateY(20px); 
+            }
+            to { 
+                opacity: 1; 
+                transform: translateY(0); 
+            }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.6s ease-out forwards;
+            opacity: 0;
+        }
+        
+        /* ===== 响应式设计 ===== */
+        
+        /* 平板设备 (768px 以下) */
+        @media (max-width: 768px) {
+            /* 头部布局调整为垂直 */
+            .header-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: var(--spacing-lg);
+            }
+            
+            .logo-container {
+                flex-direction: column;
+                min-width: auto;
+            }
+            
+            .header-logo {
+                width: 70px;
+                height: 70px;
+            }
+            
+            .services-visual {
+                width: 180px;
+                height: 100px;
+                margin: 0 auto;
+            }
+            
+            /* 服务卡片调整为单列 */
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: var(--spacing-lg);
+            }
+            
+            .service-card {
+                padding: var(--spacing-lg);
+            }
+            
+            /* 统计网格调整为2列 */
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: var(--spacing-md);
+            }
+            
+            .stat-item {
+                padding: var(--spacing-lg);
+            }
+            
+            /* 联系栏调整为单列 */
+            .contact-bar {
+                grid-template-columns: 1fr;
+                gap: var(--spacing-xl);
+                padding: var(--spacing-lg);
+            }
+            
+            .contact-item {
+                padding: var(--spacing-md) 0;
+            }
+            
+            /* 特色网格调整为单列 */
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: var(--spacing-lg);
+            }
+            
+            /* 调整浮动按钮位置 */
+            .back-main-float {
+                bottom: var(--spacing-md);
+                left: var(--spacing-md);
+                padding: var(--spacing-sm) var(--spacing-md);
+                font-size: 0.75rem;
+            }
+            
+            #back-to-top {
+                bottom: var(--spacing-md);
+                right: var(--spacing-md);
+                width: 45px;
+                height: 45px;
+                font-size: 1.2rem;
+            }
+            
+            /* 调整间距 */
+            .container {
+                padding: var(--spacing-lg) var(--spacing-md);
+            }
+            
+            .category-header {
+                margin: var(--spacing-2xl) 0 var(--spacing-xl);
+            }
+        }
+        
+        /* 手机设备 (576px 以下) */
+        @media (max-width: 576px) {
+            /* 头部进一步优化 */
+            .site-header {
+                padding: var(--spacing-lg) var(--spacing-md);
+            }
+            
+            .site-header h1 {
+                font-size: 1.5rem;
+            }
+            
+            .site-header .tagline {
+                font-size: 1rem;
+                padding: 4px 8px;
+            }
+            
+            .header-logo {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .services-visual {
+                width: 150px;
+                height: 80px;
+            }
+            
+            /* 统计网格调整为单列 */
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: var(--spacing-md);
+            }
+            
+            /* 服务卡片进一步优化 */
+            .service-card {
+                padding: var(--spacing-lg) var(--spacing-md);
+            }
+            
+            .service-card h2 {
+                font-size: 1.3rem;
+            }
+            
+            .service-card p {
+                font-size: 0.95rem;
+            }
+            
+            /* 按钮调整为块级显示 */
+            .card-actions a,
+            .secondary-btn {
+                width: 100%;
+                padding: var(--spacing-md);
+            }
+            
+            /* 页脚导航调整为垂直 */
+            .footer-nav {
+                flex-direction: column;
+                gap: var(--spacing-sm);
+            }
+            
+            .footer-nav a {
+                padding: var(--spacing-xs);
+            }
+            
+            /* 浮动按钮进一步缩小 */
+            .back-main-float {
+                bottom: 10px;
+                left: 10px;
+                padding: 8px 12px;
+                font-size: 0.688rem;
+            }
+            
+            #back-to-top {
+                bottom: 10px;
+                right: 10px;
+                width: 40px;
+                height: 40px;
+                font-size: 1.1rem;
+            }
+            
+            /* 调整所有内边距 */
+            .container,
+            .feature-section,
+            .contact-bar {
+                padding-left: var(--spacing-sm);
+                padding-right: var(--spacing-sm);
+            }
+            
+            .category-title {
+                font-size: 1.5rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+        }
+        
+        /* 超小屏幕设备 (400px 以下) */
+        @media (max-width: 400px) {
+            /* 进一步优化小屏幕显示 */
+            .site-header h1 {
+                font-size: 1.3rem;
+            }
+            
+            .site-header .tagline {
+                font-size: 0.875rem;
+            }
+            
+            .header-logo {
+                width: 50px;
+                height: 50px;
+            }
+            
+            .services-visual {
+                width: 130px;
+                height: 70px;
+            }
+            
+            /* 简化卡片内边距 */
+            .service-card {
+                padding: var(--spacing-md);
+            }
+            
+            .stat-item {
+                padding: var(--spacing-md);
+            }
+            
+            /* 调整字体大小 */
+            .category-title,
+            .section-title {
+                font-size: 1.3rem;
+            }
+            
+            .stat-number {
+                font-size: 1.75rem;
+            }
+        }
+        
+        /* 横屏模式优化 */
+        @media (max-height: 500px) and (orientation: landscape) {
+            .site-header {
+                padding: var(--spacing-md);
+            }
+            
+            .header-content {
+                grid-template-columns: auto 1fr auto;
+                gap: var(--spacing-md);
+            }
+            
+            .header-logo {
+                width: 50px;
+                height: 50px;
+            }
+            
+            .services-visual {
+                width: 100px;
+                height: 60px;
+            }
+        }
+        
+        /* 高分辨率设备优化 */
+        @media (min-width: 1400px) {
+            .container,
+            .nav-container,
+            .header-content {
+                max-width: var(--breakpoint-2xl);
+            }
+        }
+        
+        /* 打印样式优化 */
+        @media print {
+            .back-main-float,
+            #back-to-top,
+            .main-nav,
+            .menu-toggle {
+                display: none !important;
+            }
+            
+            body {
+                background: white !important;
+                color: black !important;
+            }
+            
+            .site-header,
+            .service-card,
+            .feature-section,
+            .contact-bar {
+                box-shadow: none !important;
+                border: 1px solid #ddd !important;
+                break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 浮动返回主页按钮 -->
+    <a href="index.html" class="back-main-float" aria-label="Back to Main Landing Page">
+        <i class="fas fa-arrow-left"></i>
+        <span>返回主页面</span>
+    </a>
+
+    <!-- 返回顶部按钮 -->
+    <button id="back-to-top" title="返回顶部 | Back to Top" aria-label="返回顶部">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- 响应式网站头部 -->
+    <header class="site-header">
+        <div class="header-content">
+            <div class="logo-container">
+                <img src="logo.jpg" alt="KIWI Serenity Limited Logo" class="header-logo" loading="eager">
+                
+                <div class="header-text">
+                    <h1>KIWI Serenity Limited</h1>
+                    <p class="tagline">Services Navigation</p>
+                    <p class="subtitle">
+                        Find your way through our medical and wellness travel coordination services
+                        <br>
+                        浏览我们的医疗与健康旅行协调服务
+                    </p>
+                </div>
+            </div>
+            
+            <div class="services-visual">
+                <img src="services.png" alt="Services Visual" loading="lazy">
+            </div>
+            
+            <div class="notice">
+                <strong>Important Notice:</strong>
+                This website provides information and coordination services only and does not constitute medical advice, diagnosis, or treatment.
+                <br>
+                <strong>重要提示：</strong>
+                本网站仅提供信息与协调服务，不构成医疗建议、诊断或治疗。
+            </div>
+        </div>
+    </header>
+    
+    <!-- 菜单遮罩 -->
+    <div class="menu-overlay" id="menu-overlay"></div>
+
+    <!-- 响应式主导航 -->
+    <nav class="main-nav" role="navigation" aria-label="主要导航">
+        <div class="nav-container">
+            <button class="menu-toggle" aria-label="导航菜单" aria-expanded="false" aria-controls="nav-links">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <div class="nav-links" id="nav-links" role="menu">
+                <a href="#health-services" class="nav-link" role="menuitem">
+                    <i class="fas fa-heartbeat"></i> 健康服务 | Health Services
+                </a>
+                <a href="#travel-experiences" class="nav-link" role="menuitem">
+                    <i class="fas fa-map-marked-alt"></i> 旅行体验 | Travel Experiences
+                </a>
+                <a href="#resources" class="nav-link" role="menuitem">
+                    <i class="fas fa-tools"></i> 资源工具 | Resources
+                </a>
+                <a href="#contact" class="nav-link" role="menuitem">
+                    <i class="fas fa-phone-alt"></i> 联系我们 | Contact
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主内容区域 -->
+    <main class="container">
+        <!-- 统计数据展示 -->
+        <div class="stats-grid">
+            <div class="stat-item fade-in">
+                <span class="stat-number">95%</span>
+                <span class="stat-label">客户满意度<br>Client Satisfaction</span>
+            </div>
+            <div class="stat-item fade-in">
+                <span class="stat-number">Up to 60% (Dental Care)</span>
+                <span class="stat-label">（口腔）节省约至60%<br>Cost Saving</span>
+            </div>
+            <div class="stat-item fade-in">
+                <span class="stat-number">24/7</span>
+                <span class="stat-label">双语支持<br>Bilingual Support</span>
+            </div>
+        </div>
+        
+        <!-- 健康服务类别 -->
+        <section id="health-services" aria-labelledby="health-services-title">
+            <div class="category-header">
+                <h2 class="category-title" id="health-services-title">健康服务 | Health Services</h2>
+                <p class="category-subtitle">
+                    Professional health consultation and appointment coordination services for international visitors
+                    <br>
+                    为国际访客提供的专业健康咨询与预约协调服务
+                </p>
+            </div>
+            
+            <div class="services-grid">
+                <article class="service-card tcm fade-in" role="article">
+                    <div class="icon" aria-hidden="true"><i class="fas fa-spa"></i></div>
+                    <h2>Traditional Chinese Medicine (TCM)</h2>
+                    <p>
+                        体验成都专业中医理疗服务，包括针灸、推拿、拔罐等传统疗法，感受中医文化的独特魅力。
+                        <br><br>
+                        Experience curated TCM culture & wellness sessions arranged with licensed providers.
+                    </p>
+                    <div class="card-actions">
+                        <a href="tcm.html#tcm-packages" class="primary-action">查看中医 | About TCM </a>
+                    </div>
+                </article>
+
+                <article class="service-card dental fade-in" role="article">
+                    <div class="icon" aria-hidden="true"><i class="fas fa-tooth"></i></div>
+                    <h2>Dental Care Services</h2>
+                    <p>
+                        在成都享受高质量的牙科咨询服务，费用相比新西兰可节省高达60%。我们提供预约协调和全程英语支持。
+                        <br><br>
+                        Enjoy high-quality dental consultations in Chengdu may save up to 60% compared to New Zealand costs.
+                    </p>
+                    <div class="card-actions">
+                        <a href="dental.html#dental-detail" class="primary-action">查看牙科服务 | View Dental Services</a>
+                    </div>
+                </article>
+
+                <article class="service-card questionnaire fade-in" role="article">
+                    <div class="icon" aria-hidden="true"><i class="fas fa-file-medical"></i></div>
+                    <h2>Health Information Questionnaire</h2>
+                    <p>
+                        提交您的健康和旅行信息，我们将为您提供个性化的协调服务建议。免费咨询，无任何义务。
+                        <br><br>
+                        Submit your health and travel information for personalized coordination service recommendations.
+                    </p>
+                    <div class="card-actions">
+                        <a href="questionnaire.html" class="primary-action">填写问卷 | Complete Questionnaire</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <div class="section-divider" aria-hidden="true"></div>
+
+        <!-- 旅行体验类别 -->
+        <section id="travel-experiences" aria-labelledby="travel-experiences-title">
+            <div class="category-header">
+                <h2 class="category-title" id="travel-experiences-title">旅行体验 | Travel Experiences</h2>
+                <p class="category-subtitle">
+                    Immersive cultural journeys that blend nature, heritage, and wellness
+                    <br>
+                    融合自然、文化遗产与健康养生的沉浸式文化之旅
+                </p>
+            </div>
+            
+            <div class="services-grid">
+                <article class="service-card tour fade-in" role="article">
+                    <div class="icon" aria-hidden="true"><i class="fas fa-map-marked-alt"></i></div>
+                    <h2>Cultural & Travel Experiences</h2>
+                    <p>
+                        探索精心策划的四川文化之旅，将自然景观、文化遗产与健康体验完美结合。
+                        <br><br>
+                        Explore curated Sichuan cultural journeys that perfectly blend natural landscapes, cultural heritage and wellness experiences.
+                    </p>
+                    <div class="card-actions">
+                        <a href="tours.html#premium-packages" class="primary-action">查看旅行线路 | View Travel Routes</a>
+                    </div>
+                </article>
+
+                <article class="service-card premium fade-in" role="article">
+                    <div class="icon" aria-hidden="true"><i class="fas fa-crown"></i></div>
+                    <h2>Premium Experience Packages</h2>
+                    <p>
+                        尊享体验套餐融合四川文化、中医智慧与现代健康管理，包含可选赠送体验。
+                        <br><br>
+                        Premium packages combine Sichuan culture, TCM wisdom and modern health management.
+                    </p>
+                    <div class="card-actions">
+                        <a href="sichuan.html#premium-packages" class="primary-action">查看尊享套餐 | View Premium Packages</a>
+                    </div>
+                </article>
+
+                <article class="service-card fade-in" role="article">
+                    <div class="icon" aria-hidden="true"><i class="fas fa-paw"></i></div>
+                    <h2>Sichuan Cultural Highlights</h2>
+                    <p>
+                        四川精华体验：熊猫基地、乐山大佛、峨眉山、都江堰水利工程等世界文化遗产。
+                        <br><br>
+                        Sichuan cultural highlights: Panda Base, Leshan Giant Buddha, Mount Emei, Dujiangyan Irrigation System.
+                    </p>
+                    <div class="card-actions">
+                        <a href="sichuan.html#premium-packages" class="primary-action">查看四川精华 | View Sichuan Highlights</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <div class="section-divider" aria-hidden="true"></div>
+
+        <!-- 资源工具类别 -->
+        <section id="resources" aria-labelledby="resources-title">
+            <div class="category-header">
+                <h2 class="category-title" id="resources-title">资源工具 | Resources</h2>
+                <p class="category-subtitle">
+                    Essential information and tools for planning your medical travel experience
+                    <br>
+                    规划医疗旅行体验所需的重要信息与工具
+                </p>
+            </div>
+            
+            <div class="services-grid">
+                <article class="service-card faq fade-in" role="article">
+                    <div class="icon" aria-hidden="true"><i class="fas fa-question-circle"></i></div>
+                    <h2>FAQs & Important Information</h2>
+                    <p>
+                        了解我们的服务范围、适用人群、限制条款以及常见问题解答。
+                        <br><br>
+                        Understand our service scope, suitability, limitations and frequently asked questions.
+                    </p>
+                    <div class="card-actions">
+                        <a href="faq.html" class="primary-action">阅读常见问题 | Read FAQs</a>
+                        <a href="payment.html" class="secondary-btn">中国支付指南 | China Payment Methods</a>
+                    </div>
+                </article>
+
+                <article class="service-card fade-in" role="article">
+                    <div class="icon" aria-hidden="true"><i class="fas fa-file-contract"></i></div>
+                    <h2>Legal & Policy Documents</h2>
+                    <p>
+                        查看我们的隐私政策、服务条款和医疗免责声明等重要法律文件。
+                        <br><br>
+                        Review our privacy policy, terms of service, and medical disclaimer documents.
+                    </p>
+                    <div class="card-actions">
+                        <a href="privacy.html" class="primary-action">隐私政策 | Privacy Policy</a>
+                        <div style="display: flex; flex-direction: column; gap: var(--spacing-sm); margin-top: var(--spacing-sm);">
+                            <a href="terms.html" class="secondary-btn">服务条款 | Terms</a>
+                            <a href="disclaimer.html" class="secondary-btn">免责声明 | Disclaimer</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="service-card fade-in" role="article">
+                    <div class="icon" aria-hidden="true"><i class="fas fa-comments"></i></div>
+                    <h2>Consultation & Support</h2>
+                    <p>
+                        需要个性化建议？我们的双语协调团队随时为您提供咨询和支持服务。
+                        <br><br>
+                        Need personalized advice? Our bilingual coordination team is ready to assist you.
+                    </p>
+                    <div class="card-actions">
+                        <a href="mailto:KIWI_Serenity_Limited@outlook.com" class="primary-action">邮件咨询 | Email Consultation</a>
+                        <a href="tel:+64220405795" class="secondary-btn">电话咨询 | Call Now</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- 特色展示区域 -->
+        <section class="feature-section" aria-labelledby="features-title">
+            <h2 class="section-title" id="features-title">为什么选择我们 | Why Choose Us</h2>
+            <p class="section-subtitle">
+                We bridge the gap between international visitors and premium Sichuan experiences
+                <br>
+                我们连接国际访客与优质的四川体验
+            </p>
+            
+            <div class="features-grid">
+                <div class="feature-item fade-in">
+                    <div class="feature-icon" aria-hidden="true"><i class="fas fa-user-shield"></i></div>
+                    <h3 class="feature-title">NZ-Registered & Trusted</h3>
+                    <p>新西兰注册公司，受新西兰法律管辖与保护。</p>
+                    <p class="english">New Zealand registered company, governed and protected by NZ law.</p>
+                </div>
+                
+                <div class="feature-item fade-in">
+                    <div class="feature-icon" aria-hidden="true"><i class="fas fa-language"></i></div>
+                    <h3 class="feature-title">Bilingual Coordination</h3>
+                    <p>专业双语协调团队，确保沟通无障碍。</p>
+                    <p class="english">Professional bilingual coordination team ensures seamless communication.</p>
+                </div>
+                
+                <div class="feature-item fade-in">
+                    <div class="feature-icon" aria-hidden="true"><i class="fas fa-handshake"></i></div>
+                    <h3 class="feature-title">Verified Partners</h3>
+                    <p>所有合作机构均经过严格筛选与资质验证。</p>
+                    <p class="english">All partner institutions are rigorously screened and verified.</p>
+                </div>
+                
+                <div class="feature-item fade-in">
+                    <div class="feature-icon" aria-hidden="true"><i class="fas fa-clock"></i></div>
+                    <h3 class="feature-title">24/7 Support</h3>
+                    <p>全天候支持服务，随时解答您的疑问。</p>
+                    <p class="english">Round-the-clock support to answer your questions anytime.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 响应式联系栏 -->
+        <div class="contact-bar" id="contact" role="complementary">
+            <div class="contact-item">
+                <i class="fas fa-phone contact-icon" aria-hidden="true"></i>
+                <div class="contact-main">+64220405795</div>
+                <div class="contact-sub">Tel & WhatsApp | 电话与即时通讯</div>
+            </div>
+            
+            <div class="contact-item">
+                <i class="fas fa-envelope contact-icon" aria-hidden="true"></i>
+                <div class="contact-main">KIWI_Serenity_Limited@outlook.com</div>
+                <div class="contact-sub">Email | 电子邮件</div>
+            </div>
+            
+            <div class="contact-item">
+                <i class="fas fa-clock contact-icon" aria-hidden="true"></i>
+                <div class="contact-main">9:00-18:00 (NZST)</div>
+                <div class="contact-sub">Mon-Fri | 周一至周五</div>
+            </div>
+            
+            <div class="contact-item">
+                <i class="fas fa-share-alt contact-icon" aria-hidden="true"></i>
+                <div class="contact-main">KIWI Serenity Limited</div>
+                <div class="social-icons">
+                    <a href="#" title="TikTok" aria-label="TikTok"><i class="fab fa-tiktok social-icon"></i></a>
+                    <a href="#" title="Facebook" aria-label="Facebook"><i class="fab fa-facebook social-icon"></i></a>
+                </div>
+                <div class="contact-sub">Social Media | 社交媒体</div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="site-footer" role="contentinfo">
+        <div class="footer-content">
+            <nav class="footer-nav" aria-label="Footer Navigation">
+                <a href="sichuan.html">主页面 | Main Page</a>
+                <a href="#health-services">健康服务 | Health Services</a>
+                <a href="#travel-experiences">旅行体验 | Travel Experiences</a>
+                <a href="#resources">资源工具 | Resources</a>
+            </nav>
+            
+            <nav class="footer-nav" aria-label="Legal Links">
+                <a href="privacy.html">隐私政策 | Privacy Policy</a>
+                <a href="terms.html">服务条款 | Terms of Service</a>
+                <a href="disclaimer.html">医疗免责声明 | Medical Disclaimer</a>
+            </nav>
+            
+            <p class="footer-brand">
+                © 2026 <strong>KIWI Serenity Limited</strong>. All rights reserved.
+            </p>
+            
+            <p class="footer-notice">
+                KIWI Serenity Limited provides information and coordination services only
+                and does not provide medical advice, diagnosis, or treatment.
+                <br>
+                KIWI Serenity Limited 仅提供信息与协调服务，不提供医疗建议、诊断或治疗。
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // 页面加载优化
+        document.addEventListener('DOMContentLoaded', function() {
+            // 设置页面已加载类
+            document.body.classList.add('loaded');
+            
+            // 移动端汉堡菜单功能
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            const menuOverlay = document.getElementById('menu-overlay');
+            
+            if (menuToggle && navLinks && menuOverlay) {
+                menuToggle.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                    this.setAttribute('aria-expanded', !isExpanded);
+                    navLinks.classList.toggle('active');
+                    menuOverlay.classList.toggle('active');
+                    
+                    // 切换汉堡菜单图标
+                    const icon = this.querySelector('i');
+                    if (icon) {
+                        icon.className = isExpanded ? 'fas fa-bars' : 'fas fa-times';
+                    }
+                    
+                    // 阻止body滚动
+                    document.body.style.overflow = isExpanded ? '' : 'hidden';
+                });
+                
+                // 点击遮罩关闭菜单
+                menuOverlay.addEventListener('click', function() {
+                    closeMenu();
+                });
+                
+                // 点击菜单链接后关闭菜单
+                navLinks.querySelectorAll('.nav-link').forEach(link => {
+                    link.addEventListener('click', function() {
+                        closeMenu();
+                    });
+                });
+                
+                // 键盘事件支持
+                menuToggle.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        this.click();
+                    }
+                });
+                
+                // ESC键关闭菜单
+                document.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+                        closeMenu();
+                    }
+                });
+                
+                // 关闭菜单函数
+                function closeMenu() {
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                    navLinks.classList.remove('active');
+                    menuOverlay.classList.remove('active');
+                    const icon = menuToggle.querySelector('i');
+                    if (icon) {
+                        icon.className = 'fas fa-bars';
+                    }
+                    document.body.style.overflow = '';
+                }
+                
+                // 点击菜单外区域关闭菜单
+                document.addEventListener('click', function(event) {
+                    if (navLinks.classList.contains('active') && 
+                        !menuToggle.contains(event.target) && 
+                        !navLinks.contains(event.target) &&
+                        !menuOverlay.contains(event.target)) {
+                        closeMenu();
+                    }
+                });
+            }
+            
+            // 平滑滚动
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    const targetId = this.getAttribute('href');
+                    if (targetId !== '#' && targetId.startsWith('#')) {
+                        e.preventDefault();
+                        const targetElement = document.querySelector(targetId);
+                        if (targetElement) {
+                            const headerOffset = 80;
+                            const elementPosition = targetElement.getBoundingClientRect().top;
+                            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                            
+                            window.scrollTo({
+                                top: offsetPosition,
+                                behavior: 'smooth'
+                            });
+                            
+                            // 更新URL哈希
+                            history.pushState(null, null, targetId);
+                        }
+                    }
+                });
+            });
+            
+            // 滚动动画效果
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+            
+            // 观察所有需要动画的元素
+            document.querySelectorAll('.fade-in').forEach(el => {
+                if (!el.classList.contains('animated')) {
+                    observer.observe(el);
+                }
+            });
+            
+            // 返回顶部按钮功能
+            const backToTopButton = document.getElementById('back-to-top');
+            
+            if (backToTopButton) {
+                window.addEventListener('scroll', function() {
+                    if (window.pageYOffset > 300) {
+                        backToTopButton.classList.add('show');
+                    } else {
+                        backToTopButton.classList.remove('show');
+                    }
+                });
+                
+                backToTopButton.addEventListener('click', function() {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                });
+            }
+            
+            // 触摸设备优化
+            if ('ontouchstart' in window) {
+                document.body.classList.add('touch-device');
+                
+                // 为触摸设备添加点击反馈
+                document.querySelectorAll('.service-card a, .nav-link, .secondary-btn').forEach(element => {
+                    element.addEventListener('touchstart', function() {
+                        this.classList.add('touch-active');
+                    });
+                    
+                    element.addEventListener('touchend', function() {
+                        this.classList.remove('touch-active');
+                    });
+                });
+            }
+            
+            // 性能优化：预加载关键图片
+            const criticalImages = ['logo.jpg', 'services.png'];
+            criticalImages.forEach(src => {
+                const img = new Image();
+                img.src = src;
+            });
+            
+            // 键盘导航优化
+            document.addEventListener('keydown', function(e) {
+                // Tab键导航时，为焦点元素添加样式
+                if (e.key === 'Tab') {
+                    document.body.classList.add('keyboard-navigation');
+                }
+            });
+            
+            document.addEventListener('click', function() {
+                document.body.classList.remove('keyboard-navigation');
+            });
+        });
+        
+        // 滚动性能优化
+        let scrollTimeout;
+        window.addEventListener('scroll', function() {
+            if (!scrollTimeout) {
+                scrollTimeout = setTimeout(function() {
+                    scrollTimeout = null;
+                    // 滚动停止后的操作
+                }, 100);
+            }
+        });
+        
+        // 视口变化时的响应式调整
+        window.addEventListener('resize', function() {
+            clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(function() {
+                // 重新计算需要动画的元素
+                document.querySelectorAll('.fade-in:not(.animated)').forEach(el => {
+                    el.style.animation = 'none';
+                    setTimeout(() => {
+                        el.style.animation = '';
+                    }, 10);
+                });
+            }, 250);
+        });
+        
+        // 网络连接状态检测
+        window.addEventListener('online', function() {
+            showNotification('网络已恢复连接', 'success');
+        });
+        
+        window.addEventListener('offline', function() {
+            showNotification('网络连接已断开，部分功能可能受限', 'warning');
+        });
+        
+        function showNotification(message, type) {
+            // 实现通知功能
+            console.log(`${type}: ${message}`);
+        }
+    </script>
+</body>
+</html>
