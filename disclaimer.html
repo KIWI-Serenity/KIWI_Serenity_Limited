@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>医疗免责声明 | Medical Disclaimer - KIWI Serenity Limited</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="KIWI Serenity Limited的医疗免责声明，阐明信息和协调服务的限制。">
+  
+  <!-- Google字体 -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ===== CSS变量与全局样式 ===== */
+    :root {
+      --primary-color: #1e40af;
+      --primary-dark: #1e3a8a;
+      --secondary-color: #0f172a;
+      --accent-color: #d4af37;
+      --text-color: #333;
+      --text-light: #64748b;
+      --bg-color: #f8fafc;
+      --card-bg: rgba(255, 255, 255, 0.98);
+      --border-color: #e2e8f0;
+      --highlight-bg: #fff3cd;
+      --highlight-border: #d4af37;
+      --shadow-light: rgba(0, 0, 0, 0.08);
+      --shadow-medium: rgba(0, 0, 0, 0.12);
+      --shadow-heavy: rgba(0, 0, 0, 0.15);
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 14px;
+      --transition: all 0.3s ease;
+      --zh-font: 'Noto Sans SC', 'Microsoft YaHei', 'PingFang SC', sans-serif;
+      --en-font: 'Open Sans', sans-serif;
+      --title-font: 'Montserrat', sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--zh-font);
+      background: transparent;
+      position: relative;
+      min-height: 100vh;
+      color: var(--text-color);
+      line-height: 1.6;
+      font-size: 16px;
+    }
+
+    /* ===== 语言切换按钮 ===== */
+    .lang-switcher {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 9999;
+      display: flex;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 50px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(30, 64, 175, 0.2);
+    }
+    
+    .lang-btn {
+      padding: 10px 20px;
+      background: none;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      color: var(--primary-color);
+      font-family: var(--zh-font);
+    }
+    
+    .lang-btn.active {
+      background: var(--primary-color);
+      color: white;
+    }
+    
+    .lang-btn:hover:not(.active) {
+      background: rgba(30, 64, 175, 0.1);
+    }
+
+    /* ===== 响应式容器 ===== */
+    .container {
+      max-width: 1100px;
+      margin: 60px auto;
+      background: var(--card-bg);
+      padding: 50px;
+      border-radius: var(--radius-lg);
+      box-shadow: 0 12px 30px var(--shadow-heavy);
+      position: relative;
+      z-index: 1;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(10px);
+      transition: var(--transition);
+    }
+
+    /* ===== 悬浮返回按钮样式 ===== */
+    .back-home-float {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 9999;
+      padding: 12px 20px;
+      border-radius: 50px;
+      background: rgba(30, 64, 175, 0.9);
+      color: #ffffff;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      white-space: nowrap;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+      backdrop-filter: blur(8px);
+      transition: var(--transition);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--zh-font);
+    }
+
+    .back-home-float:hover {
+      background: rgba(30, 64, 175, 1);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    /* ===== 背景容器 ===== */
+    .background-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    /* 背景图 */
+    .background-image {
+      background-image: url('https://images.unsplash.com/photo-1559757175-0eb30cd8c063?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 100%;
+      height: 100%;
+      opacity: 0.75;
+      filter: blur(1px) brightness(0.95);
+    }
+
+    /* ===== 双语文本样式 ===== */
+    .bilingual-section {
+      margin-bottom: 30px;
+    }
+    
+    .lang-zh {
+      font-family: var(--zh-font);
+      margin-bottom: 10px;
+      line-height: 1.7;
+      font-size: 1.08rem;
+      color: var(--text-color);
+    }
+    
+    .lang-en {
+      font-family: var(--en-font);
+      margin-bottom: 20px;
+      line-height: 1.7;
+      color: var(--text-light);
+      font-size: 1.05rem;
+      border-left: 3px solid var(--primary-color);
+      padding-left: 15px;
+      font-style: italic;
+    }
+
+    /* ===== 服务范围说明 ===== */
+    .service-explanation {
+      background-color: rgba(231, 241, 248, 0.9);
+      border-left: 5px solid var(--primary-color);
+      padding: 30px;
+      margin: 40px 0;
+      border-radius: var(--radius-md);
+      box-shadow: 0 4px 12px rgba(30, 64, 175, 0.1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-explanation::before {
+      content: '📋';
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      font-size: 1.5rem;
+    }
+    
+    .service-explanation-title {
+      font-family: var(--title-font);
+      font-size: 1.8rem;
+      color: var(--primary-color);
+      margin-bottom: 25px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid rgba(30, 64, 175, 0.3);
+    }
+    
+    .service-subtitle {
+      font-family: var(--title-font);
+      font-size: 1.4rem;
+      color: var(--secondary-color);
+      margin: 20px 0 15px;
+    }
+    
+    .service-does, .service-not {
+      margin-bottom: 30px;
+    }
+    
+    .service-items {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+      margin-bottom: 25px;
+    }
+    
+    .service-item {
+      padding: 18px;
+      border-radius: var(--radius-sm);
+      background-color: rgba(255, 255, 255, 0.7);
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+      transition: var(--transition);
+    }
+    
+    .service-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    .service-item.does {
+      border-left: 4px solid #4CAF50;
+    }
+    
+    .service-item.not {
+      border-left: 4px solid #f44336;
+    }
+    
+    .service-icon {
+      font-size: 1.8rem;
+      min-width: 30px;
+      text-align: center;
+    }
+    
+    .service-item.does .service-icon {
+      color: #4CAF50;
+    }
+    
+    .service-item.not .service-icon {
+      color: #f44336;
+    }
+    
+    .service-text {
+      flex: 1;
+    }
+    
+    .service-text-zh {
+      font-weight: 600;
+      margin-bottom: 8px;
+      font-family: var(--zh-font);
+      font-size: 1.1rem;
+    }
+    
+    .service-text-en {
+      font-size: 0.95rem;
+      color: var(--text-light);
+      font-family: var(--en-font);
+      line-height: 1.6;
+    }
+    
+    .important-notice {
+      background-color: rgba(255, 243, 205, 0.8);
+      padding: 20px;
+      border-radius: var(--radius-md);
+      margin-top: 25px;
+      border-left: 4px solid var(--accent-color);
+      box-shadow: 0 4px 12px rgba(255, 193, 7, 0.1);
+    }
+    
+    .important-notice-zh {
+      font-weight: 600;
+      color: #e65100;
+      margin-bottom: 10px;
+      font-family: var(--zh-font);
+      font-size: 1.1rem;
+    }
+    
+    .important-notice-en {
+      color: var(--text-light);
+      font-family: var(--en-font);
+    }
+
+    /* ===== 标题样式 ===== */
+    h1 {
+      font-family: var(--title-font);
+      font-size: 2.5rem;
+      color: var(--primary-color);
+      margin-bottom: 12px;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .updated {
+      font-size: 0.95rem;
+      color: var(--text-light);
+      margin-bottom: 40px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--zh-font);
+    }
+
+    .updated::before {
+      content: "📅";
+      font-size: 1.1rem;
+    }
+
+    h2 {
+      font-family: var(--title-font);
+      font-size: 1.4rem;
+      margin-top: 45px;
+      margin-bottom: 18px;
+      color: var(--secondary-color);
+      font-weight: 600;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--border-color);
+      position: relative;
+    }
+
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 60px;
+      height: 2px;
+      background-color: var(--primary-color);
+    }
+
+    /* ===== 段落样式 ===== */
+    p {
+      margin-bottom: 20px;
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    /* ===== 高亮框样式 ===== */
+    .highlight {
+      background: var(--highlight-bg);
+      border-left: 5px solid var(--highlight-border);
+      padding: 25px;
+      border-radius: var(--radius-md);
+      margin: 40px 0;
+      font-size: 1rem;
+      box-shadow: 0 4px 12px rgba(212, 175, 55, 0.1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .highlight::before {
+      content: "⚠️";
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      font-size: 1.5rem;
+    }
+
+    .highlight strong {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+      color: #92400e;
+      font-family: var(--zh-font);
+    }
+
+    /* ===== 页脚样式 ===== */
+    .site-footer {
+      margin-top: 70px;
+      padding-top: 30px;
+      border-top: 2px solid var(--border-color);
+    }
+
+    .footer-inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .footer-nav {
+      margin-bottom: 25px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .footer-nav a {
+      color: var(--text-light);
+      text-decoration: none;
+      font-weight: 500;
+      transition: var(--transition);
+      padding: 5px 12px;
+      border-radius: var(--radius-sm);
+      border: 1px solid transparent;
+      font-family: var(--zh-font);
+    }
+
+    .footer-nav a:hover {
+      color: var(--primary-color);
+      background-color: rgba(30, 64, 175, 0.05);
+      border-color: rgba(30, 64, 175, 0.2);
+    }
+
+    .footer-brand {
+      margin-bottom: 15px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: var(--secondary-color);
+      font-family: var(--zh-font);
+    }
+
+    .footer-notice {
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.6;
+      font-size: 0.95rem;
+      color: var(--text-light);
+    }
+    
+    .footer-notice-zh {
+      margin-bottom: 10px;
+      font-family: var(--zh-font);
+    }
+    
+    .footer-notice-en {
+      font-family: var(--en-font);
+    }
+
+    /* ===== 动画效果 ===== */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .container {
+      animation: fadeInUp 0.6s ease-out;
+    }
+
+    /* ===== 打印样式 ===== */
+    @media print {
+      .back-home-float,
+      .lang-switcher,
+      .background-container {
+        display: none !important;
+      }
+      
+      body {
+        background: white;
+        font-size: 12pt;
+      }
+      
+      .container {
+        box-shadow: none;
+        border: 1px solid #ddd;
+        margin: 0;
+        padding: 20px;
+      }
+      
+      .highlight, .service-explanation {
+        background: #f0f0f0 !important;
+        border: 1px solid #ccc;
+      }
+      
+      .lang-en {
+        color: #666;
+        font-style: normal;
+        border-left: none;
+        padding-left: 0;
+      }
+    }
+
+    /* ===== 响应式设计 - 平板设备 (768px - 1024px) ===== */
+    @media (max-width: 1024px) {
+      .container {
+        max-width: 90%;
+        padding: 40px 35px;
+        margin: 50px auto;
+      }
+      
+      h1 {
+        font-size: 2.2rem;
+      }
+      
+      h2 {
+        font-size: 1.3rem;
+        margin-top: 40px;
+      }
+      
+      p, .lang-zh, .lang-en {
+        font-size: 1.03rem;
+      }
+      
+      .back-home-float, .lang-switcher {
+        top: 18px;
+        left: 18px;
+        padding: 10px 18px;
+        font-size: 13px;
+      }
+      
+      .lang-switcher {
+        left: auto;
+        right: 18px;
+      }
+      
+      .service-items {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      }
+    }
+
+    /* ===== 响应式设计 - 手机设备 (小于768px) ===== */
+    @media (max-width: 768px) {
+      body {
+        font-size: 15px;
+      }
+      
+      .container {
+        max-width: 95%;
+        padding: 30px 25px;
+        margin: 40px auto;
+        border-radius: 12px;
+      }
+      
+      h1 {
+        font-size: 1.9rem;
+        margin-bottom: 10px;
+      }
+      
+      .updated {
+        font-size: 0.9rem;
+        margin-bottom: 30px;
+      }
+      
+      h2 {
+        font-size: 1.25rem;
+        margin-top: 35px;
+        margin-bottom: 15px;
+      }
+      
+      p, .lang-zh, .lang-en {
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 18px;
+      }
+      
+      .highlight, .service-explanation {
+        padding: 20px;
+        margin: 30px 0;
+      }
+      
+      .highlight::before {
+        top: 15px;
+        left: 15px;
+      }
+      
+      .service-explanation::before {
+        top: 15px;
+        left: 15px;
+      }
+      
+      /* 悬浮按钮调整 */
+      .back-home-float, .lang-switcher {
+        top: 15px;
+        left: 15px;
+        padding: 10px 16px;
+        font-size: 13px;
+      }
+      
+      .lang-switcher {
+        left: auto;
+        right: 15px;
+      }
+      
+      /* 页脚导航调整 */
+      .footer-nav {
+        flex-direction: column;
+        gap: 12px;
+        align-items: center;
+      }
+      
+      .footer-nav a {
+        display: inline-block;
+        padding: 8px 15px;
+        width: 100%;
+        max-width: 200px;
+        text-align: center;
+      }
+      
+      .site-footer {
+        margin-top: 50px;
+        padding-top: 25px;
+      }
+      
+      .service-items {
+        grid-template-columns: 1fr;
+      }
+      
+      .lang-en {
+        font-size: 0.95rem;
+        padding-left: 10px;
+      }
+    }
+
+    /* ===== 响应式设计 - 小手机设备 (小于480px) ===== */
+    @media (max-width: 480px) {
+      body {
+        font-size: 14px;
+      }
+      
+      .container {
+        max-width: 100%;
+        padding: 25px 20px;
+        margin: 30px 15px;
+        border-radius: 10px;
+      }
+      
+      h1 {
+        font-size: 1.7rem;
+      }
+      
+      h2 {
+        font-size: 1.2rem;
+        margin-top: 30px;
+      }
+      
+      .updated {
+        font-size: 0.85rem;
+      }
+      
+      p, .lang-zh, .lang-en {
+        font-size: 0.95rem;
+      }
+      
+      .highlight, .service-explanation {
+        padding: 18px 15px;
+        margin: 25px 0;
+      }
+      
+      .back-home-float, .lang-switcher {
+        top: 12px;
+        left: 12px;
+        padding: 8px 14px;
+        font-size: 12px;
+      }
+      
+      .lang-switcher {
+        left: auto;
+        right: 12px;
+      }
+      
+      .lang-btn {
+        padding: 8px 14px;
+      }
+      
+      .footer-nav a {
+        max-width: 180px;
+      }
+      
+      .footer-notice {
+        font-size: 0.9rem;
+      }
+      
+      .lang-en {
+        font-size: 0.9rem;
+      }
+      
+      .service-explanation-title {
+        font-size: 1.5rem;
+      }
+      
+      .service-subtitle {
+        font-size: 1.2rem;
+      }
+    }
+
+    /* ===== 响应式设计 - 超大屏幕 (大于1200px) ===== */
+    @media (min-width: 1200px) {
+      .container {
+        max-width: 1000px;
+      }
+    }
+
+    /* ===== 可访问性改进 ===== */
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+      
+      .back-home-float:hover,
+      .service-item:hover {
+        transform: none;
+      }
+      
+      .container:hover {
+        transform: none;
+      }
+    }
+
+    /* ===== 高对比度模式 ===== */
+    @media (prefers-contrast: high) {
+      :root {
+        --primary-color: #0000ff;
+        --secondary-color: #000000;
+        --text-color: #000000;
+        --highlight-bg: #ffff00;
+        --highlight-border: #ff0000;
+      }
+      
+      body {
+        background-color: white;
+      }
+      
+      .container {
+        background-color: white;
+        border: 2px solid black;
+      }
+      
+      .lang-en {
+        color: #000066;
+      }
+    }
+
+    /* ===== 深色模式支持 ===== */
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --primary-color: #60a5fa;
+        --primary-dark: #3b82f6;
+        --secondary-color: #f1f5f9;
+        --text-color: #e2e8f0;
+        --text-light: #94a3b8;
+        --bg-color: #0f172a;
+        --card-bg: rgba(30, 41, 59, 0.95);
+        --border-color: #334155;
+        --highlight-bg: #451a03;
+        --highlight-border: #f59e0b;
+      }
+      
+      body {
+        background-color: var(--bg-color);
+      }
+      
+      .background-image {
+        filter: blur(1px) brightness(0.6);
+      }
+      
+      .lang-en {
+        color: #cbd5e1;
+        border-left-color: #475569;
+      }
+      
+      .footer-nav a:hover {
+        background-color: rgba(96, 165, 250, 0.1);
+        border-color: rgba(96, 165, 250, 0.3);
+      }
+      
+      .service-item {
+        background-color: rgba(40, 40, 40, 0.8);
+      }
+      
+      .service-explanation {
+        background-color: rgba(30, 50, 70, 0.8);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ===== 语言切换按钮 ===== -->
+  <div class="lang-switcher">
+    <button class="lang-btn active" data-lang="all">中/EN</button>
+    <button class="lang-btn" data-lang="zh">中文</button>
+    <button class="lang-btn" data-lang="en">EN</button>
+  </div>
+
+  <!-- ===== 悬浮返回按钮 ===== -->
+  <a href="index.html" class="back-home-float" aria-label="返回首页">
+    ← 返回首页 | Back to Home
+  </a>
+
+  <!-- 背景容器 -->
+  <div class="background-container">
+    <div class="background-image"></div>
+  </div>
+  
+  <!-- 主内容容器 -->
+  <div class="container">
+    <h1>医疗免责声明 | Medical Disclaimer</h1>
+    <div class="updated">最后更新: <span id="current-date-zh">2026年1月</span> | Last updated: <span id="current-date-en">January 2026</span></div>
+
+    <!-- 服务范围说明 -->
+    <div class="service-explanation">
+      <h3 class="service-explanation-title">我们的服务范围 | What KIWI Serenity Does — and Doesn't Do</h3>
+      
+      <div class="bilingual-section">
+        <div class="lang-zh">从新西兰到中国四川的跨境疗愈旅程协调服务</div>
+        <div class="lang-en">Cross-Border Coordination for wellness-focused travel journeys 
+from New Zealand to Sichuan, China.</div>
+      </div>
+      
+      <div class="service-does">
+        <h4 class="service-subtitle">我们提供的服务 | What We Do</h4>
+        <div class="service-items">
+          <div class="service-item does">
+            <div class="service-icon">✓</div>
+            <div class="service-text">
+              <div class="service-text-zh">非医疗信息与协调</div>
+              <div class="service-text-en">Non-medical information & coordination</div>
+            </div>
+          </div>
+          <div class="service-item does">
+            <div class="service-icon">✓</div>
+            <div class="service-text">
+              <div class="service-text-zh">生活旅行与预约协助</div>
+              <div class="service-text-en">Lifestyle travel support & non-medical appointment coordination</div>
+            </div>
+          </div>
+          <div class="service-item does">
+            <div class="service-icon">✓</div>
+            <div class="service-text">
+              <div class="service-text-zh">仅与持牌服务提供商合作</div>
+              <div class="service-text-en">Licensed providers only</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="service-not">
+        <h4 class="service-subtitle">我们不提供的服务 | What We Don't Do</h4>
+        <div class="service-items">
+          <div class="service-item not">
+            <div class="service-icon">✗</div>
+            <div class="service-text">
+              <div class="service-text-zh">不提供医疗建议</div>
+              <div class="service-text-en">No medical advice</div>
+            </div>
+          </div>
+          <div class="service-item not">
+            <div class="service-icon">✗</div>
+            <div class="service-text">
+              <div class="service-text-zh">不提供诊断或治疗</div>
+              <div class="service-text-en">No diagnosis or treatment</div>
+            </div>
+          </div>
+          <div class="service-item not">
+            <div class="service-icon">✗</div>
+            <div class="service-text">
+              <div class="service-text-zh">不保证治疗效果</div>
+              <div class="service-text-en">No outcome guarantees</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="important-notice">
+        <div class="important-notice-zh">重要声明：我们不提供医疗建议、诊断或治疗。所有健康相关服务均由中国当地完全持牌的独立服务提供商提供。</div>
+        <div class="important-notice-en">Important Notice: We do not provide medical advice, diagnosis, or treatment. All health-related services are independently offered by fully licensed local providers in China.</div>
+      </div>
+    </div>
+
+    <!-- 重要通知高亮框 -->
+    <div class="highlight">
+      <div class="lang-zh">
+        <strong>重要通知：</strong><br>
+        KIWI Serenity Limited提供的信息和服务仅用于协调和信息目的，不构成医疗建议、诊断或治疗。KIWI Serenity Limited 仅作为独立的协调服务提供方开展业务，不在任何医疗服务、医疗决策或医疗结果相关事项中，
+作为客户、医疗机构、医务人员或任何第三方的代理人、代表或中介方。
+      </div>
+      <div class="lang-en">
+        <strong>Important Notice:</strong><br>
+        The information and services provided by KIWI Serenity Limited are for coordination and informational purposes only and do not constitute medical advice, diagnosis, or treatment.KIWI Serenity Limited acts solely as an independent coordination service provider. We do not act as an agent, representative, or intermediary for the client, any medical provider, clinic, practitioner, or third-party service provider in relation to medical services, medical decisions, or medical outcomes.
+      </div>
+    </div>
+
+    <!-- 免责声明内容 -->
+    <section>
+      <h2>1. 不提供医疗建议 | No Medical Advice</h2>
+      <div class="bilingual-section">
+        <div class="lang-zh">KIWI Serenity Limited不提供医疗、临床、诊断或治疗服务。本网站或通过问卷、电子邮件或通信提供的任何信息均为一般性信息，不得作为专业医疗建议的替代品。</div>
+        <div class="lang-en">KIWI Serenity Limited does not provide medical, clinical, diagnostic, or therapeutic services. Any information presented on this website or provided through questionnaires, emails, or communications is general in nature and must not be relied upon as a substitute for professional medical advice.</div>
+      </div>
+
+      <h2>2. 无医患关系 | No Doctor–Patient Relationship</h2>
+      <div class="bilingual-section">
+        <div class="lang-zh">使用本网站或提交信息不会在您与KIWI Serenity Limited之间建立医生-患者或医疗服务提供者-患者关系。</div>
+        <div class="lang-en">Use of this website or submission of information does not establish a doctor–patient or healthcare provider–patient relationship between you and KIWI Serenity Limited.</div>
+      </div>
+
+      <h2>3. 第三方医疗服务提供商 | Third-Party Medical Providers</h2>
+      <div class="bilingual-section">
+        <div class="lang-zh">任何医疗服务、建议、诊疗意见、操作或结果，均由独立、具备合法资质的第三方医疗机构或医务人员自行提供并承担责任。KIWI Serenity Limited 不评估、不管理、不监测、亦不承担任何医疗风险、结果或决策责任。我们作为独立的协调者，不代表提供商签订临床协议。我们亦不作为客户或医疗服务提供方在任何医疗事项上的代理人。</div>
+        <div class="lang-en">Any medical services, advice, opinions, procedures, or outcomes
+are provided solely by independent licensed medical providers. KIWI Serenity Limited does not assess, manage, monitor,or assume responsibility for any medical risks, outcomes, or decisions.We act as an independent coordinator and do not enter into clinical agreements on behalf of providers.We do not act as an agent for the client or the medical provider in relation to any medical services.</div>
+      </div>
+
+      <h2>4. 无紧急服务 | No Emergency Services</h2>
+      <div class="bilingual-section">
+        <div class="lang-zh">本网站和相关服务不适用于医疗紧急情况。如果您遇到医疗紧急情况，请立即从当地紧急服务或合格的医疗保健提供商处寻求帮助。</div>
+        <div class="lang-en">This website and related services are not intended for use in medical emergencies. If you are experiencing a medical emergency, please seek immediate assistance from local emergency services or a qualified healthcare provider.</div>
+      </div>
+
+      <h2>5. 责任限制 | Limitation of Liability</h2>
+      <div class="bilingual-section">
+        <div class="lang-zh">在法律允许的最大范围内，KIWI Serenity Limited不对因依赖通过本网站或相关协调服务提供的信息而产生的任何损失、损害、伤害或不良结果承担责任。本条款或免责声明中的任何内容，均不排除、限制或修改您依据《1993 年新西兰消费者保障法》或其他适用法律所享有且依法不得排除的权利或救济。</div>
+        <div class="lang-en">To the maximum extent permitted by law, KIWI Serenity Limited shall not be liable for any loss, damage, injury, or adverse outcome arising from reliance on information provided through this website or related coordination services.Nothing in these Terms or this Disclaimer excludes, restricts, or modifies any rights or remedies you may have under the
+Consumer Guarantees Act 1993 or any other applicable New Zealand law, where such rights cannot be lawfully excluded.</div>
+      </div>
+
+      <h2>6. 管辖法律 | Governing Law</h2>
+      <div class="bilingual-section">
+        <div class="lang-zh">本免责声明受新西兰法律管辖并依其解释。</div>
+        <div class="lang-en">This disclaimer is governed by and construed in accordance with the laws of New Zealand.</div>
+      </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-nav">
+          <a href="index.html">首页 | Home</a>
+          <a href="privacy.html">隐私政策 | Privacy Policy</a>
+          <a href="terms.html">服务条款 | Terms of Service</a>
+          <a href="disclaimer.html">医疗免责声明 | Medical Disclaimer</a>
+        </div>
+
+        <p class="footer-brand">
+          © <span id="current-year">2026</span> <strong>KIWI Serenity Limited</strong>. 保留所有权利 | All rights reserved.
+        </p>
+
+        <div class="footer-notice">
+          <div class="footer-notice-zh">
+            KIWI Serenity Limited仅提供信息和协调服务，不提供医疗建议、诊断或治疗。
+          </div>
+          <div class="footer-notice-en">
+            KIWI Serenity Limited provides information and coordination services only and does not provide medical advice, diagnosis, or treatment.
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // DOM加载完成后执行
+    document.addEventListener('DOMContentLoaded', function() {
+      // 更新当前年份
+      const currentYear = new Date().getFullYear();
+      document.getElementById('current-year').textContent = currentYear;
+      
+      // 更新最后更新日期
+      const currentDate = new Date();
+      
+      // 中文日期格式
+      const zhOptions = { year: 'numeric', month: 'long' };
+      const zhFormattedDate = currentDate.toLocaleDateString('zh-CN', zhOptions);
+      document.getElementById('current-date-zh').textContent = zhFormattedDate;
+      
+      // 英文日期格式
+      const enOptions = { year: 'numeric', month: 'long' };
+      const enFormattedDate = currentDate.toLocaleDateString('en-NZ', enOptions);
+      document.getElementById('current-date-en').textContent = enFormattedDate;
+      
+      // 语言切换功能
+      const langButtons = document.querySelectorAll('.lang-btn');
+      const zhElements = document.querySelectorAll('.lang-zh');
+      const enElements = document.querySelectorAll('.lang-en');
+      
+      langButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          // 移除所有按钮的active类
+          langButtons.forEach(btn => btn.classList.remove('active'));
+          
+          // 为当前点击的按钮添加active类
+          this.classList.add('active');
+          
+          const lang = this.getAttribute('data-lang');
+          
+          // 根据选择的语言显示/隐藏内容
+          if (lang === 'zh') {
+            zhElements.forEach(el => el.style.display = 'block');
+            enElements.forEach(el => el.style.display = 'none');
+          } else if (lang === 'en') {
+            zhElements.forEach(el => el.style.display = 'none');
+            enElements.forEach(el => el.style.display = 'block');
+          } else {
+            // 显示所有内容（中英对照）
+            zhElements.forEach(el => el.style.display = 'block');
+            enElements.forEach(el => el.style.display = 'block');
+          }
+        });
+      });
+      
+      // 移动设备优化：增加触摸目标大小
+      if ('ontouchstart' in window) {
+        document.querySelectorAll('.footer-nav a, .back-home-float, .lang-btn').forEach(element => {
+          element.style.padding = '12px 20px';
+          element.style.minHeight = '44px';
+          element.style.display = 'flex';
+          element.style.alignItems = 'center';
+          element.style.justifyContent = 'center';
+        });
+        
+        // 服务项目触摸目标优化
+        document.querySelectorAll('.service-item').forEach(item => {
+          item.style.padding = '20px 15px';
+        });
+      }
+      
+      // 平滑滚动到锚点
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href');
+          if (targetId === '#') return;
+          
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            const headerOffset = 80;
+            const elementPosition = targetElement.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+            
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+      
+      // 打印优化
+      window.addEventListener('beforeprint', () => {
+        document.querySelector('.back-home-float').style.display = 'none';
+        document.querySelector('.lang-switcher').style.display = 'none';
+      });
+      
+      window.addEventListener('afterprint', () => {
+        document.querySelector('.back-home-float').style.display = 'flex';
+        document.querySelector('.lang-switcher').style.display = 'flex';
+      });
+      
+      // 添加卡片悬停效果
+      const container = document.querySelector('.container');
+      if (container) {
+        container.addEventListener('mouseenter', () => {
+          container.style.boxShadow = '0 15px 40px rgba(0, 0, 0, 0.18)';
+          container.style.transform = 'translateY(-5px)';
+        });
+        
+        container.addEventListener('mouseleave', () => {
+          container.style.boxShadow = '0 12px 30px rgba(0, 0, 0, 0.15)';
+          container.style.transform = 'translateY(0)';
+        });
+      }
+      
+      // 高亮重要内容
+      const highlightElement = document.querySelector('.highlight');
+      if (highlightElement) {
+        // 添加轻微脉动动画
+        setInterval(() => {
+          highlightElement.style.boxShadow = '0 4px 15px rgba(212, 175, 55, 0.2)';
+          setTimeout(() => {
+            highlightElement.style.boxShadow = '0 4px 12px rgba(212, 175, 55, 0.1)';
+          }, 1000);
+        }, 5000);
+      }
+      
+      // 监听系统颜色模式变化
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+        if (e.matches) {
+          console.log('深色模式已激活');
+        } else {
+          console.log('浅色模式已激活');
+        }
+      });
+      
+      // 初始化：显示中英对照
+      zhElements.forEach(el => el.style.display = 'block');
+      enElements.forEach(el => el.style.display = 'block');
+    });
+  </script>
+</body>
+</html>
