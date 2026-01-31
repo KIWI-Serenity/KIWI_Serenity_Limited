@@ -1214,13 +1214,39 @@
         
         /* ===== 合作口腔诊所医疗团队背景 ===== */
         .dental-team-section {
-            margin: 80px 0;
-            background: linear-gradient(135deg, rgba(30, 64, 175, 0.02) 0%, rgba(16, 185, 129, 0.02) 100%);
-            border-radius: var(--border-radius);
-            padding: 40px;
-            box-shadow: var(--box-shadow);
-            border: 1px solid rgba(0,0,0,0.05);
-        }
+   	   margin: 80px 0;
+    	   background: linear-gradient(135deg, rgba(30, 64, 175, 0.15) 0%, rgba(16, 185, 129, 0.15) 100%);
+    	   border-radius: var(--border-radius);
+    	   padding: 40px;
+   	   box-shadow: var(--box-shadow);
+   	   border: 1px solid rgba(30, 64, 175, 0.3);
+	}
+	
+	.dental-team-section .collapsible-card {
+	    box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+	    border-radius: var(--border-radius);
+	    overflow: hidden;
+	    margin-bottom: 20px;
+	}
+
+	.dental-team-section .collapsible-card:last-child {
+ 	   margin-bottom: 0;
+	}
+
+	.dental-team-section .collapsible-header {
+	    background: linear-gradient(135deg, var(--primary-color), var(--dental-blue));
+ 	    color: white;
+	    padding: 25px 30px;
+	    border-bottom: none;
+	}
+
+	.dental-team-section .collapsible-header h3 {
+   	    color: white;
+	}
+
+	.dental-team-section .collapsible-header .toggle-icon {
+   	    color: white;
+	}
 
         .dental-team-content {
             display: flex;
@@ -2684,8 +2710,8 @@
         <!-- ===== 中医套餐部分 (可折叠版本) ===== -->
         <section class="tcm-packages-section" id="tcm-packages">
             <div class="section-header">
-                <h2 class="section-title">海外游客专属中医体验套餐</h2>
-                <div class="section-subtitle">Overseas Visitor Exclusive TCM Packages | 专为短期旅游设计 · 安全合规 · 双语服务 · Designed for short stays · Safe & compliant · Bilingual service</div>
+                <h2 class="section-title">国际游客专属中医体验套餐</h2>
+                <div class="section-subtitle">International Visitor Exclusive TCM Packages | 专为短期旅游设计 · 安全合规 · 双语服务 · Designed for short stays · Safe & compliant · Bilingual service</div>
             </div>
             
             <div class="collapsible-container">
@@ -2928,8 +2954,8 @@
                                     <h4><i class="fas fa-spa"></i> 健康体验 | Wellness Experience</h4>
                                     <ul>
                                         <li>免费中医体质辨证（认知层面）</li>
-                                        <li>免费基础洁牙体验（非治疗性质）</li>
                                         <li>Free TCM Constitution Analysis (Awareness Level)</li>
+                                        <li>免费基础洁牙体验（非治疗性质）</li>
                                         <li>Free Basic Dental Cleaning (Non-treatment)</li>
                                     </ul>
                                     
@@ -3028,8 +3054,8 @@
                                         </div>
                                         <div class="benefit-item">
                                             <i class="fas fa-star"></i>
-                                            <span>全程健康翻译服务</span>
-                                            <small>Full Health Translation Service</small>
+                                            <span>全程翻译陪同服务</span>
+                                            <small>Full Translation Service</small>
                                         </div>
                                     </div>
                                 </div>
@@ -3074,9 +3100,9 @@
                                     
                                     <h4><i class="fas fa-spa"></i> 健康体验 | Wellness Experience</h4>
                                     <ul>
-                                        <li>多次健康体验机会</li>
+                                        <li>多样健康体验机会</li>
+                                        <li>Multiple Wellness Experience</li>
                                         <li>中医文化深度了解</li>
-                                        <li>Multiple Wellness Experience Opportunities</li>
                                         <li>Deep Understanding of TCM Culture</li>
                                     </ul>
                                     
@@ -3156,23 +3182,13 @@
                                     <h4><i class="fas fa-spa"></i> 健康体验 | Wellness Experience</h4>
                                     <ul>
                                         <li>综合健康体验全方案</li>
-                                        <li>中医理疗 + 口腔健康全面咨询</li>
                                         <li>Comprehensive Wellness Program</li>
-                                        <li>TCM Therapy + Complete Dental Consultation</li>
+                                        <li>中医理疗 + 口腔健康全面咨询</li>
+                                        <li>TCM Therapy + Complete Dental Consultation（provided independently by licensed clinics in China.）</li>
                                     </ul>
                                     
                                     <h4><i class="fas fa-gift"></i> 专属增值 | Exclusive Benefits</h4>
                                     <div class="benefits-grid">
-                                        <div class="benefit-item">
-                                            <i class="fas fa-crown"></i>
-                                            <span>私人健康管家服务</span>
-                                            <small>Personal Health Butler Service</small>
-                                        </div>
-                                        <div class="benefit-item">
-                                            <i class="fas fa-crown"></i>
-                                            <span>VIP快速通道（所有景点）</span>
-                                            <small>VIP Fast Access (All Attractions)</small>
-                                        </div>
                                         <div class="benefit-item">
                                             <i class="fas fa-crown"></i>
                                             <span>五星级酒店住宿升级</span>
@@ -3191,7 +3207,7 @@
                                         <div class="benefit-item">
                                             <i class="fas fa-crown"></i>
                                             <span>中医理疗家庭套装</span>
-                                            <small>TCM Family Therapy Kit</small>
+                                            <small>TCM Family Therapy Kit （provided independently by licensed clinics in China.）</small>
                                         </div>
                                         <div class="benefit-item">
                                             <i class="fas fa-crown"></i>
@@ -3237,9 +3253,9 @@
             <div class="dental-header">
                 <i class="fas fa-tooth dental-icon"></i>
                 <div>
-                    <h2 class="dental-title">成都优质牙科服务</h2>
-                    <div class="dental-subtitle">Chengdu Premium Dental Care - High-Quality Dental Consultations at Comparatively Affordable Costs</div>
-                    <div class="dental-subtitle chinese">以相对可负担的费用，在成都为您协调优质牙科咨询与服务安排</div>
+                    <h2 class="dental-title">协调预约成都优质牙科服务</h2>
+                    <div class="dental-subtitle">Coordinate your Premium Dental Care & High-Quality Dental Consultations with Comparatively Affordable Costs at Chengdu clinics</div>
+                    <div class="dental-subtitle chinese">以相对可负担的费用，为您协调在成都的优质牙科咨询与服务安排</div>
                 </div>
             </div>
             
@@ -3250,7 +3266,7 @@
             
             <div class="dental-stats fade-in">
                 <div class="stat-item">
-                    <div class="stat-number">~60%</div>
+                    <div class="stat-number">Up To 60%</div>
                     <div class="stat-label">Cost Savings vs NZ | 相比新西兰节省</div>
                 </div>
                 <div class="stat-item">
@@ -3284,14 +3300,14 @@
                         </li>
                         <li style="padding: 8px 0; color: var(--text-color); position: relative; padding-left: 25px; font-size: 0.95rem;">
                             <i class="fas fa-check" style="color: var(--secondary-color); position: absolute; left: 0;"></i>
-                            免费洁牙服务 | Free dental cleaning
+                            洁牙服务 | Dental cleaning 
                         </li>
                         <li style="padding: 8px 0; color: var(--text-color); position: relative; padding-left: 25px; font-size: 0.95rem;">
                             <i class="fas fa-check" style="color: var(--secondary-color); position: absolute; left: 0;"></i>
                             X光检查（如需要）| X-rays if needed
                         </li>
                     </ul>
-                    <div style="color: var(--secondary-color); font-weight: 600; margin-top: 20px;">✅ 首次咨询包含免费洁牙 | Free cleaning with initial consultation</div>
+                    <div style="color: var(--secondary-color); font-weight: 600; margin-top: 20px;">✅ 预定旅行获赠包含洁牙 | Optional free cleaning with tour booking </div>
                 </div>
                 
                 <div class="dental-service-card additional fade-in enhanced-hover">
@@ -3362,239 +3378,264 @@
             </div>
         </section>
 
-        <!-- ===== 合作口腔诊所医疗团队背景 (可折叠版本) ===== -->
-        <section class="dental-team-section" id="dental-team">
-            <div class="collapsible-container">
-                <div class="collapsible-card active fade-in">
-                    <div class="collapsible-header" onclick="toggleCollapsible(this)">
-                        <h3><i class="fas fa-user-md"></i> 合作口腔诊所医疗团队背景 | Partner Dental Clinic Medical Team Background</h3>
-                        <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+	<!-- ===== 合作口腔诊所医疗团队背景 (可折叠版本) ===== -->
+<section class="dental-team-section" id="dental-team">
+    <div class="collapsible-container">
+        <!-- 卡片1: 华西口腔医学院介绍 -->
+        <div class="collapsible-card active fade-in">
+            <div class="collapsible-header" onclick="toggleCollapsible(this)">
+                <h3><i class="fas fa-university"></i> 华西口腔医学院介绍 | West China School of Stomatology</h3>
+                <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+            </div>
+            <div class="collapsible-content">
+                <div class="hospital-intro-card enhanced-hover">
+                    <div class="hospital-badge">
+                        <i class="fas fa-graduation-cap"></i> 教育背景 | Educational Background
                     </div>
-                    <div class="collapsible-content">
-                        <div class="dental-team-content">
-                            <!-- 华西口腔医学院介绍 -->
-                            <div class="hospital-intro-card enhanced-hover">
-                                <div class="hospital-badge">
-                                    <i class="fas fa-graduation-cap"></i> 教育背景 | Educational Background
-                                </div>
-                                
-                                <div class="hospital-header">
-                                    <div class="hospital-icon">
-                                        <i class="fas fa-university"></i>
-                                    </div>
-                                    <div class="hospital-info">
-                                        <h3 class="hospital-name">四川大学华西口腔医学院</h3>
-                                        <div class="hospital-subtitle">West China School of Stomatology, Sichuan University</div>
-                                        <div class="hospital-tagline">中国领先的口腔医学教育与研究机构 | China's Leading Dental Education & Research Institution</div>
-                                    </div>
-                                </div>
-                                
-                                <div class="rankings-grid">
-                                    <div class="ranking-card">
-                                        <div class="ranking-badge global">全球第12</div>
-                                        <div class="ranking-title">QS世界大学学科排名 2025</div>
-                                        <div class="ranking-subtitle">QS World University Rankings by Subject 2025</div>
-                                        <div class="ranking-detail">口腔医学位列全球第12位 · 中国内地第一</div>
-                                        <div class="ranking-detail english">Dentistry ranked 12th globally · 1st in Mainland China</div>
-                                    </div>
-                                    
-                                    <div class="ranking-card featured">
-                                        <div class="ranking-badge global">全球第4</div>
-                                        <div class="ranking-title">软科世界一流学科排名 2024</div>
-                                        <div class="ranking-subtitle">ShanghaiRanking's Global Ranking 2024</div>
-                                        <div class="ranking-detail">口腔医学位列世界第4位 · 中国第一</div>
-                                        <div class="ranking-detail english">Dentistry ranked 4th globally · 1st in China</div>
-                                    </div>
-                                    
-                                    <div class="ranking-card">
-                                        <div class="ranking-badge founded">1917年</div>
-                                        <div class="ranking-title">百年历史传承</div>
-                                        <div class="ranking-subtitle">Century of Excellence</div>
-                                        <div class="ranking-detail">中国现代口腔医学教育的发源地</div>
-                                        <div class="ranking-detail english">Origin of modern dental education in China</div>
-                                    </div>
-                                </div>
-                                
-                                <div class="hospital-description">
-                                    <p>四川大学华西口腔医学院是中国重要的口腔医学教育与研究机构之一，在中国现代口腔医学发展历程中扮演着关键角色。</p>
-                                    <p class="english">The West China School of Stomatology at Sichuan University is one of China's leading dental education and research institutions, playing a pivotal role in the development of modern dental education and clinical research in China.</p>
-                                </div>
+                    
+                    <div class="hospital-header">
+                        <div class="hospital-icon">
+                            <i class="fas fa-university"></i>
+                        </div>
+                        <div class="hospital-info">
+                            <h3 class="hospital-name">四川大学华西口腔医学院</h3>
+                            <div class="hospital-subtitle">West China School of Stomatology, Sichuan University</div>
+                            <div class="hospital-tagline">中国领先的口腔医学教育与研究机构 | China's Leading Dental Education & Research Institution</div>
+                        </div>
+                    </div>
+                    
+                    <div class="rankings-grid">
+                        <div class="ranking-card">
+                            <div class="ranking-badge global">全球第12</div>
+                            <div class="ranking-title">QS世界大学学科排名 2025</div>
+                            <div class="ranking-subtitle">QS World University Rankings by Subject 2025</div>
+                            <div class="ranking-detail">口腔医学位列全球第12位 · 中国内地第一</div>
+                            <div class="ranking-detail english">Dentistry ranked 12th globally · 1st in Mainland China</div>
+                        </div>
+                        
+                        <div class="ranking-card featured">
+                            <div class="ranking-badge global">全球第4</div>
+                            <div class="ranking-title">软科世界一流学科排名 2024</div>
+                            <div class="ranking-subtitle">ShanghaiRanking's Global Ranking 2024</div>
+                            <div class="ranking-detail">口腔医学位列世界第4位 · 中国第一</div>
+                            <div class="ranking-detail english">Dentistry ranked 4th globally · 1st in China</div>
+                        </div>
+                        
+                        <div class="ranking-card">
+                            <div class="ranking-badge founded">1917年</div>
+                            <div class="ranking-title">百年历史传承</div>
+                            <div class="ranking-subtitle">Century of Excellence</div>
+                            <div class="ranking-detail">中国现代口腔医学教育的发源地</div>
+                            <div class="ranking-detail english">Origin of modern dental education in China</div>
+                        </div>
+                    </div>
+                    
+                    <div class="hospital-description">
+                        <p>四川大学华西口腔医学院是中国重要的口腔医学教育与研究机构之一，在中国现代口腔医学发展历程中扮演着关键角色。</p>
+                        <p class="english">The West China School of Stomatology at Sichuan University is one of China's leading dental education and research institutions, playing a pivotal role in the development of modern dental education and clinical research in China.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 卡片2: 医疗团队资质 -->
+        <div class="collapsible-card fade-in">
+            <div class="collapsible-header" onclick="toggleCollapsible(this)">
+                <h3><i class="fas fa-award"></i> 医疗团队资质 | Medical Team Qualifications</h3>
+                <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+            </div>
+            <div class="collapsible-content">
+                <div class="team-qualifications enhanced-hover">
+                    <div class="qualifications-header">
+                        <h3><i class="fas fa-award"></i> 医疗团队资质 | Medical Team Qualifications</h3>
+                    </div>
+                    
+                    <div class="qualifications-content">
+                        <div class="qualification-item">
+                            <div class="qualification-icon">
+                                <i class="fas fa-diploma"></i>
                             </div>
-                            
-                            <!-- 医疗团队资质 -->
-                            <div class="team-qualifications enhanced-hover">
-                                <div class="qualifications-header">
-                                    <h3><i class="fas fa-award"></i> 医疗团队资质 | Medical Team Qualifications</h3>
-                                </div>
-                                
-                                <div class="qualifications-content">
-                                    <div class="qualification-item">
-                                        <div class="qualification-icon">
-                                            <i class="fas fa-diploma"></i>
-                                        </div>
-                                        <div class="qualification-details">
-                                            <h4>统一的高标准教育背景</h4>
-                                            <p class="chinese">我们的合作诊所所有执业医生均毕业于四川大学华西口腔医学院或同等级别的国内顶尖口腔医学院校。</p>
-                                            <p class="english">All practicing dentists at our partner clinics are graduates of the West China School of Stomatology at Sichuan University or other top-tier dental schools in China of equivalent standing.</p>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="qualification-item">
-                                        <div class="qualification-icon">
-                                            <i class="fas fa-stethoscope"></i>
-                                        </div>
-                                        <div class="qualification-details">
-                                            <h4>持续的继续教育与专业发展</h4>
-                                            <p class="chinese">医疗团队定期参与国内外专业学术会议、技术培训和国际交流，确保掌握最新的口腔医学技术和临床实践。</p>
-                                            <p class="english">The medical team regularly participates in domestic and international academic conferences, technical training, and exchange programs to stay current with the latest dental technologies and clinical practices.</p>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="qualification-item">
-                                        <div class="qualification-icon">
-                                            <i class="fas fa-handshake"></i>
-                                        </div>
-                                        <div class="qualification-details">
-                                            <h4>丰富的临床经验</h4>
-                                            <p class="chinese">团队医生平均拥有10年以上临床实践经验，处理过大量复杂病例，尤其擅长国际患者的诊疗需求。</p>
-                                            <p class="english">Team doctors have an average of over 10 years of clinical experience, having managed numerous complex cases with particular expertise in meeting the needs of international patients.</p>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="qualification-item">
-                                        <div class="qualification-icon">
-                                            <i class="fas fa-language"></i>
-                                        </div>
-                                        <div class="qualification-details">
-                                            <h4>跨文化沟通能力</h4>
-                                            <p class="chinese">团队中有多名医生具备流利英语沟通能力，或诊所配备专业医疗翻译，确保与国际患者无障碍沟通。</p>
-                                            <p class="english">Several team doctors are fluent in English, or the clinics provide professional medical interpreters to ensure seamless communication with international patients.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <div class="qualifications-summary">
-                                    <div class="summary-icon">
-                                        <i class="fas fa-shield-alt"></i>
-                                    </div>
-                                    <div class="summary-text">
-                                        <p><strong>我们的承诺：</strong>只与具备最高专业标准和教育背景的医疗机构合作，确保您获得安全、专业、高质量的口腔医疗服务。</p>
-                                        <p class="english"><strong>Our Commitment:</strong> We partner only with medical institutions that meet the highest professional standards and educational backgrounds, ensuring you receive safe, professional, and high-quality dental care.</p>
-                                    </div>
-                                </div>
+                            <div class="qualification-details">
+                                <h4>统一的高标准教育背景</h4>
+                                <p class="chinese">我们的合作诊所所有执业医生均毕业于四川大学华西口腔医学院或同等级别的国内顶尖口腔医学院校。</p>
+                                <p class="english">All practicing dentists at our partner clinics are graduates of the West China School of Stomatology at Sichuan University or other top-tier dental schools in China of equivalent standing.</p>
                             </div>
-                            
-                            <!-- 隐私保护声明 -->
-                            <div class="privacy-statement enhanced-hover">
-                                <div class="privacy-header">
-                                    <h3><i class="fas fa-user-shield"></i> 隐私保护声明 | Privacy Protection Statement</h3>
-                                </div>
-                                
-                                <div class="privacy-content">
-                                    <div class="privacy-notice">
-                                        <div class="notice-icon">
-                                            <i class="fas fa-exclamation-circle"></i>
-                                        </div>
-                                        <div class="notice-text">
-                                            <h4>关于医生个人信息披露</h4>
-                                            <p class="chinese">为保护医疗团队个人隐私并遵守相关医疗广告法规，我们不会在公开材料中提供具体的医生姓名、照片或个人联系方式。</p>
-                                            <p class="english">To protect the personal privacy of our medical team and comply with relevant medical advertising regulations, we do not provide specific doctor names, photos, or personal contact information in public materials.</p>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="privacy-explanation">
-                                        <div class="explanation-item">
-                                            <i class="fas fa-lock"></i>
-                                            <div>
-                                                <h5>隐私保护原则</h5>
-                                                <p>我们尊重每一位医疗专业人员的隐私权，这与国际医疗伦理标准和数据保护原则一致。</p>
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="explanation-item">
-                                            <i class="fas fa-balance-scale"></i>
-                                            <div>
-                                                <h5>合规性保障</h5>
-                                                <p>我们的信息披露方式严格遵守中国医疗广告法规和国际医疗伦理标准。</p>
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="explanation-item">
-                                            <i class="fas fa-check-circle"></i>
-                                            <div>
-                                                <h5>信任建立替代方案</h5>
-                                                <p>我们通过展示医疗团队的整体教育背景、机构认证和患者评价来建立信任，而非依赖个人宣传。</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="privacy-assurance">
-                                        <p><strong>咨询过程中的信息披露：</strong>在您进行正式咨询并确定合作关系后，我们会根据实际需要和诊所政策，在适当范围内提供相关的医生资质信息以供参考。</p>
-                                        <p class="english"><strong>Information Disclosure During Consultation:</strong> After you initiate a formal consultation and establish a cooperative relationship, we will provide relevant doctor qualification information within appropriate boundaries according to actual needs and clinic policies.</p>
-                                    </div>
-                                </div>
+                        </div>
+                        
+                        <div class="qualification-item">
+                            <div class="qualification-icon">
+                                <i class="fas fa-stethoscope"></i>
                             </div>
-                            
-                            <!-- 信任建立卡片 -->
-                            <div class="trust-building-card">
-                                <div class="trust-header">
-                                    <h3><i class="fas fa-star"></i> 为什么选择我们的合作诊所？ | Why Choose Our Partner Clinics?</h3>
-                                </div>
-                                
-                                <div class="trust-reasons">
-                                    <div class="trust-reason">
-                                        <div class="reason-icon">
-                                            <i class="fas fa-school"></i>
-                                        </div>
-                                        <div class="reason-content">
-                                            <h4>顶尖教育背景</h4>
-                                            <p>所有医生均毕业于中国顶尖口腔医学院校，确保专业基础扎实</p>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="trust-reason">
-                                        <div class="reason-icon">
-                                            <i class="fas fa-clinic-medical"></i>
-                                        </div>
-                                        <div class="reason-content">
-                                            <h4>现代化设施</h4>
-                                            <p>诊所配备国际先进的牙科设备，采用严格的无菌操作流程</p>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="trust-reason">
-                                        <div class="reason-icon">
-                                            <i class="fas fa-globe-americas"></i>
-                                        </div>
-                                        <div class="reason-content">
-                                            <h4>国际标准</h4>
-                                            <p>诊疗标准与国际接轨，许多医生有海外培训或交流经历</p>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="trust-reason">
-                                        <div class="reason-icon">
-                                            <i class="fas fa-comments"></i>
-                                        </div>
-                                        <div class="reason-content">
-                                            <h4>双语服务</h4>
-                                            <p>提供全程英语支持，消除语言障碍，确保沟通准确</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <div class="trust-cta">
-                                    <p>选择我们的协调服务，就是选择与成都顶尖口腔医疗团队连接的机会。</p>
-                                    <button class="premium-btn dental-btn" onclick="showCustomizationModal('口腔医疗团队背景咨询')">
-                                        <i class="fas fa-calendar-check"></i> 预约咨询合作诊所 | Consult About Partner Clinics
-                                    </button>
-                                </div>
+                            <div class="qualification-details">
+                                <h4>持续的继续教育与专业发展</h4>
+                                <p class="chinese">医疗团队定期参与国内外专业学术会议、技术培训和国际交流，确保掌握最新的口腔医学技术和临床实践。</p>
+                                <p class="english">The medical team regularly participates in domestic and international academic conferences, technical training, and exchange programs to stay current with the latest dental technologies and clinical practices.</p>
                             </div>
+                        </div>
+                        
+                        <div class="qualification-item">
+                            <div class="qualification-icon">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                            <div class="qualification-details">
+                                <h4>丰富的临床经验</h4>
+                                <p class="chinese">团队医生平均拥有5年以上临床实践经验，处理过大量复杂病例，尤其擅长国际患者的诊疗需求。</p>
+                                <p class="english">Team doctors have an average of over 5 years of clinical experience, having managed numerous complex cases with particular expertise in meeting the needs of international patients.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="qualification-item">
+                            <div class="qualification-icon">
+                                <i class="fas fa-language"></i>
+                            </div>
+                            <div class="qualification-details">
+                                <h4>跨文化沟通能力</h4>
+                                <p class="chinese">团队中有多名医生具备流利英语沟通能力，或诊所配备专业医疗翻译，确保与国际患者无障碍沟通。</p>
+                                <p class="english">Several team doctors are fluent in English, or the clinics provide professional medical interpreters to ensure seamless communication with international patients.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="qualifications-summary">
+                        <div class="summary-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="summary-text">
+                            <p><strong>我们的承诺：</strong>只与具备高专业标准和教育背景的医疗机构合作，确保您获得安全、专业、高质量的口腔医疗服务。</p>
+                            <p class="english"><strong>Our Commitment:</strong> We partner only with medical institutions that meet the professional standards and educational backgrounds, ensuring you receive safe, professional, and high-quality dental care.</p>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+        
+        <!-- 卡片3: 医生隐私保护声明 -->
+        <div class="collapsible-card fade-in">
+            <div class="collapsible-header" onclick="toggleCollapsible(this)">
+                <h3><i class="fas fa-user-shield"></i> 医生隐私保护声明 | Privacy Protection Statement</h3>
+                <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+            </div>
+            <div class="collapsible-content">
+                <div class="privacy-statement enhanced-hover fade-in">
+                    <div class="privacy-header">
+                        <h3><i class="fas fa-user-shield"></i> 医生隐私保护声明 | Privacy Protection Statement for doctors</h3>
+                    </div>
+                    
+                    <div class="privacy-content">
+                        <div class="privacy-notice">
+                            <div class="notice-icon">
+                                <i class="fas fa-exclamation-circle"></i>
+                            </div>
+                            <div class="notice-text">
+                                <h4>关于医生个人信息披露</h4>
+                                <p class="chinese">为保护医疗团队个人隐私并遵守相关医疗广告法规，我们不会在公开材料中提供具体的医生姓名、照片或个人联系方式。</p>
+                                <p class="english">To protect the personal privacy of our medical team and comply with relevant medical advertising regulations, we do not provide specific doctor names, photos, or personal contact information in public materials.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="privacy-explanation">
+                            <div class="explanation-item">
+                                <i class="fas fa-lock"></i>
+                                <div>
+                                    <h5>隐私保护原则  | Privacy Protection Principles</h5>
+                                    <p>我们尊重每一位医疗专业人员的隐私权，这与国际医疗伦理标准和数据保护原则一致。</p>
+            			    <p class="english">We uphold the privacy rights of medical professionals, aligning with international medical ethics standards and data protection principles (including GDPR, HIPAA, and China's Personal Information Protection Law).</p>
+                                </div>
+                            </div>
+                            
+                            <div class="explanation-item">
+                                <i class="fas fa-balance-scale"></i>
+                                <div>
+                                    <h5>合规性保障 | Regulatory Compliance Assurance</h5>
+                                    <p>我们的信息披露方式严格遵守中国医疗广告法规和国际医疗伦理标准。</p>
+            			    <p class="english">Our information disclosure practices strictly adhere to China's Medical Advertising Regulations (《医疗广告管理办法》) and international medical ethics standards (including WMA Declaration of Geneva and ICH guidelines).</p>
+                                </div>
+                            </div>
+                            
+                            <div class="explanation-item">
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <h5>信任建立替代方案 | Alternative Trust-Building Methodology</h5>
+                                    <p>我们通过展示医疗团队的整体教育背景、机构认证和患者评价来建立信任，而非依赖个人宣传。</p>
+				    <p class="english">We establish trust through comprehensive demonstration of the medical team's collective educational credentials, institutional accreditations, and aggregate patient feedback, rather than relying on individual practitioner promotion.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="privacy-assurance">
+                            <p><strong>咨询过程中的信息披露：</strong>在您进行正式咨询并确定合作关系后，我们会根据实际需要和诊所政策，在适当范围内提供相关的医生资质信息以供参考。</p>
+                            <p class="english"><strong>Information Disclosure During Consultation:</strong> After you initiate a formal consultation and establish a cooperative relationship, we will provide relevant doctor qualification information within appropriate boundaries according to actual needs and clinic policies.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 卡片4: 信任建立卡片 -->
+        <div class="collapsible-card fade-in">
+            <div class="collapsible-header" onclick="toggleCollapsible(this)">
+                <h3><i class="fas fa-star"></i> 为什么选择我们的合作诊所？ | Why Choose Our Partner Clinics?</h3>
+                <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+            </div>
+            <div class="collapsible-content">
+                <div class="trust-building-card">
+                    <div class="trust-header">
+                        <h3><i class="fas fa-star"></i> 为什么选择我们的合作诊所？ | Why Choose Our Partner Clinics?</h3>
+                    </div>
+                    
+                    <div class="trust-reasons">
+                        <div class="trust-reason">
+                            <div class="reason-icon">
+                                <i class="fas fa-school"></i>
+                            </div>
+                            <div class="reason-content">
+                                <h4>顶尖教育背景</h4>
+                                <p>所有医生均毕业于中国顶尖口腔医学院校，确保专业基础扎实</p>
+                            </div>
+                        </div>
+                        
+                        <div class="trust-reason">
+                            <div class="reason-icon">
+                                <i class="fas fa-clinic-medical"></i>
+                            </div>
+                            <div class="reason-content">
+                                <h4>现代化设施</h4>
+                                <p>诊所配备国际先进的牙科设备，采用严格的无菌操作流程</p>
+                            </div>
+                        </div>
+                        
+                        <div class="trust-reason">
+                            <div class="reason-icon">
+                                <i class="fas fa-globe-americas"></i>
+                            </div>
+                            <div class="reason-content">
+                                <h4>国际标准</h4>
+                                <p>诊疗标准与国际接轨，许多医生有海外培训或交流经历</p>
+                            </div>
+                        </div>
+                        
+                        <div class="trust-reason">
+                            <div class="reason-icon">
+                                <i class="fas fa-comments"></i>
+                            </div>
+                            <div class="reason-content">
+                                <h4>双语服务</h4>
+                                <p>提供全程英语支持，消除语言障碍，确保沟通准确</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="trust-cta">
+                        <p>选择我们的协调服务，就是选择与成都顶尖口腔医疗团队连接的机会。</p>
+                        <button class="premium-btn dental-btn" onclick="showCustomizationModal('口腔医疗团队背景咨询')">
+                            <i class="fas fa-calendar-check"></i> 预约咨询合作诊所 | Consult About Partner Clinics
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
         <!-- 预订区域 -->
         <section class="booking-section" id="contact">
