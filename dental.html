@@ -3,21 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="新西兰KIWI Serenity Limited为您提供成都优质牙科服务，高品质牙科治疗费用仅为新西兰的三分之一。专业医疗团队，英语全程支持。">
-    <meta name="keywords" content="成都牙科,新西兰牙科,牙科旅游,种植牙,牙齿美白,华西口腔,牙科费用对比">
-    <title>成都优质牙科服务 | 新西兰KIWI Serenity Limited</title>
+    <meta name="description" content="新西兰KIWI Serenity Limited为您提供成都优质牙科服务，高品质牙科治疗费用仅为新西兰的三分之一。专业医疗团队，英语全程支持。New Zealand KIWI Serenity Limited provides premium dental care in Chengdu at one-third the cost of NZ. Professional medical team with full English support.">
+    <meta name="keywords" content="成都牙科,新西兰牙科,牙科旅游,种植牙,牙齿美白,华西口腔,牙科费用对比,Chengdu dental,New Zealand dental,dental tourism,dental implants,teeth whitening,West China Dental,dental cost comparison">
+    <title>成都优质牙科服务 | 新西兰KIWI Serenity Limited | Chengdu Premium Dental Care | NZ KIWI Serenity Limited</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-blue: #1e40af;
-            --secondary-blue: #1e88e5;
+            --primary-blue: #1e3a8a;
+            --secondary-blue: #3b82f6;
             --accent-green: #10b981;
             --accent-gold: #f59e0b;
-            --warning-red: #ef4444;
-            --text-dark: #1f2937;
+            --accent-red: #ef4444;
+            --accent-purple: #8b5cf6;
+            --text-dark: #111827;
             --text-medium: #4b5563;
             --text-light: #6b7280;
             --white: #ffffff;
@@ -26,6 +27,7 @@
             --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
             --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
             --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.12);
+            --shadow-xl: 0 20px 50px rgba(0, 0, 0, 0.15);
             --radius-sm: 10px;
             --radius-md: 16px;
             --radius-lg: 24px;
@@ -58,7 +60,7 @@
             overflow-x: hidden;
         }
         
-        /* 添加渐变遮罩层 */
+        /* 渐变遮罩层 */
         body::before {
             content: '';
             position: fixed;
@@ -80,9 +82,9 @@
             position: relative;
         }
         
-        /* 新增：顶部导航栏 */
+        /* 顶部导航栏 - 修改布局 */
         .top-nav {
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255, 0.98);
             backdrop-filter: blur(20px);
             border-bottom: 1px solid rgba(229, 231, 235, 0.8);
             position: fixed;
@@ -100,6 +102,13 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+        }
+        
+        /* 左侧导航区域 */
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 20px;
         }
         
         .nav-brand {
@@ -141,6 +150,30 @@
             color: var(--text-medium);
             font-weight: 500;
             letter-spacing: 0.5px;
+        }
+        
+        /* 汉堡菜单图标 - 移至左侧 */
+        .mobile-menu-toggle {
+            display: none; /* 默认隐藏，在移动端显示 */
+            background: none;
+            border: none;
+            color: var(--primary-blue);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 8px;
+            transition: background-color var(--transition-fast);
+        }
+        
+        .mobile-menu-toggle:hover {
+            background-color: rgba(30, 64, 175, 0.1);
+        }
+        
+        /* 右侧导航区域 */
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 32px;
         }
         
         .nav-links {
@@ -197,7 +230,7 @@
             border-color: rgba(255, 255, 255, 0.3);
         }
         
-        /* 优化：主标题区域 */
+        /* 主标题区域 */
         .hero-section {
             background: linear-gradient(135deg, 
                 rgba(30, 64, 175, 0.95) 0%, 
@@ -290,7 +323,7 @@
             border-color: rgba(30, 64, 175, 0.2);
         }
         
-        /* 优化：统计数据横幅 */
+        /* 统计数据横幅 */
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -398,7 +431,372 @@
             line-height: 1.6;
         }
         
-        /* 优化：服务卡片 */
+        /* 双语标签样式 */
+        .bilingual-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+        
+        .chinese-label {
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+        
+        .english-label {
+            font-weight: 500;
+            color: var(--text-medium);
+            font-style: italic;
+            font-size: 0.9rem;
+        }
+        
+        /* 新增：全球排名展示 */
+        .global-ranking-container {
+            max-width: 1200px;
+            margin: 0 auto 80px;
+        }
+        
+        .global-ranking-card {
+            background: linear-gradient(135deg, 
+                rgba(30, 64, 175, 0.05) 0%, 
+                rgba(30, 64, 175, 0.1) 100%);
+            border-radius: var(--radius-lg);
+            padding: 60px 40px;
+            text-align: center;
+            border: 2px solid rgba(30, 64, 175, 0.1);
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .global-ranking-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 8px;
+            background: linear-gradient(90deg, #f59e0b, #10b981, #3b82f6);
+            z-index: 1;
+        }
+        
+        .ranking-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.2rem;
+            color: var(--primary-blue);
+            margin-bottom: 30px;
+            font-weight: 800;
+            text-align: center;
+        }
+        
+        .ranking-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-medium);
+            margin-bottom: 50px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+            text-align: center;
+        }
+        
+        .ranking-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .ranking-item {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: var(--radius-lg);
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            border: 1px solid rgba(229, 231, 235, 0.9);
+            transition: all var(--transition-fast);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .ranking-item:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+            border-color: rgba(30, 64, 175, 0.3);
+        }
+        
+        .ranking-number {
+            font-family: 'Poppins', sans-serif;
+            font-size: 4rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            line-height: 1;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .ranking-number::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 10%;
+            width: 80%;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, var(--accent-green), transparent);
+            border-radius: 2px;
+        }
+        
+        .ranking-label {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+        }
+        
+        .ranking-source {
+            font-size: 0.95rem;
+            color: var(--text-medium);
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+        
+        .ranking-description {
+            font-size: 1rem;
+            color: var(--text-medium);
+            line-height: 1.6;
+        }
+        
+        /* 新增：医疗团队资质卡片 */
+        .team-qualification-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        
+        .qualification-card {
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: var(--radius-lg);
+            padding: 40px 30px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid rgba(229, 231, 235, 0.9);
+            transition: all var(--transition-fast);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .qualification-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, var(--accent-green), var(--secondary-blue));
+            z-index: 1;
+        }
+        
+        .qualification-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .qualification-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            margin: 0 auto 30px;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .qualification-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.8rem;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.3;
+            text-align: center;
+        }
+        
+        .qualification-list {
+            list-style: none;
+            margin-top: 20px;
+        }
+        
+        .qualification-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(243, 244, 246, 0.9);
+            color: var(--text-medium);
+            position: relative;
+            padding-left: 36px;
+            font-size: 1.05rem;
+            line-height: 1.5;
+            transition: color var(--transition-fast);
+        }
+        
+        .qualification-list li:hover {
+            color: var(--primary-blue);
+        }
+        
+        .qualification-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            top: 12px;
+            color: var(--accent-green);
+            font-weight: bold;
+            font-size: 1.2rem;
+            width: 24px;
+            height: 24px;
+            background: rgba(16, 185, 129, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* 可折叠卡片系统 - 新增 */
+        .expandable-cards-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .expandable-card {
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            border: 1px solid rgba(229, 231, 235, 0.9);
+            overflow: hidden;
+            backdrop-filter: blur(20px);
+            transition: all var(--transition-fast);
+            margin-bottom: 24px;
+        }
+        
+        .expandable-card:hover {
+            box-shadow: var(--shadow-lg);
+            border-color: rgba(30, 64, 175, 0.3);
+        }
+        
+        .expandable-card.active {
+            border-color: var(--accent-green);
+            box-shadow: 0 20px 40px rgba(16, 185, 129, 0.15);
+        }
+        
+        .expandable-card-header {
+            padding: 32px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(135deg, 
+                rgba(30, 64, 175, 0.03) 0%, 
+                rgba(30, 64, 175, 0.08) 100%);
+            border-bottom: 1px solid rgba(229, 231, 235, 0.5);
+            transition: all var(--transition-fast);
+        }
+        
+        .expandable-card-header:hover {
+            background: linear-gradient(135deg, 
+                rgba(30, 64, 175, 0.08) 0%, 
+                rgba(30, 64, 175, 0.12) 100%);
+        }
+        
+        .expandable-card-title {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .expandable-card-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.8rem;
+            box-shadow: var(--shadow-md);
+            flex-shrink: 0;
+        }
+        
+        .expandable-card-title-text {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.7rem;
+            color: var(--primary-blue);
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        .expandable-card-toggle {
+            font-size: 1.8rem;
+            color: var(--accent-green);
+            transition: transform var(--transition-fast);
+        }
+        
+        .expandable-card.active .expandable-card-toggle {
+            transform: rotate(180deg);
+        }
+        
+        .expandable-card-content {
+            padding: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: all var(--transition-slow);
+        }
+        
+        .expandable-card.active .expandable-card-content {
+            padding: 40px;
+            max-height: 5000px;
+        }
+        
+        .expandable-content-section {
+            margin-bottom: 40px;
+        }
+        
+        .expandable-content-section:last-child {
+            margin-bottom: 0;
+        }
+        
+        .expandable-content-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 28px;
+        }
+        
+        .expandable-content-icon {
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, var(--accent-green), #34d399);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+        
+        .expandable-content-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+            font-weight: 700;
+        }
+        
+        /* 服务卡片 */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
@@ -537,7 +935,7 @@
             justify-content: center;
         }
         
-        /* 优化：免责声明 */
+        /* 免责声明 */
         .disclaimer-card {
             background: linear-gradient(135deg, 
                 rgba(255, 247, 237, 0.95) 0%, 
@@ -588,7 +986,7 @@
             font-weight: 600;
         }
         
-        /* 优化：流程部分 */
+        /* 流程部分 */
         .process-section {
             background: linear-gradient(135deg, 
                 rgba(240, 249, 255, 0.95) 0%, 
@@ -687,294 +1085,7 @@
             line-height: 1.7;
         }
         
-        /* 优化：医疗团队部分 */
-        .team-section {
-            background: linear-gradient(135deg, 
-                rgba(248, 250, 252, 0.95) 0%, 
-                rgba(241, 245, 249, 0.95) 100%);
-            border-radius: var(--radius-xl);
-            margin: 80px 0;
-            padding: 80px 40px;
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.6);
-        }
-        
-        .team-container {
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-        
-        .expandable-cards {
-            display: flex;
-            flex-direction: column;
-            gap: 28px;
-        }
-        
-        .expandable-card {
-            background: rgba(255, 255, 255, 0.98);
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-md);
-            border: 1px solid rgba(229, 231, 235, 0.9);
-            overflow: hidden;
-            backdrop-filter: blur(20px);
-            transition: all var(--transition-fast);
-        }
-        
-        .expandable-card:hover {
-            box-shadow: var(--shadow-lg);
-            border-color: rgba(30, 64, 175, 0.3);
-        }
-        
-        .expandable-card.active {
-            border-color: var(--accent-green);
-            box-shadow: 0 20px 40px rgba(16, 185, 129, 0.15);
-        }
-        
-        .card-header {
-            padding: 32px;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: linear-gradient(135deg, 
-                rgba(30, 64, 175, 0.03) 0%, 
-                rgba(30, 64, 175, 0.08) 100%);
-            border-bottom: 1px solid rgba(229, 231, 235, 0.5);
-            transition: all var(--transition-fast);
-        }
-        
-        .card-header:hover {
-            background: linear-gradient(135deg, 
-                rgba(30, 64, 175, 0.08) 0%, 
-                rgba(30, 64, 175, 0.12) 100%);
-        }
-        
-        .card-title {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-        
-        .card-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.8rem;
-            box-shadow: var(--shadow-md);
-            flex-shrink: 0;
-        }
-        
-        .card-title-text {
-            font-family: 'Poppins', sans-serif;
-            font-size: 1.7rem;
-            color: var(--primary-blue);
-            font-weight: 700;
-            line-height: 1.2;
-        }
-        
-        .toggle-icon {
-            font-size: 1.8rem;
-            color: var(--accent-green);
-            transition: transform var(--transition-fast);
-        }
-        
-        .expandable-card.active .toggle-icon {
-            transform: rotate(180deg);
-        }
-        
-        .card-content {
-            padding: 0;
-            max-height: 0;
-            overflow: hidden;
-            transition: all var(--transition-slow);
-        }
-        
-        .expandable-card.active .card-content {
-            padding: 40px;
-            max-height: 5000px;
-        }
-        
-        .content-section {
-            margin-bottom: 40px;
-        }
-        
-        .content-section:last-child {
-            margin-bottom: 0;
-        }
-        
-        .content-header {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 28px;
-        }
-        
-        .content-icon {
-            width: 44px;
-            height: 44px;
-            background: linear-gradient(135deg, var(--accent-green), #34d399);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.2rem;
-        }
-        
-        .content-title {
-            font-family: 'Poppins', sans-serif;
-            font-size: 1.5rem;
-            color: var(--primary-blue);
-            font-weight: 700;
-        }
-        
-        .rankings-grid {
-            display: grid;
-            gap: 20px;
-        }
-        
-        .ranking-item {
-            background: rgba(240, 249, 255, 0.7);
-            border-radius: var(--radius-md);
-            padding: 24px;
-            border-left: 4px solid var(--secondary-blue);
-            transition: transform var(--transition-fast), box-shadow var(--transition-fast);
-        }
-        
-        .ranking-item:hover {
-            transform: translateX(8px);
-            box-shadow: var(--shadow-md);
-        }
-        
-        .rank-badge {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            min-width: 100px;
-            padding: 10px 20px;
-            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
-            color: white;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 0.95rem;
-            margin-bottom: 16px;
-            box-shadow: var(--shadow-sm);
-        }
-        
-        .rank-content {
-            margin-bottom: 8px;
-        }
-        
-        .rank-content strong {
-            color: var(--text-dark);
-            font-weight: 700;
-            font-size: 1.1rem;
-        }
-        
-        .rank-subtitle {
-            color: var(--text-medium);
-            font-size: 0.9rem;
-            margin-top: 8px;
-            line-height: 1.5;
-        }
-        
-        .info-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 24px;
-            margin-bottom: 32px;
-        }
-        
-        .info-card {
-            background: rgba(248, 250, 252, 0.9);
-            padding: 28px;
-            border-radius: var(--radius-md);
-            border: 1px solid rgba(229, 231, 235, 0.8);
-            transition: transform var(--transition-fast);
-        }
-        
-        .info-card:hover {
-            transform: translateY(-4px);
-            border-color: rgba(30, 64, 175, 0.2);
-        }
-        
-        .info-header {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 16px;
-        }
-        
-        .info-icon {
-            width: 40px;
-            height: 40px;
-            background: linear-gradient(135deg, var(--accent-green), #34d399);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1rem;
-            flex-shrink: 0;
-        }
-        
-        .info-title {
-            font-size: 1.15rem;
-            color: var(--primary-blue);
-            font-weight: 600;
-        }
-        
-        .info-description {
-            color: var(--text-dark);
-            line-height: 1.7;
-            font-size: 1rem;
-        }
-        
-        .team-notice {
-            background: linear-gradient(135deg, 
-                rgba(255, 247, 237, 0.9) 0%, 
-                rgba(254, 243, 199, 0.9) 100%);
-            border-left: 4px solid var(--accent-gold);
-            padding: 28px;
-            border-radius: var(--radius-md);
-            margin-top: 40px;
-        }
-        
-        .notice-header {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 16px;
-        }
-        
-        .notice-icon {
-            color: #92400e;
-            font-size: 1.5rem;
-        }
-        
-        .notice-title {
-            font-family: 'Poppins', sans-serif;
-            font-size: 1.3rem;
-            color: #92400e;
-            font-weight: 700;
-        }
-        
-        .notice-content {
-            color: var(--text-dark);
-            line-height: 1.7;
-        }
-        
-        .notice-content strong {
-            color: #92400e;
-            font-weight: 600;
-        }
-        
-        /* 优化：价格对比表格 */
+        /* 价格对比表格 */
         .comparison-section {
             padding: 80px 0;
         }
@@ -1070,7 +1181,7 @@
             margin-right: auto;
         }
         
-        /* 优化：联系区域 */
+        /* 联系区域 */
         .cta-section {
             background: linear-gradient(135deg, 
                 rgba(30, 64, 175, 0.95) 0%, 
@@ -1212,7 +1323,7 @@
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
         }
         
-        /* 优化：页脚 */
+        /* 页脚 */
         .site-footer {
             background: linear-gradient(135deg, 
                 rgba(17, 24, 39, 0.98) 0%, 
@@ -1288,7 +1399,7 @@
             margin: 0 auto;
         }
         
-        /* 新增：返回顶部按钮 */
+        /* 返回顶部按钮 */
         .back-to-top {
             position: fixed;
             bottom: 40px;
@@ -1321,7 +1432,7 @@
             box-shadow: 0 12px 30px rgba(30, 64, 175, 0.4);
         }
         
-        /* 优化：加载动画 */
+        /* 动画效果 */
         .fade-in {
             opacity: 0;
             transform: translateY(30px);
@@ -1351,7 +1462,7 @@
             animation-delay: 0.4s;
         }
         
-        /* 优化：悬停效果增强 */
+        /* 悬停效果增强 */
         .hover-lift {
             transition: transform var(--transition-fast);
         }
@@ -1360,7 +1471,7 @@
             transform: translateY(-4px);
         }
         
-        /* 响应式设计 */
+        /* 响应式设计 - 重点修改移动端布局 */
         @media (max-width: 1200px) {
             .container {
                 padding: 0 32px;
@@ -1376,6 +1487,14 @@
             
             .cta-title {
                 font-size: 2.6rem;
+            }
+            
+            .ranking-title {
+                font-size: 1.9rem;
+            }
+            
+            .ranking-number {
+                font-size: 3.2rem;
             }
         }
         
@@ -1407,7 +1526,7 @@
                 gap: 48px;
             }
             
-            .card-title-text {
+            .expandable-card-title-text {
                 font-size: 1.5rem;
             }
             
@@ -1419,17 +1538,36 @@
                 grid-template-columns: 1fr;
             }
             
+            /* 修改：汉堡菜单在移动端显示 */
+            .mobile-menu-toggle {
+                display: block;
+                order: -1; /* 确保汉堡菜单在左侧最前面 */
+            }
+            
+            /* 修改：导航链接在移动端隐藏 */
             .nav-links {
                 display: none;
             }
             
-            .mobile-menu-toggle {
-                display: block;
-                background: none;
-                border: none;
-                color: var(--primary-blue);
-                font-size: 1.5rem;
-                cursor: pointer;
+            /* 修改：CTA按钮在移动端隐藏 */
+            .nav-cta {
+                display: none;
+            }
+            
+            .ranking-title {
+                font-size: 1.8rem;
+            }
+            
+            .ranking-number {
+                font-size: 3rem;
+            }
+            
+            .qualification-title {
+                font-size: 1.6rem;
+            }
+            
+            .global-ranking-card {
+                padding: 40px 24px;
             }
         }
         
@@ -1492,25 +1630,25 @@
                 font-size: 1.6rem;
             }
             
-            .card-header {
+            .expandable-card-header {
                 padding: 24px;
             }
             
-            .card-title-text {
+            .expandable-card-title-text {
                 font-size: 1.3rem;
             }
             
-            .card-icon {
+            .expandable-card-icon {
                 width: 50px;
                 height: 50px;
                 font-size: 1.5rem;
             }
             
-            .expandable-card.active .card-content {
+            .expandable-card.active .expandable-card-content {
                 padding: 32px 24px;
             }
             
-            .content-title {
+            .expandable-content-title {
                 font-size: 1.3rem;
             }
             
@@ -1567,6 +1705,26 @@
                 height: 48px;
                 font-size: 1rem;
             }
+            
+            .ranking-title {
+                font-size: 1.6rem;
+            }
+            
+            .ranking-number {
+                font-size: 2.8rem;
+            }
+            
+            .ranking-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .team-qualification-cards {
+                grid-template-columns: 1fr;
+            }
+            
+            .ranking-label {
+                font-size: 1.2rem;
+            }
         }
         
         @media (max-width: 576px) {
@@ -1609,32 +1767,49 @@
                 font-size: 1.4rem;
             }
             
-            .card-header {
+            .expandable-card-header {
                 padding: 20px;
             }
             
-            .card-title {
+            .expandable-card-title {
                 gap: 16px;
             }
             
-            .card-title-text {
+            .expandable-card-title-text {
                 font-size: 1.2rem;
             }
             
-            .card-icon {
+            .expandable-card-icon {
                 width: 44px;
                 height: 44px;
                 font-size: 1.3rem;
                 border-radius: 12px;
             }
             
-            .info-grid {
-                grid-template-columns: 1fr;
+            .ranking-title {
+                font-size: 1.4rem;
+            }
+            
+            .ranking-number {
+                font-size: 2.4rem;
+            }
+            
+            .qualification-card {
+                padding: 32px 24px;
             }
             
             .footer-grid {
                 grid-template-columns: 1fr;
                 gap: 32px;
+            }
+            
+            /* 修改：在超小屏幕上调整导航布局 */
+            .nav-left {
+                gap: 12px;
+            }
+            
+            .nav-brand-text {
+                display: none; /* 在超小屏幕上隐藏标语 */
             }
         }
         
@@ -1674,41 +1849,46 @@
     </style>
 </head>
 <body>
-    <!-- 新增：顶部导航栏 -->
+    <!-- 顶部导航栏 - 修改布局 -->
     <nav class="top-nav">
         <div class="nav-container">
-            <a href="#" class="nav-brand">
-                <div class="nav-logo">
-                    <i class="fas fa-tooth"></i>
-                </div>
-                <div class="nav-brand-text">
-                    <span class="nav-brand-name">KIWI Serenity Limited</span>
-                    <span class="nav-brand-tagline">新西兰注册公司 | 连接新西兰与成都优质牙科</span>
-                </div>
-            </a>
-            
-            <button class="mobile-menu-toggle" id="mobileMenuToggle">
-                <i class="fas fa-bars"></i>
-            </button>
-            
-            <div class="nav-links" id="navLinks">
-                <a href="#services" class="nav-link">牙科服务</a>
-                <a href="#team" class="nav-link">医疗团队</a>
-                <a href="#pricing" class="nav-link">费用对比</a>
-                <a href="#process" class="nav-link">服务流程</a>
-                <a href="#contact" class="nav-link">联系我们</a>
-                <a href="tel:+64220405795" class="nav-cta">
-                    <i class="fas fa-phone-alt"></i> +64 22 040 5795
+            <!-- 左侧区域：汉堡菜单 + 品牌logo -->
+            <div class="nav-left">
+                <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <a href="#" class="nav-brand">
+                    <div class="nav-logo">
+                        <i class="fas fa-tooth"></i>
+                    </div>
+                    <div class="nav-brand-text">
+                        <span class="nav-brand-name">KIWI Serenity Limited</span>
+                        <span class="nav-brand-tagline">新西兰注册公司 | 连接新西兰与成都优质牙科</span>
+                    </div>
                 </a>
+            </div>
+            
+            <!-- 右侧区域：导航链接 -->
+            <div class="nav-right">
+                <div class="nav-links" id="navLinks">
+                    <a href="#services" class="nav-link">牙科服务 / Services</a>
+                    <a href="#team" class="nav-link">医疗团队 / Medical Team</a>
+                    <a href="#pricing" class="nav-link">费用对比 / Pricing</a>
+                    <a href="#process" class="nav-link">服务流程 / Process</a>
+                    <a href="#contact" class="nav-link">联系我们 / Contact</a>
+                    <a href="tel:+64220405795" class="nav-cta">
+                        <i class="fas fa-phone-alt"></i> +64 22 040 5795
+                    </a>
+                </div>
             </div>
         </div>
     </nav>
 
-    <!-- 优化：主标题区域 -->
+    <!-- 主标题区域 -->
     <section class="hero-section">
         <div class="hero-content">
             <div class="hero-badge">
-                <i class="fas fa-flag"></i> 100% 新西兰注册公司
+                <i class="fas fa-flag"></i> 100% 新西兰注册公司 / 100% NZ Registered Company
             </div>
             
             <h1 class="hero-title">
@@ -1717,17 +1897,18 @@
             </h1>
             
             <p class="hero-subtitle">
-                体验世界级牙科治疗，费用仅为新西兰的三分之一。我们的合作诊所结合先进技术与卓越护理，提供全程英语支持。
+                体验世界级牙科治疗，费用仅为新西兰的四分之一。我们的合作诊所结合先进技术与卓越护理，提供全程英语支持。<br>
+                Experience world-class dental care at 1/4 the cost of New Zealand. Our partner clinics combine advanced technology with exceptional care, providing full English support.
             </p>
             
             <a href="#contact" class="hero-cta">
                 <i class="fas fa-calendar-check"></i>
-                预约免费咨询
+                预约免费咨询 / Book Free Consultation
             </a>
         </div>
     </section>
 
-    <!-- 优化：统计数据 -->
+    <!-- 统计数据 -->
     <div class="container">
         <div class="stats-grid">
             <div class="stat-card fade-in">
@@ -1735,97 +1916,142 @@
                     <i class="fas fa-percentage"></i>
                 </div>
                 <div class="stat-number">最高 60%</div>
-                <div class="stat-label">相比新西兰费用节省</div>
+                <div class="stat-label">
+                    <div class="bilingual-label">
+                        <span class="chinese-label">相比新西兰费用节省</span>
+                        <span class="english-label">Savings vs NZ Costs</span>
+                    </div>
+                </div>
             </div>
             
             <div class="stat-card fade-in delay-1">
                 <div class="stat-icon">
                     <i class="fas fa-clock"></i>
                 </div>
-                <div class="stat-number">24小时</div>
-                <div class="stat-label">英语支持服务</div>
+                <div class="stat-number">24/7</div>
+                <div class="stat-label">
+                    <div class="bilingual-label">
+                        <span class="chinese-label">英语支持服务</span>
+                        <span class="english-label">English Support Service</span>
+                    </div>
+                </div>
             </div>
             
+            <div class="stat-card fade-in delay-2">
+                <div class="stat-icon">
+                    <i class="fas fa-university"></i>
+                </div>
+                <div class="stat-number">全球第12</div>
+                <div class="stat-label">
+                    <div class="bilingual-label">
+                        <span class="chinese-label">华西口腔医学院排名</span>
+                        <span class="english-label">West China Dental Ranking</span>
+                    </div>
+                </div>
+            </div>
             
             <div class="stat-card fade-in delay-3">
                 <div class="stat-icon">
                     <i class="fas fa-shield-alt"></i>
                 </div>
                 <div class="stat-number">100%</div>
-                <div class="stat-label">无菌设备保障</div>
+                <div class="stat-label">
+                    <div class="bilingual-label">
+                        <span class="chinese-label">无菌设备保障</span>
+                        <span class="english-label">Sterile Equipment Guarantee</span>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
-    <!-- 优化：服务部分 -->
+    <!-- 服务部分 -->
     <section id="services" class="services-section">
         <div class="container">
             <div class="section-header fade-in">
-                <span class="section-badge">专业牙科服务</span>
+                <span class="section-badge">专业牙科服务 / Professional Dental Services</span>
                 <h2 class="section-title">可提供的牙科服务</h2>
-                <p class="section-subtitle">我们提供全面的牙科治疗服务，从基础检查到复杂手术，满足您的所有口腔健康需求</p>
+                <p class="section-subtitle">
+                    我们合作的口腔诊所提供全面的牙科治疗服务，从基础检查到复杂手术，满足您的所有口腔健康需求<br>
+                    Partner Dental Clinic offer comprehensive dental treatment services, from basic examinations to complex surgeries, meeting all your oral health needs
+                </p>
             </div>
             
             <div class="services-grid">
                 <!-- 包含服务 -->
                 <div class="service-card included fade-in">
-                    <div class="service-badge">可提供的服务</div>
+                    <div class="service-badge">可提供的服务 / Available Services</div>
                     <div class="service-icon">
                         <i class="fas fa-tooth"></i>
                     </div>
-                    <h3 class="service-title">口腔检查与预防保健</h3>
-                    <p class="service-description">全面的口腔检查与预防性护理，维护您的口腔健康，预防口腔疾病的发生。</p>
+                    <h3 class="service-title">口腔检查与预防保健<br>Dental Examination & Preventive Care</h3>
+                    <p class="service-description">
+                        全面的口腔检查与预防性护理，维护您的口腔健康，预防口腔疾病的发生。<br>
+                        Comprehensive oral examination and preventive care to maintain your oral health and prevent dental diseases.
+                    </p>
                     <ul class="service-features">
-                        <li>全面口腔健康评估与检查</li>
-                        <li>专业洁牙与牙菌斑清除</li>
-                        <li>数字化X光检查（如需要）</li>
-                        <li>个性化口腔健康指导</li>
-                        <li>口腔癌筛查</li>
+                        <li>全面口腔健康评估与检查 / Comprehensive Oral Health Assessment & Examination</li>
+                        <li>专业洁牙与牙菌斑清除 / Professional Teeth Cleaning & Plaque Removal</li>
+                        <li>数字化X光检查（如需要）/ Digital X-ray Examination (if needed)</li>
+                        <li>个性化口腔健康指导 / Personalized Oral Health Guidance</li>
+                        <li>口腔癌筛查 / Oral Cancer Screening</li>
                     </ul>
-                    <div class="price-note">✅ 预定行程即赠送专业洁牙服务</div>
+                    <div class="price-note" style="margin-top: 20px; padding: 12px; background: rgba(16, 185, 129, 0.1); border-radius: 8px; color: var(--accent-green); font-weight: 600;">
+                        ✅ 预定行程获赠专业洁牙服务 /Optional Free Professional dental cleaning (with tour booking)-T&C apply
+                    </div>
                 </div>
                 
                 <!-- 标准治疗 -->
                 <div class="service-card additional fade-in delay-1">
-                    <div class="service-badge">标准治疗</div>
+                    <div class="service-badge">标准治疗 / Standard Treatments</div>
                     <div class="service-icon">
                         <i class="fas fa-teeth"></i>
                     </div>
-                    <h3 class="service-title">基础治疗项目</h3>
-                    <p class="service-description">常见牙科治疗程序，采用先进材料与技术，确保治疗精准与舒适。</p>
+                    <h3 class="service-title">基础治疗项目<br>Basic Treatment Procedures</h3>
+                    <p class="service-description">
+                        常见牙科治疗程序，采用先进材料与技术，确保治疗精准与舒适。<br>
+                        Common dental treatment procedures using advanced materials and technology to ensure precision and comfort.
+                    </p>
                     <ul class="service-features">
-                        <li>常规拔牙与简单手术</li>
-                        <li>复合树脂补牙修复</li>
-                        <li>冷光牙齿美白治疗</li>
-                        <li>全瓷牙齿贴面修复</li>
-                        <li>儿童牙科治疗</li>
+                        <li>常规拔牙与简单手术 / Routine Tooth Extraction & Simple Surgery</li>
+                        <li>复合树脂补牙修复 / Composite Resin Filling Restoration</li>
+                        <li>牙齿美白治疗 / Teeth Whitening Treatment</li>
+                        <li>全瓷牙齿贴面修复 / All-Ceramic Dental Veneer Restoration</li>
+                        <li>儿童牙科治疗 / Pediatric Dental Treatment</li>
                     </ul>
-                    <div class="price-note">💡 医生诊断后提供详细治疗方案与报价</div>
+                    <div class="price-note" style="margin-top: 20px; padding: 12px; background: rgba(30, 136, 229, 0.1); border-radius: 8px; color: var(--secondary-blue); font-weight: 600;">
+                        💡 医生诊断后提供详细治疗方案与报价 / Detailed treatment plan and quote provided after dentist diagnosis
+                    </div>
                 </div>
                 
                 <!-- 复杂治疗 -->
                 <div class="service-card complex fade-in delay-2">
-                    <div class="service-badge">复杂治疗</div>
+                    <div class="service-badge">复杂治疗 / Complex Treatments</div>
                     <div class="service-icon">
                         <i class="fas fa-teeth-open"></i>
                     </div>
-                    <h3 class="service-title">复杂治疗项目</h3>
-                    <p class="service-description">高级牙科治疗，需要专家会诊与个性化治疗方案制定。</p>
+                    <h3 class="service-title">复杂治疗项目<br>Complex Treatment Procedures</h3>
+                    <p class="service-description">
+                        高级牙科治疗，需要专家会诊与个性化治疗方案制定。<br>
+                        Advanced dental treatments requiring specialist consultation and personalized treatment planning.
+                    </p>
                     <ul class="service-features">
-                        <li>数字化种植牙修复</li>
-                        <li>隐形正畸与矫正治疗</li>
-                        <li>牙周病系统治疗</li>
-                        <li>显微根管治疗</li>
-                        <li>复杂阻生智齿拔除</li>
-                        <li>全口牙齿重建</li>
+                        <li>数字化种植牙修复 / Digital Dental Implant Restoration</li>
+                        <li>隐形正畸与矫正治疗 / Invisible Orthodontics & Correction Treatment</li>
+                        <li>牙周病系统治疗 / Periodontal Disease Systemic Treatment</li>
+                        <li>显微根管治疗 / Microscopic Root Canal Treatment</li>
+                        <li>复杂阻生智齿拔除 / Complex Impacted Wisdom Tooth Extraction</li>
+                        <li>全口牙齿重建 / Full Mouth Dental Reconstruction</li>
                     </ul>
-                    <div class="price-note">⚠️ 需专家会诊并双方书面确认治疗方案</div>
+                    <div class="price-note" style="margin-top: 20px; padding: 12px; background: rgba(245, 158, 11, 0.1); border-radius: 8px; color: var(--accent-gold); font-weight: 600;">
+                        ⚠️ 需专家会诊并双方书面确认治疗方案 / Requires specialist consultation and written confirmation of treatment plan by both parties
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 优化：免责声明 -->
+    <!-- 免责声明 -->
     <div class="container">
         <div class="disclaimer-card fade-in">
             <div class="disclaimer-header">
@@ -1836,363 +2062,413 @@
             </div>
             <div class="disclaimer-content">
                 <p><strong>KIWI Serenity Limited 仅为预约协调服务公司。</strong> 我们不直接提供牙科治疗。所有医疗程序均由我们在成都的合作诊所持牌牙医执行。我们协助预约、提供英语支持，并确保从新西兰到中国往返的无缝体验。</p>
-                <p style="margin-top: 16px;"><strong>KIWI Serenity Limited is a booking and coordination service only.</strong> We do NOT provide dental treatments directly. All medical procedures are performed by licensed dentists at our partner clinics in Chengdu. We facilitate appointments, provide English support, and ensure a seamless experience from NZ to China and back.</p>
+                <p><strong>KIWI Serenity Limited is a booking and coordination service only.</strong> We do NOT provide dental treatments directly. All medical procedures are performed by licensed dentists at our partner clinics in Chengdu. We facilitate appointments, provide English support, and ensure a seamless experience from NZ to China and back.</p>
             </div>
         </div>
     </div>
 
-    <!-- 优化：流程部分 -->
+    <!-- 流程部分 -->
     <section id="process" class="process-section">
         <div class="container">
             <div class="section-header fade-in">
-                <span class="section-badge">简单四步</span>
+                <span class="section-badge">简单四步 / Simple 4-Step Process</span>
                 <h2 class="section-title">服务流程</h2>
-                <p class="section-subtitle">从咨询到治疗完成，我们提供全程无缝支持，确保您获得最佳牙科治疗体验</p>
+                <p class="section-subtitle">
+                    从咨询到治疗完成，我们提供全程无缝支持，确保您获得最佳牙科治疗体验<br>
+                    From consultation to treatment completion, we provide seamless full-process support to ensure you receive the best dental care experience
+                </p>
             </div>
             
             <div class="process-steps">
                 <div class="process-step fade-in">
                     <div class="step-number">1</div>
-                    <h3 class="step-title">咨询与评估</h3>
-                    <p class="step-description">联系我们说明您的牙科需求，我们将为您匹配最合适的合作诊所。</p>
+                    <h3 class="step-title">咨询与评估<br>Consultation & Assessment</h3>
+                    <p class="step-description">
+                        联系我们说明您的牙科需求，我们将为您匹配最合适的合作诊所。<br>
+                        Contact us to explain your dental needs, and we will match you with the most suitable partner clinic.
+                    </p>
                 </div>
                 
                 <div class="process-step fade-in delay-1">
                     <div class="step-number">2</div>
-                    <h3 class="step-title">诊所诊断</h3>
-                    <p class="step-description">前往成都合作诊所进行全面的口腔检查，由持牌牙医进行专业评估。</p>
+                    <h3 class="step-title">诊所诊断<br>Clinic Diagnosis</h3>
+                    <p class="step-description">
+                        前往成都合作诊所进行全面的口腔检查，由持牌牙医进行专业评估。<br>
+                        Visit the Chengdu partner clinic for a comprehensive oral examination and professional assessment by licensed dentists.
+                    </p>
                 </div>
                 
                 <div class="process-step fade-in delay-2">
                     <div class="step-number">3</div>
-                    <h3 class="step-title">方案与报价</h3>
-                    <p class="step-description">牙医提供详细治疗方案与透明报价，无任何隐藏费用。</p>
+                    <h3 class="step-title">方案与报价<br>Plan & Quote</h3>
+                    <p class="step-description">
+                        牙医提供详细治疗方案与透明报价，无任何隐藏费用。<br>
+                        Dentists provide detailed treatment plans and transparent quotes with no hidden fees.
+                    </p>
                 </div>
                 
                 <div class="process-step fade-in delay-3">
                     <div class="step-number">4</div>
-                    <h3 class="step-title">治疗与跟进</h3>
-                    <p class="step-description">接受治疗并享受全程英语支持，我们协调后续护理（如需要）。</p>
+                    <h3 class="step-title">治疗与跟进<br>Treatment & Follow-up</h3>
+                    <p class="step-description">
+                        接受治疗并享受全程英语支持，我们协调后续护理（如需要）。<br>
+                        Receive treatment with full English support, and we coordinate follow-up care if needed.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 优化：医疗团队部分 -->
+    <!-- 医疗团队部分 -->
     <section id="team" class="team-section">
         <div class="container">
             <div class="section-header fade-in">
-                <span class="section-badge">专业医疗团队</span>
-                <h2 class="section-title">医疗团队背景</h2>
-                <p class="section-subtitle">我们的合作诊所医生均来自中国顶尖口腔医学院，拥有丰富的临床经验与国际视野</p>
+                <span class="section-badge">专业医疗团队 / Professional Medical Team</span>
+                <h2 class="section-title">全球顶尖口腔医学教育</h2>
+                <p class="section-subtitle">
+                    我们的合作医生均毕业于四川大学华西口腔医学院 - 全球排名前12的口腔医学机构<br>
+                    Our partner dentists are graduates of Sichuan University West China School of Stomatology - ranked top 12 globally in dentistry
+                </p>
             </div>
             
-            <div class="team-container">
-                <div class="expandable-cards">
-                    <!-- 卡片1: 华西口腔医学院介绍 -->
-                    <div class="expandable-card active fade-in">
-                        <div class="card-header" onclick="toggleCard(this)">
-                            <div class="card-title">
-                                <div class="card-icon">
-                                    <i class="fas fa-university"></i>
-                                </div>
-                                <span class="card-title-text">四川大学华西口腔医学院介绍</span>
-                            </div>
-                            <div class="toggle-icon">
-                                <i class="fas fa-chevron-down"></i>
-                            </div>
+            <!-- 全球排名展示 -->
+            <div class="global-ranking-container fade-in">
+                <div class="global-ranking-card">
+                    <h3 class="ranking-title">全球排名领先 / Global Ranking Leadership</h3>
+                    <p class="ranking-subtitle">
+                        华西口腔医学院是中国历史最悠久、最具影响力的口腔医学教育机构，其全球排名彰显了卓越的学术与临床水平<br>
+                        West China School of Stomatology is China's oldest and most influential dental education institution, with global rankings demonstrating excellence in academics and clinical practice
+                    </p>
+                    
+                    <div class="ranking-grid">
+                        <div class="ranking-item">
+                            <div class="ranking-number">#12</div>
+                            <div class="ranking-label">全球排名 / Global Rank</div>
+                            <div class="ranking-source">2025年QS世界大学学科排名<br>2025 QS World University Rankings</div>
+                            <p class="ranking-description">
+                                四川大学口腔医学位列全球第12位、中国内地第一<br>
+                                Sichuan University Dentistry ranks 12th globally, 1st in Mainland China
+                            </p>
                         </div>
-                        <div class="card-content">
-                            <div class="content-section">
-                                <div class="content-header">
-                                    <div class="content-icon">
-                                        <i class="fas fa-graduation-cap"></i>
-                                    </div>
-                                    <h3 class="content-title">学院概况</h3>
+                        
+                        <div class="ranking-item">
+                            <div class="ranking-number">#4</div>
+                            <div class="ranking-label">世界一流学科排名<br>World-Class Subject Ranking</div>
+                            <div class="ranking-source">2024年软科世界一流学科排名<br>2024 ARWU Global Ranking of Academic Subjects</div>
+                            <p class="ranking-description">
+                                四川大学口腔医学位列世界第4位、中国第一<br>
+                                Sichuan University Dentistry ranks 4th globally, 1st in China
+                            </p>
+                        </div>
+                        
+                        <div class="ranking-item">
+                            <div class="ranking-number">100+</div>
+                            <div class="ranking-label">年历史 / Years of History</div>
+                            <div class="ranking-source">成立于1917年<br>Established in 1917</div>
+                            <p class="ranking-description">
+                                中国历史最悠久的口腔医学教育机构，被誉为"中国口腔医学的摇篮"<br>
+                                China's oldest dental education institution, known as the "Cradle of Chinese Dentistry"
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 可折叠卡片系统 -->
+            <div class="expandable-cards-container">
+                <!-- 卡片1: 医疗团队资质 -->
+                <div class="expandable-card active fade-in">
+                    <div class="expandable-card-header" onclick="toggleExpandableCard(this)">
+                        <div class="expandable-card-title">
+                            <div class="expandable-card-icon">
+                                <i class="fas fa-user-md"></i>
+                            </div>
+                            <span class="expandable-card-title-text">医疗团队资质与培训背景<br>Medical Team Qualifications & Training Background</span>
+                        </div>
+                        <div class="expandable-card-toggle">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="expandable-card-content">
+                        <div class="expandable-content-section">
+                            <div class="expandable-content-header">
+                                <div class="expandable-content-icon">
+                                    <i class="fas fa-graduation-cap"></i>
                                 </div>
-                                
-                                <div class="info-grid">
-                                    <div class="info-card hover-lift">
-                                        <div class="info-header">
-                                            <div class="info-icon">
-                                                <i class="fas fa-calendar-alt"></i>
-                                            </div>
-                                            <h4 class="info-title">创立时间</h4>
-                                        </div>
-                                        <p class="info-description">1917年创立，是中国历史最悠久、最具影响力的口腔医学教育机构之一，被誉为"中国口腔医学的摇篮"。</p>
-                                    </div>
-                                    
-                                    <div class="info-card hover-lift">
-                                        <div class="info-header">
-                                            <div class="info-icon">
-                                                <i class="fas fa-map-marker-alt"></i>
-                                            </div>
-                                            <h4 class="info-title">地理位置</h4>
-                                        </div>
-                                        <p class="info-description">位于中国四川省成都市，是中国西部口腔医学中心，服务辐射整个西南地区及全国。</p>
-                                    </div>
-                                    
-                                    <div class="info-card hover-lift">
-                                        <div class="info-header">
-                                            <div class="info-icon">
-                                                <i class="fas fa-award"></i>
-                                            </div>
-                                            <h4 class="info-title">学术地位</h4>
-                                        </div>
-                                        <p class="info-description">中国口腔医学教育与研究的领军机构，培养了大量口腔医学专家，拥有国家级重点学科。</p>
-                                    </div>
-                                </div>
+                                <h3 class="expandable-content-title">教育背景 / Education Background</h3>
                             </div>
                             
-                            <div class="content-section">
-                                <div class="content-header">
-                                    <div class="content-icon">
+                            <div class="team-qualification-cards">
+                                <div class="qualification-card">
+                                    <div class="qualification-icon">
+                                        <i class="fas fa-university"></i>
+                                    </div>
+                                    <h4 class="qualification-title">核心学历 / Core Qualifications</h4>
+                                    <ul class="qualification-list">
+                                        <li>四川大学华西口腔医学院学位 / Sichuan University West China Dental Degree</li>
+                                        <li>本科/硕士/博士学历 / Bachelor's/Master's/PhD Degrees</li>
+                                        <li>持续医学教育认证 / Continuous Medical Education Certification</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="qualification-card">
+                                    <div class="qualification-icon">
+                                        <i class="fas fa-award"></i>
+                                    </div>
+                                    <h4 class="qualification-title">专业认证 / Professional Certifications</h4>
+                                    <ul class="qualification-list">
+                                        <li>中国口腔医师资格证书 / Chinese Dental Practitioner Certification</li>
+                                        <li>隐形矫正专业认证 / Invisible Orthodontics Certification</li>
+                                        <li>牙周病专科认证 / Periodontics Specialization Certification</li>
+                                        <li>显微根管治疗认证 / Microscopic Endodontics Certification</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="expandable-content-section">
+                            <div class="expandable-content-header">
+                                <div class="expandable-content-icon">
+                                    <i class="fas fa-stethoscope"></i>
+                                </div>
+                                <h3 class="expandable-content-title">临床经验 / Clinical Experience</h3>
+                            </div>
+                            
+                            <div class="team-qualification-cards">
+                                <div class="qualification-card">
+                                    <div class="qualification-icon">
                                         <i class="fas fa-chart-line"></i>
                                     </div>
-                                    <h3 class="content-title">国际排名与认可</h3>
+                                    <h4 class="qualification-title">临床资历 / Clinical Qualifications</h4>
+                                    <ul class="qualification-list">
+                                        <li>平均5年以上临床经验 / Average 5+ years clinical experience</li>
+                                        <li>处理各种复杂病例经验 / Experience with complex cases</li>
+                                        <li>多学科会诊制度 / Multi-disciplinary consultation system</li>
+                                        <li>国际先进治疗技术掌握 / Mastery of international advanced techniques</li>
+                                    </ul>
                                 </div>
                                 
-                                <div class="rankings-grid">
-                                    <div class="ranking-item hover-lift">
-                                        <div class="rank-badge">全球第12位</div>
-                                        <div class="rank-content">
-                                            <strong>2025年QS世界大学学科排名</strong>
-                                            <p class="rank-subtitle">四川大学口腔医学位列全球第12位、中国内地第一，是亚洲顶尖的口腔医学院之一</p>
-                                        </div>
+                                <div class="qualification-card">
+                                    <div class="qualification-icon">
+                                        <i class="fas fa-hand-holding-medical"></i>
                                     </div>
-                                    
-                                    <div class="ranking-item hover-lift">
-                                        <div class="rank-badge">全球第4位</div>
-                                        <div class="rank-content">
-                                            <strong>2024年软科世界一流学科排名</strong>
-                                            <p class="rank-subtitle">四川大学口腔医学位列世界第4位、中国第一，连续多年保持国际领先地位</p>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="ranking-item hover-lift">
-                                        <div class="rank-badge">国际认证</div>
-                                        <div class="rank-content">
-                                            <strong>国际牙科教育认证</strong>
-                                            <p class="rank-subtitle">教育质量获得国际认可，毕业生在全球范围内具备执业资格与竞争力</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="team-notice">
-                                <div class="notice-header">
-                                    <i class="fas fa-info-circle notice-icon"></i>
-                                    <h4 class="notice-title">隐私保护声明</h4>
-                                </div>
-                                <p class="notice-content">
-                                    <strong>为保护医疗团队隐私并遵守相关法规，我们不公开具体医生姓名和照片。</strong> 我们合作诊所的所有主治医生均持有中国口腔医师资格证书，并毕业于四川大学华西口腔医学院或同等级别院校，具备丰富的临床经验。所有医生均经过严格筛选，确保为您提供最专业、安全的牙科治疗服务。
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- 卡片2: 医疗团队资质 -->
-                    <div class="expandable-card fade-in delay-1">
-                        <div class="card-header" onclick="toggleCard(this)">
-                            <div class="card-title">
-                                <div class="card-icon">
-                                    <i class="fas fa-user-md"></i>
-                                </div>
-                                <span class="card-title-text">医疗团队资质与培训背景</span>
-                            </div>
-                            <div class="toggle-icon">
-                                <i class="fas fa-chevron-down"></i>
-                            </div>
-                        </div>
-                        <div class="card-content">
-                            <div class="content-section">
-                                <div class="content-header">
-                                    <div class="content-icon">
-                                        <i class="fas fa-certificate"></i>
-                                    </div>
-                                    <h3 class="content-title">教育背景</h3>
-                                </div>
-                                
-                                <div class="info-grid">
-                                    <div class="info-card hover-lift">
-                                        <div class="info-header">
-                                            <div class="info-icon">
-                                                <i class="fas fa-school"></i>
-                                            </div>
-                                            <h4 class="info-title">核心学历</h4>
-                                        </div>
-                                        <p class="info-description">所有合作医生均持有四川大学华西口腔医学院的牙科学位（本科/硕士/博士），部分医生拥有海外留学或进修经历。</p>
-                                    </div>
-                                    
-                                    <div class="info-card hover-lift">
-                                        <div class="info-header">
-                                            <div class="info-icon">
-                                                <i class="fas fa-book"></i>
-                                            </div>
-                                            <h4 class="info-title">持续教育</h4>
-                                        </div>
-                                        <p class="info-description">定期参加国内外学术会议与培训，掌握最新牙科技术与治疗方法，确保医疗水平与国际同步。</p>
-                                    </div>
-                                    
-                                    <div class="info-card hover-lift">
-                                        <div class="info-header">
-                                            <div class="info-icon">
-                                                <i class="fas fa-language"></i>
-                                            </div>
-                                            <h4 class="info-title">国际交流</h4>
-                                        </div>
-                                        <p class="info-description">多位医生曾赴美国、欧洲、日本等国家交流学习，具备国际视野与先进治疗理念。</p>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="content-section">
-                                <div class="content-header">
-                                    <div class="content-icon">
-                                        <i class="fas fa-clinic-medical"></i>
-                                    </div>
-                                    <h3 class="content-title">临床经验</h3>
-                                </div>
-                                
-                                <div class="info-grid">
-                                    <div class="info-card hover-lift">
-                                        <div class="info-header">
-                                            <div class="info-icon">
-                                                <i class="fas fa-stethoscope"></i>
-                                            </div>
-                                            <h4 class="info-title">平均临床经验</h4>
-                                        </div>
-                                        <p class="info-description">合作医生平均拥有8年以上临床实践经验，处理过各种复杂病例，年接诊量超过5000人次。</p>
-                                    </div>
-                                    
-                                    <div class="info-card hover-lift">
-                                        <div class="info-header">
-                                            <div class="info-icon">
-                                                <i class="fas fa-hand-holding-medical"></i>
-                                            </div>
-                                            <h4 class="info-title">专业领域</h4>
-                                        </div>
-                                        <p class="info-description">涵盖种植牙、正畸、修复、牙周治疗、根管治疗、儿童牙科等全科与专科领域，提供一站式解决方案。</p>
-                                    </div>
-                                    
-                                    <div class="info-card hover-lift">
-                                        <div class="info-header">
-                                            <div class="info-icon">
-                                                <i class="fas fa-users"></i>
-                                            </div>
-                                            <h4 class="info-title">团队协作</h4>
-                                        </div>
-                                        <p class="info-description">实行多学科会诊制度，复杂病例由多个专科医生共同制定治疗方案，确保最佳治疗效果。</p>
-                                    </div>
+                                    <h4 class="qualification-title">专业领域 / Specializations</h4>
+                                    <ul class="qualification-list">
+                                        <li>种植牙专科 / Dental Implant Specialization</li>
+                                        <li>正畸与矫正 / Orthodontics & Correction</li>
+                                        <li>牙周病治疗 / Periodontal Disease Treatment</li>
+                                        <li>修复与美学牙科 / Restoration & Aesthetic Dentistry</li>
+                                        <li>儿童牙科与预防 / Pediatric Dentistry & Prevention</li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    
-                    <!-- 卡片3: 质量与安全标准 -->
-                    <div class="expandable-card fade-in delay-2">
-                        <div class="card-header" onclick="toggleCard(this)">
-                            <div class="card-title">
-                                <div class="card-icon">
-                                    <i class="fas fa-shield-alt"></i>
-                                </div>
-                                <span class="card-title-text">医疗质量与安全标准</span>
+                </div>
+                
+                <!-- 卡片2: 医疗质量与安全标准 -->
+                <div class="expandable-card fade-in delay-1">
+                    <div class="expandable-card-header" onclick="toggleExpandableCard(this)">
+                        <div class="expandable-card-title">
+                            <div class="expandable-card-icon">
+                                <i class="fas fa-shield-alt"></i>
                             </div>
-                            <div class="toggle-icon">
-                                <i class="fas fa-chevron-down"></i>
+                            <span class="expandable-card-title-text">医疗质量与安全标准<br>Medical Quality & Safety Standards</span>
+                        </div>
+                        <div class="expandable-card-toggle">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="expandable-card-content">
+                        <div class="expandable-content-section">
+                            <div class="expandable-content-header">
+                                <div class="expandable-content-icon">
+                                    <i class="fas fa-sterling-sign"></i>
+                                </div>
+                                <h3 class="expandable-content-title">消毒与感染控制<br>Disinfection & Infection Control</h3>
+                            </div>
+                            
+                            <div class="ranking-grid">
+                                <div class="ranking-item">
+                                    <div class="ranking-icon">
+                                        <i class="fas fa-spray-can-sparkles" style="font-size: 2.5rem; color: var(--accent-green); margin-bottom: 15px;"></i>
+                                    </div>
+                                    <div class="ranking-label">设备消毒 / Equipment Disinfection</div>
+                                    <p class="ranking-description">
+                                        所有器械均经过高温高压灭菌处理，严格执行"一人一机一消毒"标准<br>
+                                        All instruments undergo high-temperature, high-pressure sterilization, strictly adhering to "one person, one machine, one disinfection" standard
+                                    </p>
+                                </div>
+                                
+                                <div class="ranking-item">
+                                    <div class="ranking-icon">
+                                        <i class="fas fa-hand-sparkles" style="font-size: 2.5rem; color: var(--secondary-blue); margin-bottom: 15px;"></i>
+                                    </div>
+                                    <div class="ranking-label">环境消毒 / Environmental Disinfection</div>
+                                    <p class="ranking-description">
+                                        诊疗室所有表面使用医疗级消毒剂擦拭<br>
+                                       All surfaces of the treatment rooms are wiped with medical-grade disinfectants
+                                    </p>
+                                </div>
+                                
+                                <div class="ranking-item">
+                                    <div class="ranking-icon">
+                                        <i class="fas fa-vial" style="font-size: 2.5rem; color: var(--accent-purple); margin-bottom: 15px;"></i>
+                                    </div>
+                                    <div class="ranking-label">无菌操作 / Aseptic Operation</div>
+                                    <p class="ranking-description">
+                                        所有治疗严格执行无菌操作规范，医护人员穿戴全套防护装备<br>
+                                        All treatments strictly follow aseptic operation standards, medical staff wear full protective equipment
+                                    </p>
+                                </div>
                             </div>
                         </div>
-                        <div class="card-content">
-                            <div class="content-section">
-                                <div class="content-header">
-                                    <div class="content-icon">
-                                        <i class="fas fa-sterling-sign"></i>
-                                    </div>
-                                    <h3 class="content-title">消毒与感染控制</h3>
+                        
+                        <div class="expandable-content-section">
+                            <div class="expandable-content-header">
+                                <div class="expandable-content-icon">
+                                    <i class="fas fa-clipboard-check"></i>
                                 </div>
-                                
-                                <div class="info-grid">
-                                    <div class="info-card hover-lift">
-                                        <div class="info-header">
-                                            <div class="info-icon">
-                                                <i class="fas fa-spray-can-sparkles"></i>
-                                            </div>
-                                            <h4 class="info-title">设备消毒</h4>
-                                        </div>
-                                        <p class="info-description">所有器械均经过高温高压灭菌处理，严格执行"一人一机一消毒"标准，使用国际认证的消毒设备与耗材。</p>
-                                    </div>
-                                    
-                                    <div class="info-card hover-lift">
-                                        <div class="info-header">
-                                            <div class="info-icon">
-                                                <i class="fas fa-hand-sparkles"></i>
-                                            </div>
-                                            <h4 class="info-title">环境消毒</h4>
-                                        </div>
-                                        <p class="info-description">诊疗室每日多次紫外线消毒，所有表面使用医疗级消毒剂擦拭，空气净化系统保持空气洁净。</p>
-                                    </div>
-                                    
-                                    <div class="info-card hover-lift">
-                                        <div class="info-header">
-                                            <div class="info-icon">
-                                                <i class="fas fa-vial"></i>
-                                            </div>
-                                            <h4 class="info-title">无菌操作</h4>
-                                        </div>
-                                        <p class="info-description">所有治疗严格执行无菌操作规范，医护人员穿戴全套防护装备，确保患者与医护人员安全。</p>
-                                    </div>
-                                </div>
+                                <h3 class="expandable-content-title">质量控制体系 / Quality Control System</h3>
                             </div>
                             
-                            <div class="content-section">
-                                <div class="content-header">
-                                    <div class="content-icon">
-                                        <i class="fas fa-clipboard-check"></i>
+                            <div class="ranking-grid">
+                                <div class="ranking-item">
+                                    <div class="ranking-icon">
+                                        <i class="fas fa-file-contract" style="font-size: 2.5rem; color: var(--accent-gold); margin-bottom: 15px;"></i>
                                     </div>
-                                    <h3 class="content-title">质量控制体系</h3>
+                                    <div class="ranking-label">医疗记录 / Medical Records</div>
+                                    <p class="ranking-description">
+                                        完整的电子病历系统，记录所有诊疗过程，确保治疗可追溯<br>
+                                        Complete electronic medical record system documenting all treatment processes for traceability
+                                    </p>
                                 </div>
                                 
-                                <div class="info-grid">
-                                    <div class="info-card hover-lift">
-                                        <div class="info-header">
-                                            <div class="info-icon">
-                                                <i class="fas fa-file-contract"></i>
-                                            </div>
-                                            <h4 class="info-title">医疗记录</h4>
-                                        </div>
-                                        <p class="info-description">完整的电子病历系统，记录所有诊疗过程，确保治疗可追溯，保护患者隐私与医疗安全。</p>
+                                <div class="ranking-item">
+                                    <div class="ranking-icon">
+                                        <i class="fas fa-user-check" style="font-size: 2.5rem; color: var(--accent-green); margin-bottom: 15px;"></i>
                                     </div>
-                                    
-                                    <div class="info-card hover-lift">
-                                        <div class="info-header">
-                                            <div class="info-icon">
-                                                <i class="fas fa-user-check"></i>
-                                            </div>
-                                            <h4 class="info-title">双重检查</h4>
-                                        </div>
-                                        <p class="info-description">复杂病例实行主治医生与主任医生双重检查制度，确保治疗方案最优，减少医疗风险。</p>
+                                    <div class="ranking-label">双重检查 / Double-Check System</div>
+                                    <p class="ranking-description">
+                                        复杂病例实行主治医生与主任医生双重检查制度，确保治疗方案最优<br>
+                                        Complex cases undergo double-check by attending and chief dentists to ensure optimal treatment plans
+                                    </p>
+                                </div>
+                                
+                                <div class="ranking-item">
+                                    <div class="ranking-icon">
+                                        <i class="fas fa-chart-bar" style="font-size: 2.5rem; color: var(--secondary-blue); margin-bottom: 15px;"></i>
                                     </div>
-                                    
-                                    <div class="info-card hover-lift">
-                                        <div class="info-header">
-                                            <div class="info-icon">
-                                                <i class="fas fa-chart-bar"></i>
-                                            </div>
-                                            <h4 class="info-title">质量监控</h4>
-                                        </div>
-                                        <p class="info-description">定期进行医疗质量评估与患者满意度调查，持续改进医疗服务质量与患者体验。</p>
-                                    </div>
+                                    <div class="ranking-label">质量监控 / Quality Monitoring</div>
+                                    <p class="ranking-description">
+                                        定期进行医疗质量评估与患者满意度调查，持续改进医疗服务质量<br>
+                                        Regular medical quality assessments and patient satisfaction surveys for continuous service improvement
+                                    </p>
                                 </div>
                             </div>
-                            
-                            <div class="team-notice">
-                                <div class="notice-header">
-                                    <i class="fas fa-heartbeat notice-icon"></i>
-                                    <h4 class="notice-title">患者安全与舒适</h4>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 卡片3: 华西口腔医学院介绍 -->
+                <div class="expandable-card fade-in delay-2">
+                    <div class="expandable-card-header" onclick="toggleExpandableCard(this)">
+                        <div class="expandable-card-title">
+                            <div class="expandable-card-icon">
+                                <i class="fas fa-university"></i>
+                            </div>
+                            <span class="expandable-card-title-text">四川大学华西口腔医学院介绍<br>Introduction to Sichuan University West China School of Stomatology</span>
+                        </div>
+                        <div class="expandable-card-toggle">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="expandable-card-content">
+                        <div class="expandable-content-section">
+                            <div class="expandable-content-header">
+                                <div class="expandable-content-icon">
+                                    <i class="fas fa-history"></i>
                                 </div>
-                                <p class="notice-content">
-                                    <strong>我们始终将患者安全放在首位。</strong> 治疗前全面了解患者病史与过敏史，个性化制定治疗方案。使用进口麻醉药品确保治疗过程舒适无痛，术后提供详细的护理指导与随访服务，确保治疗效果与患者满意度。
-                                </p>
+                                <h3 class="expandable-content-title">学院概况 / College Overview</h3>
+                            </div>
+                            
+                            <div class="ranking-grid">
+                                <div class="ranking-item">
+                                    <div class="ranking-icon">
+                                        <i class="fas fa-calendar-alt" style="font-size: 2.5rem; color: var(--primary-blue); margin-bottom: 15px;"></i>
+                                    </div>
+                                    <div class="ranking-label">创立时间 / Establishment Year</div>
+                                    <p class="ranking-description">
+                                        1917年创立，是中国历史最悠久、最具影响力的口腔医学教育机构<br>
+                                        Established in 1917, it is China's oldest and most influential dental education institution
+                                    </p>
+                                </div>
+                                
+                                <div class="ranking-item">
+                                    <div class="ranking-icon">
+                                        <i class="fas fa-map-marker-alt" style="font-size: 2.5rem; color: var(--accent-green); margin-bottom: 15px;"></i>
+                                    </div>
+                                    <div class="ranking-label">地理位置 / Geographical Location</div>
+                                    <p class="ranking-description">
+                                        位于中国四川省成都市，是中国西部口腔医学中心<br>
+                                        Located in Chengdu, Sichuan Province, China, it is the dental medical center of Western China
+                                    </p>
+                                </div>
+                                
+                                <div class="ranking-item">
+                                    <div class="ranking-icon">
+                                        <i class="fas fa-award" style="font-size: 2.5rem; color: var(--accent-gold); margin-bottom: 15px;"></i>
+                                    </div>
+                                    <div class="ranking-label">学术地位 / Academic Status</div>
+                                    <p class="ranking-description">
+                                        中国口腔医学教育与研究的领军机构，拥有国家级重点学科<br>
+                                        Leading institution for dental education and research in China, with national key disciplines
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="expandable-content-section">
+                            <div class="expandable-content-header">
+                                <div class="expandable-content-icon">
+                                    <i class="fas fa-graduation-cap"></i>
+                                </div>
+                                <h3 class="expandable-content-title">教育成就 / Educational Achievements</h3>
+                            </div>
+                            
+                            <div class="ranking-grid">
+                                <div class="ranking-item">
+                                    <div class="ranking-icon">
+                                        <i class="fas fa-user-graduate" style="font-size: 2.5rem; color: var(--accent-purple); margin-bottom: 15px;"></i>
+                                    </div>
+                                    <div class="ranking-label">人才培养 / Talent Development</div>
+                                    <p class="ranking-description">
+                                        培养了大量口腔医学专家，被誉为"中国口腔医学的摇篮"<br>
+                                        Has trained numerous dental medicine experts, known as the "Cradle of Chinese Dentistry"
+                                    </p>
+                                </div>
+                                
+                                <div class="ranking-item">
+                                    <div class="ranking-icon">
+                                        <i class="fas fa-globe" style="font-size: 2.5rem; color: var(--secondary-blue); margin-bottom: 15px;"></i>
+                                    </div>
+                                    <div class="ranking-label">国际认可 / International Recognition</div>
+                                    <p class="ranking-description">
+                                        教育质量获得国际认可，毕业生在全球范围内具备执业资格与竞争力<br>
+                                        Education quality internationally recognized, graduates have global practice qualifications and competitiveness
+                                    </p>
+                                </div>
+                                
+                                <div class="ranking-item">
+                                    <div class="ranking-icon">
+                                        <i class="fas fa-flask" style="font-size: 2.5rem; color: var(--accent-green); margin-bottom: 15px;"></i>
+                                    </div>
+                                    <div class="ranking-label">科研创新 / Scientific Research & Innovation</div>
+                                    <p class="ranking-description">
+                                        在口腔医学研究领域取得多项突破性成果，推动行业发展<br>
+                                        Achieved multiple breakthroughs in dental medicine research, driving industry development
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -2201,100 +2477,103 @@
         </div>
     </section>
 
-    <!-- 优化：价格对比部分 -->
+    <!-- 价格对比部分 -->
     <section id="pricing" class="comparison-section">
         <div class="container">
             <div class="section-header fade-in">
-                <span class="section-badge">透明费用</span>
+                <span class="section-badge">透明费用 / Transparent Pricing</span>
                 <h2 class="section-title">费用对比</h2>
-                <p class="section-subtitle">相比新西兰，在成都接受同等品质牙科治疗可节省高达60%的费用</p>
+                <p class="section-subtitle">
+                    相比新西兰，在成都接受同等品质牙科治疗可节省高达60%的费用<br>
+                    Compared to New Zealand, receiving同等 quality dental treatment in Chengdu can save up to 60% in costs
+                </p>
             </div>
             
             <div class="comparison-container">
                 <div class="comparison-table fade-in">
                     <div class="table-header">
-                        <div class="table-header-cell">治疗项目</div>
-                        <div class="table-header-cell">新西兰平均费用</div>
-                        <div class="table-header-cell">成都合作诊所费用</div>
+                        <div class="table-header-cell">治疗项目 / Treatment Item</div>
+                        <div class="table-header-cell">新西兰平均费用 / NZ Average Cost</div>
+                        <div class="table-header-cell">成都合作诊所费用 / Chengdu Clinic Cost</div>
                     </div>
                     
                     <div class="table-row">
-                        <div class="table-cell" data-label="治疗项目">
-                            <strong>口腔检查与洁牙</strong><br>
-                            <span style="font-size: 0.9rem; color: var(--text-medium);">Dental Check & Cleaning</span>
+                        <div class="table-cell" data-label="治疗项目 / Treatment Item">
+                            <strong>口腔检查与洁牙 / Dental Check & Cleaning</strong><br>
+                            <span style="font-size: 0.9rem; color: var(--text-medium);">全面口腔检查与专业洁牙服务 / Comprehensive dental examination & professional cleaning</span>
                         </div>
-                        <div class="table-cell" data-label="新西兰平均费用">NZD $180 - $250</div>
-                        <div class="table-cell" data-label="成都合作诊所费用">
+                        <div class="table-cell" data-label="新西兰平均费用 / NZ Average Cost">NZD $180 - $250</div>
+                        <div class="table-cell" data-label="成都合作诊所费用 / Chengdu Clinic Cost">
                             <span class="free-badge">
-                                <i class="fas fa-gift"></i> 预定行程获赠洁牙*
+                                <i class="fas fa-gift"></i> 预定行程获赠洁牙* / Free cleaning with appointment*
                             </span>
                         </div>
                     </div>
                     
                     <div class="table-row">
-                        <div class="table-cell" data-label="治疗项目">
-                            <strong>补牙（树脂材料）</strong><br>
-                            <span style="font-size: 0.9rem; color: var(--text-medium);">Tooth Filling (Composite)</span>
+                        <div class="table-cell" data-label="治疗项目 / Treatment Item">
+                            <strong>补牙（树脂材料）/ Tooth Filling (Composite)</strong><br>
+                            <span style="font-size: 0.9rem; color: var(--text-medium);">采用高质量复合树脂材料 / Using high-quality composite resin material</span>
                         </div>
-                        <div class="table-cell" data-label="新西兰平均费用">NZD $300 - $450</div>
-                        <div class="table-cell" data-label="成都合作诊所费用">
+                        <div class="table-cell" data-label="新西兰平均费用 / NZ Average Cost">NZD $300 - $450</div>
+                        <div class="table-cell" data-label="成都合作诊所费用 / Chengdu Clinic Cost">
                             <strong>NZD $90 - $150</strong>
-                            <div style="font-size: 0.85rem; color: var(--accent-green); margin-top: 4px;">节省约 60-70%</div>
+                            <div style="font-size: 0.85rem; color: var(--accent-green); margin-top: 4px;">节省约 70% / Save about 70%</div>
                         </div>
                     </div>
                     
                     <div class="table-row">
-                        <div class="table-cell" data-label="治疗项目">
-                            <strong>拔牙（简单）</strong><br>
-                            <span style="font-size: 0.9rem; color: var(--text-medium);">Tooth Extraction (Simple)</span>
+                        <div class="table-cell" data-label="治疗项目 / Treatment Item">
+                            <strong>拔牙（简单）/ Tooth Extraction (Simple)</strong><br>
+                            <span style="font-size: 0.9rem; color: var(--text-medium);">常规拔牙，局部麻醉 / Routine extraction with local anesthesia</span>
                         </div>
-                        <div class="table-cell" data-label="新西兰平均费用">NZD $350 - $550</div>
-                        <div class="table-cell" data-label="成都合作诊所费用">
+                        <div class="table-cell" data-label="新西兰平均费用 / NZ Average Cost">NZD $350 - $550</div>
+                        <div class="table-cell" data-label="成都合作诊所费用 / Chengdu Clinic Cost">
                             <strong>NZD $100 - $200</strong>
-                            <div style="font-size: 0.85rem; color: var(--accent-green); margin-top: 4px;">节省约 60-70%</div>
+                            <div style="font-size: 0.85rem; color: var(--accent-green); margin-top: 4px;">节省约 70% / Save about 70%</div>
                         </div>
                     </div>
                     
                     <div class="table-row">
-                        <div class="table-cell" data-label="治疗项目">
-                            <strong>牙齿美白</strong><br>
-                            <span style="font-size: 0.9rem; color: var(--text-medium);">Teeth Whitening</span>
+                        <div class="table-cell" data-label="治疗项目 / Treatment Item">
+                            <strong>牙齿美白 / Teeth Whitening</strong><br>
+                            <span style="font-size: 0.9rem; color: var(--text-medium);">冷光美白，安全高效 / Cold light whitening, safe & effective</span>
                         </div>
-                        <div class="table-cell" data-label="新西兰平均费用">NZD $800 - $1,500</div>
-                        <div class="table-cell" data-label="成都合作诊所费用">
+                        <div class="table-cell" data-label="新西兰平均费用 / NZ Average Cost">NZD $800 - $1,500</div>
+                        <div class="table-cell" data-label="成都合作诊所费用 / Chengdu Clinic Cost">
                             <strong>NZD $250 - $450</strong>
-                            <div style="font-size: 0.85rem; color: var(--accent-green); margin-top: 4px;">节省约 65-70%</div>
+                            <div style="font-size: 0.85rem; color: var(--accent-green); margin-top: 4px;">节省约 70% / Save about 70%</div>
                         </div>
                     </div>
                     
                     <div class="table-row">
-                        <div class="table-cell" data-label="治疗项目">
-                            <strong>牙齿贴面（每颗）</strong><br>
-                            <span style="font-size: 0.9rem; color: var(--text-medium);">Dental Veneer (per tooth)</span>
+                        <div class="table-cell" data-label="治疗项目 / Treatment Item">
+                            <strong>牙齿贴面（每颗）/ Dental Veneer (per tooth)</strong><br>
+                            <span style="font-size: 0.9rem; color: var(--text-medium);">全瓷贴面，自然美观 / All-ceramic veneer, natural & aesthetic</span>
                         </div>
-                        <div class="table-cell" data-label="新西兰平均费用">NZD $1,500 - $2,500</div>
-                        <div class="table-cell" data-label="成都合作诊所费用">
+                        <div class="table-cell" data-label="新西兰平均费用 / NZ Average Cost">NZD $1,500 - $2,500</div>
+                        <div class="table-cell" data-label="成都合作诊所费用 / Chengdu Clinic Cost">
                             <strong>NZD $450 - $850</strong>
-                            <div style="font-size: 0.85rem; color: var(--accent-green); margin-top: 4px;">节省约 65-70%</div>
+                            <div style="font-size: 0.85rem; color: var(--accent-green); margin-top: 4px;">节省约 70% / Save about 70%</div>
                         </div>
                     </div>
                     
                     <div class="table-row">
-                        <div class="table-cell" data-label="治疗项目">
-                            <strong>种植牙（单颗）</strong><br>
-                            <span style="font-size: 0.9rem; color: var(--text-medium);">Dental Implant (Single)</span>
+                        <div class="table-cell" data-label="治疗项目 / Treatment Item">
+                            <strong>种植牙（单颗）/ Dental Implant (Single)</strong><br>
+                            <span style="font-size: 0.9rem; color: var(--text-medium);">数字化种植，精准安全 / Digital implant, precise & safe</span>
                         </div>
-                        <div class="table-cell" data-label="新西兰平均费用">NZD $4,000 - $6,000</div>
-                        <div class="table-cell" data-label="成都合作诊所费用">
+                        <div class="table-cell" data-label="新西兰平均费用 / NZ Average Cost">NZD $4,000 - $6,000</div>
+                        <div class="table-cell" data-label="成都合作诊所费用 / Chengdu Clinic Cost">
                             <strong>NZD $1,200 - $2,000</strong>
-                            <div style="font-size: 0.85rem; color: var(--accent-green); margin-top: 4px;">节省约 65-70%</div>
+                            <div style="font-size: 0.85rem; color: var(--accent-green); margin-top: 4px;">节省约 70% / Save about 70%</div>
                         </div>
                     </div>
                 </div>
                 
                 <p class="comparison-note fade-in delay-1">
                     *免费洁牙服务由合作诊所提供，作为预定行程赠送。<br>
-                    *Free cleaning may be offered by partner clinics as part of an initial consultation .<br><br>
+                    *Optional Free cleaning service provided by partner clinics as part of tour booking.<br><br>
                     所有价格为估算参考，实际费用以牙医诊断后报价为准。临床决策与费用由诊所独立确定，KIWI Serenity Limited仅提供非医疗协调服务。<br>
                     All prices are indicative only and are confirmed by the treating dentist after clinical assessment. Clinical decisions and fees are set by the clinic. KIWI Serenity Limited provides non-medical coordination only.
                 </p>
@@ -2302,12 +2581,15 @@
         </div>
     </section>
 
-    <!-- 优化：联系区域 -->
+    <!-- 联系区域 -->
     <section id="contact" class="cta-section">
         <div class="container">
             <div class="section-header fade-in">
-                <h2 class="cta-title">准备好体验优质牙科护理了吗？</h2>
-                <p class="cta-subtitle">通过您值得信赖的新西兰协调员，连接成都优质牙科诊所。评估后获得诊所报价（我们协调预约与翻译服务）。</p>
+                <h2 class="cta-title">准备好体验优质牙科护理了吗？<br>Ready to Experience Premium Dental Care?</h2>
+                <p class="cta-subtitle">
+                    通过您值得信赖的新西兰协调员，连接成都优质牙科诊所。评估后获得诊所报价（我们协调预约与翻译服务）。<br>
+                    Connect with premium dental clinics in Chengdu through your trusted NZ coordinator. Receive clinic quotes after assessment (we coordinate appointments and translation).
+                </p>
             </div>
             
             <div class="contact-card fade-in">
@@ -2317,7 +2599,7 @@
                             <i class="fas fa-building"></i>
                         </div>
                         <div class="contact-info">
-                            <div class="contact-label">公司名称</div>
+                            <div class="contact-label">公司名称 / Company Name</div>
                             <div class="contact-value">KIWI Serenity Limited</div>
                         </div>
                     </div>
@@ -2357,7 +2639,7 @@
                             <i class="fas fa-phone-alt"></i>
                         </div>
                         <div class="contact-info">
-                            <div class="contact-label">电话</div>
+                            <div class="contact-label">电话 / Phone</div>
                             <div class="contact-value">+64 22 040 5795</div>
                         </div>
                     </div>
@@ -2367,7 +2649,7 @@
                             <i class="fas fa-envelope"></i>
                         </div>
                         <div class="contact-info">
-                            <div class="contact-label">电子邮件</div>
+                            <div class="contact-label">电子邮件 / Email</div>
                             <div class="contact-value">KIWI_Serenity_Limited@outlook.com</div>
                         </div>
                     </div>
@@ -2377,8 +2659,8 @@
                             <i class="fas fa-globe"></i>
                         </div>
                         <div class="contact-info">
-                            <div class="contact-label">服务内容</div>
-                            <div class="contact-value">新西兰人牙科预约协调服务</div>
+                            <div class="contact-label">服务内容 / Service</div>
+                            <div class="contact-value">新西兰人牙科预约协调服务<br>NZ Dental Appointment Coordination</div>
                         </div>
                     </div>
                     
@@ -2387,8 +2669,8 @@
                             <i class="fas fa-clock"></i>
                         </div>
                         <div class="contact-info">
-                            <div class="contact-label">服务时间</div>
-                            <div class="contact-value">周一至周五 9:00-18:00 (NZST)</div>
+                            <div class="contact-label">服务时间 / Service Hours</div>
+                            <div class="contact-value">周一至周五 9:00-18:00 (NZST)<br>Mon-Fri 9am-6pm (NZST)</div>
                         </div>
                     </div>
                 </div>
@@ -2397,23 +2679,23 @@
             <div class="cta-buttons">
                 <a href="mailto:KIWI_Serenity_Limited@outlook.com?subject=牙科咨询请求&body=您好，我对成都的牙科服务感兴趣，请提供更多信息。" class="cta-button cta-button-primary fade-in">
                     <i class="fas fa-calendar-check"></i>
-                    预约免费咨询
+                    预约免费咨询 / Book Free Consultation
                 </a>
                 
                 <a href="tel:+64220405795" class="cta-button cta-button-secondary fade-in delay-1">
                     <i class="fas fa-phone"></i>
-                    立即致电 (新西兰)
+                    立即致电 (新西兰) / Call Now (NZ)
                 </a>
                 
                 <a href="https://wa.me/64223244938" class="cta-button cta-button-secondary fade-in delay-2" target="_blank">
                     <i class="fab fa-whatsapp"></i>
-                    WhatsApp 咨询
+                    WhatsApp 咨询 / WhatsApp Inquiry
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- 优化：页脚 -->
+    <!-- 页脚 -->
     <footer class="site-footer">
         <div class="container">
             <div class="footer-container">
@@ -2421,33 +2703,34 @@
                     <div class="footer-column">
                         <h3>KIWI Serenity Limited</h3>
                         <p class="footer-about">
-                            新西兰注册公司，专门为新西兰居民提供成都优质牙科服务的预约与协调服务。我们连接您与成都顶尖牙科诊所，确保您获得高品质、可负担的牙科治疗体验。
+                            新西兰注册公司，专门为新西兰居民提供成都优质牙科服务的预约与协调服务。我们连接您与成都顶尖牙科诊所，确保您获得高品质、可负担的牙科治疗体验。<br>
+                            NZ registered company specializing in booking and coordination of premium dental services in Chengdu for NZ residents. We connect you with top dental clinics in Chengdu for high-quality, affordable dental care.
                         </p>
                     </div>
                     
                     <div class="footer-column">
-                        <h3>快速链接</h3>
+                        <h3>快速链接 / Quick Links</h3>
                         <ul class="footer-links">
-                            <li><a href="#services"><i class="fas fa-chevron-right"></i> 牙科服务</a></li>
-                            <li><a href="#team"><i class="fas fa-chevron-right"></i> 医疗团队</a></li>
-                            <li><a href="#pricing"><i class="fas fa-chevron-right"></i> 费用对比</a></li>
-                            <li><a href="#process"><i class="fas fa-chevron-right"></i> 服务流程</a></li>
-                            <li><a href="#contact"><i class="fas fa-chevron-right"></i> 联系我们</a></li>
+                            <li><a href="#services"><i class="fas fa-chevron-right"></i> 牙科服务 / Services</a></li>
+                            <li><a href="#team"><i class="fas fa-chevron-right"></i> 医疗团队 / Medical Team</a></li>
+                            <li><a href="#pricing"><i class="fas fa-chevron-right"></i> 费用对比 / Pricing</a></li>
+                            <li><a href="#process"><i class="fas fa-chevron-right"></i> 服务流程 / Process</a></li>
+                            <li><a href="#contact"><i class="fas fa-chevron-right"></i> 联系我们 / Contact</a></li>
                         </ul>
                     </div>
                     
                     <div class="footer-column">
-                        <h3>法律文件</h3>
+                        <h3>法律文件 / Legal Documents</h3>
                         <ul class="footer-links">
-                            <li><a href="privacy.html"><i class="fas fa-file-contract"></i> 隐私政策</a></li>
-                            <li><a href="terms.html"><i class="fas fa-file-alt"></i> 服务条款</a></li>
-                            <li><a href="disclaimer.html"><i class="fas fa-exclamation-triangle"></i> 医疗免责声明</a></li>
-                            <li><a href="index.html"><i class="fas fa-home"></i> 返回首页</a></li>
+                            <li><a href="privacy.html"><i class="fas fa-file-contract"></i> 隐私政策 / Privacy Policy</a></li>
+                            <li><a href="terms.html"><i class="fas fa-file-alt"></i> 服务条款 / Terms of Service</a></li>
+                            <li><a href="disclaimer.html"><i class="fas fa-exclamation-triangle"></i> 医疗免责声明 / Medical Disclaimer</a></li>
+                            <li><a href="index.html"><i class="fas fa-home"></i> 返回首页 / Return Home</a></li>
                         </ul>
                     </div>
                     
                     <div class="footer-column">
-                        <h3>联系方式</h3>
+                        <h3>联系方式 / Contact Information</h3>
                         <ul class="footer-links">
                             <li><a href="tel:+64220405795"><i class="fas fa-phone-alt"></i> +64 22 040 5795</a></li>
                             <li><a href="mailto:KIWI_Serenity_Limited@outlook.com"><i class="fas fa-envelope"></i> KIWI_Serenity_Limited@outlook.com</a></li>
@@ -2461,32 +2744,42 @@
                 <div class="footer-bottom">
                     <p class="footer-copyright">
                         © 2026 <strong>KIWI Serenity Limited</strong>。保留所有权利。<br>
-                        KIWI Serenity Limited仅提供信息与协调服务，不提供医疗建议、诊断或治疗。<br>
-                        KIWI Serenity Limited provides information and coordination services only and does not provide medical advice, diagnosis, or treatment.
+                        KIWI Serenity Limited仅提供信息与协调服务，不提供医疗建议、诊断或治疗。所有医疗程序均由持牌牙医在合作诊所执行。<br>
+                        © 2026 <strong>KIWI Serenity Limited</strong>. All rights reserved.<br>
+                        KIWI Serenity Limited provides information and coordination services only and does not provide medical advice, diagnosis, or treatment. All medical procedures are performed by licensed dentists at partner clinics.
                     </p>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- 新增：返回顶部按钮 -->
+    <!-- 返回顶部按钮 -->
     <a href="#" class="back-to-top" id="backToTop">
         <i class="fas fa-arrow-up"></i>
     </a>
 
-    <!-- 新增：移动端菜单 -->
+    <!-- 移动端菜单 - 从左侧滑出 -->
     <div class="mobile-menu" id="mobileMenu" style="display: none;">
         <div class="mobile-menu-content">
             <button class="mobile-menu-close" id="mobileMenuClose">
                 <i class="fas fa-times"></i>
             </button>
-            <a href="#services" class="mobile-menu-link">牙科服务</a>
-            <a href="#team" class="mobile-menu-link">医疗团队</a>
-            <a href="#pricing" class="mobile-menu-link">费用对比</a>
-            <a href="#process" class="mobile-menu-link">服务流程</a>
-            <a href="#contact" class="mobile-menu-link">联系我们</a>
+            <div class="mobile-menu-header">
+                <div class="mobile-menu-logo">
+                    <i class="fas fa-tooth"></i>
+                </div>
+                <div class="mobile-menu-brand">
+                    <div class="mobile-menu-brand-name">KIWI Serenity Limited</div>
+                    <div class="mobile-menu-brand-tagline">新西兰注册公司</div>
+                </div>
+            </div>
+            <a href="#services" class="mobile-menu-link">牙科服务 / Services</a>
+            <a href="#team" class="mobile-menu-link">医疗团队 / Medical Team</a>
+            <a href="#pricing" class="mobile-menu-link">费用对比 / Pricing</a>
+            <a href="#process" class="mobile-menu-link">服务流程 / Process</a>
+            <a href="#contact" class="mobile-menu-link">联系我们 / Contact</a>
             <a href="tel:+64220405795" class="mobile-menu-cta">
-                <i class="fas fa-phone-alt"></i> 致电 +64 22 040 5795
+                <i class="fas fa-phone-alt"></i> 致电 / Call +64 22 040 5795
             </a>
         </div>
     </div>
@@ -2506,7 +2799,7 @@
             firstTeamCard.classList.add('active');
         }
         
-        // 移动端菜单切换
+        // 移动端菜单切换 - 从左侧滑出
         const mobileMenuToggle = document.getElementById('mobileMenuToggle');
         const mobileMenu = document.getElementById('mobileMenu');
         const mobileMenuClose = document.getElementById('mobileMenuClose');
@@ -2522,7 +2815,7 @@
             
             mobileMenuClose.addEventListener('click', function() {
                 mobileMenu.style.opacity = '0';
-                mobileMenu.style.transform = 'translateX(100%)';
+                mobileMenu.style.transform = 'translateX(-100%)';
                 setTimeout(() => {
                     mobileMenu.style.display = 'none';
                 }, 300);
@@ -2533,7 +2826,7 @@
             mobileMenuLinks.forEach(link => {
                 link.addEventListener('click', function() {
                     mobileMenu.style.opacity = '0';
-                    mobileMenu.style.transform = 'translateX(100%)';
+                    mobileMenu.style.transform = 'translateX(-100%)';
                     setTimeout(() => {
                         mobileMenu.style.display = 'none';
                     }, 300);
@@ -2560,15 +2853,6 @@
             });
         });
         
-        // 可折叠卡片功能
-        const cardHeaders = document.querySelectorAll('.card-header');
-        cardHeaders.forEach(header => {
-            header.addEventListener('click', function() {
-                const card = this.closest('.expandable-card');
-                card.classList.toggle('active');
-            });
-        });
-        
         // 为价格对比表格添加响应式数据标签
         const tableRows = document.querySelectorAll('.comparison-table .table-row');
         tableRows.forEach(row => {
@@ -2586,7 +2870,6 @@
         const emailButtons = document.querySelectorAll('a[href^="mailto"]');
         emailButtons.forEach(button => {
             button.addEventListener('click', function(e) {
-                // 可以添加分析代码
                 console.log('Email contact initiated');
             });
         });
@@ -2613,39 +2896,30 @@
         });
         
         // 添加页面加载完成的日志
-        console.log('成都牙科服务页面加载完成');
+        console.log('成都牙科服务页面加载完成 - 汉堡菜单在左侧');
     });
     
     // 切换卡片展开/折叠状态
-    function toggleCard(headerElement) {
+    function toggleExpandableCard(headerElement) {
         const card = headerElement.closest('.expandable-card');
-        const isActive = card.classList.contains('active');
-        
-        // 关闭所有其他卡片（可选，如果希望只打开一个）
-        // document.querySelectorAll('.expandable-card').forEach(otherCard => {
-        //     if (otherCard !== card) {
-        //         otherCard.classList.remove('active');
-        //     }
-        // });
-        
         card.classList.toggle('active');
     }
     
-    // 移动端菜单样式
+    // 移动端菜单样式 - 从左侧滑出
     const mobileMenuStyle = document.createElement('style');
     mobileMenuStyle.textContent = `
         .mobile-menu {
             position: fixed;
             top: 0;
-            right: 0;
+            left: 0;
             bottom: 0;
             width: 300px;
             background: rgba(255, 255, 255, 0.98);
             backdrop-filter: blur(30px);
             z-index: 10000;
-            padding: 80px 30px 40px;
-            box-shadow: -10px 0 40px rgba(0, 0, 0, 0.1);
-            transform: translateX(100%);
+            padding: 30px;
+            box-shadow: 10px 0 40px rgba(0, 0, 0, 0.1);
+            transform: translateX(-100%);
             opacity: 0;
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             display: flex;
@@ -2657,6 +2931,48 @@
             flex-direction: column;
             gap: 24px;
             height: 100%;
+        }
+        
+        .mobile-menu-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(229, 231, 235, 0.8);
+        }
+        
+        .mobile-menu-logo {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .mobile-menu-brand {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .mobile-menu-brand-name {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            line-height: 1.2;
+        }
+        
+        .mobile-menu-brand-tagline {
+            font-size: 0.8rem;
+            color: var(--text-medium);
+            font-weight: 500;
         }
         
         .mobile-menu-close {
@@ -2701,11 +3017,73 @@
         
         @media (max-width: 400px) {
             .mobile-menu {
-                width: 100%;
+                width: 85%;
             }
+        }
+        
+        /* 移动端菜单遮罩层 */
+        .mobile-menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 9999;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            display: none;
+        }
+        
+        .mobile-menu-overlay.active {
+            opacity: 1;
+            display: block;
         }
     `;
     document.head.appendChild(mobileMenuStyle);
+    
+    // 添加移动端菜单遮罩层
+    const mobileMenuOverlay = document.createElement('div');
+    mobileMenuOverlay.className = 'mobile-menu-overlay';
+    mobileMenuOverlay.id = 'mobileMenuOverlay';
+    document.body.appendChild(mobileMenuOverlay);
+    
+    // 更新移动端菜单交互
+    document.addEventListener('DOMContentLoaded', function() {
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileMenuClose = document.getElementById('mobileMenuClose');
+        const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+        
+        if (mobileMenuToggle && mobileMenu && mobileMenuOverlay) {
+            mobileMenuToggle.addEventListener('click', function() {
+                mobileMenu.style.display = 'block';
+                mobileMenuOverlay.classList.add('active');
+                setTimeout(() => {
+                    mobileMenu.style.opacity = '1';
+                    mobileMenu.style.transform = 'translateX(0)';
+                }, 10);
+            });
+            
+            mobileMenuClose.addEventListener('click', closeMobileMenu);
+            mobileMenuOverlay.addEventListener('click', closeMobileMenu);
+            
+            function closeMobileMenu() {
+                mobileMenu.style.opacity = '0';
+                mobileMenu.style.transform = 'translateX(-100%)';
+                mobileMenuOverlay.classList.remove('active');
+                setTimeout(() => {
+                    mobileMenu.style.display = 'none';
+                }, 300);
+            }
+            
+            // 点击菜单链接关闭菜单
+            const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
+            mobileMenuLinks.forEach(link => {
+                link.addEventListener('click', closeMobileMenu);
+            });
+        }
+    });
 </script>
 </body>
 </html>
