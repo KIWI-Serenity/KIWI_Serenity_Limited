@@ -1048,6 +1048,236 @@
             color: var(--medium-text);
         }
         
+        /* 新增：合作口腔诊所医疗团队介绍卡片 - 可折叠式 */
+        .dental-team-section {
+            background: linear-gradient(to right, rgba(26, 95, 180, 0.1), rgba(255, 255, 255, 0.8));
+            padding: 60px 0;
+            margin: 60px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .dental-team-section:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path fill="%231a5fb4" opacity="0.03" d="M20,50 C20,20 80,20 80,50 C80,80 20,80 20,50 Z M30,50 C30,30 70,30 70,50 C70,70 30,70 30,50 Z"/></svg>');
+            background-size: 120px;
+            opacity: 0.3;
+        }
+        
+        .dental-team-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .dental-team-title {
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+            color: var(--primary-blue);
+            margin-bottom: 50px;
+            font-size: 2.2rem;
+            font-weight: 800;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .dental-team-title:after {
+            content: "";
+            position: absolute;
+            bottom: -15px;
+            left: 25%;
+            width: 50%;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, var(--primary-blue), transparent);
+        }
+        
+        .dental-team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .dental-team-card {
+            background: white;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-medium);
+            transition: var(--transition);
+            position: relative;
+            border-top: 5px solid var(--primary-blue);
+        }
+        
+        .dental-team-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-heavy);
+        }
+        
+        /* 可折叠式卡片头部样式 */
+        .dental-card-header {
+            padding: 30px 30px 20px;
+            background: linear-gradient(to right, rgba(26, 95, 180, 0.05), rgba(26, 95, 180, 0.02));
+            text-align: center;
+            border-bottom: 1px solid rgba(26, 95, 180, 0.1);
+            cursor: pointer;
+            position: relative;
+            transition: var(--transition);
+        }
+        
+        .dental-card-header:hover {
+            background: linear-gradient(to right, rgba(26, 95, 180, 0.08), rgba(26, 95, 180, 0.04));
+        }
+        
+        .dental-icon {
+            font-size: 3.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+            display: inline-block;
+            background: rgba(26, 95, 180, 0.1);
+            width: 90px;
+            height: 90px;
+            line-height: 90px;
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+        
+        .dental-card-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.6rem;
+            color: var(--dark-text);
+            margin-bottom: 10px;
+            transition: var(--transition);
+        }
+        
+        .dental-card-subtitle {
+            color: var(--primary-blue);
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+        
+        /* 折叠/展开指示器 */
+        .dental-card-toggle {
+            position: absolute;
+            right: 25px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(26, 95, 180, 0.1);
+            color: var(--primary-blue);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            transition: var(--transition);
+            box-shadow: var(--shadow-light);
+        }
+        
+        .dental-card-header:hover .dental-card-toggle {
+            background: rgba(26, 95, 180, 0.2);
+            transform: translateY(-50%) scale(1.1);
+        }
+        
+        .dental-card-header.active .dental-card-toggle i {
+            transform: rotate(180deg);
+        }
+        
+        /* 可折叠卡片内容样式 */
+        .dental-card-content {
+            padding: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.8s cubic-bezier(0.4, 0, 0.2, 1), padding 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .dental-card-content.expanded {
+            max-height: 3000px;
+            padding: 25px 30px;
+        }
+        
+        .dental-feature-list {
+            padding-left: 0;
+        }
+        
+        .dental-feature-list li {
+            margin-bottom: 15px;
+            list-style-type: none;
+            padding-left: 32px;
+            position: relative;
+            font-size: 1.05rem;
+            color: var(--medium-text);
+        }
+        
+        .dental-feature-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent-green);
+            font-weight: bold;
+            font-size: 1.3rem;
+            top: 0;
+        }
+        
+        .rankings-highlight {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(26, 95, 180, 0.1));
+            border-radius: var(--radius-md);
+            padding: 20px;
+            margin-top: 25px;
+            border-left: 4px solid var(--easter-yellow);
+        }
+        
+        .rankings-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .ranking-item {
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 1px dashed rgba(26, 95, 180, 0.2);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .ranking-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .ranking-text {
+            font-size: 0.95rem;
+            color: var(--dark-text);
+        }
+        
+        .ranking-badge {
+            background: var(--primary-blue);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        
         /* Costs Not Included Section */
         .costs-not-included {
             background: linear-gradient(to right, rgba(255, 87, 87, 0.05), rgba(255, 87, 87, 0.02));
@@ -1647,6 +1877,10 @@
                 font-size: 1.2rem;
             }
             
+            .dental-team-grid {
+                grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            }
+            
             .itinerary-table th:nth-child(1),
             .itinerary-table td:nth-child(1) {
                 width: 15%;
@@ -1739,6 +1973,10 @@
                 flex-direction: column;
             }
             
+            .dental-team-grid {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+            
             .itinerary-table {
                 display: block;
                 overflow-x: auto;
@@ -1818,6 +2056,14 @@
             
             .special-features {
                 grid-template-columns: 1fr;
+            }
+            
+            .dental-team-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .dental-team-title {
+                font-size: 1.8rem;
             }
             
             /* 移动端表格响应式设计 */
@@ -1998,6 +2244,36 @@
                 padding: 18px 20px;
             }
             
+            .dental-card-header {
+                padding: 25px 20px 15px;
+                text-align: left;
+            }
+            
+            .dental-card-content {
+                padding: 20px;
+            }
+            
+            .dental-card-title {
+                font-size: 1.4rem;
+            }
+            
+            .dental-card-subtitle {
+                font-size: 1rem;
+            }
+            
+            .dental-icon {
+                width: 70px;
+                height: 70px;
+                line-height: 70px;
+                font-size: 2.8rem;
+            }
+            
+            .dental-card-toggle {
+                width: 35px;
+                height: 35px;
+                font-size: 1.3rem;
+            }
+            
             .itinerary-table td {
                 padding-left: 35%;
             }
@@ -2039,6 +2315,14 @@
             
             .info-card-title {
                 font-size: 1.1rem;
+            }
+            
+            .dental-card-title {
+                font-size: 1.3rem;
+            }
+            
+            .dental-card-subtitle {
+                font-size: 0.95rem;
             }
             
             .itinerary-table td {
@@ -2130,16 +2414,12 @@
                 <p class="lang-zh">促销有效期：2026年3月前预订，2026年4月期间出发的行程。</p>
                 
                 <a 
-  		  href="mailto:KIWI_Serenity_Limited@outlook.com?subject=Easter Special Inquiry"
-  		  class="cta-button"
-		>
-    		   <span class="lang-en">EMAIL US NOW</span>
-    		   <span class="lang-zh">立即发送邮件咨询</span>
-		</a>
-
-                    <span class="lang-en">BOOK EASTER SPECIAL NOW</span>
-                    <span class="lang-zh">立即预订复活节特惠</span>
-                </button>
+                    href="mailto:KIWI_Serenity_Limited@outlook.com?subject=Easter Special Inquiry"
+                    class="cta-button"
+                >
+                    <span class="lang-en">EMAIL US NOW</span>
+                    <span class="lang-zh">立即发送邮件咨询</span>
+                </a>
                 
                 <!-- CTA按钮下方的免责声明 -->
                 <div class="cta-disclaimer">
@@ -2191,6 +2471,178 @@
                 <p class="value-text lang-zh">成都机场接送服务</p>
             </div>
         </div>
+
+        <!-- 新增：合作口腔诊所医疗团队介绍卡片 - 可折叠式 -->
+        <section class="dental-team-section">
+            <div class="dental-team-container">
+                <h2 class="dental-team-title">
+                    <span class="lang-en">Our Partner Dental Clinic Team</span>
+                    <span class="lang-zh">合作口腔诊所医疗团队</span>
+                </h2>
+                
+                <p style="text-align: center; max-width: 800px; margin: 0 auto 30px; font-size: 1.1rem; color: var(--medium-text);" class="lang-en">
+                    Our exclusive dental cleaning services are provided by licensed dental clinics in Chengdu, whose professional teams include graduates from West China School of Stomatology at Sichuan University - one of the world's leading dental education institutions.
+                </p>
+                <p style="text-align: center; max-width: 800px; margin: 0 auto 30px; font-size: 1.1rem; color: var(--medium-text);" class="lang-zh">
+                    我们独家合作的洁牙服务由成都持牌口腔诊所提供，其专业团队包括毕业于四川大学华西口腔医学院的医生——华西口腔是全球领先的口腔医学教育机构之一。
+                </p>
+                
+                <div class="dental-team-grid">
+                    <!-- Card 1: 华西口腔医学院背景介绍卡片 - 可折叠式 -->
+                    <div class="dental-team-card">
+                        <div class="dental-card-header" onclick="toggleDentalCard('dental-school')">
+                            <div class="dental-icon">
+                                <i class="fas fa-university"></i>
+                            </div>
+                            <h3 class="dental-card-title lang-en">West China School of Stomatology</h3>
+                            <h3 class="dental-card-title lang-zh">四川大学华西口腔医学院</h3>
+                            <div class="dental-card-subtitle lang-en">World-Class Dental Education</div>
+                            <div class="dental-card-subtitle lang-zh">世界级口腔医学教育</div>
+                            <div class="dental-card-toggle">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div id="dental-school-content" class="dental-card-content">
+                            <ul class="dental-feature-list">
+                                <li>
+                                    <span class="lang-en">Founded in 1917, it's one of China's oldest and most prestigious dental schools</span>
+                                    <span class="lang-zh">成立于1917年，是中国历史最悠久、最负盛名的口腔医学院之一</span>
+                                </li>
+                                <li>
+                                    <span class="lang-en">Consistently ranked as the top dental school in China</span>
+                                    <span class="lang-zh">持续位居中国口腔医学院校排名首位</span>
+                                </li>
+                                <li>
+                                    <span class="lang-en">Recognized globally for excellence in dental education and research</span>
+                                    <span class="lang-zh">以其卓越的口腔医学教育和研究享誉全球</span>
+                                </li>
+                                <li>
+                                    <span class="lang-en">Graduates are highly sought after by top dental institutions worldwide</span>
+                                    <span class="lang-zh">毕业生备受全球顶级口腔医疗机构青睐</span>
+                                </li>
+                            </ul>
+                            
+                            <div class="rankings-highlight">
+                                <div class="rankings-title">
+                                    <i class="fas fa-trophy"></i>
+                                    <span class="lang-en">Global Rankings</span>
+                                    <span class="lang-zh">全球排名</span>
+                                </div>
+                                <div class="ranking-item">
+                                    <div class="ranking-text lang-en">QS World University Rankings 2025 (Dentistry)</div>
+                                    <div class="ranking-text lang-zh">2025年QS世界大学学科排名（牙科学）</div>
+                                    <div class="ranking-badge">#12 Global</div>
+                                </div>
+                                <div class="ranking-item">
+                                    <div class="ranking-text lang-en">ShanghaiRanking 2024 (Dentistry)</div>
+                                    <div class="ranking-text lang-zh">2024年软科世界一流学科排名（牙科学）</div>
+                                    <div class="ranking-badge">#4 Global</div>
+                                </div>
+                                <div class="ranking-item">
+                                    <div class="ranking-text lang-en">Top in Mainland China</div>
+                                    <div class="ranking-text lang-zh">中国大陆排名第一</div>
+                                    <div class="ranking-badge">#1 China</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Card 2: 专业医疗团队介绍卡片 - 可折叠式 -->
+                    <div class="dental-team-card">
+                        <div class="dental-card-header" onclick="toggleDentalCard('dental-team')">
+                            <div class="dental-icon">
+                                <i class="fas fa-user-md"></i>
+                            </div>
+                            <h3 class="dental-card-title lang-en">Professional Dental Team</h3>
+                            <h3 class="dental-card-title lang-zh">专业口腔医疗团队</h3>
+                            <div class="dental-card-subtitle lang-en">Licensed & Experienced Practitioners</div>
+                            <div class="dental-card-subtitle lang-zh">持牌且经验丰富的执业医师</div>
+                            <div class="dental-card-toggle">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div id="dental-team-content" class="dental-card-content">
+                            <ul class="dental-feature-list">
+                                <li>
+                                    <span class="lang-en">Our partner clinic dentists are graduates of West China School of Stomatology</span>
+                                    <span class="lang-zh">我们合作诊所的牙医毕业于四川大学华西口腔医学院</span>
+                                </li>
+                                <li>
+                                    <span class="lang-en">All practitioners are fully licensed by Chinese health authorities</span>
+                                    <span class="lang-zh">所有执业医师均获得中国卫生部门的完全执业许可</span>
+                                </li>
+                                <li>
+                                    <span class="lang-en">Minimum 5 years of clinical experience in professional dental practice</span>
+                                    <span class="lang-zh">在专业牙科诊所拥有至少5年临床经验</span>
+                                </li>
+                                <li>
+                                    <span class="lang-en">Specialized training in preventive dentistry and dental hygiene</span>
+                                    <span class="lang-zh">接受过预防牙科和口腔卫生方面的专业培训</span>
+                                </li>
+                                <li>
+                                    <span class="lang-en">Continuing education to stay updated with latest dental techniques</span>
+                                    <span class="lang-zh">持续接受教育以掌握最新牙科技术</span>
+                                </li>
+                                <li>
+                                    <span class="lang-en">Experience with international patients and communication in English</span>
+                                    <span class="lang-zh">具有接待国际患者的经验，能用英语沟通</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Card 3: 服务质量与标准卡片 - 可折叠式 -->
+                    <div class="dental-team-card">
+                        <div class="dental-card-header" onclick="toggleDentalCard('service-quality')">
+                            <div class="dental-icon">
+                                <i class="fas fa-clinic-medical"></i>
+                            </div>
+                            <h3 class="dental-card-title lang-en">Service Quality & Standards</h3>
+                            <h3 class="dental-card-title lang-zh">服务质量与标准</h3>
+                            <div class="dental-card-subtitle lang-en">International Standards of Care</div>
+                            <div class="dental-card-subtitle lang-zh">国际标准的护理</div>
+                            <div class="dental-card-toggle">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div id="service-quality-content" class="dental-card-content">
+                            <ul class="dental-feature-list">
+                                <li>
+                                    <span class="lang-en">State-of-the-art dental equipment and sterilization protocols</span>
+                                    <span class="lang-zh">先进的牙科设备和消毒协议</span>
+                                </li>
+                                <li>
+                                    <span class="lang-en">Single-use disposable instruments for infection control</span>
+                                    <span class="lang-zh">使用一次性器械以控制感染</span>
+                                </li>
+                                <li>
+                                    <span class="lang-en">Comprehensive dental cleaning procedure (approx. 30-45 minutes)</span>
+                                    <span class="lang-zh">全面的牙齿清洁程序（约30-45分钟）</span>
+                                </li>
+                                <li>
+                                    <span class="lang-en">Personalized oral health recommendations after cleaning</span>
+                                    <span class="lang-zh">洁牙后提供个性化的口腔健康建议</span>
+                                </li>
+                                <li>
+                                    <span class="lang-en">Clean, modern clinic facilities with comfortable environment</span>
+                                    <span class="lang-zh">干净、现代的诊所设施，环境舒适</span>
+                                </li>
+                                <li>
+                                    <span class="lang-en">Conveniently located in Chengdu with easy access</span>
+                                    <span class="lang-zh">位于成都交通便利的位置</span>
+                                </li>
+                            </ul>
+                            
+                            <div class="special-notice" style="margin-top: 20px;">
+                                <div class="notice-title"><i class="fas fa-info-circle"></i> <span class="lang-en">Important Notice</span><span class="lang-zh">重要提示</span></div>
+                                <p class="notice-text lang-en">KIWI Serenity Limited provides non-medical coordination only. Dental services are provided independently by licensed dental clinics in China. We do not provide medical advice, diagnosis, or treatment.</p>
+                                <p class="lang-zh">KIWI Serenity Limited仅提供非医疗协调服务。牙科服务由中国持牌牙科诊所独立提供。我们不提供医疗建议、诊断或治疗。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <!-- Cards Container -->
         <div class="cards-container">
@@ -2556,15 +3008,12 @@
                                 </div>
                                 
                                 <a 
- 				 href="mailto:KIWI_Serenity_Limited@outlook.com?subject=Rolling Star Easter Booking"
- 				 class="booking-button"
-				>
-  				 <span class="lang-en">Email to Book</span>
-  				 <span class="lang-zh">邮件预订</span>
-				</a>
-                                    <span class="lang-en">Book This Easter Journey</span>
-                                    <span class="lang-zh">预订此复活节旅程</span>
-                                </button>
+                                    href="mailto:KIWI_Serenity_Limited@outlook.com?subject=Rolling Star Easter Booking"
+                                    class="booking-button"
+                                >
+                                    <span class="lang-en">Email to Book</span>
+                                    <span class="lang-zh">邮件预订</span>
+                                </a>
                                 
                                 <!-- 预订按钮下方的免责声明 -->
                                 <div class="booking-disclaimer">
@@ -2591,8 +3040,8 @@
                     <div class="card-content-section">
                         <div class="card-title lang-en">Ideal Sichuan Panorama Experience</div>
                         <div class="card-title lang-zh">理想四川8天</div>
-                        <div class="card-subtitle lang-en">Comprehensive 8-day journey covering Sichuan's most spectacular natural and cultural wonders (24-36 person group)</div>
-                        <div class="card-subtitle lang-zh">全面8天旅程，涵盖四川最壮丽的自然和文化奇观（24-36人团）</div>
+                        <div class="card-subtitle lang-en">Comprehensive 8-day journey covering Sichuan's most spectacular natural and cultural wonders</div>
+                        <div class="card-subtitle lang-zh">全面8天旅程，涵盖四川最壮丽的自然和文化奇观</div>
                         
                         <div class="card-highlights">
                             <div class="highlight-item">
@@ -3009,16 +3458,12 @@
                                 </div>
                                 
                                 <a 
- 				 href="mailto:KIWI_Serenity_Limited@outlook.com?subject=Rolling Star Easter Booking"
- 				 class="booking-button"
-				>
-  				 <span class="lang-en">Email to Book</span>
-  				 <span class="lang-zh">邮件预订</span>
-				</a>
-
-                                    <span class="lang-en">Book This Easter Journey</span>
-                                    <span class="lang-zh">预订此复活节旅程</span>
-                                </button>
+                                    href="mailto:KIWI_Serenity_Limited@outlook.com?subject=Ideal Panorama Easter Booking"
+                                    class="booking-button"
+                                >
+                                    <span class="lang-en">Email to Book</span>
+                                    <span class="lang-zh">邮件预订</span>
+                                </a>
                                 
                                 <!-- 预订按钮下方的免责声明 -->
                                 <div class="booking-disclaimer">
@@ -3201,11 +3646,7 @@
                         <span class="lang-en">We provide non-medical coordination only. Medical services (if any) are provided by licensed third parties in China. No medical advice or outcome guarantees.</span>
                         <span class="lang-zh">我们仅提供非医疗协调服务。医疗服务（如有）由中国持牌第三方提供。不提供医疗建议或结果保证。</span>
                     </p>
-                    <p class="notice-text">
-						<span class="lang-en">Our partner clinics work with licensed dentists in China, who hold degrees from the West China School of Stomatology, Sichuan University.</span>
-						<span class="lang-zh">我们的合作机构配备中国持牌执业口腔医生--毕业于四川大学华西口腔医学院。
-</span>
-					</p>
+                    
                     <div class="lang-en">
                         <p>KIWI Serenity Limited acts solely as an independent coordination service provider. We do not act as an agent, representative, or intermediary for the client, any medical provider, clinic, practitioner, or third-party service provider in relation to medical services, medical decisions, or medical outcomes.</p>
                         
@@ -3313,7 +3754,7 @@
                 <p class="lang-en">&copy; 2026 KIWI Serenity Limited. All rights reserved. Discover Sichuan, Wellness travel, Experience the Summit. Easter Special Promotion: Book before March 2026 for April 2026 departures. Online payment only.</p>
                 <p class="lang-zh">&copy; 2026 KIWI Serenity Limited。保留所有权利。探索四川，健康旅行，体验巅峰。复活节特别促销：2026年3月前预订，2026年4月出发。仅限在线支付。</p>
                 <p class="lang-en">; KIWI Serenity Limited provides non-medical travel coordination and administrative support only. We do not provide medical advice, diagnosis, or treatment. All medical services, if any, are provided independently by licensed institutions in China. No medical outcomes are guaranteed.</p>
-		<p class="lang-zh">KIWI Serenity Limited 仅提供非医疗性质的行程协调及行政支持服务，
+        <p class="lang-zh">KIWI Serenity Limited 仅提供非医疗性质的行程协调及行政支持服务，
 不提供任何医疗建议、诊断或治疗。所有医疗相关服务（如有）均由中国持牌机构独立提供，本公司不对任何医疗结果作出保证。</p>
             </div>
         </div>
@@ -3341,11 +3782,31 @@
             }
         }
         
-        // Card toggle function
+        // 主卡片折叠功能
         function toggleCard(cardId) {
             const cardHeader = document.querySelector(`#${cardId}-content`).previousElementSibling;
             const cardContent = document.getElementById(`${cardId}-content`);
             const toggleIcon = cardHeader.querySelector('.card-toggle i');
+            
+            // Toggle active class on header
+            cardHeader.classList.toggle('active');
+            
+            // Toggle expanded class on content
+            cardContent.classList.toggle('expanded');
+            
+            // Change icon
+            if (cardHeader.classList.contains('active')) {
+                toggleIcon.style.transform = 'rotate(180deg)';
+            } else {
+                toggleIcon.style.transform = 'rotate(0deg)';
+            }
+        }
+        
+        // 牙科团队卡片折叠功能
+        function toggleDentalCard(cardId) {
+            const cardHeader = document.querySelector(`#${cardId}-content`).previousElementSibling;
+            const cardContent = document.getElementById(`${cardId}-content`);
+            const toggleIcon = cardHeader.querySelector('.dental-card-toggle i');
             
             // Toggle active class on header
             cardHeader.classList.toggle('active');
@@ -3410,7 +3871,16 @@
         document.addEventListener('DOMContentLoaded', function() {
             toggleLanguage('en');
             
-            // Set up initial card state (first expanded, second collapsed)
+            // 设置牙科团队卡片初始状态（默认全部折叠）
+            const dentalCardHeaders = document.querySelectorAll('.dental-card-header');
+            dentalCardHeaders.forEach(header => {
+                const toggleIcon = header.querySelector('.dental-card-toggle i');
+                if (toggleIcon) {
+                    toggleIcon.style.transform = 'rotate(0deg)';
+                }
+            });
+            
+            // 设置旅游卡片初始状态（第一个展开，第二个折叠）
             const idealPanoramaHeader = document.querySelector('#ideal-panorama-content').previousElementSibling;
             const idealPanoramaToggleIcon = idealPanoramaHeader.querySelector('.card-toggle i');
             idealPanoramaToggleIcon.style.transform = 'rotate(0deg)';
