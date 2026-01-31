@@ -1,0 +1,3433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KIWI Serenity Limited - Easter Special: Discover Sichuan's Wonders</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #1a5fb4;
+            --secondary-blue: #4a90e2;
+            --accent-orange: #ff7c4c;
+            --accent-green: #27ae60;
+            --easter-yellow: #FFD700;
+            --easter-pink: #FF69B4;
+            --easter-purple: #9370DB;
+            --easter-green: #32CD32;
+            --dark-text: #2c3e50;
+            --medium-text: #5d6d7e;
+            --light-text: #7f8c8d;
+            --light-bg: #f8fafd;
+            --card-bg: #ffffff;
+            --border-color: #e0e6ed;
+            --shadow-light: 0 5px 15px rgba(0, 0, 0, 0.05);
+            --shadow-medium: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --shadow-heavy: 0 15px 40px rgba(0, 0, 0, 0.12);
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--dark-text);
+            background-color: var(--light-bg);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Easter Banner */
+        .easter-banner {
+            background: linear-gradient(90deg, var(--easter-yellow) 0%, var(--easter-pink) 33%, var(--easter-purple) 66%, var(--easter-green) 100%);
+            color: white;
+            text-align: center;
+            padding: 15px 20px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            position: relative;
+            overflow: hidden;
+            z-index: 100;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { opacity: 0.95; }
+            50% { opacity: 1; }
+            100% { opacity: 0.95; }
+        }
+        
+        .easter-banner:before {
+            content: "🐣";
+            position: absolute;
+            left: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+            animation: bounce 2s infinite;
+        }
+        
+        .easter-banner:after {
+            content: "🥚";
+            position: absolute;
+            right: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+            animation: bounce 2s infinite 0.5s;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(-50%); }
+            50% { transform: translateY(-60%); }
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, #0d47a1 100%);
+            color: white;
+            padding: 25px 0;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .logo-img {
+            height: 80px;
+            width: auto;
+            border-radius: var(--radius-sm);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            background-color: white;
+            padding: 8px;
+            transition: var(--transition);
+        }
+        
+        .logo-img:hover {
+            transform: translateY(-3px) rotate(5deg);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+        }
+        
+        .company-info h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 2.1rem;
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        }
+        
+        .company-tagline {
+            font-size: 1rem;
+            opacity: 0.9;
+            max-width: 500px;
+            font-weight: 300;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            flex: 0 0 auto;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+        
+        .contact-item:hover {
+            transform: translateX(5px);
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+        }
+        
+        .contact-icon {
+            font-size: 1.2rem;
+            width: 24px;
+            text-align: center;
+            color: #a5d6ff;
+        }
+        
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            margin-bottom: 60px;
+            padding: 0 10px;
+            position: relative;
+        }
+        
+        .hero h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3rem;
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+            line-height: 1.2;
+            font-weight: 900;
+            background: linear-gradient(to right, var(--primary-blue), var(--accent-orange));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.4rem;
+            color: var(--medium-text);
+            max-width: 800px;
+            margin: 0 auto 30px;
+            font-weight: 400;
+        }
+        
+        /* Easter Offer Section */
+        .easter-offer {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.15) 0%, rgba(255, 105, 180, 0.15) 50%, rgba(147, 112, 219, 0.15) 100%);
+            padding: 30px 40px;
+            border-radius: var(--radius-lg);
+            margin: 40px auto;
+            max-width: 1000px;
+            border: 3px solid transparent;
+            border-image: linear-gradient(90deg, var(--easter-yellow), var(--easter-pink), var(--easter-purple)) 1;
+            box-shadow: var(--shadow-heavy);
+            position: relative;
+            overflow: hidden;
+            animation: shimmer 3s infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { box-shadow: var(--shadow-heavy); }
+            50% { box-shadow: 0 10px 40px rgba(255, 105, 180, 0.3); }
+            100% { box-shadow: var(--shadow-heavy); }
+        }
+        
+        .easter-offer:before {
+            content: "🐰";
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            font-size: 2.5rem;
+            opacity: 0.3;
+            animation: float 6s infinite;
+        }
+        
+        .easter-offer:after {
+            content: "🌸";
+            position: absolute;
+            right: 20px;
+            bottom: 20px;
+            font-size: 2.5rem;
+            opacity: 0.3;
+            animation: float 6s infinite 2s;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .easter-offer h3 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--easter-purple);
+            margin-bottom: 15px;
+            font-size: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .easter-offer p {
+            font-size: 1.3rem;
+            color: var(--dark-text);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .easter-highlight {
+            background: linear-gradient(90deg, var(--easter-yellow) 0%, var(--easter-pink) 100%);
+            color: white;
+            padding: 12px 25px;
+            border-radius: var(--radius-md);
+            font-weight: 800;
+            font-size: 1.5rem;
+            display: inline-block;
+            margin: 20px 0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transform: rotate(-1deg);
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(90deg, var(--easter-yellow) 0%, var(--easter-pink) 50%, var(--easter-purple) 100%);
+            color: white;
+            padding: 18px 45px;
+            border-radius: 50px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 1.4rem;
+            text-decoration: none;
+            transition: var(--transition);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .cta-button:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: 0.5s;
+            z-index: -1;
+        }
+        
+        .cta-button:hover:before {
+            left: 100%;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+        }
+        
+        /* CTA Disclaimer */
+        .cta-disclaimer {
+            margin-top: 15px;
+            font-size: 0.9rem;
+            color: var(--medium-text);
+            text-align: center;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 10px;
+        }
+        
+        /* Language Toggle */
+        .language-toggle {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            gap: 15px;
+        }
+        
+        .lang-btn {
+            background: white;
+            border: 2px solid var(--primary-blue);
+            color: var(--primary-blue);
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .lang-btn.active {
+            background: var(--primary-blue);
+            color: white;
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .lang-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-medium);
+        }
+        
+        /* Value Proposition */
+        .value-proposition {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin: 50px 0;
+        }
+        
+        .value-card {
+            background: white;
+            border-radius: var(--radius-lg);
+            padding: 25px;
+            text-align: center;
+            flex: 1;
+            min-width: 200px;
+            max-width: 300px;
+            box-shadow: var(--shadow-light);
+            transition: var(--transition);
+        }
+        
+        .value-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .value-icon {
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .value-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--dark-text);
+        }
+        
+        .value-text {
+            color: var(--medium-text);
+            font-size: 0.95rem;
+        }
+        
+        /* Cards Container */
+        .cards-container {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            margin-bottom: 80px;
+        }
+        
+        /* Tour Card Design with Full Image Display - Fixed Height */
+        .tour-card {
+            background-color: var(--card-bg);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-medium);
+            transition: var(--transition);
+            position: relative;
+            border: 1px solid var(--border-color);
+        }
+        
+        .tour-card:hover {
+            box-shadow: var(--shadow-heavy);
+            transform: translateY(-10px);
+        }
+        
+        /* Card Header with Full Image Display - Fixed Height */
+        .card-header {
+            display: flex;
+            align-items: stretch;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+            min-height: 280px;
+            cursor: pointer;
+        }
+        
+        .card-image-container {
+            flex: 0 0 45%;
+            height: 280px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            background-color: #f8fafd;
+            transition: transform 0.5s ease;
+        }
+        
+        .tour-card:hover .card-image-container img {
+            transform: scale(1.1);
+        }
+        
+        .image-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(26, 95, 180, 0.85), rgba(26, 95, 180, 0.4));
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .coach-tour .image-overlay {
+            background: linear-gradient(to right, rgba(255, 124, 76, 0.85), rgba(255, 124, 76, 0.4));
+        }
+        
+        .days-number {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 5rem;
+            font-weight: 900;
+            line-height: 1;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        .days-text {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 800;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+        }
+        
+        .card-content-section {
+            flex: 1;
+            padding: 35px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .card-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary-blue);
+            margin-bottom: 10px;
+        }
+        
+        .coach-tour .card-title {
+            color: var(--accent-orange);
+        }
+        
+        .card-subtitle {
+            font-size: 1.2rem;
+            color: var(--medium-text);
+            margin-bottom: 25px;
+        }
+        
+        .card-highlights {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        
+        .highlight-item {
+            background-color: rgba(26, 95, 180, 0.1);
+            color: var(--primary-blue);
+            padding: 10px 18px;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition);
+        }
+        
+        .highlight-item:hover {
+            transform: translateY(-3px);
+            background-color: rgba(26, 95, 180, 0.2);
+        }
+        
+        .coach-tour .highlight-item {
+            background-color: rgba(255, 124, 76, 0.1);
+            color: var(--accent-orange);
+        }
+        
+        .coach-tour .highlight-item:hover {
+            background-color: rgba(255, 124, 76, 0.2);
+        }
+        
+        .card-toggle {
+            font-size: 2rem;
+            transition: var(--transition);
+            position: absolute;
+            right: 40px;
+            top: 35px;
+            color: var(--primary-blue);
+            cursor: pointer;
+            background: rgba(255, 255, 255, 0.9);
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-light);
+            z-index: 2;
+        }
+        
+        .coach-tour .card-toggle {
+            color: var(--accent-orange);
+        }
+        
+        .card-toggle:hover {
+            transform: scale(1.1);
+            background: white;
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .card-header.active .card-toggle i {
+            transform: rotate(180deg);
+        }
+        
+        .card-content {
+            padding: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.8s cubic-bezier(0.4, 0, 0.2, 1), padding 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .card-content.expanded {
+            max-height: 5000px;
+            padding: 50px;
+        }
+        
+        /* Tour Packages Layout - 精简优化 */
+        .tour-package {
+            margin-bottom: 50px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .tour-package:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .package-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 1.9rem;
+            color: var(--primary-blue);
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .coach-tour .package-title {
+            color: var(--accent-orange);
+        }
+        
+        .package-title i {
+            font-size: 1.6rem;
+        }
+        
+        .package-content {
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .package-section {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.4rem;
+            color: var(--dark-text);
+            margin-bottom: 18px;
+            padding-bottom: 8px;
+            border-bottom: 3px solid var(--primary-blue);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .coach-tour .section-title {
+            border-bottom: 3px solid var(--accent-orange);
+        }
+        
+        .section-title i {
+            color: var(--primary-blue);
+        }
+        
+        .coach-tour .section-title i {
+            color: var(--accent-orange);
+        }
+        
+        .feature-list {
+            padding-left: 0;
+            margin-top: 10px;
+        }
+        
+        .feature-list li {
+            margin-bottom: 14px;
+            list-style-type: none;
+            padding-left: 32px;
+            position: relative;
+        }
+        
+        .feature-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent-green);
+            font-weight: bold;
+            font-size: 1.3rem;
+            top: 0;
+        }
+        
+        .feature-text {
+            font-size: 1.05rem;
+            color: var(--medium-text);
+        }
+        
+        /* 特色亮点区 */
+        .special-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .special-feature-item {
+            background: linear-gradient(135deg, rgba(26, 95, 180, 0.08), rgba(26, 95, 180, 0.03));
+            border-radius: var(--radius-md);
+            padding: 20px;
+            border-left: 4px solid var(--primary-blue);
+            transition: var(--transition);
+        }
+        
+        .coach-tour .special-feature-item {
+            background: linear-gradient(135deg, rgba(255, 124, 76, 0.08), rgba(255, 124, 76, 0.03));
+            border-left: 4px solid var(--accent-orange);
+        }
+        
+        .special-feature-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-light);
+        }
+        
+        .special-feature-icon {
+            color: var(--primary-blue);
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+        
+        .coach-tour .special-feature-icon {
+            color: var(--accent-orange);
+        }
+        
+        .special-feature-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: var(--dark-text);
+        }
+        
+        .special-feature-text {
+            font-size: 0.95rem;
+            color: var(--medium-text);
+            line-height: 1.5;
+        }
+        
+        /* 图片展示区 */
+        .tour-image-showcase {
+            margin: 40px 0;
+            text-align: center;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-heavy);
+            position: relative;
+        }
+        
+        .tour-image-showcase img {
+            width: 100%;
+            height: auto;
+            max-height: 500px;
+            object-fit: contain;
+            background:#000;
+            transition: transform 0.5s ease;
+        }
+        
+        .tour-image-showcase:hover img {
+            transform: scale(1.03);
+        }
+        
+        .image-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+            color: white;
+            padding: 20px;
+            text-align: left;
+        }
+        
+        .image-caption h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+        
+        .image-caption p {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+        
+        /* Pricing Section */
+        .pricing-section {
+            flex: 0.8;
+            min-width: 320px;
+            background: linear-gradient(to bottom right, #f8fafd, #eef5ff);
+            border-radius: var(--radius-lg);
+            padding: 35px;
+            box-shadow: var(--shadow-medium);
+            border: 1px solid var(--border-color);
+            position: relative;
+            align-self: flex-start;
+        }
+        
+        .easter-badge {
+            position: absolute;
+            top: -15px;
+            right: 20px;
+            background: linear-gradient(90deg, var(--easter-yellow) 0%, var(--easter-pink) 50%, var(--easter-purple) 100%);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 1rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            z-index: 2;
+            transform: rotate(5deg);
+        }
+        
+        .price-display {
+            margin-bottom: 25px;
+        }
+        
+        .price-label {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--medium-text);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .price-amount {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 2.8rem;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: baseline;
+            flex-wrap: wrap;
+        }
+        
+        .price-from {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--medium-text);
+            margin-right: 5px;
+        }
+        
+        .adult-price {
+            color: var(--primary-blue);
+        }
+        
+        .coach-tour .adult-price {
+            color: var(--accent-orange);
+        }
+        
+        .self-pay-price {
+            color: var(--accent-orange);
+        }
+        
+        .total-price {
+            color: var(--accent-green);
+        }
+        
+        .old-price {
+            text-decoration: line-through;
+            color: var(--light-text);
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-left: 15px;
+        }
+        
+        .price-note {
+            font-size: 0.95rem;
+            color: var(--light-text);
+            font-style: italic;
+            margin-top: 5px;
+        }
+        
+        .special-note {
+            background-color: rgba(26, 95, 180, 0.1);
+            border-left: 3px solid var(--primary-blue);
+            padding: 12px 15px;
+            margin-top: 15px;
+            border-radius: var(--radius-sm);
+            font-size: 0.9rem;
+            color: var(--medium-text);
+        }
+        
+        .coach-tour .special-note {
+            background-color: rgba(255, 124, 76, 0.1);
+            border-left: 3px solid var(--accent-orange);
+        }
+        
+        .price-divider {
+            height: 2px;
+            background: linear-gradient(to right, transparent, var(--border-color), transparent);
+            margin: 30px 0;
+        }
+        
+        .booking-button {
+            display: inline-block;
+            background: linear-gradient(90deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            color: white;
+            padding: 16px 30px;
+            border-radius: 50px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: var(--transition);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            width: 100%;
+            margin-top: 15px;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .coach-tour .booking-button {
+            background: linear-gradient(90deg, var(--accent-orange) 0%, #ff9c7c 100%);
+        }
+        
+        .booking-button:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: 0.5s;
+            z-index: -1;
+        }
+        
+        .booking-button:hover:before {
+            left: 100%;
+        }
+        
+        .booking-button:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Booking Button Disclaimer */
+        .booking-disclaimer {
+            margin-top: 10px;
+            font-size: 0.85rem;
+            color: var(--medium-text);
+            text-align: center;
+            font-style: italic;
+        }
+        
+        /* Included Services */
+        .included-services {
+            background: linear-gradient(to right, rgba(26, 95, 180, 0.08), rgba(255, 124, 76, 0.08));
+            padding: 35px;
+            border-radius: var(--radius-lg);
+            margin-top: 50px;
+            border-left: 5px solid var(--primary-blue);
+            box-shadow: var(--shadow-light);
+        }
+        
+        .included-services h4 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary-blue);
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 1.6rem;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .service-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            padding: 15px;
+            background: white;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-light);
+            transition: var(--transition);
+        }
+        
+        .service-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .service-icon {
+            color: var(--primary-blue);
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+        
+        .service-content h5 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: var(--dark-text);
+        }
+        
+        .service-content p {
+            font-size: 0.9rem;
+            color: var(--medium-text);
+        }
+        
+        /* Costs Not Included Section */
+        .costs-not-included {
+            background: linear-gradient(to right, rgba(255, 87, 87, 0.05), rgba(255, 87, 87, 0.02));
+            padding: 40px;
+            border-radius: var(--radius-lg);
+            margin-top: 60px;
+            border-left: 5px solid #ff5757;
+            box-shadow: var(--shadow-light);
+        }
+        
+        .costs-not-included h4 {
+            font-family: 'Montserrat', sans-serif;
+            color: #ff5757;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 1.6rem;
+        }
+        
+        .costs-not-included ul {
+            padding-left: 25px;
+            margin-bottom: 20px;
+        }
+        
+        .costs-not-included li {
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+            color: var(--medium-text);
+            line-height: 1.7;
+            position: relative;
+            padding-left: 10px;
+        }
+        
+        .costs-not-included li:before {
+            content: "•";
+            color: #ff5757;
+            font-weight: bold;
+            position: absolute;
+            left: -15px;
+            font-size: 1.2rem;
+        }
+        
+        .costs-not-included strong {
+            color: var(--dark-text);
+        }
+        
+        /* Additional Information */
+        .additional-info {
+            background: linear-gradient(to right, rgba(26, 95, 180, 0.05), rgba(255, 124, 76, 0.05));
+            padding: 40px;
+            border-radius: var(--radius-lg);
+            margin-top: 60px;
+            border-left: 5px solid var(--primary-blue);
+            box-shadow: var(--shadow-light);
+        }
+        
+        .additional-info h4 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary-blue);
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 1.6rem;
+        }
+        
+        .additional-info ul {
+            padding-left: 25px;
+            margin-bottom: 20px;
+        }
+        
+        .additional-info li {
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+            color: var(--medium-text);
+            line-height: 1.7;
+        }
+        
+        .additional-info strong {
+            color: var(--dark-text);
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #2c3e50 0%, #1a252f 100%);
+            color: white;
+            padding: 70px 0 30px;
+            margin-top: 100px;
+            position: relative;
+        }
+        
+        footer:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--easter-yellow) 0%, var(--easter-pink) 50%, var(--easter-purple) 100%);
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 50px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-logo {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .footer-logo h3 {
+            font-family: 'Montserrat', sans-serif;
+            margin-bottom: 25px;
+            font-size: 2rem;
+            color: #a5d6ff;
+        }
+        
+        .footer-logo p {
+            font-size: 1rem;
+            line-height: 1.8;
+            opacity: 0.9;
+        }
+        
+        .footer-contact {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .footer-contact h4 {
+            font-family: 'Montserrat', sans-serif;
+            margin-bottom: 25px;
+            font-size: 1.6rem;
+            color: #a5d6ff;
+        }
+        
+        .footer-contact .contact-item {
+            margin-bottom: 20px;
+            font-size: 1rem;
+        }
+        
+        .footer-links {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .footer-links h4 {
+            font-family: 'Montserrat', sans-serif;
+            margin-bottom: 25px;
+            font-size: 1.6rem;
+            color: #a5d6ff;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 15px;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            opacity: 0.9;
+        }
+        
+        .footer-links a:hover {
+            color: #a5d6ff;
+            transform: translateX(5px);
+            opacity: 1;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.95rem;
+            opacity: 0.8;
+        }
+        
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(90deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: var(--transition);
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Special Notice Styles */
+        .special-notice {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, rgba(255, 105, 180, 0.1) 100%);
+            border-radius: var(--radius-md);
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 4px solid var(--easter-yellow);
+        }
+        
+        .notice-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--easter-purple);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .notice-text {
+            font-size: 0.95rem;
+            color: var(--medium-text);
+        }
+        
+        /* 行程详情表格 - 更新为三列结构 */
+        .itinerary-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-light);
+        }
+        
+        .itinerary-table th {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+        
+        .coach-tour .itinerary-table th {
+            background: linear-gradient(135deg, var(--accent-orange) 0%, #ff9c7c 100%);
+        }
+        
+        .itinerary-table td {
+            padding: 15px;
+            border-bottom: 1px solid var(--border-color);
+            vertical-align: top;
+        }
+        
+        .itinerary-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .day-number {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: var(--primary-blue);
+            font-size: 1.1rem;
+            display: block;
+        }
+        
+        .coach-tour .day-number {
+            color: var(--accent-orange);
+        }
+        
+        .meal-info {
+            display: inline-block;
+            background: rgba(39, 174, 96, 0.1);
+            color: var(--accent-green);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin: 2px;
+        }
+        
+        /* 设置表格列宽 */
+        .itinerary-table th:nth-child(1),
+        .itinerary-table td:nth-child(1) {
+            width: 12%;
+        }
+        
+        .itinerary-table th:nth-child(2),
+        .itinerary-table td:nth-child(2) {
+            width: 68%;
+        }
+        
+        .itinerary-table th:nth-child(3),
+        .itinerary-table td:nth-child(3) {
+            width: 20%;
+            text-align: center;
+        }
+        
+        /* Insurance and Disclaimer Cards */
+        .info-cards-container {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            margin: 50px 0;
+        }
+        
+        .info-card {
+            background: white;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-medium);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+        
+        .info-card-header {
+            padding: 25px 30px;
+            background: linear-gradient(135deg, rgba(26, 95, 180, 0.1), rgba(26, 95, 180, 0.05));
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition);
+        }
+        
+        .info-card-header:hover {
+            background: linear-gradient(135deg, rgba(26, 95, 180, 0.15), rgba(26, 95, 180, 0.08));
+        }
+        
+        .info-card-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: var(--primary-blue);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .info-card-toggle {
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+            transition: var(--transition);
+        }
+        
+        .info-card-header.active .info-card-toggle i {
+            transform: rotate(180deg);
+        }
+        
+        .info-card-content {
+            padding: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.8s cubic-bezier(0.4, 0, 0.2, 1), padding 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .info-card-content.expanded {
+            max-height: 2000px;
+            padding: 30px;
+        }
+        
+        .disclaimer-notice {
+            background-color: rgba(255, 87, 87, 0.1);
+            border-left: 4px solid #ff5757;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: var(--radius-sm);
+            font-weight: 600;
+        }
+        
+        .info-card-content p {
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+            color: var(--medium-text);
+            line-height: 1.7;
+        }
+        
+        .info-card-content ul {
+            padding-left: 25px;
+            margin-bottom: 20px;
+        }
+        
+        .info-card-content li {
+            margin-bottom: 12px;
+            font-size: 1.05rem;
+            color: var(--medium-text);
+            line-height: 1.6;
+        }
+        
+        .info-card-content strong {
+            color: var(--dark-text);
+        }
+        
+        /* Language classes */
+        .lang-en {
+            display: block;
+        }
+        
+        .lang-zh {
+            display: none;
+        }
+        
+        .show-zh .lang-en {
+            display: none;
+        }
+        
+        .show-zh .lang-zh {
+            display: block;
+        }
+        
+        /* 对比区 */
+        .comparison-section {
+            background: linear-gradient(135deg, #f8fafd 0%, #f0f5ff 100%);
+            border-radius: var(--radius-lg);
+            padding: 30px;
+            margin: 30px 0;
+            border: 1px solid var(--border-color);
+        }
+        
+        .comparison-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .coach-tour .comparison-title {
+            color: var(--accent-orange);
+        }
+        
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        
+        .comparison-item {
+            background: white;
+            border-radius: var(--radius-md);
+            padding: 20px;
+            box-shadow: var(--shadow-light);
+            transition: var(--transition);
+        }
+        
+        .comparison-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .comparison-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 15px;
+        }
+        
+        .comparison-icon {
+            color: var(--primary-blue);
+            font-size: 1.5rem;
+        }
+        
+        .coach-tour .comparison-icon {
+            color: var(--accent-orange);
+        }
+        
+        .comparison-name {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--dark-text);
+        }
+        
+        .comparison-features {
+            padding-left: 0;
+        }
+        
+        .comparison-features li {
+            margin-bottom: 8px;
+            list-style-type: none;
+            padding-left: 24px;
+            position: relative;
+            font-size: 0.95rem;
+            color: var(--medium-text);
+        }
+        
+        .comparison-features li:before {
+            content: "•";
+            position: absolute;
+            left: 10px;
+            color: var(--primary-blue);
+            font-weight: bold;
+        }
+        
+        .coach-tour .comparison-features li:before {
+            color: var(--accent-orange);
+        }
+        
+        /* Hotel Showcase */
+        .hotel-showcase {
+            margin-top: 30px;
+        }
+        
+        .hotel-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .hotel-item {
+            background: white;
+            border-radius: var(--radius-md);
+            padding: 15px;
+            box-shadow: var(--shadow-light);
+            text-align: center;
+            transition: var(--transition);
+        }
+        
+        .hotel-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .hotel-name {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            color: var(--dark-text);
+            margin-bottom: 5px;
+        }
+        
+        .hotel-location {
+            font-size: 0.9rem;
+            color: var(--medium-text);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .hero h2 {
+                font-size: 2.7rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.3rem;
+            }
+            
+            .package-content {
+                gap: 40px;
+            }
+            
+            .card-header {
+                min-height: 250px;
+            }
+            
+            .card-image-container {
+                height: 250px;
+            }
+            
+            .days-number {
+                font-size: 4.5rem;
+            }
+            
+            .days-text {
+                font-size: 2rem;
+            }
+            
+            .price-amount {
+                font-size: 2.4rem;
+            }
+            
+            .old-price {
+                font-size: 1.2rem;
+            }
+            
+            .itinerary-table th:nth-child(1),
+            .itinerary-table td:nth-child(1) {
+                width: 15%;
+            }
+            
+            .itinerary-table th:nth-child(2),
+            .itinerary-table td:nth-child(2) {
+                width: 65%;
+            }
+            
+            .itinerary-table th:nth-child(3),
+            .itinerary-table td:nth-child(3) {
+                width: 20%;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .header-content {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 30px;
+            }
+            
+            .contact-info {
+                width: 100%;
+            }
+            
+            .hero h2 {
+                font-size: 2.4rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .card-content.expanded {
+                padding: 40px;
+            }
+            
+            .info-card-content.expanded {
+                padding: 25px;
+            }
+            
+            .package-section {
+                min-width: 100%;
+            }
+            
+            .pricing-section {
+                min-width: 100%;
+            }
+            
+            .package-content {
+                flex-direction: column;
+            }
+            
+            .card-header {
+                flex-direction: column;
+                min-height: auto;
+            }
+            
+            .card-image-container {
+                flex: 0 0 100%;
+                width: 100%;
+                height: 220px;
+            }
+            
+            .card-content-section {
+                padding: 30px;
+            }
+            
+            .card-toggle {
+                top: 30px;
+                right: 30px;
+            }
+            
+            .easter-banner:before,
+            .easter-banner:after {
+                display: none;
+            }
+            
+            .services-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+            
+            .price-amount {
+                font-size: 2.2rem;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+            }
+            
+            .itinerary-table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero h2 {
+                font-size: 2.1rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .card-content.expanded {
+                padding: 30px;
+            }
+            
+            .info-card-content.expanded {
+                padding: 20px;
+            }
+            
+            .info-card-header {
+                padding: 20px 25px;
+            }
+            
+            .package-title {
+                font-size: 1.7rem;
+            }
+            
+            .included-services,
+            .additional-info,
+            .costs-not-included {
+                padding: 30px;
+            }
+            
+            .price-amount {
+                font-size: 2rem;
+            }
+            
+            .old-price {
+                font-size: 1.1rem;
+            }
+            
+            .card-image-container {
+                height: 200px;
+            }
+            
+            .days-number {
+                font-size: 4rem;
+            }
+            
+            .days-text {
+                font-size: 1.8rem;
+            }
+            
+            .card-title {
+                font-size: 1.8rem;
+            }
+            
+            .easter-offer {
+                padding: 25px;
+            }
+            
+            .easter-offer h3 {
+                font-size: 1.7rem;
+            }
+            
+            .easter-highlight {
+                font-size: 1.3rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .special-features {
+                grid-template-columns: 1fr;
+            }
+            
+            /* 移动端表格响应式设计 */
+            .itinerary-table {
+                display: block;
+            }
+            
+            .itinerary-table thead {
+                display: none;
+            }
+            
+            .itinerary-table tbody {
+                display: block;
+            }
+            
+            .itinerary-table tr {
+                display: block;
+                margin-bottom: 20px;
+                border: 1px solid var(--border-color);
+                border-radius: var(--radius-md);
+                overflow: hidden;
+                box-shadow: var(--shadow-light);
+            }
+            
+            .itinerary-table td {
+                display: block;
+                width: 100% !important;
+                padding: 12px 15px;
+                border-bottom: 1px solid var(--border-color);
+                position: relative;
+                padding-left: 40%;
+            }
+            
+            .itinerary-table td:last-child {
+                border-bottom: none;
+            }
+            
+            .itinerary-table td:before {
+                content: attr(data-label);
+                position: absolute;
+                left: 15px;
+                width: 35%;
+                padding-right: 10px;
+                font-weight: 700;
+                color: var(--primary-blue);
+                font-family: 'Montserrat', sans-serif;
+            }
+            
+            .coach-tour .itinerary-table td:before {
+                color: var(--accent-orange);
+            }
+            
+            .itinerary-table td:nth-child(1):before {
+                content: "Day";
+            }
+            
+            .show-zh .itinerary-table td:nth-child(1):before {
+                content: "天数";
+            }
+            
+            .itinerary-table td:nth-child(2):before {
+                content: "Itinerary";
+            }
+            
+            .show-zh .itinerary-table td:nth-child(2):before {
+                content: "行程安排";
+            }
+            
+            .itinerary-table td:nth-child(3):before {
+                content: "Meals";
+            }
+            
+            .show-zh .itinerary-table td:nth-child(3):before {
+                content: "餐饮";
+            }
+            
+            .itinerary-table td:nth-child(3) {
+                text-align: left;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            .hero h2 {
+                font-size: 1.9rem;
+            }
+            
+            .logo-section {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+            
+            .logo-img {
+                height: 70px;
+            }
+            
+            .language-toggle {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .lang-btn {
+                width: 220px;
+                justify-content: center;
+            }
+            
+            .included-services,
+            .additional-info,
+            .costs-not-included {
+                padding: 25px;
+            }
+            
+            .card-image-container {
+                height: 180px;
+            }
+            
+            .card-content-section {
+                padding: 25px;
+            }
+            
+            .card-title {
+                font-size: 1.6rem;
+                margin-bottom: 8px;
+            }
+            
+            .card-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .highlight-item {
+                font-size: 0.9rem;
+                padding: 8px 15px;
+            }
+            
+            .card-toggle {
+                width: 50px;
+                height: 50px;
+                font-size: 1.8rem;
+                right: 25px;
+                top: 25px;
+            }
+            
+            .cta-button {
+                padding: 15px 30px;
+                font-size: 1.2rem;
+            }
+            
+            .easter-banner {
+                font-size: 1.1rem;
+                padding: 12px 15px;
+            }
+            
+            .back-to-top {
+                width: 45px;
+                height: 45px;
+                font-size: 1.3rem;
+                bottom: 20px;
+                right: 20px;
+            }
+            
+            .price-amount {
+                font-size: 1.8rem;
+            }
+            
+            .old-price {
+                font-size: 1rem;
+            }
+            
+            .info-card-title {
+                font-size: 1.2rem;
+            }
+            
+            .info-card-header {
+                padding: 18px 20px;
+            }
+            
+            .itinerary-table td {
+                padding-left: 35%;
+            }
+            
+            .itinerary-table td:before {
+                width: 30%;
+            }
+        }
+        
+        @media (max-width: 400px) {
+            .card-image-container {
+                height: 160px;
+            }
+            
+            .days-number {
+                font-size: 3.5rem;
+            }
+            
+            .days-text {
+                font-size: 1.6rem;
+            }
+            
+            .card-title {
+                font-size: 1.5rem;
+            }
+            
+            .card-subtitle {
+                font-size: 1rem;
+            }
+            
+            .highlight-item {
+                font-size: 0.85rem;
+                padding: 6px 12px;
+            }
+            
+            .price-amount {
+                font-size: 1.6rem;
+            }
+            
+            .info-card-title {
+                font-size: 1.1rem;
+            }
+            
+            .itinerary-table td {
+                padding-left: 40%;
+            }
+            
+            .itinerary-table td:before {
+                width: 35%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Easter Banner -->
+    <div class="easter-banner">
+        <span class="lang-en">EASTER SPECIAL OFFER! Book before March 2026 for April departures and receive complimentary airport transfers + Easter gift!</span>
+        <span class="lang-zh">复活节特别优惠！2026年3月前预订4月出发行程，免费获赠机场接送+复活节礼物！</span>
+    </div>
+
+    <!-- Header Section --> 
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <img src="logo.jpg" alt="KIWI Serenity Limited Logo" class="logo-img">
+                    <div class="company-info">
+                        <h1>KIWI Serenity Limited</h1>
+                        <p class="company-tagline">
+                            <span class="lang-en">New Zealand registered company providing premium cultural and wellness travel experiences in Sichuan, China.</span>
+                            <span class="lang-zh">新西兰注册公司，提供中国四川的高端文化和健康旅行体验。</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-phone contact-icon"></i>
+                        <span>Tel: +64220405795</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope contact-icon"></i>
+                        <span>KIWI_Serenity_Limited@outlook.com</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Language Toggle -->
+        <div class="language-toggle">
+            <button class="lang-btn active" onclick="toggleLanguage('en')">
+                <i class="fas fa-language"></i> <span class="lang-en">English</span><span class="lang-zh">英文</span>
+            </button>
+            <button class="lang-btn" onclick="toggleLanguage('zh')">
+                <i class="fas fa-language"></i> <span class="lang-en">中文</span><span class="lang-zh">中文</span>
+            </button>
+        </div>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <h2 class="lang-en">Easter Special: Discover the Wonders of Sichuan</h2>
+            <h2 class="lang-zh">复活节特惠：探索四川的奇迹</h2>
+            
+            <p class="hero-subtitle lang-en">
+                Celebrate Easter with our exclusive Sichuan tour packages. Experience Jiuzhaigou's turquoise lakes, Huanglong's colorful pools, sacred Emei Mountain, and the majestic Leshan Giant Buddha.
+            </p>
+            <p class="hero-subtitle lang-zh">
+                用我们专属的四川旅游套餐庆祝复活节。体验九寨沟碧绿湖泊、黄龙五彩池、神圣峨眉山和雄伟乐山大佛。
+            </p>
+            
+            <div class="easter-offer">
+                <h3><i class="fas fa-gift"></i> <span class="lang-en">Easter Special Offer - April 2026 Departures</span><span class="lang-zh">复活节特别优惠 - 2026年4月出发</span></h3>
+                <p class="lang-en">Book any tour package for April departure before March 2026 and receive:</p>
+                <p class="lang-zh">在2026年3月前预订任何四月出发的旅行套餐，可获得：</p>
+                
+                <div class="easter-highlight">
+                    <span class="lang-en">Complimentary Airport Transfers + Exclusive Easter Welcome Gift!</span>
+                    <span class="lang-zh">免费机场接送 + 独家复活节欢迎礼物！</span>
+                </div>
+                
+                <div class="special-notice">
+                    <div class="notice-title"><i class="fas fa-star"></i> <span class="lang-en">Special Complimentary Services</span><span class="lang-zh">特别赠送服务</span></div>
+                    <p class="notice-text lang-en">All packages include FREE Dental Cleaning + Traditional Chinese Medicine Body Constitution Assessment valued at NZD $168! Complimentary appointment coordination for dental cleaning and TCM body constitution assessment (services provided independently by licensed clinics and practitioners in China).</p>
+                    <p class="notice-text lang-zh">所有套餐赠送全口洁牙+中医体质评估（价值$168新西兰元）！赠送洁牙及中医体质辨识项目预约协调服务（相关服务由中国持牌医疗机构及执业人员独立提供）</p>
+                </div>
+                
+                <p class="lang-en">Promotion valid for bookings made before March 2026 for travel during April 2026.</p>
+                <p class="lang-zh">促销有效期：2026年3月前预订，2026年4月期间出发的行程。</p>
+                
+                <a 
+  		  href="mailto:KIWI_Serenity_Limited@outlook.com?subject=Easter Special Inquiry"
+  		  class="cta-button"
+		>
+    		   <span class="lang-en">EMAIL US NOW</span>
+    		   <span class="lang-zh">立即发送邮件咨询</span>
+		</a>
+
+                    <span class="lang-en">BOOK EASTER SPECIAL NOW</span>
+                    <span class="lang-zh">立即预订复活节特惠</span>
+                </button>
+                
+                <!-- CTA按钮下方的免责声明 -->
+                <div class="cta-disclaimer">
+                    <p class="lang-en">We provide non-medical coordination only. No medical advice or treatment is offered.</p>
+                    <p class="lang-zh">本公司仅提供非医疗协调服务，不提供任何医疗建议或治疗。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Value Proposition -->
+        <div class="value-proposition">
+            <div class="value-card">
+                <div class="value-icon">
+                    <i class="fas fa-stethoscope"></i>
+                </div>
+                <h3 class="value-title lang-en">Free TCM Consultation Appointment Coordination</h3>
+                <h3 class="value-title lang-zh">赠送中医体质评估（由中国持牌中医诊所提供）</h3>
+                <p class="value-text lang-en">Traditional Chinese Medicine Body Constitution Assessment (provided by licensed practitioners in China)</p>
+                <p class="value-text lang-zh">赠送专业中医体质评估（由中国持牌中医诊所提供）</p>
+            </div>
+            
+            <div class="value-card">
+                <div class="value-icon">
+                    <i class="fas fa-tooth"></i>
+                </div>
+                <h3 class="value-title lang-en">Dental Cleaning and Appointment Coordination</h3>
+                <h3 class="value-title lang-zh">赠送全口洁牙（由中国持牌口腔诊所提供）</h3>
+                <p class="value-text lang-en">Professional dental cleaning (provided by licensed clinics in China)</p>
+                <p class="value-text lang-zh">赠送专业全口洁牙（由中国持牌口腔诊所提供）</p>
+            </div>
+            
+            <div class="value-card">
+                <div class="value-icon">
+                    <i class="fas fa-language"></i>
+                </div>
+                <h3 class="value-title lang-en">Bilingual Service</h3>
+                <h3 class="value-title lang-zh">双语服务</h3>
+                <p class="value-text lang-en">Professional English-speaking guides throughout your journey</p>
+                <p class="value-text lang-zh">全程专业英语导游服务</p>
+            </div>
+            
+            <div class="value-card">
+                <div class="value-icon">
+                    <i class="fas fa-plane"></i>
+                </div>
+                <h3 class="value-title lang-en">Free Airport Transfers</h3>
+                <h3 class="value-title lang-zh">免费接送机</h3>
+                <p class="value-text lang-en">Complimentary airport transfers in Chengdu</p>
+                <p class="value-text lang-zh">成都机场接送服务</p>
+            </div>
+        </div>
+
+        <!-- Cards Container -->
+        <div class="cards-container">
+            <!-- 滚滚星途 理想双动四川8天 Card -->
+            <div class="tour-card">
+                <div class="card-header active" onclick="toggleCard('rolling-star')">
+                    <div class="card-image-container">
+                        <img src="eight.jpg" alt="Rolling Star 8-Day Sichuan Tour" loading="lazy">
+                        <div class="image-overlay">
+                            <div class="days-number">8</div>
+                            <div class="days-text lang-en">Days</div>
+                            <div class="days-text lang-zh">天</div>
+                        </div>
+                    </div>
+                    <div class="card-content-section">
+                        <div class="card-title lang-en">Rolling Star Sichuan Experience</div>
+                        <div class="card-title lang-zh">星途四川8天</div>
+                        <div class="card-subtitle lang-en">Premium 8-day journey featuring high-speed rail, Jiuzhaigou, pandas, and cultural wonders</div>
+                        <div class="card-subtitle lang-zh">8天优质旅程，包含高铁、九寨沟、熊猫和文化奇观</div>
+                        
+                        <div class="card-highlights">
+                            <div class="highlight-item">
+                                <i class="fas fa-paw"></i>
+                                <span class="lang-en">Panda Base</span>
+                                <span class="lang-zh">熊猫基地</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-archway"></i>
+                                <span class="lang-en">Sanxingdui</span>
+                                <span class="lang-zh">三星堆</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-mountain"></i>
+                                <span class="lang-en">Jiuzhaigou</span>
+                                <span class="lang-zh">九寨沟</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-train"></i>
+                                <span class="lang-en">High-Speed Rail</span>
+                                <span class="lang-zh">高速铁路</span>
+                            </div>
+                        </div>
+                        
+                        <div class="card-toggle" onclick="toggleCard('rolling-star')">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                </div>
+                <div id="rolling-star-content" class="card-content expanded">
+                    <!-- 星途特色亮点 -->
+                    <div class="special-features">
+                        <div class="special-feature-item">
+                            <div class="special-feature-icon">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="special-feature-title lang-en">Premium Experience</div>
+                            <div class="special-feature-title lang-zh">尊贵体验</div>
+                            <div class="special-feature-text lang-en">Carefully curated itinerary focusing on Sichuan's most iconic destinations</div>
+                            <div class="special-feature-text lang-zh">精心策划的行程，专注于四川最具标志性的目的地</div>
+                        </div>
+                        
+                        <div class="special-feature-item">
+                            <div class="special-feature-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="special-feature-title lang-en">Small Group Experience</div>
+                            <div class="special-feature-title lang-zh">小团体体验</div>
+                            <div class="special-feature-text lang-en">Intimate groups of max 29 guests for personalized attention</div>
+                            <div class="special-feature-text lang-zh">小团体旅行，最多29位客人，提供个性化服务</div>
+                        </div>
+                        
+                        <div class="special-feature-item">
+                            <div class="special-feature-icon">
+                                <i class="fas fa-camera"></i>
+                            </div>
+                            <div class="special-feature-title lang-en">Free Tibetan Costume Photoshoot</div>
+                            <div class="special-feature-title lang-zh">免费藏服摄影</div>
+                            <div class="special-feature-text lang-en">Complimentary Tibetan costume photoshoot with 3 professionally edited photos</div>
+                            <div class="special-feature-text lang-zh">免费藏服摄影体验，赠送3张精修电子照</div>
+                        </div>
+                        
+                        <div class="special-feature-item">
+                            <div class="special-feature-icon">
+                                <i class="fas fa-train"></i>
+                            </div>
+                            <div class="special-feature-title lang-en">Premium Transportation</div>
+                            <div class="special-feature-title lang-zh">尊贵交通</div>
+                            <div class="special-feature-text lang-en">High-speed rail + luxury coach with spacious, reclining seats and USB charging ports</div>
+                            <div class="special-feature-text lang-zh">高铁+豪华2+1保姆车，宽敞可倾斜座椅，配备USB充电口</div>
+                        </div>
+                    </div>
+                    
+                    <!-- 图片展示区域：picture.jpg -->
+                    <div class="tour-image-showcase">
+                        <img src="picture.jpg" alt="Rolling Star Sichuan Experience - Beautiful Scenery" loading="lazy">
+                        <div class="image-caption">
+                            <h4 class="lang-en">Experience the Beauty of Sichuan</h4>
+                            <h4 class="lang-zh">体验四川之美</h4>
+                            <p class="lang-en">Crystal clear lakes, majestic mountains, and vibrant culture await you on this unforgettable journey.</p>
+                            <p class="lang-zh">清澈的湖泊、雄伟的山脉和充满活力的文化在这难忘的旅程中等待着您。</p>
+                        </div>
+                    </div>
+                    
+                    <!-- 星途详细行程 -->
+                    <div class="tour-package">
+                        <h3 class="package-title">
+                            <i class="fas fa-star"></i>
+                            <span class="lang-en">Rolling Star Sichuan Journey - 8 Days</span>
+                            <span class="lang-zh">滚滚星途四川之旅 - 8天</span>
+                        </h3>
+                        
+                        <!-- 行程表格 - 更新为三列结构 -->
+                        <table class="itinerary-table">
+                            <thead>
+                                <tr>
+                                    <th><span class="lang-en">Day</span><span class="lang-zh">天数</span></th>
+                                    <th><span class="lang-en">Itinerary</span><span class="lang-zh">行程安排</span></th>
+                                    <th><span class="lang-en">Meals</span><span class="lang-zh">餐饮</span></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td data-label="Day"><span class="day-number lang-en">D1</span><span class="day-number lang-zh">第一天</span></td>
+                                    <td data-label="Itinerary">
+                                        <span class="lang-en">Arrive in Chengdu + Optional Dental Cleaning & TCM appointments (arranged with licensed third-party providers)</span>
+                                        <span class="lang-zh">抵达成都 + 可选洁牙及中医体质评估预约（由第三方持牌机构提供）</span>
+                                    </td>
+                                    <td data-label="Meals">
+                                        <span class="meal-info lang-en">-</span>
+                                        <span class="meal-info lang-zh">-</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td data-label="Day"><span class="day-number lang-en">D2</span><span class="day-number lang-zh">第二天</span></td>
+                                    <td data-label="Itinerary">
+                                        <span class="lang-en">Hotel - Panda Base - Sanxingdui - High-speed Rail - Jiuzhaigou</span>
+                                        <span class="lang-zh">酒店-熊猫基地-三星堆-动车-九寨沟</span>
+                                    </td>
+                                    <td data-label="Meals">
+                                        <span class="meal-info lang-en">B,L,D</span>
+                                        <span class="meal-info lang-zh">早,午,晚</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td data-label="Day"><span class="day-number lang-en">D3</span><span class="day-number lang-zh">第三天</span></td>
+                                    <td data-label="Itinerary">
+                                        <span class="lang-en">Full Day Jiuzhaigou Exploration - Valley Entrance/Chuanzhusi</span>
+                                        <span class="lang-zh">全天游览九寨沟-沟口/川主寺</span>
+                                    </td>
+                                    <td data-label="Meals">
+                                        <span class="meal-info lang-en">B,D</span>
+                                        <span class="meal-info lang-zh">早,晚</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td data-label="Day"><span class="day-number lang-en">D4</span><span class="day-number lang-zh">第四天</span></td>
+                                    <td data-label="Itinerary">
+                                        <span class="lang-en">Hotel - Huanglong - High-speed Rail - Chengdu</span>
+                                        <span class="lang-zh">酒店-黄龙-动车-成都</span>
+                                    </td>
+                                    <td data-label="Meals">
+                                        <span class="meal-info lang-en">B</span>
+                                        <span class="meal-info lang-zh">早</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td data-label="Day"><span class="day-number lang-en">D5</span><span class="day-number lang-zh">第五天</span></td>
+                                    <td data-label="Itinerary">
+                                        <span class="lang-en">Chengdu - Emei Mountain - Golden Summit - Wannian Temple</span>
+                                        <span class="lang-zh">成都-峨眉山-金顶-万年寺</span>
+                                    </td>
+                                    <td data-label="Meals">
+                                        <span class="meal-info lang-en">B,L,D</span>
+                                        <span class="meal-info lang-zh">早,午,晚</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td data-label="Day"><span class="day-number lang-en">D6</span><span class="day-number lang-zh">第六天</span></td>
+                                    <td data-label="Itinerary">
+                                        <span class="lang-en">Wannian Temple - Qingyin Pavilion - Wuxiangang - Leshan Giant Buddha - Chengdu</span>
+                                        <span class="lang-zh">万年寺-清音阁-五显岗-乐山大佛-成都</span>
+                                    </td>
+                                    <td data-label="Meals">
+                                        <span class="meal-info lang-en">B,L</span>
+                                        <span class="meal-info lang-zh">早,午</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td data-label="Day"><span class="day-number lang-en">D7</span><span class="day-number lang-zh">第七天</span></td>
+                                    <td data-label="Itinerary">
+                                        <span class="lang-en">Chengdu - Free Day</span>
+                                        <span class="lang-zh">成都--自由行</span>
+                                    </td>
+                                    <td data-label="Meals">
+                                        <span class="meal-info lang-en">B</span>
+                                        <span class="meal-info lang-zh">早</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td data-label="Day"><span class="day-number lang-en">D8</span><span class="day-number lang-zh">第八天</span></td>
+                                    <td data-label="Itinerary">
+                                        <span class="lang-en">Chengdu - Departure</span>
+                                        <span class="lang-zh">成都--温馨的家</span>
+                                    </td>
+                                    <td data-label="Meals">
+                                        <span class="meal-info lang-en">B</span>
+                                        <span class="meal-info lang-zh">早</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                        <div class="package-content">
+                            <div class="package-section">
+                                <h4 class="section-title">
+                                    <i class="fas fa-map-marked-alt"></i>
+                                    <span class="lang-en">Journey Highlights</span>
+                                    <span class="lang-zh">行程亮点</span>
+                                </h4>
+                                <ul class="feature-list">
+                                    <li>
+                                        <span class="feature-text lang-en">Visit Chengdu Panda Base for close-up giant panda observation</span>
+                                        <span class="feature-text lang-zh">参观成都熊猫基地，近距离观察大熊猫</span>
+                                    </li>
+                                    <li>
+                                        <span class="feature-text lang-en">Explore Sanxingdui Museum with extraordinary bronze artifacts</span>
+                                        <span class="feature-text lang-zh">探索三星堆博物馆，观赏非凡青铜文物</span>
+                                    </li>
+                                    <li>
+                                        <span class="feature-text lang-en">High-speed rail to UNESCO World Heritage Jiuzhaigou Valley</span>
+                                        <span class="feature-text lang-zh">高铁前往联合国教科文组织世界遗产九寨沟</span>
+                                    </li>
+                                    <li>
+                                        <span class="feature-text lang-en">Full day to marvel at Jiuzhaigou's stunning turquoise lakes</span>
+                                        <span class="feature-text lang-zh">全天欣赏九寨沟令人惊叹的碧绿湖泊</span>
+                                    </li>
+                                    <li>
+                                        <span class="feature-text lang-en">Discover Huanglong's vibrant travertine terraces and pools</span>
+                                        <span class="feature-text lang-zh">探索黄龙色彩斑斓的钙华梯田和彩池</span>
+                                    </li>
+                                    <li>
+                                        <span class="feature-text lang-en">Ascend sacred Emei Mountain and visit Leshan Giant Buddha</span>
+                                        <span class="feature-text lang-zh">攀登神圣的峨眉山，参观乐山大佛</span>
+                                    </li>
+                                </ul>
+                                
+                                <h4 class="section-title" style="margin-top: 30px;">
+                                    <i class="fas fa-hotel"></i>
+                                    <span class="lang-en">Selected Hotels</span>
+                                    <span class="lang-zh">精选酒店参考</span>
+                                </h4>
+                                <ul class="feature-list">
+                                    <li>
+                                        <span class="feature-text lang-en"><strong>Jiuzhaigou:</strong> Youyue / Tianlan / Jingyue / Jingyue / Mingren / JS-Jisheng / Xueshan Tibetan Culture Hotel</span>
+                                        <span class="feature-text lang-zh"><strong>九寨沟：</strong>友约/天澜/景悦/璟悦/名人/JS-吉盛/雪山藏文化酒店</span>
+                                    </li>
+                                    <li>
+                                        <span class="feature-text lang-en"><strong>Chengdu:</strong> Yishang Jinniu Wanda / Bolley Huishe / Mingyu Licheng Fuqin Night Market / Haoke / Lavande Southwest Jiaotong University / Chengyouyuan / Yishang Southwest Jiaotong University / Kyriad Marvelous Land / Changdu / North Station Holiday Inn Express / Vienna International Happy Valley / Jinjiang Capital City Wuhou Dayuecheng / New Century Mingting / New Hope Holiday Inn Express</span>
+                                        <span class="feature-text lang-zh"><strong>成都：</strong>宜尚金牛万达/柏栎荟舍/明宇丽呈抚琴夜市/好客/丽枫西南交大/诚友苑/宜尚西南交大/凯里亚德欢乐谷/昌都/北站智选假日/维也纳国际欢乐谷/锦江都城武侯大悦城/开元名庭/新希望智选假日</span>
+                                    </li>
+                                    <li>
+                                        <span class="feature-text lang-en"><strong>Emei:</strong> Moke Zizai / Manya / Yufeng Licheng / Garden City / Huasheng / Shuyin Resort</span>
+                                        <span class="feature-text lang-zh"><strong>峨眉山：</strong>墨客自在/漫雅/余枫丽呈/花园城/华生/树荫度假酒店</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="package-section">
+                                <h4 class="section-title">
+                                    <i class="fas fa-concierge-bell"></i>
+                                    <span class="lang-en">Premium Inclusions</span>
+                                    <span class="lang-zh">豪华包含项目</span>
+                                </h4>
+                                <ul class="feature-list">
+                                    <li>
+                                        <span class="feature-text lang-en">High-speed rail + luxury coach transportation</span>
+                                        <span class="feature-text lang-zh">高铁+豪华2+1保姆车交通</span>
+                                    </li>
+                                    <li>
+                                        <span class="feature-text lang-en">7 nights in CTrip Diamond-rated hotels</span>
+                                        <span class="feature-text lang-zh">7晚携程钻级酒店住宿</span>
+                                    </li>
+                                    <li>
+                                        <span class="feature-text lang-en">7 breakfasts, 1 dinner, 3 lunches + Tibetan hotpot experience</span>
+                                        <span class="feature-text lang-zh">7早餐、1晚餐、3午餐+藏式火锅体验</span>
+                                    </li>
+                                    <li>
+                                        <span class="feature-text lang-en">Complimentary Tibetan costume photoshoot (3 professionally edited photos + all raw photos)</span>
+                                        <span class="feature-text lang-zh">免费藏服摄影体验（3张精修电子照+全部底片）</span>
+                                    </li>
+                                    <li>
+                                        <span class="feature-text lang-en">All entrance tickets + transportation within attractions included</span>
+                                        <span class="feature-text lang-zh">包含所有景点门票+景区内交通</span>
+                                    </li>
+                                    <li>
+                                        <span class="feature-text lang-en">Dedicated pick-up/drop-off service, no waiting or sharing</span>
+                                        <span class="feature-text lang-zh">专车接送站、不拼不等、随到随走</span>
+                                    </li>
+                                </ul>
+                                
+                                <div class="special-note">
+                                    <i class="fas fa-gift"></i> <strong class="lang-en">Special Easter (1st April - 15 April):</strong><strong class="lang-zh">复活节（4月1日-4月15日）：</strong>
+                                    <span class="lang-en">Each person receives a complimentary panda wristband!</span>
+                                    <span class="lang-zh">每人赠送一支熊猫手环！</span>
+                                </div>
+                                
+                                <div class="special-note" style="margin-top: 15px;">
+                                    <i class="fas fa-user-friends"></i> <strong class="lang-en">Child Price (Ages 2-12):</strong><strong class="lang-zh">儿童价格（2-12岁）：</strong>
+                                    <span class="lang-en">$460 per child (includes transportation, lunches, accident insurance; excludes hotel breakfasts, dinners, accommodation, tickets, and other items)</span>
+                                    <span class="lang-zh">$460/人（包含车位、中午餐、意外险；不含酒店早晚餐、住宿、门票及其他项目）</span>
+                                </div>
+                            </div>
+                            
+                            <div class="pricing-section">
+                                <div class="easter-badge">EASTER SPECIAL</div>
+                                <div class="price-display">
+                                    <div class="price-label">
+                                        <i class="fas fa-user-check"></i>
+                                        <span class="lang-en">All-Inclusive Package Price</span>
+                                        <span class="lang-zh">全包套餐价格</span>
+                                    </div>
+                                    <div class="price-amount adult-price">
+                                        <span class="price-from">NZD</span> $2,799 <span class="old-price">was $2,999</span>
+                                    </div>
+                                    <div class="price-note lang-en">Per adult, twin share accommodation. Includes all taxes, tips, bilingual service, airport transfers, TCM consultation & dental cleaning</div>
+                                    <div class="price-note lang-zh">每位成人，双人共享房。包含所有小费、双语服务、接送机、中医辩证及洁牙服务</div>
+                                    
+                                    <div class="special-note">
+                                        <i class="fas fa-star"></i> <strong class="lang-en">Single Room Supplement:</strong><strong class="lang-zh">单人房差：</strong>
+                                        <span class="lang-en">$240 per person</span>
+                                        <span class="lang-zh">$240/人</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="price-divider"></div>
+                                
+                                <div class="price-display">
+                                    <div class="price-label">
+                                        <i class="fas fa-wallet"></i>
+                                        <span class="lang-en">Complimentary Services (Valued at $168)</span>
+                                        <span class="lang-zh">赠送服务（价值$168）</span>
+                                    </div>
+                                    <div class="price-amount self-pay-price">
+                                        FREE
+                                    </div>
+                                    <div class="price-note lang-en">Professional dental cleaning + Traditional Chinese Medicine Body Constitution Assessment (provided by licensed clinics in Chian)</div>
+                                    <div class="price-note lang-zh">专业全口洁牙服务+中医体质评估分析（由中国持牌诊所提供）</div>
+                                </div>
+                                
+                                <div class="price-divider"></div>
+                                
+                                <div class="price-display">
+                                    <div class="price-label">
+                                        <i class="fas fa-exclamation-circle"></i>
+                                        <span class="lang-en">Important Notes</span>
+                                        <span class="lang-zh">重要说明</span>
+                                    </div>
+                                    <div class="special-note">
+                                        <i class="fas fa-plane"></i> <strong class="lang-en">International Flights:</strong><strong class="lang-zh">国际机票：</strong>
+                                        <span class="lang-en">Price does NOT include round-trip airfare from New Zealand to Chengdu (can be arranged upon request)</span>
+                                        <span class="lang-zh">价格不包含新西兰至成都往返机票（可根据客需，代为预定）</span>
+                                    </div>
+                                </div>
+                                
+                                <a 
+ 				 href="mailto:KIWI_Serenity_Limited@outlook.com?subject=Rolling Star Easter Booking"
+ 				 class="booking-button"
+				>
+  				 <span class="lang-en">Email to Book</span>
+  				 <span class="lang-zh">邮件预订</span>
+				</a>
+                                    <span class="lang-en">Book This Easter Journey</span>
+                                    <span class="lang-zh">预订此复活节旅程</span>
+                                </button>
+                                
+                                <!-- 预订按钮下方的免责声明 -->
+                                <div class="booking-disclaimer">
+                                    <p class="lang-en">We provide non-medical coordination only. No medical advice or treatment is offered.</p>
+                                    <p class="lang-zh">本公司仅提供非医疗协调服务，不提供任何医疗建议或治疗。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 理想四川8天 Card - 重新设计为Rolling Star风格 -->
+            <div class="tour-card coach-tour">
+                <div class="card-header" onclick="toggleCard('ideal-panorama')">
+                    <div class="card-image-container">
+                        <img src="seven.jpg" alt="Ideal Sichuan Panorama 8-Day Tour" loading="lazy">
+                        <div class="image-overlay">
+                            <div class="days-number">8</div>
+                            <div class="days-text lang-en">Days</div>
+                            <div class="days-text lang-zh">天</div>
+                        </div>
+                    </div>
+                    <div class="card-content-section">
+                        <div class="card-title lang-en">Ideal Sichuan Panorama Experience</div>
+                        <div class="card-title lang-zh">理想四川8天</div>
+                        <div class="card-subtitle lang-en">Comprehensive 8-day journey covering Sichuan's most spectacular natural and cultural wonders (24-36 person group)</div>
+                        <div class="card-subtitle lang-zh">全面8天旅程，涵盖四川最壮丽的自然和文化奇观（24-36人团）</div>
+                        
+                        <div class="card-highlights">
+                            <div class="highlight-item">
+                                <i class="fas fa-paw"></i>
+                                <span class="lang-en">Panda Paradise</span>
+                                <span class="lang-zh">熊猫乐园</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-mountain"></i>
+                                <span class="lang-en">Huanglong</span>
+                                <span class="lang-zh">黄龙</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-landmark"></i>
+                                <span class="lang-en">World Heritage Sites</span>
+                                <span class="lang-zh">世界遗产地</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-bus"></i>
+                                <span class="lang-en">Luxury Coach</span>
+                                <span class="lang-zh">豪华汽车</span>
+                            </div>
+                        </div>
+                        
+                        <div class="card-toggle" onclick="toggleCard('ideal-panorama')">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                </div>
+                <div id="ideal-panorama-content" class="card-content">
+                    <!-- 理想双动特色亮点 -->
+                    <div class="special-features">
+                        <div class="special-feature-item">
+                            <div class="special-feature-icon">
+                                <i class="fas fa-bus"></i>
+                            </div>
+                            <div class="special-feature-title lang-en">Luxury coach</div>
+                            <div class="special-feature-title lang-zh">豪华2+1保姆车</div>
+                            <div class="special-feature-text lang-en">luxury coach with spacious reclining seats, intelligent seat adjustment, and USB charging ports</div>
+                            <div class="special-feature-text lang-zh">2+1布局豪华保姆车，车间距宽敞，智能坐躺、随意切换，座位配备USB充电口</div>
+                        </div>
+                        
+                        <div class="special-feature-item">
+                            <div class="special-feature-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="special-feature-title lang-en">Comfortable Group Size</div>
+                            <div class="special-feature-title lang-zh">舒适团体规模</div>
+                            <div class="special-feature-text lang-en">24-36 person group for optimal social interaction and personal space balance</div>
+                            <div class="special-feature-text lang-zh">24-36人团，最佳社交互动和个人空间平衡</div>
+                        </div>
+                        
+                        <div class="special-feature-item">
+                            <div class="special-feature-icon">
+                                <i class="fas fa-theater-masks"></i>
+                            </div>
+                            <div class="special-feature-title lang-en">Free Sichuan Opera Performance</div>
+                            <div class="special-feature-title lang-zh">免费川剧表演</div>
+                            <div class="special-feature-text lang-en">Complimentary Sichuan Opera Face Changing performance on Day 7 after lunch</div>
+                            <div class="special-feature-text lang-zh">第七天午餐后赠送川剧变脸表演</div>
+                        </div>
+                        
+                        <div class="special-feature-item">
+                            <div class="special-feature-icon">
+                                <i class="fas fa-hotel"></i>
+                            </div>
+                            <div class="special-feature-title lang-en">Premium Hotel Selection</div>
+                            <div class="special-feature-title lang-zh">优质酒店选择</div>
+                            <div class="special-feature-text lang-en">Carefully selected deluxe hotels with clear alternatives, no hidden tricks</div>
+                            <div class="special-feature-text lang-zh">精心挑选的豪华酒店，明确备选酒店，无隐藏套路</div>
+                        </div>
+                    </div>
+                    
+                    <!-- 图片展示区域：hotpot.jpg -->
+                    <div class="tour-image-showcase">
+                        <img src="hotpot.jpg" alt="Ideal Sichuan Panorama Experience - Hotpot Dining" loading="lazy">
+                        <div class="image-caption">
+                            <h4 class="lang-en">Authentic Sichuan Cuisine Experience</h4>
+                            <h4 class="lang-zh">正宗四川美食体验</h4>
+                            <p class="lang-en">Enjoy traditional Sichuan hotpot and local delicacies as part of your cultural journey.</p>
+                            <p class="lang-zh">在您的文化之旅中，享受传统四川火锅和当地美食。</p>
+                        </div>
+                    </div>
+                    
+                    <!-- 行程对比区 -->
+                    <div class="comparison-section">
+                        <div class="comparison-title lang-en">Why Choose Ideal Sichuan Panorama?</div>
+                        <div class="comparison-title lang-zh">为什么选择理想双动全景四川？</div>
+                        
+                        <div class="comparison-grid">
+                            <div class="comparison-item">
+                                <div class="comparison-header">
+                                    <div class="comparison-icon">
+                                        <i class="fas fa-route"></i>
+                                    </div>
+                                    <div class="comparison-name lang-en">Comprehensive Itinerary</div>
+                                    <div class="comparison-name lang-zh">全面行程</div>
+                                </div>
+                                <ul class="comparison-features">
+                                    <li class="lang-en">Covers 7 major Sichuan attractions in 8 days</li>
+                                    <li class="lang-zh">8天涵盖7大四川景点</li>
+                                    <li class="lang-en">Includes Panda Paradise, Huanglong, Jiuzhaigou</li>
+                                    <li class="lang-zh">包含熊猫乐园、黄龙、九寨沟</li>
+                                    <li class="lang-en">Emei Mountain, Leshan Giant Buddha, Dujiangyan, Qingcheng Mountain</li>
+                                    <li class="lang-zh">峨眉山、乐山大佛、都江堰、青城山</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="comparison-item">
+                                <div class="comparison-header">
+                                    <div class="comparison-icon">
+                                        <i class="fas fa-couch"></i>
+                                    </div>
+                                    <div class="comparison-name lang-en">Premium Comfort</div>
+                                    <div class="comparison-name lang-zh">尊贵舒适</div>
+                                </div>
+                                <ul class="comparison-features">
+                                    <li class="lang-en">Luxury 2+1保姆车 with spacious seating</li>
+                                    <li class="lang-zh">豪华2+1保姆车，宽敞座椅</li>
+                                    <li class="lang-en">Intelligent reclining seats with USB charging</li>
+                                    <li class="lang-zh">智能可倾斜座椅，配备USB充电</li>
+                                    <li class="lang-en">Optimal group size for comfort and interaction</li>
+                                    <li class="lang-zh">最佳团体规模，舒适与互动兼顾</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 理想双动详细行程 -->
+                    <div class="tour-package">
+                        <h3 class="package-title">
+                            <i class="fas fa-bus"></i>
+                            <span class="lang-en">Ideal Sichuan Panorama Journey - 8 Days</span>
+                            <span class="lang-zh">理想双动全景四川之旅 - 8天</span>
+                        </h3>
+                        
+                        <!-- 行程表格 - 更新为三列结构 -->
+                        <table class="itinerary-table">
+                            <thead>
+                                <tr>
+                                    <th><span class="lang-en">Day</span><span class="lang-zh">天数</span></th>
+                                    <th><span class="lang-en">Itinerary</span><span class="lang-zh">行程安排</span></th>
+                                    <th><span class="lang-en">Meals</span><span class="lang-zh">餐饮</span></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td data-label="Day"><span class="day-number lang-en">D1</span><span class="day-number lang-zh">第一天</span></td>
+                                    <td data-label="Itinerary">
+                                        <span class="lang-en">Arrive in Chengdu + Optional Dental Cleaning & TCM appointment (arranged with licensed third-party providers)</span>
+                                        <span class="lang-zh">抵达成都-可选洁牙及中医体质评估评估（由第三方持牌机构提供）</span>
+                                    </td>
+                                    <td data-label="Meals">
+                                        <span class="meal-info lang-en">-</span>
+                                        <span class="meal-info lang-zh">-</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td data-label="Day"><span class="day-number lang-en">D2</span><span class="day-number lang-zh">第二天</span></td>
+                                    <td data-label="Itinerary">
+                                        <span class="lang-en">Chengdu - Panda Paradise - Songpan Ancient Town - Jiuzhaigou</span>
+                                        <span class="lang-zh">成都-熊猫乐园-松潘古城-九寨沟</span>
+                                    </td>
+                                    <td data-label="Meals">
+                                        <span class="meal-info lang-en">B,L,D</span>
+                                        <span class="meal-info lang-zh">早,午,晚</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td data-label="Day"><span class="day-number lang-en">D3</span><span class="day-number lang-zh">第三天</span></td>
+                                    <td data-label="Itinerary">
+                                        <span class="lang-en">Full Day Jiuzhaigou Exploration (9 hours)</span>
+                                        <span class="lang-zh">全天游览九寨沟（9小时）</span>
+                                    </td>
+                                    <td data-label="Meals">
+                                        <span class="meal-info lang-en">B,D</span>
+                                        <span class="meal-info lang-zh">早,晚</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td data-label="Day"><span class="day-number lang-en">D4</span><span class="day-number lang-zh">第四天</span></td>
+                                    <td data-label="Itinerary">
+                                        <span class="lang-en">Jiuzhaigou - Huanglong (4 hours) - Chengdu</span>
+                                        <span class="lang-zh">九寨沟-黄龙（4小时）-成都</span>
+                                    </td>
+                                    <td data-label="Meals">
+                                        <span class="meal-info lang-en">B,L</span>
+                                        <span class="meal-info lang-zh">早,午</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td data-label="Day"><span class="day-number lang-en">D5</span><span class="day-number lang-zh">第五天</span></td>
+                                    <td data-label="Itinerary">
+                                        <span class="lang-en">Chengdu - Emei Mountain - Golden Summit - Wannian Temple</span>
+                                        <span class="lang-zh">成都-峨眉山-金顶-万年寺</span>
+                                    </td>
+                                    <td data-label="Meals">
+                                        <span class="meal-info lang-en">B,L,D</span>
+                                        <span class="meal-info lang-zh">早,午,晚</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td data-label="Day"><span class="day-number lang-en">D6</span><span class="day-number lang-zh">第六天</span></td>
+                                    <td data-label="Itinerary">
+                                        <span class="lang-en">Wannian Temple - Qingyin Pavilion - Wuxiangang - Leshan Giant Buddha - Chengdu</span>
+                                        <span class="lang-zh">万年寺-清音阁-五显岗-乐山大佛-成都</span>
+                                    </td>
+                                    <td data-label="Meals">
+                                        <span class="meal-info lang-en">B,L</span>
+                                        <span class="meal-info lang-zh">早,午</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td data-label="Day"><span class="day-number lang-en">D7</span><span class="day-number lang-zh">第七天</span></td>
+                                    <td data-label="Itinerary">
+                                        <span class="lang-en">Chengdu - Dujiangyan Irrigation System - Qingcheng Mountain - Chengdu</span>
+                                        <span class="lang-zh">成都-都江堰-青城山-成都</span>
+                                    </td>
+                                    <td data-label="Meals">
+                                        <span class="meal-info lang-en">B,L</span>
+                                        <span class="meal-info lang-zh">早,午</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td data-label="Day"><span class="day-number lang-en">D8</span><span class="day-number lang-zh">第八天</span></td>
+                                    <td data-label="Itinerary">
+                                        <span class="lang-en">Chengdu - Departure</span>
+                                        <span class="lang-zh">成都--温馨的家</span>
+                                    </td>
+                                    <td data-label="Meals">
+                                        <span class="meal-info lang-en">B</span>
+                                        <span class="meal-info lang-zh">早</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                        <div class="package-content">
+                            <div class="package-section">
+                                <h4 class="section-title">
+                                    <i class="fas fa-map-marked-alt"></i>
+                                    <span class="lang-en">Journey Highlights</span>
+                                    <span class="lang-zh">行程亮点</span>
+                                </h4>
+                                <ul class="feature-list">
+                                    <li>
+                                        <span class="feature-text lang-en">Visit Panda Paradise for close-up panda observation</span>
+                                        <span class="feature-text lang-zh">参观熊猫乐园，近距离观察熊猫</span>
+                                    </li>
+                                    <li>
+                                        <span class="feature-text lang-en">Explore Songpan Ancient Town with rich historical heritage</span>
+                                        <span class="feature-text lang-zh">探索松潘古城，感受丰富的历史遗产</span>
+                                    </li>
+                                    <li>
+                                        <span class="feature-text lang-en">Full day exploration of Jiuzhaigou's crystal-clear lakes and waterfalls</span>
+                                        <span class="feature-text lang-zh">全天探索九寨沟清澈湖泊和瀑布</span>
+                                    </li>
+                                    <li>
+                                        <span class="feature-text lang-en">Discover Huanglong's breathtaking travertine terraces</span>
+                                        <span class="feature-text lang-zh">探索黄龙令人叹为观止的钙华梯田</span>
+                                    </li>
+                                    <li>
+                                        <span class="feature-text lang-en">Ascend sacred Emei Mountain and visit the Leshan Giant Buddha</span>
+                                        <span class="feature-text lang-zh">攀登神圣的峨眉山，参观乐山大佛</span>
+                                    </li>
+                                    <li>
+                                        <span class="feature-text lang-en">Explore Dujiangyan Irrigation System and Qingcheng Mountain</span>
+                                        <span class="feature-text lang-zh">探索都江堰水利工程和青城山</span>
+                                    </li>
+                                </ul>
+                                
+                                <div class="special-note">
+                                    <i class="fas fa-landmark"></i> <strong class="lang-en">Key Attractions:</strong><strong class="lang-zh">精华景点：</strong>
+                                    <span class="lang-en">Panda Paradise, Huanglong, Jiuzhaigou, Emei Mountain, Leshan Giant Buddha, Dujiangyan, Qingcheng Mountain</span>
+                                    <span class="lang-zh">熊猫乐园、黄龙、九寨沟、峨眉山、乐山大佛、都江堰、青城山</span>
+                                </div>
+                                
+                                <h4 class="section-title" style="margin-top: 30px;">
+                                    <i class="fas fa-hotel"></i>
+                                    <span class="lang-en">Selected Hotels</span>
+                                    <span class="lang-zh">精选酒店参考</span>
+                                </h4>
+                                <div class="hotel-showcase">
+                                    <div class="hotel-grid">
+                                        <div class="hotel-item">
+                                            <div class="hotel-name lang-en">Youyue Hotel</div>
+                                            <div class="hotel-name lang-zh">友约酒店</div>
+                                            <div class="hotel-location lang-en">Jiuzhaigou</div>
+                                            <div class="hotel-location lang-zh">九寨沟</div>
+                                        </div>
+                                        <div class="hotel-item">
+                                            <div class="hotel-name lang-en">Yishang Jinniu Wanda</div>
+                                            <div class="hotel-name lang-zh">宜尚金牛万达</div>
+                                            <div class="hotel-location lang-en">Chengdu</div>
+                                            <div class="hotel-location lang-zh">成都</div>
+                                        </div>
+                                        <div class="hotel-item">
+                                            <div class="hotel-name lang-en">Moke Zizai</div>
+                                            <div class="hotel-name lang-zh">墨客自在</div>
+                                            <div class="hotel-location lang-en">Emei Mountain</div>
+                                            <div class="hotel-location lang-zh">峨眉山</div>
+                                        </div>
+                                        <div class="hotel-item">
+                                            <div class="hotel-name lang-en">Jinjiang Capital City</div>
+                                            <div class="hotel-name lang-zh">锦江都城</div>
+                                            <div class="hotel-location lang-en">Chengdu</div>
+                                            <div class="hotel-location lang-zh">成都</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="package-section">
+                                <h4 class="section-title">
+                                    <i class="fas fa-concierge-bell"></i>
+                                    <span class="lang-en">Premium Inclusions</span>
+                                    <span class="lang-zh">豪华包含项目</span>
+                                </h4>
+                                <ul class="feature-list">
+                                    <li>
+                                        <span class="feature-text lang-en">Luxury 2+1保姆车 transportation throughout</span>
+                                        <span class="feature-text lang-zh">全程豪华2+1保姆车交通</span>
+                                    </li>
+                                    <li>
+                                        <span class="feature-text lang-en">7 nights in carefully selected deluxe accommodations</span>
+                                        <span class="feature-text lang-zh">7晚精心挑选的豪华住宿</span>
+                                    </li>
+                                    <li>
+                                        <span class="feature-text lang-en">7 breakfasts, 2 hotel dinners, 5特色 lunches + Tibetan hotpot dinner</span>
+                                        <span class="feature-text lang-zh">7早餐、2酒店晚餐、5特色中餐+藏式火锅晚餐</span>
+                                    </li>
+                                    <li>
+                                        <span class="feature-text lang-en">All entrance tickets and internal transportation included</span>
+                                        <span class="feature-text lang-zh">包含所有景点门票和景区内交通</span>
+                                    </li>
+                                    <li>
+                                        <span class="feature-text lang-en">Complimentary Sichuan Opera Face Changing performance (Day 7 after lunch)</span>
+                                        <span class="feature-text lang-zh">免费川剧变脸表演（第七天午餐后）</span>
+                                    </li>
+                                    <li>
+                                        <span class="feature-text lang-en">Dedicated pick-up/drop-off service, no waiting or sharing</span>
+                                        <span class="feature-text lang-zh">专车接送站、不拼不等、随到随走</span>
+                                    </li>
+                                </ul>
+                                
+                                <div class="special-note">
+                                    <i class="fas fa-bus"></i> <strong class="lang-en">Transportation Features:</strong><strong class="lang-zh">交通特色：</strong>
+                                    <span class="lang-en">2+1 layout luxury保姆车 with spacious reclining seats, intelligent seat adjustment, and USB charging ports for maximum comfort</span>
+                                    <span class="lang-zh">2+1布局豪华保姆车，宽敞可倾斜座椅，智能坐躺、随意切换，座位配备USB充电口，提供最大舒适度</span>
+                                </div>
+                                
+                                <div class="special-note" style="margin-top: 15px;">
+                                    <i class="fas fa-user-friends"></i> <strong class="lang-en">Child Price (Ages 2-12):</strong><strong class="lang-zh">儿童价格（2-12岁）：</strong>
+                                    <span class="lang-en">$460 per child (includes transportation, lunches, accident insurance; excludes hotel breakfasts, dinners, accommodation, tickets, and other items)</span>
+                                    <span class="lang-zh">$460/人（包含车位、中午餐、意外险；不含酒店早晚餐、住宿、门票及其他项目）</span>
+                                </div>
+                            </div>
+                            
+                            <div class="pricing-section">
+                                <div class="easter-badge">EASTER SPECIAL</div>
+                                <div class="price-display">
+                                    <div class="price-label">
+                                        <i class="fas fa-user-check"></i>
+                                        <span class="lang-en">All-Inclusive Package Price</span>
+                                        <span class="lang-zh">全包套餐价格</span>
+                                    </div>
+                                    <div class="price-amount adult-price">
+                                        <span class="price-from">NZD</span> $2,699 <span class="old-price">was $2,899</span>
+                                    </div>
+                                    <div class="price-note lang-en">Per adult, twin share accommodation. Includes all taxes, tips, bilingual service, airport transfers, TCM consultation & dental cleaning</div>
+                                    <div class="price-note lang-zh">每位成人，双人共享房。包含所有小费、双语服务、接送机、中医辩证及洁牙服务</div>
+                                    
+                                    <div class="special-note">
+                                        <i class="fas fa-star"></i> <strong class="lang-en">Single Room Supplement:</strong><strong class="lang-zh">单人房差：</strong>
+                                        <span class="lang-en">$240 per person</span>
+                                        <span class="lang-zh">$240/人</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="price-divider"></div>
+                                
+                                <div class="price-display">
+                                    <div class="price-label">
+                                        <i class="fas fa-wallet"></i>
+                                        <span class="lang-en">Complimentary Services (Valued at $168)</span>
+                                        <span class="lang-zh">赠送服务（价值$168）</span>
+                                    </div>
+                                    <div class="price-amount self-pay-price">
+                                        FREE
+                                    </div>
+                                    <div class="price-note lang-en">Professional dental cleaning + Traditional Chinese Medicine Body Constitution Assessment (provided by licensed clinics in Chian)</div>
+                                    <div class="price-note lang-zh">专业全口洁牙服务+中医体质评估分析（由中国持牌诊所提供）</div>
+                                </div>
+                                
+                                <div class="price-divider"></div>
+                                
+                                <div class="price-display">
+                                    <div class="price-label">
+                                        <i class="fas fa-exclamation-circle"></i>
+                                        <span class="lang-en">Important Notes</span>
+                                        <span class="lang-zh">重要说明</span>
+                                    </div>
+                                    <div class="special-note">
+                                        <i class="fas fa-plane"></i> <strong class="lang-en">International Flights:</strong><strong class="lang-zh">国际机票：</strong>
+                                        <span class="lang-en">Price does NOT include round-trip airfare from New Zealand to Chengdu (can be arranged upon request)</span>
+                                        <span class="lang-zh">价格不包含新西兰至成都往返机票（可根据客需，代为预定）</span>
+                                    </div>
+                                    
+                                    <div class="special-note" style="margin-top: 10px;">
+                                        <i class="fas fa-theater-masks"></i> <strong class="lang-en">Cultural Experience:</strong><strong class="lang-zh">文化体验：</strong>
+                                        <span class="lang-en">Complimentary Sichuan Opera Face Changing performance included on Day 7</span>
+                                        <span class="lang-zh">第七天包含免费川剧变脸表演</span>
+                                    </div>
+                                </div>
+                                
+                                <a 
+ 				 href="mailto:KIWI_Serenity_Limited@outlook.com?subject=Rolling Star Easter Booking"
+ 				 class="booking-button"
+				>
+  				 <span class="lang-en">Email to Book</span>
+  				 <span class="lang-zh">邮件预订</span>
+				</a>
+
+                                    <span class="lang-en">Book This Easter Journey</span>
+                                    <span class="lang-zh">预订此复活节旅程</span>
+                                </button>
+                                
+                                <!-- 预订按钮下方的免责声明 -->
+                                <div class="booking-disclaimer">
+                                    <p class="lang-en">We provide non-medical coordination only. No medical advice or treatment is offered.</p>
+                                    <p class="lang-zh">本公司仅提供非医疗协调服务，不提供任何医疗建议或治疗。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Included Services Section -->
+        <div class="included-services">
+            <h4><i class="fas fa-check-circle"></i> <span class="lang-en">All Packages Include These Premium Services</span><span class="lang-zh">所有套餐包含以下尊贵服务</span></h4>
+            
+            <div class="services-grid">
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-stethoscope"></i>
+                    </div>
+                    <div class="service-content">
+                        <h5 class="lang-en">Traditional Chinese Medicine Consultation</h5>
+                        <h5 class="lang-zh">中医体质评估咨询</h5>
+                        <p class="lang-en">Personalized Body Constitution Assessment by (provided by licensed practitioners in China)</p>
+                        <p class="lang-zh">中医师提供的个性化体质分析(由中国持牌中医诊所提供)</p>
+                    </div>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-tooth"></i>
+                    </div>
+                    <div class="service-content">
+                        <h5 class="lang-en">Full Dental Cleaning</h5>
+                        <h5 class="lang-zh">全口洁牙服务</h5>
+                        <p class="lang-en">Professional dental cleaning (provided by licensed clinics in Chian) </p>
+                        <p class="lang-zh">专业洁牙服务（由中国持牌口腔诊所提供）</p>
+                    </div>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-language"></i>
+                    </div>
+                    <div class="service-content">
+                        <h5 class="lang-en">Bilingual Service</h5>
+                        <h5 class="lang-zh">双语导游服务</h5>
+                        <p class="lang-en">Professional English-speaking guides throughout your journey</p>
+                        <p class="lang-zh">全程专业英语导游陪同服务</p>
+                    </div>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-plane"></i>
+                    </div>
+                    <div class="service-content">
+                        <h5 class="lang-en">Airport Transfers</h5>
+                        <h5 class="lang-zh">机场接送服务</h5>
+                        <p class="lang-en">Complimentary airport transfers</p>
+                        <p class="lang-zh">免费机场接送</p>
+                    </div>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-concierge-bell"></i>
+                    </div>
+                    <div class="service-content">
+                        <h5 class="lang-en">All Taxes & Tips Included</h5>
+                        <h5 class="lang-zh">包含所有小费</h5>
+                        <p class="lang-en">No hidden costs - all government taxes and service tips included</p>
+                        <p class="lang-zh">无隐藏费用 - 所有服务小费已包含</p>
+                    </div>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-hotel"></i>
+                    </div>
+                    <div class="service-content">
+                        <h5 class="lang-en">Premium Accommodation</h5>
+                        <h5 class="lang-zh">豪华住宿</h5>
+                        <p class="lang-en">Carefully selected deluxe hotels throughout your journey</p>
+                        <p class="lang-zh">全程精心挑选的豪华酒店住宿</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Costs Not Included Section -->
+        <div class="costs-not-included">
+            <h4><i class="fas fa-exclamation-triangle"></i> <span class="lang-en">Costs Not Included</span><span class="lang-zh">费用不包含</span></h4>
+            
+            <div class="lang-en">
+                <ul>
+                    <li><strong>Meals and drinks not mentioned in the program:</strong> Any meals or beverages not specifically listed in the itinerary</li>
+                    <li><strong>Chinese Visa:</strong> All visa application fees and related costs for entry into China</li>
+                    <li><strong>Personal expenses:</strong> Souvenirs, laundry, telephone calls, and other personal items</li>
+                    <li><strong>Trip delay or interruption caused by airline schedule change:</strong> Additional costs resulting from airline schedule modifications</li>
+                    <li><strong>Extra cost associated with missed tour caused by flight delays or cancellation:</strong> Any expenses related to tour components missed due to flight disruptions</li>
+                    <li><strong>Any service clearly not mentioned in the program:</strong> Services and items not explicitly stated as included in the tour package</li>
+                </ul>
+            </div>
+            
+            <div class="lang-zh">
+                <ul>
+                    <li><strong>行程中未提及的餐饮：</strong>行程中未明确列出的任何餐食或饮料</li>
+                    <li><strong>中国签证：</strong>所有进入中国的签证申请费用及相关费用</li>
+                    <li><strong>个人消费：</strong>纪念品、洗衣、电话费及其他个人物品</li>
+                    <li><strong>航空公司航班时刻变更导致的行程延误或中断：</strong>航空公司航班时刻修改导致的额外费用</li>
+                    <li><strong>因航班延误或取消导致错过旅行产生的额外费用：</strong>因航班中断导致错过旅行部分内容所产生的任何费用</li>
+                    <li><strong>行程中明确未提及的任何服务：</strong>未明确说明包含在旅行套餐中的服务和项目</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Insurance and Disclaimer Cards -->
+        <div class="info-cards-container">
+            <!-- Travel Insurance Card -->
+            <div class="info-card">
+                <div class="info-card-header" onclick="toggleInfoCard('insurance')">
+                    <div class="info-card-title">
+                        <i class="fas fa-shield-alt"></i>
+                        <span class="lang-en">Travel Insurance Reminder</span>
+                        <span class="lang-zh">旅行保险提醒</span>
+                    </div>
+                    <div class="info-card-toggle">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+                <div id="insurance-content" class="info-card-content">
+                    <div class="lang-en">
+                        <p>We would like to kindly remind you that while travel insurance is not mandatory, it is strongly recommended for international medical travel. Comprehensive travel insurance may help cover unexpected medical expenses, travel disruptions, or other unforeseen circumstances during your trip.</p>
+                        
+                        <p>Please note:</p>
+                        <ul>
+                            <li>KIWI Serenity Limited does not provide insurance services</li>
+                            <li>We do not recommend or endorse any specific insurance provider</li>
+                            <li>This message is provided for informational and risk-awareness purposes only</li>
+                        </ul>
+                        
+                        <p>If you already have travel insurance, no further action is required.</p>
+                        <p>If you plan to arrange coverage later, we recommend ensuring that medical treatment abroad is included in your policy.</p>
+                    </div>
+                    
+                    <div class="lang-zh">
+                        <p>我们想提醒您，虽然旅行保险不是强制性的，但对于国际医疗旅行强烈建议购买。全面的旅行保险可以帮助覆盖旅行期间意外的医疗费用、旅行中断或其他不可预见的情况。</p>
+                        
+                        <p>请注意：</p>
+                        <ul>
+                            <li>KIWI Serenity Limited不提供保险服务</li>
+                            <li>我们不推荐或认可任何特定的保险提供商</li>
+                            <li>此信息仅用于提供信息和风险意识目的</li>
+                        </ul>
+                        
+                        <p>如果您已经拥有旅行保险，则无需进一步行动。</p>
+                        <p>如果您计划稍后安排保险，我们建议确保您的保单包含国外医疗治疗。</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Disclaimer Card -->
+            <div class="info-card">
+                <div class="info-card-header" onclick="toggleInfoCard('disclaimer')">
+                    <div class="info-card-title">
+                        <i class="fas fa-file-contract"></i>
+                        <span class="lang-en">Important Disclaimer</span>
+                        <span class="lang-zh">重要免责声明</span>
+                    </div>
+                    <div class="info-card-toggle">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+                <div id="disclaimer-content" class="info-card-content">
+                    <!-- 新增免责声明 -->
+                    <p class="disclaimer-notice">
+                        <span class="lang-en">We provide non-medical coordination only. Medical services (if any) are provided by licensed third parties in China. No medical advice or outcome guarantees.</span>
+                        <span class="lang-zh">我们仅提供非医疗协调服务。医疗服务（如有）由中国持牌第三方提供。不提供医疗建议或结果保证。</span>
+                    </p>
+                    
+                    <div class="lang-en">
+                        <p>KIWI Serenity Limited acts solely as an independent coordination service provider. We do not act as an agent, representative, or intermediary for the client, any medical provider, clinic, practitioner, or third-party service provider in relation to medical services, medical decisions, or medical outcomes.</p>
+                        
+                        <p>Any medical services, advice, opinions, procedures, or outcomes are provided solely by independent licensed medical providers. KIWI Serenity Limited does not assess, manage, monitor, or assume responsibility for any medical risks, outcomes, or decisions.</p>
+                        
+                        <p>Nothing in these Terms or this Disclaimer excludes, restricts, or modifies any rights or remedies you may have under the Consumer Guarantees Act 1993 or any other applicable New Zealand law, where such rights cannot be lawfully excluded.</p>
+                    </div>
+                    
+                    <div class="lang-zh">
+                        <p>KIWI Serenity Limited仅作为独立的协调服务提供方开展业务，不在任何医疗服务、医疗决策或医疗结果相关事项中，作为客户、医疗机构、医务人员或任何第三方的代理人、代表或中介方。</p>
+                        
+                        <p>任何医疗服务、建议、诊疗意见、操作或结果，均由独立、具备合法资质的医疗机构或医务人员自行提供并承担责任。KIWI Serenity Limited不评估、不管理、不监测、亦不承担任何医疗风险、结果或决策责任。</p>
+                        
+                        <p>本条款或免责声明中的任何内容，均不排除、限制或修改您依据《1993年新西兰消费者保障法》或其他适用法律所享有且依法不得排除的权利或救济。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Additional Information -->
+        <div class="additional-info">
+            <h4><i class="fas fa-info-circle"></i> <span class="lang-en">Easter Promotion Details & Important Information</span><span class="lang-zh">复活节促销详情与重要信息</span></h4>
+            
+            <div class="lang-en">
+                <ul>
+                    <li><strong>Easter Special Promotion:</strong> Valid for bookings made before March 2026 for travel during April 2026. Includes complimentary airport transfers from Chengdu Shuangliu Airport/Chengdu city center plus an exclusive Easter welcome gift.</li>
+                    <li><strong>Complimentary Services:</strong> All packages include FREE Dental Cleaning + Traditional Chinese Medicine Body Constitution Assessment valued at NZD $168.</li>
+                    <li><strong>Pricing Information:</strong> All prices are quoted in New Zealand Dollars (NZD). These are all-inclusive prices covering all tour components, taxes, tips, bilingual service, airport transfers, TCM consultation and dental cleaning. International flights from New Zealand to Chengdu are not included but can be arranged upon request.</li>
+                    <li><strong>Booking & Payment Terms:</strong> Online payment only. A deposit is required to secure your booking. <strong>Final payment will be collected in 15 days of your booking.</strong></li>
+                    <li><strong>Cancellation Policy:</strong>
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li>Cancellation 30+ days before departure: 75% refund</li>
+                            <li>Cancellation 15-30 days before departure: 50% refund</li>
+                            <li>Cancellation less than 15 days before departure: No refund</li>
+                        </ul>
+                    </li>
+                    <li><strong>Tour Operation:</strong> All tours are guaranteed departures. Rolling Star tour has a maximum of 29 participants. Ideal Panorama tour has 24-36 participants.</li>
+                    <li><strong>Travel Insurance:</strong> While not mandatory, comprehensive travel insurance with medical coverage is strongly recommended for international travel.</li>
+                </ul>
+            </div>
+            
+            <div class="lang-zh">
+                <ul>
+                    <li><strong>复活节特别促销：</strong>适用于2026年3月前预订，2026年4月期间旅行的订单。包括成都免费机场接送以及独家复活节欢迎礼物。</li>
+                    <li><strong>赠送服务：</strong>所有套餐包含免费全口洁牙+中医体质评估（价值$168新西兰元），由中国持牌诊所提供。</li>
+                    <li><strong>价格信息：</strong>所有价格均以新西兰元(NZD)报价。此为全包价格，包含所有旅游项目、小费、双语服务、接送机，以及赠送的中医辩证及洁牙服务。不包含新西兰至成都的国际机票（可根据客需，代为预定）。</li>
+                    <li><strong>预订与支付条款：</strong>仅限在线支付。需支付定金以确保预订。<strong>余款需在预订后15天内付清。</strong></li>
+                    <li><strong>取消政策：</strong>
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li>出发前30天以上取消：退款75%</li>
+                            <li>出发前15-30天取消：退款50%</li>
+                            <li>出发前少于15天取消：不退款</li>
+                        </ul>
+                    </li>
+                    <li><strong>团队操作：</strong>所有团队均为保证出发。滚滚星途行程最多29位客人。理想全景行程为24-36人团。</li>
+                    <li><strong>旅行保险：</strong>虽然不是强制性的，但强烈建议为国际旅行购买包含医疗保险的综合旅行保险。</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>KIWI Serenity Limited</h3>
+                    <p class="lang-en">
+                        Experience the unparalleled beauty of Sichuan with our premium Easter travel packages. As a New Zealand registered company, we specialize in creating unforgettable journeys that combine cultural immersion, natural wonders, and exceptional service in China's most breathtaking destinations.
+                    </p>
+                    <p class="lang-zh">
+                        通过我们的优质复活节旅行套餐，体验四川无与伦比的美丽。作为新西兰注册公司，我们专注于创造难忘的旅程，将文化沉浸、自然奇观和卓越服务结合在中国最令人叹为观止的目的地中。
+                    </p>
+                </div>
+                <div class="footer-contact">
+                    <h4 class="lang-en">Contact Us for Easter Travel Bookings</h4>
+                    <h4 class="lang-zh">复活节预订请联系我们</h4>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-phone contact-icon"></i>
+                        <span>Tel: +64220405795</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope contact-icon"></i>
+                        <span>KIWI_Serenity_Limited@outlook.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt contact-icon"></i>
+                        <span class="lang-en">New Zealand Registered Company</span>
+                        <span class="lang-zh">新西兰注册公司</span>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4 class="lang-en">Important Documents</h4>
+                    <h4 class="lang-zh">重要文件</h4>
+                    <ul>
+                        <li><a href="privacy.html"><i class="fas fa-lock"></i> <span class="lang-en">Privacy Policy</span><span class="lang-zh">隐私政策</span></a></li>
+                        <li><a href="disclaimer.html"><i class="fas fa-file-contract"></i> <span class="lang-en">Disclaimer</span><span class="lang-zh">免责声明</span></a></li>
+                        <li><a href="terms.html"><i class="fas fa-gavel"></i> <span class="lang-en">Terms & Conditions</span><span class="lang-zh">条款与条件</span></a></li>
+                        <li><a href="questionnaire.html"><i class="fas fa-clipboard-list"></i> <span class="lang-en">Health Questionnaire</span><span class="lang-zh">健康问卷</span></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p class="lang-en">&copy; 2026 KIWI Serenity Limited. All rights reserved. Discover Sichuan, Wellness travel, Experience the Summit. Easter Special Promotion: Book before March 2026 for April 2026 departures. Online payment only.</p>
+                <p class="lang-zh">&copy; 2026 KIWI Serenity Limited。保留所有权利。探索四川，健康旅行，体验巅峰。复活节特别促销：2026年3月前预订，2026年4月出发。仅限在线支付。</p>
+                <p class="lang-en">; KIWI Serenity Limited provides non-medical travel coordination and administrative support only. We do not provide medical advice, diagnosis, or treatment. All medical services, if any, are provided independently by licensed institutions in China. No medical outcomes are guaranteed.</p>
+		<p class="lang-zh">KIWI Serenity Limited 仅提供非医疗性质的行程协调及行政支持服务，
+不提供任何医疗建议、诊断或治疗。所有医疗相关服务（如有）均由中国持牌机构独立提供，本公司不对任何医疗结果作出保证。</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script>
+        // Language toggle function
+        function toggleLanguage(lang) {
+            const body = document.body;
+            const buttons = document.querySelectorAll('.lang-btn');
+            
+            if (lang === 'zh') {
+                body.classList.add('show-zh');
+                buttons[0].classList.remove('active');
+                buttons[1].classList.add('active');
+            } else {
+                body.classList.remove('show-zh');
+                buttons[0].classList.add('active');
+                buttons[1].classList.remove('active');
+            }
+        }
+        
+        // Card toggle function
+        function toggleCard(cardId) {
+            const cardHeader = document.querySelector(`#${cardId}-content`).previousElementSibling;
+            const cardContent = document.getElementById(`${cardId}-content`);
+            const toggleIcon = cardHeader.querySelector('.card-toggle i');
+            
+            // Toggle active class on header
+            cardHeader.classList.toggle('active');
+            
+            // Toggle expanded class on content
+            cardContent.classList.toggle('expanded');
+            
+            // Change icon
+            if (cardHeader.classList.contains('active')) {
+                toggleIcon.style.transform = 'rotate(180deg)';
+            } else {
+                toggleIcon.style.transform = 'rotate(0deg)';
+            }
+        }
+        
+        // Info card toggle function
+        function toggleInfoCard(cardId) {
+            const cardHeader = document.querySelector(`#${cardId}-content`).previousElementSibling;
+            const cardContent = document.getElementById(`${cardId}-content`);
+            const toggleIcon = cardHeader.querySelector('.info-card-toggle i');
+            
+            // Toggle active class on header
+            cardHeader.classList.toggle('active');
+            
+            // Toggle expanded class on content
+            cardContent.classList.toggle('expanded');
+            
+            // Change icon
+            if (cardHeader.classList.contains('active')) {
+                toggleIcon.style.transform = 'rotate(180deg)';
+            } else {
+                toggleIcon.style.transform = 'rotate(0deg)';
+            }
+        }
+        
+        // Contact us function
+        function contactUs(packageName) {
+            const message = `Hello, I'm interested in the "${packageName}" Easter tour package. Could you please provide more details about availability, booking process, and the Easter promotion?`;
+            const telUrl = `https://wa.me/64220405795?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+        }
+        
+        // Back to top functionality
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+        
+        // Show/hide back to top button based on scroll position
+        window.addEventListener('scroll', function() {
+            const backToTopButton = document.querySelector('.back-to-top');
+            if (window.scrollY > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        });
+        
+        // Set default language to English and expand first card by default
+        document.addEventListener('DOMContentLoaded', function() {
+            toggleLanguage('en');
+            
+            // Set up initial card state (first expanded, second collapsed)
+            const idealPanoramaHeader = document.querySelector('#ideal-panorama-content').previousElementSibling;
+            const idealPanoramaToggleIcon = idealPanoramaHeader.querySelector('.card-toggle i');
+            idealPanoramaToggleIcon.style.transform = 'rotate(0deg)';
+            
+            // Add smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
