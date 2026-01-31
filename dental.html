@@ -121,8 +121,8 @@
         .nav-logo {
             width: 40px;
             height: 40px;
-            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
             border-radius: 12px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
             display: flex;
             align-items: center;
             justify-content: center;
@@ -130,6 +130,39 @@
             font-size: 1.2rem;
             font-weight: 700;
             box-shadow: var(--shadow-sm);
+	    overflow:hidden;/*确保图片不溢出*/
+        }
+        
+	/* 修复：logo图片样式 */
+        .nav-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* 确保图片填充整个容器 */
+            border-radius: 12px; /* 保持与容器相同的圆角 */
+        }
+        
+        /* 修复：移动端菜单logo容器 */
+        .mobile-menu-logo {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+            box-shadow: var(--shadow-sm);
+            overflow: hidden; /* 确保图片不溢出 */
+        }
+        
+        /* 修复：移动端菜单logo图片样式 */
+        .mobile-menu-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* 确保图片填充整个容器 */
+            border-radius: 12px; /* 保持与容器相同的圆角 */
         }
         
         .nav-brand-text {
@@ -167,6 +200,26 @@
         
         .mobile-menu-toggle:hover {
             background-color: rgba(30, 64, 175, 0.1);
+        }
+        
+        .nav-brand-text {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .nav-brand-name {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            line-height: 1.2;
+        }
+        
+        .nav-brand-tagline {
+            font-size: 0.75rem;
+            color: var(--text-medium);
+            font-weight: 500;
+            letter-spacing: 0.5px;
         }
         
         /* 右侧导航区域 */
@@ -1859,11 +1912,11 @@
                 </button>
                 <a href="#" class="nav-brand">
                     <div class="nav-logo">
-                        <i class="fas fa-tooth"></i>
+                        <img src="logo.jpg" alt="KIWI Serenity Limited Logo"> </i>
                     </div>
                     <div class="nav-brand-text">
                         <span class="nav-brand-name">KIWI Serenity Limited</span>
-                        <span class="nav-brand-tagline">新西兰注册公司 | 连接新西兰与成都优质牙科</span>
+                        <span class="nav-brand-tagline">新西兰注册公司 | NZ registed company</span>
                     </div>
                 </a>
             </div>
@@ -1877,7 +1930,7 @@
                     <a href="#process" class="nav-link">服务流程 / Process</a>
                     <a href="#contact" class="nav-link">联系我们 / Contact</a>
                     <a href="tel:+64220405795" class="nav-cta">
-                        <i class="fas fa-phone-alt"></i> +64 22 040 5795
+                        <i class="fas fa-phone-alt"></i> +64220405795
                     </a>
                 </div>
             </div>
@@ -1945,7 +1998,7 @@
                 <div class="stat-label">
                     <div class="bilingual-label">
                         <span class="chinese-label">华西口腔医学院排名</span>
-                        <span class="english-label">West China Dental Ranking</span>
+                        <span class="english-label">West China School of Stomatology Ranking</span>
                     </div>
                 </div>
             </div>
@@ -1992,7 +2045,7 @@
                     <ul class="service-features">
                         <li>全面口腔健康评估与检查 / Comprehensive Oral Health Assessment & Examination</li>
                         <li>专业洁牙与牙菌斑清除 / Professional Teeth Cleaning & Plaque Removal</li>
-                        <li>数字化X光检查（如需要）/ Digital X-ray Examination (if needed)</li>
+                        <li>数字化X光检查 / Digital X-ray Examination</li>
                         <li>个性化口腔健康指导 / Personalized Oral Health Guidance</li>
                         <li>口腔癌筛查 / Oral Cancer Screening</li>
                     </ul>
@@ -2146,8 +2199,8 @@
                             <div class="ranking-label">全球排名 / Global Rank</div>
                             <div class="ranking-source">2025年QS世界大学学科排名<br>2025 QS World University Rankings</div>
                             <p class="ranking-description">
-                                四川大学口腔医学位列全球第12位、中国内地第一<br>
-                                Sichuan University Dentistry ranks 12th globally, 1st in Mainland China
+                                四川大学华西口腔医学位列全球第12位、中国内地第一<br>
+                                West China Stomatology of Sichuan University ranks 12th globally, 1st in Mainland China
                             </p>
                         </div>
                         
@@ -2156,8 +2209,8 @@
                             <div class="ranking-label">世界一流学科排名<br>World-Class Subject Ranking</div>
                             <div class="ranking-source">2024年软科世界一流学科排名<br>2024 ARWU Global Ranking of Academic Subjects</div>
                             <p class="ranking-description">
-                                四川大学口腔医学位列世界第4位、中国第一<br>
-                                Sichuan University Dentistry ranks 4th globally, 1st in China
+                                四川大学华西口腔医学位列世界第4位、中国第一<br>
+                                West China Stomatology of Sichuan University ranks 4th globally, 1st in China
                             </p>
                         </div>
                         
@@ -2766,7 +2819,7 @@
             </button>
             <div class="mobile-menu-header">
                 <div class="mobile-menu-logo">
-                    <i class="fas fa-tooth"></i>
+                    <div class="mobile-menu-logo"> </i>
                 </div>
                 <div class="mobile-menu-brand">
                     <div class="mobile-menu-brand-name">KIWI Serenity Limited</div>
