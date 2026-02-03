@@ -1,3 +1,4 @@
+[file content begin]
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -926,6 +927,37 @@
             border-left: 3px solid var(--accent-orange);
         }
         
+        /* 新增：服务亮点列表 */
+        .service-highlights {
+            background-color: rgba(39, 174, 96, 0.1);
+            border-left: 3px solid var(--accent-green);
+            padding: 12px 15px;
+            margin-top: 15px;
+            border-radius: var(--radius-sm);
+            font-size: 0.9rem;
+            color: var(--medium-text);
+        }
+        
+        .service-highlights-list {
+            list-style-type: none;
+            padding-left: 0;
+            margin-top: 8px;
+        }
+        
+        .service-highlights-list li {
+            margin-bottom: 5px;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .service-highlights-list li:before {
+            content: "✔";
+            position: absolute;
+            left: 0;
+            color: var(--accent-green);
+            font-weight: bold;
+        }
+        
         .price-divider {
             height: 2px;
             background: linear-gradient(to right, transparent, var(--border-color), transparent);
@@ -1467,6 +1499,34 @@
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             font-size: 0.95rem;
             opacity: 0.8;
+        }
+        
+        /* 底部预订提醒 */
+        .reservation-reminder {
+            text-align: center;
+            margin: 40px auto;
+            max-width: 800px;
+            padding: 25px;
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, rgba(255, 105, 180, 0.1) 100%);
+            border-radius: var(--radius-lg);
+            border: 2px solid var(--easter-yellow);
+        }
+        
+        .reservation-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.4rem;
+            color: var(--easter-purple);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .reservation-text {
+            font-size: 1.1rem;
+            color: var(--medium-text);
         }
         
         /* Back to Top Button */
@@ -2709,9 +2769,9 @@
                                 <i class="fas fa-users"></i>
                             </div>
                             <div class="special-feature-title lang-en">Small Group Experience</div>
-                            <div class="special-feature-title lang-zh">小团体体验</div>
+                            <div class="special-feature-title lang-zh">服务体体验</div>
                             <div class="special-feature-text lang-en">Intimate groups of max 29 guests for personalized attention</div>
-                            <div class="special-feature-text lang-zh">小团体旅行，最多29位客人，提供个性化服务</div>
+                            <div class="special-feature-text lang-zh">服务体旅行，最多29位客人，提供个性化服务</div>
                         </div>
                         
                         <div class="special-feature-item">
@@ -3002,8 +3062,28 @@
                                     </div>
                                     <div class="special-note">
                                         <i class="fas fa-plane"></i> <strong class="lang-en">International Flights:</strong><strong class="lang-zh">国际机票：</strong>
-                                        <span class="lang-en">Price does NOT include round-trip airfare from New Zealand to Chengdu (can be arranged upon request)</span>
-                                        <span class="lang-zh">价格不包含新西兰至成都往返机票（可根据客需，代为预定）</span>
+                                        <span class="lang-en">Package excludes international flights. We assist with flight booking and timing coordination.</span>
+                                        <span class="lang-zh">不含国际机票｜提供航班协助与衔接服务</span>
+                                    </div>
+                                    
+                                    <!-- 新增：服务亮点 -->
+                                    <div class="service-highlights">
+                                        <div class="lang-en">Our Premium Service Highlights:</div>
+                                        <div class="lang-zh">我们的尊贵服务亮点：</div>
+                                        <ul class="service-highlights-list">
+                                            <li>
+                                                <span class="lang-en">✔ Carefully managed group (English support)</span>
+                                                <span class="lang-zh">✔ 精心管理的服务（英语支持）</span>
+                                            </li>
+                                            <li>
+                                                <span class="lang-en">✔ Flight booking assistance provided</span>
+                                                <span class="lang-zh">✔ 提供航班预订协助</span>
+                                            </li>
+                                            <li>
+                                                <span class="lang-en">✔ One-on-one coordinator support</span>
+                                                <span class="lang-zh">✔ 一对一协调员支持</span>
+                                            </li>
+                                        </ul>
                                     </div>
                                 </div>
                                 
@@ -3159,7 +3239,7 @@
                                     <div class="comparison-name lang-zh">尊贵舒适</div>
                                 </div>
                                 <ul class="comparison-features">
-                                    <li class="lang-en">Luxury 2+1保姆车 with spacious seating</li>
+                                    <li class="lang-en">Luxury Coach with spacious seating</li>
                                     <li class="lang-zh">豪华2+1保姆车，宽敞座椅</li>
                                     <li class="lang-en">Intelligent reclining seats with USB charging</li>
                                     <li class="lang-zh">智能可倾斜座椅，配备USB充电</li>
@@ -3362,7 +3442,7 @@
                                 </h4>
                                 <ul class="feature-list">
                                     <li>
-                                        <span class="feature-text lang-en">Luxury 2+1保姆车 transportation throughout</span>
+                                        <span class="feature-text lang-en">Luxury Coach transportation throughout</span>
                                         <span class="feature-text lang-zh">全程豪华2+1保姆车交通</span>
                                     </li>
                                     <li>
@@ -3370,7 +3450,7 @@
                                         <span class="feature-text lang-zh">7晚精心挑选的豪华住宿</span>
                                     </li>
                                     <li>
-                                        <span class="feature-text lang-en">7 breakfasts, 2 hotel dinners, 5特色 lunches + Tibetan hotpot dinner</span>
+                                        <span class="feature-text lang-en">7 breakfasts, 2 hotel dinners, 5 unique lunches + Tibetan hotpot dinner</span>
                                         <span class="feature-text lang-zh">7早餐、2酒店晚餐、5特色中餐+藏式火锅晚餐</span>
                                     </li>
                                     <li>
@@ -3389,7 +3469,7 @@
                                 
                                 <div class="special-note">
                                     <i class="fas fa-bus"></i> <strong class="lang-en">Transportation Features:</strong><strong class="lang-zh">交通特色：</strong>
-                                    <span class="lang-en">2+1 layout luxury保姆车 with spacious reclining seats, intelligent seat adjustment, and USB charging ports for maximum comfort</span>
+                                    <span class="lang-en">Layout luxury coach with spacious reclining seats, intelligent seat adjustment, and USB charging ports for maximum comfort</span>
                                     <span class="lang-zh">2+1布局豪华保姆车，宽敞可倾斜座椅，智能坐躺、随意切换，座位配备USB充电口，提供最大舒适度</span>
                                 </div>
                                 
@@ -3446,8 +3526,28 @@
                                     </div>
                                     <div class="special-note">
                                         <i class="fas fa-plane"></i> <strong class="lang-en">International Flights:</strong><strong class="lang-zh">国际机票：</strong>
-                                        <span class="lang-en">Price does NOT include round-trip airfare from New Zealand to Chengdu (can be arranged upon request)</span>
-                                        <span class="lang-zh">价格不包含新西兰至成都往返机票（可根据客需，代为预定）</span>
+                                        <span class="lang-en">Package excludes international flights. We assist with flight booking and timing coordination.</span>
+                                        <span class="lang-zh">不含国际机票｜提供航班协助与衔接服务</span>
+                                    </div>
+                                    
+                                    <!-- 新增：服务亮点 -->
+                                    <div class="service-highlights">
+                                        <div class="lang-en">Our Premium Service Highlights:</div>
+                                        <div class="lang-zh">我们的尊贵服务亮点：</div>
+                                        <ul class="service-highlights-list">
+                                            <li>
+                                                <span class="lang-en">✔ Carefully managed group (English support)</span>
+                                                <span class="lang-zh">✔ 精心管理的服务（英语支持）</span>
+                                            </li>
+                                            <li>
+                                                <span class="lang-en">✔ Flight booking assistance provided</span>
+                                                <span class="lang-zh">✔ 提供航班预订协助</span>
+                                            </li>
+                                            <li>
+                                                <span class="lang-en">✔ One-on-one coordinator support</span>
+                                                <span class="lang-zh">✔ 一对一协调员支持</span>
+                                            </li>
+                                        </ul>
                                     </div>
                                     
                                     <div class="special-note" style="margin-top: 10px;">
@@ -3581,6 +3681,21 @@
                     <li><strong>行程中明确未提及的任何服务：</strong>未明确说明包含在旅行套餐中的服务和项目</li>
                 </ul>
             </div>
+        </div>
+        
+        <!-- 新增：预订提醒部分 -->
+        <div class="reservation-reminder">
+            <div class="reservation-title">
+                <i class="fas fa-calendar-check"></i>
+                <span class="lang-en">Reserve Early to Secure Your Spot</span>
+                <span class="lang-zh">尽早预订以锁定你的名额</span>
+            </div>
+            <p class="reservation-text lang-en">
+                Book your Easter tour early to ensure availability and secure your spot. Limited rooms available for April departures.
+            </p>
+            <p class="reservation-text lang-zh">
+                尽早预订复活节行程，以确保名额。四月出发的客房数量有限。
+            </p>
         </div>
         
         <!-- Insurance and Disclaimer Cards -->
@@ -3911,3 +4026,4 @@ We do not provide medical advice, diagnosis, or treatment. </p>
     </script>
 </body>
 </html>
+[file content end]
