@@ -3,2162 +3,649 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KIWI Serenity Limited - 成都中医文化体验 | Chengdu TCM Culture Experience</title>
+    <title>KIWI Serenity · 成都中医文化 | Chengdu TCM Culture</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root {
-            --nz-blue: #1e40af;
-            --nz-green: #2f855a;
-            --nz-silver: #cbd5e0;
-            --nz-white: #ffffff;
-            --nz-gold: #d4af37;
-            --nz-red: #c53030;
-            --nz-brown: #8b4513;
-            --nz-light-blue: #dbeafe;
-            --nz-light-green: #f0fdf4;
-            --nz-deep-blue: #1e3a8a;
-            --nz-forest-green: #22543d;
-            --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
-            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
-            --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.12);
-            --radius-sm: 8px;
-            --radius-md: 12px;
-            --radius-lg: 16px;
-            --radius-xl: 20px;
-        }
-        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
+        :root {
+            --cinnabar: #9E2A2B;        /* 朱砂红 */
+            --golden: #C89F68;           /* 金箔色 */
+            --jade: #2F6B5E;              /* 翡翠绿 */
+            --ink: #2E2A28;               /* 墨黑 */
+            --paper: #FDF8F2;              /* 宣纸白 */
+            --sand: #EADBC6;               /* 砂色 */
+            --shadow-elegant: 0 15px 35px -10px rgba(46, 42, 40, 0.15);
+            --radius-classic: 20px;
+        }
+
         html {
             scroll-behavior: smooth;
-            -webkit-text-size-adjust: 100%;
         }
-        
+
         body {
-            font-family: 'Segoe UI', 'Microsoft YaHei', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Cormorant Garamond', 'Times New Roman', '宋体', 'Microsoft YaHei', serif;
+            background: var(--sand);
+            color: var(--ink);
             line-height: 1.6;
-            color: #333;
             min-height: 100vh;
-            position: relative;
             overflow-x: hidden;
-            background: url("Background.jpg") center / cover no-repeat fixed;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
+            background-image: radial-gradient(circle at 20% 30%, rgba(198, 159, 104, 0.08) 0%, transparent 30%),
+                              linear-gradient(145deg, #f1e8da 0%, #fcf7f0 100%);
         }
-        
-        body::before {
-            content: "";
-            position: fixed;
-            inset: 0;
-            background: rgba(255, 255, 255, 0.85);
-            z-index: -1;
-            backdrop-filter: blur(2px);
-        }
-        
-        .container {
-            background: rgba(255, 255, 255, 0.98);
-            border-radius: var(--radius-xl);
-            box-shadow: var(--shadow-lg);
-            overflow: hidden;
-            border: 1px solid rgba(203, 213, 224, 0.3);
-            margin: 20px auto;
-            max-width: 1400px;
-            position: relative;
-            z-index: 1;
-            backdrop-filter: blur(8px);
-        }
-        
-        /* Header Styles */
-        .header {
-            background: linear-gradient(135deg, rgba(30, 64, 175, 0.97) 0%, rgba(47, 133, 90, 0.95) 100%);
-            color: white;
-            padding: 40px 30px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            min-height: 220px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            border-bottom: 3px solid var(--nz-gold);
-        }
-        
-        .header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 20% 30%, rgba(255,255,255,0.15) 0%, transparent 50%),
-                        radial-gradient(circle at 80% 70%, rgba(255,255,255,0.1) 0%, transparent 50%);
-            z-index: 1;
-        }
-        
-        /* Logo容器 */
-        .logo-container {
-            position: relative;
-            z-index: 2;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 25px;
-            width: 100%;
-            max-width: 1200px;
-        }
-        
-        .logo-image {
-            width: 140px;
-            height: 140px;
-            border-radius: 50%;
-            border: 4px solid rgba(255, 255, 255, 0.9);
-            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
-            background: white;
-            padding: 8px;
-            flex-shrink: 0;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
-            object-fit: cover;
-        }
-        
-        .logo-image:hover {
-            transform: scale(1.08) rotate(5deg);
-            box-shadow: 0 18px 45px rgba(0, 0, 0, 0.4);
-        }
-        
-        .logo-text-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            flex-grow: 1;
-        }
-        
-        .logo {
-            font-size: 2.8rem;
-            font-weight: 800;
-            color: white;
-            text-shadow: 0 4px 25px rgba(0,0,0,0.3);
-            margin-bottom: 10px;
-            letter-spacing: -0.5px;
-            line-height: 1.1;
-        }
-        
-        .logo-subtitle {
-            font-size: 1.1rem;
-            opacity: 0.95;
-            margin-bottom: 6px;
-            font-weight: 400;
-            letter-spacing: 0.5px;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
-            line-height: 1.4;
-        }
-        
-        .main-title {
-            font-size: 2.2rem;
-            margin: 20px 0 12px;
-            position: relative;
-            z-index: 2;
-            text-shadow: 0 4px 20px rgba(0,0,0,0.3);
-            font-weight: 700;
-            line-height: 1.2;
-        }
-        
-        .main-subtitle {
-            font-size: 1.4rem;
-            opacity: 0.95;
-            font-weight: 400;
-            position: relative;
-            z-index: 2;
-            margin-bottom: 15px;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
-            line-height: 1.4;
-        }
-        
-        .wellness-tagline {
-            font-size: 1.05rem;
-            font-style: italic;
-            margin-top: 20px;
-            position: relative;
-            z-index: 2;
-            padding: 12px 25px;
-            border-top: 1px solid rgba(255, 255, 255, 0.4);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.4);
-            text-shadow: 0 2px 8px rgba(0,0,0,0.2);
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50px;
-            backdrop-filter: blur(5px);
-        }
-        
-        /* Navigation Bar */
-        .nav-container {
-            background: rgba(255, 255, 255, 0.98);
-            border-bottom: 1px solid rgba(203, 213, 224, 0.3);
-            padding: 15px 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            backdrop-filter: blur(12px);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        
-        .breadcrumb {
-            font-size: 0.95rem;
-            color: var(--nz-deep-blue);
-            font-weight: 500;
-        }
-        
-        .breadcrumb a {
-            color: var(--nz-deep-blue);
-            text-decoration: none;
-            font-weight: 600;
-            position: relative;
-            padding-bottom: 3px;
-        }
-        
-        .breadcrumb a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--nz-blue);
-            transition: width 0.3s ease;
-        }
-        
-        .breadcrumb a:hover {
-            color: var(--nz-blue);
-        }
-        
-        .breadcrumb a:hover::after {
-            width: 100%;
-        }
-        
-        .language-switch {
-            display: flex;
-            gap: 10px;
-        }
-        
-        .lang-btn {
-            padding: 8px 16px;
-            border: 1px solid rgba(203, 213, 224, 0.6);
-            border-radius: 25px;
-            background: transparent;
-            color: var(--nz-deep-blue);
-            font-size: 0.9rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-weight: 500;
-        }
-        
-        .lang-btn:hover {
-            background: rgba(30, 64, 175, 0.1);
-            border-color: var(--nz-blue);
-        }
-        
-        .lang-btn.active {
-            background: var(--nz-blue);
-            color: white;
-            border-color: var(--nz-blue);
-            box-shadow: var(--shadow-sm);
-        }
-        
-        /* ===== Floating Back to Home ===== */
+
         .back-home-float {
             position: fixed;
             top: 20px;
             left: 20px;
             z-index: 9999;
-            padding: 12px 24px;
+            padding: 12px 28px;
             border-radius: 50px;
-            background: rgba(30, 64, 175, 0.9);
+            background: var(--cinnabar);
             color: white;
-            font-size: 0.95rem;
-            font-weight: 700;
+            font-size: 1rem;
+            font-weight: 600;
             text-decoration: none;
-            white-space: nowrap;
-            box-shadow: var(--shadow-lg);
-            backdrop-filter: blur(10px);
-            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: var(--shadow-elegant);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255,215,140,0.3);
+            transition: all 0.3s;
             display: flex;
             align-items: center;
             gap: 8px;
-        }
-        
-        .back-home-float:hover {
-            background: rgba(30, 64, 175, 1);
-            transform: translateY(-2px);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
-        }
-        
-        /* ===== 折叠式重要声明 ===== */
-        .notice-accordion {
-            margin: 30px;
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-            box-shadow: var(--shadow-md);
-            border: 1px solid rgba(30, 64, 175, 0.25);
-        }
-        
-        .notice-accordion-header {
-            background: linear-gradient(135deg, rgba(30, 64, 175, 0.95) 0%, rgba(30, 58, 138, 0.95) 100%);
-            color: white;
-            padding: 28px 35px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .notice-accordion-header:hover {
-            background: linear-gradient(135deg, rgba(30, 64, 175, 0.98) 0%, rgba(30, 58, 138, 0.98) 100%);
-        }
-        
-        .notice-accordion.active .notice-accordion-header {
-            border-bottom: 1px solid rgba(255, 255, 255, 0.25);
-        }
-        
-        .notice-title {
-            display: flex;
-            align-items: center;
-            gap: 18px;
-            font-size: 1.5rem;
-            font-weight: 700;
-        }
-        
-        .notice-title-icon {
-            font-size: 2rem;
-        }
-        
-        .notice-arrow {
-            font-size: 1.8rem;
-            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
-        }
-        
-        .notice-accordion.active .notice-arrow {
-            transform: rotate(180deg);
-        }
-        
-        .notice-accordion-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.1);
-            background: linear-gradient(135deg, rgba(235, 248, 255, 0.97) 0%, rgba(219, 234, 254, 0.97) 100%);
-        }
-        
-        .notice-accordion.active .notice-accordion-content {
-            max-height: 1000px;
-        }
-        
-        .notice-content {
-            padding: 35px;
-        }
-        
-        .bilingual-text {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            margin-bottom: 20px;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: var(--radius-md);
-            border: 1px solid rgba(30, 64, 175, 0.15);
-            box-shadow: var(--shadow-sm);
-        }
-        
-        .chinese-text {
-            color: var(--nz-deep-blue);
-            font-weight: 700;
-            font-size: 1.05rem;
-            padding-left: 12px;
-            border-left: 4px solid var(--nz-blue);
-            line-height: 1.5;
-        }
-        
-        .english-text {
-            color: var(--nz-blue);
-            opacity: 0.95;
-            font-style: italic;
-            padding-left: 20px;
-            border-left: 4px solid rgba(30, 64, 175, 0.4);
-            font-size: 1rem;
-            line-height: 1.5;
-        }
-        
-        /* Banner Styles */
-        .banner {
-            background: linear-gradient(135deg, rgba(47, 133, 90, 0.96) 0%, rgba(31, 64, 175, 0.96) 100%);
-            color: white;
-            padding: 45px 35px;
-            text-align: center;
-            margin: 30px;
-            border-radius: var(--radius-lg);
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 18px 45px rgba(31, 64, 175, 0.15);
-        }
-        
-        .banner::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" opacity="0.06"><path d="M20,20 Q40,10 60,30 Q70,50 50,70 Q30,90 10,80 Z" fill="white"/><path d="M80,10 Q90,30 70,40 Q60,60 80,80 Q95,70 95,50 Z" fill="white"/></svg>');
-        }
-        
-        .banner h2 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-            position: relative;
-            z-index: 2;
-            font-weight: 800;
-            text-shadow: 0 2px 12px rgba(0,0,0,0.25);
-            line-height: 1.2;
-        }
-        
-        .banner p {
-            font-size: 1.15rem;
-            opacity: 0.95;
-            position: relative;
-            z-index: 2;
-            max-width: 900px;
-            margin: 0 auto 15px;
-            line-height: 1.7;
-        }
-        
-        /* Therapies Section */
-        .therapies {
-            padding: 70px 30px;
-        }
-        
-        .section-header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-        
-        .section-title {
-            font-size: 2.5rem;
-            color: var(--nz-deep-blue);
-            margin-bottom: 15px;
-            position: relative;
-            display: inline-block;
-            font-weight: 800;
-        }
-        
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 100px;
-            height: 4px;
-            background: linear-gradient(90deg, var(--nz-gold) 0%, var(--nz-green) 100%);
-            margin: 15px auto;
-            border-radius: 2px;
-        }
-        
-        .section-subtitle {
-            font-size: 1.2rem;
-            color: var(--nz-forest-green);
-            max-width: 900px;
-            margin: 0 auto;
-            line-height: 1.6;
-            font-weight: 500;
-        }
-        
-        /* ===== 折叠式九宫格卡片设计 ===== */
-        .accordion-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            margin-top: 50px;
-        }
-        
-        .accordion-card {
-            background: white;
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-            box-shadow: var(--shadow-md);
-            border: 1px solid rgba(203, 213, 224, 0.4);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
-            display: flex;
-            flex-direction: column;
-            position: relative;
-            height: 100%;
-        }
-        
-        .accordion-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 5px;
-            background: linear-gradient(90deg, var(--nz-deep-blue), var(--nz-forest-green));
-            z-index: 1;
-        }
-        
-        .accordion-header {
-            padding: 30px 25px;
-            display: flex;
-            align-items: center;
-            gap: 18px;
-            cursor: pointer;
-            background: linear-gradient(135deg, rgba(219, 234, 254, 0.85) 0%, rgba(240, 253, 244, 0.85) 100%);
-            transition: all 0.3s ease;
-            position: relative;
-            flex-grow: 0;
-            flex-shrink: 0;
-        }
-        
-        .accordion-header:hover {
-            background: linear-gradient(135deg, rgba(219, 234, 254, 0.95) 0%, rgba(240, 253, 244, 0.95) 100%);
-        }
-        
-        .accordion-card.active .accordion-header {
-            background: linear-gradient(135deg, rgba(30, 58, 138, 0.15) 0%, rgba(34, 84, 61, 0.15) 100%);
-        }
-        
-        .accordion-number {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 45px;
-            height: 45px;
-            background: linear-gradient(135deg, var(--nz-deep-blue) 0%, var(--nz-forest-green) 100%);
-            color: white;
-            border-radius: 50%;
-            font-weight: 800;
-            font-size: 1.3rem;
-            flex-shrink: 0;
-            box-shadow: var(--shadow-sm);
-        }
-        
-        .accordion-icon {
-            font-size: 2.8rem;
-            margin: 0;
-            flex-shrink: 0;
-            filter: drop-shadow(0 2px 3px rgba(0,0,0,0.1));
-        }
-        
-        .accordion-title-container {
-            flex-grow: 1;
-            min-width: 0;
-        }
-        
-        .accordion-title {
-            font-size: 1.4rem;
-            color: var(--nz-deep-blue);
-            font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 8px;
-        }
-        
-        .accordion-tag {
-            display: inline-block;
-            padding: 5px 14px;
-            background: rgba(34, 84, 61, 0.12);
-            color: var(--nz-forest-green);
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 700;
-            letter-spacing: 0.3px;
-        }
-        
-        .accordion-arrow {
-            font-size: 1.8rem;
-            color: var(--nz-deep-blue);
-            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
-            margin-left: 10px;
-            flex-shrink: 0;
-        }
-        
-        .accordion-card.active .accordion-arrow {
-            transform: rotate(180deg);
-        }
-        
-        .accordion-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.1);
-            background: white;
-        }
-        
-        .accordion-card.active .accordion-content {
-            max-height: 1500px;
-        }
-        
-        .accordion-body {
-            padding: 35px 25px;
-            border-top: 1px solid rgba(203, 213, 224, 0.3);
-        }
-        
-        /* 卡片图片样式 */
-        .accordion-image-container {
-            margin: 0 auto 30px;
-            width: 100%;
-            max-width: 320px;
-            border-radius: var(--radius-md);
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-            border: 1px solid rgba(203, 213, 224, 0.4);
-        }
-        
-        .accordion-image {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-            transition: transform 0.6s ease;
-        }
-        
-        .accordion-card.active .accordion-image {
-            transform: scale(1.03);
-        }
-        
-        .accordion-desc {
-            margin-bottom: 30px;
-            padding: 25px;
-            background: rgba(248, 250, 252, 0.9);
-            border-radius: var(--radius-md);
-            border: 1px solid rgba(203, 213, 224, 0.3);
-            text-align: center;
-        }
-        
-        .accordion-desc-chinese {
-            color: var(--nz-deep-blue);
-            font-size: 1.05rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-            line-height: 1.4;
-        }
-        
-        .accordion-desc-english {
-            color: #4b5563;
-            font-size: 1rem;
-            font-style: italic;
-            line-height: 1.5;
-        }
-        
-        .accordion-features {
-            list-style: none;
-        }
-        
-        .accordion-feature-item {
-            padding: 14px 0;
-            border-bottom: 1px solid rgba(203, 213, 224, 0.25);
-        }
-        
-        .accordion-feature-item:last-child {
-            border-bottom: none;
-        }
-        
-        .accordion-feature-chinese {
-            color: #1f2937;
-            font-weight: 600;
-            font-size: 1rem;
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-            line-height: 1.4;
-        }
-        
-        .accordion-feature-chinese::before {
-            content: '✓';
-            color: var(--nz-forest-green);
-            font-weight: bold;
-            font-size: 1.1rem;
-            flex-shrink: 0;
-            margin-top: 1px;
-        }
-        
-        /* Safety Notice */
-        .safety-notice {
-            margin: 50px auto;
-            padding: 40px;
-            background: linear-gradient(135deg, rgba(235, 248, 255, 0.97) 0%, rgba(219, 234, 254, 0.97) 100%);
-            border-radius: var(--radius-lg);
-            border: 2px solid rgba(30, 64, 175, 0.35);
-            max-width: 1200px;
-            position: relative;
-            overflow: hidden;
-            box-shadow: var(--shadow-md);
-        }
-        
-        .safety-notice::before {
-            content: '🛡️';
-            position: absolute;
-            top: -20px;
-            right: -20px;
-            font-size: 8rem;
-            opacity: 0.08;
-            transform: rotate(15deg);
-        }
-        
-        .safety-title {
-            color: var(--nz-deep-blue);
-            font-size: 1.5rem;
-            margin-bottom: 25px;
-            font-weight: 800;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .safety-title::before {
-            content: '🛡️';
-            font-size: 1.8rem;
-        }
-        
-        /* 更新后的联系信息区域 */
-        .compact-contact-info {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-            margin: 40px 0;
-            position: relative;
-            z-index: 2;
-        }
-        
-        .contact-card {
-            background: rgba(255, 255, 255, 0.2);
-            padding: 35px 30px;
-            border-radius: var(--radius-lg);
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
-            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
-        }
-        
-        .contact-card:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: translateY(-8px);
-            box-shadow: 0 18px 45px rgba(0, 0, 0, 0.15);
-        }
-        
-        .contact-icon-row {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 20px;
-            margin-bottom: 20px;
-        }
-        
-        .contact-icon {
-            font-size: 3rem;
-            color: var(--nz-gold);
-            filter: drop-shadow(0 2px 4px rgba(212, 175, 55, 0.3));
-        }
-        
-        .contact-icon.small {
-            font-size: 2.5rem;
-        }
-        
-        .contact-label {
-            font-weight: 800;
-            font-size: 1.2rem;
-            color: var(--nz-gold);
-            margin-bottom: 12px;
             letter-spacing: 0.5px;
-            text-shadow: 0 1px 2px rgba(0,0,0,0.1);
         }
-        
-        .contact-value {
-            font-size: 1.1rem;
-            line-height: 1.6;
-            margin-bottom: 8px;
-            font-weight: 600;
+
+        .back-home-float:hover {
+            background: #7f1f1f;
+            transform: translateY(-3px);
+            box-shadow: 0 20px 35px -8px rgba(158, 42, 43, 0.3);
         }
-        
-        .contact-note {
-            font-size: 0.95rem;
-            opacity: 0.9;
-            margin-top: 10px;
-            font-style: italic;
-        }
-        
-        /* CTA Section */
-        .cta-section {
-            padding: 60px 30px;
-            text-align: center;
-            background: linear-gradient(135deg, var(--nz-deep-blue) 0%, #1e3a8a 100%);
-            color: white;
-            position: relative;
+
+        .container {
+            max-width: 1400px;
+            margin: 20px auto;
+            background: rgba(255, 250, 240, 0.95);
+            backdrop-filter: blur(6px);
+            border-radius: var(--radius-classic);
+            box-shadow: var(--shadow-elegant);
             overflow: hidden;
-            margin: 30px;
-            border-radius: var(--radius-lg);
-            box-shadow: 0 18px 50px rgba(31, 64, 175, 0.2);
+            border: 1px solid rgba(198, 159, 104, 0.2);
         }
-        
-        .cta-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" opacity="0.06"><circle cx="50" cy="50" r="40" fill="white"/></svg>');
-        }
-        
-        .cta-title {
-            font-size: 2.2rem;
-            margin-bottom: 15px;
-            position: relative;
-            z-index: 2;
-            font-weight: 800;
-            text-shadow: 0 2px 12px rgba(0,0,0,0.35);
-            line-height: 1.2;
-        }
-        
-        .cta-subtitle {
-            font-size: 1.2rem;
-            opacity: 0.95;
-            margin-bottom: 35px;
-            position: relative;
-            z-index: 2;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-            line-height: 1.6;
-            font-weight: 400;
-        }
-        
-        /* Compact button container */
-        .compact-btn-container {
-            margin-top: 35px;
+
+        /* 视频头部 —— 完全展示，自适应比例，无裁剪 
+           使用压缩版本视频 tcm-compressed.mp4 确保体积减小但仍完整展示 */
+        .video-header {
+            width: 100%;
+            background: var(--ink);  /* 背景色填充空隙 */
+            border-bottom: 3px solid var(--golden);
             display: flex;
-            gap: 20px;
+            align-items: center;
             justify-content: center;
+        }
+
+        .video-header video {
+            display: block;
+            width: 100%;
+            height: auto;            /* 高度自适应，完整显示视频比例 */
+            max-height: 85vh;        /* 可选上限，防止太高，但依然保证完整可视 */
+            object-fit: contain;     /* 保证视频全部可见，无裁剪 */
+            background-color: #2f2a24; /* 与墨色相近，填满空隙 */
+        }
+
+        .overlay-logo {
+            position: absolute;
+            bottom: 30px;
+            right: 40px;
+            z-index: 10;
+            background: rgba(46, 42, 40, 0.55);
+            backdrop-filter: blur(10px);
+            padding: 18px 32px;
+            border-radius: 60px;
+            border: 1px solid var(--golden);
+            color: white;
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-shadow: 0 2px 10px #2e2a28;
+        }
+
+        .overlay-logo small {
+            font-size: 1rem;
+            font-weight: 300;
+            display: block;
+            color: var(--sand);
+        }
+
+        /* 导航条 */
+        .nav-bar {
+            padding: 16px 40px;
+            background: rgba(255, 250, 240, 0.9);
+            border-bottom: 1px solid var(--golden);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             flex-wrap: wrap;
         }
-        
-        .compact-btn {
+
+        .breadcrumb a {
+            color: var(--cinnabar);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.05rem;
+            border-bottom: 1px solid transparent;
+            transition: 0.2s;
+        }
+        .breadcrumb a:hover { border-bottom-color: var(--cinnabar); }
+
+        /* 电话/WhatsApp 图标样式 - 已修改为仅图标 */
+        .contact-icons {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .contact-icons a {
+            color: var(--jade);
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 1.5rem;        /* 增大图标尺寸 */
+            transition: transform 0.2s, color 0.2s;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 12px;
-            background: var(--nz-blue);
-            color: white;
-            padding: 16px 40px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 800;
-            font-size: 1.1rem;
-            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.1);
-            border: 2px solid var(--nz-blue);
-            box-shadow: 0 8px 25px rgba(31, 64, 175, 0.4);
-            min-width: 250px;
-            letter-spacing: 0.3px;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: rgba(255,250,240,0.7);
+            border: 1px solid var(--golden);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
         }
-        
-        .compact-btn:hover {
-            background: transparent;
-            color: white;
-            border-color: white;
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(31, 64, 175, 0.5);
+        .contact-icons a i {
+            margin: 0;                /* 移除原有边距 */
         }
-        
-        .compact-btn-secondary {
-            background: transparent;
-            border-color: white;
-        }
-        
-        .compact-btn-secondary:hover {
+        .contact-icons a:hover {
+            color: var(--cinnabar);
+            transform: scale(1.1) translateY(-2px);
             background: white;
-            color: var(--nz-blue);
+            border-color: var(--cinnabar);
+            box-shadow: 0 8px 12px rgba(158,42,43,0.15);
         }
-        
-        /* Footer */
-        .footer {
-            background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+        /* WhatsApp 按钮保留原按钮样式但变成圆形图标风格 */
+        .contact-icons .whatsapp-icon {
+            background: #1F5E4A;
             color: white;
-            padding: 70px 30px 50px;
+            border-color: var(--golden);
+            font-size: 1.6rem;
+        }
+        .contact-icons .whatsapp-icon:hover {
+            background: #17473a;
+            color: white;
+            border-color: var(--cinnabar);
+        }
+
+        /* 中医风格标题 */
+        .heritage-title {
             text-align: center;
-            position: relative;
+            padding: 40px 30px 20px;
         }
-        
-        .footer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+        .heritage-title h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--cinnabar);
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 0 rgba(198,159,104,0.2);
         }
-        
-        .footer-logo {
-            font-size: 2.5rem;
+        .heritage-title h2 {
+            font-size: 2rem;
+            color: var(--jade);
+            font-style: italic;
+            border-top: 1px solid var(--golden);
+            display: inline-block;
+            padding-top: 15px;
+            margin-top: 15px;
+        }
+
+        /* 重要声明 折叠 */
+        .notice-fold {
+            margin: 20px 40px;
+            border: 1px solid var(--golden);
+            border-radius: 30px;
+            background: rgba(255,250,240,0.8);
+        }
+        .notice-header {
+            padding: 22px 35px;
+            background: linear-gradient(95deg, var(--cinnabar) 0%, #b6492a 100%);
+            color: white;
+            border-radius: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+        .notice-header span i { margin-right: 12px; }
+        .notice-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: 0.5s ease;
+            padding: 0 30px;
+            background: #fcf6ec;
+            border-radius: 0 0 30px 30px;
+        }
+        .notice-fold.active .notice-content {
+            max-height: 550px;
+            padding: 30px;
+        }
+
+        /* 9宫格卡片 (点击展开) */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            padding: 30px 40px;
+        }
+        .tcm-card {
+            background: white;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 8px 22px rgba(106, 78, 55, 0.1);
+            border: 1px solid #e7d8bf;
+            transition: 0.25s;
+            cursor: pointer;
+        }
+        .tcm-card:hover { border-color: var(--golden); box-shadow: 0 18px 35px -10px #8b5a2b30; }
+        .card-header {
+            padding: 22px 18px;
+            background: #fdf3e6;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .card-number {
+            width: 44px; height: 44px;
+            background: var(--cinnabar);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             font-weight: 800;
-            color: var(--nz-gold);
-            margin-bottom: 25px;
-            letter-spacing: -0.5px;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            font-size: 1.4rem;
+            box-shadow: 0 4px 8px rgba(158,42,43,0.2);
         }
-        
-        .footer-tagline {
-            font-size: 1.15rem;
-            color: #d1d5db;
-            margin-bottom: 40px;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-            line-height: 1.8;
+        .card-icon { font-size: 2.4rem; }
+        .card-title {
+            flex:1;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--ink);
+            line-height: 1.2;
         }
-        
-        .site-footer {
-            margin-top: 40px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            padding-top: 30px;
+        .card-title small { display: block; font-size: 1rem; color: var(--jade); }
+        .arrow { font-size: 2rem; color: var(--cinnabar); transition: 0.3s; }
+        .tcm-card.active .arrow { transform: rotate(180deg); }
+
+        .card-expand {
+            max-height: 0;
+            overflow: hidden;
+            transition: 0.5s cubic-bezier(0.2, 0.9, 0.3, 1);
+            background: #fffbf5;
         }
-        
-        .site-footer .footer-nav {
-            margin-bottom: 25px;
+        .tcm-card.active .card-expand { max-height: 550px; }
+        .expand-inner {
+            padding: 25px 20px;
+            border-top: 1px dashed var(--golden);
+        }
+        .expand-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 20px;
+            margin-bottom: 18px;
+            border: 1px solid #ebd9c0;
+        }
+        .feature-list { list-style: none; }
+        .feature-list li {
+            padding: 8px 0 8px 28px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="%23C89F68"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>') left center no-repeat;
+            background-size: 18px;
+            font-size: 1rem;
+        }
+
+        /* 6步骤 三横排 */
+        .steps-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin: 50px 40px;
+        }
+        .step-item {
+            background: linear-gradient(135deg, #fff, #fbf3e8);
+            padding: 30px 20px;
+            border-radius: 40px;
+            border: 1px solid var(--golden);
+            box-shadow: 0 8px 0 #aa7b4c20;
+            text-align: center;
+        }
+        .step-num {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--cinnabar);
+            opacity: 0.25;
+            line-height: 1;
+        }
+        .step-item p { font-size: 1.3rem; font-weight: 600; color: var(--jade); margin-top: 10px;}
+
+        /* 按钮区域 */
+        .book-section {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 15px;
+            gap: 30px;
+            margin: 40px 40px 30px;
         }
-        
-        .site-footer .footer-nav a {
-            color: #cbd5e1;
-            text-decoration: none;
-            font-size: 1rem;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            padding: 8px 16px;
-            border-radius: 25px;
-            position: relative;
-        }
-        
-        .site-footer .footer-nav a:hover {
+        .btn-gold {
+            background: var(--cinnabar);
             color: white;
-            background: rgba(255,255,255,0.1);
+            padding: 18px 45px;
+            border-radius: 60px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 18px;
+            border: 2px solid var(--golden);
+            transition: 0.25s;
+            box-shadow: 0 12px 0 #571c1c;
         }
-        
-        .site-footer .footer-nav a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            width: 0;
-            height: 2px;
-            background: var(--nz-gold);
-            transition: all 0.3s ease;
-            transform: translateX(-50%);
+        .btn-gold:hover {
+            background: #811f1f;
+            transform: translateY(-4px);
+            box-shadow: 0 18px 0 #571c1c;
         }
-        
-        .site-footer .footer-nav a:hover::after {
-            width: 60%;
+
+        .whatsapp-btn {
+            background: #1F5E4A;
+            border-color: var(--golden);
+            box-shadow: 0 12px 0 #12493a;
+            font-size: 1.3rem;
+            padding: 16px 40px;
         }
-        
-        .footer-brand {
-            color: #a0aec0;
-            font-size: 1.1rem;
-            margin-bottom: 15px;
+        .whatsapp-btn:hover { background: #17473a; }
+
+        /* 页脚 法律链接横排 + 社交 */
+        .footer-classic {
+            background: var(--ink);
+            color: #eadbc6;
+            padding: 60px 40px 40px;
+            margin-top: 60px;
+            border-radius: var(--radius-classic) var(--radius-classic) 0 0;
         }
-        
-        .footer-notice {
-            color: #94a3b8;
-            font-size: 0.9rem;
-            max-width: 800px;
-            margin: 30px auto 0;
-            line-height: 1.6;
-            padding: 20px;
-            background: rgba(255,255,255,0.08);
-            border-radius: var(--radius-md);
+
+        .social-row {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
         }
-        
-        /* ========== RESPONSIVE DESIGN ========== */
-        
-        /* Large Tablets (1200px and below) */
-        @media (max-width: 1200px) {
-            .container {
-                margin: 18px;
-                max-width: calc(100% - 36px);
-            }
-            
-            .accordion-grid {
-                gap: 25px;
-            }
-            
-            .logo-container {
-                gap: 20px;
-            }
-            
-            .compact-contact-info {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 25px;
-            }
+        .social-row a {
+            color: var(--golden);
+            font-size: 2rem;
+            transition: 0.2s;
+            width: 55px; height: 55px;
+            background: #423d38;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
         }
-        
-        /* Tablets (992px and below) */
-        @media (max-width: 992px) {
-            .container {
-                margin: 15px;
-                max-width: calc(100% - 30px);
-                border-radius: var(--radius-lg);
-            }
-            
-            .header {
-                padding: 35px 25px;
-                min-height: 200px;
-            }
-            
-            .logo {
-                font-size: 2.4rem;
-            }
-            
-            .logo-subtitle {
-                font-size: 1rem;
-            }
-            
-            .main-title {
-                font-size: 2rem;
-            }
-            
-            .main-subtitle {
-                font-size: 1.3rem;
-            }
-            
-            .section-title {
-                font-size: 2.2rem;
-            }
-            
-            .accordion-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 20px;
-            }
-            
-            .banner, .cta-section, .safety-notice {
-                margin: 25px;
-                padding: 35px 30px;
-            }
-            
-            .notice-accordion {
-                margin: 25px;
-            }
-            
-            .compact-btn {
-                min-width: 220px;
-                padding: 15px 35px;
-            }
-            
-            .contact-card {
-                padding: 30px 25px;
-            }
+        .social-row a:hover { background: var(--cinnabar); color: white; transform: scale(1.1); }
+
+        .legal-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px 40px;
+            border-top: 1px solid #5f5242;
+            border-bottom: 1px solid #5f5242;
+            padding: 28px 20px;
+            margin: 25px 0 30px;
         }
-        
-        /* Small Tablets (768px and below) */
-        @media (max-width: 768px) {
-            .container {
-                margin: 12px;
-                border-radius: var(--radius-md);
-            }
-            
-            .header {
-                padding: 30px 20px;
-                min-height: 180px;
-                border-bottom-width: 2px;
-            }
-            
-            .logo-container {
-                flex-direction: column;
-                gap: 20px;
-                margin-bottom: 15px;
-            }
-            
-            .logo-image {
-                width: 120px;
-                height: 120px;
-            }
-            
-            .logo {
-                font-size: 2rem;
-            }
-            
-            .logo-subtitle {
-                font-size: 0.95rem;
-            }
-            
-            .main-title {
-                font-size: 1.8rem;
-                margin: 15px 0 10px;
-            }
-            
-            .main-subtitle {
-                font-size: 1.2rem;
-                margin-bottom: 10px;
-            }
-            
-            .wellness-tagline {
-                font-size: 1rem;
-                padding: 10px 20px;
-                margin-top: 15px;
-            }
-            
-            .nav-container {
-                padding: 12px 20px;
-            }
-            
-            .section-title {
-                font-size: 1.9rem;
-            }
-            
-            .section-subtitle {
-                font-size: 1.1rem;
-            }
-            
-            .therapies {
-                padding: 50px 20px;
-            }
-            
-            .accordion-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-            
-            .accordion-header {
-                padding: 25px 20px;
-            }
-            
-            .accordion-number {
-                width: 40px;
-                height: 40px;
-                font-size: 1.2rem;
-            }
-            
-            .accordion-icon {
-                font-size: 2.5rem;
-            }
-            
-            .accordion-title {
-                font-size: 1.3rem;
-            }
-            
-            .accordion-body {
-                padding: 30px 20px;
-            }
-            
-            .accordion-image-container {
-                max-width: 100%;
-            }
-            
-            .accordion-image {
-                height: 200px;
-            }
-            
-            .banner, .cta-section, .safety-notice, .notice-accordion {
-                margin: 20px;
-                padding: 30px 25px;
-            }
-            
-            .banner h2 {
-                font-size: 1.7rem;
-            }
-            
-            .banner p {
-                font-size: 1.1rem;
-            }
-            
-            .cta-title {
-                font-size: 1.8rem;
-            }
-            
-            .cta-subtitle {
-                font-size: 1.1rem;
-            }
-            
-            .compact-btn-container {
-                flex-direction: column;
-                align-items: center;
-                gap: 15px;
-            }
-            
-            .compact-btn {
-                width: 100%;
-                max-width: 350px;
-                min-width: auto;
-            }
-            
-            .compact-contact-info {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-            
-            .contact-card {
-                padding: 25px 20px;
-            }
-            
-            .notice-accordion-header {
-                padding: 22px 25px;
-            }
-            
-            .notice-title {
-                font-size: 1.3rem;
-                gap: 12px;
-            }
-            
-            .notice-content {
-                padding: 25px;
-            }
-            
-            .footer {
-                padding: 50px 20px 40px;
-            }
-            
-            .footer-logo {
-                font-size: 2.2rem;
-            }
-            
-            .footer-tagline {
-                font-size: 1.05rem;
-            }
-            
-            .site-footer .footer-nav {
-                flex-direction: column;
-                align-items: center;
-                gap: 12px;
-            }
-            
-            .site-footer .footer-nav a {
-                width: 100%;
-                max-width: 300px;
-            }
-            
-            .back-home-float {
-                top: 15px;
-                left: 15px;
-                padding: 10px 20px;
-                font-size: 0.9rem;
-            }
+        .legal-links a {
+            color: #e0cfbb;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 500;
+            padding-bottom: 3px;
+            border-bottom: 2px solid transparent;
+            transition: 0.2s;
         }
-        
-        /* Mobile (576px and below) */
-        @media (max-width: 576px) {
-            .container {
-                margin: 10px;
-                border-radius: var(--radius-md);
-            }
-            
-            .header {
-                padding: 25px 15px;
-                min-height: 170px;
-            }
-            
-            .logo {
-                font-size: 1.8rem;
-            }
-            
-            .logo-subtitle {
-                font-size: 0.9rem;
-                line-height: 1.3;
-            }
-            
-            .main-title {
-                font-size: 1.6rem;
-                margin: 12px 0 8px;
-            }
-            
-            .main-subtitle {
-                font-size: 1.1rem;
-            }
-            
-            .wellness-tagline {
-                font-size: 0.95rem;
-                padding: 8px 18px;
-                margin-top: 12px;
-            }
-            
-            .section-title {
-                font-size: 1.7rem;
-            }
-            
-            .section-subtitle {
-                font-size: 1rem;
-            }
-            
-            .therapies {
-                padding: 40px 15px;
-            }
-            
-            .accordion-header {
-                padding: 20px 18px;
-                flex-wrap: wrap;
-            }
-            
-            .accordion-title-container {
-                order: 3;
-                width: 100%;
-                margin-top: 10px;
-            }
-            
-            .accordion-body {
-                padding: 25px 18px;
-            }
-            
-            .accordion-image {
-                height: 180px;
-            }
-            
-            .accordion-desc {
-                padding: 20px;
-                margin-bottom: 25px;
-            }
-            
-            .banner, .cta-section, .safety-notice, .notice-accordion {
-                margin: 15px;
-                padding: 25px 20px;
-            }
-            
-            .banner h2 {
-                font-size: 1.5rem;
-            }
-            
-            .banner p {
-                font-size: 1rem;
-            }
-            
-            .cta-title {
-                font-size: 1.6rem;
-            }
-            
-            .cta-subtitle {
-                font-size: 1rem;
-                margin-bottom: 25px;
-            }
-            
-            .compact-btn {
-                padding: 14px 30px;
-                font-size: 1rem;
-            }
-            
-            .contact-card {
-                padding: 22px 18px;
-            }
-            
-            .contact-icon {
-                font-size: 2.5rem;
-            }
-            
-            .contact-icon.small {
-                font-size: 2.2rem;
-            }
-            
-            .contact-label {
-                font-size: 1.1rem;
-            }
-            
-            .notice-accordion-header {
-                padding: 20px 22px;
-            }
-            
-            .notice-title {
-                font-size: 1.2rem;
-                gap: 10px;
-            }
-            
-            .notice-content {
-                padding: 20px;
-            }
-            
-            .bilingual-text {
-                padding: 18px;
-            }
-            
-            .chinese-text, .english-text {
-                padding-left: 10px;
-                border-left-width: 3px;
-            }
-            
-            .footer {
-                padding: 40px 15px 30px;
-            }
-            
-            .footer-logo {
-                font-size: 2rem;
-            }
-            
-            .footer-tagline {
-                font-size: 1rem;
-                margin-bottom: 30px;
-            }
-            
-            .back-home-float {
-                top: 12px;
-                left: 12px;
-                padding: 8px 16px;
-                font-size: 0.85rem;
-            }
-            
-            body {
-                background-attachment: scroll;
-                background-size: cover;
-            }
+        .legal-links a:hover {
+            color: var(--golden);
+            border-bottom-color: var(--golden);
         }
-        
-        /* Small Mobile (400px and below) */
-        @media (max-width: 400px) {
-            .logo {
-                font-size: 1.6rem;
-            }
-            
-            .main-title {
-                font-size: 1.4rem;
-            }
-            
-            .main-subtitle {
-                font-size: 1rem;
-            }
-            
-            .section-title {
-                font-size: 1.5rem;
-            }
-            
-            .accordion-title {
-                font-size: 1.2rem;
-            }
-            
-            .cta-title {
-                font-size: 1.4rem;
-            }
-            
-            .compact-btn {
-                padding: 12px 25px;
-                font-size: 0.95rem;
-                gap: 8px;
-            }
-            
-            .back-home-float {
-                padding: 7px 14px;
-                font-size: 0.8rem;
-                top: 10px;
-                left: 10px;
-            }
-            
-            .accordion-image {
-                height: 160px;
-            }
+
+        .footer-note {
+            text-align: center;
+            font-size: 0.95rem;
+            color: #b7a48e;
         }
-        
-        /* Animation */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .footer-note strong { color: var(--golden); }
+
+        /* 响应式 */
+        @media (max-width: 1000px) {
+            .grid-3 { grid-template-columns: repeat(2,1fr); }
+            .steps-row { grid-template-columns: repeat(2,1fr); }
         }
-        
-        .fade-in {
-            animation: fadeInUp 0.6s ease-out forwards;
-            opacity: 0;
-        }
-        
-        /* Print Styles */
-        @media print {
-            .back-home-float,
-            .compact-btn-container,
-            .language-switch {
-                display: none !important;
-            }
-            
-            body {
-                background: white !important;
-                color: black !important;
-            }
-            
-            .container {
-                box-shadow: none !important;
-                border: 1px solid #ddd !important;
-                margin: 0 !important;
-            }
-            
-            .header, .cta-section, .footer {
-                background: white !important;
-                color: black !important;
-            }
-            
-            .accordion-card, .safety-notice, .banner {
-                box-shadow: none !important;
-                border: 1px solid #ddd !important;
-            }
+        @media (max-width: 700px) {
+            .grid-3 { grid-template-columns: 1fr; }
+            .steps-row { grid-template-columns: 1fr; }
+            .video-header video { max-height: 70vh; } /* 移动端依然完整 */
+            .overlay-logo { font-size: 1.5rem; padding: 12px 20px; bottom: 15px; right: 20px; }
         }
     </style>
 </head>
 <body>
-    
-    <!-- Floating Back to Home -->
-    <a href="index.html" class="back-home-float" aria-label="Back to Home">
-        <i class="fas fa-arrow-left"></i>
-        <span>返回首页 | Back to Home</span>
-    </a>
-    
-    <div class="container fade-in">
-        <!-- Header -->
-        <header class="header">
-            <!-- Logo和文本容器 -->
-            <div class="logo-container">
-                <img src="logo.jpg" alt="KIWI Serenity Limited Logo" class="logo-image">
-                <div class="logo-text-container">
-                    <div class="logo">KIWI Serenity Limited</div>
-                    <div class="logo-subtitle">新西兰注册公司 | New Zealand Registered Company</div>
-                    <div class="logo-subtitle">连接新西兰标准与正宗中医 | Bridging NZ Standards with Authentic TCM</div>
-                </div>
+
+<!-- 返回首页按钮 -->
+<a href="index.html" class="back-home-float"><i class="fas fa-arrow-left"></i> 返回首页 | Home</a>
+
+<div class="container">
+
+    <!-- 视频头：完整平铺，自适应尺寸 (object-fit: contain) 保证完全可见 
+         视频源更改为压缩自适应大小版本 tcm-compressed.mp4 -->
+    <div class="video-header" style="position: relative;">
+        <video autoplay muted loop playsinline>
+            <source src="tcm-compressed.mp4" type="video/mp4">
+            <!-- 如果压缩视频也无法加载，显示柔和背景；优雅降级 -->
+        </video>
+        <div class="overlay-logo">
+            KIWI Serenity<br>
+            <small>成都 · 中医文化</small>
+        </div>
+    </div>
+
+    <!-- 导航 + 电话/WhatsApp 图标 (已修改为仅图标) -->
+    <div class="nav-bar">
+        <div class="breadcrumb">
+            <a href="index.html">首页 Home</a> <i class="fas fa-chevron-right" style="margin:0 8px; color:#C89F68;"></i> 成都中医体验
+        </div>
+        <div class="contact-icons">
+            <!-- 电话图标（直拨） -->
+            <a href="tel:+640220405795" title="拨打电话 +64 22 040 5795"><i class="fas fa-phone-alt"></i></a>
+            <!-- WhatsApp 图标（点击直接打开对话） -->
+            <a href="https://wa.me/64223244938?text=Hello%20KIWI%20Serenity%2C%20I%27m%20interested%20in%20your%20TCM%20program" target="_blank" class="whatsapp-icon" title="WhatsApp 咨询"><i class="fab fa-whatsapp"></i></a>
+        </div>
+    </div>
+
+    <!-- 中英文主标题 -->
+    <div class="heritage-title">
+        <h1>成都中医文化体验</h1>
+        <h2>Chengdu Traditional Chinese Medicine Culture Experience</h2>
+        <div style="margin:20px auto 0; max-width:800px; color: #5f4e3c; font-size:1.2rem;"><i>蜀地灵韵 · 岐黄薪火 · 寰宇共享</i></div>
+    </div>
+
+    <!-- 折叠式重要声明 (默认关闭) -->
+    <div class="notice-fold" id="importantNotice">
+        <div class="notice-header" onclick="this.parentElement.classList.toggle('active')">
+            <span><i class="fas fa-scroll"></i> 重要声明 | Important Notice</span>
+            <i class="fas fa-chevron-down" style="font-size:2rem;"></i>
+        </div>
+        <div class="notice-content">
+            <div style="border-left: 4px solid var(--cinnabar); padding-left: 20px; margin: 15px 0;">
+                <p><strong>KIWI Serenity Limited</strong> 仅为预约协调服务公司。我们不直接提供中医理疗体验。<br>
+                <span style="color: var(--jade);">KIWI Serenity Limited is a booking coordination service only. We do not directly provide TCM therapy experiences.</span></p>
+                <p>所有中医文化体验项目均由我们在成都的合作诊所持牌中医师执行。<br>
+                <span style="color: var(--jade);">All TCM culture experiences are conducted by licensed TCM practitioners at our partner clinics in Chengdu.</span></p>
+                <p>我们协助预约、提供英语支持，并确保从新西兰到中国的无缝体验。<br>
+                <span style="color: var(--jade);">We assist with bookings, provide English support, and ensure a seamless experience from New Zealand to China and back.</span></p>
             </div>
-            
-            <h1 class="main-title">成都中医文化体验</h1>
-            <h2 class="main-subtitle">Chengdu Traditional Chinese Medicine Culture Experience</h2>
-            
-            <div class="wellness-tagline">探索四川，健康之旅，体验巅峰 | Discover Sichuan, Wellness Travel, Experience the Summit</div>
-        </header>
-        
-        <!-- 折叠式重要声明 - 默认不展开 -->
-        <div class="notice-accordion fade-in" onclick="toggleNotice(this)">
-            <div class="notice-accordion-header">
-                <div class="notice-title">
-                    <span class="notice-title-icon">⚠️</span>
-                    <span>重要声明 | Important Notice</span>
-                </div>
-                <div class="notice-arrow">▼</div>
+        </div>
+    </div>
+
+    <!-- 九宫格卡片 (点击展开, 保留原图片名) -->
+    <div class="grid-3">
+        <!-- 1 艾灸 -->
+        <div class="tcm-card" onclick="toggleCard(this)">
+            <div class="card-header">
+                <span class="card-number">1</span>
+                <span class="card-icon">🔥</span>
+                <div class="card-title">艾灸 <small>Moxibustion</small></div>
+                <span class="arrow">▼</span>
             </div>
-            <div class="notice-accordion-content">
-                <div class="notice-content">
-                    <div class="bilingual-text">
-                        <div class="chinese-text">KIWI Serenity Limited仅为预约协调服务公司。</div>
-                        <div class="english-text">KIWI Serenity Limited is a booking coordination service only.</div>
-                    </div>
-                    <div class="bilingual-text">
-                        <div class="chinese-text">我们不直接提供中医理疗体验。</div>
-                        <div class="english-text">We do not directly provide TCM therapy experiences.</div>
-                    </div>
-                    <div class="bilingual-text">
-                        <div class="chinese-text">所有中医文化体验项目均由我们在成都的合作诊所持牌中医师执行。</div>
-                        <div class="english-text">All TCM culture experiences are conducted by licensed TCM practitioners at our partner clinics in Chengdu.</div>
-                    </div>
-                    <div class="bilingual-text">
-                        <div class="chinese-text">我们协助预约、提供英语支持，并确保从新西兰到中国往返的无缝体验。</div>
-                        <div class="english-text">We assist with bookings, provide English support, and ensure a seamless experience from New Zealand to China and back.</div>
-                    </div>
+            <div class="card-expand">
+                <div class="expand-inner">
+                    <img src="艾灸.jpg" alt="艾灸" class="expand-img" onerror="this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22320%22%20height%3D%22200%22%20viewBox%3D%220%200%20320%20200%22%3E%3Crect%20width%3D%22320%22%20height%3D%22200%22%20fill%3D%22%23eadbc6%22%2F%3E%3Ctext%20x%3D%22160%22%20y%3D%22110%22%20font-family%3D%22serif%22%20font-size%3D%2220%22%20fill%3D%22%239e2a2b%22%20text-anchor%3D%22middle%22%3E艾灸%3C%2Ftext%3E%3C%2Fsvg%3E'">
+                    <p><strong>温热调理 | Warming Therapy</strong></p>
+                    <ul class="feature-list">
+                        <li>温经散寒 | Warms body, relieves chills</li>
+                        <li>扶阳固本 | Boosts energy, strengthens immunity</li>
+                        <li>改善寒性体质 | Improves cold-sensitive constitution</li>
+                    </ul>
                 </div>
             </div>
         </div>
-        
-        <!-- Banner -->
-        <section class="banner fade-in">
-            <h2>✨ 专为国际宾客设计的沉浸式中医体验 ✨</h2>
-            <p>Immerse yourself in 5,000 years of healing wisdom. Our bilingual experts ensure a safe, comfortable, and authentic TCM journey in the heart of Chengdu.</p>
-            <p>✨ Immersive TCM Experience Designed for International Guests ✨</p>
-            <p>沉浸于五千年的智慧。我们的双语专家确保您在成都享受安全、舒适且正宗的中医之旅。</p>
-        </section>
-        
-        <!-- Core TCM Therapies Section - 折叠式九宫格卡片设计 -->
-        <section class="therapies">
-            <div class="section-header">
-                <h2 class="section-title">核心中医理疗项目简介</h2>
-                <div class="section-subtitle">Core TCM Therapy Introduction | 中医理疗 · 文化体验 · 安全舒适 | TCM Wellness · Cultural Experience · Safe & Comfortable</div>
-            </div>
-            
-            <div class="accordion-grid">
-                <!-- 1. 艾灸 | Moxibustion -->
-                <div class="accordion-card fade-in" onclick="toggleAccordion(this)">
-                    <div class="accordion-header">
-                        <div class="accordion-number">1</div>
-                        <div class="accordion-icon">🔥</div>
-                        <div class="accordion-title-container">
-                            <h3 class="accordion-title">艾灸 | Moxibustion</h3>
-                            <div class="accordion-tag">温热调理 | Warming Therapy</div>
-                        </div>
-                        <div class="accordion-arrow">▼</div>
-                    </div>
-                    <div class="accordion-content">
-                        <div class="accordion-body">
-                            <div class="accordion-image-container">
-                                <img src="艾灸.jpg" alt="艾灸 | Moxibustion" class="accordion-image" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIwIiBoZWlnaHQ9IjIyMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZmZmIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjE4IiBmaWxsPSIjNjY2IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+RWZvcnRzIG9mIE1veGlidXN0aW9uPC90ZXh0Pjwvc3ZnPg=='">
-                            </div>
-                            <div class="accordion-desc">
-                                <div class="accordion-desc-chinese">艾绒温热刺激穴位，温通气血、扶正祛寒。</div>
-                                <div class="accordion-desc-english">Warms acupoints with moxa wool to regulate Qi and dispel cold.</div>
-                            </div>
-                            <ul class="accordion-features">
-                                <li class="accordion-feature-item">
-                                    <div class="accordion-feature-chinese">温经散寒 | Warms body, relieves chills</div>
-                                </li>
-                                <li class="accordion-feature-item">
-                                    <div class="accordion-feature-chinese">扶阳固本 | Boosts energy, strengthens immunity</div>
-                                </li>
-                                <li class="accordion-feature-item">
-                                    <div class="accordion-feature-chinese">改善寒性体质 | Improves cold-sensitive constitution</div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- 2. 拔罐 | Cupping -->
-                <div class="accordion-card fade-in" onclick="toggleAccordion(this)">
-                    <div class="accordion-header">
-                        <div class="accordion-number">2</div>
-                        <div class="accordion-icon">🫙</div>
-                        <div class="accordion-title-container">
-                            <h3 class="accordion-title">拔罐 | Cupping</h3>
-                            <div class="accordion-tag">祛瘀排毒 | Detoxification</div>
-                        </div>
-                        <div class="accordion-arrow">▼</div>
-                    </div>
-                    <div class="accordion-content">
-                        <div class="accordion-body">
-                            <div class="accordion-image-container">
-                                <img src="拔罐.jpg" alt="拔罐 | Cupping" class="accordion-image" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIwIiBoZWlnaHQ9IjIyMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZmZmIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjE4IiBmaWxsPSIjNjY2IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+Q3VwcGluZyBUaGVyYXB5PC90ZXh0Pjwvc3ZnPg=='">
-                            </div>
-                            <div class="accordion-desc">
-                                <div class="accordion-desc-chinese">负压吸附体表，促进气血运行、排散瘀滞。</div>
-                                <div class="accordion-desc-english">Uses suction cups to promote circulation and release tension.</div>
-                            </div>
-                            <ul class="accordion-features">
-                                <li class="accordion-feature-item">
-                                    <div class="accordion-feature-chinese">活血化瘀 | Improves blood flow, reduces stiffness</div>
-                                </li>
-                                <li class="accordion-feature-item">
-                                    <div class="accordion-feature-chinese">祛风散寒 | Relieves cold and stiffness</div>
-                                </li>
-                                <li class="accordion-feature-item">
-                                    <div class="accordion-feature-chinese">缓解肌肉紧张 | Relieves muscle tension</div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- 3. 电针 | Electroacupuncture -->
-                <div class="accordion-card fade-in" onclick="toggleAccordion(this)">
-                    <div class="accordion-header">
-                        <div class="accordion-number">3</div>
-                        <div class="accordion-icon">⚡</div>
-                        <div class="accordion-title-container">
-                            <h3 class="accordion-title">电针 | Electroacupuncture</h3>
-                            <div class="accordion-tag">现代技术 | Modern Technique</div>
-                        </div>
-                        <div class="accordion-arrow">▼</div>
-                    </div>
-                    <div class="accordion-content">
-                        <div class="accordion-body">
-                            <div class="accordion-image-container">
-                                <img src="电针.jpg" alt="电针 | Electroacupuncture" class="accordion-image" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIwIiBoZWlnaHQ9IjIyMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZmZmIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjE4IiBmaWxsPSIjNjY2IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+RWxlY3Ryb2FjdXB1bmN0dXJlPC90ZXh0Pjwvc3ZnPg=='">
-                            </div>
-                            <div class="accordion-desc">
-                                <div class="accordion-desc-chinese">针灸结合微电流，增强经络调节作用。</div>
-                                <div class="accordion-desc-english">Combines acupuncture with gentle electrical stimulation for enhanced effect.</div>
-                            </div>
-                            <ul class="accordion-features">
-                                <li class="accordion-feature-item">
-                                    <div class="accordion-feature-chinese">疏通经络 | Unblocks energy pathways</div>
-                                </li>
-                                <li class="accordion-feature-item">
-                                    <div class="accordion-feature-chinese">调节气血 | Regulates energy and circulation</div>
-                                </li>
-                                <li class="accordion-feature-item">
-                                    <div class="accordion-feature-chinese">缓解慢性疼痛 | Relieves chronic pain</div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- 4. 刮痧 | Gua Sha -->
-                <div class="accordion-card fade-in" onclick="toggleAccordion(this)">
-                    <div class="accordion-header">
-                        <div class="accordion-number">4</div>
-                        <div class="accordion-icon">🌿</div>
-                        <div class="accordion-title-container">
-                            <h3 class="accordion-title">刮痧 | Gua Sha</h3>
-                            <div class="accordion-tag">体表疏通 | Surface Stimulation</div>
-                        </div>
-                        <div class="accordion-arrow">▼</div>
-                    </div>
-                    <div class="accordion-content">
-                        <div class="accordion-body">
-                            <div class="accordion-image-container">
-                                <img src="刮痧.jpg" alt="刮痧 | Gua Sha" class="accordion-image" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIwIiBoZWlnaHQ9IjIyMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZmZmIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjE4IiBmaWxsPSIjNjY2IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+R3VhIFNoYSBUaGVyYXB5PC90ZXh0Pjwvc3ZnPg=='">
-                            </div>
-                            <div class="accordion-desc">
-                                <div class="accordion-desc-chinese">刮拭体表促进气血运行、排出体表瘀滞。</div>
-                                <div class="accordion-desc-english">Gentle scraping technique to promote circulation and release tension.</div>
-                            </div>
-                            <ul class="accordion-features">
-                                <li class="accordion-feature-item">
-                                    <div class="accordion-feature-chinese">活血化瘀 | Improves blood circulation</div>
-                                </li>
-                                <li class="accordion-feature-item">
-                                    <div class="accordion-feature-chinese">清理瘀滞 | Clears stagnation</div>
-                                </li>
-                                <li class="accordion-feature-item">
-                                    <div class="accordion-feature-chinese">缓解肩颈不适 | Relieves neck and shoulder discomfort</div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- 5. 推拿 | Tui Na Massage -->
-                <div class="accordion-card fade-in" onclick="toggleAccordion(this)">
-                    <div class="accordion-header">
-                        <div class="accordion-number">5</div>
-                        <div class="accordion-icon">👐</div>
-                        <div class="accordion-title-container">
-                            <h3 class="accordion-title">推拿 | Tui Na Massage</h3>
-                            <div class="accordion-tag">手法调理 | Manual Therapy</div>
-                        </div>
-                        <div class="accordion-arrow">▼</div>
-                    </div>
-                    <div class="accordion-content">
-                        <div class="accordion-body">
-                            <div class="accordion-image-container">
-                                <img src="推拿.jpg" alt="推拿 | Tui Na Massage" class="accordion-image" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIwIiBoZWlnaHQ9IjIyMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZmZmIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjE4IiBmaWxsPSIjNjY2IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+VHVpIE5hIE1hc3NhZ2U8L3RleHQ+PC9zdmc+'">
-                            </div>
-                            <div class="accordion-desc">
-                                <div class="accordion-desc-chinese">手法作用于经络穴位，调整气血运行。</div>
-                                <div class="accordion-desc-english">Therapeutic massage focusing on acupoints and meridians.</div>
-                            </div>
-                            <ul class="accordion-features">
-                                <li class="accordion-feature-item">
-                                    <div class="accordion-feature-chinese">疏通经络 | Unblocks energy flow</div>
-                                </li>
-                                <li class="accordion-feature-item">
-                                    <div class="accordion-feature-chinese">调和气血 | Balances energy and blood</div>
-                                </li>
-                                <li class="accordion-feature-item">
-                                    <div class="accordion-feature-chinese">放松筋骨 | Relaxes muscles and joints</div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- 6. 针灸 | Acupuncture -->
-                <div class="accordion-card fade-in" onclick="toggleAccordion(this)">
-                    <div class="accordion-header">
-                        <div class="accordion-number">6</div>
-                        <div class="accordion-icon">📍</div>
-                        <div class="accordion-title-container">
-                            <h3 class="accordion-title">针灸 | Acupuncture</h3>
-                            <div class="accordion-tag">核心疗法 | Core Therapy</div>
-                        </div>
-                        <div class="accordion-arrow">▼</div>
-                    </div>
-                    <div class="accordion-content">
-                        <div class="accordion-body">
-                            <div class="accordion-image-container">
-                                <img src="针灸.jpg" alt="针灸 | Acupuncture" class="accordion-image" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIwIiBoZWlnaHQ9IjIyMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZmZmIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjE4IiBmaWxsPSIjNjY2IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+QWN1cHVuY3R1cmU8L3RleHQ+PC9zdmc+'">
-                            </div>
-                            <div class="accordion-desc">
-                                <div class="accordion-desc-chinese">针刺特定穴位，调节经络气血运行。</div>
-                                <div class="accordion-desc-english">Fine needles inserted at specific points to balance body's energy.</div>
-                            </div>
-                            <ul class="accordion-features">
-                                <li class="accordion-feature-item">
-                                    <div class="accordion-feature-chinese">调和阴阳 | Balances body's yin and yang</div>
-                                </li>
-                                <li class="accordion-feature-item">
-                                    <div class="accordion-feature-chinese">平衡气血 | Regulates energy and circulation</div>
-                                </li>
-                                <li class="accordion-feature-item">
-                                    <div class="accordion-feature-chinese">改善功能状态 | Improves overall wellbeing</div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- 7. TDP烤灯 | TDP Warm Lamp -->
-                <div class="accordion-card fade-in" onclick="toggleAccordion(this)">
-                    <div class="accordion-header">
-                        <div class="accordion-number">7</div>
-                        <div class="accordion-icon">🔆</div>
-                        <div class="accordion-title-container">
-                            <h3 class="accordion-title">TDP烤灯 | TDP Warm Lamp</h3>
-                            <div class="accordion-tag">辅助温热 | Supplemental Warming</div>
-                        </div>
-                        <div class="accordion-arrow">▼</div>
-                    </div>
-                    <div class="accordion-content">
-                        <div class="accordion-body">
-                            <div class="accordion-image-container">
-                                <img src="TDP烤灯.jpg" alt="TDP烤灯 | TDP Warm Lamp" class="accordion-image" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIwIiBoZWlnaHQ9IjIyMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZmZmIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjE4IiBmaWxsPSIjNjY2IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+VEQQIFdhcm0gTGFtcDwvdGV4dD48L3N2Zz4='">
-                            </div>
-                            <div class="accordion-desc">
-                                <div class="accordion-desc-chinese">热辐射作用于体表，辅助理疗。</div>
-                                <div class="accordion-desc-english">Infrared lamp therapy to warm and relax muscles.</div>
-                            </div>
-                            <ul class="accordion-features">
-                                <li class="accordion-feature-item">
-                                    <div class="accordion-feature-chinese">温经通络 | Warms and relaxes muscles</div>
-                                </li>
-                                <li class="accordion-feature-item">
-                                    <div class="accordion-feature-chinese">促进局部循环 | Improves local circulation</div>
-                                </li>
-                                <li class="accordion-feature-item">
-                                    <div class="accordion-feature-chinese">提升舒适度 | Enhances comfort and relaxation</div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- 8. 火龙灸 | Fire Dragon Moxibustion -->
-                <div class="accordion-card fade-in" onclick="toggleAccordion(this)">
-                    <div class="accordion-header">
-                        <div class="accordion-number">8</div>
-                        <div class="accordion-icon">🐉</div>
-                        <div class="accordion-title-container">
-                            <h3 class="accordion-title">火龙灸 | Fire Dragon Moxibustion</h3>
-                            <div class="accordion-tag">综合温热 | Comprehensive Warming</div>
-                        </div>
-                        <div class="accordion-arrow">▼</div>
-                    </div>
-                    <div class="accordion-content">
-                        <div class="accordion-body">
-                            <div class="accordion-image-container">
-                                <img src="火龙灸.jpg" alt="火龙灸 | Fire Dragon Moxibustion" class="accordion-image" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIwIiBoZWlnaHQ9IjIyMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZmZmIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjE4IiBmaWxsPSIjNjY2IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+RmlyZSBEcmFnb24gTW94aWJ1c3Rpb248L3RleHQ+PC9zdmc+'">
-                            </div>
-                            <div class="accordion-desc">
-                                <div class="accordion-desc-chinese">在艾灸基础上，重点对督脉与背部经络的综合温热调理方式。</div>
-                                <div class="accordion-desc-english">An intensive warming therapy based on moxibustion targeting the Governor Vessel and back meridians.</div>
-                            </div>
-                            <ul class="accordion-features">
-                                <li class="accordion-feature-item">
-                                    <div class="accordion-feature-chinese">时长：40–60分钟 | Duration: 40–60 minutes</div>
-                                </li>
-                                <li class="accordion-feature-item">
-                                    <div class="accordion-feature-chinese">温补阳气 | Warms and energizes the body</div>
-                                </li>
-                                <li class="accordion-feature-item">
-                                    <div class="accordion-feature-chinese">通调全身气血 | Improves overall circulation</div>
-                                </li>
-                                <li class="accordion-feature-item">
-                                    <div class="accordion-feature-chinese">改善阳虚体质 | Helps with low energy and fatigue</div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- 9. 火疗 | Fire Therapy -->
-                <div class="accordion-card fade-in" onclick="toggleAccordion(this)">
-                    <div class="accordion-header">
-                        <div class="accordion-number">9</div>
-                        <div class="accordion-icon">✨</div>
-                        <div class="accordion-title-container">
-                            <h3 class="accordion-title">火疗 | Fire Therapy</h3>
-                            <div class="accordion-tag">局部温热 | Local Warming Therapy</div>
-                        </div>
-                        <div class="accordion-arrow">▼</div>
-                    </div>
-                    <div class="accordion-content">
-                        <div class="accordion-body">
-                            <div class="accordion-image-container">
-                                <img src="火疗.jpg" alt="火疗 | Fire Therapy" class="accordion-image" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIwIiBoZWlnaHQ9IjIyMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZmZmIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjE4IiBmaWxsPSIjNjY2IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+RmlyZSBUaGVyYXB5PC90ZXh0Pjwvc3ZnPg=='">
-                            </div>
-                            <div class="accordion-desc">
-                                <div class="accordion-desc-chinese">以温热刺激为核心，对体表特定区域进行调理，改善局部循环。</div>
-                                <div class="accordion-desc-english">Focuses on targeted warming stimulation to specific body surfaces, improving local circulation.</div>
-                            </div>
-                            <ul class="accordion-features">
-                                <li class="accordion-feature-item">
-                                    <div class="accordion-feature-chinese">温阳散寒 | Warms Yang and dispels cold</div>
-                                </li>
-                                <li class="accordion-feature-item">
-                                    <div class="accordion-feature-chinese">通络活血 | Unblocks meridians and activates blood flow</div>
-                                </li>
-                                <li class="accordion-feature-item">
-                                    <div class="accordion-feature-chinese">放松筋骨 | Relaxes muscles and joints</div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- 中医服务说明 -->
-            <div class="safety-notice" style="margin-top: 50px;">
-                <div class="safety-title">中医服务说明 | TCM Service Information</div>
-                <div class="notice-content">
-                    <div class="bilingual-text">
-                        <div class="chinese-text">任何中医咨询与项目建议均由合作诊所持牌中医师提供，参与前需签署知情同意书。我们提供全程英文翻译和支持服务。</div>
-                        <div class="english-text">Any TCM consultation/recommendation is provided by licensed TCM practitioners at partner clinics, please sign with prior informed consent. KIWI Serenity Limited provides bilingual coordination and language support only.</div>
-                    </div>
-                    <div class="bilingual-text">
-                        <div class="chinese-text">体验前将进行专业咨询，根据个人体质推荐合适的理疗项目。</div>
-                        <div class="english-text">A licensed practitioner at the partner clinic will conduct any consultation and, where appropriate, suggest available services. KIWI Serenity Limited provides bilingual coordination and language support only.</div>
-                    </div>
-                    <div class="bilingual-text">
-                        <div class="chinese-text">我们确保所有合作伙伴符合卫生标准和安全规范。</div>
-                        <div class="english-text">We aim to work with licensed providers and request confirmation of appropriate hygiene and safety practices, however we do not control clinical operations.</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Safety Notice -->
-        <section class="safety-notice fade-in">
-            <div class="safety-title">安全与法律须知 | Safety & Legal Notes</div>
-            <div class="notice-content">
-                <div class="bilingual-text">
-                    <div class="chinese-text">本页面介绍的中医文化体验项目不构成医疗建议、诊断或治疗方案。中医文化与健康理念体验（由第三方医疗机构独立提供医疗服务）</div>
-                    <div class="english-text">The TCM culture experiences described here do not constitute medical advice, diagnosis, or treatment. Any medical services are independently provided by licensed third-party medical institutions</div>
-                </div>
-                <div class="bilingual-text">
-                    <div class="chinese-text">KIWI Serenity Limited仅为协调服务公司，不提供医疗服务。</div>
-                    <div class="english-text">KIWI Serenity Limited is a coordination service only and does not provide medical services.</div>
-                </div>
-                <div class="bilingual-text">
-                    <div class="chinese-text">个体体验效果可能有所不同，如有任何健康问题，请咨询专业医疗人员。</div>
-                    <div class="english-text">Individual experiences may vary. Consult a healthcare professional for any health concerns.</div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- CTA Section - Compact layout -->
-        <section class="cta-section fade-in">
-            <h2 class="cta-title">开启您的中医养生之旅</h2>
-            <p class="cta-subtitle">Start Your TCM Wellness Journey Today | 立即预约，享受专业双语服务</p>
-            
-            <div class="compact-contact-info">
-                <div class="contact-card">
-                    <div class="contact-icon">🏢</div>
-                    <div class="contact-label">新西兰总部 | NZ Registered</div>
-                    <div class="contact-value">KIWI Serenity Limited</div>
-                </div>
-                
-                <div class="contact-card">
-                    <div class="contact-icon-row">
-                        <div class="contact-icon small">📞</div>
-                        <div class="contact-icon small">💬</div>
-                    </div>
-                    <div class="contact-label">电话</div>
-                    <div class="contact-label">Tel </div>
-                    <div class="contact-value">+64 022 040 5795</div>
-                    <div class="contact-note">新西兰号码 | New Zealand Number</div>
-                </div>
-                
-                <div class="contact-card">
-                    <div class="contact-icon">📧</div>
-                    <div class="contact-label">邮箱 | Email</div>
-                    <div class="contact-value">KIWI_Serenity_Limited@outlook.com</div>
-                    <div class="contact-note">首选联系方式 | Preferred Contact Method</div>
-                </div>
-                
-                <div class="contact-card">
-                    <div class="contact-icon-row">
-                        <div class="contact-icon small">🎵</div>
-                    </div>
-                    <div class="contact-label">社交媒体 | Social Media</div>
-                    <div class="contact-label">Facebook</div>
-                    <div class="contact-value">KIWI Serenity Limited</div>
-                    <div class="contact-note">关注我们 | Follow Us</div>
-                </div>
-            </div>
-            
-            <div class="compact-btn-container">
-                <a href="mailto:KIWI_Serenity_Limited@outlook.com?subject=TCM%20Experience%20Inquiry&body=Hello%20KIWI%20Serenity%20Limited%2C%0A%0AI%20am%20interested%20in%20learning%20more%20about%20your%20TCM%20experiences%20in%20Chengdu.%20Please%20contact%20me%20with%20more%20information.%0A%0ABest%20regards%2C" class="compact-btn">
-                    <i class="fas fa-calendar-check"></i> 📧 立即邮件预约 | Email to Book Now
-                </a>
-                <a href="tel:+640220405795" class="compact-btn compact-btn-secondary">
-                    <i class="fas fa-phone"></i> 📞 电话咨询 | Call for Inquiry
-                </a>
-            </div>
-            
-            <p style="margin-top: 25px; font-size: 0.95rem; opacity: 0.9; position: relative; z-index: 2; font-weight: 500;">
-                全程英文咨询与协调 | Full English consultation and coordination
-            </p>
-        </section>
-        
-        <!-- Footer -->
-        <footer class="footer">
-            <div class="footer-logo">KIWI Serenity Limited</div>
-            <p class="footer-tagline">
-                连接新西兰质量标准与正宗的成都中医体验。<br>
-                Bridging New Zealand's quality standards with authentic Chengdu TCM experiences.<br>
-                您在中国健康之旅的可靠伙伴。<br>
-                Your trusted partner for wellness journeys in China.
-            </p>
-            
-            <footer class="site-footer">
-                <div class="footer-nav">
-                    <a href="index.html">首页 | Home</a>
-                    <a href="privacy.html">隐私政策 | Privacy Policy</a>
-                    <a href="terms.html">服务条款 | Terms of Service</a>
-                    <a href="disclaimer.html">医疗免责声明 | Medical Disclaimer</a>
-                </div>
-                
-                <p class="footer-brand">
-                    © 2026 <strong>KIWI Serenity Limited</strong>. 保留所有权利 | All rights reserved.
-                </p>
-                
-                <p class="footer-notice">
-                    KIWI Serenity Limited仅提供信息和协调服务，<br>
-                    KIWI Serenity Limited provides information and coordination services only,<br>
-                    不提供医疗建议、诊断或治疗。<br>
-                    and does not provide medical advice, diagnosis, or treatment.
-                </p>
-            </footer>
-        </footer>
+        <!-- 2 拔罐 -->
+        <div class="tcm-card" onclick="toggleCard(this)">
+            <div class="card-header"><span class="card-number">2</span><span class="card-icon">🫙</span><div class="card-title">拔罐 <small>Cupping</small></div><span class="arrow">▼</span></div>
+            <div class="card-expand"><div class="expand-inner"><img src="拔罐.jpg" alt="拔罐" class="expand-img" onerror="this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22320%22%20height%3D%22200%22%3E%3Crect%20fill%3D%22%23eadbc6%22%20width%3D%22320%22%20height%3D%22200%22%2F%3E%3Ctext%20x%3D%22160%22%20y%3D%22110%22%20fill%3D%22%239e2a2b%22%20font-size%3D%2220%22%20text-anchor%3D%22middle%22%3E拔罐%3C%2Ftext%3E%3C%2Fsvg%3E'"><ul class="feature-list"><li>活血化瘀 | Improves blood flow</li><li>祛风散寒 | Relieves cold</li><li>缓解肌肉紧张 | Relieves muscle tension</li></ul></div></div>
+        </div>
+        <!-- 3 电针 -->
+        <div class="tcm-card" onclick="toggleCard(this)">
+            <div class="card-header"><span class="card-number">3</span><span class="card-icon">⚡</span><div class="card-title">电针 <small>Electroacupuncture</small></div><span class="arrow">▼</span></div>
+            <div class="card-expand"><div class="expand-inner"><img src="电针.jpg" alt="电针" class="expand-img" onerror="this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22320%22%20height%3D%22200%22%3E%3Crect%20fill%3D%22%23eadbc6%22%20width%3D%22320%22%20height%3D%22200%22%2F%3E%3Ctext%20x%3D%22160%22%20y%3D%22110%22%20fill%3D%22%239e2a2b%22%20font-size%3D%2220%22%20text-anchor%3D%22middle%22%3E电针%3C%2Ftext%3E%3C%2Fsvg%3E'"><ul class="feature-list"><li>疏通经络 | Unblocks energy</li><li>调节气血 | Regulates Qi</li><li>缓解慢性疼痛 | Relieves chronic pain</li></ul></div></div>
+        </div>
+        <!-- 4 刮痧 -->
+        <div class="tcm-card" onclick="toggleCard(this)">
+            <div class="card-header"><span class="card-number">4</span><span class="card-icon">🌿</span><div class="card-title">刮痧 <small>Gua Sha</small></div><span class="arrow">▼</span></div>
+            <div class="card-expand"><div class="expand-inner"><img src="刮痧.jpg" alt="刮痧" class="expand-img" onerror="this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22320%22%20height%3D%22200%22%3E%3Crect%20fill%3D%22%23eadbc6%22%20width%3D%22320%22%20height%3D%22200%22%2F%3E%3Ctext%20x%3D%22160%22%20y%3D%22110%22%20fill%3D%22%239e2a2b%22%20font-size%3D%2220%22%20text-anchor%3D%22middle%22%3E刮痧%3C%2Ftext%3E%3C%2Fsvg%3E'"><ul class="feature-list"><li>活血化瘀 | Improves circulation</li><li>清理瘀滞 | Clears stagnation</li><li>缓解肩颈不适 | Relieves neck/shoulders</li></ul></div></div>
+        </div>
+        <!-- 5 推拿 -->
+        <div class="tcm-card" onclick="toggleCard(this)">
+            <div class="card-header"><span class="card-number">5</span><span class="card-icon">👐</span><div class="card-title">推拿 <small>Tui Na</small></div><span class="arrow">▼</span></div>
+            <div class="card-expand"><div class="expand-inner"><img src="推拿.jpg" alt="推拿" class="expand-img" onerror="this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22320%22%20height%3D%22200%22%3E%3Crect%20fill%3D%22%23eadbc6%22%20width%3D%22320%22%20height%3D%22200%22%2F%3E%3Ctext%20x%3D%22160%22%20y%3D%22110%22%20fill%3D%22%239e2a2b%22%20font-size%3D%2220%22%20text-anchor%3D%22middle%22%3E推拿%3C%2Ftext%3E%3C%2Fsvg%3E'"><ul class="feature-list"><li>疏通经络 | Unblocks meridians</li><li>调和气血 | Balances Qi & blood</li><li>放松筋骨 | Relaxes muscles</li></ul></div></div>
+        </div>
+        <!-- 6 针灸 -->
+        <div class="tcm-card" onclick="toggleCard(this)">
+            <div class="card-header"><span class="card-number">6</span><span class="card-icon">📍</span><div class="card-title">针灸 <small>Acupuncture</small></div><span class="arrow">▼</span></div>
+            <div class="card-expand"><div class="expand-inner"><img src="针灸.jpg" alt="针灸" class="expand-img" onerror="this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22320%22%20height%3D%22200%22%3E%3Crect%20fill%3D%22%23eadbc6%22%20width%3D%22320%22%20height%3D%22200%22%2F%3E%3Ctext%20x%3D%22160%22%20y%3D%22110%22%20fill%3D%22%239e2a2b%22%20font-size%3D%2220%22%20text-anchor%3D%22middle%22%3E针灸%3C%2Ftext%3E%3C%2Fsvg%3E'"><ul class="feature-list"><li>调和阴阳 | Balances yin-yang</li><li>平衡气血 | Regulates Qi & blood</li><li>改善功能状态 | Improves wellbeing</li></ul></div></div>
+        </div>
+        <!-- 7 TDP烤灯 -->
+        <div class="tcm-card" onclick="toggleCard(this)">
+            <div class="card-header"><span class="card-number">7</span><span class="card-icon">🔆</span><div class="card-title">TDP烤灯 <small>Warm Lamp</small></div><span class="arrow">▼</span></div>
+            <div class="card-expand"><div class="expand-inner"><img src="TDP烤灯.jpg" alt="TDP烤灯" class="expand-img" onerror="this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22320%22%20height%3D%22200%22%3E%3Crect%20fill%3D%22%23eadbc6%22%20width%3D%22320%22%20height%3D%22200%22%2F%3E%3Ctext%20x%3D%22160%22%20y%3D%22110%22%20fill%3D%22%239e2a2b%22%20font-size%3D%2220%22%20text-anchor%3D%22middle%22%3ETDP%3C%2Ftext%3E%3C%2Fsvg%3E'"><ul class="feature-list"><li>温经通络 | Warms meridians</li><li>促进局部循环 | Improves local circulation</li><li>提升舒适度 | Enhances comfort</li></ul></div></div>
+        </div>
+        <!-- 8 火龙灸 -->
+        <div class="tcm-card" onclick="toggleCard(this)">
+            <div class="card-header"><span class="card-number">8</span><span class="card-icon">🐉</span><div class="card-title">火龙灸 <small>Fire Dragon</small></div><span class="arrow">▼</span></div>
+            <div class="card-expand"><div class="expand-inner"><img src="火龙灸.jpg" alt="火龙灸" class="expand-img" onerror="this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22320%22%20height%3D%22200%22%3E%3Crect%20fill%3D%22%23eadbc6%22%20width%3D%22320%22%20height%3D%22200%22%2F%3E%3Ctext%20x%3D%22160%22%20y%3D%22110%22%20fill%3D%22%239e2a2b%22%20font-size%3D%2220%22%20text-anchor%3D%22middle%22%3E火龙灸%3C%2Ftext%3E%3C%2Fsvg%3E'"><ul class="feature-list"><li>时长 40–60分钟 | 40-60 min</li><li>温补阳气 | Warms Yang</li><li>通调全身气血 | Regulates whole body</li></ul></div></div>
+        </div>
+        <!-- 9 火疗 -->
+        <div class="tcm-card" onclick="toggleCard(this)">
+            <div class="card-header"><span class="card-number">9</span><span class="card-icon">✨</span><div class="card-title">火疗 <small>Fire Therapy</small></div><span class="arrow">▼</span></div>
+            <div class="card-expand"><div class="expand-inner"><img src="火疗.jpg" alt="火疗" class="expand-img" onerror="this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22320%22%20height%3D%22200%22%3E%3Crect%20fill%3D%22%23eadbc6%22%20width%3D%22320%22%20height%3D%22200%22%2F%3E%3Ctext%20x%3D%22160%22%20y%3D%22110%22%20fill%3D%22%239e2a2b%22%20font-size%3D%2220%22%20text-anchor%3D%22middle%22%3E火疗%3C%2Ftext%3E%3C%2Fsvg%3E'"><ul class="feature-list"><li>温阳散寒 | Warms Yang</li><li>通络活血 | Unblocks meridians</li><li>放松筋骨 | Relaxes muscles</li></ul></div></div>
+        </div>
     </div>
 
-    <script>
-        // 折叠式卡片功能
-        function toggleAccordion(card) {
-            const isActive = card.classList.contains('active');
-            
-            // 关闭所有其他卡片
-            document.querySelectorAll('.accordion-card').forEach(otherCard => {
-                if (otherCard !== card) {
-                    otherCard.classList.remove('active');
-                }
-            });
-            
-            // 切换当前卡片状态
-            if (!isActive) {
-                card.classList.add('active');
-                
-                // 平滑滚动到卡片位置（在移动设备上优化体验）
-                if (window.innerWidth <= 768) {
-                    setTimeout(() => {
-                        card.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }, 300);
-                }
-            }
-        }
-        
-        // 重要声明折叠功能
-        function toggleNotice(notice) {
-            notice.classList.toggle('active');
-            
-            // 如果重要声明是打开的，自动滚动到它
-            if (notice.classList.contains('active')) {
-                setTimeout(() => {
-                    notice.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }, 300);
-            }
-        }
-        
-        // Enhanced scroll animation
-        document.addEventListener('DOMContentLoaded', function() {
-            const observerOptions = {
-                threshold: 0.05,
-                rootMargin: '0px 0px -40px 0px'
-            };
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            }, observerOptions);
-            
-            // Set initial state for animated elements
-            const animatedElements = document.querySelectorAll('.fade-in');
-            animatedElements.forEach(el => {
-                el.style.opacity = '0';
-                el.style.transform = 'translateY(25px)';
-                el.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
-                observer.observe(el);
-            });
-            
-            // Language switch functionality
-            document.querySelectorAll('.lang-btn').forEach(btn => {
-                btn.addEventListener('click', function() {
-                    document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
-                    this.classList.add('active');
-                });
-            });
-            
-            // Optimize background for mobile performance
-            function optimizeForMobile() {
-                if (window.innerWidth <= 768) {
-                    // 移动设备上禁用背景固定以提高性能
-                    document.body.style.backgroundAttachment = 'scroll';
-                    // 优化图片加载
-                    document.querySelectorAll('.accordion-image').forEach(img => {
-                        img.loading = 'lazy';
-                    });
-                } else {
-                    document.body.style.backgroundAttachment = 'fixed';
-                }
-            }
-            
-            // Initial optimization
-            optimizeForMobile();
-            
-            // Re-optimize on resize
-            window.addEventListener('resize', optimizeForMobile);
-            
-            // 默认打开第一个卡片
-            const firstCard = document.querySelector('.accordion-card');
-            if (firstCard) {
-                setTimeout(() => {
-                    firstCard.classList.add('active');
-                }, 800);
-            }
-            
-            // 图片加载错误处理
-            document.querySelectorAll('.accordion-image').forEach(img => {
-                img.addEventListener('error', function() {
-                    console.log('Image failed to load:', this.src);
-                });
-            });
-            
-            // 按钮点击动画
-            document.querySelectorAll('.compact-btn, .accordion-header').forEach(element => {
-                element.addEventListener('click', function(e) {
-                    // 添加点击反馈效果
-                    this.style.transform = 'scale(0.98)';
-                    setTimeout(() => {
-                        this.style.transform = '';
-                    }, 150);
-                });
-            });
-            
-            // 平滑滚动锚点链接
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href');
-                    if (targetId === '#') return;
-                    
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        targetElement.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
-                });
-            });
-            
-            console.log('TCM页面优化加载完成');
+    <!-- 6 steps 三横排 -->
+    <div class="steps-row">
+        <div class="step-item"><div class="step-num">STEP 1</div><p>Send medical information</p></div>
+        <div class="step-item"><div class="step-num">STEP 2</div><p>Online consultation with a doctor</p></div>
+        <div class="step-item"><div class="step-num">STEP 3</div><p>Receive treatment plan</p></div>
+        <div class="step-item"><div class="step-num">STEP 4</div><p>Travel to Chengdu</p></div>
+        <div class="step-item"><div class="step-num">STEP 5</div><p>Treatment and recovery</p></div>
+        <div class="step-item"><div class="step-num">STEP 6</div><p>Follow-up support</p></div>
+    </div>
+
+    <!-- 按钮区域：咨询邮件 / whatsapp -->
+    <div class="book-section">
+        <a href="mailto:KIWI_Serenity_Limited@outlook.com?subject=TCM%20Consultation%20Inquiry&body=Dear%20KIWI%20Serenity%2C%20I%20am%20interested%20in%20a%20TCM%20consultation..." class="btn-gold"><i class="fas fa-envelope"></i> Book TCM Consultation</a>
+        <a href="https://wa.me/64223244938?text=Hello%20KIWI%20Serenity%2C%20I%27m%20interested%20in%20your%20TCM%20program" target="_blank" class="btn-gold whatsapp-btn"><i class="fab fa-whatsapp"></i> WhatsApp us</a>
+    </div>
+
+    <!-- 页脚 (包含所有社交 + 法律文件横排) -->
+    <div class="footer-classic">
+        <!-- 社交帐号行 -->
+        <div class="social-row">
+            <a href="https://www.tiktok.com/@kiwi_sichuan_explorer.nz?" target="_blank"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=61586286820740" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/kiwi_serenity_limited/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/company/kiwi-serenity-limited" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+
+        <!-- 法律文件横排链接 (悬停下划线) -->
+        <div class="legal-links">
+            <a href="terms.html">服务条款 | Terms</a>
+            <a href="privacy.html">隐私政策 | Privacy</a>
+            <a href="disclaimer.html">医疗免责 | Disclaimer</a>
+            <a href="contact_card.html">中国应急联系卡 | CN Useful Contact Number</a>
+        </div>
+
+        <!-- 底部版权及声明 -->
+        <div class="footer-note">
+            <p><strong>KIWI Serenity Limited</strong> © 2026 保留所有权利 | All rights reserved</p>
+            <p style="margin-top:15px; max-width:900px; margin-left:auto; margin-right:auto;">仅提供信息和协调服务 · Information & coordination only.<br> 不提供医疗建议、诊断或治疗 · Does not provide medical advice, diagnosis, or treatment.</p>
+        </div>
+    </div>
+</div>
+
+<!-- 卡片点击展开函数 (仅保留一个打开) -->
+<script>
+    function toggleCard(card) {
+        const isActive = card.classList.contains('active');
+        // 关闭所有其他卡片 (一次只展开一个)
+        document.querySelectorAll('.tcm-card').forEach(c => {
+            if (c !== card) c.classList.remove('active');
         });
-    </script>
+        // 切换当前卡片
+        if (!isActive) {
+            card.classList.add('active');
+        } else {
+            card.classList.remove('active');
+        }
+    }
+
+    // 让重要声明默认折叠
+    document.addEventListener('DOMContentLoaded', function() {
+        const notice = document.querySelector('.notice-fold');
+        if (notice) notice.classList.remove('active');  // 确保初始折叠
+
+        // 可选：让第一个卡片默认打开（增加用户体验）
+        // const firstCard = document.querySelector('.tcm-card');
+        // if(firstCard) firstCard.classList.add('active');
+    });
+</script>
+
+<!-- LinkedIn 异步脚本 (不影响布局) -->
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+
 </body>
 </html>
