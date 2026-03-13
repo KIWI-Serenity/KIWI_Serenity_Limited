@@ -14,12 +14,12 @@
         }
 
         :root {
-            --deep-navy: #0B1E33;        /* 深邃午夜蓝 – 权威/信任 */
-            --gold-leaf: #C6A15B;         /* 香槟金 – 奢华/温暖 */
-            --soft-cream: #F8F6F2;        /* 奶油白 – 柔和/干净 */
+            --deep-navy: #0B1E33;
+            --gold-leaf: #C6A15B;
+            --soft-cream: #F8F6F2;
             --pure-white: #FFFFFF;
-            --graphite: #2C3A4B;           /* 石墨灰 – 辅助信息 */
-            --accent-burgundy: #8B3C3C;    /* 暗红 – 点缀/CTA */
+            --graphite: #2C3A4B;
+            --accent-burgundy: #8B3C3C;
             --shadow-heavy: 0 20px 40px -12px rgba(0, 20, 40, 0.35);
             --shadow-light: 0 10px 25px -8px rgba(0,0,0,0.1);
             --gold-gradient: linear-gradient(145deg, #C6A15B 0%, #B28B46 100%);
@@ -43,7 +43,7 @@
             flex: 1;
         }
 
-        /* --- arrival banner (prestige) --- */
+        /* --- arrival banner (fixed with actual image) --- */
         .arrival-banner {
             margin-bottom: 2rem;
             border-radius: 2rem;
@@ -53,14 +53,15 @@
             border: 1px solid rgba(198, 161, 91, 0.3);
             transition: 0.3s;
         }
+        
         .arrival-banner img {
             width: 100%;
             height: auto;
             display: block;
-            max-height: 200px;
+            max-height: 220px;
             object-fit: cover;
             object-position: center 30%;
-            opacity: 0.9;
+            opacity: 0.95;
         }
 
         /* --- top bar (home + subtle brand) --- */
@@ -445,16 +446,15 @@
 </head>
 <body>
 <div class="main-container">
-    <!-- arrival banner (prestige) 实际图片可替换为services.png -->
+    <!-- arrival banner with actual services.png -->
     <div class="arrival-banner">
-        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1400' height='220' viewBox='0 0 1400 220'%3E%3Crect width='1400' height='220' fill='%230B1E33'/%3E%3Ctext x='70' y='130' font-family='Inter' font-weight='400' font-size='60' fill='%23C6A15B'%3E✈️ ARRIVALS · 到达%3C/text%3E%3Ctext x='70' y='180' font-size='36' fill='%23F8F6F2'%3EWelcome to Chengdu · 天府之约%3C/text%3E%3C/svg%3A"
-             alt="arrivals chengdu" style="width:100%;">
+        <img src="services.png" alt="Arrivals Chengdu - Welcome">
     </div>
 
     <!-- top bar with home button (index.html) -->
     <div class="top-bar">
         <a href="index.html" class="home-btn"><i class="fas fa-arrow-left"></i> Home</a>
-        <div class="brand-pill"><strong>KIWI Serenity</strong> · 国际医疗协调</div>
+        <div class="brand-pill"><strong>KIWI Serenity Limited</strong> · Medical Coordination · Worldwide to Chengdu</div>
     </div>
 
     <!-- three packages concise & compelling (USD, integer) -->
@@ -463,7 +463,7 @@
         <div class="prestige-card">
             <div class="card-title">A</div>
             <div class="card-sub">Semi‑Assisted · 基础辅助</div>
-            <div class="price-usd">$2,000 <small>/person</small></div>
+            <div class="price-usd">$2,100 <small>/person</small></div>
             <ul class="feature-short">
                 <li><i class="fas fa-check"></i> Pre‑arrival planning + clinic selection</li>
                 <li><i class="fas fa-check"></i> Online doctor coordination</li>
@@ -512,8 +512,8 @@
         <table class="prestige-table">
             <thead><tr><th>Package</th><th>For</th><th>Inclusions</th><th>Price (USD)</th></tr></thead>
             <tbody>
-                <tr><td><strong>Duo</strong> (2 pax)</td><td>Couples / friends</td><td><span class="gold-badge">shared coordinator</span> Double room arrangement · vehicle 2‑3 pax · same package A/B</td><td><span class="highlight">5‑7d $100 OFF/2pp</span><br>8‑10d $200 OFF/2pp</td></tr>
-                <tr><td><strong>Group</strong> (3‑6 pax)</td><td>Families / small group</td><td><span class="gold-badge">group discount</span> 1‑2 translators · 7‑seater · optimized schedule</td><td><span class="highlight">5‑7d $100 OFF/pp</span><br>8‑10d $150 OFF/pp<br>Min 3, max 6</td></tr>
+                <tr><td><strong>Duo</strong> (2 pax)</td><td>Couples / Friends</td><td><span class="gold-badge">Same Package</span> Double room · vehicle 2‑3 pax · Shared coordinator</td><td><span class="highlight">5‑7d $100 OFF/2pp</span><br>>7Days $200 OFF/2pp</td></tr>
+                <tr><td><strong>Group</strong> (3‑6 pax)</td><td>Families / Small Group</td><td><span class="gold-badge">Same Package</span> vehicle 7‑seats · optimized schedule · Interpreter</td><td><span class="highlight">5‑7d $100 OFF/pp</span><br>>7Days $150 OFF/pp<br>Min 3, Max 6</td></tr>
             </tbody>
         </table>
     </div>
@@ -526,7 +526,7 @@
             <tbody>
                 <tr><td>Extra transfer</td><td>One‑way within Chengdu</td><td><strong>$80 / trip</strong></td></tr>
                 <tr><td>Extended interpreter</td><td>Per hour beyond package</td><td><strong>$60 / hour</strong></td></tr>
-                <tr><td>Private car upgrade</td><td>Dedicated car + driver full‑day</td><td><strong>$120 / day</strong></td></tr>
+                <tr><td>Private car upgrade</td><td>Dedicated car + driver full‑day</td><td><strong>$150 / day</strong></td></tr>
             </tbody>
         </table>
         <div style="background:#f3efe7; margin-top:1.8rem; padding:1rem 2rem; border-radius:40px; color:#5e513d;"><i class="fas fa-info-circle" style="color:var(--gold-leaf);"></i> All add‑ons must be pre‑booked & paid.</div>
