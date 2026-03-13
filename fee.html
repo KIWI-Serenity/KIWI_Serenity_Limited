@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>KIWI Serenity · premium medical concierge Chengdu</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', 'Segoe UI', 'Roboto', system-ui, sans-serif;
+        }
+
+        :root {
+            --deep-navy: #0B1E33;        /* 深邃午夜蓝 – 权威/信任 */
+            --gold-leaf: #C6A15B;         /* 香槟金 – 奢华/温暖 */
+            --soft-cream: #F8F6F2;        /* 奶油白 – 柔和/干净 */
+            --pure-white: #FFFFFF;
+            --graphite: #2C3A4B;           /* 石墨灰 – 辅助信息 */
+            --accent-burgundy: #8B3C3C;    /* 暗红 – 点缀/CTA */
+            --shadow-heavy: 0 20px 40px -12px rgba(0, 20, 40, 0.35);
+            --shadow-light: 0 10px 25px -8px rgba(0,0,0,0.1);
+            --gold-gradient: linear-gradient(145deg, #C6A15B 0%, #B28B46 100%);
+            --navy-gradient: linear-gradient(135deg, #0B1E33 0%, #1C2F44 100%);
+        }
+
+        body {
+            background-color: var(--soft-cream);
+            color: var(--deep-navy);
+            line-height: 1.4;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .main-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 1.8rem 2rem 2rem;
+            width: 100%;
+            flex: 1;
+        }
+
+        /* --- arrival banner (prestige) --- */
+        .arrival-banner {
+            margin-bottom: 2rem;
+            border-radius: 2rem;
+            overflow: hidden;
+            box-shadow: var(--shadow-heavy);
+            background: var(--deep-navy);
+            border: 1px solid rgba(198, 161, 91, 0.3);
+            transition: 0.3s;
+        }
+        .arrival-banner img {
+            width: 100%;
+            height: auto;
+            display: block;
+            max-height: 200px;
+            object-fit: cover;
+            object-position: center 30%;
+            opacity: 0.9;
+        }
+
+        /* --- top bar (home + subtle brand) --- */
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--pure-white);
+            padding: 0.7rem 2rem 0.7rem 1.8rem;
+            border-radius: 60px;
+            margin-bottom: 2.8rem;
+            box-shadow: var(--shadow-light);
+            border: 1px solid rgba(198,161,91,0.25);
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .home-btn {
+            background: var(--deep-navy);
+            color: var(--gold-leaf);
+            padding: 0.6rem 2rem;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid var(--gold-leaf);
+            transition: all 0.2s;
+        }
+        .home-btn i { color: var(--gold-leaf); }
+        .home-btn:hover {
+            background: var(--gold-leaf);
+            color: var(--deep-navy);
+            border-color: var(--deep-navy);
+        }
+        .home-btn:hover i { color: var(--deep-navy); }
+        .brand-pill {
+            font-weight: 400;
+            letter-spacing: 1px;
+            color: var(--graphite);
+            background: #F0EEE9;
+            padding: 0.4rem 1.5rem;
+            border-radius: 30px;
+            font-size: 1rem;
+        }
+        .brand-pill strong { color: var(--deep-navy); font-weight: 700; }
+
+        /* --- 3 cards : premium concise --- */
+        .cards-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 28px;
+            margin: 2.8rem 0 3rem;
+        }
+        .prestige-card {
+            flex: 1 1 280px;
+            background: var(--pure-white);
+            border-radius: 2.5rem;
+            padding: 2.2rem 1.8rem 1.8rem;
+            box-shadow: var(--shadow-heavy);
+            transition: all 0.25s ease;
+            border: 1px solid rgba(198,161,91,0.2);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            backdrop-filter: blur(2px);
+        }
+        .prestige-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--gold-leaf);
+            box-shadow: 0 28px 48px -15px #0B1E33;
+        }
+        .popular-tag {
+            position: absolute;
+            top: 1.2rem; right: 1.8rem;
+            background: var(--gold-gradient);
+            color: var(--deep-navy);
+            font-weight: 700;
+            font-size: 0.75rem;
+            padding: 0.3rem 1.2rem;
+            border-radius: 30px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .card-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--deep-navy);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+        .card-sub {
+            color: var(--gold-leaf);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.85rem;
+            margin-bottom: 1.2rem;
+            border-bottom: 1px dashed rgba(198,161,91,0.3);
+            padding-bottom: 0.8rem;
+        }
+        .price-usd {
+            font-size: 2.4rem;
+            font-weight: 800;
+            color: var(--deep-navy);
+            background: #F0F2F5;
+            display: inline-block;
+            padding: 0.2rem 1.5rem 0.2rem 1.5rem;
+            border-radius: 60px;
+            margin: 1rem 0 1.2rem;
+            border-left: 6px solid var(--gold-leaf);
+            line-height: 1.2;
+        }
+        .price-usd small {
+            font-size: 1rem;
+            font-weight: 400;
+            color: var(--graphite);
+        }
+        .feature-short {
+            list-style: none;
+            margin: 1rem 0 1.5rem;
+            flex: 1;
+        }
+        .feature-short li {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 0.9rem;
+            font-size: 1rem;
+            color: #1F2D3A;
+            align-items: flex-start;
+        }
+        .feature-short i {
+            color: var(--gold-leaf);
+            width: 1.5rem;
+            font-size: 1.2rem;
+            margin-top: 2px;
+        }
+        .btn-consult {
+            background: transparent;
+            border: 2px solid var(--deep-navy);
+            color: var(--deep-navy);
+            font-weight: 700;
+            padding: 1rem 1rem;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            transition: 0.2s;
+            margin-top: 1.2rem;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .btn-consult i { color: var(--gold-leaf); }
+        .btn-consult:hover {
+            background: var(--deep-navy);
+            color: var(--pure-white);
+            border-color: var(--deep-navy);
+        }
+        .btn-consult:hover i { color: var(--gold-leaf); }
+
+        /* --- family & addons (elegant tables) --- */
+        .section-elegant {
+            background: var(--pure-white);
+            border-radius: 3rem;
+            padding: 2.5rem 2.2rem;
+            margin: 3.2rem 0 2.8rem;
+            box-shadow: var(--shadow-heavy);
+            border: 1px solid rgba(198,161,91,0.25);
+        }
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--deep-navy);
+            margin-bottom: 2.2rem;
+            border-bottom: 2px solid var(--gold-leaf);
+            padding-bottom: 0.8rem;
+        }
+        .section-header i { color: var(--gold-leaf); font-size: 2rem; }
+        .prestige-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 2rem;
+            overflow: hidden;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.02);
+        }
+        .prestige-table th {
+            background: var(--navy-gradient);
+            color: var(--gold-leaf);
+            font-weight: 600;
+            font-size: 1rem;
+            padding: 1.3rem 1.5rem;
+            text-align: left;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .prestige-table td {
+            padding: 1.5rem 1.5rem;
+            border-bottom: 1px solid #e9e4d8;
+            vertical-align: top;
+            color: #233240;
+        }
+        .prestige-table tr:last-child td { border-bottom: none; }
+        .prestige-table tr:nth-child(even) { background-color: #fcfaf7; }
+        .gold-badge {
+            background: var(--gold-gradient);
+            color: #0B1E33;
+            font-weight: 700;
+            padding: 0.2rem 1rem;
+            border-radius: 50px;
+            display: inline-block;
+            font-size: 0.75rem;
+            margin-bottom: 0.5rem;
+            border: none;
+        }
+        .highlight { color: var(--deep-navy); font-weight: 700; }
+
+        /* --- in/ex (two column, crisp) --- */
+        .info-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 28px;
+            margin: 2.8rem 0;
+        }
+        .info-col {
+            flex: 1 1 300px;
+            background: var(--pure-white);
+            border-radius: 2rem;
+            padding: 2.2rem 2rem;
+            box-shadow: var(--shadow-heavy);
+            border-left: 6px solid;
+        }
+        .inclusions-col { border-left-color: var(--gold-leaf); }
+        .exclusions-col { border-left-color: var(--accent-burgundy); }
+        .info-col h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1.8rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .inclusions-col h3 i { color: var(--gold-leaf); }
+        .exclusions-col h3 i { color: var(--accent-burgundy); }
+        .info-list {
+            list-style: none;
+        }
+        .info-list li {
+            display: flex;
+            gap: 14px;
+            margin-bottom: 1.1rem;
+            font-size: 1rem;
+            border-bottom: 1px dashed #ddd6cb;
+            padding-bottom: 0.7rem;
+        }
+        .info-list li:last-child { border: none; }
+        .info-list i { width: 1.6rem; font-size: 1.3rem; }
+        .inclusions-col i { color: var(--gold-leaf); }
+        .exclusions-col i { color: var(--accent-burgundy); }
+
+        /* --- footer luxury (dark & gold) --- */
+        .footer-premium {
+            background: var(--deep-navy);
+            color: #ece8e0;
+            border-radius: 4rem 4rem 2rem 2rem;
+            padding: 3rem 2.8rem 2.2rem;
+            margin-top: 4rem;
+            box-shadow: var(--shadow-heavy);
+            border: 1px solid rgba(198,161,91,0.3);
+        }
+        .contact-flex {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 1.5rem;
+            margin-bottom: 2.8rem;
+        }
+        .contact-chip {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(198,161,91,0.3);
+            padding: 0.9rem 2rem;
+            border-radius: 60px;
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            font-size: 1.2rem;
+            color: var(--pure-white);
+            backdrop-filter: blur(4px);
+        }
+        .contact-chip a {
+            color: var(--gold-leaf);
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px dotted rgba(198,161,91,0.5);
+        }
+        .contact-chip a:hover { color: white; border-bottom-color: white; }
+        .contact-chip i { font-size: 1.8rem; color: var(--gold-leaf); }
+
+        .social-wrap {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem 1.8rem;
+            justify-content: center;
+            margin: 2.5rem 0 2rem;
+        }
+        .social-wrap a {
+            background: rgba(255,255,255,0.04);
+            color: var(--gold-leaf);
+            padding: 0.6rem 1.8rem;
+            border-radius: 50px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border: 1px solid rgba(198,161,91,0.2);
+            font-weight: 400;
+            transition: 0.2s;
+        }
+        .social-wrap a:hover { background: var(--gold-leaf); color: var(--deep-navy); border-color: white; }
+        .legal-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem 2.8rem;
+            justify-content: center;
+            margin: 2.2rem 0 1.8rem;
+        }
+        .legal-links a {
+            color: #b7aa95;
+            text-decoration: none;
+            font-weight: 300;
+            border-bottom: 1px dotted transparent;
+        }
+        .legal-links a:hover { color: var(--gold-leaf); border-bottom-color: var(--gold-leaf); }
+        .footer-note {
+            text-align: center;
+            font-size: 0.9rem;
+            opacity: 0.7;
+            border-top: 1px solid rgba(198,161,91,0.2);
+            padding-top: 1.8rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* fixed elements */
+        .back-to-top {
+            position: fixed; bottom: 100px; right: 28px;
+            background: var(--gold-leaf); color: var(--deep-navy);
+            width: 54px; height: 54px; border-radius: 30px;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            opacity: 0; visibility: hidden; transition: 0.3s;
+            z-index: 99; cursor: pointer;
+        }
+        .back-to-top.visible { opacity: 1; visibility: visible; }
+        .print-btn {
+            position: fixed; bottom: 28px; right: 28px;
+            background: var(--deep-navy); color: var(--gold-leaf);
+            border: 2px solid var(--gold-leaf);
+            padding: 15px 30px; border-radius: 60px;
+            font-weight: 700; display: flex; gap: 10px;
+            z-index: 99; cursor: pointer; transition: 0.2s;
+            backdrop-filter: blur(4px);
+        }
+        .print-btn:hover { background: var(--gold-leaf); color: var(--deep-navy); border-color: var(--deep-navy); }
+
+        @media (max-width: 800px) {
+            .main-container { padding: 1rem; }
+            .contact-flex { flex-direction: column; }
+        }
+        @media print {
+            .back-to-top, .print-btn, .social-wrap, .legal-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+<div class="main-container">
+    <!-- arrival banner (prestige) 实际图片可替换为services.png -->
+    <div class="arrival-banner">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1400' height='220' viewBox='0 0 1400 220'%3E%3Crect width='1400' height='220' fill='%230B1E33'/%3E%3Ctext x='70' y='130' font-family='Inter' font-weight='400' font-size='60' fill='%23C6A15B'%3E✈️ ARRIVALS · 到达%3C/text%3E%3Ctext x='70' y='180' font-size='36' fill='%23F8F6F2'%3EWelcome to Chengdu · 天府之约%3C/text%3E%3C/svg%3A"
+             alt="arrivals chengdu" style="width:100%;">
+    </div>
+
+    <!-- top bar with home button (index.html) -->
+    <div class="top-bar">
+        <a href="index.html" class="home-btn"><i class="fas fa-arrow-left"></i> Home</a>
+        <div class="brand-pill"><strong>KIWI Serenity</strong> · 国际医疗协调</div>
+    </div>
+
+    <!-- three packages concise & compelling (USD, integer) -->
+    <div class="cards-grid">
+        <!-- Package A – Semi‑Assisted -->
+        <div class="prestige-card">
+            <div class="card-title">A</div>
+            <div class="card-sub">Semi‑Assisted · 基础辅助</div>
+            <div class="price-usd">$2,000 <small>/person</small></div>
+            <ul class="feature-short">
+                <li><i class="fas fa-check"></i> Pre‑arrival planning + clinic selection</li>
+                <li><i class="fas fa-check"></i> Online doctor coordination</li>
+                <li><i class="fas fa-check"></i> Visa invitation & itinerary</li>
+                <li><i class="fas fa-check"></i> Bilingual escort (2‑3 visits)</li>
+                <li><i class="fas fa-check"></i> Airport pickup/drop‑off + medical rides</li>
+            </ul>
+            <div style="color: #7f6e5a; font-size:0.9rem; background:#F4F1EC; padding:0.5rem 1rem; border-radius:30px;"><i class="fas fa-plus-circle" style="color:var(--gold-leaf);"></i> Extra escort $150/visit</div>
+            <a href="mailto:KIWI_Serenity_Limited@outlook.com?subject=Package%20A%20Inquiry" class="btn-consult"><i class="fas fa-calendar-check"></i> Request consultation</a>
+        </div>
+        <!-- Package B – All‑Inclusive (most popular) -->
+        <div class="prestige-card">
+            <span class="popular-tag">★ most popular</span>
+            <div class="card-title">B</div>
+            <div class="card-sub">All‑Inclusive · 全程无忧</div>
+            <div class="price-usd">$3,899 <small>/30 days</small></div>
+            <ul class="feature-short">
+                <li><i class="fas fa-check"></i> Everything in A + unlimited accompaniment</li>
+                <li><i class="fas fa-check"></i> Professional medical interpreter</li>
+                <li><i class="fas fa-check"></i> Records translation & cross‑border payment</li>
+                <li><i class="fas fa-check"></i> Emergency coordination</li>
+                <li><i class="fas fa-check"></i> Portable WiFi / SIM</li>
+            </ul>
+            <div style="color:#586e7e; font-size:0.9rem;">Personal transport not included</div>
+            <a href="mailto:KIWI_Serenity_Limited@outlook.com?subject=Package%20B%20Inquiry" class="btn-consult"><i class="fas fa-calendar-check"></i> Request consultation</a>
+        </div>
+        <!-- Package C – Premium Concierge -->
+        <div class="prestige-card">
+            <div class="card-title">C</div>
+            <div class="card-sub">Premium Concierge · 尊享礼宾</div>
+            <div class="price-usd">$6,299 <small>/30 days</small></div>
+            <ul class="feature-short">
+                <li><i class="fas fa-check"></i> All of B + private car & driver (daily)</li>
+                <li><i class="fas fa-check"></i> Dedicated bilingual concierge</li>
+                <li><i class="fas fa-check"></i> Unlimited hospital/dining errands</li>
+                <li><i class="fas fa-check"></i> Priority clinic coordination</li>
+                <li><i class="fas fa-check"></i> Lifestyle assistance</li>
+            </ul>
+            <a href="mailto:KIWI_Serenity_Limited@outlook.com?subject=Package%20C%20Inquiry" class="btn-consult"><i class="fas fa-calendar-check"></i> Request consultation</a>
+        </div>
+    </div>
+
+    <!-- Family & Group Packages (elegant table) -->
+    <div class="section-elegant">
+        <div class="section-header"><i class="fas fa-users"></i> Family & Group · 家庭团体</div>
+        <table class="prestige-table">
+            <thead><tr><th>Package</th><th>For</th><th>Inclusions</th><th>Price (USD)</th></tr></thead>
+            <tbody>
+                <tr><td><strong>Duo</strong> (2 pax)</td><td>Couples / friends</td><td><span class="gold-badge">shared coordinator</span> Double room arrangement · vehicle 2‑3 pax · same package A/B</td><td><span class="highlight">5‑7d $100 OFF/2pp</span><br>8‑10d $200 OFF/2pp</td></tr>
+                <tr><td><strong>Group</strong> (3‑6 pax)</td><td>Families / small group</td><td><span class="gold-badge">group discount</span> 1‑2 translators · 7‑seater · optimized schedule</td><td><span class="highlight">5‑7d $100 OFF/pp</span><br>8‑10d $150 OFF/pp<br>Min 3, max 6</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Add‑on services (optional) -->
+    <div class="section-elegant">
+        <div class="section-header"><i class="fas fa-concierge-bell"></i> Add‑ons · 可选增值</div>
+        <table class="prestige-table">
+            <thead><tr><th>Service</th><th>Description</th><th>Price (USD)</th></tr></thead>
+            <tbody>
+                <tr><td>Extra transfer</td><td>One‑way within Chengdu</td><td><strong>$80 / trip</strong></td></tr>
+                <tr><td>Extended interpreter</td><td>Per hour beyond package</td><td><strong>$60 / hour</strong></td></tr>
+                <tr><td>Private car upgrade</td><td>Dedicated car + driver full‑day</td><td><strong>$120 / day</strong></td></tr>
+            </tbody>
+        </table>
+        <div style="background:#f3efe7; margin-top:1.8rem; padding:1rem 2rem; border-radius:40px; color:#5e513d;"><i class="fas fa-info-circle" style="color:var(--gold-leaf);"></i> All add‑ons must be pre‑booked & paid.</div>
+    </div>
+
+    <!-- Inclusions / Exclusions (refined) -->
+    <div class="info-row">
+        <div class="info-col inclusions-col">
+            <h3><i class="fas fa-check-circle"></i> Included</h3>
+            <ul class="info-list">
+                <li><i class="fas fa-calendar-alt"></i> Custom itinerary 7‑14d (hotel/transport/visits)</li>
+                <li><i class="fas fa-car"></i> Airport transfer + daily round‑trip medical rides</li>
+                <li><i class="fas fa-language"></i> Accompanying interpreter (EN/ZH)</li>
+                <li><i class="fas fa-clipboard-list"></i> Appointment booking & record organization</li>
+                <li><i class="fas fa-money-check-alt"></i> Cross‑border remittance guidance</li>
+                <li><i class="fas fa-leaf"></i> TCM constitution coordination (complimentary)</li>
+                <li><i class="fas fa-wifi"></i> Portable WiFi device</li>
+                <li><i class="fas fa-tooth"></i> Basic dental / polishing (Package 1)</li>
+            </ul>
+        </div>
+        <div class="info-col exclusions-col">
+            <h3><i class="fas fa-times-circle"></i> Not included</h3>
+            <ul class="info-list">
+                <li><i class="fas fa-stethoscope"></i> Medical treatment fees / procedures</li>
+                <li><i class="fas fa-hotel"></i> Accommodation / hotel stay</li>
+                <li><i class="fas fa-plane"></i> International flights & visa</li>
+                <li><i class="fas fa-utensils"></i> Meals & personal expenses</li>
+                <li><i class="fas fa-shield-alt"></i> Travel insurance (strongly recommended)</li>
+                <li><i class="fas fa-ticket-alt"></i> Tourism / sightseeing</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- FOOTER (contact / social / legal) with clickable items -->
+    <div class="footer-premium">
+        <div class="contact-flex">
+            <div class="contact-chip"><i class="fas fa-phone-alt"></i> <a href="tel:+64220405795">+64 22 040 5795</a></div>
+            <div class="contact-chip"><i class="fab fa-whatsapp"></i> <a href="https://wa.me/64223244938">WhatsApp +64 22 324 4938</a></div>
+            <div class="contact-chip"><i class="fas fa-envelope"></i> <a href="mailto:KIWI_Serenity_Limited@outlook.com">KIWI_Serenity_Limited@outlook.com</a></div>
+        </div>
+
+        <div class="social-wrap">
+            <a href="https://www.tiktok.com/@kiwi_sichuan_explorer.nz?" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a>
+            <a href="https://www.facebook.com/profile.php?id=61586286820740" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
+            <a href="https://www.instagram.com/kiwi_serenity_limited/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+            <a href="https://www.linkedin.com/company/kiwi-serenity-limited" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            <a href="https://www.threads.com/@kiwi_serenity_limited" target="_blank"><i class="fab fa-threads"></i> Threads</a>
+        </div>
+
+        <div class="legal-links">
+            <a href="terms.html">Terms · 服务条款</a>
+            <a href="privacy.html">Privacy · 隐私政策</a>
+            <a href="disclaimer.html">Disclaimer · 医疗免责</a>
+            <a href="contact_card.html">Contact · 联系卡</a>
+        </div>
+
+        <div class="footer-note">
+            <p><strong>KIWI Serenity Limited</strong> © 2026 · all rights reserved</p>
+            <p style="margin-top:1rem;">Information & coordination only. No medical advice/diagnosis/treatment.</p>
+        </div>
+    </div>
+</div>
+
+<!-- back to top + print -->
+<div class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></div>
+<button class="print-btn" onclick="window.print()"><i class="fas fa-print"></i> Print / 打印</button>
+
+<script>
+    (function(){
+        const backTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', ()=> {
+            if (window.scrollY > 300) backTop.classList.add('visible');
+            else backTop.classList.remove('visible');
+        });
+        backTop.addEventListener('click', ()=> window.scrollTo({top:0, behavior:'smooth'}));
+    })();
+</script>
+</body>
+</html>
