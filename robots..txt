@@ -1,0 +1,26 @@
+# robots.txt for https://www.kiwi-serenity-limited.com
+
+User-agent: *
+Allow: /
+
+# Disallow admin or private directories (if any)
+# Disallow: /admin/
+# Disallow: /private/
+
+# Sitemap location
+Sitemap: https://www.kiwi-serenity-limited.com/sitemap.xml
+
+# Crawl delay (optional - be polite to servers)
+Crawl-delay: 2
+
+# Disallow specific file types (optional)
+Disallow: /*.pdf$
+Disallow: /*.doc$
+Disallow: /*.zip$
+
+# Allow images and CSS/JS for better rendering
+Allow: /*.jpg$
+Allow: /*.png$
+Allow: /*.svg$
+Allow: /*.css$
+Allow: /*.js$
