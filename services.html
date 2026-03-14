@@ -2,9 +2,9 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>KIWI Serenity Limited | Services Navigation</title>
+    <title>Medical Travel Services | KIWI Serenity Chengdu Coordination</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
-    <meta name="description" content="Navigate through KIWI Serenity Limited's medical and wellness travel coordination services. Find TCM, dental, tours, and premium packages.">
+    <meta name="description" content="Explore KIWI Serenity's medical travel coordination services in Chengdu: Traditional Chinese Medicine, dental care, wellness tours, and premium packages. NZ-registered, bilingual support.">
     <meta name="theme-color" content="#1e40af">
     
     <!-- iOS Safari 优化 -->
@@ -23,6 +23,71 @@
     <!-- 图标 -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    
+    <!-- Organization Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalBusiness",
+      "@id": "https://www.kiwi-serenity-limited.com/#organization",
+      "name": "KIWI Serenity Limited",
+      "alternateName": "KIWI Serenity - Medical Travel Coordination Chengdu",
+      "url": "https://www.kiwi-serenity-limited.com",
+      "logo": "https://www.kiwi-serenity-limited.com/logo.jpg",
+      "image": "https://www.kiwi-serenity-limited.com/medical.jpg",
+      "description": "NZ-registered medical travel coordination service specializing in dental treatment and Traditional Chinese Medicine in Chengdu, China.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "NZ",
+        "addressLocality": "Auckland",
+        "addressRegion": "Auckland"
+      },
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+64-22-040-5795",
+          "contactType": "customer service",
+          "areaServed": ["NZ", "AU", "US", "GB", "CA"],
+          "availableLanguage": ["English", "Chinese"]
+        },
+        {
+          "@type": "ContactPoint",
+          "telephone": "+64-22-3244-938",
+          "contactType": "WhatsApp",
+          "areaServed": "Worldwide",
+          "availableLanguage": ["English", "Chinese"]
+        }
+      ],
+      "email": "KIWI_Serenity_Limited@outlook.com",
+      "sameAs": [
+        "https://www.facebook.com/profile.php?id=61586286820740",
+        "https://www.instagram.com/kiwi_serenity_limited/",
+        "https://www.tiktok.com/@kiwi_sichuan_explorer.nz",
+        "https://www.linkedin.com/company/kiwi-serenity-limited"
+      ],
+      "areaServed": {
+        "@type": "Country",
+        "name": ["New Zealand", "Australia", "United States", "United Kingdom", "Canada"]
+      },
+      "serviceArea": {
+        "@type": "AdministrativeArea",
+        "name": "Chengdu, Sichuan, China"
+      },
+      "foundingDate": "2024",
+      "knowsAbout": ["Dental Tourism", "Medical Travel", "Traditional Chinese Medicine", "Sichuan Travel"]
+    }
+    </script>
+    
+    <!-- WebSite Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "KIWI Serenity Limited",
+      "url": "https://www.kiwi-serenity-limited.com",
+      "description": "NZ-registered medical travel coordination service in Chengdu, China"
+    }
+    </script>
     
     <style>
         /* ===== CSS 变量与重置 ===== */
@@ -1327,10 +1392,10 @@
 </head>
 
 <body>
-    <!-- 浮动返回主页按钮 -->
-    <a href="home.html" class="back-main-float" aria-label="Back to Home Page">
+    <!-- 浮动返回主页按钮 (已修复链接) -->
+    <a href="index.html" class="back-main-float" aria-label="Back to Home Page">
         <i class="fas fa-arrow-left"></i>
-        <span>返回主页面</span>
+        <span>返回主页面 | Home</span>
     </a>
 
     <!-- 返回顶部按钮 -->
@@ -1356,7 +1421,7 @@
             </div>
             
             <div class="services-visual">
-                <img src="services.png" alt="Services Visual" loading="lazy">
+                <img src="services.png" alt="Services Visual - Medical Travel Coordination" loading="lazy">
             </div>
             
             <div class="notice">
@@ -1398,15 +1463,15 @@
 
     <!-- 主内容区域 -->
     <main class="container">
-        <!-- 统计数据展示 -->
+        <!-- 统计数据展示 (已优化) -->
         <div class="stats-grid">
             <div class="stat-item fade-in">
                 <span class="stat-number">95%</span>
                 <span class="stat-label">客户满意度<br>Client Satisfaction</span>
             </div>
             <div class="stat-item fade-in">
-                <span class="stat-number">Up to 60% (Dental Care)</span>
-                <span class="stat-label">（口腔）节省约至60%<br>Cost Saving</span>
+                <span class="stat-number">60%</span>
+                <span class="stat-label">平均节省<br>Average Savings</span>
             </div>
             <div class="stat-item fade-in">
                 <span class="stat-number">24/7</span>
@@ -1435,7 +1500,7 @@
                         Experience curated TCM culture & wellness sessions arranged with licensed providers.
                     </p>
                     <div class="card-actions">
-                        <a href="tcm.html#tcm-packages" class="primary-action">查看中医 | About TCM </a>
+                        <a href="tcm.html" class="primary-action">查看中医 | About TCM</a>
                     </div>
                 </article>
 
@@ -1445,10 +1510,10 @@
                     <p>
                         在成都享受高质量的牙科咨询服务，费用相比新西兰可节省高达60%。我们提供预约协调和全程英语支持。
                         <br><br>
-                        Enjoy high-quality dental consultations in Chengdu may save up to 60% compared to New Zealand costs.
+                        Enjoy high-quality dental consultations in Chengdu with savings up to 60% compared to New Zealand costs.
                     </p>
                     <div class="card-actions">
-                        <a href="dental.html#dental-detail" class="primary-action">查看牙科服务 | View Dental Services</a>
+                        <a href="dental.html" class="primary-action">查看牙科服务 | View Dental Services</a>
                     </div>
                 </article>
 
@@ -1469,7 +1534,7 @@
 
         <div class="section-divider" aria-hidden="true"></div>
 
-        <!-- 旅行体验类别 -->
+        <!-- 旅行体验类别 (已修复链接) -->
         <section id="travel-experiences" aria-labelledby="travel-experiences-title">
             <div class="category-header">
                 <h2 class="category-title" id="travel-experiences-title">旅行体验 | Travel Experiences</h2>
@@ -1490,7 +1555,7 @@
                         Explore curated Sichuan cultural journeys that perfectly blend natural landscapes, cultural heritage and wellness experiences.
                     </p>
                     <div class="card-actions">
-                        <a href="tours.html#premium-packages" class="primary-action">查看旅行线路 | View Travel Routes</a>
+                        <a href="tour.html" class="primary-action">查看旅行线路 | View Travel Routes</a>
                     </div>
                 </article>
 
@@ -1503,7 +1568,7 @@
                         Premium packages combine Sichuan culture, TCM wisdom and modern health management.
                     </p>
                     <div class="card-actions">
-                        <a href="sichuan.html#premium-packages" class="primary-action">查看尊享套餐 | View Premium Packages</a>
+                        <a href="tour.html" class="primary-action">查看尊享套餐 | View Premium Packages</a>
                     </div>
                 </article>
 
@@ -1516,7 +1581,7 @@
                         Sichuan cultural highlights: Panda Base, Leshan Giant Buddha, Mount Emei, Dujiangyan Irrigation System.
                     </p>
                     <div class="card-actions">
-                        <a href="sichuan.html#premium-packages" class="primary-action">查看四川精华 | View Sichuan Highlights</a>
+                        <a href="tour.html" class="primary-action">查看四川精华 | View Sichuan Highlights</a>
                     </div>
                 </article>
             </div>
@@ -1578,6 +1643,7 @@
                     <div class="card-actions">
                         <a href="mailto:KIWI_Serenity_Limited@outlook.com" class="primary-action">邮件咨询 | Email Consultation</a>
                         <a href="tel:+64220405795" class="secondary-btn">电话咨询 | Call Now</a>
+                        <a href="https://wa.me/64223244938" class="secondary-btn" target="_blank">WhatsApp咨询 | WhatsApp</a>
                     </div>
                 </article>
             </div>
@@ -1623,12 +1689,18 @@
             </div>
         </section>
 
-        <!-- 响应式联系栏 -->
+        <!-- 响应式联系栏 (已优化) -->
         <div class="contact-bar" id="contact" role="complementary">
             <div class="contact-item">
                 <i class="fas fa-phone contact-icon" aria-hidden="true"></i>
-                <div class="contact-main">+64220405795</div>
-                <div class="contact-sub">Tel | 电话与即时通讯</div>
+                <div class="contact-main">+64 22 040 5795</div>
+                <div class="contact-sub">Tel | 电话</div>
+            </div>
+            
+            <div class="contact-item">
+                <i class="fab fa-whatsapp contact-icon" aria-hidden="true"></i>
+                <div class="contact-main">+64 22 324 4938</div>
+                <div class="contact-sub">WhatsApp | 即时通讯</div>
             </div>
             
             <div class="contact-item">
@@ -1647,30 +1719,34 @@
                 <i class="fas fa-share-alt contact-icon" aria-hidden="true"></i>
                 <div class="contact-main">KIWI Serenity Limited</div>
                 <div class="social-icons">
-                    <a href="#" title="TikTok" aria-label="TikTok"><i class="fab fa-tiktok social-icon"></i></a>
-                    <a href="#" title="Facebook" aria-label="Facebook"><i class="fab fa-facebook social-icon"></i></a>
+                    <a href="https://www.tiktok.com/@kiwi_sichuan_explorer.nz" target="_blank" title="TikTok" aria-label="TikTok"><i class="fab fa-tiktok social-icon"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=61586286820740" target="_blank" title="Facebook" aria-label="Facebook"><i class="fab fa-facebook social-icon"></i></a>
+                    <a href="https://www.instagram.com/kiwi_serenity_limited/" target="_blank" title="Instagram" aria-label="Instagram"><i class="fab fa-instagram social-icon"></i></a>
+                    <a href="https://www.linkedin.com/company/kiwi-serenity-limited" target="_blank" title="LinkedIn" aria-label="LinkedIn"><i class="fab fa-linkedin social-icon"></i></a>
                 </div>
                 <div class="contact-sub">Social Media | 社交媒体</div>
             </div>
         </div>
     </main>
 
-    <!-- 页脚 -->
+    <!-- 页脚 (已优化) -->
     <footer class="site-footer" role="contentinfo">
         <div class="footer-content">
             <nav class="footer-nav" aria-label="Footer Navigation">
-                <a href="index.html">主页面 | Home Page</a>
-                <a href="dental.html">口腔服务 | Dental Service</a>
-                <a href="tcm.html">中医服务 | TCM Service</a>
-                <a href="travel.html">旅行体验 | Travel </a>
-                <a href="fee.html">服务与费用 | Service Package</a>
+                <a href="index.html">主页面 | Home</a>
+                <a href="dental.html">口腔服务 | Dental</a>
+                <a href="tcm.html">中医服务 | TCM</a>
+                <a href="tour.html">旅行体验 | Travel</a>
+                <a href="fee.html">服务与费用 | Packages</a>
+                <a href="faq.html">常见问题 | FAQ</a>
             </nav>
             
             <nav class="footer-nav" aria-label="Legal Links">
-                <a href="privacy.html">隐私政策 | Privacy Policy</a>
-                <a href="terms.html">服务条款 | Terms of Service</a>
-                <a href="disclaimer.html">医疗免责声明 | Medical Disclaimer</a>
-                <a href="payment.html">中国支付指南 | China Payment Method</a>
+                <a href="privacy.html">隐私政策 | Privacy</a>
+                <a href="terms.html">服务条款 | Terms</a>
+                <a href="disclaimer.html">医疗免责 | Disclaimer</a>
+                <a href="payment.html">中国支付指南 | Payment</a>
+                <a href="contact_card.html">应急联系卡 | Emergency</a>
             </nav>
             
             <p class="footer-brand">
@@ -1685,6 +1761,189 @@
             </p>
         </div>
     </footer>
+
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.kiwi-serenity-limited.com/index.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Services",
+          "item": "https://www.kiwi-serenity-limited.com/services.html"
+        }
+      ]
+    }
+    </script>
+
+    <!-- Services ItemList Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "KIWI Serenity Services",
+      "description": "Medical travel coordination services in Chengdu, China",
+      "numberOfItems": 9,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "Service",
+            "name": "Traditional Chinese Medicine (TCM)",
+            "description": "Experience curated TCM culture & wellness sessions arranged with licensed providers including acupuncture, Tui Na, cupping, and more.",
+            "url": "https://www.kiwi-serenity-limited.com/tcm.html",
+            "provider": { "@type": "Organization", "name": "KIWI Serenity Limited" }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "MedicalBusiness",
+            "name": "Dental Care Services",
+            "description": "High-quality dental consultations in Chengdu with savings up to 60% compared to New Zealand costs.",
+            "url": "https://www.kiwi-serenity-limited.com/dental.html",
+            "provider": { "@type": "Organization", "name": "KIWI Serenity Limited" }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "Service",
+            "name": "Health Information Questionnaire",
+            "description": "Submit your health and travel information for personalized coordination service recommendations.",
+            "url": "https://www.kiwi-serenity-limited.com/questionnaire.html",
+            "provider": { "@type": "Organization", "name": "KIWI Serenity Limited" }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "item": {
+            "@type": "TouristTrip",
+            "name": "Cultural & Travel Experiences",
+            "description": "Curated Sichuan cultural journeys blending natural landscapes, cultural heritage and wellness experiences.",
+            "url": "https://www.kiwi-serenity-limited.com/tour.html",
+            "provider": { "@type": "Organization", "name": "KIWI Serenity Limited" }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "item": {
+            "@type": "Product",
+            "name": "Premium Experience Packages",
+            "description": "Premium packages combining Sichuan culture, TCM wisdom and modern health management.",
+            "url": "https://www.kiwi-serenity-limited.com/tour.html",
+            "provider": { "@type": "Organization", "name": "KIWI Serenity Limited" }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "item": {
+            "@type": "TouristAttraction",
+            "name": "Sichuan Cultural Highlights",
+            "description": "Sichuan cultural highlights: Panda Base, Leshan Giant Buddha, Mount Emei, Dujiangyan Irrigation System.",
+            "url": "https://www.kiwi-serenity-limited.com/tour.html",
+            "provider": { "@type": "Organization", "name": "KIWI Serenity Limited" }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "item": {
+            "@type": "Service",
+            "name": "FAQs & Important Information",
+            "description": "Understand our service scope, suitability, limitations and frequently asked questions.",
+            "url": "https://www.kiwi-serenity-limited.com/faq.html",
+            "provider": { "@type": "Organization", "name": "KIWI Serenity Limited" }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "item": {
+            "@type": "Service",
+            "name": "Legal & Policy Documents",
+            "description": "Review our privacy policy, terms of service, and medical disclaimer documents.",
+            "url": "https://www.kiwi-serenity-limited.com/privacy.html",
+            "provider": { "@type": "Organization", "name": "KIWI Serenity Limited" }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 9,
+          "item": {
+            "@type": "Service",
+            "name": "Consultation & Support",
+            "description": "Personalized advice from our bilingual coordination team.",
+            "url": "mailto:KIWI_Serenity_Limited@outlook.com",
+            "provider": { "@type": "Organization", "name": "KIWI Serenity Limited" }
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Why Choose Us ItemList Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Why Choose KIWI Serenity",
+      "description": "Key reasons to choose KIWI Serenity for medical travel coordination",
+      "numberOfItems": 4,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "Thing",
+            "name": "NZ-Registered & Trusted",
+            "description": "New Zealand registered company, governed and protected by NZ law."
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "Thing",
+            "name": "Bilingual Coordination",
+            "description": "Professional bilingual coordination team ensures seamless communication."
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "Thing",
+            "name": "Verified Partners",
+            "description": "All partner institutions are rigorously screened and verified."
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "item": {
+            "@type": "Thing",
+            "name": "24/7 Support",
+            "description": "Round-the-clock support to answer your questions anytime."
+          }
+        }
+      ]
+    }
+    </script>
 
     <script>
         // 页面加载优化
@@ -1873,7 +2132,6 @@
             if (!scrollTimeout) {
                 scrollTimeout = setTimeout(function() {
                     scrollTimeout = null;
-                    // 滚动停止后的操作
                 }, 100);
             }
         });
@@ -1891,20 +2149,6 @@
                 });
             }, 250);
         });
-        
-        // 网络连接状态检测
-        window.addEventListener('online', function() {
-            showNotification('网络已恢复连接', 'success');
-        });
-        
-        window.addEventListener('offline', function() {
-            showNotification('网络连接已断开，部分功能可能受限', 'warning');
-        });
-        
-        function showNotification(message, type) {
-            // 实现通知功能
-            console.log(`${type}: ${message}`);
-        }
     </script>
 </body>
 </html>
