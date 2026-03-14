@@ -59,9 +59,9 @@
 }
 </script>
   <meta charset="UTF-8">
-  <title>KIWI Serenity Limited | Healing Journey FAQs</title>
+  <title>Frequently Asked Questions | KIWI Serenity Medical Travel Chengdu</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Frequently Asked Questions about healing journey coordination for international visitors in Chengdu, China. Learn about dental care and Traditional Chinese Medicine (TCM) services in licensed Chengdu clinics, suitability, and limitations.">
+  <meta name="description" content="Find answers to frequently asked questions about medical travel to Chengdu, China. Learn about dental care costs, TCM treatments, the coordination process, and more with KIWI Serenity.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -481,6 +481,35 @@
       box-shadow: 0 10px 25px rgba(0,0,0,0.15);
     }
 
+    /* ===== 社交媒体链接样式 ===== */
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin: 25px 0 15px;
+    }
+
+    .social-links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.1);
+      color: var(--secondary);
+      font-size: 1.5rem;
+      transition: var(--transition);
+      border: 1px solid rgba(255,255,255,0.2);
+      text-decoration: none;
+    }
+
+    .social-links a:hover {
+      background: var(--secondary);
+      color: var(--dark);
+      transform: translateY(-3px);
+    }
+
     /* ===== 页脚 ===== */
     footer {
       background: rgba(31, 41, 51, 0.97);
@@ -626,7 +655,7 @@
       animation: fadeInUp 0.6s ease-out;
     }
 
-    /* ===== 响应式设计 - 平板设备 (768px - 1024px) ===== */
+    /* ===== 响应式设计 - 平板设备 ===== */
     @media (max-width: 1024px) {
       .container {
         padding: 0 25px;
@@ -668,7 +697,7 @@
       }
     }
 
-    /* ===== 响应式设计 - 手机设备 (小于768px) ===== */
+    /* ===== 响应式设计 - 手机设备 ===== */
     @media (max-width: 768px) {
       body {
         font-size: 15px;
@@ -714,7 +743,6 @@
         margin-bottom: 30px;
       }
       
-      /* FAQ区域调整 */
       .faq-section {
         padding: 30px 25px;
         margin-bottom: 40px;
@@ -745,7 +773,6 @@
         font-size: 1rem;
       }
       
-      /* 功能网格垂直布局 */
       .features-grid {
         grid-template-columns: 1fr;
         gap: 25px;
@@ -761,7 +788,6 @@
         min-height: auto;
       }
       
-      /* CTA区域调整 */
       .faq-cta {
         padding: 35px 25px;
         margin-top: 40px;
@@ -780,7 +806,6 @@
         font-size: 1.05rem;
       }
       
-      /* 悬浮按钮调整 */
       .back-home-float {
         top: 15px;
         left: 15px;
@@ -788,7 +813,6 @@
         font-size: 13px;
       }
       
-      /* 页脚调整 */
       footer {
         padding: 50px 0 25px;
       }
@@ -812,12 +836,22 @@
         text-align: center;
       }
       
+      .social-links {
+        gap: 15px;
+      }
+      
+      .social-links a {
+        width: 42px;
+        height: 42px;
+        font-size: 1.3rem;
+      }
+      
       .disclaimer {
         padding: 25px 20px;
       }
     }
 
-    /* ===== 响应式设计 - 小手机设备 (小于480px) ===== */
+    /* ===== 响应式设计 - 小手机设备 ===== */
     @media (max-width: 480px) {
       body {
         font-size: 14px;
@@ -914,9 +948,15 @@
       .footer-notice {
         font-size: 0.9rem;
       }
+      
+      .social-links a {
+        width: 38px;
+        height: 38px;
+        font-size: 1.2rem;
+      }
     }
 
-    /* ===== 响应式设计 - 超大屏幕 (大于1200px) ===== */
+    /* ===== 超大屏幕优化 ===== */
     @media (min-width: 1200px) {
       .container {
         max-width: 1100px;
@@ -935,7 +975,8 @@
       .logo-main img:hover,
       .faq-section:hover,
       .feature-card:hover,
-      .cta-button:hover {
+      .cta-button:hover,
+      .social-links a:hover {
         transform: none !important;
       }
     }
@@ -979,13 +1020,18 @@
       .disclaimer {
         background: rgba(0, 0, 0, 0.3);
       }
+      
+      .social-links a {
+        background: rgba(255,255,255,0.05);
+      }
     }
 
     /* ===== 打印样式 ===== */
     @media print {
       .back-home-float,
       .cta-button,
-      .logo-main img {
+      .logo-main img,
+      .social-links {
         display: none !important;
       }
       
@@ -1073,7 +1119,7 @@
       </div>
       
       <div class="feature-card">
-        <h4><i class="fas fa-plane"></i> Suitable for planned short-term medical travel, depending on individual assessment</h4>
+        <h4><i class="fas fa-plane"></i> Suitable for planned short-term medical travel</h4>
         <p>Many services can be completed within a short stay, making Chengdu suitable for planned medical travel itineraries.</p>
         <div class="chinese-text">适合医旅行程安排：多数项目可在短期停留内完成。</div>
       </div>
@@ -1089,6 +1135,31 @@
     <div class="faq-section">
       <h2><i class="fas fa-tooth"></i> Dental Care in Chengdu for Overseas Visitors | 成都口腔医疗服务</h2>
 
+      <!-- 牙科节省费用 -->
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Q: How much can I save on dental treatment in Chengdu compared to my home country?</span>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          <p class="english-answer">A: Patients typically save 60-75% on dental procedures in Chengdu compared to prices in New Zealand, USA, UK, or Australia. For example, dental implants cost $800-1500 USD in Chengdu versus $4000+ in Western countries.</p>
+          <p class="chinese-answer">与新西兰、美国、英国或澳大利亚相比，患者在成都的牙科治疗通常可节省60-75%。例如，种植牙在成都费用为800-1500美元，而在西方国家则需4000美元以上。</p>
+        </div>
+      </div>
+
+      <!-- 牙医资质 -->
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Q: Are the dentists in Chengdu qualified and English-speaking?</span>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          <p class="english-answer">A: Yes, our partner clinics employ dentists graduated from West China School of Stomatology (ranked #12 globally). Many have international training and can communicate in English. We also provide professional interpreters for all consultations.</p>
+          <p class="chinese-answer">是的，我们的合作诊所聘请毕业于华西口腔医学院（全球排名第12位）的牙医。许多人接受过国际培训，可以用英语沟通。我们还为所有咨询提供专业翻译。</p>
+        </div>
+      </div>
+
+      <!-- 安全性 -->
       <div class="faq-item">
         <div class="faq-question">
           <span>Q: Is dental treatment in Chengdu safe for overseas visitors from New Zealand and Australia?</span>
@@ -1100,6 +1171,7 @@
         </div>
       </div>
 
+      <!-- 牙科服务项目 -->
       <div class="faq-item">
         <div class="faq-question">
           <span>Q: What dental services are available in Chengdu for medical travelers?</span>
@@ -1111,6 +1183,7 @@
         </div>
       </div>
 
+      <!-- 短期停留可行性 -->
       <div class="faq-item">
         <div class="faq-question">
           <span>Q: Can dental treatments be completed during a short stay?</span>
@@ -1122,6 +1195,7 @@
         </div>
       </div>
 
+      <!-- 语言支持 -->
       <div class="faq-item">
         <div class="faq-question">
           <span>Q: Are language support services available?</span>
@@ -1138,6 +1212,7 @@
     <div class="faq-section">
       <h2><i class="fas fa-spa"></i> Traditional Chinese Medicine (TCM) Experience in Chengdu | 成都中医理疗体验</h2>
 
+      <!-- 中医受监管情况 -->
       <div class="faq-item">
         <div class="faq-question">
           <span>Q: Is Traditional Chinese Medicine (TCM) in Chengdu regulated and provided by licensed practitioners?</span>
@@ -1149,17 +1224,19 @@
         </div>
       </div>
 
+      <!-- 可体验的中医项目 -->
       <div class="faq-item">
         <div class="faq-question">
           <span>Q: What TCM therapies can visitors experience?</span>
           <i class="fas fa-chevron-down"></i>
         </div>
         <div class="faq-answer">
-          <p class="english-answer">A: Common therapies include Tui Na massage, cupping, Gua Sha, TDP Warm Lamp, acupuncture / electroacupuncture, moxibustion / fire therapy.</p>
-          <p class="chinese-answer">常见体验项目包括：推拿、拔罐、刮痧、TDP烤灯、针灸/电针、艾灸/火疗。</p>
+          <p class="english-answer">A: Common therapies include Tui Na massage, cupping, Gua Sha, TDP Warm Lamp, acupuncture / electroacupuncture, moxibustion / fire therapy, and herbal therapy.</p>
+          <p class="chinese-answer">常见体验项目包括：推拿、拔罐、刮痧、TDP烤灯、针灸/电针、艾灸/火疗以及中药调理。</p>
         </div>
       </div>
 
+      <!-- 适合初次体验者 -->
       <div class="faq-item">
         <div class="faq-question">
           <span>Q: Is TCM suitable for first-time visitors?</span>
@@ -1171,38 +1248,49 @@
         </div>
       </div>
 
+      <!-- 是否涉及用药 -->
       <div class="faq-item">
         <div class="faq-question">
           <span>Q: Does TCM treatment involve medication?</span>
           <i class="fas fa-chevron-down"></i>
         </div>
         <div class="faq-answer">
-          <p class="english-answer">A: Some experiences involve non-invasive therapies only. Any herbal or medical recommendations are provided directly by licensed practitioners. Treatments are not intended to diagnose or treat medical conditions.</p>
-          <p class="chinese-answer">部分体验仅包含非药物理疗。如涉及中药或其他建议，均由持证中医师当面说明。相关体验不用于疾病诊断或替代医疗治疗。</p>
+          <p class="english-answer">A: Some experiences involve non-invasive therapies only. Any herbal or medical recommendations are provided directly by licensed practitioners.</p>
+          <p class="chinese-answer">部分体验仅包含非药物理疗。如涉及中药或其他建议，均由持证中医师当面说明。</p>
         </div>
       </div>
     </div>
 
-    <!-- ================= Healing Journey Suitability FAQ ================= -->
+    <!-- ================= Medical Travel Process FAQ ================= -->
+    <div class="faq-section">
+      <h2><i class="fas fa-plane"></i> Medical Travel Process | 医疗旅行流程</h2>
+
+      <!-- 医疗旅行流程 -->
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Q: How does the medical travel process work with KIWI Serenity?</span>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          <p class="english-answer">A: The process is simple: 1) Send your X-rays or medical information, 2) Schedule an online consultation with a specialist, 3) Receive a treatment plan and quote, 4) Travel to Chengdu, 5) Complete treatment with our coordination support, 6) Receive follow-up care after returning home.</p>
+          <p class="chinese-answer">流程简单：1）发送您的X光片或医疗信息，2）与专家安排在线咨询，3）接收治疗计划和报价，4）前往成都，5）在我们的协调支持下完成治疗，6）回国后接受后续关怀。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= Suitability & Limitations FAQ ================= -->
     <div class="faq-section">
       <h2><i class="fas fa-exclamation-triangle"></i> Medical Travel Suitability & Limitations | 医疗旅行适用性与限制说明</h2>
 
+      <!-- 紧急情况 -->
       <div class="faq-item">
         <div class="faq-question">
           <span>Q: Is medical travel to Chengdu suitable for emergency or urgent medical care?</span>
           <i class="fas fa-chevron-down"></i>
         </div>
         <div class="faq-answer">
-          <p class="english-answer">
-            A: No. Healing Journey are not suitable for emergency situations, urgent medical conditions,
-            or cases requiring immediate or ongoing critical care. In such situations, individuals should seek local emergency medical services in their home country.
-            Suitability for healing journey should always be discussed during a pre-travel consultation.
-          </p>
-          <p class="chinese-answer">
-            不适合。医疗与康养旅行不适用于紧急情况、突发疾病或需要立即或长期重症医疗干预的情形。
-            如遇紧急医疗状况，应优先在所在国家或地区寻求本地急救及医疗服务。
-            是否适合医疗旅行，应在出行前咨询中进行充分沟通与评估。
-          </p>
+          <p class="english-answer">A: No. Healing Journey are not suitable for emergency situations, urgent medical conditions, or cases requiring immediate or ongoing critical care. In such situations, individuals should seek local emergency medical services in their home country. Suitability for healing journey should always be discussed during a pre-travel consultation.</p>
+          <p class="chinese-answer">不适合。医疗与康养旅行不适用于紧急情况、突发疾病或需要立即或长期重症医疗干预的情形。如遇紧急医疗状况，应优先在所在国家或地区寻求本地急救及医疗服务。是否适合医疗旅行，应在出行前咨询中进行充分沟通与评估。</p>
         </div>
       </div>
     </div>
@@ -1210,12 +1298,8 @@
     <!-- ================= CTA Section ================= -->
     <div class="faq-cta">
       <h3>Considering a Cross-border travel & Healing Journey?</h3>
-      <p>
-        Pre-Travel Planning. 行程咨询。
-      </p>
-      <a href="questionnaire.html" class="cta-button">
-        Book a Coordination Call
-      </a>
+      <p>Pre-Travel Planning. 行程咨询。</p>
+      <a href="questionnaire.html" class="cta-button">Book a Coordination Call</a>
     </div>
 
   </div>
@@ -1236,8 +1320,17 @@
         <ul class="contact-info">
           <li><i class="fas fa-map-marker-alt"></i> <span>Chengdu, Sichuan, China</span></li>
           <li><i class="fas fa-envelope"></i> <span>KIWI_Serenity_Limited@outlook.com</span></li>
-          <li><i class="fas fa-phone"></i> <span>+64 022 040 5795</span></li>
+          <li><i class="fas fa-phone"></i> <span>+64 22 040 5795</span></li>
+          <li><i class="fab fa-whatsapp"></i> <span>+64 22 324 4938</span></li>
         </ul>
+        
+        <!-- 社交媒体链接 -->
+        <div class="social-links">
+          <a href="https://www.tiktok.com/@kiwi_sichuan_explorer.nz" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+          <a href="https://www.facebook.com/profile.php?id=61586286820740" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+          <a href="https://www.instagram.com/kiwi_serenity_limited/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/company/kiwi-serenity-limited" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        </div>
       </div>
       
       <div class="footer-section">
@@ -1263,6 +1356,9 @@
       <div class="footer-inner">
         <div class="footer-nav">
           <a href="index.html">Home</a>
+          <a href="dental.html">Dental</a>
+          <a href="tcm.html">TCM</a>
+          <a href="tour.html">Tours</a>
           <a href="privacy.html">Privacy Policy</a>
           <a href="terms.html">Terms of Service</a>
           <a href="disclaimer.html">Medical Disclaimer</a>
@@ -1312,17 +1408,14 @@
     });
 
     // 默认打开第一个FAQ项
-    document.querySelectorAll('.faq-section').forEach(section => {
-      const firstItem = section.querySelector('.faq-item');
-      if (firstItem) {
-        firstItem.classList.add('active');
-      }
-    });
+    const firstItem = document.querySelector('.faq-item');
+    if (firstItem) {
+      firstItem.classList.add('active');
+    }
     
     // 移动设备优化：增加触摸目标大小
     if ('ontouchstart' in window) {
-      document.querySelectorAll('.faq-question, .footer-nav a, .cta-button, .back-home-float').forEach(element => {
-        element.style.padding = '14px 20px';
+      document.querySelectorAll('.faq-question, .footer-nav a, .cta-button, .back-home-float, .social-links a').forEach(element => {
         element.style.minHeight = '44px';
         element.style.display = 'flex';
         element.style.alignItems = 'center';
@@ -1351,43 +1444,80 @@
       });
     });
     
-    // 添加卡片悬停效果
-    const faqSections = document.querySelectorAll('.faq-section');
-    faqSections.forEach(section => {
-      section.addEventListener('mouseenter', () => {
-        section.style.transform = 'translateY(-4px)';
-        section.style.boxShadow = '0 35px 80px rgba(0,0,0,0.16)';
-      });
-      
-      section.addEventListener('mouseleave', () => {
-        section.style.transform = 'translateY(0)';
-        section.style.boxShadow = '0 25px 60px rgba(0,0,0,0.12)';
-      });
-    });
-    
     // 打印优化
     window.addEventListener('beforeprint', () => {
-      document.querySelector('.back-home-float').style.display = 'none';
+      const backBtn = document.querySelector('.back-home-float');
+      if (backBtn) backBtn.style.display = 'none';
     });
     
     window.addEventListener('afterprint', () => {
-      document.querySelector('.back-home-float').style.display = 'flex';
+      const backBtn = document.querySelector('.back-home-float');
+      if (backBtn) backBtn.style.display = 'flex';
     });
-    
-    // 监听系统颜色模式变化
-    const darkModeQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    
-    const updateColorScheme = (e) => {
-      if (e.matches) {
-        console.log('Dark mode activated for FAQ page');
-      } else {
-        console.log('Light mode activated for FAQ page');
-      }
-    };
-    
-    darkModeQuery.addEventListener('change', updateColorScheme);
   });
 </script>
+
+<!-- ================= Schema Markup ================= -->
+
+<!-- Why Choose Chengdu ItemList Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Why Choose Chengdu for Healing Journey",
+  "description": "Key reasons to choose Chengdu for medical travel and wellness",
+  "numberOfItems": 5,
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "item": {
+        "@type": "Thing",
+        "name": "Professional & Regulated Medical Environment",
+        "description": "Healthcare services are delivered in licensed medical institutions following national regulations and clinical standards."
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "item": {
+        "@type": "Thing",
+        "name": "Licensed Medical & TCM Practitioners",
+        "description": "Treatments are provided by appropriately licensed dentists and licensed Traditional Chinese Medicine practitioners."
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "item": {
+        "@type": "Thing",
+        "name": "Integration of Dentistry & Traditional Chinese Medicine",
+        "description": "Visitors can access both evidence-based dental care and Traditional Chinese Medicine therapies in one destination."
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "item": {
+        "@type": "Thing",
+        "name": "Supportive Recovery Environment",
+        "description": "A relaxed pace of life, mild climate, and strong wellness culture support post-treatment recovery."
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 5,
+      "item": {
+        "@type": "Thing",
+        "name": "Suitable for planned short-term medical travel",
+        "description": "Many services can be completed within a short stay, making Chengdu suitable for planned medical travel itineraries."
+      }
+    }
+  ]
+}
+</script>
+
+<!-- FAQPage Schema (12 questions - complete) -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -1412,6 +1542,70 @@
     },
     {
       "@type": "Question",
+      "name": "Is dental treatment in Chengdu safe for overseas visitors from New Zealand and Australia?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Dental treatments are provided in licensed clinics using regulated materials and standard infection-control procedures."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What dental services are available in Chengdu for medical travelers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Common services include teeth cleaning, fillings, tooth extraction, veneers, and teeth whitening."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can dental treatments be completed during a short stay?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Many basic procedures such as cleaning, fillings, whitening, and simple extractions can be completed within one or two visits, subject to clinical assessment."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are language support services available?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Language assistance may be arranged to support communication during consultations and treatments."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Traditional Chinese Medicine (TCM) in Chengdu regulated and provided by licensed practitioners?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. TCM is a regulated medical system in China and is practiced by licensed professionals in approved medical institutions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What TCM therapies can visitors experience?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Common therapies include Tui Na massage, cupping, Gua Sha, TDP Warm Lamp, acupuncture / electroacupuncture, moxibustion / fire therapy, and herbal therapy."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is TCM suitable for first-time visitors?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Treatments are explained in advance, and therapy intensity is adjusted according to individual comfort levels."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does TCM treatment involve medication?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Some experiences involve non-invasive therapies only. Any herbal or medical recommendations are provided directly by licensed practitioners."
+      }
+    },
+    {
+      "@type": "Question",
       "name": "How does the medical travel process work with KIWI Serenity?",
       "acceptedAnswer": {
         "@type": "Answer",
@@ -1420,14 +1614,15 @@
     },
     {
       "@type": "Question",
-      "name": "What TCM treatments are available in Chengdu?",
+      "name": "Is medical travel to Chengdu suitable for emergency or urgent medical care?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "We coordinate access to various Traditional Chinese Medicine treatments including acupuncture, electroacupuncture, moxibustion, cupping, gua sha, Tui Na massage, herbal therapy, fire therapy, and TDP lamp therapy, all performed by licensed practitioners."
+        "text": "No. Healing Journey are not suitable for emergency situations, urgent medical conditions, or cases requiring immediate or ongoing critical care. In such situations, individuals should seek local emergency medical services in their home country. Suitability for healing journey should always be discussed during a pre-travel consultation."
       }
     }
   ]
 }
 </script>
+
 </body>
 </html>
