@@ -3,7 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>健康信息问卷 / Health Questionnaire</title>
+    <title>健康信息问卷 | Health Questionnaire - KIWI Serenity Limited</title>
+    <meta name="description" content="Complete our health questionnaire for medical travel coordination in Chengdu. Provide your health information for dental or TCM treatment planning with KIWI Serenity Limited.">
+    
+    <!-- Font Awesome 图标库 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Organization Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "@id": "https://www.kiwi-serenity-limited.com/#organization",
+      "name": "KIWI Serenity Limited",
+      "alternateName": "KIWI Serenity - Medical Travel Coordination Chengdu",
+      "url": "https://www.kiwi-serenity-limited.com",
+      "logo": "https://www.kiwi-serenity-limited.com/logo.jpg",
+      "description": "NZ-registered medical travel coordination service specializing in dental treatment and Traditional Chinese Medicine in Chengdu, China.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "NZ",
+        "addressLocality": "Auckland",
+        "addressRegion": "Auckland"
+      },
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+64-22-040-5795",
+          "contactType": "customer service",
+          "areaServed": ["NZ", "AU", "US", "GB", "CA"],
+          "availableLanguage": ["English", "Chinese"]
+        },
+        {
+          "@type": "ContactPoint",
+          "telephone": "+64-22-3244-938",
+          "contactType": "WhatsApp",
+          "areaServed": "Worldwide",
+          "availableLanguage": ["English", "Chinese"]
+        }
+      ],
+      "email": "KIWI_Serenity_Limited@outlook.com",
+      "sameAs": [
+        "https://www.facebook.com/profile.php?id=61586286820740",
+        "https://www.instagram.com/kiwi_serenity_limited/",
+        "https://www.tiktok.com/@kiwi_sichuan_explorer.nz",
+        "https://www.linkedin.com/company/kiwi-serenity-limited",
+        "https://www.threads.com/@kiwi_serenity_limited"
+      ]
+    }
+    </script>
+    
+    <!-- WebSite Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "KIWI Serenity Limited",
+      "url": "https://www.kiwi-serenity-limited.com",
+      "description": "NZ-registered medical travel coordination service in Chengdu, China",
+      "inLanguage": ["en", "zh"]
+    }
+    </script>
 
     <style>
         /* ===== 全局样式重置与基础设置 ===== */
@@ -130,10 +190,22 @@
             display: flex;
             align-items: center;
             gap: 8px;
+            flex-wrap: wrap;
         }
 
         .company-info p:last-child {
             margin-bottom: 0;
+        }
+        
+        .company-info a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .company-info a:hover {
+            color: var(--primary-dark);
+            text-decoration: underline;
         }
 
         .language-note {
@@ -472,6 +544,35 @@
             display: block;
         }
 
+        /* ===== 社交媒体链接样式 ===== */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin: 30px 0 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: rgba(44, 90, 160, 0.1);
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            transition: var(--transition);
+            border: 1px solid rgba(44, 90, 160, 0.2);
+            text-decoration: none;
+        }
+        
+        .social-links a:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-3px);
+        }
+
         /* ===== 浮动返回首页按钮 ===== */
         .back-home-float {
             position: fixed;
@@ -513,14 +614,19 @@
 
         .footer-nav {
             margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
         }
 
         .footer-nav a {
             color: var(--primary-color);
             text-decoration: none;
-            margin: 0 10px;
+            margin: 0 5px;
             font-weight: 500;
             transition: var(--transition);
+            padding: 5px 8px;
         }
 
         .footer-nav a:hover {
@@ -546,7 +652,15 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* ===== 响应式设计 - 平板设备 (768px - 1024px) ===== */
+        /* ===== 错误消息样式 ===== */
+        .error-message {
+            color: var(--danger-color);
+            font-size: 0.85em;
+            margin-top: -10px;
+            margin-bottom: 15px;
+        }
+
+        /* ===== 响应式设计 - 平板设备 ===== */
         @media (max-width: 1024px) {
             body {
                 padding: 15px;
@@ -587,7 +701,7 @@
             }
         }
 
-        /* ===== 响应式设计 - 手机设备 (小于768px) ===== */
+        /* ===== 响应式设计 - 手机设备 ===== */
         @media (max-width: 768px) {
             body {
                 padding: 12px;
@@ -598,7 +712,6 @@
                 max-width: 100%;
             }
             
-            /* 垂直布局调整 */
             .bilingual {
                 grid-template-columns: 1fr;
                 gap: 0;
@@ -612,7 +725,6 @@
                 margin-bottom: 20px;
             }
             
-            /* Logo区域垂直布局 */
             .logo {
                 flex-direction: column;
                 text-align: center;
@@ -628,13 +740,11 @@
                 max-height: 100px;
             }
             
-            /* 表单行垂直布局 */
             .form-row {
                 flex-direction: column;
                 gap: 15px;
             }
             
-            /* 诊所选择垂直布局 */
             .clinic-select {
                 flex-direction: column;
                 gap: 15px;
@@ -644,7 +754,6 @@
                 padding: 20px 15px;
             }
             
-            /* 进度指示器调整 */
             .progress-indicator {
                 flex-wrap: wrap;
                 justify-content: center;
@@ -665,19 +774,16 @@
                 height: 35px;
             }
             
-            /* 单选按钮组垂直布局 */
             .radio-group {
                 flex-direction: column;
                 gap: 10px;
             }
             
-            /* 输入框和选择框调整 */
             input, select, textarea {
                 padding: 14px 12px;
-                font-size: 16px; /* 防止iOS自动缩放 */
+                font-size: 16px;
             }
             
-            /* 按钮调整 */
             .submit-btn {
                 width: 100%;
                 min-width: auto;
@@ -685,7 +791,6 @@
                 font-size: 17px;
             }
             
-            /* 浮动按钮调整 */
             .back-home-float {
                 top: 15px;
                 left: 15px;
@@ -693,9 +798,7 @@
                 font-size: 13px;
             }
             
-            /* 页脚调整 */
             .footer-nav {
-                display: flex;
                 flex-direction: column;
                 gap: 10px;
             }
@@ -704,15 +807,24 @@
                 margin: 5px 0;
             }
             
-            /* 公司信息调整 */
             .company-info p {
                 flex-direction: column;
                 align-items: flex-start;
                 gap: 5px;
             }
+            
+            .social-links {
+                gap: 15px;
+            }
+            
+            .social-links a {
+                width: 42px;
+                height: 42px;
+                font-size: 1.3rem;
+            }
         }
 
-        /* ===== 响应式设计 - 小手机设备 (小于480px) ===== */
+        /* ===== 响应式设计 - 小手机设备 ===== */
         @media (max-width: 480px) {
             body {
                 padding: 10px;
@@ -757,9 +869,15 @@
             .footer-notice {
                 font-size: 0.85em;
             }
+            
+            .social-links a {
+                width: 38px;
+                height: 38px;
+                font-size: 1.2rem;
+            }
         }
 
-        /* ===== 响应式设计 - 超大屏幕 (大于1200px) ===== */
+        /* ===== 响应式设计 - 超大屏幕 ===== */
         @media (min-width: 1200px) {
             body {
                 max-width: 1100px;
@@ -770,7 +888,8 @@
         @media print {
             .back-home-float,
             .submit-btn,
-            .progress-indicator {
+            .progress-indicator,
+            .social-links {
                 display: none !important;
             }
             
@@ -801,8 +920,9 @@
             </div>
 
             <div class="company-info">
-                <p><strong>联系电话 / TEL:</strong> +64220405795</p>
-                <p><strong>邮箱 / Email:</strong> KIWI_Serenity_Limited@outlook.com</p>
+                <p><strong><i class="fas fa-phone-alt"></i> 联系电话 / TEL:</strong> <a href="tel:+64220405795">+64 22 040 5795</a></p>
+                <p><strong><i class="fab fa-whatsapp"></i> WhatsApp:</strong> <a href="https://wa.me/64223244938" target="_blank">+64 22 324 4938</a></p>
+                <p><strong><i class="fas fa-envelope"></i> 邮箱 / Email:</strong> <a href="mailto:KIWI_Serenity_Limited@outlook.com">KIWI_Serenity_Limited@outlook.com</a></p>
             </div>
         </div>
 
@@ -811,8 +931,8 @@
             <p><strong>重要声明：</strong>本问卷仅用于医疗旅行与行程协调之目的，不构成任何医疗评估、诊断或医疗建议。</p>
         </div>
         <div class="language-note">
-            <p><strong>Note:</strong>This questionnaire is bilingual. Please fill in all information in English.</p>
-            <p><strong>请注意:</strong>本问卷为中英文对照，请用英文填写所有信息。填写后将转交诊所进行医生预评估。</p>
+            <p><strong>Note:</strong> This questionnaire is bilingual. Please fill in all information in English.</p>
+            <p><strong>请注意:</strong> 本问卷为中英文对照，请用英文填写所有信息。填写后将转交诊所进行医生预评估。</p>
         </div>
         
         <!-- Progress Indicator -->
@@ -836,15 +956,16 @@
         </div>
 
         <div class="language-note">
-            <p><strong>Note:</strong>Please fill in English. Your information may be shared with your selected third-party provider for scheduling and suitability screening conducted by that provider. KIWI Serenity Limited does not provide medical advice or assessments. All fields marked with * are required.</p>
+            <p><strong>Note:</strong> Please fill in English. Your information may be shared with your selected third-party provider for scheduling and suitability screening conducted by that provider. KIWI Serenity Limited does not provide medical advice or assessments. All fields marked with * are required.</p>
             <p><strong>请注意:</strong> 请使用英文填写，本问卷信息可能转交所选第三方服务方用于预约安排与适配性筛查。KIWI Serenity Limited不提供任何医疗评估或建议。所有带 * 的为必填项。</p>
         </div>
 
+        <!-- 重要提示：请将以下表单action和_next值替换为您的真实Formspree ID和感谢页面URL -->
         <form id="health-questionnaire" action="https://formspree.io/f/abcdwxyz" method="POST">
             
-            <!-- FormSubmit配置 -->
-            <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you.html">
-            <input type="hidden" name="_subject" value="New Health Questionnaire Submission">
+            <!-- FormSubmit配置 - 请替换为您的真实值 -->
+            <input type="hidden" name="_next" value="https://www.kiwi-serenity-limited.com/thank-you.html">
+            <input type="hidden" name="_subject" value="New Health Questionnaire Submission - KIWI Serenity">
             <input type="hidden" name="_template" value="table">
             <input type="hidden" name="_language" value="en">
             <input type="hidden" name="_captcha" value="false">
@@ -1187,10 +1308,9 @@
                 
                 <br>
                 <button class="submit-btn" type="submit" id="submit-button">提交问卷 / Submit Questionnaire</button>
-                <input type="hidden" name="_next" value="thank-you.html">
                 <div style="text-align: center; margin-top: 20px; color: #666; font-size: 0.9em; line-height: 1.5;">
-                    如有问题，请致电 +64220405795 或邮件至 KIWI_Serenity_Limited@outlook.com<br>
-                    For any questions, please call +64220405795 or email KIWI_Serenity_Limited@outlook.com
+                    如有问题，请致电 <a href="tel:+64220405795" style="color: var(--primary-color);">+64 22 040 5795</a> 或邮件至 <a href="mailto:KIWI_Serenity_Limited@outlook.com" style="color: var(--primary-color);">KIWI_Serenity_Limited@outlook.com</a><br>
+                    For any questions, please call <a href="tel:+64220405795" style="color: var(--primary-color);">+64 22 040 5795</a> or email <a href="mailto:KIWI_Serenity_Limited@outlook.com" style="color: var(--primary-color);">KIWI_Serenity_Limited@outlook.com</a>
                 </div>
             </div>
         </form>
@@ -1198,15 +1318,27 @@
         <!-- ===== 页脚 ===== -->
         <footer class="site-footer">
             <div class="footer-inner">
+                <!-- 社交媒体链接 -->
+                <div class="social-links">
+                    <a href="https://www.tiktok.com/@kiwi_sichuan_explorer.nz" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=61586286820740" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/kiwi_serenity_limited/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/company/kiwi-serenity-limited" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.threads.com/@kiwi_serenity_limited" target="_blank" aria-label="Threads"><i class="fab fa-threads"></i></a>
+                </div>
+                
                 <div class="footer-nav">
                     <a href="index.html">Home</a>
-                    <a href="privacy.html">Privacy Policy</a>
-                    <a href="terms.html">Terms of Service</a>
-                    <a href="disclaimer.html">Medical Disclaimer</a>
+                    <a href="dental.html">Dental</a>
+                    <a href="tcm.html">TCM</a>
+                    <a href="tour.html">Travel</a>
+                    <a href="privacy.html">Privacy</a>
+                    <a href="terms.html">Terms</a>
+                    <a href="disclaimer.html">Disclaimer</a>
                 </div>
 
                 <p class="footer-brand">
-                    © 2026 <strong>KIWI Serenity Limited</strong>. All rights reserved.
+                    © <span id="current-year">2026</span> <strong>KIWI Serenity Limited</strong>. All rights reserved.
                 </p>
 
                 <p class="footer-notice">
@@ -1222,194 +1354,269 @@
         ← 返回首页 | Back to Home
     </a>
 
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.kiwi-serenity-limited.com/index.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Health Questionnaire",
+          "item": "https://www.kiwi-serenity-limited.com/questionnaire.html"
+        }
+      ]
+    }
+    </script>
+
+    <!-- Service Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Medical Travel Health Questionnaire",
+      "description": "Pre-travel health information collection for medical tourism coordination in Chengdu",
+      "provider": {
+        "@type": "Organization",
+        "name": "KIWI Serenity Limited"
+      },
+      "serviceType": "Health Information Collection",
+      "audience": {
+        "@type": "MedicalAudience",
+        "audienceType": "Medical Travelers"
+      }
+    }
+    </script>
+
     <script>
-        // Clinic selection
-        document.querySelectorAll('.clinic-option').forEach(opt => {
-            opt.onclick = () => {
-                document.querySelectorAll('.clinic-option').forEach(o => o.classList.remove('selected'));
-                opt.classList.add('selected');
-                document.getElementById('clinic-type').value = opt.dataset.clinic;
+        // DOM加载完成后执行
+        document.addEventListener('DOMContentLoaded', function() {
+            // 更新当前年份
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+            
+            // Clinic selection
+            document.querySelectorAll('.clinic-option').forEach(opt => {
+                opt.onclick = () => {
+                    document.querySelectorAll('.clinic-option').forEach(o => o.classList.remove('selected'));
+                    opt.classList.add('selected');
+                    document.getElementById('clinic-type').value = opt.dataset.clinic;
+                    
+                    // Show clinic-specific questions
+                    document.querySelectorAll('.dental-questions, .tcm-questions').forEach(section => {
+                        section.classList.remove('active');
+                    });
+                    
+                    if (opt.dataset.clinic === 'dental') {
+                        document.querySelector('.dental-questions').classList.add('active');
+                    } else if (opt.dataset.clinic === 'tcm') {
+                        document.querySelector('.tcm-questions').classList.add('active');
+                    }
+                    
+                    updateProgress(2);
+                };
+            });
+            
+            // Toggle allergy details
+            document.querySelectorAll('input[name="allergies"]').forEach(radio => {
+                radio.onchange = () => {
+                    const details = document.getElementById('allergies-details');
+                    details.style.display = radio.value === 'yes' ? 'block' : 'none';
+                };
+            });
+            
+            // Toggle medication details
+            document.querySelectorAll('input[name="medications"]').forEach(radio => {
+                radio.onchange = () => {
+                    const details = document.getElementById('medications-details');
+                    details.style.display = radio.value === 'yes' ? 'block' : 'none';
+                };
+            });
+            
+            // Toggle travel insurance details
+            document.querySelectorAll('input[name="travel-insurance"]').forEach(radio => {
+                radio.onchange = () => {
+                    const details = document.getElementById('insurance-details');
+                    if (details) {
+                        details.style.display = radio.value === 'yes' ? 'block' : 'none';
+                    }
+                };
+            });
+            
+            // Toggle other medical history
+            const historyOther = document.getElementById('history-other');
+            if (historyOther) {
+                historyOther.onchange = () => {
+                    const otherDetails = document.getElementById('medical-history-other');
+                    otherDetails.style.display = historyOther.checked ? 'block' : 'none';
+                };
+            }
+            
+            // Toggle dental history details
+            document.querySelectorAll('input[name="dental-history"]').forEach(radio => {
+                radio.onchange = () => {
+                    const details = document.getElementById('dental-history-details');
+                    if (details) details.style.display = radio.value === 'yes' ? 'block' : 'none';
+                };
+            });
+            
+            // Toggle TCM history details
+            document.querySelectorAll('input[name="tcm-history"]').forEach(radio => {
+                radio.onchange = () => {
+                    const details = document.getElementById('tcm-history-details');
+                    if (details) details.style.display = radio.value === 'yes' ? 'block' : 'none';
+                };
+            });
+            
+            // Form validation
+            document.getElementById('health-questionnaire').onsubmit = (e) => {
+                e.preventDefault();
                 
-                // Show clinic-specific questions
-                document.querySelectorAll('.dental-questions, .tcm-questions').forEach(section => {
-                    section.classList.remove('active');
+                // Validate clinic selection
+                if (!document.getElementById('clinic-type').value) {
+                    alert('请选择诊所类型 / Please select a clinic type');
+                    return false;
+                }
+                
+                // Basic validation
+                const requiredInputs = document.querySelectorAll('input[required], select[required]');
+                let valid = true;
+                
+                requiredInputs.forEach(input => {
+                    if (!input.value.trim()) {
+                        valid = false;
+                        input.style.borderColor = '#e74c3c';
+                        input.style.boxShadow = '0 0 0 3px rgba(231, 76, 60, 0.1)';
+                        
+                        // Add error message
+                        if (!input.nextElementSibling || !input.nextElementSibling.classList.contains('error-message')) {
+                            const errorMsg = document.createElement('div');
+                            errorMsg.className = 'error-message';
+                            errorMsg.style.color = '#e74c3c';
+                            errorMsg.style.fontSize = '0.85em';
+                            errorMsg.style.marginTop = '-10px';
+                            errorMsg.style.marginBottom = '15px';
+                            errorMsg.textContent = '此字段为必填项 / This field is required';
+                            input.parentNode.insertBefore(errorMsg, input.nextSibling);
+                        }
+                    } else {
+                        input.style.borderColor = '#ccc';
+                        input.style.boxShadow = 'none';
+                        
+                        // Remove error message if exists
+                        if (input.nextElementSibling && input.nextElementSibling.classList.contains('error-message')) {
+                            input.nextElementSibling.remove();
+                        }
+                    }
                 });
                 
-                if (opt.dataset.clinic === 'dental') {
-                    document.querySelector('.dental-questions').classList.add('active');
-                } else if (opt.dataset.clinic === 'tcm') {
-                    document.querySelector('.tcm-questions').classList.add('active');
-                }
+                // Validate consent checkboxes
+                const consentCheckbox = document.getElementById('consent-agree');
+                const privacyCheckbox = document.getElementById('privacy-consent-check');
                 
-                updateProgress(2);
-            };
-        });
-        
-        // Toggle allergy details
-        document.querySelectorAll('input[name="allergies"]').forEach(radio => {
-            radio.onchange = () => {
-                const details = document.getElementById('allergies-details');
-                details.style.display = radio.value === 'yes' ? 'block' : 'none';
-            };
-        });
-        
-        // Toggle medication details
-        document.querySelectorAll('input[name="medications"]').forEach(radio => {
-            radio.onchange = () => {
-                const details = document.getElementById('medications-details');
-                details.style.display = radio.value === 'yes' ? 'block' : 'none';
-            };
-        });
-        
-        // Toggle travel insurance details
-        document.querySelectorAll('input[name="travel-insurance"]').forEach(radio => {
-            radio.onchange = () => {
-                const details = document.getElementById('insurance-details');
-                if (details) {
-                    details.style.display = radio.value === 'yes' ? 'block' : 'none';
-                }
-            };
-        });
-        
-        // Toggle other medical history
-        document.getElementById('history-other').onchange = () => {
-            const otherDetails = document.getElementById('medical-history-other');
-            otherDetails.style.display = document.getElementById('history-other').checked ? 'block' : 'none';
-        };
-        
-        // Toggle dental history details
-        document.querySelectorAll('input[name="dental-history"]').forEach(radio => {
-            radio.onchange = () => {
-                const details = document.getElementById('dental-history-details');
-                if (details) details.style.display = radio.value === 'yes' ? 'block' : 'none';
-            };
-        });
-        
-        // Toggle TCM history details
-        document.querySelectorAll('input[name="tcm-history"]').forEach(radio => {
-            radio.onchange = () => {
-                const details = document.getElementById('tcm-history-details');
-                if (details) details.style.display = radio.value === 'yes' ? 'block' : 'none';
-            };
-        });
-        
-        // Form validation
-        document.getElementById('health-questionnaire').onsubmit = (e) => {
-            e.preventDefault();
-            
-            // Validate clinic selection
-            if (!document.getElementById('clinic-type').value) {
-                alert('请选择诊所类型 / Please select a clinic type');
-                return false;
-            }
-            
-            // Basic validation
-            const requiredInputs = document.querySelectorAll('input[required], select[required]');
-            let valid = true;
-            
-            requiredInputs.forEach(input => {
-                if (!input.value.trim()) {
+                if (!consentCheckbox.checked || !privacyCheckbox.checked) {
                     valid = false;
-                    input.style.borderColor = '#e74c3c';
-                    input.style.boxShadow = '0 0 0 3px rgba(231, 76, 60, 0.1)';
-                    
-                    // Add error message
-                    if (!input.nextElementSibling || !input.nextElementSibling.classList.contains('error-message')) {
-                        const errorMsg = document.createElement('div');
-                        errorMsg.className = 'error-message';
-                        errorMsg.style.color = '#e74c3c';
-                        errorMsg.style.fontSize = '0.85em';
-                        errorMsg.style.marginTop = '-10px';
-                        errorMsg.style.marginBottom = '15px';
-                        errorMsg.textContent = '此字段为必填项 / This field is required';
-                        input.parentNode.insertBefore(errorMsg, input.nextSibling);
-                    }
-                } else {
-                    input.style.borderColor = '#ccc';
-                    input.style.boxShadow = 'none';
-                    
-                    // Remove error message if exists
-                    if (input.nextElementSibling && input.nextElementSibling.classList.contains('error-message')) {
-                        input.nextElementSibling.remove();
-                    }
+                    alert('请同意声明和隐私政策 / Please agree to the statement and privacy policy');
                 }
-            });
-            
-            // Validate consent checkboxes
-            const consentCheckbox = document.getElementById('consent-agree');
-            const privacyCheckbox = document.getElementById('privacy-consent-check');
-            
-            if (!consentCheckbox.checked || !privacyCheckbox.checked) {
-                valid = false;
-                alert('请同意声明和隐私政策 / Please agree to the statement and privacy policy');
-            }
-            
-            if (valid) {
-                // Update progress indicator to step 4
-                updateProgress(4);
                 
-                // Show submission confirmation
-                const submitBtn = document.getElementById('submit-button');
-                submitBtn.innerHTML = '提交中... / Submitting...';
-                submitBtn.disabled = true;
-                
-                // Simulate form submission (in real implementation, this would be the actual form submission)
-                setTimeout(() => {
-                    alert('表单提交成功！我们将在1-2个工作日内与您联系。/ Form submitted successfully! We will contact you within 1-2 business days.');
-                    submitBtn.innerHTML = '提交成功！ / Submitted Successfully!';
+                if (valid) {
+                    // Update progress indicator to step 4
+                    updateProgress(4);
                     
-                    // In a real implementation, you would submit the form here
-                    // e.target.submit();
-                }, 1500);
-            } else {
-                // Scroll to first error
-                const firstError = document.querySelector('.error-message');
-                if (firstError) {
-                    firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                }
-            }
-            
-            return false;
-        };
-        
-        // Progress indicator update function
-        function updateProgress(step) {
-            const steps = document.querySelectorAll('.progress-step');
-            steps.forEach((stepElement, index) => {
-                const circle = stepElement.querySelector('.step-circle');
-                if (index + 1 <= step) {
-                    circle.classList.add('active');
-                } else {
-                    circle.classList.remove('active');
-                }
-            });
-        }
-        
-        // Initialize progress indicator
-        updateProgress(1);
-        
-        // Add touch event listeners for better mobile experience
-        if ('ontouchstart' in window) {
-            // Make clinic options more touch-friendly
-            document.querySelectorAll('.clinic-option').forEach(opt => {
-                opt.style.cursor = 'pointer';
-            });
-            
-            // Increase tap target size for checkboxes and radio buttons on mobile
-            document.querySelectorAll('.checkbox-item label, .radio-item label').forEach(label => {
-                label.style.padding = '8px 0';
-            });
-        }
-        
-        // Enhance form field focus on mobile
-        document.querySelectorAll('input, select, textarea').forEach(field => {
-            field.addEventListener('focus', function() {
-                // On mobile, ensure focused field is visible above keyboard
-                if (window.innerWidth <= 768) {
+                    // Show submission confirmation
+                    const submitBtn = document.getElementById('submit-button');
+                    submitBtn.innerHTML = '提交中... / Submitting...';
+                    submitBtn.disabled = true;
+                    
+                    // Simulate form submission (in real implementation, this would be the actual form submission)
                     setTimeout(() => {
-                        this.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    }, 300);
+                        alert('表单提交成功！我们将在1-2个工作日内与您联系。/ Form submitted successfully! We will contact you within 1-2 business days.');
+                        submitBtn.innerHTML = '提交成功！ / Submitted Successfully!';
+                        
+                        // In a real implementation, you would submit the form here
+                        // e.target.submit();
+                    }, 1500);
+                } else {
+                    // Scroll to first error
+                    const firstError = document.querySelector('.error-message');
+                    if (firstError) {
+                        firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
                 }
+                
+                return false;
+            };
+            
+            // Progress indicator update function
+            function updateProgress(step) {
+                const steps = document.querySelectorAll('.progress-step');
+                steps.forEach((stepElement, index) => {
+                    const circle = stepElement.querySelector('.step-circle');
+                    if (index + 1 <= step) {
+                        circle.classList.add('active');
+                    } else {
+                        circle.classList.remove('active');
+                    }
+                });
+            }
+            
+            // Initialize progress indicator
+            updateProgress(1);
+            
+            // Add touch event listeners for better mobile experience
+            if ('ontouchstart' in window) {
+                // Make clinic options more touch-friendly
+                document.querySelectorAll('.clinic-option').forEach(opt => {
+                    opt.style.cursor = 'pointer';
+                });
+                
+                // Increase tap target size for checkboxes and radio buttons on mobile
+                document.querySelectorAll('.checkbox-item label, .radio-item label, .social-links a').forEach(label => {
+                    label.style.minHeight = '44px';
+                    label.style.display = 'flex';
+                    label.style.alignItems = 'center';
+                });
+                
+                // Increase checkbox and radio size
+                document.querySelectorAll('input[type="checkbox"], input[type="radio"]').forEach(input => {
+                    input.style.width = '22px';
+                    input.style.height = '22px';
+                });
+            }
+            
+            // Enhance form field focus on mobile
+            document.querySelectorAll('input, select, textarea').forEach(field => {
+                field.addEventListener('focus', function() {
+                    // On mobile, ensure focused field is visible above keyboard
+                    if (window.innerWidth <= 768) {
+                        setTimeout(() => {
+                            this.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        }, 300);
+                    }
+                });
+            });
+            
+            // 为所有外部链接添加安全属性
+            document.querySelectorAll('a[href^="http"]').forEach(link => {
+                if (!link.href.includes('kiwi-serenity-limited.com') && !link.href.includes('tel:') && !link.href.includes('mailto:')) {
+                    link.setAttribute('target', '_blank');
+                    link.setAttribute('rel', 'noopener noreferrer');
+                }
+            });
+            
+            // 打印优化
+            window.addEventListener('beforeprint', () => {
+                document.querySelector('.back-home-float').style.display = 'none';
+            });
+            
+            window.addEventListener('afterprint', () => {
+                document.querySelector('.back-home-float').style.display = 'flex';
             });
         });
     </script>
