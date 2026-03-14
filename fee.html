@@ -60,7 +60,7 @@
 </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <title>KIWI Serenity · premium medical concierge Chengdu</title>
+    <title>Medical Travel Packages & Fees | KIWI Serenity Chengdu Coordination</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -507,7 +507,8 @@
     <div class="arrival-banner">
         <img src="services.png" alt="Arrivals Chengdu - Welcome">
     </div>
-
+<!-- 添加在 <head> 中 -->
+<meta name="description" content="KIWI Serenity Limited offers premium medical travel coordination packages in Chengdu. Choose from Semi-Assisted ($2,100), All-Inclusive ($3,899), or Premium Concierge ($6,299) packages. Includes interpreter, transfers, and coordination support.">
     <!-- top bar with home button (index.html) -->
     <div class="top-bar">
         <a href="index.html" class="home-btn"><i class="fas fa-arrow-left"></i> Home</a>
@@ -678,7 +679,7 @@
   },
   "offers": {
     "@type": "Offer",
-    "price": "3899",
+    "price": "3,899",
     "priceCurrency": "USD",
     "availability": "https://schema.org/InStock",
     "validFrom": "2026-01-01",
@@ -703,6 +704,104 @@
       "@type": "PropertyValue",
       "name": "Duration",
       "value": "30 days"
+    }
+  ]
+}
+</script>
+    <!-- Package A Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "@id": "https://www.kiwi-serenity-limited.com/fee.html#package-a",
+  "name": "Semi-Assisted Medical Travel Package - Chengdu",
+  "description": "Basic medical travel coordination package including pre-arrival planning, online doctor coordination, visa invitation, bilingual escort (2-3 visits), and airport transfers.",
+  "brand": {
+    "@type": "Brand",
+    "name": "KIWI Serenity Limited"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "2,100",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock",
+    "validFrom": "2026-01-01",
+    "url": "https://www.kiwi-serenity-limited.com/fee.html"
+  }
+}
+</script>
+
+<!-- Package C Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "@id": "https://www.kiwi-serenity-limited.com/fee.html#package-c",
+  "name": "Premium Concierge Medical Travel Package - Chengdu",
+  "description": "30-day premium medical travel coordination package including private car & driver, dedicated bilingual concierge, unlimited hospital/dining errands, priority clinic coordination, and lifestyle assistance.",
+  "brand": {
+    "@type": "Brand",
+    "name": "KIWI Serenity Limited"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "6,299",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock",
+    "validFrom": "2026-01-01",
+    "url": "https://www.kiwi-serenity-limited.com/fee.html"
+  }
+}
+</script>
+    <!-- Add-ons 服务结构化数据 -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Add-on Services for Medical Travel",
+  "description": "Optional add-on services for medical travel packages in Chengdu",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "item": {
+        "@type": "Service",
+        "name": "Extra Transfer",
+        "description": "One-way transfer within Chengdu",
+        "offers": {
+          "@type": "Offer",
+          "price": "80",
+          "priceCurrency": "USD"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "item": {
+        "@type": "Service",
+        "name": "Extended Interpreter",
+        "description": "Per hour beyond package",
+        "offers": {
+          "@type": "Offer",
+          "price": "60",
+          "priceCurrency": "USD"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "item": {
+        "@type": "Service",
+        "name": "Private Car Upgrade",
+        "description": "Dedicated car + driver full-day",
+        "offers": {
+          "@type": "Offer",
+          "price": "150",
+          "priceCurrency": "USD"
+        }
+      }
     }
   ]
 }
