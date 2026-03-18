@@ -8,15 +8,27 @@
     <meta name="description" content="Complete guide to medical travel to Chengdu: affordable dental implants, Traditional Chinese Medicine, and wellness experiences. Expert coordination for China medical tourism.">
     <meta name="keywords" content="Medical travel to Chengdu, Dental treatment in Chengdu, Traditional Chinese Medicine Chengdu, China medical tourism, Affordable dental implants China">
     <meta name="author" content="KIWI Serenity Limited – Medical Travel Coordination">
+    <!-- Font Awesome for home icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+
+        :root {
+            --primary-green: #2d6a4f;
+            --gold: #C5A059;
+            --deep-navy: #1c2f2b;
+            --light-bg: #f5faf8;
+            --card-white: #ffffff;
+            --soft-gray: #f0f7f3;
+        }
+
         body {
             font-family: 'Inter', 'Segoe UI', Roboto, system-ui, sans-serif;
-            background-color: #f5faf8;
+            background-color: var(--light-bg);
             color: #1c2f2b;
             line-height: 1.6;
         }
@@ -32,7 +44,7 @@
             justify-content: space-between;
             align-items: center;
             margin-bottom: 30px;
-            border-bottom: 3px solid #2d6a4f;
+            border-bottom: 3px solid var(--primary-green);
             padding-bottom: 20px;
         }
         .logo {
@@ -42,7 +54,7 @@
             color: #1b4d3e;
         }
         .logo span {
-            color: #2d6a4f;
+            color: var(--primary-green);
             font-weight: 300;
         }
         .publish-tag {
@@ -70,7 +82,7 @@
             font-size: 0.9rem;
             font-weight: 500;
             color: #1b4e3b;
-            border: 1px solid #2d6a4f;
+            border: 1px solid var(--primary-green);
             box-shadow: 0 2px 5px #d0e2d8;
         }
         .article-grid {
@@ -79,7 +91,7 @@
             gap: 45px;
         }
         .article-card {
-            background: white;
+            background: var(--card-white);
             border-radius: 32px;
             padding: 40px 45px;
             box-shadow: 0 15px 35px rgba(20, 60, 40, 0.06);
@@ -88,6 +100,7 @@
         }
         .article-card:hover {
             border-color: #a0cfba;
+            box-shadow: 0 20px 40px rgba(20, 70, 40, 0.08);
         }
         .article-meta {
             display: inline-block;
@@ -113,7 +126,7 @@
             font-weight: 600;
             color: #1a5840;
             margin: 35px 0 15px 0;
-            border-left: 8px solid #2d6a4f;
+            border-left: 8px solid var(--primary-green);
             padding-left: 25px;
         }
         h3 {
@@ -139,7 +152,7 @@
             border-radius: 30px;
             padding: 25px 30px;
             margin: 30px 0 20px;
-            border-left: 6px solid #2d6a4f;
+            border-left: 6px solid var(--primary-green);
         }
         table {
             width: 100%;
@@ -168,6 +181,8 @@
             background: #e2f0e9;
             font-weight: 600;
         }
+        
+        /* 内部链接面板 - 美化保持一致性 */
         .internal-links-panel {
             display: flex;
             flex-wrap: wrap;
@@ -177,6 +192,7 @@
             background: #ecf6f1;
             padding: 25px 25px;
             border-radius: 70px;
+            border: 1px solid #b8d9c8;
         }
         .internal-links-panel a {
             background: white;
@@ -185,14 +201,86 @@
             text-decoration: none;
             color: #1f4f3b;
             font-weight: 600;
-            border: 1px solid #2d6a4f;
+            border: 1px solid var(--primary-green);
             transition: 0.2s;
             font-size: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
         }
         .internal-links-panel a:hover {
-            background: #2d6a4f;
+            background: var(--primary-green);
             color: white;
         }
+
+        /* 新增: 内部快速链接块 (用于文章内跳转) */
+        .internal-quick-block {
+            background: #eef9f2;
+            padding: 15px 20px;
+            border-radius: 40px;
+            margin-top: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px 25px;
+            justify-content: center;
+            border: 1px solid #b8d9c8;
+        }
+        .internal-quick-block a {
+            color: #1b4b3b;
+            font-weight: 600;
+            text-decoration: none;
+            padding: 5px 0;
+            border-bottom: 2px solid transparent;
+            transition: 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .internal-quick-block a:hover {
+            border-bottom-color: var(--primary-green);
+        }
+
+        .future-ref {
+            background: #fcf9e9;
+            border-radius: 40px;
+            padding: 25px;
+            margin-top: 25px;
+            border: 1px dashed #b8a35c;
+        }
+
+        /* 主页按钮样式 (金) */
+        .home-button-container {
+            text-align: center;
+            margin: 50px 0 25px;
+        }
+        .home-button {
+            background: var(--gold);
+            color: var(--deep-navy);
+            padding: 14px 42px;
+            border-radius: 60px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            display: inline-block;
+            box-shadow: 0 4px 12px rgba(197, 160, 89, 0.3);
+            transition: 0.2s;
+            border: 1px solid #b28a4a;
+        }
+        .home-button:hover {
+            background: #b8944a;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 18px rgba(197, 160, 89, 0.4);
+        }
+        .home-button i {
+            margin-right: 8px;
+        }
+        .chinese {
+            font-family: 'Microsoft YaHei', sans-serif;
+        }
+        .english {
+            font-family: 'Inter', sans-serif;
+        }
+
         .footer {
             margin-top: 60px;
             text-align: center;
@@ -201,12 +289,16 @@
             padding-top: 35px;
             font-size: 0.95rem;
         }
-        .future-ref {
-            background: #fcf9e9;
-            border-radius: 40px;
-            padding: 25px;
-            margin-top: 25px;
-            border: 1px dashed #b8a35c;
+        .footer-bottom {
+            margin-top: 30px;
+            text-align: center;
+            border-top: 1px solid #cbdcd0;
+            padding-top: 25px;
+            font-size: 0.9rem;
+            color: #5b7e70;
+        }
+        .footer-bottom p {
+            margin: 5px 0;
         }
     </style>
 </head>
@@ -259,6 +351,14 @@
 
             <h2>A Growing Medical Travel Destination</h2>
             <p>Chengdu is increasingly becoming a hub for <strong>dental tourism and wellness travel</strong> in China. With modern healthcare infrastructure, skilled medical professionals, and a welcoming cultural environment, the city offers an attractive option for international patients seeking high-quality care at more reasonable prices. For many patients, choosing Chengdu is not only a smart financial decision — it is also an opportunity to experience one of China's most vibrant and historic cities.</p>
+            
+            <!-- 内部快速链接指向本页其他文章 -->
+            <div class="internal-quick-block">
+                <a href="#dental-implants-guide">→ Dental Implants Guide</a>
+                <a href="#tcm-chengdu">→ TCM Chengdu</a>
+                <a href="#medical-travel-expect">→ Medical Travel Expectations</a>
+                <a href="#wellness-travel">→ Wellness Travel</a>
+            </div>
         </article>
 
         <!-- ARTICLE 2: Dental Implants in China: What International Patients Should Know -->
@@ -289,6 +389,12 @@
             <h2>Planning Dental Implants as an International Patient</h2>
             <p>Patients considering dental implants abroad should prepare by collecting recent dental X-rays or scans, obtaining a preliminary consultation, and discussing treatment timelines. Since implants require healing time, some patients plan two visits: one for implant placement and another for final restoration.</p>
             <p><strong>A practical option for many patients:</strong> For those facing high dental costs at home, traveling abroad for implants can provide access to high-quality treatment while significantly reducing expenses. With proper planning and reliable local support, <strong>dental implants in China</strong> can be a practical and effective solution.</p>
+            
+            <div class="internal-quick-block">
+                <a href="#article-dental-chengdu">← Why Chengdu for Dental</a>
+                <a href="#tcm-chengdu">→ TCM Chengdu</a>
+                <a href="#medical-travel-expect">→ Medical Travel</a>
+            </div>
         </article>
 
         <!-- ARTICLE 3: Traditional Chinese Medicine in Chengdu: A Holistic Approach to Wellness -->
@@ -313,6 +419,13 @@
             <h2>Combining Wellness with Cultural Experience</h2>
             <p>Chengdu provides a relaxed environment that complements wellness treatments. Patients often combine their therapy with visits to tea houses, parks, cultural sites, and natural landscapes in Sichuan. This combination of medical care and cultural experience makes the city a unique destination for <strong>wellness travel</strong>.</p>
             <p>A growing interest worldwide: Interest in Traditional Chinese Medicine continues to grow. For those seeking an authentic and affordable experience, Chengdu offers a meaningful opportunity to explore the benefits of TCM within its cultural origin.</p>
+            
+            <div class="internal-quick-block">
+                <a href="#article-dental-chengdu">🦷 Dental Chengdu</a>
+                <a href="#dental-implants-guide">📝 Implant Guide</a>
+                <a href="#medical-travel-expect">🏥 Medical Travel</a>
+                <a href="#wellness-travel">🧘 Wellness</a>
+            </div>
         </article>
 
         <!-- ARTICLE 4: Medical Travel to China: What International Patients Should Expect -->
@@ -335,6 +448,13 @@
 
             <h2>Combining Healthcare with Travel</h2>
             <p>One advantage of traveling for treatment is the opportunity to explore a new destination. Many patients visiting Chengdu enjoy panda research centers, historical temples, scenic mountain regions, and famous Sichuan cuisine. This combination of healthcare and cultural experience makes medical travel both practical and memorable.</p>
+            
+            <div class="internal-quick-block">
+                <a href="#article-dental-chengdu">🦷 Dental</a>
+                <a href="#dental-implants-guide">📝 Implants</a>
+                <a href="#tcm-chengdu">🌿 TCM</a>
+                <a href="#wellness-travel">🧘 Wellness</a>
+            </div>
         </article>
 
         <!-- ARTICLE 5: Wellness Travel in Chengdu: Combining Healthcare and Cultural Experience -->
@@ -354,29 +474,61 @@
 
             <h2>A New Kind of Travel Experience</h2>
             <p>Wellness travel represents a shift in how people think about tourism. Instead of simply visiting new places, travelers are increasingly interested in returning home feeling healthier and more refreshed. Cities like Chengdu offer the rare combination of medical expertise, traditional healing practices, and a relaxed cultural atmosphere. For many visitors, this makes <strong>wellness travel in Chengdu</strong> a truly distinctive experience.</p>
+            
+            <div class="internal-quick-block">
+                <a href="#article-dental-chengdu">🦷 Dental</a>
+                <a href="#dental-implants-guide">📝 Implants</a>
+                <a href="#tcm-chengdu">🌿 TCM</a>
+                <a href="#medical-travel-expect">🏥 Medical Travel</a>
+            </div>
         </article>
     </div>
 
-    <!-- internal links panel (navigation across all articles & key topics) -->
+    <!-- internal links panel (navigation across all articles & key topics) 保留原有样式但微调 -->
     <div class="internal-links-panel">
-        <a href="#article-dental-chengdu">🦷 Dental treatment Chengdu</a>
-        <a href="#dental-implants-guide">🇨🇳 Affordable implants China</a>
-        <a href="#tcm-chengdu">🌿 TCM Chengdu</a>
-        <a href="#medical-travel-expect">🏥 Medical travel to China</a>
-        <a href="#wellness-travel">🧘 Wellness travel China</a>
+        <a href="#article-dental-chengdu"><i class="fas fa-tooth"></i> Dental treatment Chengdu</a>
+        <a href="#dental-implants-guide"><i class="fas fa-coins"></i> Affordable implants China</a>
+        <a href="#tcm-chengdu"><i class="fas fa-leaf"></i> TCM Chengdu</a>
+        <a href="#medical-travel-expect"><i class="fas fa-plane"></i> Medical travel to China</a>
+        <a href="#wellness-travel"><i class="fas fa-spa"></i> Wellness travel China</a>
     </div>
 
     <!-- future article reference: continuity with previous dental implants cost article (internal linking strategy) -->
     <div class="future-ref">
         <p style="font-weight:600; font-size:1.1rem;">🔗 Internal linking strategy — connected articles:</p>
-        <p>↪ <strong>From January 2026:</strong> <a href="#article-dental-chengdu" style="color:#1a6441;">"Cost of Dental Implants in China vs USA/NZ/UK"</a> (see Article 1 in previous series) — this page continues the topic with deeper focus on <em>medical travel to Chengdu, TCM, wellness</em>. All keywords (<strong>Medical travel to Chengdu, Dental treatment in Chengdu, Traditional Chinese Medicine Chengdu, China medical tourism, Affordable dental implants China</strong>) are embedded throughout.</p>
+        <p>↪ <strong>From January 2026:</strong> <a href="Series1.html#article-1" style="color:#1a6441;">"Cost of Dental Implants in China vs USA/NZ/UK"</a> (see Series 1) — this page continues the topic with deeper focus on <em>medical travel to Chengdu, TCM, wellness</em>. All keywords (<strong>Medical travel to Chengdu, Dental treatment in Chengdu, Traditional Chinese Medicine Chengdu, China medical tourism, Affordable dental implants China</strong>) are embedded throughout.</p>
     </div>
 
-    <!-- footer -->
+    <!-- ========== 返回主页按钮 (中英文) ========== -->
+    <div class="home-button-container">
+        <a href="index.html" class="home-button">
+            <i class="fas fa-home"></i> <span class="chinese">返回主页</span> / <span class="english">Return Home</span>
+        </a>
+    </div>
+
+    <!-- footer with original text plus new bilingual disclaimer -->
     <footer class="footer">
         <p>© 2026 KIWI Serenity Limited — Your partner for medical travel to Chengdu, dental implants, Traditional Chinese Medicine, and wellness journeys. All rights reserved.</p>
         <p style="font-size:0.9rem; margin-top:15px;">SEO target: Medical travel to Chengdu, Dental treatment in Chengdu, Traditional Chinese Medicine Chengdu, China medical tourism, Affordable dental implants China. This page is part of a 2026 continuous publication plan.</p>
+        
+        <!-- 新增双语脚注 -->
+        <div class="footer-bottom">
+            <p>© 2026 KIWI Serenity Limited · <span class="chinese">协调服务，医疗由持牌牙医执行</span> / <span class="english">Coordination only, procedures by licensed dentists</span></p>
+        </div>
     </footer>
 </div>
+
+<!-- 平滑滚动脚本 (可选) -->
+<script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+</script>
 </body>
 </html>
