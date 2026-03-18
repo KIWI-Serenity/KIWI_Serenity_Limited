@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <title>KIWI Serenity · Medical Travel Chengdu – Dental & TCM hub</title>
-    <!-- SEO meta (core keywords) -->
-    <meta name="description" content="NZ‑registered coordination for dental implants, TCM therapy in Chengdu. Read in‑depth guides: cost comparison USA/NZ/UK, safety, TCM, wellness travel. Start your journey.">
-    <meta name="keywords" content="dental implants China, medical travel China, Chengdu dental implants, acupuncture Chengdu, wellness travel China, Traditional Chinese Medicine Chengdu, China medical tourism">
+    <title>KIWI Serenity · Medical Travel Chengdu – Dental Implants, TCM & Wellness</title>
+    <!-- 合并所有核心关键词，精准英文 -->
+    <meta name="description" content="NZ‑registered coordination for dental implants & TCM in Chengdu. Compare costs USA/NZ/UK, safety guide, TCM therapy, wellness travel. Start your journey.">
+    <meta name="keywords" content="dental implants China, medical travel China, Chengdu dental implants, acupuncture Chengdu, wellness travel China, Traditional Chinese Medicine Chengdu, China medical tourism, Medical travel to Chengdu, Dental treatment in Chengdu, Affordable dental implants China">
     
-    <!-- Organization Schema (unchanged, keep) -->
+    <!-- Organization Schema (保持不变) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -74,7 +74,7 @@
     }
     </script>
     
-    <!-- Font & Icons -->
+    <!-- Font & Icons (优雅衬线 + 现代无衬线) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -200,7 +200,7 @@
             line-height: 1.8;
         }
         
-        /* top bar & brand strip (identical to original) */
+        /* top bar & brand strip (来自 index.html) */
         .top-bar {
             background: var(--deep-charcoal);
             color: var(--off-white);
@@ -233,6 +233,12 @@
             font-size: 1rem;
         }
         
+        .top-bar .contact-sep { 
+            opacity: 0.3; 
+            margin: 0 8px; 
+            color: var(--primary-gold);
+        }
+
         .brand-strip {
             background: var(--deep-charcoal);
             padding: 20px 24px;
@@ -286,7 +292,11 @@
             font-weight: 500;
             font-size: 1.1rem;
         }
-        
+        .brand-taglines span:last-child {
+            margin-top: 4px;
+            font-style: italic;
+        }
+
         .hero-image-strip {
             background: var(--deep-charcoal);
             border-bottom: 3px solid var(--primary-gold);
@@ -365,7 +375,25 @@
             margin-top: 10px;
             letter-spacing: 2px;
         }
+        .hero .medical-tag {
+            background: rgba(197, 160, 89, 0.05);
+            padding: 20px 30px;
+            border-left: 4px solid var(--primary-gold);
+            margin: 30px 0 25px;
+            font-size: 1.3rem;
+            font-weight: 400;
+            color: var(--deep-charcoal);
+            max-width: 500px;
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+        }
         
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
         /* trust bar */
         .trust-bar {
             background: var(--off-white);
@@ -388,6 +416,11 @@
             font-size: 2.4rem; 
             color: var(--primary-gold); 
             margin-bottom: 15px;
+        }
+        .trust-item h4 { 
+            font-weight: 600; 
+            color: var(--deep-charcoal); 
+            margin-bottom: 8px;
         }
         
         /* cost comparison table */
@@ -461,7 +494,7 @@
             font-family: 'Cormorant Garamond', serif;
         }
 
-        /* ========== NEW: ARTICLE GRID (interactive internal links) ========== */
+        /* ========== ARTICLE HUB (融合 Series1 + Series2 所有文章) ========== */
         .article-hub {
             background: var(--pure-white);
             border-radius: 20px;
@@ -547,8 +580,37 @@
             margin-bottom: 5px;
             border: 1px solid var(--primary-gold-light);
         }
-        /* ===== end article hub ===== */
 
+        /* 内部链接面板 (从 Series2 借用) */
+        .internal-links-panel {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+            justify-content: center;
+            margin: 50px 0 25px;
+            background: #ecf6f1;
+            padding: 25px 25px;
+            border-radius: 70px;
+            background: var(--off-white);
+            border: 1px solid var(--primary-gold-light);
+        }
+        .internal-links-panel a {
+            background: white;
+            padding: 12px 28px;
+            border-radius: 50px;
+            text-decoration: none;
+            color: #1f4f3b;
+            font-weight: 600;
+            border: 1px solid #2d6a4f;
+            transition: 0.2s;
+            font-size: 1rem;
+        }
+        .internal-links-panel a:hover {
+            background: #2d6a4f;
+            color: white;
+        }
+
+        /* 其他原有组件: QR, footer, chengdu experience etc. (保持原样) */
         .qr-row {
             display: flex;
             gap: 40px;
@@ -572,6 +634,41 @@
             margin: 0 auto 15px;
             border-radius: 4px;
             border: 1px solid var(--primary-gold-light);
+        }
+        .qr-item p { 
+            font-weight: 600; 
+            color: var(--deep-charcoal);
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+
+        .chengdu-experience {
+            background: linear-gradient(135deg, var(--deep-charcoal), var(--soft-charcoal));
+            border-radius: 8px;
+            padding: 60px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            margin: 70px 0;
+            color: var(--off-white);
+            border: 1px solid var(--primary-gold);
+        }
+        .chengdu-experience .section-title {
+            color: var(--primary-gold);
+        }
+        .chengdu-experience .section-title:after {
+            background: linear-gradient(90deg, var(--primary-gold), transparent);
+        }
+        
+        .case-card {
+            background: var(--pure-white);
+            border-radius: 8px;
+            padding: 40px;
+            border-left: 4px solid var(--primary-gold);
+            box-shadow: var(--card-shadow);
+            margin: 50px 0;
         }
 
         .social-footer {
@@ -621,6 +718,7 @@
             .service-row { grid-template-columns: 1fr; }
             .process-grid { grid-template-columns: 1fr; }
             .article-grid { grid-template-columns: repeat(2, 1fr); }
+            .chengdu-experience { grid-template-columns: 1fr; text-align: center; }
             .brand-name { border-right: none; border-bottom: 2px solid var(--primary-gold); padding-right: 0; padding-bottom: 12px; }
         }
         @media (max-width: 600px) {
@@ -632,11 +730,11 @@
 </head>
 <body>
 
-<!-- top bar (identical) -->
+<!-- ========== 顶部联系方式 (来自 index.html) ========== -->
 <div class="top-bar">
     <div>
         <i class="fas fa-phone-alt"></i> <strong>NZ +64 22 040 5795</strong>
-        <span style="opacity:0.3; margin:0 8px;">|</span>
+        <span class="contact-sep">|</span>
         <i class="fab fa-whatsapp"></i> <a href="https://wa.me/64223244938" target="_blank" style="color: var(--off-white);"><strong>+64 22 324 4938</strong></a>
     </div>
     <div>
@@ -644,10 +742,12 @@
     </div>
 </div>
 
-<!-- brand strip -->
+<!-- ========== 品牌标识区域 (logo.jpg + 公司名 + 双口号) ========== -->
 <div class="brand-strip">
     <div class="brand-card">
-        <div class="brand-logo"><img src="logo.jpg" alt="KIWI Serenity Limited logo"></div>
+        <div class="brand-logo">
+            <img src="logo.jpg" alt="KIWI Serenity Limited logo">
+        </div>
         <div class="brand-name">KIWI Serenity Limited</div>
         <div class="brand-taglines">
             <span>Discover Sichuan, Wellness travel</span>
@@ -656,29 +756,30 @@
     </div>
 </div>
 
-<!-- medical image strip -->
+<!-- ========== 单图片展示区：medical.jpg + 两横排居中英文 caption ========== -->
 <div class="hero-image-strip">
     <div class="medical-image-wrapper">
-        <img src="medical.jpg" alt="Medical Travel Chengdu">
+        <img src="medical.jpg" alt="Medical Travel Chengdu - World-Class Care">
         <div class="image-caption">
-            World-Class Care · 遇见非凡成都
+            World-Class Care · Meet Chengdu
             <span>Your Healing Journey in Chengdu</span>
         </div>
     </div>
 </div>
 
-<!-- hero section -->
+<!-- ========== HERO SECTION ========== -->
 <section class="hero">
     <div class="hero-grid">
         <div>
             <h1>Affordable Dental & TCM <span>Medical Travel in Chengdu</span></h1>
-            <div style="background: rgba(197, 160, 89, 0.05); padding:20px 30px; border-left:4px solid var(--primary-gold); margin:30px 0 25px; max-width:500px;">
-                <p style="font-size:1.3rem; font-style:italic; font-family:'Cormorant Garamond';">“World-Class Care, Meeting a Remarkable City.”</p>
-                <small style="color:var(--text-light);">Medical Travel: Your Healing Journey in Chengdu</small>
+            <div class="medical-tag">
+                “World-Class Care, Meeting a Remarkable City.”
+                <small style="display:block; margin-top:10px; font-size:0.9rem; color:var(--text-light);">Medical Travel: Your Healing Journey in Chengdu</small>
             </div>
+            <p style="font-size:1.1rem; color:var(--text-light); margin-bottom:2rem; line-height:1.8;">NZ‑Registered Coordination for International Patients. Access trusted dental clinics and traditional Chinese medicine in Chengdu.</p>
             <div class="hero-buttons">
-                <a href="mailto:KIWI_Serenity_Limited@outlook.com?subject=Free%20Consultation" class="btn-primary"><i class="fas fa-calendar-check"></i> Free Online Consultation</a>
-                <a href="mailto:KIWI_Serenity_Limited@outlook.com?subject=Dental%20X-ray" class="btn-outline"><i class="fas fa-x-ray"></i> Send Your Dental X‑ray</a>
+                <a href="mailto:KIWI_Serenity_Limited@outlook.com?subject=Free%20Online%20Consultation%20Request" class="btn-primary"><i class="fas fa-calendar-check"></i> Free Online Consultation</a>
+                <a href="mailto:KIWI_Serenity_Limited@outlook.com?subject=Dental%20X-ray%20for%20Consultation" class="btn-outline"><i class="fas fa-x-ray"></i> Send Your Dental X‑ray</a>
             </div>
         </div>
         <div style="background: linear-gradient(145deg, #1E1E1E, #2C2C2C); border-radius:8px; padding:40px; color:white; border:1px solid var(--primary-gold); text-align:center;">
@@ -689,7 +790,7 @@
     </div>
 </section>
 
-<!-- trust bar -->
+<!-- ========== TRUST BAR ========== -->
 <section class="trust-bar">
     <div class="container">
         <h2 class="section-title" style="text-align:center; display:block;">Why Patients Choose Chengdu</h2>
@@ -703,7 +804,7 @@
     </div>
 </section>
 
-<!-- cost comparison -->
+<!-- ========== COST COMPARISON TABLE ========== -->
 <div class="container">
     <div class="cost-comparison">
         <h2 class="section-title">Dental Treatment Cost Comparison</h2>
@@ -717,85 +818,106 @@
                 <tr><td>Teeth Whitening</td><td>$800+</td><td>$170 – $300</td><td class="saving">save ~70%</td></tr>
             </tbody>
         </table>
+        <p style="margin-top:30px; color:var(--text-light); font-style:italic;">*Many international patients travel abroad for high‑quality treatment at significantly lower cost.</p>
     </div>
 </div>
 
-<!-- ========== INTERACTIVE ARTICLE HUB (internal links to all articles) ========== -->
+<!-- ========== ARTICLE HUB (融合 Series1 + Series2 全部文章, 精准英文) ========== -->
 <div class="container">
     <div class="article-hub">
-        <h2 class="section-title" style="display:block; text-align:center;">📚 In‑Depth Medical Travel Guides</h2>
-        <p class="section-subhead" style="margin:0 auto; text-align:center;">Explore our series of expert articles — cost comparison, safety, TCM, wellness, and patient stories.</p>
+        <h2 class="section-title" style="display:block; text-align:center;">📚 Complete Medical Travel Library</h2>
+        <p class="section-subhead" style="margin:0 auto; text-align:center;">Cost comparison, safety, TCM, wellness – all in‑depth articles from our 2026 series.</p>
         <div class="article-grid">
-            <!-- Article 1: Cost of Dental Implants (USA/NZ/UK vs China) -->
-            <a href="cost-comparison-2026.html" class="article-card" id="link-cost">
+            <!-- 1. Cost of Dental Implants (Series1 Article 1) -->
+            <a href="Series1.html#article-1" class="article-card" target="_blank">
                 <span class="article-tag">💰 Cost guide 2026</span>
                 <h3>Cost of Dental Implants: China vs USA/NZ/UK</h3>
                 <p>Save 50‑70% with Chengdu clinics. Detailed table & why Chengdu is rising.</p>
                 <div><span class="keyword-badge-sm">dental implants China</span><span class="keyword-badge-sm">medical travel China</span></div>
                 <span class="read-more">Read full article <i class="fas fa-arrow-right"></i></span>
             </a>
-            <!-- Article 2: Is Dental Treatment in China Safe? -->
-            <a href="safety-dental-china.html" class="article-card" id="link-safety">
+            <!-- 2. Is Dental Treatment in China Safe? (Series1 Article 2) -->
+            <a href="Series1.html#article-2" class="article-card" target="_blank">
                 <span class="article-tag">🛡️ Safety first</span>
                 <h3>Is Dental Treatment in China Safe?</h3>
                 <p>Modern facilities, sterilization, training, and how to choose a reputable clinic.</p>
                 <div><span class="keyword-badge-sm">Chengdu dental implants</span><span class="keyword-badge-sm">medical travel China</span></div>
                 <span class="read-more">Read full article <i class="fas fa-arrow-right"></i></span>
             </a>
-            <!-- Article 3: Why More Patients Choose Chengdu (dental focus) -->
-            <a href="why-chengdu-dental.html" class="article-card" id="link-why">
+            <!-- 3. Acupuncture & wellness preview (Series1 preview) -->
+            <a href="Series1.html#acupuncture-preview" class="article-card" target="_blank">
+                <span class="article-tag">🌸 TCM preview</span>
+                <h3>Acupuncture Chengdu & Wellness Travel</h3>
+                <p>Upcoming guides on acupuncture, TCM hospitals, and wellness retreats in Sichuan.</p>
+                <div><span class="keyword-badge-sm">acupuncture Chengdu</span><span class="keyword-badge-sm">wellness travel China</span></div>
+                <span class="read-more">Read full article <i class="fas fa-arrow-right"></i></span>
+            </a>
+            <!-- 4. Why More Patients Choose Chengdu (Series2 Article 1) -->
+            <a href="Series2.html#article-dental-chengdu" class="article-card" target="_blank">
                 <span class="article-tag">🦷 Chengdu advantage</span>
-                <h3>Why International Patients Choose Chengdu for Dental Care</h3>
+                <h3>Why Patients Choose Chengdu for Dental Care</h3>
                 <p>Advanced tech, experienced specialists, and the role of medical facilitators.</p>
                 <div><span class="keyword-badge-sm">dental treatment Chengdu</span><span class="keyword-badge-sm">affordable dental implants China</span></div>
                 <span class="read-more">Read full article <i class="fas fa-arrow-right"></i></span>
             </a>
-            <!-- Article 4: Dental Implants in China – what to know -->
-            <a href="dental-implants-guide.html" class="article-card" id="link-implants">
+            <!-- 5. Dental Implants in China: What Patients Should Know (Series2 Article 2) -->
+            <a href="Series2.html#dental-implants-guide" class="article-card" target="_blank">
                 <span class="article-tag">📝 implant guide</span>
-                <h3>Dental Implants in China: What Patients Should Know</h3>
+                <h3>Dental Implants in China: What to Know</h3>
                 <p>Step‑by‑step process, healing period, two‑visit planning.</p>
                 <div><span class="keyword-badge-sm">affordable dental implants China</span><span class="keyword-badge-sm">dental implants China</span></div>
                 <span class="read-more">Read full article <i class="fas fa-arrow-right"></i></span>
             </a>
-            <!-- Article 5: Traditional Chinese Medicine in Chengdu -->
-            <a href="tcm-chengdu.html" class="article-card" id="link-tcm">
+            <!-- 6. Traditional Chinese Medicine in Chengdu (Series2 Article 3) -->
+            <a href="Series2.html#tcm-chengdu" class="article-card" target="_blank">
                 <span class="article-tag">🌿 TCM & wellness</span>
-                <h3>Traditional Chinese Medicine in Chengdu: Holistic Approach</h3>
+                <h3>Traditional Chinese Medicine in Chengdu</h3>
                 <p>Acupuncture, herbal medicine, cupping – authentic treatments in Sichuan.</p>
                 <div><span class="keyword-badge-sm">Traditional Chinese Medicine Chengdu</span><span class="keyword-badge-sm">acupuncture Chengdu</span></div>
                 <span class="read-more">Read full article <i class="fas fa-arrow-right"></i></span>
             </a>
-            <!-- Article 6: Medical Travel to China – expectations -->
-            <a href="medical-travel-expectations.html" class="article-card" id="link-expect">
+            <!-- 7. Medical Travel to China: What to Expect (Series2 Article 4) -->
+            <a href="Series2.html#medical-travel-expect" class="article-card" target="_blank">
                 <span class="article-tag">✈️ travel planning</span>
                 <h3>Medical Travel to China: What to Expect</h3>
                 <p>Infrastructure, language support, cultural integration, coordination.</p>
                 <div><span class="keyword-badge-sm">China medical tourism</span><span class="keyword-badge-sm">medical travel China</span></div>
                 <span class="read-more">Read full article <i class="fas fa-arrow-right"></i></span>
             </a>
-            <!-- Article 7: Wellness Travel in Chengdu (combining health & culture) -->
-            <a href="wellness-travel-chengdu.html" class="article-card" id="link-wellness">
+            <!-- 8. Wellness Travel in Chengdu (Series2 Article 5) -->
+            <a href="Series2.html#wellness-travel" class="article-card" target="_blank">
                 <span class="article-tag">🧘 wellness journey</span>
                 <h3>Wellness Travel in Chengdu: Healthcare & Culture</h3>
                 <p>Pandas, tea houses, Mount Qingcheng – healing through experience.</p>
                 <div><span class="keyword-badge-sm">wellness travel China</span><span class="keyword-badge-sm">Chengdu dental implants</span></div>
                 <span class="read-more">Read full article <i class="fas fa-arrow-right"></i></span>
             </a>
-            <!-- Article 8: Additional piece – Cost comparison deep dive (placeholder) can be same as #1 but keep variety -->
-            <a href="cost-vs-nz-uk.html" class="article-card" id="link-cost2">
-                <span class="article-tag">📊 2026 data</span>
-                <h3>Dental Costs: Chengdu vs Western Countries</h3>
-                <p>Updated figures for implants, crowns, root canals – with savings.</p>
-                <div><span class="keyword-badge-sm">dental implants China</span><span class="keyword-badge-sm">medical travel to Chengdu</span></div>
-                <span class="read-more">Read full article <i class="fas fa-arrow-right"></i></span>
+            <!-- 9. Series1 Overview (额外导航) -->
+            <a href="Series1.html" class="article-card" target="_blank">
+                <span class="article-tag">📚 Series 1</span>
+                <h3>Dental Cost & Safety Series</h3>
+                <p>All articles from our first series: cost comparison, safety guide, acupuncture preview.</p>
+                <div><span class="keyword-badge-sm">dental implants China</span><span class="keyword-badge-sm">medical travel China</span></div>
+                <span class="read-more">Explore series <i class="fas fa-arrow-right"></i></span>
             </a>
         </div>
-        <p style="text-align:center; margin-top:40px; color:var(--text-light);">➡️ Click any card to read the full in‑depth article — all open as separate pages (HTML).</p>
+        <p style="text-align:center; margin-top:40px; color:var(--text-light);">➡️ Click any card to jump to the specific article in Series1 or Series2. All links open in new tabs.</p>
     </div>
 </div>
 
-<!-- main service cards (dental + tcm) with email links (as in original) -->
+<!-- ========== INTERNAL LINKS PANEL (快速导航) ========== -->
+<div class="container">
+    <div class="internal-links-panel">
+        <a href="Series1.html#article-1">💰 Cost: dental implants China</a>
+        <a href="Series1.html#article-2">🛡️ Safety & medical travel</a>
+        <a href="Series2.html#article-dental-chengdu">🦷 Dental treatment Chengdu</a>
+        <a href="Series2.html#tcm-chengdu">🌿 TCM Chengdu</a>
+        <a href="Series2.html#wellness-travel">🧘 Wellness travel China</a>
+        <a href="Series1.html#acupuncture-preview">📌 acupuncture Chengdu</a>
+    </div>
+</div>
+
+<!-- ========== SERVICE CARDS (DENTAL + TCM) ========== -->
 <div class="container">
     <div class="service-row">
         <div class="service-card">
@@ -804,6 +926,7 @@
                 <li><i class="fas fa-check-circle" style="color:var(--primary-gold); width:24px;"></i> Dental implants (single / full arch)</li>
                 <li><i class="fas fa-check-circle" style="color:var(--primary-gold);"></i> Root canal therapy</li>
                 <li><i class="fas fa-check-circle" style="color:var(--primary-gold);"></i> Crowns, bridges & veneers</li>
+                <li><i class="fas fa-check-circle" style="color:var(--primary-gold);"></i> Wisdom tooth extraction</li>
             </ul>
             <a href="mailto:KIWI_Serenity_Limited@outlook.com?subject=Dental%20Consultation" class="btn-outline" style="margin-top:30px;">Get Dental Consultation →</a>
         </div>
@@ -813,23 +936,55 @@
                 <li><i class="fas fa-check-circle" style="color:var(--primary-gold);"></i> Acupuncture & electroacupuncture</li>
                 <li><i class="fas fa-check-circle" style="color:var(--primary-gold);"></i> Herbal therapy & Tui Na massage</li>
                 <li><i class="fas fa-check-circle" style="color:var(--primary-gold);"></i> Cupping / moxibustion</li>
+                <li><i class="fas fa-check-circle" style="color:var(--primary-gold);"></i> Pain management</li>
             </ul>
             <a href="mailto:KIWI_Serenity_Limited@outlook.com?subject=TCM%20Consultation" class="btn-outline" style="margin-top:30px;">Book TCM Consultation →</a>
         </div>
     </div>
 </div>
 
-<!-- process steps (abridged) -->
+<!-- ========== MEDICAL TRAVEL PROCESS ========== -->
 <div class="container">
     <h2 class="section-title">How Medical Travel Works</h2>
     <div class="process-grid">
-        <div class="step"><div class="step-num">01</div><h4>Send X‑ray / info</h4></div>
-        <div class="step"><div class="step-num">02</div><h4>Online consultation</h4></div>
-        <div class="step"><div class="step-num">03</div><h4>Receive treatment plan</h4></div>
+        <div class="step"><div class="step-num">01</div><h4>Send X‑ray / info</h4><p>Share dental X‑ray or describe health concerns</p></div>
+        <div class="step"><div class="step-num">02</div><h4>Online consultation</h4><p>Video/chat with specialist (translation included)</p></div>
+        <div class="step"><div class="step-num">03</div><h4>Receive treatment plan</h4><p>Clear timeline & cost estimate</p></div>
+        <div class="step"><div class="step-num">04</div><h4>Travel to Chengdu</h4><p>We coordinate appointments, accommodation</p></div>
+        <div class="step"><div class="step-num">05</div><h4>Treatment & recovery</h4><p>Care + enjoy Chengdu’s culture</p></div>
+        <div class="step"><div class="step-num">06</div><h4>Follow‑up support</h4><p>Post‑treatment check‑in, remote guidance</p></div>
     </div>
 </div>
 
-<!-- QR row -->
+<!-- ========== CHENGDU EXPERIENCE + CASE CARD ========== -->
+<div class="container">
+    <div class="chengdu-experience">
+        <div>
+            <h2 class="section-title">Chengdu Experience</h2>
+            <p style="font-size:1.2rem; margin-bottom:20px;">While receiving treatment, explore the treasures of Sichuan</p>
+            <div style="display: flex; gap: 30px; flex-wrap: wrap; margin-top:20px;">
+                <span style="font-size:2.5rem;">🐼</span> <span style="font-size:2.5rem;">🌶️</span> <span style="font-size:2.5rem;">🏔️</span> <span style="font-size:2.5rem;">🏯</span>
+            </div>
+            <ul style="margin-top:20px; list-style:none;">
+                <li style="margin-bottom:10px;"><i class="fas fa-paw" style="color:var(--primary-gold); margin-right:10px;"></i> Giant Panda Base</li>
+                <li style="margin-bottom:10px;"><i class="fas fa-utensils" style="color:var(--primary-gold); margin-right:10px;"></i> Authentic Sichuan Hot Pot</li>
+                <li style="margin-bottom:10px;"><i class="fas fa-mountain" style="color:var(--primary-gold); margin-right:10px;"></i> Mount Qingcheng / Leshan Buddha</li>
+            </ul>
+        </div>
+        <div style="background:rgba(197,160,89,0.1); border-radius:8px; padding:30px; text-align:center; border:1px solid var(--primary-gold);">
+            <p style="font-size:1.6rem; font-family:'Cormorant Garamond', serif; color:var(--primary-gold);">Travel Enhances Healing</p>
+            <p style="margin-top:15px; color:var(--off-white);">Culture is the companion of recovery</p>
+        </div>
+    </div>
+    
+    <div class="case-card">
+        <h3>📋 Recent Consultation Case</h3>
+        <p style="margin-bottom:20px; font-size:1.1rem;">An international patient from Nigeria contacted us regarding multiple dental issues including implants and root canal treatment. After reviewing the case through an online consultation, a dentist provided a treatment plan and estimated cost. The patient is currently preparing for a treatment trip to Chengdu.</p>
+        <p><i class="fas fa-check-circle" style="color:var(--primary-gold);"></i> Implant + root canal plan • cost disclosed • travel planned</p>
+    </div>
+</div>
+
+<!-- ========== QR CODES ========== -->
 <div class="container">
     <div class="qr-row">
         <div class="qr-item"><img src="WhatsApp.jpg" alt="WhatsApp QR"><p>WhatsApp</p></div>
@@ -837,7 +992,7 @@
     </div>
 </div>
 
-<!-- footer -->
+<!-- ========== FOOTER ========== -->
 <footer class="social-footer">
     <div class="container">
         <div class="social-links">
@@ -857,12 +1012,12 @@
         </div>
         <div class="footer-legal">
             <p>© 2026 KIWI Serenity Limited · Medical Travel Coordination Chengdu</p>
-            <p style="font-size:0.8rem;">dental implants China · medical travel China · Chengdu dental implants · acupuncture Chengdu · wellness travel China</p>
+            <p style="font-size:0.8rem;">dental implants China · medical travel China · Chengdu dental implants · acupuncture Chengdu · wellness travel China · TCM Chengdu · China medical tourism</p>
         </div>
     </div>
 </footer>
 
-<!-- Breadcrumb schema (minimal) -->
+<!-- ========== SCHEMA & SCRIPTS ========== -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -876,12 +1031,20 @@
 }
 </script>
 
-<!-- interactive link behavior note -->
 <script>
-    document.querySelectorAll('a.article-card').forEach(link => {
-        link.setAttribute('target', '_blank'); // open articles in new tab (preserve site)
+    // 为所有外部链接添加安全属性，并确保文章卡片在新标签打开
+    document.querySelectorAll('a[href^="http"]').forEach(link => {
+        if (!link.href.includes('kiwi-serenity-limited.com')) {
+            link.setAttribute('target', '_blank');
+            link.setAttribute('rel', 'noopener noreferrer');
+        }
     });
-    console.log('Article hub integrated with internal links');
+    // 文章卡片已经设置 target="_blank"，但以防内联遗漏
+    document.querySelectorAll('.article-card').forEach(link => {
+        link.setAttribute('target', '_blank');
+    });
+    console.log('融合版 index 已加载：Series1 + Series2 所有文章可交互访问');
 </script>
+
 </body>
 </html>
