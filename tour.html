@@ -505,9 +505,9 @@
             flex: 0 0 40%;
             position: relative;
             overflow: hidden;
-            background-color: #f0f0f0; /* fallback */
-            aspect-ratio: 4/3; /* 统一宽高比 4:3，确保 eight.jpg 和 seven.jpg 大小一致 */
-            min-height: auto; /* 覆盖原来的 min-height */
+            background-color: #f0f0f0;
+            aspect-ratio: 4/3;
+            min-height: auto;
         }
         .card-img .days-badge {
             position: absolute;
@@ -522,7 +522,6 @@
             backdrop-filter: blur(4px);
             z-index: 2;
         }
-        /* 背景图片设置 - cover保证完整显示且不被裁剪变形，同时填满容器 */
         .card-img .bg-image {
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -765,7 +764,7 @@
             .quick-contact { width: 100%; }
             .card-toggle { right: 20px; bottom: 10px; width: 40px; height: 40px; }
             .chengdu-story-banner { border-radius: 40px 10px 40px 10px; padding: 20px; }
-            .card-img { aspect-ratio: 16/9; } /* 小屏可稍扁，仍保证比例 */
+            .card-img { aspect-ratio: 16/9; }
         }
         @media (max-width: 480px) {
             .contact-links { flex-direction: column; gap: 8px; }
@@ -873,11 +872,10 @@
         </div>
     </div>
 
-    <!-- 行程卡片: 滚滚星途 8天 (使用统一比例图片容器) -->
+    <!-- 行程卡片: 滚滚星途 8天 -->
     <div class="tour-card" id="tour-rolling">
         <div class="card-header active" onclick="toggleCard('rolling')">
             <div class="card-img">
-                <!-- 背景图片独立元素保证cover完整显示 -->
                 <div class="bg-image" style="background-image: url('eight.jpg'), url('https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=800');"></div>
                 <div class="days-badge">8 <span style="font-size:1rem;">Days</span></div>
             </div>
@@ -917,7 +915,7 @@
         </div>
     </div>
 
-    <!-- 行程卡片: 理想四川8天 (同样使用统一比例图片容器) -->
+    <!-- 行程卡片: 理想四川8天 -->
     <div class="tour-card coach-tour" id="tour-ideal">
         <div class="card-header" onclick="toggleCard('ideal')">
             <div class="card-img">
@@ -991,7 +989,7 @@
     </div>
 </div>
 
-<!-- 页脚 -->
+<!-- 页脚重构：Services 独立一列，TCM 和 Dental 清晰展示 -->
 <footer class="site-footer">
     <div class="container">
         <div class="footer-grid">
@@ -1006,6 +1004,12 @@
                 <a href="mailto:KIWI_Serenity_Limited@outlook.com"><i class="fas fa-envelope"></i> Email us</a>
             </div>
             <div>
+                <h4>Services</h4>
+                <a href="dental.html"><i class="fas fa-tooth"></i> Dental Wellness</a><br>
+                <a href="tcm.html"><i class="fas fa-leaf"></i> TCM Consultation</a><br>
+                <a href="index.html"><i class="fas fa-spa"></i> Wellness Coordination</a>
+            </div>
+            <div>
                 <h4>Follow</h4>
                 <a href="https://www.tiktok.com/@kiwi_sichuan_explorer.nz"><i class="fab fa-tiktok"></i> TikTok</a><br>
                 <a href="https://www.facebook.com/profile.php?id=61586286820740"><i class="fab fa-facebook"></i> Facebook</a><br>
@@ -1013,7 +1017,6 @@
             </div>
             <div>
                 <h4>Policies</h4>
-                <a href="dental.html">Dental</a> | <a href="tcm.html">TCM</a> 
                 <a href="privacy.html">Privacy</a> | <a href="terms.html">Terms</a> | <a href="disclaimer.html">Disclaimer</a><br>
                 <small>Non-medical coordination only.</small>
             </div>
@@ -1068,64 +1071,21 @@
   "itinerary": {
     "@type": "ItemList",
     "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Arrive Chengdu + optional dental/TCM"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Panda Base - Sanxingdui - High-speed rail to Jiuzhaigou"
-      },
-      {
-        "@type": "ListItem",
-        "position": 3,
-        "name": "Full Day Jiuzhaigou"
-      },
-      {
-        "@type": "ListItem",
-        "position": 4,
-        "name": "Huanglong - rail to Chengdu"
-      },
-      {
-        "@type": "ListItem",
-        "position": 5,
-        "name": "Emei Golden Summit"
-      },
-      {
-        "@type": "ListItem",
-        "position": 6,
-        "name": "Leshan Giant Buddha - Chengdu"
-      },
-      {
-        "@type": "ListItem",
-        "position": 7,
-        "name": "Chengdu free day"
-      },
-      {
-        "@type": "ListItem",
-        "position": 8,
-        "name": "Departure"
-      }
+      {"@type": "ListItem","position": 1,"name": "Arrive Chengdu + optional dental/TCM"},
+      {"@type": "ListItem","position": 2,"name": "Panda Base - Sanxingdui - High-speed rail to Jiuzhaigou"},
+      {"@type": "ListItem","position": 3,"name": "Full Day Jiuzhaigou"},
+      {"@type": "ListItem","position": 4,"name": "Huanglong - rail to Chengdu"},
+      {"@type": "ListItem","position": 5,"name": "Emei Golden Summit"},
+      {"@type": "ListItem","position": 6,"name": "Leshan Giant Buddha - Chengdu"},
+      {"@type": "ListItem","position": 7,"name": "Chengdu free day"},
+      {"@type": "ListItem","position": 8,"name": "Departure"}
     ]
   },
-  "offers": {
-    "@type": "Offer",
-    "price": "1749",
-    "priceCurrency": "USD",
-    "priceValidUntil": "2026-12-31",
-    "availability": "https://schema.org/InStock"
-  },
+  "offers": {"@type": "Offer","price": "1749","priceCurrency": "USD","priceValidUntil": "2026-12-31","availability": "https://schema.org/InStock"},
   "touristType": "Wellness traveler, Medical tourist, Culture enthusiast",
-  "provider": {
-    "@type": "Organization",
-    "name": "KIWI Serenity Limited",
-    "url": "https://www.kiwi-serenity-limited.com"
-  }
+  "provider": {"@type": "Organization","name": "KIWI Serenity Limited","url": "https://www.kiwi-serenity-limited.com"}
 }
 </script>
-    <!-- Ideal Sichuan Tour Schema -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -1136,168 +1096,19 @@
   "itinerary": {
     "@type": "ItemList",
     "itemListElement": [
-      {"@type": "ListItem", "position": 1, "name": "Arrive Chengdu + optional dental/TCM"},
-      {"@type": "ListItem", "position": 2, "name": "Panda Paradise - Songpan - Jiuzhaigou"},
-      {"@type": "ListItem", "position": 3, "name": "Full Day Jiuzhaigou"},
-      {"@type": "ListItem", "position": 4, "name": "Huanglong - Chengdu"},
-      {"@type": "ListItem", "position": 5, "name": "Emei Golden Summit"},
-      {"@type": "ListItem", "position": 6, "name": "Leshan Giant Buddha - Chengdu"},
-      {"@type": "ListItem", "position": 7, "name": "Dujiangyan - Qingcheng Mountain"},
-      {"@type": "ListItem", "position": 8, "name": "Departure"}
+      {"@type": "ListItem","position": 1,"name": "Arrive Chengdu + optional dental/TCM"},
+      {"@type": "ListItem","position": 2,"name": "Panda Paradise - Songpan - Jiuzhaigou"},
+      {"@type": "ListItem","position": 3,"name": "Full Day Jiuzhaigou"},
+      {"@type": "ListItem","position": 4,"name": "Huanglong - Chengdu"},
+      {"@type": "ListItem","position": 5,"name": "Emei Golden Summit"},
+      {"@type": "ListItem","position": 6,"name": "Leshan Giant Buddha - Chengdu"},
+      {"@type": "ListItem","position": 7,"name": "Dujiangyan - Qingcheng Mountain"},
+      {"@type": "ListItem","position": 8,"name": "Departure"}
     ]
   },
-  "offers": {
-    "@type": "Offer",
-    "price": "1687",
-    "priceCurrency": "USD",
-    "priceValidUntil": "2026-12-31",
-    "availability": "https://schema.org/InStock"
-  },
+  "offers": {"@type": "Offer","price": "1687","priceCurrency": "USD","priceValidUntil": "2026-12-31","availability": "https://schema.org/InStock"},
   "touristType": "Wellness traveler, Culture enthusiast, Nature lover",
-  "provider": {
-    "@type": "Organization",
-    "name": "KIWI Serenity Limited"
-  }
-}
-</script>
-
-<!-- Tour Packages ItemList -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ItemList",
-  "name": "Sichuan Wellness Tour Packages",
-  "description": "8-day wellness and cultural tours in Sichuan, China",
-  "numberOfItems": 2,
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "item": {
-        "@type": "TouristTrip",
-        "name": "Rolling Star Sichuan Tour",
-        "url": "https://www.kiwi-serenity-limited.com/tour.html#rolling-star"
-      }
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "item": {
-        "@type": "TouristTrip",
-        "name": "Ideal Sichuan Panorama Tour",
-        "url": "https://www.kiwi-serenity-limited.com/tour.html#ideal-sichuan"
-      }
-    }
-  ]
-}
-</script>
- <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ItemList",
-  "name": "Tour Inclusions",
-  "description": "Key benefits included in all wellness tours",
-  "numberOfItems": 4,
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "item": {
-        "@type": "Service",
-        "name": "Dental Cleaning",
-        "description": "Professional dental cleaning at licensed clinics with West China graduates"
-      }
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "item": {
-        "@type": "Service",
-        "name": "TCM Consultation",
-        "description": "Traditional Chinese Medicine assessment with licensed practitioners"
-      }
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "item": {
-        "@type": "Service",
-        "name": "Bilingual Guide",
-        "description": "Professional English-speaking guide throughout the tour"
-      }
-    },
-    {
-      "@type": "ListItem",
-      "position": 4,
-      "item": {
-        "@type": "Service",
-        "name": "Free Transfers",
-        "description": "Airport pickup and drop-off included"
-      }
-    }
-  ]
-}
-</script>
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ItemList",
-  "name": "Partner Dental Team Information",
-  "description": "Information about our partner dental clinics and dentists",
-  "numberOfItems": 3,
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "item": {
-        "@type": "MedicalClinic",
-        "name": "West China Stomatology",
-        "description": "Founded 1917, QS #12 global. Graduates lead our partner clinics."
-      }
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "item": {
-        "@type": "MedicalClinic",
-        "name": "Licensed Dentists",
-        "description": "5+ years experience, fluent English, international patient friendly."
-      }
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "item": {
-        "@type": "MedicalClinic",
-        "name": "Modern Clinic",
-        "description": "State-of-the-art equipment, single-use instruments, 30-45min cleaning."
-      }
-    }
-  ]
-}
-</script>
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What is included in the tour packages?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "All packages include dental cleaning, TCM consultation, bilingual guide, airport transfers, all taxes & tips, and premium hotels."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Are the dental and TCM services provided by licensed professionals?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes, all dental and TCM services are provided by licensed practitioners at our partner clinics in Chengdu."
-      }
-    }
-  ]
+  "provider": {"@type": "Organization","name": "KIWI Serenity Limited"}
 }
 </script>
 </body>
