@@ -5,104 +5,422 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us | Kiwi Serenity Limited – Medical Travel to Chengdu</title>
     <meta name="description" content="Contact Kiwi Serenity Limited for medical travel coordination to Chengdu. Free consultation for dental implants, TCM therapy, and wellness travel.">
-    <link rel="canonical" href="https://www.kiwi-serenity-limited.com/contact/">
+    <link rel="canonical" href="https://www.kiwi-serenity-limited.com/contact.html">
+    
+    <!-- Google Fonts for Elegant Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.6;
-            color: #1e293b;
-            background: #f8fafc;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        .container { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
         
+        :root {
+            --primary-gold: #D4AF37;
+            --primary-gold-dark: #B49450;
+            --primary-gold-light: #F3E5AB;
+            --deep-navy: #0A1A2F;
+            --rich-charcoal: #1E2A3A;
+            --pure-white: #FFFFFF;
+            --off-white: #FDF9F0;
+            --soft-gray: #F5F2EB;
+            --text-dark: #1E2A3A;
+            --text-muted: #5A6E7A;
+            --border-subtle: rgba(212, 175, 55, 0.25);
+            --card-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(212, 175, 55, 0.1);
+            --hover-shadow: 0 30px 50px -15px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(212, 175, 55, 0.25);
+            --transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, var(--off-white) 0%, #F5EFE2 100%);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+        
+        /* Elegant Navigation */
         .nav-bar {
-            background: #1E1E1E;
-            padding: 16px 24px;
-            border-bottom: 2px solid #C5A059;
+            background: linear-gradient(135deg, var(--deep-navy) 0%, #0F2A3E 100%);
+            padding: 20px 32px;
+            border-bottom: 2px solid var(--primary-gold);
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
         }
+        
         .nav-links {
             max-width: 1280px;
             margin: 0 auto;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 32px;
+            gap: 40px;
         }
+        
         .nav-links a {
-            color: #F8F6F2;
+            color: var(--off-white);
             text-decoration: none;
             font-weight: 500;
-            transition: color 0.3s;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            transition: var(--transition);
+            position: relative;
         }
-        .nav-links a:hover { color: #C5A059; }
         
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-gold);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary-gold);
+        }
+        
+        /* Page Header */
         .page-header {
-            background: #0f5e4a;
+            background: linear-gradient(135deg, var(--deep-navy) 0%, #1A3A4F 100%);
             color: white;
-            padding: 48px 0;
+            padding: 80px 0 60px;
             text-align: center;
+            position: relative;
+            overflow: hidden;
         }
-        .page-header h1 { font-size: 2.2rem; margin-bottom: 12px; }
         
-        .content {
-            background: white;
-            padding: 48px;
-            margin: -32px 0 48px;
-            border-radius: 24px;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.05);
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
         }
+        
+        .page-header::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 250px;
+            height: 250px;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        
+        .page-header h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.2rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            letter-spacing: 1px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .page-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Main Content Card */
+        .content {
+            background: var(--pure-white);
+            padding: 60px;
+            margin: -48px 0 60px;
+            border-radius: 32px;
+            box-shadow: var(--card-shadow);
+            position: relative;
+            z-index: 10;
+            border: 1px solid var(--border-subtle);
+        }
+        
+        /* Contact Methods Grid */
         .contact-methods {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 30px;
-            margin-bottom: 40px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            margin-bottom: 60px;
         }
-        .contact-card {
-            background: #f8fafc;
-            padding: 24px;
-            border-radius: 16px;
-            text-align: center;
-            border: 1px solid #e2e8f0;
-        }
-        .contact-card i { font-size: 2rem; color: #0f5e4a; margin-bottom: 12px; display: inline-block; }
-        .contact-card h3 { margin-bottom: 8px; color: #0f5e4a; }
-        .contact-card a { color: #0f5e4a; text-decoration: none; font-weight: 500; }
         
-        .form-group { margin-bottom: 20px; }
-        label { display: block; font-weight: 600; margin-bottom: 8px; }
-        input, select, textarea {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #e2e8f0;
-            border-radius: 8px;
-            font-family: inherit;
-        }
-        .btn {
-            background: #0f5e4a;
-            color: white;
-            padding: 14px 28px;
-            border: none;
-            border-radius: 40px;
-            font-weight: 600;
+        .contact-card {
+            background: linear-gradient(135deg, var(--off-white) 0%, var(--soft-gray) 100%);
+            padding: 32px 20px;
+            border-radius: 24px;
+            text-align: center;
+            border: 1px solid var(--border-subtle);
+            transition: var(--transition);
             cursor: pointer;
         }
-        .btn:hover { background: #1a7f64; }
         
-        .footer {
-            background: #1E1E1E;
-            color: #94a3b8;
-            padding: 32px 0;
-            text-align: center;
+        .contact-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--hover-shadow);
+            border-color: var(--primary-gold);
         }
-        .footer a { color: #C5A059; text-decoration: none; margin: 0 12px; }
+        
+        .contact-card i {
+            font-size: 2.5rem;
+            color: var(--primary-gold);
+            margin-bottom: 16px;
+            display: inline-block;
+        }
+        
+        .contact-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            margin-bottom: 8px;
+            color: var(--deep-navy);
+        }
+        
+        .contact-card a {
+            color: var(--primary-gold-dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        
+        .contact-card a:hover {
+            color: var(--primary-gold);
+        }
+        
+        .contact-card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-top: 8px;
+        }
+        
+        /* Form Section */
+        .contact-form {
+            margin-top: 40px;
+        }
+        
+        .contact-form h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            color: var(--deep-navy);
+            margin-bottom: 32px;
+            text-align: center;
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+        
+        .contact-form h3:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-gold), transparent);
+            margin: 12px auto 0;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-bottom: 24px;
+        }
+        
+        .form-group {
+            margin-bottom: 24px;
+        }
+        
+        label {
+            display: block;
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--primary-gold-dark);
+            margin-bottom: 8px;
+        }
+        
+        input, select, textarea {
+            width: 100%;
+            padding: 14px 18px;
+            border: 1.5px solid #E8E2D4;
+            border-radius: 16px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            background: var(--off-white);
+        }
+        
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--primary-gold);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+        }
+        
+        /* Success Message */
+        .success-message {
+            background: linear-gradient(135deg, #1A5F4A, #0F4A3A);
+            color: white;
+            padding: 20px 24px;
+            border-radius: 20px;
+            margin-bottom: 24px;
+            text-align: center;
+            display: none;
+            animation: slideDown 0.4s ease;
+        }
+        
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Elegant Button */
+        .btn {
+            background: linear-gradient(135deg, var(--primary-gold) 0%, var(--primary-gold-dark) 100%);
+            color: var(--deep-navy);
+            padding: 16px 40px;
+            border: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 28px rgba(212, 175, 55, 0.4);
+            background: linear-gradient(135deg, #E5C158 0%, #C5A050 100%);
+        }
+        
+        .btn i {
+            transition: transform 0.3s ease;
+        }
+        
+        .btn:hover i {
+            transform: translateX(5px);
+        }
+        
+        .btn-submit {
+            display: flex;
+            justify-content: center;
+            margin-top: 32px;
+        }
+        
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, var(--deep-navy) 0%, #0A1A2A 100%);
+            color: #8A9BB0;
+            padding: 48px 0 32px;
+            text-align: center;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        
+        .footer a {
+            color: var(--primary-gold);
+            text-decoration: none;
+            margin: 0 16px;
+            transition: var(--transition);
+        }
+        
+        .footer a:hover {
+            color: var(--primary-gold-light);
+        }
+        
+        .footer-links {
+            margin-bottom: 24px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 24px;
+        }
+        
+        .social-links {
+            margin-bottom: 24px;
+        }
+        
+        .social-links a {
+            font-size: 1.4rem;
+            margin: 0 20px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 900px) {
+            .contact-methods {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+            .content {
+                padding: 40px 28px;
+            }
+            .page-header h1 {
+                font-size: 2.4rem;
+            }
+        }
         
         @media (max-width: 640px) {
-            .contact-methods { grid-template-columns: 1fr; }
-            .content { padding: 28px; }
+            .contact-methods {
+                grid-template-columns: 1fr;
+            }
+            .nav-links {
+                gap: 20px;
+            }
+            .nav-links a {
+                font-size: 0.8rem;
+            }
+            .container {
+                padding: 0 20px;
+            }
+        }
+        
+        /* Loading Spinner */
+        .spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 2px solid rgba(0,0,0,0.2);
+            border-top-color: var(--deep-navy);
+            border-radius: 50%;
+            animation: spin 0.6s linear infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
         }
     </style>
 </head>
@@ -110,11 +428,11 @@
 
 <div class="nav-bar">
     <div class="nav-links">
-        <a href="index.html">🏠 Home</a>
-        <a href="Series1.html">💰 Dental Cost Guide</a>
-        <a href="Series2.html">📚 Medical Travel Guide</a>
-        <a href="Patient.html">📖 Patient Stories</a>
-        <a href="contact.html">📧 Contact</a>
+        <a href="index.html"><i class="fas fa-home"></i> Home</a>
+        <a href="Series1.html"><i class="fas fa-coins"></i> Dental Cost Guide</a>
+        <a href="Series2.html"><i class="fas fa-book-open"></i> Medical Travel Guide</a>
+        <a href="Patient.html"><i class="fas fa-user-md"></i> Patient Stories</a>
+        <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
     </div>
 </div>
 
@@ -122,6 +440,7 @@
     <div class="container">
         <h1>Contact Kiwi Serenity Limited</h1>
         <p>Your trusted partner for medical travel to Chengdu, China</p>
+        <div style="margin-top: 24px; font-size: 2rem; opacity: 0.7;">✧ 尊贵医疗旅行体验 ✧</div>
     </div>
 </div>
 
@@ -129,77 +448,246 @@
     <div class="content">
         <div class="contact-methods">
             <div class="contact-card">
-                <i>📧</i>
+                <i class="fas fa-envelope"></i>
                 <h3>Email</h3>
                 <a href="mailto:KIWI_Serenity_Limited@outlook.com">KIWI_Serenity_Limited@outlook.com</a>
+                <p>We reply within 24 hours</p>
             </div>
             <div class="contact-card">
-                <i>📞</i>
+                <i class="fas fa-phone-alt"></i>
                 <h3>Phone (NZ)</h3>
                 <a href="tel:+64220405795">+64 22 040 5795</a>
+                <p>Mon-Fri, 9AM-6PM NZT</p>
             </div>
             <div class="contact-card">
-                <i>💬</i>
+                <i class="fab fa-whatsapp"></i>
                 <h3>WhatsApp</h3>
                 <a href="https://wa.me/64223244938" target="_blank">+64 22 324 4938</a>
+                <p>Instant messaging support</p>
             </div>
             <div class="contact-card">
-                <i>📋</i>
+                <i class="fas fa-calendar-check"></i>
                 <h3>Free Consultation</h3>
                 <p>Send your dental X-ray or health questions</p>
             </div>
         </div>
         
         <div class="contact-form">
-            <h3 style="color: #0f5e4a; margin-bottom: 24px;">Request Free Consultation</h3>
-            <form action="mailto:KIWI_Serenity_Limited@outlook.com" method="post" enctype="text/plain">
-                <div class="form-group">
-                    <label>Full Name</label>
-                    <input type="text" name="name" required>
+            <h3>Request a Confidential Consultation</h3>
+            
+            <div id="successMessage" class="success-message">
+                <i class="fas fa-check-circle" style="margin-right: 10px;"></i>
+                Thank you for your message! Our team will respond within 24 hours.
+            </div>
+            
+            <form id="contactForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label><i class="fas fa-user"></i> Full Name *</label>
+                        <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-envelope"></i> Email Address *</label>
+                        <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label>Email</label>
-                    <input type="email" name="email" required>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label><i class="fas fa-phone"></i> Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+64 XX XXX XXXX">
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-globe"></i> Country *</label>
+                        <select id="country" name="country" required>
+                            <option value="">Select your country</option>
+                            <option>New Zealand</option>
+                            <option>Australia</option>
+                            <option>United States</option>
+                            <option>United Kingdom</option>
+                            <option>Canada</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label>Country</label>
-                    <select name="country">
-                        <option>New Zealand</option><option>Australia</option><option>United States</option>
-                        <option>United Kingdom</option><option>Canada</option><option>Other</option>
-                    </select>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label><i class="fas fa-tooth"></i> Treatment Interest *</label>
+                        <select id="treatment" name="treatment" required>
+                            <option value="">Select treatment type</option>
+                            <option>Dental Implants</option>
+                            <option>Root Canal Treatment</option>
+                            <option>Dental Crowns / Bridges</option>
+                            <option>Full Mouth Reconstruction</option>
+                            <option>Traditional Chinese Medicine (TCM)</option>
+                            <option>Wellness Travel Consultation</option>
+                            <option>General Inquiry</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-calendar-alt"></i> Preferred Travel Timeline</label>
+                        <select id="timeline" name="timeline">
+                            <option value="">Please select</option>
+                            <option>Within 1 month</option>
+                            <option>1-3 months</option>
+                            <option>3-6 months</option>
+                            <option>6+ months</option>
+                            <option>Just researching</option>
+                        </select>
+                    </div>
                 </div>
+                
                 <div class="form-group">
-                    <label>Treatment Interest</label>
-                    <select name="treatment">
-                        <option>Dental Implants</option><option>Root Canal</option><option>Dental Crowns</option>
-                        <option>Traditional Chinese Medicine</option><option>Wellness Travel</option>
-                    </select>
+                    <label><i class="fas fa-comment-dots"></i> Message / Questions *</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Please describe your dental concerns, health history, or any specific questions..." required></textarea>
                 </div>
-                <div class="form-group">
-                    <label>Message / Questions</label>
-                    <textarea rows="5" name="message"></textarea>
+                
+                <div class="btn-submit">
+                    <button type="submit" class="btn" id="submitBtn">
+                        <i class="fas fa-paper-plane"></i> Send Request
+                        <span id="loadingSpinner" style="display: none;"></span>
+                    </button>
                 </div>
-                <button type="submit" class="btn">Send Request →</button>
+                
+                <p style="text-align: center; margin-top: 20px; font-size: 0.8rem; color: var(--text-muted);">
+                    <i class="fas fa-lock"></i> Your information is confidential and protected.
+                    We never share your data with third parties.
+                </p>
             </form>
         </div>
         
-        <div style="margin-top: 32px; padding-top: 24px; border-top: 1px solid #e2e8f0; text-align: center;">
-            <a href="/index.html" style="color: #0f5e4a;">← Back to Home</a>
+        <div style="margin-top: 48px; padding-top: 32px; border-top: 2px solid var(--border-subtle); text-align: center;">
+            <p style="font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: var(--primary-gold-dark);">
+                "Begin your journey to exceptional care in Chengdu"
+            </p>
+            <a href="index.html" style="color: var(--deep-navy); text-decoration: none; font-weight: 500; margin-top: 12px; display: inline-block;">
+                ← Back to Home
+            </a>
         </div>
     </div>
 </div>
 
 <footer class="footer">
     <div class="container">
-        <div style="margin-bottom:16px;">
+        <div class="social-links">
+            <a href="https://www.facebook.com/profile.php?id=61586286820740" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/kiwi_serenity_limited/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@kiwi_sichuan_explorer.nz" target="_blank"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.linkedin.com/company/kiwi-serenity-limited" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <div class="footer-links">
             <a href="index.html">Home</a>
             <a href="Series1.html">Dental Cost Guide</a>
             <a href="Series2.html">Medical Travel Guide</a>
             <a href="Patient.html">Patient Stories</a>
             <a href="contact.html">Contact</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Service</a>
         </div>
-        <p>© 2026 Kiwi Serenity Limited — Medical Travel to Chengdu, China</p>
+        <p>© 2026 Kiwi Serenity Limited — Premier Medical Travel Coordination to Chengdu, China</p>
+        <p style="font-size: 0.75rem; margin-top: 16px; opacity: 0.6;">
+            <i class="fas fa-gem"></i> Excellence in Medical Tourism | Dental Implants | Traditional Chinese Medicine | Wellness Journeys
+        </p>
     </div>
 </footer>
+
+<script>
+    // Auto-send email functionality
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Get form values
+        const fullName = document.getElementById('fullName').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        const country = document.getElementById('country').value;
+        const treatment = document.getElementById('treatment').value;
+        const timeline = document.getElementById('timeline').value;
+        const message = document.getElementById('message').value.trim();
+        
+        // Validate required fields
+        if (!fullName || !email || !country || !treatment || !message) {
+            alert('Please fill in all required fields (*)');
+            return;
+        }
+        
+        // Show loading state
+        const submitBtn = document.getElementById('submitBtn');
+        const spinner = document.getElementById('loadingSpinner');
+        const btnText = submitBtn.querySelector('i.fa-paper-plane');
+        
+        submitBtn.disabled = true;
+        btnText.style.display = 'none';
+        spinner.style.display = 'inline-block';
+        
+        // Build email content
+        const subject = `Consultation Request: ${treatment} - ${fullName} from ${country}`;
+        
+        const emailBody = `
+=== NEW CONSULTATION REQUEST ===
+
+--- Personal Information ---
+Name: ${fullName}
+Email: ${email}
+Phone: ${phone || 'Not provided'}
+Country: ${country}
+
+--- Treatment Details ---
+Treatment Interest: ${treatment}
+Preferred Timeline: ${timeline || 'Not specified'}
+
+--- Message ---
+${message}
+
+--- Form Submission ---
+Submitted via Kiwi Serenity Limited Contact Form
+Date: ${new Date().toLocaleString('en-US', { timeZone: 'Pacific/Auckland' })} (NZ Time)
+        `.trim();
+        
+        // Create mailto link with encoded content
+        const mailtoLink = `mailto:KIWI_Serenity_Limited@outlook.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
+        
+        // Open default email client
+        window.location.href = mailtoLink;
+        
+        // Show success message
+        const successMsg = document.getElementById('successMessage');
+        successMsg.style.display = 'block';
+        
+        // Reset form
+        document.getElementById('contactForm').reset();
+        
+        // Reset button state after a short delay
+        setTimeout(() => {
+            submitBtn.disabled = false;
+            btnText.style.display = 'inline-block';
+            spinner.style.display = 'none';
+        }, 1000);
+        
+        // Auto-hide success message after 5 seconds
+        setTimeout(() => {
+            successMsg.style.display = 'none';
+        }, 5000);
+        
+        // Optional: Track conversion (for analytics)
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'form_submission', {
+                'event_category': 'contact',
+                'event_label': treatment
+            });
+        }
+    });
+    
+    // Add hover animation to contact cards
+    document.querySelectorAll('.contact-card').forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transition = 'all 0.3s ease';
+        });
+    });
+    
+    // Auto-focus on first input for better UX
+    document.getElementById('fullName').focus();
+</script>
 </body>
 </html>
