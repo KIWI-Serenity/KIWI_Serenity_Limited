@@ -37,7 +37,7 @@
         "https://www.instagram.com/kiwi_serenity_limited/",
         "https://www.tiktok.com/@kiwi_sichuan_explorer.nz"
       ],
-      "foundingDate": "2024"
+      "foundingDate": "2026"
     }
     </script>
     
@@ -330,7 +330,84 @@
         }
         .internal-links-panel a:hover { background: var(--primary-gold); color: var(--deep-charcoal); }
         
-        /* Footer with PNG branding replacing contacts */
+        /* Founder Story & Medical Experience Sections */
+        .founder-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin: 60px 0;
+        }
+        .founder-card {
+            background: var(--pure-white);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+            border: 1px solid var(--border-subtle);
+        }
+        .founder-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--primary-gold);
+        }
+        .founder-card h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--deep-charcoal);
+        }
+        .founder-card h2:after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 2px;
+            background: var(--primary-gold);
+            margin-top: 8px;
+        }
+        .founder-story-text {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--text-light);
+            margin-top: 20px;
+        }
+        .experience-list {
+            margin-top: 20px;
+            list-style: none;
+        }
+        .experience-list li {
+            padding: 16px 0;
+            border-bottom: 1px solid var(--border-subtle);
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .exp-title {
+            font-weight: 700;
+            color: var(--deep-charcoal);
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+        }
+        .exp-desc {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            flex: 1;
+            text-align: right;
+        }
+        .exp-cost {
+            background: rgba(197,160,89,0.12);
+            padding: 4px 12px;
+            border-radius: 40px;
+            font-weight: 600;
+            color: var(--primary-gold-dark);
+            font-size: 0.85rem;
+            white-space: nowrap;
+        }
+        @media (max-width: 900px) {
+            .founder-grid { grid-template-columns: 1fr; gap: 30px; }
+            .experience-list li { flex-direction: column; align-items: flex-start; }
+            .exp-desc { text-align: left; margin-top: 4px; }
+        }
+        
+        /* Footer with PNG branding */
         .footer {
             background: var(--deep-charcoal);
             color: #94a3b8;
@@ -375,6 +452,7 @@
             .article-grid { grid-template-columns: 1fr; }
             .section-title { font-size: 2rem; }
             .hero h1 { font-size: 2.2rem; }
+            .founder-card { padding: 30px 20px; }
         }
     </style>
 </head>
@@ -428,8 +506,8 @@
             <h1>Affordable Medical Treatment in Chengdu <span>NZ‑Registered Coordination</span></h1>
             <p style="font-size:1.1rem; color:var(--text-light); margin: 20px 0;">Access world-class partner hospital & TCM clinics in Chengdu. Save 60–75% compared to USA/NZ/Australia. Seamless coordination from first inquiry to post-treatment follow-up.</p>
             <div class="hero-buttons" style="display: flex; gap: 16px; flex-wrap: wrap;">
-                <a href="mailto:KIWI_Serenity_Limited@outlook.com?subject=Treatment%20Needs%20" class="btn-primary"><i class="fas fa-calendar-check"></i> Request Coordination</a>
-                <a href="mailto:KIWI_Serenity_Limited@outlook.com?subject=Free%20Consultation%20" class="btn-outline"><i class="fas fa-x-ray"></i> Submit X-ray for Coordination</a>
+                <a href="mailto:KIWI_Serenity_Limited@outlook.com?subject=Free%20Consultation%20" class="btn-primary"><i class="fas fa-calendar-check"></i> Free Consultation</a>
+                <a href="mailto:KIWI_Serenity_Limited@outlook.com?subject=Treatment%20Needs%20" class="btn-outline"><i class="fas fa-x-ray"></i> Treatment Needs for Coordination</a>
             </div>
         </div>
         <div style="background: linear-gradient(145deg, #1E1E1E, #2C2C2C); border-radius:8px; padding:40px; color:white; border:1px solid var(--primary-gold); text-align:center;">
@@ -440,7 +518,7 @@
     </div>
 </section>
 
-<!-- Trust Bar (Replaced 'clinic' with 'partner institutions') -->
+<!-- Trust Bar -->
 <section class="trust-bar">
     <div class="container">
         <h2 class="section-title" style="text-align:center; display:block;">Why Patients Choose Chengdu Coordination</h2>
@@ -468,7 +546,7 @@
     </div>
 </div>
 
-<!-- Service Row (Partner institutions wording) -->
+<!-- Service Row -->
 <div class="container">
     <div class="service-row">
         <div class="service-card">
@@ -492,7 +570,7 @@
     </div>
 </div>
 
-<!-- Process Steps: updated wording (Coordination Service steps) -->
+<!-- Process Steps -->
 <div class="container">
     <h2 class="section-title">How Our Coordination Service Works</h2>
     <div class="process-grid">
@@ -505,7 +583,7 @@
     </div>
 </div>
 
-<!-- Medical Coordination Library (formerly medical travel library) -->
+<!-- Medical Coordination Library -->
 <div class="container">
     <div class="article-hub">
         <h2 class="section-title" style="display:block; text-align:center;">📚 Complete Medical Coordination Library</h2>
@@ -550,7 +628,56 @@
     </div>
 </div>
 
-<!-- Internal links panel (updated with coordination language) -->
+<!-- NEW: Founder Story & Medical Experience Sections -->
+<div class="container">
+    <div class="founder-grid">
+        <!-- Founder Story Card -->
+        <div class="founder-card">
+            <h2>Meet the Founder</h2>
+            <div class="founder-story-text">
+                <p>KIWI Serenity was founded by someone who understands both New Zealand and China.</p>
+                <p style="margin-top: 12px;">Originally from Chengdu and living in New Zealand for more than a decade, the founder saw the dramatic difference in medical costs between countries.</p>
+                <p style="margin-top: 12px;">In 2025, he returned to China and personally experienced several medical procedures including:</p>
+                <ul style="margin: 12px 0 0 20px; color: var(--text-light);">
+                    <li>Colonoscopy and Gastroscopy examination</li>
+                    <li>Polyps removal</li>
+                    <li>Wisdom tooth removal</li>
+                    <li>Traditional Chinese medicine treatment</li>
+                    <li>Dental orthodontics</li>
+                </ul>
+                <p style="margin-top: 16px; font-style: italic;">Through this experience, he realised that high-quality medical care in Chengdu can be both accessible and affordable.</p>
+                <p style="margin-top: 16px; font-weight: 500;">KIWI Serenity was created to help international patients explore these opportunities safely.</p>
+            </div>
+        </div>
+        
+        <!-- Founder Medical Experience Card -->
+        <div class="founder-card">
+            <h2>Real Medical Experience in China</h2>
+            <ul class="experience-list">
+                <li>
+                    <span class="exp-title">Colonoscopy + Gastroscopy + Polyps Removal</span>
+                    <div class="exp-desc">Quick appointment, modern equipment</div>
+                    <span class="exp-cost">≈ USD $600</span>
+                </li>
+                <li>
+                    <span class="exp-title">Wisdom Tooth Removal</span>
+                    <div class="exp-desc">Professional dental surgery, short recovery</div>
+                    <span class="exp-cost">≈ USD $120</span>
+                </li>
+                <li>
+                    <span class="exp-title">Traditional Chinese Medicine Therapy</span>
+                    <div class="exp-desc">Acupuncture, herbal medicine, cupping – many patients explore TCM for wellness and recovery</div>
+                    <span class="exp-cost">Coordinated rates available</span>
+                </li>
+            </ul>
+            <p style="margin-top: 24px; font-size: 0.9rem; color: var(--primary-gold-dark); border-top: 1px solid var(--border-subtle); padding-top: 16px;">
+                <i class="fas fa-hand-holding-heart"></i> All procedures were performed by licensed partner institutions. KIWI Serenity coordinates access only.
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- Internal links panel -->
 <div class="container">
     <div class="internal-links-panel">
         <a href="Series1.html">💰 Dental Implants Cost</a>
@@ -591,7 +718,6 @@
             link.setAttribute('target', '_blank');
         }
     });
-    // Additional SEO: inform about sitemap and robots.txt existence
     console.log("SEO optimized: sitemap.xml & robots.txt available at root. Google Search Console submission recommended.");
 </script>
 </body>
