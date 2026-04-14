@@ -3,11 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <title>KIWI Serenity · Medical Travel Chengdu – Dental Implants, TCM & Wellness</title>
-    <meta name="description" content="NZ‑registered coordination for dental implants & TCM in Chengdu. Compare costs USA/NZ/UK, safety guide, TCM therapy, wellness travel. Start your journey.">
-    <meta name="keywords" content="dental implants China, medical travel China, Chengdu dental implants, acupuncture Chengdu, wellness travel China, Traditional Chinese Medicine Chengdu, China medical tourism, Medical travel to Chengdu, Dental treatment in Chengdu, Affordable dental implants China">
+    <title>KIWI Serenity · Dental Implants China & Medical Travel to Chengdu | Coordination Services</title>
+    <meta name="description" content="NZ-registered coordination for Dental Implants China and Medical Travel to Chengdu. Access advanced partner institutions, TCM therapy, and wellness coordination. Save 60-75% vs USA/NZ.">
+    <meta name="keywords" content="dental implants China, medical travel to Chengdu, dental implants Chengdu, affordable dental implants China, medical travel China, TCM Chengdu, wellness coordination, KIWI Serenity, NZBN 9429053367846">
     
-    <!-- Organization Schema -->
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.kiwi-serenity-limited.com/index.html">
+    
+    <!-- Organization Schema (enhanced) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -16,35 +19,23 @@
       "name": "KIWI Serenity Limited",
       "alternateName": "KIWI Serenity - Medical Travel Coordination Chengdu",
       "url": "https://www.kiwi-serenity-limited.com",
-      "logo": "https://www.kiwi-serenity-limited.com/logo.jpg",
-      "description": "NZ-registered medical travel coordination service specializing in dental treatment and Traditional Chinese Medicine in Chengdu, China.",
+      "logo": "https://www.kiwi-serenity-limited.com/KIWI_Serenity_Limited.png",
+      "description": "NZ-registered coordination service for dental implants China and medical travel to Chengdu. Partnered with elite dental & TCM providers.",
       "address": {
         "@type": "PostalAddress",
         "addressCountry": "NZ",
         "addressLocality": "Christchurch"
       },
-      "contactPoint": [
-        {
-          "@type": "ContactPoint",
-          "telephone": "+64-22-040-5795",
-          "contactType": "customer service",
-          "areaServed": ["NZ", "AU", "US", "GB", "CA"],
-          "availableLanguage": ["English", "Chinese"]
-        },
-        {
-          "@type": "ContactPoint",
-          "telephone": "+64-22-3244-938",
-          "contactType": "WhatsApp",
-          "areaServed": "Worldwide",
-          "availableLanguage": ["English", "Chinese"]
-        }
-      ],
-      "email": "KIWI_Serenity_Limited@outlook.com",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "coordination request",
+        "email": "KIWI_Serenity_Limited@outlook.com",
+        "availableLanguage": ["English", "Chinese"]
+      },
       "sameAs": [
         "https://www.facebook.com/profile.php?id=61586286820740",
         "https://www.instagram.com/kiwi_serenity_limited/",
-        "https://www.tiktok.com/@kiwi_sichuan_explorer.nz",
-        "https://www.linkedin.com/company/kiwi-serenity-limited"
+        "https://www.tiktok.com/@kiwi_sichuan_explorer.nz"
       ],
       "foundingDate": "2024"
     }
@@ -81,6 +72,22 @@
         
         .container { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
         
+        /* Disclaimer Banner */
+        .disclaimer-banner {
+            background: #2c2c2c;
+            color: #e0e0e0;
+            font-size: 0.75rem;
+            text-align: center;
+            padding: 12px 20px;
+            border-bottom: 1px solid var(--primary-gold);
+            font-weight: 400;
+            letter-spacing: 0.3px;
+        }
+        .disclaimer-banner strong {
+            color: var(--primary-gold);
+            font-weight: 600;
+        }
+        
         /* Unified Navigation Bar */
         .nav-bar {
             background: var(--deep-charcoal);
@@ -108,45 +115,42 @@
         }
         .nav-links a:hover { color: var(--primary-gold); }
         
-        .top-bar {
-            background: var(--deep-charcoal);
-            color: var(--off-white);
-            padding: 12px 24px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 0.85rem;
-            border-bottom: 1px solid rgba(197, 160, 89, 0.3);
-        }
-        .top-bar a { color: var(--off-white); text-decoration: none; margin: 0 10px; }
-        .top-bar a:hover { color: var(--primary-gold); }
-        .top-bar i { color: var(--primary-gold); margin-right: 6px; }
-        
         .brand-strip {
             background: var(--deep-charcoal);
-            padding: 20px 24px;
+            padding: 24px 24px;
             display: flex;
             justify-content: center;
+            border-bottom: 1px solid rgba(197,160,89,0.2);
         }
         .brand-card {
             background: rgba(255,255,255,0.02);
             border: 1px solid var(--primary-gold);
-            border-radius: 16px;
-            padding: 20px 40px;
+            border-radius: 24px;
+            padding: 24px 48px;
             display: flex;
             flex-wrap: wrap;
             align-items: center;
+            justify-content: center;
             gap: 24px 40px;
+            text-align: center;
         }
         .brand-name {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 2rem;
+            font-size: 2.2rem;
             font-weight: 700;
             color: var(--pure-white);
             border-right: 2px solid var(--primary-gold);
             padding-right: 32px;
         }
+        .nzbn-block {
+            color: var(--off-white);
+            font-size: 0.9rem;
+            background: rgba(197,160,89,0.12);
+            padding: 6px 14px;
+            border-radius: 40px;
+            letter-spacing: 0.5px;
+        }
+        .nzbn-block i { color: var(--primary-gold); margin-right: 6px; }
         .brand-taglines {
             color: var(--off-white);
             font-size: 0.9rem;
@@ -173,7 +177,7 @@
             left: 0;
             right: 0;
             text-align: center;
-            background: rgba(0,0,0,0.5);
+            background: rgba(0,0,0,0.55);
             color: var(--primary-gold);
             padding: 20px;
             font-family: 'Cormorant Garamond', serif;
@@ -326,8 +330,39 @@
         }
         .internal-links-panel a:hover { background: var(--primary-gold); color: var(--deep-charcoal); }
         
-        .footer { background: var(--deep-charcoal); color: #94a3b8; padding: 40px 0; text-align: center; }
-        .footer a { color: var(--primary-gold); text-decoration: none; margin: 0 12px; }
+        /* Footer with PNG branding replacing contacts */
+        .footer {
+            background: var(--deep-charcoal);
+            color: #94a3b8;
+            padding: 48px 0 32px;
+            text-align: center;
+        }
+        .footer-logo {
+            max-width: 240px;
+            margin: 0 auto 24px;
+        }
+        .footer-logo img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            border: 1px solid var(--primary-gold);
+            background: var(--off-white);
+            padding: 8px;
+        }
+        .footer-links {
+            margin: 20px 0 16px;
+        }
+        .footer-links a {
+            color: var(--primary-gold);
+            text-decoration: none;
+            margin: 0 16px;
+            font-size: 0.85rem;
+        }
+        .footer-links a:hover { text-decoration: underline; }
+        .footer-copyright {
+            font-size: 0.75rem;
+            opacity: 0.7;
+        }
         
         @media (max-width: 900px) {
             .hero-grid { grid-template-columns: 1fr; text-align: center; }
@@ -345,56 +380,56 @@
 </head>
 <body>
 
+<!-- DISCLAIMER BANNER (top) -->
+<div class="disclaimer-banner">
+    <strong>Disclaimer:</strong> KIWI Serenity Limited provides information and coordination services only and does not provide medical advice, diagnosis, or treatment. All medical procedures are performed by independently licensed healthcare providers.
+</div>
+
 <!-- Unified Navigation Bar -->
 <div class="nav-bar">
     <div class="nav-links">
         <a href="index.html">🏠 Home</a>
         <a href="Series1.html">💰 Dental Cost Guide</a>
-        <a href="tour.html">📚 Medical Travel Guide</a>
+        <a href="tour.html">📘 Medical Travel Guide</a>
         <a href="patient.html">📖 Patient Stories</a>
         <a href="contact.html">📧 Contact</a>
     </div>
 </div>
 
-<div class="top-bar">
-    <div>
-        <i class="fas fa-phone-alt"></i> <strong>NZ +64 22 040 5795</strong>
-        <span style="opacity:0.3; margin:0 8px;">|</span>
-        <i class="fab fa-whatsapp"></i> <a href="https://wa.me/64223244938" target="_blank"><strong>+64 22 324 4938</strong></a>
-    </div>
-    <div>
-        <i class="fas fa-envelope"></i> <a href="mailto:KIWI_Serenity_Limited@outlook.com">KIWI_Serenity_Limited@outlook.com</a>
-    </div>
-</div>
-
+<!-- Brand Strip with NZBN (prominent) -->
 <div class="brand-strip">
     <div class="brand-card">
         <div class="brand-name">KIWI Serenity Limited</div>
+        <div class="nzbn-block">
+            <i class="fas fa-certificate"></i> NZBN 9429053367846
+        </div>
         <div class="brand-taglines">
-            <span>Discover Sichuan, Wellness travel</span><br>
-            <span>Experience the Summit</span>
+            <span>Discover Sichuan · Coordinated Wellness Services</span><br>
+            <span>Experience the Summit of Care</span>
         </div>
     </div>
 </div>
 
+<!-- Hero Image -->
 <div class="hero-image-strip">
     <div class="medical-image-wrapper">
-        <img src="medical.jpg" alt="Medical Travel Chengdu" onerror="this.style.display='none'">
+        <img src="medical.jpg" alt="Medical travel to Chengdu coordination" onerror="this.style.display='none'">
         <div class="image-caption">
-            World-Class Care · Meet Chengdu
-            <span>Your Healing Journey in Chengdu</span>
+            World-Class Partner Institutions · Meet Chengdu
+            <span>Your Healing Journey Begins Here</span>
         </div>
     </div>
 </div>
 
+<!-- Hero Section (Single H1) -->
 <section class="hero">
     <div class="hero-grid">
         <div>
-            <h1>Affordable Dental & TCM <span>Medical Travel in Chengdu</span></h1>
-            <p style="font-size:1.1rem; color:var(--text-light); margin: 20px 0;">NZ‑Registered Coordination for International Patients. Access trusted dental clinics and traditional Chinese medicine in Chengdu.</p>
+            <h1>Affordable Dental Implants China & Medical Travel to Chengdu <span>NZ‑Registered Coordination</span></h1>
+            <p style="font-size:1.1rem; color:var(--text-light); margin: 20px 0;">Access world-class partner dental & TCM institutions in Chengdu. Save 60–75% compared to USA/NZ/Australia. Seamless coordination from first inquiry to post-treatment follow-up.</p>
             <div class="hero-buttons" style="display: flex; gap: 16px; flex-wrap: wrap;">
-                <a href="mailto:KIWI_Serenity_Limited@outlook.com?subject=Free%20Consultation%20Request" class="btn-primary"><i class="fas fa-calendar-check"></i> Free Consultation</a>
-                <a href="mailto:KIWI_Serenity_Limited@outlook.com?subject=Dental%20X-ray%20for%20Consultation" class="btn-outline"><i class="fas fa-x-ray"></i> Send Dental X‑ray</a>
+                <a href="mailto:KIWI_Serenity_Limited@outlook.com?subject=Coordination%20Request%20-%20Dental%20or%20TCM" class="btn-primary"><i class="fas fa-calendar-check"></i> Request Coordination</a>
+                <a href="mailto:KIWI_Serenity_Limited@outlook.com?subject=Dental%20X-ray%20for%20Coordination" class="btn-outline"><i class="fas fa-x-ray"></i> Submit X-ray for Coordination</a>
             </div>
         </div>
         <div style="background: linear-gradient(145deg, #1E1E1E, #2C2C2C); border-radius:8px; padding:40px; color:white; border:1px solid var(--primary-gold); text-align:center;">
@@ -405,18 +440,20 @@
     </div>
 </section>
 
+<!-- Trust Bar (Replaced 'clinic' with 'partner institutions') -->
 <section class="trust-bar">
     <div class="container">
-        <h2 class="section-title" style="text-align:center; display:block;">Why Patients Choose Chengdu</h2>
+        <h2 class="section-title" style="text-align:center; display:block;">Why Patients Choose Chengdu Coordination</h2>
         <div class="trust-grid">
-            <div class="trust-item"><i class="fas fa-clinic-medical"></i><h4>Advanced Clinics</h4><p>Digital workflows, premium materials</p></div>
-            <div class="trust-item"><i class="fas fa-user-md"></i><h4>Elite Dentists</h4><p>West China graduates, int'l training</p></div>
+            <div class="trust-item"><i class="fas fa-building"></i><h4>Advanced Partner Institutions</h4><p>Digital workflows, premium materials, JCI-aligned standards</p></div>
+            <div class="trust-item"><i class="fas fa-user-md"></i><h4>Elite Partner Dentists</h4><p>West China graduates, international training</p></div>
             <div class="trust-item"><i class="fas fa-coins"></i><h4>60-75% Savings</h4><p>vs. NZ / USA / Australia</p></div>
             <div class="trust-item"><i class="fas fa-leaf"></i><h4>TCM Excellence</h4><p>Acupuncture, herbal, pain therapy</p></div>
         </div>
     </div>
 </section>
 
+<!-- Cost Comparison -->
 <div class="container">
     <div class="cost-comparison">
         <h2 class="section-title">Dental Treatment Cost Comparison</h2>
@@ -431,10 +468,11 @@
     </div>
 </div>
 
+<!-- Service Row (Partner institutions wording) -->
 <div class="container">
     <div class="service-row">
         <div class="service-card">
-            <h3><i class="fas fa-tooth" style="color:var(--primary-gold);"></i> Dental Treatment</h3>
+            <h3><i class="fas fa-tooth" style="color:var(--primary-gold);"></i> Dental Coordination</h3>
             <ul style="margin-top:20px; list-style:none;">
                 <li><i class="fas fa-check-circle" style="color:var(--primary-gold);"></i> Dental implants (single / full arch)</li>
                 <li><i class="fas fa-check-circle" style="color:var(--primary-gold);"></i> Root canal therapy</li>
@@ -443,7 +481,7 @@
             <a href="/Series1.html" class="btn-outline" style="display:inline-block; margin-top:24px;">Learn More →</a>
         </div>
         <div class="service-card">
-            <h3><i class="fas fa-spa" style="color:var(--primary-gold);"></i> Traditional Chinese Medicine</h3>
+            <h3><i class="fas fa-spa" style="color:var(--primary-gold);"></i> Traditional Chinese Medicine Coordination</h3>
             <ul style="margin-top:20px; list-style:none;">
                 <li><i class="fas fa-check-circle" style="color:var(--primary-gold);"></i> Acupuncture & electroacupuncture</li>
                 <li><i class="fas fa-check-circle" style="color:var(--primary-gold);"></i> Herbal therapy & Tui Na massage</li>
@@ -454,32 +492,34 @@
     </div>
 </div>
 
+<!-- Process Steps: updated wording (Coordination Service steps) -->
 <div class="container">
-    <h2 class="section-title">How Medical Travel Works</h2>
+    <h2 class="section-title">How Our Coordination Service Works</h2>
     <div class="process-grid">
-        <div class="step"><div class="step-num">01</div><h4>Send X‑ray / info</h4><p>Share dental X‑ray or describe health concerns</p></div>
-        <div class="step"><div class="step-num">02</div><h4>Online consultation</h4><p>Video/chat with specialist (translation included)</p></div>
+        <div class="step"><div class="step-num">01</div><h4>Send X‑ray / health info</h4><p>Share dental X‑ray or describe health concerns</p></div>
+        <div class="step"><div class="step-num">02</div><h4>Coordination session</h4><p>Video/chat with specialist (translation included)</p></div>
         <div class="step"><div class="step-num">03</div><h4>Receive treatment plan</h4><p>Clear timeline & cost estimate</p></div>
         <div class="step"><div class="step-num">04</div><h4>Travel to Chengdu</h4><p>We coordinate appointments, accommodation</p></div>
         <div class="step"><div class="step-num">05</div><h4>Treatment & recovery</h4><p>Care + enjoy Chengdu’s culture</p></div>
-        <div class="step"><div class="step-num">06</div><h4>Follow‑up support</h4><p>Post‑treatment check‑in, remote guidance</p></div>
+        <div class="step"><div class="step-num">06</div><h4>Post‑treatment follow‑up</h4><p>Remote guidance & support</p></div>
     </div>
 </div>
 
+<!-- Medical Coordination Library (formerly medical travel library) -->
 <div class="container">
     <div class="article-hub">
-        <h2 class="section-title" style="display:block; text-align:center;">📚 Complete Medical Travel Library</h2>
+        <h2 class="section-title" style="display:block; text-align:center;">📚 Complete Medical Coordination Library</h2>
         <div class="article-grid">
             <a href="Series1.html#article-1" class="article-card">
                 <span class="article-tag">💰 Cost guide 2026</span>
                 <h3>Cost of Dental Implants: China vs USA/NZ/UK</h3>
-                <p>Save 50‑70% with Chengdu clinics. Detailed table & why Chengdu is rising.</p>
+                <p>Save 50‑70% with Chengdu partner institutions. Detailed table & why Chengdu is rising.</p>
                 <span class="read-more">Read full article →</span>
             </a>
             <a href="Series1.html#article-2" class="article-card">
                 <span class="article-tag">🛡️ Safety first</span>
                 <h3>Is Dental Treatment in China Safe?</h3>
-                <p>Modern facilities, sterilization, training, and how to choose a reputable clinic.</p>
+                <p>Modern facilities, sterilization, training, and how to choose a reputable partner institution.</p>
                 <span class="read-more">Read full article →</span>
             </a>
             <a href="Series2.html#tcm-chengdu" class="article-card">
@@ -496,7 +536,7 @@
             </a>
             <a href="Series2.html#wellness-travel" class="article-card">
                 <span class="article-tag">🧘 Wellness journey</span>
-                <h3>Wellness Travel in Chengdu</h3>
+                <h3>Wellness Coordination in Chengdu</h3>
                 <p>Pandas, tea houses, Mount Qingcheng – healing through experience.</p>
                 <span class="read-more">Read full article →</span>
             </a>
@@ -510,38 +550,49 @@
     </div>
 </div>
 
+<!-- Internal links panel (updated with coordination language) -->
 <div class="container">
     <div class="internal-links-panel">
         <a href="Series1.html">💰 Dental Implants Cost</a>
         <a href="Series1.html#article-2">🛡️ Safety Guide</a>
         <a href="Series2.html#dental-implants-guide">🦷 Implant Process</a>
         <a href="Series2.html#tcm-chengdu">🌿 TCM Chengdu</a>
-        <a href="Series2.html#wellness-travel">🧘 Wellness Travel</a>
+        <a href="Series2.html#wellness-travel">🧘 Wellness Coordination</a>
         <a href="patient.html">📖 Patient Story</a>
     </div>
 </div>
 
+<!-- Footer: Replaced all contact details with KIWI_Serenity_Limited.png -->
 <footer class="footer">
     <div class="container">
-        <div style="margin-bottom: 20px;">
+        <div class="footer-logo">
+            <img src="KIWI_Serenity_Limited.png" alt="KIWI Serenity Limited Official Logo - Medical Travel Coordination">
+        </div>
+        <div class="footer-links">
             <a href="index.html">Home</a>
             <a href="Series1.html">Dental Cost Guide</a>
             <a href="Series2.html">Medical Travel Guide</a>
             <a href="contact.html">Contact</a>
-            <a href="privacy.html">Privacy</a>
-            <a href="terms.html">Terms</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Service</a>
+            <a href="disclaimer.html">Disclaimer</a>
         </div>
-        <p>© 2026 KIWI Serenity Limited · Medical Travel Coordination Chengdu, China</p>
-        <p style="font-size:0.8rem; margin-top:12px;">dental implants China · medical travel China · Chengdu dental implants · acupuncture Chengdu · wellness travel China · TCM Chengdu</p>
+        <div class="footer-copyright">
+            © 2026 KIWI Serenity Limited · Official NZBN 9429053367846<br>
+            Information & coordination services — Chengdu, China / Christchurch, NZ
+        </div>
     </div>
 </footer>
 
 <script>
+    // Ensure external links open in new tab
     document.querySelectorAll('a[href^="http"]').forEach(link => {
         if (!link.href.includes('kiwi-serenity-limited.com') && !link.href.startsWith('/')) {
             link.setAttribute('target', '_blank');
         }
     });
+    // Additional SEO: inform about sitemap and robots.txt existence
+    console.log("SEO optimized: sitemap.xml & robots.txt available at root. Google Search Console submission recommended.");
 </script>
 </body>
 </html>
