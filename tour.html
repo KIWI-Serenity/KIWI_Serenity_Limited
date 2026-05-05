@@ -2,27 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <title>Medical Travel Bundles | Dental + TCM + Tours Chengdu | KIWI Serenity</title>
-    <meta name="description" content="All-inclusive medical travel bundles to Chengdu: combine dental/TCM treatments with Sichuan tours. Panda, Jiuzhaigou, Emei, and wellness experiences.">
-    <meta name="keywords" content="medical travel bundles, Chengdu dental tours, TCM wellness travel, Sichuan tours, KIWI Serenity">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+    <title>Medical Travel Bundles | Dental + TCM + Sichuan Tours | KIWI Serenity</title>
+    <meta name="description" content="All-inclusive medical travel bundles to Chengdu: combine dental/TCM treatments with Sichuan tours. Panda, Jiuzhaigou, Emei, wellness experiences. Free consultation.">
+    <meta name="keywords" content="medical travel bundles, Chengdu dental tours, TCM wellness travel, Sichuan tours, KIWI Serenity, dental implants China">
     <link rel="canonical" href="https://www.kiwi-serenity-limited.com/tour.html">
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..800&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: 'Montserrat', sans-serif;
-            background: #fdf7f0;
-            color: #2b3a41;
-            line-height: 1.6;
+            font-family: 'Inter', sans-serif;
+            background: #F5F2ED;
+            color: #1E2A2E;
+            line-height: 1.5;
         }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
-        
+
+        /* Navigation */
         .nav-bar {
-            background: #2f3e46;
-            padding: 16px 24px;
-            border-bottom: 2px solid #f3b33d;
+            background: #0F1A24;
+            padding: 14px 24px;
+            border-bottom: 2px solid #C5A059;
             position: sticky;
             top: 0;
             z-index: 100;
@@ -33,128 +33,328 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 32px;
+            gap: 28px;
         }
         .nav-links a {
-            color: #fdf7f0;
+            color: #F8F6F2;
             text-decoration: none;
             font-weight: 500;
-            transition: color 0.3s;
+            font-size: 0.85rem;
+            transition: color 0.2s;
         }
-        .nav-links a:hover { color: #f3b33d; }
-        
+        .nav-links a:hover { color: #C5A059; }
+
+        /* Fee Notice */
         .fee-notice {
-            background: #FFF3E0;
-            border-left: 6px solid #f3b33d;
-            padding: 14px 24px;
-            margin: 20px auto;
-            max-width: 1200px;
-            font-size: 0.9rem;
+            background: #FEF6E6;
+            border-left: 6px solid #C5A059;
+            padding: 12px 24px;
+            margin: 16px auto;
+            max-width: 1400px;
+            font-size: 0.8rem;
             font-weight: 500;
-            color: #5a3e1b;
+            color: #7A5A2E;
+            text-align: center;
+            border-radius: 0 12px 12px 0;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Hero Section with full images */
+        .image-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .gallery-item {
+            flex: 1 1 300px;
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            transition: transform 0.2s;
+        }
+        .gallery-item:hover { transform: translateY(-4px); }
+        .gallery-img {
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            object-fit: cover;
+            display: block;
+            background: #E5DDD0;
+        }
+        .gallery-caption {
+            padding: 12px;
+            text-align: center;
+            font-weight: 600;
+            background: white;
+            color: #1E2A2E;
+        }
+
+        /* Story Banner */
+        .story-banner {
+            background: linear-gradient(135deg, #D95F2B, #B04D2E, #2C9676, #F3B33D);
+            border-radius: 80px 20px 80px 20px;
+            padding: 36px 28px;
+            margin: 30px 0;
+            color: white;
             text-align: center;
         }
-        
-        .bundle-card {
+        .story-banner h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            font-weight: 700;
+        }
+        .story-banner h2 span {
+            background: linear-gradient(45deg, #FFF6C0, #FFEB99);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .gift-tag {
+            background: rgba(243,179,61,0.3);
+            backdrop-filter: blur(4px);
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 60px;
+            margin-top: 16px;
+            font-weight: 600;
+        }
+
+        /* Value Grid */
+        .value-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
+            margin: 50px 0;
+        }
+        .value-card {
+            background: white;
+            padding: 28px 16px;
+            text-align: center;
+            border-radius: 24px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            border-bottom: 4px solid #C5A059;
+        }
+        .value-card i { font-size: 2rem; color: #C5A059; margin-bottom: 12px; display: block; }
+        .value-card h4 { font-weight: 700; margin-bottom: 8px; }
+
+        /* Tour Cards */
+        .tour-card {
             background: white;
             border-radius: 32px;
-            margin: 40px 0;
+            margin-bottom: 48px;
             overflow: hidden;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-            border-left: 8px solid #d95f2b;
+            box-shadow: 0 15px 35px -12px rgba(0,0,0,0.12);
+            border-left: 8px solid #D95F2B;
         }
-        .bundle-header {
-            padding: 30px;
-            background: #fff;
+        .coach-tour { border-left-color: #2C9676; }
+        .card-header {
+            display: flex;
+            flex-wrap: wrap;
+            cursor: pointer;
         }
-        .bundle-header h2 {
+        .card-img {
+            flex: 0 0 40%;
+            min-height: 240px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        /* Ensure images are fully visible without cropping */
+        .card-img.rolling { background-image: url('eight.jpg'); background-size: contain; background-color: #E5DDD0; }
+        .card-img.ideal { background-image: url('seven.jpg'); background-size: contain; background-color: #E5DDD0; }
+        .card-content-section {
+            flex: 1;
+            padding: 28px 32px;
+        }
+        .card-title {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 2rem;
-            color: #d95f2b;
-        }
-        .bundle-price {
-            font-size: 2.2rem;
+            font-size: 1.8rem;
             font-weight: 700;
-            color: #2c9676;
-            margin: 15px 0;
+            color: #D95F2B;
         }
-        .btn-request {
-            background: #d95f2b;
+        .coach-tour .card-title { color: #2C9676; }
+        .card-toggle {
+            background: #D95F2B;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             color: white;
-            padding: 12px 28px;
-            border-radius: 60px;
-            text-decoration: none;
-            display: inline-block;
-            font-weight: 600;
-            margin: 20px 0 10px;
+            margin-top: 20px;
         }
-        .itinerary {
-            background: #f9f5f0;
-            padding: 30px;
-            border-top: 1px solid #e2dcd5;
+        .card-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: 0.4s ease;
+            padding: 0 32px;
         }
-        .itinerary table {
+        .card-content.expanded {
+            max-height: 2000px;
+            padding: 20px 32px 40px;
+        }
+        .itinerary-table {
             width: 100%;
             border-collapse: collapse;
+            margin: 20px 0;
         }
-        .itinerary th, .itinerary td {
+        .itinerary-table th {
+            background: #D95F2B;
+            color: white;
             padding: 12px;
-            border-bottom: 1px solid #ddd;
             text-align: left;
         }
-        .itinerary th {
-            background: #2c9676;
-            color: white;
+        .coach-tour .itinerary-table th { background: #2C9676; }
+        .itinerary-table td {
+            padding: 10px 12px;
+            border-bottom: 1px solid #E2E8F0;
         }
-        
+        .pricing-box {
+            background: #FFF9F2;
+            border-radius: 24px;
+            padding: 24px;
+            margin-top: 24px;
+            border: 2px dashed #C5A059;
+            text-align: center;
+        }
+        .price-amount {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #D95F2B;
+        }
+        .btn-coordination {
+            display: inline-block;
+            background: #D95F2B;
+            color: white;
+            padding: 12px 32px;
+            border-radius: 60px;
+            text-decoration: none;
+            font-weight: 700;
+            margin-top: 16px;
+            transition: 0.2s;
+        }
+        .btn-coordination:hover {
+            background: #B04D2E;
+            transform: translateY(-2px);
+        }
+
+        /* Partner Institutions */
+        .partner-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 24px;
+            margin: 40px 0;
+        }
+        .partner-card {
+            background: white;
+            border-radius: 24px;
+            padding: 20px;
+            border-top: 5px solid #C5A059;
+            cursor: pointer;
+        }
+        .partner-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 700;
+        }
+        .partner-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+        .partner-content.expanded {
+            max-height: 200px;
+            padding-top: 16px;
+        }
+
+        /* Floating Consultation Button */
         .free-consult-btn {
             position: fixed;
             bottom: 30px;
             right: 30px;
-            background: #f3b33d;
-            color: #2f3e46;
-            padding: 12px 22px;
-            border-radius: 50px;
+            background: #C5A059;
+            color: #1E1E1E;
+            padding: 12px 24px;
+            border-radius: 60px;
             font-weight: 700;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             text-decoration: none;
             z-index: 1000;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
             display: flex;
             align-items: center;
-            gap: 8px;
-            transition: all 0.3s;
-            border: 1px solid white;
+            gap: 10px;
+            transition: all 0.2s;
         }
-        .free-consult-btn:hover { background: #d95f2b; color: white; transform: scale(1.02); }
-        
+        .free-consult-btn:hover {
+            background: #9E7E4A;
+            transform: scale(1.02);
+        }
+
+        /* Footer */
         .footer {
-            background: #2f3e46;
-            color: #cbd5e1;
-            padding: 40px 0;
+            background: #0F1A24;
+            color: #9AABBC;
+            padding: 48px 24px 32px;
             text-align: center;
             margin-top: 60px;
         }
-        .footer a { color: #f3b33d; text-decoration: none; margin: 0 12px; }
-        
+        .footer-logo {
+            max-width: 200px;
+            margin: 0 auto 20px;
+        }
+        .footer-logo img {
+            width: 100%;
+            border-radius: 16px;
+            background: white;
+            padding: 8px;
+            border: 2px solid #C5A059;
+        }
+        .footer-links a {
+            color: #C5A059;
+            text-decoration: none;
+            margin: 0 16px;
+            font-size: 0.8rem;
+        }
+        .copyright {
+            font-size: 0.7rem;
+            margin-top: 20px;
+            opacity: 0.7;
+        }
+
         @media (max-width: 768px) {
-            .bundle-header h2 { font-size: 1.5rem; }
-            .bundle-price { font-size: 1.6rem; }
-            .itinerary th, .itinerary td { font-size: 0.85rem; }
+            .card-header { flex-direction: column; }
+            .card-img { flex: auto; min-height: 200px; background-size: contain; }
+            .card-content-section { padding: 20px; }
+            .card-content.expanded { padding: 0 20px 30px; }
+            .itinerary-table th, .itinerary-table td { font-size: 0.75rem; padding: 8px; }
         }
     </style>
 </head>
 <body>
 
+<div class="disclaimer-banner" style="background:#1e2a2f; color:#e2e8f0; font-size:0.75rem; text-align:center; padding:10px; border-bottom:2px solid #C5A059;">
+    <strong>Disclaimer:</strong> KIWI Serenity provides coordination only. Medical services are provided by independently licensed partners.
+</div>
+
 <div class="nav-bar">
     <div class="nav-links">
         <a href="index.html">🏠 Home</a>
-        <a href="Series1.html">💰 Dental Cost Guide</a>
-        <a href="Series2.html">📚 Medical Travel Guide</a>
+        <a href="Series1.html">💰 Cost Guide</a>
+        <a href="Series2.html">📚 Travel Guide</a>
         <a href="dental.html">🦷 Dental</a>
         <a href="tcm.html">🌿 TCM</a>
-        <a href="tour.html">🧘 Travel Bundles</a>
-        <a href="patient.html">📖 Patient Stories</a>
+        <a href="tour.html">🧘 Bundles</a>
+        <a href="patient.html">📖 Patient Cases</a>
         <a href="faq.html">❓ FAQ</a>
         <a href="contact.html">📧 Contact</a>
     </div>
@@ -165,21 +365,66 @@
 </div>
 
 <div class="container">
-    <h1 style="font-family:'Cormorant Garamond'; font-size:2.5rem; text-align:center; margin: 40px 0 20px;">Medical Travel Bundles</h1>
-    <p style="text-align:center; max-width:800px; margin:0 auto 40px;">Combine your dental or TCM treatment with an unforgettable Sichuan journey. We handle logistics — you focus on healing.</p>
-
-    <!-- Bundle 1 -->
-    <div class="bundle-card">
-        <div class="bundle-header">
-            <h2>🐼 Rolling Star · Sichuan</h2>
-            <p>High-speed rail · Jiuzhaigou · Panda Base · Sanxingdui · Emei · Leshan</p>
-            <div class="bundle-price">USD $1,749 <span style="font-size:1rem; text-decoration:line-through;">$1,874</span> / person (twin share)</div>
-            <a href="mailto:KIWI_Serenity_Limited@outlook.com?subject=Rolling%20Star%20Bundle%20Inquiry" class="btn-request">Request Coordination →</a>
-            <p><small>Includes: transfers, hotels, meals as listed, bilingual guide, dental cleaning, TCM assessment. Excludes medical treatment fees.</small></p>
+    <!-- Logo & NZBN -->
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; margin: 30px 0 20px;">
+        <div style="display: flex; align-items: center; gap: 20px;">
+            <img src="logo.jpg" alt="KIWI Serenity Logo" style="width: 70px; border-radius: 16px; border: 2px solid #C5A059;">
+            <div><strong style="font-size: 1.4rem;">KIWI SERENITY LIMITED</strong><br><span style="font-size:0.8rem; background: rgba(197,160,89,0.2); padding:4px 12px; border-radius:40px;"><i class="fas fa-certificate"></i> NZBN 9429053367846</span></div>
         </div>
-        <div class="itinerary">
-            <table>
-                <thead><tr><th>Day</th><th>Highlights</th><th>Meals</th></tr></thead>
+        <div>
+            <a href="tel:+64220405795" style="margin-right:16px;"><i class="fas fa-phone"></i> Call</a>
+            <a href="https://wa.me/64223244938" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        </div>
+    </div>
+
+    <!-- Image Gallery (full display) -->
+    <div class="image-gallery">
+        <div class="gallery-item">
+            <img src="pic.jpg" alt="Sichuan cultural experience" class="gallery-img" onerror="this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22400%22%20height%3D%22300%22%3E%3Crect%20width%3D%22400%22%20height%3D%22300%22%20fill%3D%22%23C5A059%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20fill%3D%22white%22%20text-anchor%3D%22middle%22%3ETibetan%20Culture%3C%2Ftext%3E%3C%2Fsvg%3E'">
+            <div class="gallery-caption"><i class="fas fa-paw"></i> Tibetan Costume & Culture</div>
+        </div>
+        <div class="gallery-item">
+            <img src="hotpot.jpg" alt="Sichuan hot pot" class="gallery-img" onerror="this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22400%22%20height%3D%22300%22%3E%3Crect%20width%3D%22400%22%20height%3D%22300%22%20fill%3D%22%23C5A059%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20fill%3D%22white%22%20text-anchor%3D%22middle%22%3EHotpot%3C%2Ftext%3E%3C%2Fsvg%3E'">
+            <div class="gallery-caption"><i class="fas fa-utensils"></i> Authentic Hot Pot</div>
+        </div>
+        <div class="gallery-item">
+            <img src="eight.jpg" alt="Jiuzhaigou" class="gallery-img" onerror="this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22400%22%20height%3D%22300%22%3E%3Crect%20width%3D%22400%22%20height%3D%22300%22%20fill%3D%22%23C5A059%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20fill%3D%22white%22%20text-anchor%3D%22middle%22%3EJiuzhaigou%3C%2Ftext%3E%3C%2Fsvg%3E'">
+            <div class="gallery-caption"><i class="fas fa-mountain"></i> Jiuzhaigou Valley</div>
+        </div>
+    </div>
+
+    <!-- Story Banner -->
+    <div class="story-banner">
+        <h2>🐼 <span>Medical Travel & Wellness Bundles</span> 🌿</h2>
+        <p style="margin: 16px 0;">Expert coordination for world-class partner institutions, TCM therapies, and all-inclusive Sichuan discovery journeys.</p>
+        <div class="gift-tag"><i class="fas fa-gift"></i> FREE dental cleaning + TCM assessment (value $115) with any coordination service bundle</div>
+    </div>
+
+    <!-- Value Highlights -->
+    <div class="value-grid">
+        <div class="value-card"><i class="fas fa-tooth"></i><h4>Dental Cleaning</h4><p>Licensed partner institutions, West China graduates</p></div>
+        <div class="value-card"><i class="fas fa-leaf"></i><h4>TCM Assessment</h4><p>Traditional Chinese Medicine consultation</p></div>
+        <div class="value-card"><i class="fas fa-language"></i><h4>Bilingual Guide</h4><p>Professional English-speaking coordinator</p></div>
+        <div class="value-card"><i class="fas fa-car"></i><h4>Free Transfers</h4><p>Airport pickup & drop-off</p></div>
+    </div>
+
+    <!-- Tour Card 1: Rolling Star -->
+    <div class="tour-card" id="tour-rolling">
+        <div class="card-header" onclick="toggleCard('rolling')">
+            <div class="card-img rolling"></div>
+            <div class="card-content-section">
+                <div class="card-title">Rolling Star · Sichuan</div>
+                <div class="card-subtitle" style="color: #5A6E7A;">High-speed rail · Jiuzhaigou · Panda Base · Sanxingdui · Emei · Leshan</div>
+                <div class="card-toggle"><i class="fas fa-chevron-down"></i></div>
+            </div>
+        </div>
+        <div id="rolling-content" class="card-content expanded">
+            <div style="display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 20px;">
+                <span><i class="fas fa-camera"></i> Free Tibetan costume photos</span>
+                <span><i class="fas fa-train"></i> High-speed rail experience</span>
+            </div>
+            <table class="itinerary-table">
+                <thead><tr><th>Day</th><th>Itinerary</th><th>Meals</th></tr></thead>
                 <tbody>
                     <tr><td>1</td><td>Arrive Chengdu + optional dental/TCM coordination</td><td>-</td></tr>
                     <tr><td>2</td><td>Panda Base - Sanxingdui - High-speed rail to Jiuzhaigou</td><td>B,L,D</td></tr>
@@ -187,25 +432,37 @@
                     <tr><td>4</td><td>Huanglong - rail to Chengdu</td><td>B</td></tr>
                     <tr><td>5</td><td>Emei Golden Summit</td><td>B,L,D</td></tr>
                     <tr><td>6</td><td>Leshan Giant Buddha - Chengdu</td><td>B,L</td></tr>
-                    <tr><td>7</td><td>Chengdu free day (wellness/leisure)</td><td>B</td></tr>
+                    <tr><td>7</td><td>Chengdu free day (wellness or leisure)</td><td>B</td></tr>
                     <tr><td>8</td><td>Departure</td><td>B</td></tr>
                 </tbody>
             </table>
+            <div class="pricing-box">
+                <span style="background:#C5A059; padding:4px 16px; border-radius:40px;">Coordination Service Bundle</span>
+                <div class="price-amount">USD $1,749 <span style="font-size:1rem; text-decoration:line-through;">$1,874</span></div>
+                <p>Per adult twin share. Includes all taxes, tips, guide, transfers, dental cleaning, TCM assessment.</p>
+                <a href="mailto:KIWI_Serenity_Limited@outlook.com?subject=Rolling%20Star%20Bundle%20Inquiry" class="btn-coordination"><i class="fas fa-calendar-check"></i> Request Coordination</a>
+                <p style="font-size:0.7rem; margin-top:10px;">*Coordination only. Services by independently licensed partners.</p>
+            </div>
         </div>
     </div>
 
-    <!-- Bundle 2 -->
-    <div class="bundle-card">
-        <div class="bundle-header">
-            <h2>🏞️ Ideal Sichuan Panorama</h2>
-            <p>Panda, Huanglong, Jiuzhaigou, Emei, Leshan, Dujiangyan, Qingcheng Mountain</p>
-            <div class="bundle-price">USD $1,687 <span style="font-size:1rem; text-decoration:line-through;">$1,812</span> / person (twin share)</div>
-            <a href="mailto:KIWI_Serenity_Limited@outlook.com?subject=Ideal%20Sichuan%20Bundle%20Inquiry" class="btn-request">Request Coordination →</a>
-            <p><small>Includes: luxury coach, hotels, meals, guide, dental cleaning, TCM assessment. Excludes medical treatment fees.</small></p>
+    <!-- Tour Card 2: Ideal Sichuan Panorama -->
+    <div class="tour-card coach-tour" id="tour-ideal">
+        <div class="card-header" onclick="toggleCard('ideal')">
+            <div class="card-img ideal"></div>
+            <div class="card-content-section">
+                <div class="card-title">Ideal Sichuan Panorama</div>
+                <div class="card-subtitle" style="color: #5A6E7A;">All major sights: Panda, Huanglong, Jiuzhaigou, Emei, Leshan, Dujiangyan, Qingcheng</div>
+                <div class="card-toggle"><i class="fas fa-chevron-down"></i></div>
+            </div>
         </div>
-        <div class="itinerary">
-            <table>
-                <thead><tr><th>Day</th><th>Highlights</th><th>Meals</th></tr></thead>
+        <div id="ideal-content" class="card-content">
+            <div style="display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 20px;">
+                <span><i class="fas fa-bus"></i> Luxury 2+1 coach</span>
+                <span><i class="fas fa-theater-masks"></i> Sichuan Opera show</span>
+            </div>
+            <table class="itinerary-table">
+                <thead><tr><th>Day</th><th>Itinerary</th><th>Meals</th></tr></thead>
                 <tbody>
                     <tr><td>1</td><td>Arrive Chengdu + optional dental/TCM coordination</td><td>-</td></tr>
                     <tr><td>2</td><td>Panda Paradise - Songpan - Jiuzhaigou</td><td>B,L,D</td></tr>
@@ -217,29 +474,93 @@
                     <tr><td>8</td><td>Departure</td><td>B</td></tr>
                 </tbody>
             </table>
+            <div class="pricing-box">
+                <span style="background:#C5A059; padding:4px 16px; border-radius:40px;">Coordination Service Bundle</span>
+                <div class="price-amount">USD $1,687 <span style="font-size:1rem; text-decoration:line-through;">$1,812</span></div>
+                <p>Per adult twin share. Includes all taxes, tips, guide, transfers, dental cleaning & TCM.</p>
+                <a href="mailto:KIWI_Serenity_Limited@outlook.com?subject=Ideal%20Sichuan%20Bundle%20Inquiry" class="btn-coordination"><i class="fas fa-calendar-check"></i> Request Coordination</a>
+            </div>
         </div>
     </div>
 
-    <div style="background: #e9f2ef; border-radius: 28px; padding: 30px; text-align: center; margin: 40px 0;">
-        <h3>Customize Your Bundle</h3>
-        <p>Add extra days, upgrade to private guide, or focus only on medical coordination. Contact us for a tailored plan.</p>
-        <a href="mailto:KIWI_Serenity_Limited@outlook.com?subject=Custom%20Bundle%20Request" class="btn-request" style="background:#2c9676;">Get Personalised Quote →</a>
+    <!-- Partner Institutions -->
+    <div style="margin: 50px 0;">
+        <h2 style="font-family:'Cormorant Garamond'; color:#D95F2B;">Our Partner Institutions</h2>
+        <div class="partner-grid">
+            <div class="partner-card" onclick="togglePartner(this)"><div class="partner-header"><strong>West China Stomatology Network</strong> <i class="fas fa-chevron-down"></i></div><div class="partner-content">Top-tier partner institutions, QS #12 global. Graduates lead our partnered dental centers.</div></div>
+            <div class="partner-card" onclick="togglePartner(this)"><div class="partner-header"><strong>Licensed Dentists</strong> <i class="fas fa-chevron-down"></i></div><div class="partner-content">5+ years experience, English-friendly, international patient coordination.</div></div>
+            <div class="partner-card" onclick="togglePartner(this)"><div class="partner-header"><strong>Modern Partner Clinics</strong> <i class="fas fa-chevron-down"></i></div><div class="partner-content">State-of-the-art equipment, single-use instruments, 30-45min cleaning.</div></div>
+        </div>
+    </div>
+
+    <!-- Coordinator Services Included -->
+    <div style="background: rgba(44,150,118,0.08); border-radius: 28px; padding: 32px; margin: 40px 0;">
+        <h3><i class="fas fa-check-circle" style="color:#2C9676;"></i> Coordination Service Bundle Includes</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px,1fr)); gap: 16px; margin-top: 20px;">
+            <span><i class="fas fa-tooth"></i> Dental cleaning (partner institution)</span>
+            <span><i class="fas fa-leaf"></i> TCM consultation</span>
+            <span><i class="fas fa-user-tie"></i> Bilingual coordinator</span>
+            <span><i class="fas fa-shuttle-van"></i> Airport transfers</span>
+            <span><i class="fas fa-wine-glass-alt"></i> All taxes & tips</span>
+            <span><i class="fas fa-hotel"></i> Premium hotels</span>
+        </div>
+        <p style="margin-top:20px;"><i class="fas fa-exclamation-triangle"></i> Not included: International flights, visa, personal expenses, meals not listed, medical treatment fees.</p>
+    </div>
+
+    <!-- Final CTA -->
+    <div style="background: linear-gradient(105deg, #0F5E4A, #1A7F64); border-radius: 36px; padding: 48px 32px; text-align: center; color: white; margin: 40px 0;">
+        <h3 style="font-family:'Cormorant Garamond'; font-size: 2rem;">Design Your Own Wellness Journey</h3>
+        <p style="max-width: 700px; margin: 16px auto;">Not sure which bundle? Contact us for a customized plan combining medical treatment and travel, tailored to your needs and timeline.</p>
+        <a href="mailto:KIWI_Serenity_Limited@outlook.com?subject=Custom%20Bundle%20Request" class="btn-coordination" style="background: white; color: #0F5E4A;">Get Personalised Quote →</a>
     </div>
 </div>
 
 <footer class="footer">
-    <div class="container">
-        <a href="index.html">Home</a> | <a href="dental.html">Dental</a> | <a href="tcm.html">TCM</a> | <a href="tour.html">Bundles</a> | <a href="privacy.html">Privacy</a>
-        <p>© 2026 KIWI Serenity Limited · NZBN 9429053367846 · Coordination services only</p>
+    <div class="footer-logo">
+        <img src="KIWI_Serenity_Limited.png" alt="KIWI Serenity Limited Official Logo" onerror="this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20200%2080%22%3E%3Crect%20width%3D%22200%22%20height%3D%2280%22%20fill%3D%22%239E7E4A%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20fill%3D%22white%22%20text-anchor%3D%22middle%22%20dy%3D%22.3em%22%3EKIWI%20Serenity%3C%2Ftext%3E%3C%2Fsvg%3E'">
     </div>
+    <div class="footer-links">
+        <a href="index.html">Home</a> | <a href="dental.html">Dental</a> | <a href="tcm.html">TCM</a> | <a href="tour.html">Bundles</a> | <a href="privacy.html">Privacy</a>
+    </div>
+    <div class="copyright">© 2026 KIWI Serenity Limited · NZBN 9429053367846 · Coordination services only</div>
 </footer>
 
-<a href="mailto:KIWI_Serenity_Limited@outlook.com?subject=Free%20Bundle%20Consultation&body=Name%3A%0D%0ATreatment%20needed%3A%0D%0ATravel%20dates%20(if%20any)%3A" class="free-consult-btn"><i class="fas fa-envelope"></i> Free Consultation</a>
+<a href="mailto:KIWI_Serenity_Limited@outlook.com?subject=Free%20Bundle%20Consultation&body=Name%3A%0D%0ATreatment%20interest%3A%0D%0ATravel%20dates%3A" class="free-consult-btn"><i class="fas fa-envelope"></i> Free Consultation</a>
 
 <script>
+    function toggleCard(id) {
+        const content = document.getElementById(id + '-content');
+        content.classList.toggle('expanded');
+        const icon = content.previousElementSibling.querySelector('.card-toggle i');
+        if (content.classList.contains('expanded')) {
+            icon.classList.remove('fa-chevron-down');
+            icon.classList.add('fa-chevron-up');
+        } else {
+            icon.classList.remove('fa-chevron-up');
+            icon.classList.add('fa-chevron-down');
+        }
+    }
+    function togglePartner(card) {
+        const content = card.querySelector('.partner-content');
+        content.classList.toggle('expanded');
+        const icon = card.querySelector('.partner-header i');
+        if (content.classList.contains('expanded')) {
+            icon.classList.remove('fa-chevron-down');
+            icon.classList.add('fa-chevron-up');
+        } else {
+            icon.classList.remove('fa-chevron-up');
+            icon.classList.add('fa-chevron-down');
+        }
+    }
+    // Ensure external links open safely
     document.querySelectorAll('a[href^="http"]').forEach(link => {
-        if (!link.href.includes('kiwi-serenity-limited.com') && !link.href.startsWith('/')) link.setAttribute('target', '_blank');
+        if (!link.href.includes('kiwi-serenity-limited.com') && !link.href.startsWith('/')) {
+            link.setAttribute('target', '_blank');
+            link.setAttribute('rel', 'noopener noreferrer');
+        }
     });
+    // Initially expand Rolling Star for better UX
+    document.getElementById('rolling-content').classList.add('expanded');
 </script>
 </body>
 </html>
