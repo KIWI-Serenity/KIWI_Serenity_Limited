@@ -80,7 +80,7 @@
             border-radius: 0 12px 12px 0;
         }
 
-        /* Hero Section with Image Tag */
+        /* Hero Section with Responsive Image */
         .hero-section {
             max-width: 1280px;
             margin: 30px auto 0;
@@ -96,7 +96,7 @@
         }
         .hero-image {
             flex: 1 1 45%;
-            min-height: 400px;
+            min-height: 320px;
             background-color: #D9D2C5;
             display: flex;
             align-items: center;
@@ -184,7 +184,7 @@
             padding-bottom: 8px;
         }
 
-        /* Price Table */
+        /* Price Table - Responsive */
         .price-table-wrapper {
             max-width: 1280px;
             margin: 30px auto;
@@ -369,17 +369,20 @@
             opacity: 0.7;
         }
 
+        /* Responsive */
         @media (max-width: 900px) {
             .hero-card { flex-direction: column; }
-            .hero-image { min-height: 280px; }
+            .hero-image { min-height: 240px; }
             .hero-content { padding: 32px 28px; }
+            .hero-content h1 { font-size: 2rem; }
             .stats-grid { grid-template-columns: repeat(2, 1fr); }
             .process-steps { flex-direction: column; align-items: stretch; }
             .step { justify-content: center; }
         }
         @media (max-width: 600px) {
             .stats-grid { grid-template-columns: 1fr; }
-            .hero-content h1 { font-size: 1.8rem; }
+            .hero-content h1 { font-size: 1.6rem; }
+            .section-header h2 { font-size: 1.5rem; }
         }
     </style>
 </head>
@@ -390,6 +393,7 @@
     <strong>Disclaimer:</strong> KIWI Serenity provides coordination only. All dental procedures performed by independently licensed partner clinics.
 </div>
 
+<!-- Unified Navigation -->
 <div class="nav-bar">
     <div class="nav-links">
         <a href="index.html">🏠 Home</a>
@@ -404,11 +408,12 @@
     </div>
 </div>
 
+<!-- Fee Notice -->
 <div class="fee-notice">
     <i class="fas fa-info-circle"></i> <strong>Important:</strong> Coordination fees are separate from treatment costs. All dental fees are paid directly to partner clinics. We are transparent – ask for a detailed quote.
 </div>
 
-<!-- Hero Section with Image Tag (Fixed) -->
+<!-- Hero Section with Fixed Image -->
 <div class="hero-section">
     <div class="hero-card">
         <div class="hero-image">
@@ -416,10 +421,16 @@
         </div>
         <div class="hero-content">
             <h1>Dental Coordination in Chengdu, China</h1>
-            <p>Partnered with leading clinics staffed by <strong>West China School of Stomatology</strong> graduates (QS #12 globally). Save 50–70% compared to USA, NZ, UK, or Australia.</p>
+            <p>Partnered with leading dental institutions staffed by <strong>West China School of Stomatology</strong> graduates (QS #12 globally). Save 50–70% compared to USA, NZ, UK, or Australia.</p>
+            <ul style="margin: 20px 0; list-style: none;">
+                <li><i class="fas fa-check-circle" style="color:#C5A059;"></i> Dental implants from $800</li>
+                <li><i class="fas fa-check-circle" style="color:#C5A059;"></i> Root canal therapy $180–$250</li>
+                <li><i class="fas fa-check-circle" style="color:#C5A059;"></i> Crowns from $280</li>
+                <li><i class="fas fa-check-circle" style="color:#C5A059;"></i> Veneers $300–$600</li>
+            </ul>
             <div style="display: flex; gap: 16px; flex-wrap: wrap;">
                 <a href="mailto:KIWI_Serenity_Limited@outlook.com?subject=Dental%20Coordination%20Request" class="btn-primary"><i class="fas fa-calendar-check"></i> Get Your Plan</a>
-                <a href="https://wa.me/64223244938?text=Hello%20KIWI%20Serenity%2C%20I'm%20interested%20in%20dental%20treatment%20in%20Chengdu." target="_blank" style="background:#25D366; color:white;" class="btn-primary"><i class="fab fa-whatsapp"></i> WhatsApp Chat</a>
+                <a href="https://wa.me/64223244938?text=Hello%20KIWI%20Serenity%2C%20I'm%20interested%20in%20dental%20treatment%20in%20Chengdu." target="_blank" class="btn-primary" style="background:#25D366; color:white;"><i class="fab fa-whatsapp"></i> WhatsApp Chat</a>
             </div>
         </div>
     </div>
@@ -433,7 +444,7 @@
     <div class="stat-card"><div class="stat-number">100%</div><div class="stat-label">Licensed partner clinics</div></div>
 </div>
 
-<!-- Price Comparison Table -->
+<!-- Price Comparison -->
 <div class="section-header"><h2>Treatment Cost Comparison (USD)</h2></div>
 <div class="price-table-wrapper">
     <table class="comparison-table">
@@ -452,11 +463,11 @@
     <p style="font-size: 0.75rem; margin-top: 12px; color: var(--text-muted);">*Free cleaning included when you book a coordination service bundle. Final quotes provided by partner clinics after examination.</p>
 </div>
 
-<!-- Services Grid -->
+<!-- Services -->
 <div class="section-header"><h2>Treatments at Our Partner Institutions</h2></div>
 <div class="services-grid">
     <div class="service-card"><i class="fas fa-tooth"></i><h3>Examination & Prevention</h3><ul><li>Comprehensive oral exam</li><li>Digital X-ray & 3D CBCT</li><li>Professional cleaning (included in bundles)</li></ul></div>
-    <div class="service-card"><i class="fas fa-fill"></i><h3>Basic Treatments</h3><ul><li>Composite fillings</li><li>Simple & surgical extractions</li><li>Teeth whitening</li></ul></div>
+    <div class="service-card"><i class="fas fa-fill-drip"></i><h3>Basic Treatments</h3><ul><li>Composite fillings</li><li>Simple & surgical extractions</li><li>Teeth whitening</li></ul></div>
     <div class="service-card"><i class="fas fa-teeth-open"></i><h3>Advanced Procedures</h3><ul><li>Implant placement (Straumann, Nobel)</li><li>Microscopic root canal</li><li>All-ceramic crowns & bridges</li><li>Porcelain veneers</li><li>Invisible orthodontics</li></ul></div>
 </div>
 
@@ -471,7 +482,7 @@
     <div class="step"><span class="step-number">6</span> Follow-up support</div>
 </div>
 
-<!-- CTA Section -->
+<!-- Final CTA -->
 <div class="cta-section">
     <h3>Ready to Save Thousands on Your Dental Care?</h3>
     <p>Get a free, no-obligation consultation and receive a personalised treatment plan from our partner dental specialists in Chengdu.</p>
@@ -487,16 +498,14 @@
     <div class="footer-links">
         <a href="index.html">Home</a> | <a href="dental.html">Dental</a> | <a href="tcm.html">TCM</a> | <a href="privacy.html">Privacy</a> | <a href="terms.html">Terms</a>
     </div>
-    <div class="copyright">
-        © 2026 KIWI Serenity Limited · NZBN 9429053367846 · Coordination services only
-    </div>
+    <div class="copyright">© 2026 KIWI Serenity Limited · NZBN 9429053367846 · Coordination services only</div>
 </footer>
 
 <!-- Floating Free Consultation Button -->
 <a href="mailto:KIWI_Serenity_Limited@outlook.com?subject=Free%20Dental%20Consultation&body=Name%3A%0D%0ATreatment%20needed%3A%0D%0ACountry%3A" class="free-consult-btn"><i class="fas fa-comment-dental"></i> Free Consultation</a>
 
 <script>
-    // Ensure external links open in new tab
+    // External links open in new tab
     document.querySelectorAll('a[href^="http"]').forEach(link => {
         if (!link.href.includes('kiwi-serenity-limited.com') && !link.href.startsWith('/')) {
             link.setAttribute('target', '_blank');
