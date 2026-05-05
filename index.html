@@ -7,10 +7,8 @@
     <meta name="description" content="NZ-registered medical travel coordination for dental implants China, TCM Chengdu, root canal, crowns, veneers, and wellness. Save 60-75% vs USA/NZ. Free WhatsApp consultation.">
     <meta name="keywords" content="wisdom teeth removal, dental implants, medical travel, dental implants Chengdu, affordable dental implants China, medical travel China, TCM Chengdu, root canal, crown, wellness coordination, medical travel, veneer, whiting, oral, cupping, acupuncture, moxibustion, massage, 中医, 智齿, 拔牙, 根管, 种植, 理疗, 按摩, 针灸, 推拿, 艾灸, 拔罐, KIWI Serenity, NZBN 9429053367846">
     
-    <!-- Canonical URL -->
     <link rel="canonical" href="https://www.kiwi-serenity-limited.com/index.html">
     
-    <!-- Organization Schema (enhanced with WhatsApp) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -93,10 +91,7 @@
             font-weight: 400;
             letter-spacing: 0.3px;
         }
-        .disclaimer-banner strong {
-            color: var(--primary-gold);
-            font-weight: 600;
-        }
+        .disclaimer-banner strong { color: var(--primary-gold); }
         
         /* Unified Navigation Bar */
         .nav-bar {
@@ -124,6 +119,18 @@
             transition: color 0.3s;
         }
         .nav-links a:hover { color: var(--primary-gold); }
+        
+        .fee-notice {
+            background: #FFF3E0;
+            border-left: 6px solid var(--primary-gold);
+            padding: 14px 24px;
+            margin: 20px auto;
+            max-width: 1280px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #5a3e1b;
+            text-align: center;
+        }
         
         .brand-strip {
             background: var(--deep-charcoal);
@@ -240,7 +247,6 @@
         }
         .btn-outline:hover { background: var(--primary-gold); }
         
-        /* WhatsApp specific button style */
         .btn-wa {
             background: transparent;
             border: 2px solid var(--whatsapp-green);
@@ -252,7 +258,6 @@
             border-color: var(--whatsapp-green);
         }
         
-        /* Floating WhatsApp Icon */
         .float-wa {
             position: fixed;
             bottom: 30px;
@@ -450,6 +455,30 @@
             white-space: nowrap;
         }
         
+        .free-consult-btn {
+            position: fixed;
+            bottom: 120px;
+            right: 30px;
+            background: var(--primary-gold);
+            color: var(--deep-charcoal);
+            padding: 12px 22px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-decoration: none;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition);
+            border: 1px solid white;
+        }
+        .free-consult-btn:hover {
+            background: var(--primary-gold-dark);
+            transform: scale(1.02);
+        }
+        
         .footer {
             background: var(--deep-charcoal);
             color: #94a3b8;
@@ -468,9 +497,6 @@
             background: var(--off-white);
             padding: 8px;
         }
-        .footer-links {
-            margin: 20px 0 16px;
-        }
         .footer-links a {
             color: var(--primary-gold);
             text-decoration: none;
@@ -483,7 +509,6 @@
             opacity: 0.7;
         }
         
-        /* Mobile Adjustments */
         @media (max-width: 900px) {
             .hero-grid { grid-template-columns: 1fr; text-align: center; }
             .service-row { grid-template-columns: 1fr; }
@@ -493,73 +518,58 @@
             .founder-grid { grid-template-columns: 1fr; gap: 30px; }
             .experience-list li { flex-direction: column; align-items: flex-start; }
             .exp-desc { text-align: left; margin-top: 4px; }
-            .float-wa {
-                width: 50px;
-                height: 50px;
-                font-size: 1.6rem;
-                bottom: 20px;
-                right: 20px;
-            }
+            .float-wa { width: 50px; height: 50px; font-size: 1.6rem; bottom: 20px; right: 20px; }
+            .free-consult-btn { bottom: 100px; right: 20px; padding: 8px 18px; font-size: 0.8rem;}
         }
         @media (max-width: 600px) {
             .article-grid { grid-template-columns: 1fr; }
             .section-title { font-size: 2rem; }
             .hero h1 { font-size: 2.2rem; }
             .founder-card { padding: 30px 20px; }
-            .float-wa {
-                width: 48px;
-                height: 48px;
-                font-size: 1.5rem;
-                bottom: 16px;
-                right: 16px;
-            }
+            .float-wa { width: 48px; height: 48px; font-size: 1.5rem; bottom: 16px; right: 16px; }
+            .free-consult-btn { bottom: 90px; right: 16px; padding: 6px 14px; font-size: 0.75rem;}
         }
     </style>
 </head>
 <body>
 
-<!-- DISCLAIMER BANNER (top) -->
 <div class="disclaimer-banner">
     <strong>Disclaimer:</strong> KIWI Serenity Limited provides medical travel coordination services only. Licensed healthcare providers provide all medical advice, diagnosis, or procedures.
 </div>
 
-<!-- Unified Navigation Bar -->
 <div class="nav-bar">
     <div class="nav-links">
         <a href="index.html">🏠 Home</a>
         <a href="Series1.html">💰 Dental Cost Guide</a>
-        <a href="tour.html">📘 Medical Travel Bundles</a>
+        <a href="Series2.html">📚 Medical Travel Guide</a>
+        <a href="dental.html">🦷 Dental</a>
+        <a href="tcm.html">🌿 TCM</a>
+        <a href="tour.html">🧘 Travel Bundles</a>
         <a href="patient.html">📖 Patient Stories</a>
+        <a href="faq.html">❓ FAQ</a>
         <a href="contact.html">📧 Contact</a>
     </div>
 </div>
 
-<!-- Brand Strip with NZBN (prominent) -->
+<div class="fee-notice">
+    <i class="fas fa-info-circle"></i> <strong>Important:</strong> Our coordination service fee does NOT include medical treatment costs. Treatment fees are paid directly to the partner clinics/hospitals. We are transparent – ask for a detailed breakdown.
+</div>
+
 <div class="brand-strip">
     <div class="brand-card">
         <div class="brand-name">KIWI Serenity Limited</div>
-        <div class="nzbn-block">
-            <i class="fas fa-certificate"></i> NZBN 9429053367846
-        </div>
-        <div class="brand-taglines">
-            <span>Discover Chengdu · Coordinated Medical Relative Services</span><br>
-            <span>Experience the Summit of Care</span>
-        </div>
+        <div class="nzbn-block"><i class="fas fa-certificate"></i> NZBN 9429053367846</div>
+        <div class="brand-taglines"><span>Discover Chengdu · Coordinated Medical Relative Services</span><br><span>Experience the Summit of Care</span></div>
     </div>
 </div>
 
-<!-- Hero Image -->
 <div class="hero-image-strip">
     <div class="medical-image-wrapper">
         <img src="medical.jpg" alt="Medical travel to Chengdu coordination" onerror="this.style.display='none'">
-        <div class="image-caption">
-            World-Class Partner Institutions · Meet Chengdu
-            <span>Your Healing Journey Begins Here</span>
-        </div>
+        <div class="image-caption">World-Class Partner Institutions · Meet Chengdu<span>Your Healing Journey Begins Here</span></div>
     </div>
 </div>
 
-<!-- Hero Section (Single H1) -->
 <section class="hero">
     <div class="hero-grid">
         <div>
@@ -567,10 +577,7 @@
             <p style="font-size:1.1rem; color:var(--text-light); margin: 20px 0;">Access world-class partner hospitals & TCM clinics in Chengdu. Save up to 70% compared to the USA/UK/NZ/AU. Seamless coordination from first inquiry to post-treatment follow-up.</p>
             <div class="hero-buttons" style="display: flex; gap: 16px; flex-wrap: wrap;">
                 <a href="mailto:KIWI_Serenity_Limited@outlook.com?subject=Free%20Consultation%20" class="btn-primary"><i class="fas fa-calendar-check"></i> Free Consultation</a>
-                <!-- WhatsApp button replacing "Get Your Plan" -->
-                <a href="https://wa.me/64223244938?text=Hello%20KIWI%20Serenity%2C%20I'm%20interested%20in%20medical%20travel%20coordination%20to%20Chengdu.%20Please%20share%20more%20information." class="btn-outline btn-wa" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-whatsapp"></i> Chat on WhatsApp
-                </a>
+                <a href="https://wa.me/64223244938?text=Hello%20KIWI%20Serenity%2C%20I'm%20interested%20in%20medical%20travel%20coordination%20to%20Chengdu.%20Please%20share%20more%20information." class="btn-outline btn-wa" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a>
             </div>
         </div>
         <div style="background: linear-gradient(145deg, #1E1E1E, #2C2C2C); border-radius:8px; padding:40px; color:white; border:1px solid var(--primary-gold); text-align:center;">
@@ -581,7 +588,6 @@
     </div>
 </section>
 
-<!-- Trust Bar -->
 <section class="trust-bar">
     <div class="container">
         <h2 class="section-title" style="text-align:center; display:block;">Why Patients Choose Chengdu Coordination</h2>
@@ -594,7 +600,6 @@
     </div>
 </section>
 
-<!-- Cost Comparison -->
 <div class="container">
     <div class="cost-comparison">
         <h2 class="section-title">Dental Treatment Cost Comparison</h2>
@@ -609,31 +614,13 @@
     </div>
 </div>
 
-<!-- Service Row -->
 <div class="container">
     <div class="service-row">
-        <div class="service-card">
-            <h3><i class="fas fa-tooth" style="color:var(--primary-gold);"></i> Dental Coordination</h3>
-            <ul style="margin-top:20px; list-style:none;">
-                <li><i class="fas fa-check-circle" style="color:var(--primary-gold);"></i> Orthodontics</li>
-                <li><i class="fas fa-check-circle" style="color:var(--primary-gold);"></i> Dental implants, Root canal therapy</li>
-                <li><i class="fas fa-check-circle" style="color:var(--primary-gold);"></i> Crowns, bridges & veneers</li>
-            </ul>
-            <a href="dental.html" class="btn-outline" style="display:inline-block; margin-top:24px;">Dental Services →</a>
-        </div>
-        <div class="service-card">
-            <h3><i class="fas fa-spa" style="color:var(--primary-gold);"></i> Traditional Chinese Medicine Coordination</h3>
-            <ul style="margin-top:20px; list-style:none;">
-                <li><i class="fas fa-check-circle" style="color:var(--primary-gold);"></i> Acupuncture & electroacupuncture</li>
-                <li><i class="fas fa-check-circle" style="color:var(--primary-gold);"></i> Herbal therapy & Tui Na massage</li>
-                <li><i class="fas fa-check-circle" style="color:var(--primary-gold);"></i> Cupping / moxibustion</li>
-            </ul>
-            <a href="tcm.html" class="btn-outline" style="display:inline-block; margin-top:24px;">Explore TCM →</a>
-        </div>
+        <div class="service-card"><h3><i class="fas fa-tooth" style="color:var(--primary-gold);"></i> Dental Coordination</h3><ul style="margin-top:20px; list-style:none;"><li><i class="fas fa-check-circle" style="color:var(--primary-gold);"></i> Orthodontics</li><li><i class="fas fa-check-circle" style="color:var(--primary-gold);"></i> Dental implants, Root canal therapy</li><li><i class="fas fa-check-circle" style="color:var(--primary-gold);"></i> Crowns, bridges & veneers</li></ul><a href="dental.html" class="btn-outline" style="display:inline-block; margin-top:24px;">Dental Services →</a></div>
+        <div class="service-card"><h3><i class="fas fa-spa" style="color:var(--primary-gold);"></i> Traditional Chinese Medicine Coordination</h3><ul style="margin-top:20px; list-style:none;"><li><i class="fas fa-check-circle" style="color:var(--primary-gold);"></i> Acupuncture & electroacupuncture</li><li><i class="fas fa-check-circle" style="color:var(--primary-gold);"></i> Herbal therapy & Tui Na massage</li><li><i class="fas fa-check-circle" style="color:var(--primary-gold);"></i> Cupping / moxibustion</li></ul><a href="tcm.html" class="btn-outline" style="display:inline-block; margin-top:24px;">Explore TCM →</a></div>
     </div>
 </div>
 
-<!-- Process Steps -->
 <div class="container">
     <h2 class="section-title">How Our Coordination Service Works</h2>
     <div class="process-grid">
@@ -646,99 +633,27 @@
     </div>
 </div>
 
-<!-- Medical Coordination Library -->
 <div class="container">
     <div class="article-hub">
         <h2 class="section-title" style="display:block; text-align:center;">📚 Complete Medical Coordination Library</h2>
         <div class="article-grid">
-            <a href="Series1.html#article-1" class="article-card">
-                <span class="article-tag">💰 Cost guide 2026</span>
-                <h3>Cost of Dental Implants: China vs USA / NZ / UK</h3>
-                <p>Save 50‑70% with Chengdu partner institutions. Detailed table & why Chengdu is rising.</p>
-                <span class="read-more">Read full article →</span>
-            </a>
-            <a href="Series1.html#article-2" class="article-card">
-                <span class="article-tag">🛡️ Safety first</span>
-                <h3>Is Dental Treatment in China Safe?</h3>
-                <p>Modern facilities, sterilization, training, and how to choose a reputable partner institution.</p>
-                <span class="read-more">Read full article →</span>
-            </a>
-            <a href="Series2.html#tcm-chengdu" class="article-card">
-                <span class="article-tag">🌿 TCM guide</span>
-                <h3>Traditional Chinese Medicine in Chengdu</h3>
-                <p>Acupuncture, herbal medicine, cupping – authentic treatments in Sichuan.</p>
-                <span class="read-more">Read full article →</span>
-            </a>
-            <a href="Series2.html#dental-implants-guide" class="article-card">
-                <span class="article-tag">🦷 Implant guide</span>
-                <h3>Dental Implants in China: What to Know</h3>
-                <p>Step‑by‑step process, healing period, two‑visit planning.</p>
-                <span class="read-more">Read full article →</span>
-            </a>
-            <a href="Series2.html#wellness-travel" class="article-card">
-                <span class="article-tag">🧘 Wellness journey</span>
-                <h3>Wellness Coordination in Chengdu</h3>
-                <p>Pandas, tea houses, Mount Qingcheng – healing through experience.</p>
-                <span class="read-more">Read full article →</span>
-            </a>
-            <a href="Patient.html" class="article-card">
-                <span class="article-tag">📖 Real story</span>
-                <h3>From Oregon to Chengdu: Root Canal Journey</h3>
-                <p>Michael saved over $8,000 on dental work. Read his honest experience.</p>
-                <span class="read-more">Read full story →</span>
-            </a>
+            <a href="Series1.html#article-1" class="article-card"><span class="article-tag">💰 Cost guide 2026</span><h3>Cost of Dental Implants: China vs USA / NZ / UK</h3><p>Save 50‑70% with Chengdu partner institutions. Detailed table & why Chengdu is rising.</p><span class="read-more">Read full article →</span></a>
+            <a href="Series1.html#article-2" class="article-card"><span class="article-tag">🛡️ Safety first</span><h3>Is Dental Treatment in China Safe?</h3><p>Modern facilities, sterilization, training, and how to choose a reputable partner institution.</p><span class="read-more">Read full article →</span></a>
+            <a href="Series2.html#tcm-chengdu" class="article-card"><span class="article-tag">🌿 TCM guide</span><h3>Traditional Chinese Medicine in Chengdu</h3><p>Acupuncture, herbal medicine, cupping – authentic treatments in Sichuan.</p><span class="read-more">Read full article →</span></a>
+            <a href="Series2.html#dental-implants-guide" class="article-card"><span class="article-tag">🦷 Implant guide</span><h3>Dental Implants in China: What to Know</h3><p>Step‑by‑step process, healing period, two‑visit planning.</p><span class="read-more">Read full article →</span></a>
+            <a href="Series2.html#wellness-travel" class="article-card"><span class="article-tag">🧘 Wellness journey</span><h3>Wellness Coordination in Chengdu</h3><p>Pandas, tea houses, Mount Qingcheng – healing through experience.</p><span class="read-more">Read full article →</span></a>
+            <a href="patient.html" class="article-card"><span class="article-tag">📖 Real story</span><h3>From Oregon to Chengdu: Root Canal Journey</h3><p>Michael saved over $8,000 on dental work. Read his honest experience.</p><span class="read-more">Read full story →</span></a>
         </div>
     </div>
 </div>
 
-<!-- Founder Story & Medical Experience Sections -->
 <div class="container">
     <div class="founder-grid">
-        <div class="founder-card">
-            <h2>Meet the Founder</h2>
-            <div class="founder-story-text">
-                <p>KIWI Serenity was founded by someone who understands both New Zealand and China.</p>
-                <p style="margin-top: 12px;">Originally from Chengdu and living in New Zealand for more than a decade, the founder saw the dramatic difference in medical costs between countries.</p>
-                <p style="margin-top: 12px;">In 2025, she returned to Chengdu and personally experienced several medical procedures, including:</p>
-                <ul style="margin: 12px 0 0 20px; color: var(--text-light);">
-                    <li>Colonoscopy and gastroscopy examination</li>
-                    <li>Polyps removal</li>
-                    <li>Wisdom teeth removal</li>
-                    <li>Traditional Chinese medicine treatment</li>
-                    <li>Dental orthodontics</li>
-                </ul>
-                <p style="margin-top: 16px; font-style: italic;">Through this experience, she realised that high-quality medical care in Chengdu can be both accessible and affordable.</p>
-                <p style="margin-top: 16px; font-weight: 500;">KIWI Serenity was created to help international patients explore these opportunities safely.</p>
-            </div>
-        </div>
-        
-        <div class="founder-card">
-            <h2>Real Medical Experience in China</h2>
-            <ul class="experience-list">
-                <li>
-                    <span class="exp-title">Colonoscopy + Gastroscopy + Polyps Removal</span>
-                    <span class="exp-cost">≈ USD $600</span>
-                    <div class="exp-desc">Quick appointment</div>
-                </li>
-                <li>
-                    <span class="exp-title">Wisdom Teeth Removal</span>
-                    <span class="exp-cost">≈ USD $120/each</span>
-                    <div class="exp-desc">Professional dental surgery</div>
-                </li>
-                <li>
-                    <span class="exp-title">Traditional Chinese Medicine Therapy</span>
-                    <span class="exp-cost">Cost depends on Treatment</span>
-                    <div class="exp-desc">Acupuncture, herbal medicine, moxibustion for wellness and recovery</div>
-                </li>
-            </ul>
-            <p style="margin-top: 24px; font-size: 0.9rem; color: var(--primary-gold-dark); border-top: 1px solid var(--border-subtle); padding-top: 16px;">
-                <i class="fas fa-hand-holding-heart"></i> All procedures were performed by licensed partner institutions. KIWI Serenity Limited coordinates access only.
-            </p>
-        </div>
+        <div class="founder-card"><h2>Meet the Founder</h2><div class="founder-story-text"><p>KIWI Serenity was founded by someone who understands both New Zealand and China.</p><p style="margin-top: 12px;">Originally from Chengdu and living in New Zealand for more than a decade, the founder saw the dramatic difference in medical costs between countries.</p><p style="margin-top: 12px;">In 2025, she returned to Chengdu and personally experienced several medical procedures, including:</p><ul style="margin: 12px 0 0 20px; color: var(--text-light);"><li>Colonoscopy and gastroscopy examination</li><li>Polyps removal</li><li>Wisdom teeth removal</li><li>Traditional Chinese medicine treatment</li><li>Dental orthodontics</li></ul><p style="margin-top: 16px; font-style: italic;">Through this experience, she realised that high-quality medical care in Chengdu can be both accessible and affordable.</p><p style="margin-top: 16px; font-weight: 500;">KIWI Serenity was created to help international patients explore these opportunities safely.</p></div></div>
+        <div class="founder-card"><h2>Real Medical Experience in China</h2><ul class="experience-list"><li><span class="exp-title">Colonoscopy + Gastroscopy + Polyps Removal</span><span class="exp-cost">≈ USD $600</span><div class="exp-desc">Quick appointment</div></li><li><span class="exp-title">Wisdom Teeth Removal</span><span class="exp-cost">≈ USD $120/each</span><div class="exp-desc">Professional dental surgery</div></li><li><span class="exp-title">Traditional Chinese Medicine Therapy</span><span class="exp-cost">Cost depends on Treatment</span><div class="exp-desc">Acupuncture, herbal medicine, moxibustion for wellness and recovery</div></li></ul><p style="margin-top: 24px; font-size: 0.9rem; color: var(--primary-gold-dark); border-top: 1px solid var(--border-subtle); padding-top: 16px;"><i class="fas fa-hand-holding-heart"></i> All procedures were performed by licensed partner institutions. KIWI Serenity Limited coordinates access only.</p></div>
     </div>
 </div>
 
-<!-- Internal links panel -->
 <div class="container">
     <div class="internal-links-panel">
         <a href="Series1.html">💰 Dental Implants Cost</a>
@@ -750,41 +665,20 @@
     </div>
 </div>
 
-<!-- Footer -->
 <footer class="footer">
     <div class="container">
-        <div class="footer-logo">
-            <img src="KIWI_Serenity_Limited.png" alt="KIWI Serenity Limited Official Logo - Medical Travel Coordination">
-        </div>
-        <div class="footer-links">
-            <a href="index.html">Home</a>
-            <a href="dental.html">Dental Guide</a>
-            <a href="tcm.html">TCM Guide</a>
-            <a href="tour.html">Medical Travel Bundles</a>
-            <a href="privacy.html">Privacy Policy</a>
-            <a href="terms.html">Terms of Service</a>
-            <a href="disclaimer.html">Disclaimer</a>
-        </div>
-        <div class="footer-copyright">
-            © 2026 KIWI Serenity Limited · Official NZBN 9429053367846<br>
-            Medical Travel Coordination services — Worldwide to Chengdu, China
-        </div>
+        <div class="footer-logo"><img src="KIWI_Serenity_Limited.png" alt="KIWI Serenity Limited Official Logo - Medical Travel Coordination"></div>
+        <div class="footer-links"><a href="index.html">Home</a> <a href="dental.html">Dental Guide</a> <a href="tcm.html">TCM Guide</a> <a href="tour.html">Medical Travel Bundles</a> <a href="privacy.html">Privacy Policy</a> <a href="terms.html">Terms of Service</a> <a href="disclaimer.html">Disclaimer</a></div>
+        <div class="footer-copyright">© 2026 KIWI Serenity Limited · Official NZBN 9429053367846<br>Medical Travel Coordination services — Worldwide to Chengdu, China</div>
     </div>
 </footer>
 
-<!-- Floating WhatsApp Icon -->
-<a href="https://wa.me/64223244938?text=Hello%20KIWI%20Serenity%2C%20I'm%20interested%20in%20medical%20travel%20coordination%20to%20Chengdu.%20Please%20share%20more%20information." class="float-wa" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
-    <i class="fab fa-whatsapp"></i>
-</a>
+<a href="https://wa.me/64223244938?text=Hello%20KIWI%20Serenity%2C%20I'm%20interested%20in%20medical%20travel%20coordination%20to%20Chengdu.%20Please%20share%20more%20information." class="float-wa" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+
+<a href="mailto:KIWI_Serenity_Limited@outlook.com?subject=Free%20Consultation%20Request&body=Name%3A%0D%0APhone%3A%0D%0ATreatment%20Interest%3A%0D%0AMessage%3A" class="free-consult-btn" target="_blank"><i class="fas fa-envelope"></i> Free Consultation</a>
 
 <script>
-    // Ensure external links open in new tab
-    document.querySelectorAll('a[href^="http"]').forEach(link => {
-        if (!link.href.includes('kiwi-serenity-limited.com') && !link.href.startsWith('/')) {
-            link.setAttribute('target', '_blank');
-        }
-    });
-    console.log("SEO optimized: sitemap.xml & robots.txt available at root. Google Search Console submission recommended.");
+    document.querySelectorAll('a[href^="http"]').forEach(link => { if (!link.href.includes('kiwi-serenity-limited.com') && !link.href.startsWith('/')) { link.setAttribute('target', '_blank'); } });
 </script>
 </body>
 </html>
