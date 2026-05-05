@@ -1,31 +1,21 @@
 # robots.txt for https://www.kiwi-serenity-limited.com
-# Updated: 2026-05-04
+# Updated: 2026-05-05
 
-# Allow all major crawlers
 User-agent: *
-
-# 允许抓取整个网站（通过 Allow / 先禁止敏感目录，再允许）
 Allow: /
 
-# ========== 禁止抓取无价值或重复内容 ==========
-# 禁止后台目录（即使不存在，也为将来预留）
+# Disallow admin or system paths (future-proof)
 Disallow: /admin/
 Disallow: /cgi-bin/
 Disallow: /tmp/
-Disallow: /temp/
 Disallow: /backup/
 Disallow: /debug/
 
-# 禁止打印版本（如有）
+# Disallow print versions (if any)
 Disallow: /*print=true$
 Disallow: /*?print
 
-# 完全禁止抓取邮件/联络卡片专用图片（减少服务器负担，非必须）
-Disallow: /WhatsApp.jpg
-Disallow: /WeChat.jpg
-
-# ========== 文件类型控制 ==========
-# 允许图片/样式/脚本被完整抓取
+# Allow all static assets
 Allow: /*.jpg$
 Allow: /*.jpeg$
 Allow: /*.png$
@@ -35,33 +25,13 @@ Allow: /*.webp$
 Allow: /*.css$
 Allow: /*.js$
 
-# 屏蔽无需索引的文档类型（可根据需要调整）
-# 若希望 PDF 指南被搜索到，可以注释掉下面一行或删除
+# Optional: disallow PDFs if not intended for indexing (adjust as needed)
 Disallow: /*.pdf$
 Disallow: /*.doc$
 Disallow: /*.docx$
-Disallow: /*.xls$
-Disallow: /*.zip$
-Disallow: /*.rar$
 
-# ========== 爬虫友好设置 ==========
-# 抓取延迟 2 秒，避免服务器压力（适用于所有爬虫）
+# Crawl delay to be respectful to server
 Crawl-delay: 2
 
-# 指定抓取超时（可选）
-# Request-rate: 1/2
-
-# ========== 站点地图位置 ==========
+# Sitemap location
 Sitemap: https://www.kiwi-serenity-limited.com/sitemap.xml
-
-# ========== 针对特定爬虫的额外规则（可选） ==========
-# Googlebot 允许更快的抓取（可取消注释）
-# User-agent: Googlebot
-# Crawl-delay: 1
-
-# 禁止某些低效爬虫（如 SemrushBot, AhrefsBot）可根据需要取消注释
-# User-agent: SemrushBot
-# Disallow: /
-# 
-# User-agent: AhrefsBot
-# Disallow: /
