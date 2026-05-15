@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>Frequently Asked Questions – Medical Travel to Chengdu | KIWI Serenity</title>
-    <meta name="description" content="Answers to common questions about medical travel to Chengdu: payments, visa, safety, insurance, and coordination process.">
-    <meta name="keywords" content="medical travel FAQ, Chengdu dental FAQ, TCM FAQ, visa for China medical treatment, KIWI Serenity">
+    <meta name="description" content="Answers to common questions about medical travel to Chengdu: payments, visa, safety, insurance, and coordination process. Includes health screening, CT, MRI, blood test coordination.">
+    <meta name="keywords" content="medical travel FAQ, Chengdu dental FAQ, TCM FAQ, visa for China medical treatment, medical appointment coordination, health screening, CT, MRI, blood test, KIWI Serenity">
     <link rel="canonical" href="https://www.kiwi-serenity-limited.com/faq.html">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -33,12 +33,13 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 32px;
+            gap: 28px;
         }
         .nav-links a {
             color: #F8F6F2;
             text-decoration: none;
             font-weight: 500;
+            font-size: 0.85rem;
             transition: color 0.3s;
         }
         .nav-links a:hover { color: #C5A059; }
@@ -49,7 +50,7 @@
             padding: 14px 24px;
             margin: 20px auto;
             max-width: 1000px;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: 500;
             color: #5a3e1b;
             text-align: center;
@@ -128,22 +129,28 @@
 </head>
 <body>
 
+<!-- 完整医疗法律免责声明 -->
+<div class="disclaimer-banner" style="background:#1e2a2f; color:#e2e8f0; font-size:0.75rem; text-align:center; padding:10px; border-bottom:2px solid #C5A059;">
+    <strong>Medical & Legal Disclaimer:</strong> KIWI Serenity provides medical travel coordination services only. All medical assessments, diagnoses, procedures, and treatments are performed solely by licensed physicians and independent partner institutions in Chengdu. We do not provide medical advice. All examination items, treatment plans, and final costs must be determined by a doctor after an in-person evaluation. Except for a non-refundable coordination/registration fee (where applicable), all medical fees are paid directly by the patient to the healthcare provider. No treatment outcomes are guaranteed.
+</div>
+
 <div class="nav-bar">
     <div class="nav-links">
         <a href="index.html">🏠 Home</a>
-        <a href="Series1.html">💰 Dental Cost Guide</a>
-        <a href="Series2.html">📚 Medical Travel Guide</a>
         <a href="dental.html">🦷 Dental</a>
         <a href="tcm.html">🌿 TCM</a>
-        <a href="tour.html">🧘 Travel Bundles</a>
+        <a href="health_screening.html">🩺 Medical Coordination</a>
+        <a href="tour.html">🧘 Bundles</a>
         <a href="patient.html">📖 Patient Stories</a>
         <a href="faq.html">❓ FAQ</a>
         <a href="contact.html">📧 Contact</a>
+        <a href="Series1.html">💰 Cost Guide</a>
+        <a href="Series2.html">📚 Travel Guide</a>
     </div>
 </div>
 
 <div class="fee-notice">
-    <i class="fas fa-info-circle"></i> <strong>Important:</strong> Our coordination service fee does NOT include medical treatment costs. Treatment fees are paid directly to partner clinics.
+    <i class="fas fa-info-circle"></i> <strong>Important:</strong> Our coordination service fee does NOT include medical treatment costs. Treatment fees are paid directly to partner clinics. A non-refundable coordination fee may apply. All medical decisions and final costs are determined by physicians after an in-person evaluation.
 </div>
 
 <div class="page-header">
@@ -219,13 +226,31 @@
                 <p>Yes. Our partner TCM practitioners are licensed and experienced with international patients. Therapies are explained in advance, and intensity is adjusted to your comfort level. Always disclose your full medical history.</p>
             </div>
         </div>
+        <!-- 新增关于诊断检查协调的FAQ -->
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+                <span>🩻 Can you coordinate health screening, CT, MRI, or blood tests?</span> <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Yes. We assist in scheduling physician-ordered diagnostic tests including blood work, CT, MRI, ultrasound, endoscopy, and more at partner institutions. A physician's order is required for all tests. Final costs depend on the specific orders and facility chosen. We provide transparent estimates but the final price is determined by the provider after your consultation.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+                <span>📋 How are medical costs determined?</span> <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>All medical costs (treatments, tests, procedures) are set by the partner clinics/hospitals. Final fees depend on the specific physician's orders, materials used, and individual clinical requirements. We provide estimates based on typical cases, but a final quote is always given after an in-person evaluation by the doctor. No medical fees are included in our coordination service packages.</p>
+            </div>
+        </div>
     </div>
 </div>
 
 <footer class="footer">
     <div class="container">
-        <a href="index.html">Home</a> | <a href="dental.html">Dental</a> | <a href="tcm.html">TCM</a> | <a href="faq.html">FAQ</a> | <a href="contact.html">Contact</a>
+        <a href="index.html">Home</a> | <a href="dental.html">Dental</a> | <a href="tcm.html">TCM</a> | <a href="health_screening.html">Medical Coordination</a> | <a href="faq.html">FAQ</a> | <a href="contact.html">Contact</a>
         <p>© 2026 KIWI Serenity Limited — Medical Travel to Chengdu, China</p>
+        <p style="font-size:0.7rem; margin-top:8px;"><strong>Disclaimer:</strong> All medical services are provided by independent licensed partner institutions. Final treatment plans and costs determined by physicians.</p>
     </div>
 </footer>
 
