@@ -7,107 +7,107 @@
     <!-- Core pages -->
     <url>
         <loc>https://www.kiwi-serenity-limited.com/index.html</loc>
-        <lastmod>2026-05-05</lastmod>
+        <lastmod>2026-05-16</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>https://www.kiwi-serenity-limited.com/Series1.html</loc>
-        <lastmod>2026-05-05</lastmod>
+        <lastmod>2026-05-16</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://www.kiwi-serenity-limited.com/Series2.html</loc>
-        <lastmod>2026-05-05</lastmod>
+        <lastmod>2026-05-16</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://www.kiwi-serenity-limited.com/dental.html</loc>
-        <lastmod>2026-05-05</lastmod>
+        <lastmod>2026-05-16</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://www.kiwi-serenity-limited.com/tcm.html</loc>
-        <lastmod>2026-05-05</lastmod>
+        <lastmod>2026-05-16</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://www.kiwi-serenity-limited.com/health_screening.html</loc>
+        <lastmod>2026-05-16</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://www.kiwi-serenity-limited.com/tour.html</loc>
-        <lastmod>2026-05-05</lastmod>
+        <lastmod>2026-05-16</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://www.kiwi-serenity-limited.com/patient.html</loc>
-        <lastmod>2026-05-05</lastmod>
+        <lastmod>2026-05-16</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://www.kiwi-serenity-limited.com/fee.html</loc>
-        <lastmod>2026-05-05</lastmod>
+        <lastmod>2026-05-16</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://www.kiwi-serenity-limited.com/faq.html</loc>
-        <lastmod>2026-05-05</lastmod>
+        <lastmod>2026-05-16</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://www.kiwi-serenity-limited.com/contact.html</loc>
-        <lastmod>2026-05-05</lastmod>
+        <lastmod>2026-05-16</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
 
-    <!-- Legal & information pages (if exist) -->
+    <!-- Legal & information pages -->
     <url>
         <loc>https://www.kiwi-serenity-limited.com/privacy.html</loc>
-        <lastmod>2026-01-01</lastmod>
+        <lastmod>2026-05-16</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>
     <url>
         <loc>https://www.kiwi-serenity-limited.com/terms.html</loc>
-        <lastmod>2026-01-01</lastmod>
+        <lastmod>2026-05-16</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>
     <url>
         <loc>https://www.kiwi-serenity-limited.com/disclaimer.html</loc>
-        <lastmod>2026-01-01</lastmod>
+        <lastmod>2026-05-16</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>
 
-    <!-- Images (optional but helpful) -->
+    <!-- Important images -->
     <url>
         <loc>https://www.kiwi-serenity-limited.com/KIWI_Serenity_Limited.png</loc>
-        <lastmod>2026-05-05</lastmod>
+        <lastmod>2026-05-16</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.2</priority>
     </url>
     <url>
         <loc>https://www.kiwi-serenity-limited.com/medical.jpg</loc>
-        <lastmod>2026-05-05</lastmod>
+        <lastmod>2026-05-16</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.2</priority>
     </url>
     <url>
         <loc>https://www.kiwi-serenity-limited.com/logo.jpg</loc>
-        <lastmod>2026-05-05</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.2</priority>
-    </url>
-    <url>
-        <loc>https://www.kiwi-serenity-limited.com/services.png</loc>
-        <lastmod>2026-05-05</lastmod>
+        <lastmod>2026-05-16</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.2</priority>
     </url>
