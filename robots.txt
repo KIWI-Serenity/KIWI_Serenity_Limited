@@ -1,5 +1,5 @@
 # robots.txt for https://www.kiwi-serenity-limited.com
-# Updated: 2026-05-05
+# Updated: 2026-05-16
 
 User-agent: *
 Allow: /
