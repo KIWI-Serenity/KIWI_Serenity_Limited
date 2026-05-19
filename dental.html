@@ -3,15 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="description" content="KIWI Serenity Limited – NZ-registered dental coordination in Chengdu. Save on implants, root canals, crowns, veneers. Partner clinics with West China trained dentists. Free consultation.">
-    <meta name="keywords" content="dental implants China, affordable dental implants Chengdu, root canal China, dental crowns, veneers Chengdu, medical travel dental, health screening, medical appointment coordination, KIWI Serenity, NZBN 9429053367846">
+    <meta name="description" content="KIWI Serenity Limited – NZ-registered dental coordination in Chengdu. Full range of specialties: implants, root canals, crowns, pediatric dentistry, orthodontics, and more. Partner clinics with West China trained dentists. Free consultation.">
+    <meta name="keywords" content="dental implants China, affordable dental implants Chengdu, root canal China, dental crowns, veneers Chengdu, dental specialties, pediatric dentistry, orthodontics, periodontics, medical travel dental, KIWI Serenity, NZBN 9429053367846">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://www.kiwi-serenity-limited.com/dental.html">
-    <title>Dental Coordination Chengdu | Implants, Root Canals, Crowns | KIWI Serenity</title>
+    <title>Dental Coordination Chengdu | Full-Service Dental Specialties | KIWI Serenity</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..800&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* (Styles remain largely unchanged, but ensure responsive) */
         * {
             margin: 0;
             padding: 0;
@@ -141,13 +140,78 @@
             transform: translateY(-2px);
         }
 
+        /* Why Choose Us Module */
+        .why-choose-us {
+            max-width: 1280px;
+            margin: 48px auto 20px;
+            padding: 0 24px;
+        }
+        .choose-card {
+            background: var(--white);
+            border-radius: var(--radius-sm);
+            box-shadow: var(--shadow);
+            padding: 32px 36px;
+            transition: 0.2s;
+            border-left: 5px solid var(--gold);
+        }
+        .choose-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            color: var(--charcoal);
+            margin-bottom: 1.25rem;
+            letter-spacing: -0.3px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .choose-card h3 i {
+            color: var(--gold);
+            font-size: 1.8rem;
+        }
+        .choose-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px 28px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .choose-grid li {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-dark);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 6px 0;
+            border-bottom: 1px dashed var(--border-light);
+        }
+        .choose-grid li i {
+            color: var(--gold);
+            font-size: 1.1rem;
+            width: 22px;
+            text-align: center;
+        }
+        @media (max-width: 700px) {
+            .choose-grid {
+                grid-template-columns: 1fr;
+                gap: 8px;
+            }
+            .choose-card {
+                padding: 28px 24px;
+            }
+            .choose-card h3 {
+                font-size: 1.5rem;
+            }
+        }
+
         /* Stats Grid */
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 24px;
             max-width: 1280px;
-            margin: 60px auto;
+            margin: 40px auto 60px;
             padding: 0 24px;
         }
         .stat-card {
@@ -227,7 +291,7 @@
             font-style: italic;
         }
 
-        /* Services Grid */
+        /* Services Grid (original condensed) */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -254,6 +318,113 @@
             left: 0;
             color: var(--gold);
             font-weight: 700;
+        }
+
+        /* Expanded Specialties Grid */
+        .specialties-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+            gap: 28px;
+            max-width: 1280px;
+            margin: 40px auto;
+            padding: 0 24px;
+        }
+        .specialty-card {
+            background: var(--white);
+            border-radius: var(--radius-sm);
+            padding: 28px 24px;
+            box-shadow: var(--shadow);
+            transition: all 0.25s ease;
+            border-left: 4px solid var(--gold);
+        }
+        .specialty-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+        .specialty-icon {
+            font-size: 2rem;
+            color: var(--gold);
+            margin-bottom: 16px;
+        }
+        .specialty-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--charcoal);
+            margin-bottom: 6px;
+            letter-spacing: -0.2px;
+        }
+        .specialty-sub {
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--gold-dark);
+            margin-bottom: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .specialty-desc {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.45;
+        }
+
+        /* X-ray & CT Send CTA Box */
+        .xray-cta-box {
+            background: linear-gradient(105deg, #e9e2d4 0%, #f5efe5 100%);
+            border-radius: var(--radius);
+            padding: 28px 32px;
+            max-width: 1280px;
+            margin: 30px auto;
+            border: 1px solid var(--gold);
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+        .xray-cta-box i {
+            font-size: 2rem;
+            color: var(--gold-dark);
+            margin-bottom: 12px;
+        }
+        .xray-cta-box h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--deep-navy);
+            margin-bottom: 10px;
+        }
+        .xray-cta-box p {
+            color: var(--text-dark);
+            margin-bottom: 18px;
+        }
+        .xray-buttons {
+            display: flex;
+            gap: 18px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .btn-xray {
+            background: var(--deep-navy);
+            color: var(--gold);
+            padding: 10px 24px;
+            border-radius: 60px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.2s;
+        }
+        .btn-xray:hover {
+            background: var(--charcoal);
+            color: var(--gold-dark);
+            transform: translateY(-2px);
+        }
+        .medical-disclaimer-extra {
+            background: #fff4e5;
+            border-radius: 20px;
+            padding: 18px 24px;
+            margin: 20px auto 0;
+            max-width: 1280px;
+            font-size: 0.8rem;
+            border-left: 6px solid var(--gold-dark);
+            color: #4a3b22;
         }
 
         /* Process Steps */
@@ -385,17 +556,20 @@
             .stats-grid { grid-template-columns: repeat(2, 1fr); }
             .process-steps { flex-direction: column; align-items: stretch; }
             .step { justify-content: center; }
+            .specialties-grid { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
+            .xray-cta-box { margin: 20px 20px; padding: 20px; }
         }
         @media (max-width: 600px) {
             .stats-grid { grid-template-columns: 1fr; }
             .hero-content h1 { font-size: 1.6rem; }
             .section-header h2 { font-size: 1.5rem; }
+            .specialty-title { font-size: 1.2rem; }
         }
     </style>
 </head>
 <body>
 
-<!-- DISCLAIMER BANNER -->
+<!-- DISCLAIMER BANNER (Main) -->
 <div class="disclaimer-banner" style="background:#1e2a2f; color:#e2e8f0; font-size:0.75rem; text-align:center; padding:10px; border-bottom:2px solid var(--gold);">
     <strong>Medical & Legal Disclaimer:</strong> KIWI Serenity provides coordination only. All dental procedures are performed by independently licensed partner clinics. We do not provide medical advice. All treatment plans and final costs must be determined by a dentist after an in-person evaluation. Except for a non-refundable coordination fee (where applicable), all medical fees are paid directly to the provider. No treatment outcomes are guaranteed.
 </div>
@@ -429,7 +603,7 @@
         </div>
         <div class="hero-content">
             <h1>Dental Coordination in Chengdu, China</h1>
-            <p>Partnered with leading dental institutions staffed by <strong>West China School of Stomatology</strong> graduates. Treatment costs are typically 50–70% lower than in the USA, NZ, UK, or Australia. Final pricing depends on individual evaluation.</p>
+            <p>Access to multidisciplinary dental resources in Chengdu，dentists backgrounds including <strong>West China School of Stomatology</strong>. Treatment costs are up to 70% lower than in the USA, NZ, UK, or Australia. Final pricing depends on individual evaluation.</p>
             <ul style="margin: 20px 0; list-style: none;">
                 <li><i class="fas fa-check-circle" style="color:#C5A059;"></i> Dental implants (estimate from $800)</li>
                 <li><i class="fas fa-check-circle" style="color:#C5A059;"></i> Root canal (estimate from $180)</li>
@@ -444,6 +618,24 @@
     </div>
 </div>
 
+<!-- ============================================= -->
+<!-- WHY PATIENTS CHOOSE US (Hero section之后，stats之前) -->
+<!-- ============================================= -->
+<div class="why-choose-us">
+    <div class="choose-card">
+        <h3><i class="fas fa-heartbeat"></i> Why International Patients Choose KIWI Serenity Limited</h3>
+        <ul class="choose-grid">
+            <li><i class="fas fa-check-circle"></i> NZ-registered coordination company</li>
+            <li><i class="fas fa-check-circle"></i> Independent clinic network in Chengdu</li>
+            <li><i class="fas fa-check-circle"></i> English-Chinese communication assistance</li>
+            <li><i class="fas fa-check-circle"></i> Transparent coordination process</li>
+            <li><i class="fas fa-check-circle"></i> Direct payment to clinics</li>
+            <li><i class="fas fa-check-circle"></i> Support for travel & appointment arrangements</li>
+            <li><i class="fas fa-check-circle"></i> Coordination support for complex dental cases</li>
+        </ul>
+    </div>
+</div>
+
 <!-- Stats -->
 <div class="stats-grid">
     <div class="stat-card"><div class="stat-number">Up to 70%</div><div class="stat-label">Potential Savings vs. Western countries*</div></div>
@@ -452,26 +644,42 @@
     <div class="stat-card"><div class="stat-number">100%</div><div class="stat-label">Licensed partner clinics</div></div>
 </div>
 
+<!-- NEW: SEND X-RAY / CT SCAN INFO SECTION + CLEAR DISCLAIMER -->
+<div class="xray-cta-box">
+    <i class="fas fa-x-ray"></i>
+    <h3>📤 Send your X-ray / CT scan for preliminary review</h3>
+    <p>Share your existing dental images (panoramic X-ray, CBCT, or periapical films) with our coordination team. Submitted images may be reviewed for preliminary coordination purposes only. Any comments provided before travel are informational only and are not a diagnosis or confirmed treatment recommendation. <strong>The final treatment plan and exact quote must be confirmed after an in-person dental examination.</strong></p>
+    <div class="xray-buttons">
+        <a href="mailto:KIWI_Serenity_Limited@outlook.com?subject=X-ray%20%2F%20CT%20for%20dental%20review&body=I%20am%20attaching%20my%20dental%20X-ray%20or%20CT%20images.%20Please%20review%20and%20advise%20preliminary%20options." class="btn-xray"><i class="fas fa-envelope"></i> Email X-ray / CT</a>
+        <a href="https://wa.me/64223244938?text=Hello%2C%20I%20would%20like%20to%20send%20my%20dental%20X-ray%20for%20a%20preliminary%20review." target="_blank" class="btn-xray" style="background:#25D366; color:white;"><i class="fab fa-whatsapp"></i> WhatsApp X-ray / CT</a>
+    </div>
+    <div class="medical-disclaimer-extra" style="margin-top: 24px; background: rgba(0,0,0,0.05); border-left-color: var(--gold);">
+        <i class="fas fa-stethoscope"></i> <strong>Important Medical Disclaimer:</strong> Information presented on this page is for general informational purposes only and should not be interpreted as medical advice, diagnosis, or treatment recommendations. Any preliminary review of X-ray/CT images is not a substitute for a full clinical examination. <strong>最终诊疗方案与报价，必需经过牙医当面检查判定后才能确认 — Final treatment plan and exact quote must be confirmed after an in-person dental examination.</strong>
+    </div>
+</div>
+
 <!-- Price Comparison -->
 <div class="section-header"><h2>Treatment Cost Comparison (USD) - Estimates</h2></div>
 <div class="price-table-wrapper">
     <table class="comparison-table">
-        <thead><tr><th>Treatment</th><th>USA / NZ / AU Average</th><th>Chengdu Partner Clinics (Estimate)</th></tr></thead>
+        <thead><tr><th>Treatment</th><th>USA / NZ / AU Average</th><th>Chengdu Partner Clinics (Estimate)</th></tr>
+        </thead>
         <tbody>
-            <tr><td>Comprehensive Exam + Cleaning</td><td>$180 – $250</td><td><span class="free-badge"><i class="fas fa-gift"></i> Free* with coordination bundle</span></td></tr>
-            <tr><td>Composite Filling (per tooth)</td><td>$300 – $450</td><td><strong>$60 – $100</strong></td></tr>
-            <tr><td>Simple Extraction</td><td>$350 – $550</td><td><strong>$70 – $150</strong></td></tr>
-            <tr><td>Teeth Whitening</td><td>$800 – $1,500</td><td><strong>$170 – $300</strong></td></tr>
-            <tr><td>Porcelain Veneer (per tooth)</td><td>$1,500 – $2,500</td><td><strong>$300 – $600</strong></td></tr>
-            <tr><td>Root Canal (per tooth)</td><td>$1,400 – $2,000</td><td><strong>$180 – $250</strong></td></tr>
-            <tr><td>All-Ceramic Crown (per tooth)</td><td>$1,600 – $2,700</td><td><strong>$280 – $980</strong></td></tr>
-            <tr><td>Dental Implant (single)</td><td>$4,000 – $6,000</td><td><strong>$800 – $1,500</strong></td></tr>
+            <tr><td>Comprehensive Exam + Cleaning</td><td>from $180</td><td><span class="free-badge"><i class="fas fa-gift"></i> Free* with coordination bundle</span></td></tr>
+            <tr><td>Composite Filling (per tooth)</td><td>from $300</td><td><strong>$60 – $100</strong></td></tr>
+            <tr><td>Simple Extraction</td><td>from $350</td><td><strong>$70 – $150</strong></td></tr>
+            <tr><td>Teeth Whitening</td><td>from $800</td><td><strong>from $170</strong></td></tr>
+            <tr><td>Porcelain Veneer (per tooth)</td><td>from $1,500</td><td><strong>from $300</strong></td></tr>
+            <tr><td>Root Canal (per tooth)</td><td>from $1,400</td><td><strong>from $180</strong></td></tr>
+            <tr><td>All-Ceramic Crown (per tooth)</td><td>from $1,600</td><td><strong>from $280</strong></td></tr>
+            <tr><td>Dental Implant (single)</td><td>from $4,000</td><td><strong>from $800</strong></td></tr>
         </tbody>
     </table>
     <div class="price-note"><i class="fas fa-exclamation-triangle"></i> *Free cleaning included when you book a coordination service bundle. All prices are estimates only. Final quotes are provided by partner clinics after an in-person examination. Costs depend on individual treatment complexity, materials, and doctor's evaluation.</div>
+    <div class="price-note" style="background:#FEF6E6; padding: 8px; border-radius: 12px; margin-top: 12px;"><i class="fas fa-user-md"></i> <strong>Important:</strong> Estimates shown are for reference only. <u>Final treatment plan and exact pricing must be confirmed by a dentist after a physical examination in Chengdu.</u> (最终治疗方案与报价需经牙医面诊后确定)</div>
 </div>
 
-<!-- Services -->
+<!-- Original Services (Concise Overview) -->
 <div class="section-header"><h2>Treatments at Our Partner Institutions</h2></div>
 <div class="services-grid">
     <div class="service-card"><i class="fas fa-tooth"></i><h3>Examination & Prevention</h3><ul><li>Comprehensive oral exam</li><li>Digital X-ray & 3D CBCT</li><li>Professional cleaning (included in bundles)</li></ul></div>
@@ -479,15 +687,34 @@
     <div class="service-card"><i class="fas fa-teeth-open"></i><h3>Advanced Procedures</h3><ul><li>Implant placement (Straumann, Nobel)</li><li>Microscopic root canal</li><li>All-ceramic crowns & bridges</li><li>Porcelain veneers</li><li>Invisible orthodontics</li></ul></div>
 </div>
 
+<!-- FULL RANGE OF DENTAL SPECIALTIES -->
+<div class="section-header"><h2>Comprehensive Dental Specialties</h2></div>
+<div class="specialties-grid">
+    <div class="specialty-card"><div class="specialty-icon"><i class="fas fa-child"></i></div><div class="specialty-title">Pediatric Dentistry</div><div class="specialty-sub">儿童口腔科</div><div class="specialty-desc">Caries prevention & treatment, developmental anomaly management, early orthodontic intervention, full-cycle oral care for children and adolescents.</div></div>
+    <div class="specialty-card"><div class="specialty-icon"><i class="fas fa-microscope"></i></div><div class="specialty-title">Implantology</div><div class="specialty-sub">口腔种植科</div><div class="specialty-desc">Single/multiple tooth implants, full-arch restoration (All-on-4/6), painless & immediate loading solutions using premium materials.</div></div>
+    <div class="specialty-card"><div class="specialty-icon"><i class="fas fa-smile"></i></div><div class="specialty-title">Orthodontics</div><div class="specialty-sub">口腔正畸科</div><div class="specialty-desc">Correction of misalignment, spacing, displacement, reverse overjet, jaw deformities; braces & clear aligner therapy.</div></div>
+    <div class="specialty-card"><div class="specialty-icon"><i class="fas fa-crown"></i></div><div class="specialty-title">Prosthodontics</div><div class="specialty-sub">口腔修复科</div><div class="specialty-desc">Inlays, crowns, bridges, dentures, implant-supported prostheses, adhesive & aesthetic restorations.</div></div>
+    <div class="specialty-card"><div class="specialty-icon"><i class="fas fa-teeth"></i></div><div class="specialty-title">Periodontics</div><div class="specialty-sub">牙周病科</div><div class="specialty-desc">Complex periodontal disease management, guided tissue regeneration, aesthetic periodontal plastic surgery.</div></div>
+    <div class="specialty-card"><div class="specialty-icon"><i class="fas fa-scalpel"></i></div><div class="specialty-title">Oral & Maxillofacial Surgery</div><div class="specialty-sub">口腔颌面外科</div><div class="specialty-desc">Impacted/embedded extractions, maxillofacial trauma, trismus, minor oral surgeries.</div></div>
+    <div class="specialty-card"><div class="specialty-icon"><i class="fas fa-fill"></i></div><div class="specialty-title">Endodontics</div><div class="specialty-sub">牙体牙髓科</div><div class="specialty-desc">Caries, pulpitis, periapical periodontitis, cracked teeth; microscopic root canal treatment.</div></div>
+    <div class="specialty-card"><div class="specialty-icon"><i class="fas fa-notes-medical"></i></div><div class="specialty-title">Oral Medicine</div><div class="specialty-sub">口腔黏膜病科</div><div class="specialty-desc">Diagnosis & treatment of gingival redness, swelling, bleeding, ulcers, recurrent aphthous stomatitis.</div></div>
+    <div class="specialty-card"><div class="specialty-icon"><i class="fas fa-shield-alt"></i></div><div class="specialty-title">Preventive Dentistry</div><div class="specialty-sub">口腔预防保健科</div><div class="specialty-desc">Professional cleaning, risk management, oral health education, fluoride therapy.</div></div>
+    <div class="specialty-card"><div class="specialty-icon"><i class="fas fa-heartbeat"></i></div><div class="specialty-title">Internal Medicine</div><div class="specialty-sub">内科</div><div class="specialty-desc">Pre-treatment screening for cardiovascular, endocrine & hematologic conditions.</div></div>
+    <div class="specialty-card"><div class="specialty-icon"><i class="fas fa-syringe"></i></div><div class="specialty-title">Anesthesiology</div><div class="specialty-sub">麻醉科</div><div class="specialty-desc">Personalized anesthesia regimens, general anesthesia, sedation for pain & anxiety control.</div></div>
+</div>
+<div style="max-width: 1280px; margin: 0 auto 20px; padding: 0 24px;">
+    <p class="price-note" style="text-align: center;"><i class="fas fa-star-of-life"></i> All specialties delivered by experienced dentists from top-tier institutions including West China School of Stomatology.</p>
+</div>
+
 <!-- Process Steps -->
 <div class="section-header"><h2>How Our Coordination Works</h2></div>
 <div class="process-steps">
-    <div class="step"><span class="step-number">1</span> Send X-ray / info</div>
-    <div class="step"><span class="step-number">2</span> Online consult with dentist</div>
-    <div class="step"><span class="step-number">3</span> Receive plan & quote</div>
+    <div class="step"><span class="step-number">1</span> Send X-ray / CT & info</div>
+    <div class="step"><span class="step-number">2</span> Initial case review coordination</div>
+    <div class="step"><span class="step-number">3</span> Receive preliminary information</div>
     <div class="step"><span class="step-number">4</span> Travel to Chengdu</div>
-    <div class="step"><span class="step-number">5</span> Treatment & recovery</div>
-    <div class="step"><span class="step-number">6</span> Follow-up support</div>
+    <div class="step"><span class="step-number">5</span> In-person exam → final plan</div>
+    <div class="step"><span class="step-number">6</span> Treatment & Post-visit communication support</div>
 </div>
 
 <!-- Final CTA -->
@@ -507,7 +734,8 @@
         <a href="index.html">Home</a> | <a href="dental.html">Dental</a> | <a href="tcm.html">TCM</a> | <a href="health_screening.html">Medical Coordination</a> | <a href="privacy.html">Privacy</a> | <a href="terms.html">Terms</a>
     </div>
     <div class="copyright">© 2026 KIWI Serenity Limited · NZBN 9429053367846 · Coordination services only</div>
-    <div class="copyright" style="margin-top: 8px;"><strong>Disclaimer:</strong> All treatment costs and plans are determined by partner clinics. Estimates are not guarantees.</div>
+    <div class="copyright" style="margin-top: 8px;"><strong>Disclaimer:</strong> All treatment costs and plans are determined by partner clinics. Estimates are not guarantees. Final treatment plan & quote require in-person dental evaluation (最终诊疗方案与报价需经牙医当面检查判定).</div>
+    <div class="copyright" style="margin-top: 8px;">Information presented on this page is for general informational purposes only and should not be interpreted as medical advice, diagnosis, or treatment recommendations. Patients are free to choose whether to proceed with any consultation or treatment after arriving in Chengdu.</div>
 </footer>
 
 <!-- Floating Free Consultation Button -->
