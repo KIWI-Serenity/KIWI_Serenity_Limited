@@ -1,21 +1,17 @@
 # robots.txt for https://www.kiwi-serenity-limited.com
-# Updated: 2026-05-16
+# Updated: 2026-07-19
 
 User-agent: *
 Allow: /
 
-# Disallow admin or system paths (future-proof)
 Disallow: /admin/
 Disallow: /cgi-bin/
 Disallow: /tmp/
 Disallow: /backup/
 Disallow: /debug/
-
-# Disallow print versions (if any)
 Disallow: /*print=true$
 Disallow: /*?print
 
-# Allow all static assets
 Allow: /*.jpg$
 Allow: /*.jpeg$
 Allow: /*.png$
@@ -25,13 +21,34 @@ Allow: /*.webp$
 Allow: /*.css$
 Allow: /*.js$
 
-# Optional: disallow PDFs if not intended for indexing (adjust as needed)
-Disallow: /*.pdf$
+Allow: /*.pdf$
 Disallow: /*.doc$
 Disallow: /*.docx$
 
-# Crawl delay to be respectful to server
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
 Crawl-delay: 2
 
-# Sitemap location
 Sitemap: https://www.kiwi-serenity-limited.com/sitemap.xml
