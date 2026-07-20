@@ -293,12 +293,14 @@
         /* ===== 诊所选择 ===== */
         .clinic-select {
             display: flex;
+            flex-wrap: wrap;
             gap: 20px;
             margin-top: 15px;
         }
 
         .clinic-option {
-            flex: 1;
+            flex: 1 1 calc(50% - 20px);  /* 两列布局，减去间隙 */
+            min-width: 200px;
             padding: 25px 15px;
             border: 2px solid #ddd;
             border-radius: var(--radius-md);
@@ -752,6 +754,7 @@
             
             .clinic-option {
                 padding: 20px 15px;
+                flex: 1 1 auto;  /* 移动端单列，恢复默认 */
             }
             
             .progress-indicator {
@@ -920,7 +923,7 @@
             </div>
 
             <div class="company-info">
-                <p><strong><i class="fas fa-phone-alt"></i> 联系电话 / TEL:</strong> <a href="tel:+64220405795">+64 22 040 5795</a></p>
+                <p><strong><i class="fas fa-phone-alt"></i> 联系电话 / TEL:</strong> <a href="tel:+64223244938">+64 223244938</a></p>
                 <p><strong><i class="fab fa-whatsapp"></i> WhatsApp:</strong> <a href="https://wa.me/64223244938" target="_blank">+64 22 324 4938</a></p>
                 <p><strong><i class="fas fa-envelope"></i> 邮箱 / Email:</strong> <a href="mailto:KIWI_Serenity_Limited@outlook.com">KIWI_Serenity_Limited@outlook.com</a></p>
             </div>
@@ -960,10 +963,10 @@
             <p><strong>请注意:</strong> 请使用英文填写，本问卷信息可能转交所选第三方服务方用于预约安排与适配性筛查。KIWI Serenity Limited不提供任何医疗评估或建议。所有带 * 的为必填项。</p>
         </div>
 
-        <!-- 重要提示：请将以下表单action和_next值替换为您的真实Formspree ID和感谢页面URL -->
-        <form id="health-questionnaire" action="https://formspree.io/f/abcdwxyz" method="POST">
+        <!-- 表单 action 已更新为 Formspree 真实 endpoint，_next 指向感谢页 -->
+        <form id="health-questionnaire" action="https://formspree.io/f/xykrjkqk" method="POST">
             
-            <!-- FormSubmit配置 - 请替换为您的真实值 -->
+            <!-- Formspree 配置 -->
             <input type="hidden" name="_next" value="https://www.kiwi-serenity-limited.com/thank-you.html">
             <input type="hidden" name="_subject" value="New Health Questionnaire Submission - KIWI Serenity">
             <input type="hidden" name="_template" value="table">
@@ -975,17 +978,33 @@
                 <h2>选择诊所 / Select Clinic</h2>
                 <p class="section-note">请选择您计划就诊的诊所类型。不同诊所的健康问题不同。</p>
                 <div class="clinic-select">
+                    <!-- 牙科 -->
                     <div class="clinic-option" data-clinic="dental">
                         <div style="font-size: 2.5em; margin-bottom: 8px;">🦷</div>
                         <strong>牙科诊所</strong><br>
                         <strong>Dental Clinic</strong><br>
                         <small style="color: #666;">牙齿治疗、种植牙、正畸等</small>
                     </div>
+                    <!-- 中医 -->
                     <div class="clinic-option" data-clinic="tcm">
                         <div style="font-size: 2.5em; margin-bottom: 8px;">🌿</div>
                         <strong>中医诊所</strong><br>
                         <strong>TCM Clinic</strong><br>
                         <small style="color: #666;">针灸、中药、推拿等</small>
+                    </div>
+                    <!-- 体检（新增） -->
+                    <div class="clinic-option" data-clinic="health-screening">
+                        <div style="font-size: 2.5em; margin-bottom: 8px;">🩺</div>
+                        <strong>体检</strong><br>
+                        <strong>Health Screening</strong><br>
+                        <small style="color: #666;">全面体检、健康检查等</small>
+                    </div>
+                    <!-- 其他（新增） -->
+                    <div class="clinic-option" data-clinic="others">
+                        <div style="font-size: 2.5em; margin-bottom: 8px;">📋</div>
+                        <strong>其他</strong><br>
+                        <strong>Others</strong><br>
+                        <small style="color: #666;">其他医疗需求</small>
                     </div>
                 </div>
                 <input type="hidden" id="clinic-type" name="clinic-type" required>
@@ -1008,8 +1027,10 @@
                             <option value="prefer-not-to-say">不愿透露 / Prefer not to say</option>
                         </select>
                         
+                        <!-- ===== 出生日期改为文本输入，格式 DD/MM/YYYY ===== -->
                         <label class="required">出生日期 / Date of Birth</label>
-                        <input type="date" name="dob" required>
+                        <input type="text" name="dob" placeholder="DD/MM/YYYY" pattern="\d{2}/\d{2}/\d{4}" title="请输入有效日期，格式 DD/MM/YYYY (例如 25/12/1985)" required>
+                        <small style="display: block; margin-top: -10px; margin-bottom: 15px; color: #666; font-size: 0.85em;">格式: DD/MM/YYYY (例如 25/12/1985)</small>
                     </div>
                     <div>
                         <label class="required">护照号 / Passport Number</label>
@@ -1272,7 +1293,7 @@
                 </div>
             </div>
 
-            <!-- Consent & Privacy -->
+            <!-- Consent & Submission -->
             <div class="form-section">
                 <h2>同意与提交 / Consent & Submission</h2>
                 
@@ -1309,8 +1330,8 @@
                 <br>
                 <button class="submit-btn" type="submit" id="submit-button">提交问卷 / Submit Questionnaire</button>
                 <div style="text-align: center; margin-top: 20px; color: #666; font-size: 0.9em; line-height: 1.5;">
-                    如有问题，请致电 <a href="tel:+64220405795" style="color: var(--primary-color);">+64 22 040 5795</a> 或邮件至 <a href="mailto:KIWI_Serenity_Limited@outlook.com" style="color: var(--primary-color);">KIWI_Serenity_Limited@outlook.com</a><br>
-                    For any questions, please call <a href="tel:+64220405795" style="color: var(--primary-color);">+64 22 040 5795</a> or email <a href="mailto:KIWI_Serenity_Limited@outlook.com" style="color: var(--primary-color);">KIWI_Serenity_Limited@outlook.com</a>
+                    如有问题，请致电 <a href="tel:+64223244938" style="color: var(--primary-color);">+64 223244938</a> 或邮件至 <a href="mailto:KIWI_Serenity_Limited@outlook.com" style="color: var(--primary-color);">KIWI_Serenity_Limited@outlook.com</a><br>
+                    For any questions, please call <a href="tel:+64223244938" style="color: var(--primary-color);">+64 223244938</a> or email <a href="mailto:KIWI_Serenity_Limited@outlook.com" style="color: var(--primary-color);">KIWI_Serenity_Limited@outlook.com</a>
                 </div>
             </div>
         </form>
@@ -1407,7 +1428,7 @@
                     opt.classList.add('selected');
                     document.getElementById('clinic-type').value = opt.dataset.clinic;
                     
-                    // Show clinic-specific questions
+                    // Show clinic-specific questions (仅当 dental 或 tcm)
                     document.querySelectorAll('.dental-questions, .tcm-questions').forEach(section => {
                         section.classList.remove('active');
                     });
@@ -1417,6 +1438,7 @@
                     } else if (opt.dataset.clinic === 'tcm') {
                         document.querySelector('.tcm-questions').classList.add('active');
                     }
+                    // 其他选项不显示额外问题
                     
                     updateProgress(2);
                 };
@@ -1473,83 +1495,97 @@
                 };
             });
             
-            // Form validation
-            document.getElementById('health-questionnaire').onsubmit = (e) => {
+            // ----- AJAX 提交处理 -----
+            document.getElementById('health-questionnaire').onsubmit = async (e) => {
                 e.preventDefault();
-                
-                // Validate clinic selection
+
+                // ---- 1. 验证部分 ----
                 if (!document.getElementById('clinic-type').value) {
                     alert('请选择诊所类型 / Please select a clinic type');
                     return false;
                 }
-                
-                // Basic validation
+
+                // 清除旧的错误样式并重新验证 required 字段
                 const requiredInputs = document.querySelectorAll('input[required], select[required]');
                 let valid = true;
-                
+
                 requiredInputs.forEach(input => {
+                    if (input.nextElementSibling && input.nextElementSibling.classList.contains('error-message')) {
+                        input.nextElementSibling.remove();
+                    }
                     if (!input.value.trim()) {
                         valid = false;
                         input.style.borderColor = '#e74c3c';
-                        input.style.boxShadow = '0 0 0 3px rgba(231, 76, 60, 0.1)';
-                        
-                        // Add error message
-                        if (!input.nextElementSibling || !input.nextElementSibling.classList.contains('error-message')) {
-                            const errorMsg = document.createElement('div');
-                            errorMsg.className = 'error-message';
-                            errorMsg.style.color = '#e74c3c';
-                            errorMsg.style.fontSize = '0.85em';
-                            errorMsg.style.marginTop = '-10px';
-                            errorMsg.style.marginBottom = '15px';
-                            errorMsg.textContent = '此字段为必填项 / This field is required';
-                            input.parentNode.insertBefore(errorMsg, input.nextSibling);
-                        }
+                        input.style.boxShadow = '0 0 0 3px rgba(231,76,60,0.1)';
+                        const errorMsg = document.createElement('div');
+                        errorMsg.className = 'error-message';
+                        errorMsg.style.color = '#e74c3c';
+                        errorMsg.style.fontSize = '0.85em';
+                        errorMsg.style.marginTop = '-10px';
+                        errorMsg.style.marginBottom = '15px';
+                        errorMsg.textContent = '此字段为必填项 / This field is required';
+                        input.parentNode.insertBefore(errorMsg, input.nextSibling);
                     } else {
                         input.style.borderColor = '#ccc';
                         input.style.boxShadow = 'none';
-                        
-                        // Remove error message if exists
-                        if (input.nextElementSibling && input.nextElementSibling.classList.contains('error-message')) {
-                            input.nextElementSibling.remove();
-                        }
                     }
                 });
-                
-                // Validate consent checkboxes
+
                 const consentCheckbox = document.getElementById('consent-agree');
                 const privacyCheckbox = document.getElementById('privacy-consent-check');
-                
                 if (!consentCheckbox.checked || !privacyCheckbox.checked) {
                     valid = false;
                     alert('请同意声明和隐私政策 / Please agree to the statement and privacy policy');
                 }
-                
-                if (valid) {
-                    // Update progress indicator to step 4
-                    updateProgress(4);
-                    
-                    // Show submission confirmation
-                    const submitBtn = document.getElementById('submit-button');
-                    submitBtn.innerHTML = '提交中... / Submitting...';
-                    submitBtn.disabled = true;
-                    
-                    // Simulate form submission (in real implementation, this would be the actual form submission)
-                    setTimeout(() => {
-                        alert('表单提交成功！我们将在1-2个工作日内与您联系。/ Form submitted successfully! We will contact you within 1-2 business days.');
-                        submitBtn.innerHTML = '提交成功！ / Submitted Successfully!';
-                        
-                        // In a real implementation, you would submit the form here
-                        // e.target.submit();
-                    }, 1500);
-                } else {
-                    // Scroll to first error
+
+                if (!valid) {
                     const firstError = document.querySelector('.error-message');
-                    if (firstError) {
-                        firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    }
+                    if (firstError) firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    return false;
                 }
-                
-                return false;
+
+                // ---- 2. 提交 ----
+                const submitBtn = document.getElementById('submit-button');
+                const originalText = submitBtn.innerHTML;
+                submitBtn.innerHTML = '提交中... / Submitting...';
+                submitBtn.disabled = true;
+
+                try {
+                    const formData = new FormData(e.target);
+                    const response = await fetch(e.target.action, {
+                        method: 'POST',
+                        body: formData,
+                        headers: { 'Accept': 'application/json' }
+                    });
+
+                    if (response.ok) {
+                        updateProgress(4);
+                        submitBtn.innerHTML = '✅ 提交成功！ / Submitted!';
+                        submitBtn.disabled = true;
+
+                        const nextUrl = document.querySelector('input[name="_next"]')?.value;
+                        if (nextUrl) {
+                            setTimeout(() => { window.location.href = nextUrl; }, 2000);
+                        } else {
+                            alert('表单提交成功！我们将在1-2个工作日内与您联系。\nForm submitted successfully! We will contact you within 1-2 business days.');
+                        }
+                    } else {
+                        let errorMsg = '提交失败，请稍后重试。 / Submission failed, please try again.';
+                        try {
+                            const errorData = await response.json();
+                            if (errorData.error) {
+                                errorMsg = `错误 / Error: ${errorData.error}`;
+                            }
+                        } catch (e) { /* ignore */ }
+                        alert(errorMsg);
+                        submitBtn.innerHTML = originalText;
+                        submitBtn.disabled = false;
+                    }
+                } catch (error) {
+                    alert('网络错误，请检查您的连接后重试。 / Network error, please check your connection and try again.');
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                }
             };
             
             // Progress indicator update function
@@ -1568,31 +1604,24 @@
             // Initialize progress indicator
             updateProgress(1);
             
-            // Add touch event listeners for better mobile experience
+            // Touch and mobile enhancements
             if ('ontouchstart' in window) {
-                // Make clinic options more touch-friendly
                 document.querySelectorAll('.clinic-option').forEach(opt => {
                     opt.style.cursor = 'pointer';
                 });
-                
-                // Increase tap target size for checkboxes and radio buttons on mobile
                 document.querySelectorAll('.checkbox-item label, .radio-item label, .social-links a').forEach(label => {
                     label.style.minHeight = '44px';
                     label.style.display = 'flex';
                     label.style.alignItems = 'center';
                 });
-                
-                // Increase checkbox and radio size
                 document.querySelectorAll('input[type="checkbox"], input[type="radio"]').forEach(input => {
                     input.style.width = '22px';
                     input.style.height = '22px';
                 });
             }
             
-            // Enhance form field focus on mobile
             document.querySelectorAll('input, select, textarea').forEach(field => {
                 field.addEventListener('focus', function() {
-                    // On mobile, ensure focused field is visible above keyboard
                     if (window.innerWidth <= 768) {
                         setTimeout(() => {
                             this.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -1601,7 +1630,6 @@
                 });
             });
             
-            // 为所有外部链接添加安全属性
             document.querySelectorAll('a[href^="http"]').forEach(link => {
                 if (!link.href.includes('kiwi-serenity-limited.com') && !link.href.includes('tel:') && !link.href.includes('mailto:')) {
                     link.setAttribute('target', '_blank');
@@ -1609,11 +1637,9 @@
                 }
             });
             
-            // 打印优化
             window.addEventListener('beforeprint', () => {
                 document.querySelector('.back-home-float').style.display = 'none';
             });
-            
             window.addEventListener('afterprint', () => {
                 document.querySelector('.back-home-float').style.display = 'flex';
             });
