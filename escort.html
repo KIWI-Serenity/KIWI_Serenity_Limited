@@ -309,10 +309,40 @@
             height: 100%;
             display: flex;
             flex-direction: column;
+            position: relative;
         }
         .service-card:hover {
             box-shadow: 0 8px 30px rgba(26, 38, 52, 0.07);
             transform: translateY(-2px);
+        }
+
+        /* ---- Featured Cards (热门推荐) ---- */
+        .service-card.featured-card {
+            border-color: #c9a961;
+            border-width: 2px;
+            background: #fcfaf7;
+            box-shadow: 0 4px 20px rgba(201, 169, 97, 0.10);
+        }
+        .service-card.featured-card:hover {
+            box-shadow: 0 8px 35px rgba(201, 169, 97, 0.18);
+        }
+        .service-card.featured-card .popular-badge {
+            display: inline-block;
+            background: #c9a961;
+            color: #1a2634;
+            font-size: 10px;
+            font-weight: 700;
+            padding: 2px 12px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-left: 8px;
+        }
+        .service-card .card-desc {
+            font-size: 14px;
+            color: #4a5a6a;
+            margin: 4px 0 14px 0;
+            line-height: 1.5;
         }
 
         .service-card .card-title {
@@ -348,15 +378,15 @@
             margin-left: 4px;
         }
         .service-card .card-sub {
-            font-size: 13px;
-            color: #6b7a8a;
-            margin-bottom: 12px;
-            font-style: italic;
+            font-size: 15px;
+            font-weight: 600;
+            color: #1a2634;
+            margin-bottom: 2px;
         }
         .service-card .card-features {
             list-style: none;
             padding: 0;
-            margin: 0 0 8px 0;
+            margin: 8px 0 8px 0;
             flex: 1;
         }
         .service-card .card-features li {
@@ -961,6 +991,10 @@
             .top-disclaimer strong {
                 color: #c9a961 !important;
             }
+            .service-card.featured-card {
+                border-color: #c9a961 !important;
+                background: #fcfaf7 !important;
+            }
         }
     </style>
 </head>
@@ -1032,7 +1066,8 @@
                         <span class="tag">Bilingual</span>
                     </div>
                     <div class="card-price">USD $60 <small>/ hour</small></div>
-                    <div class="card-sub">For patients who already have coordination arranged and require bilingual on‑site assistance.</div>
+                    <div class="card-sub">For patients who already have coordination arranged</div>
+                    <div class="card-desc">Bilingual on‑site assistance for navigation, registration, and general communication.</div>
                     <ul class="card-features">
                         <li><span class="check">✓</span> English–Chinese bilingual assistance</li>
                         <li><span class="check">✓</span> Hospital and partner institution navigation</li>
@@ -1055,7 +1090,8 @@
                         <span class="tag">Driver</span>
                     </div>
                     <div class="card-price">USD $35 <small>/ hour</small></div>
-                    <div class="card-sub">Private vehicle and driver service within Chengdu urban areas.</div>
+                    <div class="card-sub">Private vehicle and driver within Chengdu urban</div>
+                    <div class="card-desc">Convenient transport between hotel, hospital, and partner institutions.</div>
                     <ul class="card-features">
                         <li><span class="check">✓</span> Private vehicle</li>
                         <li><span class="check">✓</span> Professional driver</li>
@@ -1070,13 +1106,14 @@
                 </div>
 
                 <!-- Escort + Vehicle -->
-                <div class="service-card">
+                <div class="service-card featured-card">
                     <div class="card-title">
                         <span>Escort + Private Vehicle</span>
-                        <span class="tag">Recommended</span>
+                        <span class="tag">Popular</span>
                     </div>
                     <div class="card-price">USD $80 <small>/ hour</small></div>
-                    <div class="card-sub">Our recommended hourly service for patients who require both bilingual support and private transportation.</div>
+                    <div class="card-sub">Our recommended hourly service</div>
+                    <div class="card-desc">Bilingual escort and private vehicle — the perfect combination for stress‑free coordination.</div>
                     <ul class="card-features">
                         <li><span class="check">✓</span> English–Chinese bilingual escort</li>
                         <li><span class="check">✓</span> Private vehicle and driver</li>
@@ -1111,7 +1148,8 @@
                         <span class="tag">Up to 4h</span>
                     </div>
                     <div class="card-price">USD $299</div>
-                    <div class="card-sub">Ideal for one specialist appointment, dental consultation, TCM consultation, follow‑up, short diagnostic visit, or hospital registration.</div>
+                    <div class="card-sub">Ideal for one specialist appointment</div>
+                    <div class="card-desc">Dental consultation, TCM follow‑up, short diagnostic visit, or hospital registration.</div>
                     <ul class="card-features">
                         <li><span class="check">✓</span> Bilingual escort</li>
                         <li><span class="check">✓</span> Private vehicle within Chengdu urban areas</li>
@@ -1124,14 +1162,16 @@
                     <div class="card-note"><i class="fa-regular fa-clock"></i> Up to 4 hours · Additional hours: USD $80/hour</div>
                 </div>
 
-                <!-- Full Day -->
-                <div class="service-card">
+                <!-- Full Day (Featured) -->
+                <div class="service-card featured-card">
                     <div class="card-title">
                         <span>Full Day</span>
                         <span class="tag">Up to 8h</span>
+                        <span class="popular-badge">⭐ Popular</span>
                     </div>
                     <div class="card-price">USD $499</div>
-                    <div class="card-sub">Ideal for multiple hospital appointments, comprehensive consultations, dental treatment visits, full‑day diagnostics, or multi‑department hospital visits.</div>
+                    <div class="card-sub">Flexible On‑Site Medical Support</div>
+                    <div class="card-desc">For patients who already have their medical arrangements in place and need bilingual escort and private transportation for up to 8 hours.</div>
                     <ul class="card-features">
                         <li><span class="check">✓</span> Pre‑arrival coordination of appointments</li>
                         <li><span class="check">✓</span> Bilingual escort for up to 8 hours</li>
@@ -1163,14 +1203,16 @@
 
             <div class="card-grid-2">
 
-                <!-- Health Checkup -->
-                <div class="service-card">
+                <!-- Health Checkup (Featured) -->
+                <div class="service-card featured-card">
                     <div class="card-title">
                         <span>Health Checkup — All‑in‑One Day</span>
                         <span class="tag">1 Day</span>
+                        <span class="popular-badge">⭐ Popular</span>
                     </div>
                     <div class="card-price">USD $590 <small>/ person</small></div>
-                    <div class="card-sub">Comprehensive health screening · full hospital day</div>
+                    <div class="card-sub">Health Checkup — All‑in‑One Support Package</div>
+                    <div class="card-desc">A dedicated end‑to‑end coordination service for international patients travelling to Chengdu for health screening, including pre‑arrival appointment coordination, airport pickup, full‑day bilingual support, private transportation, examination navigation and basic follow‑up coordination.</div>
 
                     <div class="whats-included">
                         <p>📋 What's Included:</p>
@@ -1204,13 +1246,14 @@
                     </div>
                     <div class="card-price">USD $690 <small>/ person</small></div>
                     <div class="card-sub">Implant Week — Lite · most popular</div>
+                    <div class="card-desc">Designed for international patients travelling to Chengdu for dental implant treatment.</div>
 
                     <div class="whats-included">
                         <p>📋 What's Included:</p>
                         <ul class="card-features" style="margin-bottom:0;">
                             <li><span class="check">✓</span> Pre‑arrival coordination with partner institutions</li>
                             <li><span class="check">✓</span> Treatment schedule coordination</li>
-                            <li><span class="check">✓</span> Bilingual escort: up to <strong> 6 hours total</strong> within 7 days</li>
+                            <li><span class="check">✓</span> Bilingual escort: up to <strong>6 hours total</strong> within 7 days</li>
                             <li><span class="check">✓</span> Registration, payment, receipts &amp; paperwork</li>
                             <li><span class="check">✓</span> Hospital / partner institution navigation &amp; communication</li>
                             <li><span class="check">✓</span> Follow‑up coordination within 7 days</li>
@@ -1250,7 +1293,8 @@
                         <span class="tag">25 hours</span>
                     </div>
                     <div class="card-price">USD $1,799</div>
-                    <div class="card-sub">Ideal for dental treatment, TCM programmes, multiple specialist consultations, diagnostic appointments, or multi‑appointment medical trips.</div>
+                    <div class="card-sub">Ideal for dental treatment, TCM programmes</div>
+                    <div class="card-desc">Multiple specialist consultations, diagnostic appointments, or multi‑appointment medical trips.</div>
                     <ul class="card-features">
                         <li><span class="check">✓</span> Pre‑arrival medical travel planning</li>
                         <li><span class="check">✓</span> Coordination of appointments and partner institutions</li>
@@ -1277,7 +1321,8 @@
                         <span class="tag">35 hours</span>
                     </div>
                     <div class="card-price">USD $2,499</div>
-                    <div class="card-sub">Ideal for longer dental treatment, TCM treatment courses, rehabilitation programmes, multiple medical departments, or multi‑stage treatment plans.</div>
+                    <div class="card-sub">Ideal for longer treatment courses</div>
+                    <div class="card-desc">Rehabilitation, multiple medical departments, or multi‑stage treatment plans.</div>
                     <ul class="card-features">
                         <li><span class="check">✓</span> Pre‑arrival planning</li>
                         <li><span class="check">✓</span> Multi‑appointment coordination</li>
@@ -1305,7 +1350,8 @@
                         <span class="tag">60 hours</span>
                     </div>
                     <div class="card-price">USD $4,199</div>
-                    <div class="card-sub">Our recommended package for patients undertaking longer or multi‑stage medical travel in Chengdu. Ideal for complex dental treatment, extended TCM programmes, rehabilitation, multiple specialist appointments, multi‑stage treatment, or longer recovery‑related stays.</div>
+                    <div class="card-sub">Our recommended package for extended stays</div>
+                    <div class="card-desc">Complex dental treatment, extended TCM, rehabilitation, multiple specialists, multi‑stage treatment, or recovery‑related stays.</div>
                     <ul class="card-features">
                         <li><span class="check">✓</span> Pre‑arrival medical travel planning</li>
                         <li><span class="check">✓</span> Multi‑provider coordination</li>
@@ -1574,7 +1620,7 @@
 
             <!-- Copyright & Disclaimer -->
             <div class="footer-note">
-                <p><strong>KIWI Serenity Limited</strong> © 2026 | All rights reserved</p>
+                <p><strong>KIWI Serenity Limited</strong> © 2026 All rights reserved</p>
                 <p style="margin-top:10px; max-width:900px; margin-left:auto; margin-right:auto;">
                     仅提供信息和协调服务 · Information &amp; coordination only.<br />
                     不提供医疗建议、诊断或治疗 · Does not provide medical advice, diagnosis, or treatment.
